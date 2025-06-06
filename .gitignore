@@ -1,0 +1,27 @@
+# Arquivos de configuração sensíveis
+private/config.env
+private/config.php
+config.env
+*.env
+
+# Diretórios privados
+private/data/
+private/cache/
+private/logs/
+
+# Arquivos temporários e de sistema
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Node e dependências (caso use futuramente)
+node_modules/
+
+# Outros arquivos que não devem ser versionados
+.env.*
+
+# Arquivos sensíveis (NÃO versionar)
+!private/config.env.example
+!config.env.example 
