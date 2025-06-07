@@ -29,7 +29,7 @@ Visit: [https://gasnow.tools](https://gasnow.tools)
    # cd gasnow
    ```
 2. To contribute, fork the repository on GitHub and submit a pull request with your proposed changes.
-3. For questions or partnership inquiries, contact: gasnow@protonmail.com
+3. For questions or partnership inquiries, contact: contact@gasnow.tools
 
 ---
 
@@ -64,7 +64,6 @@ GasNow is a collaborative project. All help is welcome:
 
 GasNow is maintained independently and non-profit. If this project helps you, consider donating to help cover server and API costs:
 
-- **Pix (Brazil):** contact@gasnow.tools
 - **USDT (ERC20):** 0x4e21C77Ca734cb87cF034D31a72A2c3d74191E0d
 - **BTC (Lightning):** jonata@walletofsatoshi.com
 - Or contact us for other ways to support!
