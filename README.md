@@ -3,93 +3,95 @@
 [![Site](https://img.shields.io/badge/Visit%20Site-gasnow.tools-blue)](https://gasnow.tools)
 [![GitHub](https://img.shields.io/github/stars/j0n777/gasnow?style=social)](https://github.com/j0n777/gasnow)
 
-## 🚀 O que é o GasNow?
+## 🚀 What is GasNow?
 
-**GasNow** é uma plataforma open source para monitoramento em tempo real das taxas de transação (gas fees) das principais blockchains, como Ethereum, Bitcoin e TON. O projeto oferece também dados de market cap, tokens em alta, Fear & Greed Index, notícias cripto e integrações para SEO e automação.
+**GasNow** is a source-available platform for real-time monitoring of transaction fees (gas fees) on major blockchains like Ethereum, Bitcoin, and TON. The project also provides global market cap data, trending tokens, Fear & Greed Index, crypto news, and SEO/automation integrations.
 
-- **Taxas de Gas em tempo real** (ETH, BTC, TON)
-- **Market Cap global e por token**
+- **Real-time Gas Fees** (ETH, BTC, TON)
+- **Global and Token Market Cap**
 - **Fear & Greed Index**
-- **Tokens em alta e maiores altas**
-- **Notícias cripto integradas**
-- **Modo claro/escuro**
-- **API pública e fallback multi-provedor**
-- **Design responsivo e moderno**
+- **Trending Tokens & Top Gainers**
+- **Integrated Crypto News**
+- **Light/Dark Mode**
+- **Public API & Multi-provider Fallback**
+- **Modern, Responsive Design**
 
-Acesse: [https://gasnow.tools](https://gasnow.tools)
-
----
-
-## 📦 Instalação e Uso
-
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/j0n777/gasnow.git
-   cd gasnow
-   ```
-2. Copie o arquivo de exemplo de configuração:
-   ```sh
-   cp private/config.env.example private/config.env
-   # Edite com suas chaves de API
-   ```
-3. Configure seu servidor web (Apache/Nginx) para apontar para a pasta do projeto.
-4. Pronto! O site estará disponível localmente.
+Visit: [https://gasnow.tools](https://gasnow.tools)
 
 ---
 
-## 🌐 Funcionalidades
+## 📦 Installation & Usage
+
+1. Clone the repository:
+   ```sh
+   # Cloning or copying this repository is NOT permitted. Please contribute via pull requests or issues only.
+   # git clone https://github.com/j0n777/gasnow.git
+   # cd gasnow
+   ```
+2. To contribute, fork the repository on GitHub and submit a pull request with your proposed changes.
+3. For questions or partnership inquiries, contact: gasnow@protonmail.com
+
+---
+
+## 🌐 Features
 
 - **Frontend:**
-  - Visualização de taxas de gas, market cap, Fear & Greed, notícias e mais.
-  - Atualização automática e cache local para performance.
-  - Modo claro/escuro e responsividade total.
+  - View gas fees, market cap, Fear & Greed, news, and more.
+  - Automatic updates and local cache for performance.
+  - Full light/dark mode and responsive design.
 - **Backend/API:**
-  - Endpoints para gas, market cap, notícias, Fear & Greed.
-  - Fallback multi-provedor (CoinGecko, Binance, CryptoCompare).
-  - SEO dinâmico e integração com Google/Bing.
-- **Parceiros & Patrocinadores:**
-  - Espaço para banners e integrações de parceiros.
+  - Endpoints for gas, market cap, news, Fear & Greed.
+  - Multi-provider fallback (CoinGecko, Binance, CryptoCompare).
+  - Dynamic SEO and Google/Bing integration.
+- **Partners & Sponsors:**
+  - Space for banners and partner integrations.
 
 ---
 
-## 🤝 Contribua!
+## 🤝 Contribute
 
-O GasNow é um projeto aberto e colaborativo. Toda ajuda é bem-vinda:
-- Reporte bugs e sugira melhorias via [Issues](https://github.com/j0n777/gasnow/issues)
-- Envie Pull Requests
-- Sugira integrações, novos provedores ou melhorias de UX/UI
-- Traduções e documentação
+GasNow is a collaborative project. All help is welcome:
+- Report bugs and suggest improvements via [Issues](https://github.com/j0n777/gasnow/issues)
+- Submit Pull Requests
+- Suggest new integrations, providers, or UX/UI improvements
+- Help with translations and documentation
 
-**Vamos construir juntos a melhor plataforma de monitoramento de taxas cripto!**
-
----
-
-## 💚 Apoie o Projeto
-
-O GasNow é mantido de forma independente e sem fins lucrativos. Se o projeto te ajuda, considere fazer uma doação para ajudar a cobrir custos de servidores e APIs:
-
-- **Pix:** gasnow@protonmail.com
-- **USDT (TRC20):** [informe seu endereço aqui]
-- **BTC/ETH:** [informe seu endereço aqui]
-- Ou entre em contato para outras formas de apoio!
-
-Cada doação faz a diferença e ajuda a manter o projeto online e gratuito para todos.
+**Please note:** You are NOT permitted to copy, clone, redistribute, or use this codebase outside the official repository. All contributions must be made via pull requests or issues on GitHub.
 
 ---
 
-## 🔗 Links Úteis
+## 💚 Support the Project
 
-- [Site Oficial](https://gasnow.tools)
-- [Repositório no GitHub](https://github.com/j0n777/gasnow)
+GasNow is maintained independently and non-profit. If this project helps you, consider donating to help cover server and API costs:
+
+- **Pix (Brazil):** contact@gasnow.tools
+- **USDT (ERC20):** 0x4e21C77Ca734cb87cF034D31a72A2c3d74191E0d
+- **BTC (Lightning):** jonata@walletofsatoshi.com
+- Or contact us for other ways to support!
+
+Every donation makes a difference and helps keep the project online and free for everyone.
+
+---
+
+## 🔗 Useful Links
+
+- [Official Website](https://gasnow.tools)
+- [GitHub Repository](https://github.com/j0n777/gasnow)
 - [API Docs](https://gasnow.tools/api)
-- [Parceiros & Patrocinadores](https://gasnow.tools/#partners-sponsors)
+- [Partners & Sponsors](https://gasnow.tools/#partners-sponsors)
 
 ---
 
-## 📄 Licença
+## 📄 License & Usage Policy
 
-Este projeto é open source sob a licença MIT.
+**This project is NOT open source.**
+
+- You are NOT permitted to copy, clone, redistribute, or use this codebase, in whole or in part, outside the official repository.
+- Contributions are welcome via pull requests and issues on GitHub only.
+- For partnership, licensing, or other inquiries, please contact: gasnow@protonmail.com
+
+See the LICENSE file for full details.
 
 ---
 
-> Feito com 💙 pela comunidade cripto. Junte-se a nós! 
+> Made with 💙 by the crypto community. Join us! 
