@@ -25,3 +25,4 @@ node_modules/
 # Arquivos sensíveis (NÃO versionar)
 !private/config.env.example
 !config.env.example 
+.env
