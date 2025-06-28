@@ -5,6 +5,8 @@ class GasNowApp {
         this.charts = {};
         this.cache = new Map();
         this.isLoading = false;
+        this.retryAttempts = new Map();
+        this.maxRetries = 3;
         
         this.init();
     }
@@ -19,9 +21,12 @@ class GasNowApp {
 
     setupEventListeners() {
         // Theme toggle
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            this.toggleTheme();
-        });
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                this.toggleTheme();
+            });
+        }
 
         // Blockchain selector
         document.querySelectorAll('.blockchain-btn').forEach(btn => {
@@ -40,7 +45,10 @@ class GasNowApp {
         const savedTheme = localStorage.getItem('gasnow-theme') || 'dark';
         if (savedTheme === 'light') {
             document.body.classList.add('light-theme');
-            document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i>';
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
         }
     }
 
@@ -48,12 +56,14 @@ class GasNowApp {
         const isLight = document.body.classList.toggle('light-theme');
         const themeToggle = document.getElementById('themeToggle');
         
-        if (isLight) {
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.setItem('gasnow-theme', 'light');
-        } else {
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem('gasnow-theme', 'dark');
+        if (themeToggle) {
+            if (isLight) {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('gasnow-theme', 'light');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('gasnow-theme', 'dark');
+            }
         }
 
         // Update charts for theme change
@@ -64,14 +74,17 @@ class GasNowApp {
         this.showLoading();
         
         try {
-            await Promise.all([
-                this.updateCryptoPrices(),
-                this.updateGasPrices(),
-                this.updateMarketData(),
-                this.updateNews()
-            ]);
+            console.log('🔄 Loading initial data...');
+            
+            // Load data sequentially to avoid overwhelming the API
+            await this.updateCryptoPrices();
+            await this.updateGasPrices();
+            await this.updateMarketData();
+            await this.updateNews();
+            
+            console.log('✅ Initial data loaded successfully');
         } catch (error) {
-            console.error('Error loading initial data:', error);
+            console.error('❌ Error loading initial data:', error);
             this.showError('Failed to load data. Please refresh the page.');
         } finally {
             this.hideLoading();
@@ -80,18 +93,25 @@ class GasNowApp {
 
     async updateCryptoPrices() {
         try {
+            console.log('📈 Updating crypto prices...');
             const prices = await this.fetchWithCache('/api_v2/?action=prices&coins=ethereum,bitcoin,solana,the-open-network&currencies=usd', 180000);
             
             if (prices) {
                 this.renderCryptoPrices(prices);
+                console.log('✅ Crypto prices updated');
+            } else {
+                console.warn('⚠️ No crypto prices data received');
             }
         } catch (error) {
-            console.error('Error updating crypto prices:', error);
+            console.error('❌ Error updating crypto prices:', error);
+            this.renderCryptoPricesError();
         }
     }
 
     renderCryptoPrices(prices) {
         const container = document.getElementById('cryptoPrices');
+        if (!container) return;
+
         const cryptos = [
             { id: 'ethereum', symbol: 'ETH', icon: 'eth-icon.png' },
             { id: 'bitcoin', symbol: 'BTC', icon: 'btc-icon.png' },
@@ -101,17 +121,35 @@ class GasNowApp {
 
         container.innerHTML = cryptos.map(crypto => {
             const price = prices[crypto.id]?.usd || 0;
+            const change = prices[crypto.id]?.usd_24h_change || 0;
+            const changeClass = change >= 0 ? 'positive' : 'negative';
+            
             return `
                 <div class="crypto-price" data-crypto="${crypto.id}">
                     <img src="images/${crypto.icon}" alt="${crypto.symbol}">
-                    <span class="crypto-price-value">$${this.formatPrice(price)}</span>
+                    <div class="crypto-price-info">
+                        <span class="crypto-price-value">$${this.formatPrice(price)}</span>
+                        <span class="crypto-price-change ${changeClass}">${change >= 0 ? '+' : ''}${change.toFixed(2)}%</span>
+                    </div>
                 </div>
             `;
         }).join('');
     }
 
+    renderCryptoPricesError() {
+        const container = document.getElementById('cryptoPrices');
+        if (!container) return;
+
+        container.innerHTML = `
+            <div class="crypto-price error">
+                <span class="crypto-price-value">Error loading prices</span>
+            </div>
+        `;
+    }
+
     async updateGasPrices() {
         try {
+            console.log(`⛽ Updating gas prices for ${this.currentBlockchain}...`);
             let data;
             
             switch (this.currentBlockchain) {
@@ -129,11 +167,15 @@ class GasNowApp {
             }
 
             if (data) {
-                this.renderGasPrices(data);
+                await this.renderGasPrices(data);
                 this.startProgressAnimation();
+                console.log('✅ Gas prices updated');
+            } else {
+                console.warn('⚠️ No gas prices data received');
+                this.renderGasPricesError();
             }
         } catch (error) {
-            console.error('Error updating gas prices:', error);
+            console.error('❌ Error updating gas prices:', error);
             this.renderGasPricesError();
         }
     }
@@ -142,30 +184,26 @@ class GasNowApp {
         try {
             // Try multiple sources for Ethereum gas prices
             const sources = [
-                'https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=YourApiKeyToken',
-                'https://gas-api.metaswap.codefi.network/networks/1/suggestedGasFees',
-                'https://api.blocknative.com/gasprices/blockprices'
+                '/api/gas-prices?blockchain=ethereum',
+                'https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=YourApiKeyToken'
             ];
 
             for (const source of sources) {
                 try {
                     const response = await fetch(source);
+                    if (!response.ok) continue;
+                    
                     const data = await response.json();
                     
-                    if (source.includes('etherscan')) {
+                    if (source.includes('etherscan') && data.result) {
                         return {
                             slow: parseFloat(data.result.SafeGasPrice),
                             standard: parseFloat(data.result.StandardGasPrice),
                             fast: parseFloat(data.result.FastGasPrice),
                             unit: 'Gwei'
                         };
-                    } else if (source.includes('metaswap')) {
-                        return {
-                            slow: parseFloat(data.low.suggestedMaxFeePerGas),
-                            standard: parseFloat(data.medium.suggestedMaxFeePerGas),
-                            fast: parseFloat(data.high.suggestedMaxFeePerGas),
-                            unit: 'Gwei'
-                        };
+                    } else if (data.slow !== undefined) {
+                        return data;
                     }
                 } catch (err) {
                     console.warn(`Failed to fetch from ${source}:`, err);
@@ -187,16 +225,34 @@ class GasNowApp {
 
     async fetchBitcoinGas() {
         try {
-            const response = await fetch('https://mempool.space/api/v1/fees/recommended');
-            const data = await response.json();
-            
-            return {
-                slow: data.hourFee,
-                standard: data.halfHourFee,
-                fast: data.fastestFee,
-                unit: 'sat/vB'
-            };
-        } catch (error) {
+            const sources = [
+                '/api/gas-prices?blockchain=bitcoin',
+                'https://mempool.space/api/v1/fees/recommended'
+            ];
+
+            for (const source of sources) {
+                try {
+                    const response = await fetch(source);
+                    if (!response.ok) continue;
+                    
+                    const data = await response.json();
+                    
+                    if (data.hourFee !== undefined) {
+                        return {
+                            slow: data.hourFee,
+                            standard: data.halfHourFee,
+                            fast: data.fastestFee,
+                            unit: 'sat/vB'
+                        };
+                    } else if (data.slow !== undefined) {
+                        return data;
+                    }
+                } catch (err) {
+                    console.warn(`Failed to fetch from ${source}:`, err);
+                    continue;
+                }
+            }
+
             // Fallback values
             return {
                 slow: 1,
@@ -204,13 +260,17 @@ class GasNowApp {
                 fast: 10,
                 unit: 'sat/vB'
             };
+        } catch (error) {
+            throw new Error('Failed to fetch Bitcoin gas prices');
         }
     }
 
     async fetchTonGas() {
         try {
-            // TON gas estimation (simplified)
-            const response = await fetch('https://toncenter.com/api/v2/getAddressInformation?address=EQD4FPq-PRDieyQKkizFTRtSDyucUIqrj0v_zXJmqaDp6_0t');
+            const response = await fetch('/api/gas-prices?blockchain=ton');
+            if (response.ok) {
+                return await response.json();
+            }
             
             // TON has very low and predictable fees
             return {
@@ -246,16 +306,19 @@ class GasNowApp {
                     coinId = 'ethereum';
             }
 
-            const priceResponse = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`);
+            const priceResponse = await fetch(`/api_v2/?action=prices&coins=${coinId}&currencies=usd`);
+            if (!priceResponse.ok) throw new Error('Failed to fetch token price');
+            
             const priceData = await priceResponse.json();
             const tokenPrice = priceData[coinId]?.usd || 0;
 
             if (this.currentBlockchain === 'ethereum') {
-                // Convert Gwei to ETH and multiply by price
+                // Convert Gwei to ETH and multiply by price (assuming 21000 gas limit)
+                const gasLimit = 21000;
                 return {
-                    slowUsd: (gasData.slow / 1000000000) * 21000 * tokenPrice,
-                    standardUsd: (gasData.standard / 1000000000) * 21000 * tokenPrice,
-                    fastUsd: (gasData.fast / 1000000000) * 21000 * tokenPrice
+                    slowUsd: (gasData.slow / 1000000000) * gasLimit * tokenPrice,
+                    standardUsd: (gasData.standard / 1000000000) * gasLimit * tokenPrice,
+                    fastUsd: (gasData.fast / 1000000000) * gasLimit * tokenPrice
                 };
             } else if (this.currentBlockchain === 'bitcoin') {
                 // Estimate transaction size (250 bytes average)
@@ -274,6 +337,7 @@ class GasNowApp {
                 };
             }
         } catch (error) {
+            console.warn('Error calculating USD prices:', error);
             return {
                 slowUsd: 0,
                 standardUsd: 0,
@@ -323,34 +387,48 @@ class GasNowApp {
 
     async updateMarketData() {
         try {
-            const [marketCap, fearGreed, altseason, trending] = await Promise.all([
+            console.log('📊 Updating market data...');
+            
+            const [marketCap, fearGreed, altseason, trending] = await Promise.allSettled([
                 this.fetchWithCache('/api_v2/?action=market_cap', 300000),
                 this.fetchWithCache('/api_v2/?action=fear_greed', 3600000),
                 this.fetchWithCache('/api_v2/?action=altseason', 3600000),
                 this.fetchCoingeckoTrending()
             ]);
 
-            if (marketCap) this.renderMarketCap(marketCap);
-            if (fearGreed) this.renderFearGreed(fearGreed);
-            if (altseason) this.renderAltseason(altseason);
-            if (trending) this.renderTokenLists(trending);
+            if (marketCap.status === 'fulfilled' && marketCap.value) {
+                this.renderMarketCap(marketCap.value);
+            }
+            
+            if (fearGreed.status === 'fulfilled' && fearGreed.value) {
+                this.renderFearGreed(fearGreed.value);
+            }
+            
+            if (altseason.status === 'fulfilled' && altseason.value) {
+                this.renderAltseason(altseason.value);
+            }
+            
+            if (trending.status === 'fulfilled' && trending.value) {
+                this.renderTokenLists(trending.value);
+            }
             
             this.initializeCharts();
+            console.log('✅ Market data updated');
         } catch (error) {
-            console.error('Error updating market data:', error);
+            console.error('❌ Error updating market data:', error);
         }
     }
 
     async fetchCoingeckoTrending() {
         try {
-            const [trending, gainers] = await Promise.all([
+            const [trending, gainers] = await Promise.allSettled([
                 fetch('https://api.coingecko.com/api/v3/search/trending').then(r => r.json()),
                 fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=percent_change_24h_desc&per_page=10&page=1').then(r => r.json())
             ]);
 
             return {
-                trending: trending.coins?.slice(0, 5) || [],
-                gainers: gainers?.slice(0, 5) || []
+                trending: trending.status === 'fulfilled' ? (trending.value.coins?.slice(0, 5) || []) : [],
+                gainers: gainers.status === 'fulfilled' ? (gainers.value?.slice(0, 5) || []) : []
             };
         } catch (error) {
             console.error('Error fetching trending data:', error);
@@ -398,12 +476,17 @@ class GasNowApp {
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d');
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * window.devicePixelRatio;
+        canvas.height = rect.height * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
         const radius = Math.min(centerX, centerY) - 10;
 
         // Clear canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, rect.width, rect.height);
 
         // Draw background arc
         ctx.beginPath();
@@ -525,15 +608,18 @@ class GasNowApp {
 
     async updateNews() {
         try {
+            console.log('📰 Updating news...');
             const news = await this.fetchWithCache('/api_v2/?action=news', 1800000); // 30 minutes cache
+            
             if (news && news.length) {
                 this.renderNews(news);
+                console.log('✅ News updated');
             } else {
-                // Fallback to mock news
+                console.warn('⚠️ No news data received, using fallback');
                 this.renderNews(this.getMockNews());
             }
         } catch (error) {
-            console.error('Error updating news:', error);
+            console.error('❌ Error updating news:', error);
             this.renderNews(this.getMockNews());
         }
     }
@@ -589,11 +675,18 @@ class GasNowApp {
 
     async initializeMarketCapChart() {
         try {
+            console.log('📈 Initializing market cap chart...');
             const chartData = await this.fetchWithCache('/api_v2/?action=market_cap_chart', 3600000);
-            if (!chartData || !chartData.market_cap) return;
+            if (!chartData || !chartData.market_cap) {
+                console.warn('⚠️ No chart data available');
+                return;
+            }
 
             const canvas = document.getElementById('marketCapChart');
-            if (!canvas) return;
+            if (!canvas) {
+                console.warn('⚠️ Chart canvas not found');
+                return;
+            }
 
             const ctx = canvas.getContext('2d');
 
@@ -689,8 +782,10 @@ class GasNowApp {
                     }
                 }
             });
+            
+            console.log('✅ Market cap chart initialized');
         } catch (error) {
-            console.error('Error initializing market cap chart:', error);
+            console.error('❌ Error initializing market cap chart:', error);
         }
     }
 
@@ -758,15 +853,44 @@ class GasNowApp {
             return cached.data;
         }
 
+        // Check retry attempts
+        const retryKey = `retry-${url}`;
+        const attempts = this.retryAttempts.get(retryKey) || 0;
+        
+        if (attempts >= this.maxRetries) {
+            console.warn(`⚠️ Max retries reached for ${url}, using cached data if available`);
+            return cached?.data || null;
+        }
+
         try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            console.log(`🌐 Fetching: ${url} (attempt ${attempts + 1})`);
+            const response = await fetch(url, {
+                timeout: 15000,
+                headers: {
+                    'Accept': 'application/json',
+                    'Cache-Control': 'no-cache'
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
             
             const data = await response.json();
+            
+            // Reset retry counter on success
+            this.retryAttempts.delete(retryKey);
+            
             this.cache.set(cacheKey, { data, timestamp: Date.now() });
+            console.log(`✅ Successfully fetched: ${url}`);
             return data;
         } catch (error) {
-            console.error(`Fetch error for ${url}:`, error);
+            console.error(`❌ Fetch error for ${url}:`, error);
+            
+            // Increment retry counter
+            this.retryAttempts.set(retryKey, attempts + 1);
+            
+            // Return cached data if available, otherwise null
             return cached?.data || null;
         }
     }
@@ -787,7 +911,7 @@ class GasNowApp {
     }
 
     showError(message) {
-        console.error(message);
+        console.error('🚨 Application Error:', message);
         // Could implement a toast notification system here
     }
 
@@ -879,6 +1003,7 @@ function closeDonationModal() {
 
 // Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('🚀 Initializing GasNow App...');
     window.gasNowApp = new GasNowApp();
 });
 
@@ -898,6 +1023,9 @@ document.addEventListener('keydown', (e) => {
     
     if (e.key === 't' && (e.ctrlKey || e.metaKey)) {
         e.preventDefault();
-        document.getElementById('themeToggle').click();
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.click();
+        }
     }
 });
