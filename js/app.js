@@ -1,978 +1,903 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Código de diagnóstico - verificar disponibilidade dos elementos
-    console.log('DOM carregado. Verificando elementos dos gráficos:');
-    console.log('Market Cap Chart container:', document.querySelector('#market-cap-chart') ? 'Existe' : 'Não existe');
-    console.log('Fear & Greed Container:', document.querySelector('.fear-greed-container') ? 'Existe' : 'Não existe');
-    console.log('Altseason Container:', document.querySelector('.altseason-container') ? 'Existe' : 'Não existe');
-    
-    // Verificar se a biblioteca ApexCharts está carregada
-    console.log('ApexCharts disponível:', typeof ApexCharts !== 'undefined' ? 'Sim' : 'Não');
-    
-    // Inicializar componentes principais com verificação de erros
-    try {
-        initializeHeaderCryptoPrices();
-    } catch (error) {
-        console.error('Erro ao inicializar preços de cryptos no header:', error);
-    }
-    
-    try {
-        updateGasPrices();
-    } catch (error) {
-        console.error('Erro ao atualizar preços de gas:', error);
-    }
-    
-    try {
-        updateMarketCap();
-    } catch (error) {
-        console.error('Erro ao atualizar market cap:', error);
-    }
-    
-    try {
-        updateNews();
-    } catch (error) {
-        console.error('Erro ao atualizar notícias:', error);
-    }
-    
-    // Inicializar os gráficos com um pequeno atraso para garantir que o DOM está completamente pronto
-    console.log('Agendando inicialização dos gráficos...');
-    
-    // Primeiro, limpar quaisquer gráficos que possam estar em um estado inconsistente
-    if (typeof marketCapChart !== 'undefined' && marketCapChart) {
-        try {
-            marketCapChart.destroy();
-            console.log('Market Cap Chart destruído para reinicialização');
-        } catch (e) {
-            console.warn('Não foi possível destruir Market Cap Chart:', e);
-        }
-    }
-    
-    if (typeof fearGreedGauge !== 'undefined' && fearGreedGauge) {
-        try {
-            fearGreedGauge.destroy();
-            console.log('Fear & Greed Gauge destruído para reinicialização');
-        } catch (e) {
-            console.warn('Não foi possível destruir Fear & Greed Gauge:', e);
-        }
-    }
-    
-    if (typeof altseasonChart !== 'undefined' && altseasonChart) {
-        try {
-            altseasonChart.destroy();
-            console.log('Altseason Chart destruído para reinicialização');
-        } catch (e) {
-            console.warn('Não foi possível destruir Altseason Chart:', e);
-        }
-    }
-    
-    // Aguardar um pouco para garantir que o DOM está completamente montado
-    setTimeout(() => {
-        // Inicializar os gráficos usando a função do charts.js que já tem delay sequencial
-        if (typeof initializeCharts === 'function') {
-            initializeCharts().then(() => {
-                console.log('Inicialização dos gráficos concluída');
-            }).catch(error => {
-                console.error('Erro na inicialização dos gráficos:', error);
-            });
-        } else {
-            console.error('Função initializeCharts não encontrada');
-        }
-    }, 500);
-    
-    // Configurar intervalos de atualização
-    setInterval(updateGasPrices, 30000);
-    setInterval(updateCryptoPrices, 180000);
-    setInterval(updateMarketCap, 600000);
-    setInterval(updateNews, 3600000);
-    
-    // Adicionar event listeners com verificação de existência
-    const blockchainSelect = document.getElementById('blockchain-select');
-    if (blockchainSelect) {
-        blockchainSelect.addEventListener('change', function() {
-            updateGasPrices(this.value);
-        });
-    } else {
-        console.warn('Elemento blockchain-select não encontrado');
-    }
-    
-    // Inicializar tooltip se os elementos existirem
-    const marketCapValue = document.getElementById('market-cap-value');
-    const tooltip = document.getElementById('market-cap-tooltip');
-    if (marketCapValue && tooltip) {
-        initializeTooltip(marketCapValue, tooltip);
+class GasNowApp {
+    constructor() {
+        this.currentBlockchain = 'ethereum';
+        this.updateInterval = 30000; // 30 seconds
+        this.charts = {};
+        this.cache = new Map();
+        this.isLoading = false;
+        
+        this.init();
     }
 
-    // Garantir que os gráficos sejam inicializados
-    window.disableChartsReload = false;
-    
-    // Aguardar um momento para garantir que todos os elementos estejam prontos
-    setTimeout(async function() {
-        console.log('Forçando inicialização dos gráficos após carregamento da página...');
+    async init() {
+        this.setupEventListeners();
+        this.setupTheme();
+        await this.loadInitialData();
+        this.startAutoUpdate();
+        this.hideLoadingScreen();
+    }
+
+    setupEventListeners() {
+        // Theme toggle
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            this.toggleTheme();
+        });
+
+        // Blockchain selector
+        document.querySelectorAll('.blockchain-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.selectBlockchain(e.currentTarget.dataset.blockchain);
+            });
+        });
+
+        // Window resize
+        window.addEventListener('resize', this.debounce(() => {
+            this.resizeCharts();
+        }, 250));
+    }
+
+    setupTheme() {
+        const savedTheme = localStorage.getItem('gasnow-theme') || 'dark';
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+            document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    }
+
+    toggleTheme() {
+        const isLight = document.body.classList.toggle('light-theme');
+        const themeToggle = document.getElementById('themeToggle');
+        
+        if (isLight) {
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('gasnow-theme', 'light');
+        } else {
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('gasnow-theme', 'dark');
+        }
+
+        // Update charts for theme change
+        setTimeout(() => this.updateChartsTheme(), 100);
+    }
+
+    async loadInitialData() {
+        this.showLoading();
         
         try {
-            if (typeof window.initializeCharts === 'function') {
-                await window.initializeCharts();
-            } else if (typeof initializeCharts === 'function') {
-                await initializeCharts();
-            } else {
-                console.error('Função de inicialização de gráficos não encontrada');
+            await Promise.all([
+                this.updateCryptoPrices(),
+                this.updateGasPrices(),
+                this.updateMarketData(),
+                this.updateNews()
+            ]);
+        } catch (error) {
+            console.error('Error loading initial data:', error);
+            this.showError('Failed to load data. Please refresh the page.');
+        } finally {
+            this.hideLoading();
+        }
+    }
+
+    async updateCryptoPrices() {
+        try {
+            const prices = await this.fetchWithCache('/api_v2/?action=prices&coins=ethereum,bitcoin,solana,the-open-network&currencies=usd', 180000);
+            
+            if (prices) {
+                this.renderCryptoPrices(prices);
             }
         } catch (error) {
-            console.error('Erro ao forçar inicialização dos gráficos:', error);
+            console.error('Error updating crypto prices:', error);
         }
-    }, 500);
-
-    // Carregar preferências do usuário
-    loadUserPreferences();
-    
-    // Adicionar evento para salvar tema - CORREÇÃO: Verificar se o elemento existe antes
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            const isDarkMode = !document.body.classList.contains('light-mode');
-            document.body.classList.toggle('light-mode');
-            
-            const icon = this.querySelector('i');
-            if (icon) {
-                if (isDarkMode) {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                    localStorage.setItem('theme', 'dark');
-                }
-            } else {
-                localStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
-            }
-        });
     }
-    
-    // Adicionar evento para salvar blockchain selecionada
-    document.querySelectorAll('.crypto-price').forEach(function(elem) {
-        elem.addEventListener('click', function() {
-            document.querySelectorAll('.crypto-price').forEach(e => e.classList.remove('active'));
-            this.classList.add('active');
-            const chain = this.getAttribute('data-chain');
-            localStorage.setItem('selectedChain', chain);
-            updateGasPrices(chain);
-        });
-    });
-});
 
-function selectBlockchain(blockchain) {
-    document.querySelectorAll('.crypto-price').forEach(el => {
-        el.classList.remove('selected');
-    });
-    document.querySelector(`.crypto-price[data-crypto="${blockchain}"]`).classList.add('selected');
-    updateGasPrices(blockchain);
-}
+    renderCryptoPrices(prices) {
+        const container = document.getElementById('cryptoPrices');
+        const cryptos = [
+            { id: 'ethereum', symbol: 'ETH', icon: 'eth-icon.png' },
+            { id: 'bitcoin', symbol: 'BTC', icon: 'btc-icon.png' },
+            { id: 'solana', symbol: 'SOL', icon: 'sol-icon.png' },
+            { id: 'the-open-network', symbol: 'TON', icon: 'ton-icon.png' }
+        ];
 
-async function fetchData(action, params = {}) {
-    try {
-        const queryString = new URLSearchParams(params).toString();
-        const response = await fetch(`api.php?action=${action}&${queryString}`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const text = await response.text();
+        container.innerHTML = cryptos.map(crypto => {
+            const price = prices[crypto.id]?.usd || 0;
+            return `
+                <div class="crypto-price" data-crypto="${crypto.id}">
+                    <img src="images/${crypto.icon}" alt="${crypto.symbol}">
+                    <span class="crypto-price-value">$${this.formatPrice(price)}</span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    async updateGasPrices() {
         try {
-            return JSON.parse(text);
-        } catch (e) {
-            console.error(`Invalid JSON response for ${action}:`, text);
-            return null;
+            let data;
+            
+            switch (this.currentBlockchain) {
+                case 'ethereum':
+                    data = await this.fetchEthereumGas();
+                    break;
+                case 'bitcoin':
+                    data = await this.fetchBitcoinGas();
+                    break;
+                case 'ton':
+                    data = await this.fetchTonGas();
+                    break;
+                default:
+                    data = await this.fetchEthereumGas();
+            }
+
+            if (data) {
+                this.renderGasPrices(data);
+                this.startProgressAnimation();
+            }
+        } catch (error) {
+            console.error('Error updating gas prices:', error);
+            this.renderGasPricesError();
         }
-    } catch (error) {
-        console.error(`Error fetching ${action}:`, error);
-        return null;
     }
-}
 
-const GAS_CACHE_TTL = 30 * 1000; // 30 segundos
+    async fetchEthereumGas() {
+        try {
+            // Try multiple sources for Ethereum gas prices
+            const sources = [
+                'https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=YourApiKeyToken',
+                'https://gas-api.metaswap.codefi.network/networks/1/suggestedGasFees',
+                'https://api.blocknative.com/gasprices/blockprices'
+            ];
 
-function getCachedGasPrices(chain) {
-    const cache = localStorage.getItem('gasPricesCache');
-    if (!cache) return null;
-    const parsed = JSON.parse(cache);
-    if (!parsed[chain]) return null;
-    if (Date.now() - parsed[chain].timestamp > GAS_CACHE_TTL) return null;
-    return parsed[chain].data;
-}
-
-function setCachedGasPrices(chain, data) {
-    let cache = localStorage.getItem('gasPricesCache');
-    cache = cache ? JSON.parse(cache) : {};
-    cache[chain] = { data, timestamp: Date.now() };
-    localStorage.setItem('gasPricesCache', JSON.stringify(cache));
-}
-
-// Substituir updateGasPrices para usar cache
-async function updateGasPrices(chain = 'ethereum') {
-    try {
-        // Reset progress bars
-        document.querySelectorAll('.progress-bar').forEach(bar => {
-            bar.style.transition = 'none';
-            bar.style.width = '0';
-            void bar.offsetWidth;
-            bar.style.transition = 'width 30s linear';
-        });
-
-        let data = getCachedGasPrices(chain);
-        if (!data) {
-            data = await fetchData('gas_prices', { blockchain: chain });
-            if (data) setCachedGasPrices(chain, data);
-        }
-        if (data) {
-            // Se não houver campos USD, calcular dinamicamente
-            let needUsd = (!('slowUsd' in data) || !('standardUsd' in data) || !('fastUsd' in data));
-            let usdPrices = { slowUsd: data.slowUsd, standardUsd: data.standardUsd, fastUsd: data.fastUsd };
-            if (needUsd) {
-                // Mapear chain para id do CoinGecko
-                const chainToId = {
-                    ethereum: 'ethereum',
-                    binance: 'binancecoin',
-                    polygon: 'matic-network',
-                    avalanche: 'avalanche-2',
-                    arbitrum: 'arbitrum',
-                    optimism: 'optimism',
-                    fantom: 'fantom',
-                    celo: 'celo',
-                    cronos: 'cronos',
-                    base: 'base-protocol',
-                    bitcoin: 'bitcoin',
-                    ton: 'the-open-network',
-                    // Adicione outros se necessário
-                };
-                const coingeckoId = chainToId[chain] || 'ethereum';
+            for (const source of sources) {
                 try {
-                    const priceResp = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coingeckoId}&vs_currencies=usd`);
-                    const priceJson = await priceResp.json();
-                    const tokenPrice = priceJson[coingeckoId]?.usd || 0;
-                    if (chain === 'ethereum') {
-                        usdPrices = {
-                            slowUsd: (data.slow / 1_000_000_000) * tokenPrice,
-                            standardUsd: (data.standard / 1_000_000_000) * tokenPrice,
-                            fastUsd: (data.fast / 1_000_000_000) * tokenPrice
+                    const response = await fetch(source);
+                    const data = await response.json();
+                    
+                    if (source.includes('etherscan')) {
+                        return {
+                            slow: parseFloat(data.result.SafeGasPrice),
+                            standard: parseFloat(data.result.StandardGasPrice),
+                            fast: parseFloat(data.result.FastGasPrice),
+                            unit: 'Gwei'
                         };
-                    } else if (chain === 'btc' || chain === 'bitcoin') {
-                        // sat/vB * 250 bytes = total satoshis
-                        const avgTxSize = 250;
-                        usdPrices = {
-                            slowUsd: ((data.slow * avgTxSize) / 100_000_000) * tokenPrice,
-                            standardUsd: ((data.standard * avgTxSize) / 100_000_000) * tokenPrice,
-                            fastUsd: ((data.fast * avgTxSize) / 100_000_000) * tokenPrice
-                        };
-                    } else {
-                        usdPrices = {
-                            slowUsd: data.slow * tokenPrice,
-                            standardUsd: data.standard * tokenPrice,
-                            fastUsd: data.fast * tokenPrice
+                    } else if (source.includes('metaswap')) {
+                        return {
+                            slow: parseFloat(data.low.suggestedMaxFeePerGas),
+                            standard: parseFloat(data.medium.suggestedMaxFeePerGas),
+                            fast: parseFloat(data.high.suggestedMaxFeePerGas),
+                            unit: 'Gwei'
                         };
                     }
-                } catch (e) {
-                    usdPrices = { slowUsd: 'N/A', standardUsd: 'N/A', fastUsd: 'N/A' };
+                } catch (err) {
+                    console.warn(`Failed to fetch from ${source}:`, err);
+                    continue;
                 }
             }
-            if (chain === 'btc') {
-                updateBitcoinPriceCard('slow', data.slow, usdPrices.slowUsd);
-                updateBitcoinPriceCard('standard', data.standard, usdPrices.standardUsd);
-                updateBitcoinPriceCard('fast', data.fast, usdPrices.fastUsd);
-            } else if (chain === 'ton') {
-                updateTonPriceCard('slow', data.slow, usdPrices.slowUsd);
-                updateTonPriceCard('standard', data.standard, usdPrices.standardUsd);
-                updateTonPriceCard('fast', data.fast, usdPrices.fastUsd);
-            } else {
-                updatePriceCard('slow', data.slow, usdPrices.slowUsd, chain);
-                updatePriceCard('standard', data.standard, usdPrices.standardUsd, chain);
-                updatePriceCard('fast', data.fast, usdPrices.fastUsd, chain);
-            }
-            startTimerAnimation();
-        } else {
-            displayErrorInPriceCards();
-        }
-    } catch (error) {
-        console.error('Error updating gas prices:', error);
-        displayErrorInPriceCards();
-    }
-}
-
-function displayErrorInPriceCards() {
-    updatePriceCard('slow', 'Error', 'N/A');
-    updatePriceCard('standard', 'Error', 'N/A');
-    updatePriceCard('fast', 'Error', 'N/A');
-}
-
-function updatePriceCard(id, price, usdPrice, blockchain) {
-    const card = document.getElementById(id);
-    if (card) {
-        const priceElement = card.querySelector('.price');
-        const usdPriceElement = card.querySelector('.usd-price');
-        if (priceElement && usdPriceElement) {
-            if (price === 'Error') {
-                priceElement.textContent = 'Error fetching data';
-                usdPriceElement.textContent = 'N/A';
-            } else if (price && !isNaN(price) && usdPrice && !isNaN(usdPrice)) {
-                if (blockchain === 'eth') {
-                    priceElement.innerHTML = `${parseFloat(price).toFixed(2)} <span class="gwei">Gwei</span>`;
-                } else if (blockchain === 'btc') {
-                    priceElement.innerHTML = `${parseFloat(price).toFixed(0)} <span class="gwei">sat/vB</span>`;
-                } else if (blockchain === 'ton') {
-                    priceElement.innerHTML = `${parseFloat(price).toFixed(2)} <span class="gwei">TON</span>`;
-                }
-                usdPriceElement.textContent = `$${parseFloat(usdPrice).toFixed(2)}`;
-            } else {
-                priceElement.textContent = 'N/A';
-                usdPriceElement.textContent = 'N/A';
-            }
-        }
-    }
-}
-
-function updateBitcoinPriceCard(id, satoshisPerByte, usdPrice) {
-    const card = document.getElementById(id);
-    if (card) {
-        const priceElement = card.querySelector('.price');
-        const usdPriceElement = card.querySelector('.usd-price');
-        if (priceElement && usdPriceElement) {
-            if (satoshisPerByte === 'Error') {
-                priceElement.textContent = 'Error fetching data';
-                usdPriceElement.textContent = 'N/A';
-            } else if (satoshisPerByte && !isNaN(satoshisPerByte) && usdPrice && !isNaN(usdPrice)) {
-                const avgTransactionSize = 250; // bytes
-                const totalUsdPrice = usdPrice * avgTransactionSize;
-                priceElement.innerHTML = `${parseFloat(satoshisPerByte).toFixed(2)} <span class="gwei">sat/vB</span>`;
-                usdPriceElement.textContent = `$${totalUsdPrice.toFixed(2)}`;
-            } else {
-                priceElement.textContent = 'N/A';
-                usdPriceElement.textContent = 'N/A';
-            }
-        }
-    }
-}
-
-function updateTonPriceCard(id, tonFee, usdPrice) {
-    const card = document.getElementById(id);
-    if (card) {
-        const priceElement = card.querySelector('.price');
-        const usdPriceElement = card.querySelector('.usd-price');
-        if (priceElement && usdPriceElement) {
-            if (tonFee === 'Error') {
-                priceElement.textContent = 'Error fetching data';
-                usdPriceElement.textContent = 'N/A';
-            } else if (tonFee && !isNaN(tonFee) && usdPrice && !isNaN(usdPrice)) {
-                priceElement.innerHTML = `${parseFloat(tonFee).toFixed(4)} <span class="gwei">TON</span>`;
-                usdPriceElement.textContent = `$${parseFloat(usdPrice).toFixed(4)}`;
-            } else {
-                priceElement.textContent = 'N/A';
-                usdPriceElement.textContent = 'N/A';
-            }
-        }
-    }
-}
-
-async function updateCryptoPrices() {
-    try {
-        const data = await fetchData('crypto_prices');
-        if (data) {
-            updateHeaderCryptoPrice('eth', data.ethPrice);
-            updateHeaderCryptoPrice('btc', data.btcPrice);
-            updateHeaderCryptoPrice('sol', data.solPrice);
-            updateHeaderCryptoPrice('ton', data.tonPrice);
-        }
-    } catch (error) {
-        console.error('Error updating crypto prices:', error);
-    }
-}
-
-function updateHeaderCryptoPrice(symbol, price) {
-    const element = document.querySelector(`.crypto-price[data-crypto="${symbol}"] .price-value`);
-    if (element) {
-        if (price !== null && !isNaN(price)) {
-            element.textContent = formatCryptoPrice(price);
-        } else {
-            console.warn(`Invalid price for ${symbol}:`, price);
-            element.textContent = 'N/A';
-        }
-    }
-}
-
-function formatCryptoPrice(price) {
-    return new Intl.NumberFormat('en-US', { 
-        style: 'currency', 
-        currency: 'USD', 
-        minimumFractionDigits: 2, 
-        maximumFractionDigits: 2 
-    }).format(price);
-}
-
-function startTimerAnimation() {
-    document.querySelectorAll('.progress-bar').forEach(bar => {
-        bar.style.width = '0';
-        void bar.offsetWidth;
-        bar.style.width = '100%';
-    });
-}
-
-async function updateMarketCap() {
-    try {
-        const data = await fetchData('market_cap');
-        if (data) {
-            // Verificar se estamos recebendo o formato antigo ou novo
-            if (data.globalMarketCap) {
-                // Novo formato da API
-                updateMarketCapDisplayFromNewFormat(data);
-            } else if (data.total_market_cap) {
-                // Formato antigo
-                updateMarketCapDisplay(data);
-            } else {
-                console.error('Dados de Market Cap inválidos:', data);
-            }
-        }
-    } catch (error) {
-        console.error('Erro ao atualizar Market Cap:', error);
-    }
-}
-
-// Função para processar o novo formato de dados
-function updateMarketCapDisplayFromNewFormat(data) {
-    // Extrair o valor numérico do globalMarketCap (remover $ e vírgulas)
-    const marketCapString = data.globalMarketCap.replace('$', '').replace(/,/g, '');
-    const marketCapValue = parseFloat(marketCapString);
-    
-    // Extrair o valor percentual do change24h (remover %)
-    const changeString = data.change24h.replace('%', '');
-    const changeValue = parseFloat(changeString);
-    
-    // Formatar para exibição
-    const totalMarketCap = formatCurrencyAbbreviated(marketCapValue);
-    
-    // Atualizar elementos na página
-    const marketCapElement = document.getElementById('total-market-cap');
-    const volumeElement = document.getElementById('total-volume');
-    const changeElement = document.getElementById('market-cap-change');
-    
-    if (marketCapElement) marketCapElement.textContent = totalMarketCap;
-    
-    // Volume pode não estar disponível no novo formato
-    if (volumeElement) {
-        // Se tivermos dados de volume, use-os, caso contrário, mostre N/A
-        volumeElement.textContent = data.totalVolume ? formatCurrencyAbbreviated(data.totalVolume) : 'N/A';
-    }
-    
-    if (changeElement) {
-        // Formatar a mudança percentual
-        const changePrefix = changeValue >= 0 ? '+' : '';
-        changeElement.textContent = `${changePrefix}${changeValue.toFixed(2)}%`;
-        
-        // Adicionar classe baseada no valor (positivo/negativo)
-        changeElement.className = 'market-cap-stat-value';
-        if (changeValue > 0) {
-            changeElement.classList.add('positive');
-        } else if (changeValue < 0) {
-            changeElement.classList.add('negative');
-        }
-    }
-}
-
-// Adicionar a função original para o formato antigo de dados
-function updateMarketCapDisplay(data) {
-    // Formatar valores para exibição
-    const totalMarketCap = formatCurrency(data.total_market_cap);
-    const totalVolume = formatCurrency(data.total_volume);
-    const change24h = data.market_cap_change_percentage_24h_usd;
-    
-    // Atualizar elementos na página
-    const marketCapElement = document.getElementById('total-market-cap');
-    const volumeElement = document.getElementById('total-volume');
-    const changeElement = document.getElementById('market-cap-change');
-    
-    if (marketCapElement) marketCapElement.textContent = totalMarketCap;
-    if (volumeElement) volumeElement.textContent = totalVolume;
-    
-    if (changeElement) {
-        // Formatar a mudança percentual
-        const changePrefix = change24h >= 0 ? '+' : '';
-        changeElement.textContent = `${changePrefix}${change24h.toFixed(2)}%`;
-        
-        // Adicionar classe baseada no valor (positivo/negativo)
-        changeElement.className = 'market-cap-stat-value';
-        if (change24h > 0) {
-            changeElement.classList.add('positive');
-        } else if (change24h < 0) {
-            changeElement.classList.add('negative');
-        }
-    }
-}
-
-// Função para formatar valores monetários (ex: $1.23T, $4.56B)
-function formatCurrencyAbbreviated(value) {
-    if (value === undefined || value === null || isNaN(value)) {
-        return '$0';
-    }
-    
-    // Definir os sufixos para diferentes escalas
-    const suffixes = ['', 'K', 'M', 'B', 'T'];
-    
-    // Determinar o índice do sufixo
-    const suffixIndex = Math.floor(Math.log10(Math.abs(value)) / 3);
-    
-    // Calcular o valor formatado
-    const formattedValue = suffixIndex === 0 ? 
-        value : 
-        (value / Math.pow(10, suffixIndex * 3)).toFixed(2);
-    
-    // Retornar o valor formatado com o símbolo de dólar e o sufixo apropriado
-    return `$${formattedValue}${suffixes[suffixIndex]}`;
-}
-
-function initializeTooltip(triggerElement, tooltipElement) {
-    if (triggerElement && tooltipElement) {
-        triggerElement.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
             
-            tooltipElement.style.visibility = 'visible';
-            tooltipElement.style.opacity = '1';
-            
-            // Position the tooltip near the cursor
-            tooltipElement.style.left = `${x + 10}px`;
-            tooltipElement.style.top = `${y + 10}px`;
-        });
+            // Fallback to estimated values
+            return {
+                slow: 10,
+                standard: 15,
+                fast: 25,
+                unit: 'Gwei'
+            };
+        } catch (error) {
+            throw new Error('Failed to fetch Ethereum gas prices');
+        }
+    }
 
-        triggerElement.addEventListener('mouseleave', () => {
-            tooltipElement.style.visibility = 'hidden';
-            tooltipElement.style.opacity = '0';
+    async fetchBitcoinGas() {
+        try {
+            const response = await fetch('https://mempool.space/api/v1/fees/recommended');
+            const data = await response.json();
+            
+            return {
+                slow: data.hourFee,
+                standard: data.halfHourFee,
+                fast: data.fastestFee,
+                unit: 'sat/vB'
+            };
+        } catch (error) {
+            // Fallback values
+            return {
+                slow: 1,
+                standard: 5,
+                fast: 10,
+                unit: 'sat/vB'
+            };
+        }
+    }
+
+    async fetchTonGas() {
+        try {
+            // TON gas estimation (simplified)
+            const response = await fetch('https://toncenter.com/api/v2/getAddressInformation?address=EQD4FPq-PRDieyQKkizFTRtSDyucUIqrj0v_zXJmqaDp6_0t');
+            
+            // TON has very low and predictable fees
+            return {
+                slow: 0.005,
+                standard: 0.01,
+                fast: 0.02,
+                unit: 'TON'
+            };
+        } catch (error) {
+            return {
+                slow: 0.005,
+                standard: 0.01,
+                fast: 0.02,
+                unit: 'TON'
+            };
+        }
+    }
+
+    async calculateUsdPrices(gasData) {
+        try {
+            let coinId;
+            switch (this.currentBlockchain) {
+                case 'ethereum':
+                    coinId = 'ethereum';
+                    break;
+                case 'bitcoin':
+                    coinId = 'bitcoin';
+                    break;
+                case 'ton':
+                    coinId = 'the-open-network';
+                    break;
+                default:
+                    coinId = 'ethereum';
+            }
+
+            const priceResponse = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`);
+            const priceData = await priceResponse.json();
+            const tokenPrice = priceData[coinId]?.usd || 0;
+
+            if (this.currentBlockchain === 'ethereum') {
+                // Convert Gwei to ETH and multiply by price
+                return {
+                    slowUsd: (gasData.slow / 1000000000) * 21000 * tokenPrice,
+                    standardUsd: (gasData.standard / 1000000000) * 21000 * tokenPrice,
+                    fastUsd: (gasData.fast / 1000000000) * 21000 * tokenPrice
+                };
+            } else if (this.currentBlockchain === 'bitcoin') {
+                // Estimate transaction size (250 bytes average)
+                const avgTxSize = 250;
+                return {
+                    slowUsd: (gasData.slow * avgTxSize / 100000000) * tokenPrice,
+                    standardUsd: (gasData.standard * avgTxSize / 100000000) * tokenPrice,
+                    fastUsd: (gasData.fast * avgTxSize / 100000000) * tokenPrice
+                };
+            } else {
+                // TON - direct multiplication
+                return {
+                    slowUsd: gasData.slow * tokenPrice,
+                    standardUsd: gasData.standard * tokenPrice,
+                    fastUsd: gasData.fast * tokenPrice
+                };
+            }
+        } catch (error) {
+            return {
+                slowUsd: 0,
+                standardUsd: 0,
+                fastUsd: 0
+            };
+        }
+    }
+
+    async renderGasPrices(gasData) {
+        const usdPrices = await this.calculateUsdPrices(gasData);
+        
+        const speeds = ['slow', 'standard', 'fast'];
+        speeds.forEach(speed => {
+            const priceElement = document.getElementById(`${speed}Price`);
+            const unitElement = document.getElementById(`${speed}Unit`);
+            const usdElement = document.getElementById(`${speed}Usd`);
+            
+            if (priceElement && unitElement && usdElement) {
+                priceElement.textContent = this.formatGasPrice(gasData[speed]);
+                unitElement.textContent = gasData.unit;
+                usdElement.textContent = `$${this.formatPrice(usdPrices[`${speed}Usd`])}`;
+            }
         });
     }
-}
 
-function formatTokenPrice(price) {
-    if (price < 0.01) {
-        return price.toFixed(8);
+    renderGasPricesError() {
+        const speeds = ['slow', 'standard', 'fast'];
+        speeds.forEach(speed => {
+            const priceElement = document.getElementById(`${speed}Price`);
+            const usdElement = document.getElementById(`${speed}Usd`);
+            
+            if (priceElement && usdElement) {
+                priceElement.textContent = '--';
+                usdElement.textContent = '$--';
+            }
+        });
     }
-    return price.toFixed(2);
-}
 
-function updateTrendingTokens(tokens) {
-    updateTokenList('trending-tokens', tokens);
-}
+    startProgressAnimation() {
+        document.querySelectorAll('.progress-fill').forEach(fill => {
+            fill.style.width = '0%';
+            setTimeout(() => {
+                fill.style.width = '100%';
+            }, 100);
+        });
+    }
 
-function updateLargestGainers(tokens) {
-    updateTokenList('largest-gainers', tokens);
-}
+    async updateMarketData() {
+        try {
+            const [marketCap, fearGreed, altseason, trending] = await Promise.all([
+                this.fetchWithCache('/api_v2/?action=market_cap', 300000),
+                this.fetchWithCache('/api_v2/?action=fear_greed', 3600000),
+                this.fetchWithCache('/api_v2/?action=altseason', 3600000),
+                this.fetchCoingeckoTrending()
+            ]);
 
-function updateTokenList(containerId, tokens) {
-    const container = document.getElementById(containerId);
-    if (container && tokens) {
-        container.innerHTML = tokens.map(token => `
-            <div class="token">
-                <div class="token-left">
-                    <img src="${token.icon}" alt="${token.name}" class="token-icon">
+            if (marketCap) this.renderMarketCap(marketCap);
+            if (fearGreed) this.renderFearGreed(fearGreed);
+            if (altseason) this.renderAltseason(altseason);
+            if (trending) this.renderTokenLists(trending);
+            
+            this.initializeCharts();
+        } catch (error) {
+            console.error('Error updating market data:', error);
+        }
+    }
+
+    async fetchCoingeckoTrending() {
+        try {
+            const [trending, gainers] = await Promise.all([
+                fetch('https://api.coingecko.com/api/v3/search/trending').then(r => r.json()),
+                fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=percent_change_24h_desc&per_page=10&page=1').then(r => r.json())
+            ]);
+
+            return {
+                trending: trending.coins?.slice(0, 5) || [],
+                gainers: gainers?.slice(0, 5) || []
+            };
+        } catch (error) {
+            console.error('Error fetching trending data:', error);
+            return { trending: [], gainers: [] };
+        }
+    }
+
+    renderMarketCap(data) {
+        const totalElement = document.getElementById('totalMarketCap');
+        const changeElement = document.getElementById('marketCapChange');
+        const volumeElement = document.getElementById('totalVolume');
+
+        if (totalElement && data.formatted?.total_market_cap) {
+            totalElement.textContent = data.formatted.total_market_cap;
+        }
+
+        if (changeElement && data.formatted?.change_24h) {
+            const change = parseFloat(data.formatted.change_24h.replace('%', ''));
+            changeElement.textContent = data.formatted.change_24h;
+            changeElement.className = `stat-value ${change >= 0 ? 'positive' : 'negative'}`;
+        }
+
+        if (volumeElement && data.formatted?.total_volume) {
+            volumeElement.textContent = data.formatted.total_volume;
+        }
+    }
+
+    renderFearGreed(data) {
+        const valueElement = document.getElementById('fearGreedValue');
+        const labelElement = document.getElementById('fearGreedLabel');
+
+        if (valueElement && labelElement) {
+            const value = data.current?.value || data.value || 50;
+            const classification = data.current?.classification || data.classification || 'Neutral';
+
+            valueElement.textContent = Math.round(value);
+            labelElement.textContent = classification;
+
+            this.updateFearGreedGauge(value);
+        }
+    }
+
+    updateFearGreedGauge(value) {
+        const canvas = document.getElementById('fearGreedCanvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = Math.min(centerX, centerY) - 10;
+
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw background arc
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, Math.PI, 2 * Math.PI);
+        ctx.lineWidth = 20;
+        ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg-tertiary');
+        ctx.stroke();
+
+        // Draw value arc
+        const angle = Math.PI + (value / 100) * Math.PI;
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, Math.PI, angle);
+        ctx.lineWidth = 20;
+        
+        // Color based on value
+        if (value <= 20) ctx.strokeStyle = '#ef4444';
+        else if (value <= 40) ctx.strokeStyle = '#f59e0b';
+        else if (value <= 60) ctx.strokeStyle = '#eab308';
+        else if (value <= 80) ctx.strokeStyle = '#10b981';
+        else ctx.strokeStyle = '#059669';
+        
+        ctx.stroke();
+
+        // Draw pointer
+        const pointerAngle = Math.PI + (value / 100) * Math.PI;
+        const pointerX = centerX + Math.cos(pointerAngle) * (radius - 10);
+        const pointerY = centerY + Math.sin(pointerAngle) * (radius - 10);
+        
+        ctx.beginPath();
+        ctx.arc(pointerX, pointerY, 8, 0, 2 * Math.PI);
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-primary');
+        ctx.fill();
+    }
+
+    renderAltseason(data) {
+        const valueElement = document.getElementById('altseasonValue');
+        const statusElement = document.getElementById('altseasonStatus');
+        const progressElement = document.getElementById('altseasonProgress');
+        const markerElement = document.getElementById('altseasonMarker');
+
+        if (valueElement && statusElement && progressElement && markerElement) {
+            const value = data.index || data.current?.index || 50;
+            
+            valueElement.textContent = Math.round(value);
+            progressElement.style.width = `${value}%`;
+            markerElement.style.left = `${value}%`;
+
+            // Determine status
+            let status, statusClass;
+            if (value <= 25) {
+                status = 'Bitcoin Season';
+                statusClass = 'bitcoin-season';
+            } else if (value <= 75) {
+                status = 'Neutral';
+                statusClass = 'neutral';
+            } else {
+                status = 'Altcoin Season';
+                statusClass = 'altcoin-season';
+            }
+
+            statusElement.textContent = status;
+            statusElement.className = `altseason-status ${statusClass}`;
+        }
+    }
+
+    renderTokenLists(data) {
+        this.renderTrendingTokens(data.trending);
+        this.renderTopGainers(data.gainers);
+    }
+
+    renderTrendingTokens(tokens) {
+        const container = document.getElementById('trendingTokens');
+        if (!container || !tokens.length) return;
+
+        container.innerHTML = tokens.map(token => {
+            const coin = token.item || token;
+            return `
+                <div class="token-item">
                     <div class="token-info">
-                        <span class="token-name">${token.name}</span>
-                        <span class="token-symbol">${token.symbol}</span>
+                        <img src="${coin.thumb || coin.image}" alt="${coin.name}" class="token-icon">
+                        <div class="token-details">
+                            <h4>${coin.name}</h4>
+                            <p>${coin.symbol?.toUpperCase()}</p>
+                        </div>
+                    </div>
+                    <div class="token-stats">
+                        <div class="token-price">$${this.formatPrice(coin.current_price || 0)}</div>
+                        <div class="token-change ${(coin.price_change_percentage_24h || 0) >= 0 ? 'positive' : 'negative'}">
+                            ${this.formatPercentage(coin.price_change_percentage_24h || 0)}
+                        </div>
                     </div>
                 </div>
-                <div class="token-right">
-                    <div class="token-price">$${formatTokenPrice(parseFloat(token.price))}</div>
-                    <div class="token-change ${parseFloat(token.change24h) >= 0 ? 'positive' : 'negative'}">
-                        <span class="token-change-arrow">${parseFloat(token.change24h) >= 0 ? '▲' : '▼'}</span>
-                        ${Math.abs(parseFloat(token.change24h)).toFixed(2)}%
+            `;
+        }).join('');
+    }
+
+    renderTopGainers(tokens) {
+        const container = document.getElementById('topGainers');
+        if (!container || !tokens.length) return;
+
+        container.innerHTML = tokens.map(token => `
+            <div class="token-item">
+                <div class="token-info">
+                    <img src="${token.image}" alt="${token.name}" class="token-icon">
+                    <div class="token-details">
+                        <h4>${token.name}</h4>
+                        <p>${token.symbol?.toUpperCase()}</p>
+                    </div>
+                </div>
+                <div class="token-stats">
+                    <div class="token-price">$${this.formatPrice(token.current_price || 0)}</div>
+                    <div class="token-change positive">
+                        +${this.formatPercentage(token.price_change_percentage_24h || 0)}
                     </div>
                 </div>
             </div>
         `).join('');
     }
-}
 
-async function updateNews() {
-    try {
-        const news = await fetchData('news');
-        const newsContainer = document.getElementById('news-container');
-        if (newsContainer && news) {
-            newsContainer.innerHTML = news.map(article => `
-                <div class="news-article">
-                    <div class="news-image" style="background-image: url('${article.image}')"></div>
-                    <div class="news-content">
-                        <h3><a href="${article.link}" target="_blank">${article.title}</a></h3>
-                        <p>${article.excerpt}</p>
-                        <a href="${article.link}" target="_blank" class="read-more">Read more</a>
+    async updateNews() {
+        try {
+            const news = await this.fetchWithCache('/api_v2/?action=news', 1800000); // 30 minutes cache
+            if (news && news.length) {
+                this.renderNews(news);
+            } else {
+                // Fallback to mock news
+                this.renderNews(this.getMockNews());
+            }
+        } catch (error) {
+            console.error('Error updating news:', error);
+            this.renderNews(this.getMockNews());
+        }
+    }
+
+    getMockNews() {
+        return [
+            {
+                title: "Bitcoin Reaches New All-Time High",
+                excerpt: "Bitcoin continues its bullish momentum as institutional adoption grows...",
+                image: "images/default-crypto-news.jpg",
+                link: "#",
+                date: new Date().toISOString()
+            },
+            {
+                title: "Ethereum 2.0 Staking Rewards Increase",
+                excerpt: "Ethereum staking rewards see significant increase following network upgrades...",
+                image: "images/default-crypto-news.jpg",
+                link: "#",
+                date: new Date().toISOString()
+            },
+            {
+                title: "DeFi TVL Surpasses $100 Billion",
+                excerpt: "Decentralized Finance total value locked reaches new milestone...",
+                image: "images/default-crypto-news.jpg",
+                link: "#",
+                date: new Date().toISOString()
+            }
+        ];
+    }
+
+    renderNews(articles) {
+        const container = document.getElementById('newsGrid');
+        if (!container) return;
+
+        container.innerHTML = articles.slice(0, 6).map(article => `
+            <div class="news-card" onclick="window.open('${article.link}', '_blank')">
+                <div class="news-image" style="background-image: url('${article.image || 'images/default-crypto-news.jpg'}')"></div>
+                <div class="news-content">
+                    <h3 class="news-title">${article.title}</h3>
+                    <p class="news-excerpt">${article.excerpt || ''}</p>
+                    <div class="news-meta">
+                        <span class="news-date">${this.formatDate(article.date)}</span>
+                        <a href="${article.link}" class="read-more" target="_blank" onclick="event.stopPropagation()">Read more</a>
                     </div>
                 </div>
-            `).join('');
-        }
-    } catch (error) {
-        console.error('Error updating news:', error);
+            </div>
+        `).join('');
     }
-}
 
-function initializeHeaderCryptoPrices() {
-    const cryptoPrices = document.querySelectorAll('#crypto-prices .crypto-price span');
-    cryptoPrices.forEach(priceSpan => {
-        const initialPrice = priceSpan.textContent.split('$')[1];
-        if (!isNaN(parseFloat(initialPrice))) {
-            const symbol = priceSpan.textContent.split(':')[0];
-            updateHeaderCryptoPrice(symbol, parseFloat(initialPrice));
-        }
-    });
-}
-
-// A inicialização real é feita pela função no charts.js
-async function initializeChartsWrapper() {
-    try {
-        console.log('Redirecionando para a função de inicialização no charts.js...');
-        
-        // Verificar se a função existe no charts.js
-        if (typeof window.initializeCharts === 'function') {
-            return await window.initializeCharts();
-        }
-        
-        // Fallback para inicialização direta se a função do charts.js não existir
-        console.log('Iniciando inicialização direta dos gráficos (fallback)...');
-        
-        // Inicializar os gráficos diretamente, sem depender do ChartManager
-        if (typeof initMarketCapChart === 'function') {
-            console.log('Inicializando Market Cap Chart...');
-            await initMarketCapChart();
-        } else {
-            console.error('Função initMarketCapChart não encontrada');
-        }
-        
-        if (typeof initFearGreedIndex === 'function') {
-            console.log('Inicializando Fear & Greed Index...');
-            await initFearGreedIndex();
-        } else {
-            console.error('Função initFearGreedIndex não encontrada');
-        }
-        
-        if (typeof initAltseasonIndex === 'function') {
-            console.log('Inicializando Altseason Index...');
-            await initAltseasonIndex();
-        } else {
-            console.error('Função initAltseasonIndex não encontrada');
-        }
-        
-        console.log('Todos os gráficos foram inicializados com sucesso.');
-    } catch (error) {
-        console.error('Erro na inicialização dos gráficos:', error);
+    initializeCharts() {
+        this.initializeMarketCapChart();
     }
-}
 
-// Usar a função wrapper para inicialização
-const initializeCharts = initializeChartsWrapper;
-
-// Variável para armazenar o timer de debounce do resize
-// Verificar se a variável já existe para evitar redeclaração
-let resizeTimer;
-
-// Código para detectar quando o redimensionamento está ocorrendo
-window.isResizing = false;
-window.disableChartsReload = false; // Permitir o carregamento inicial dos gráficos
-
-window.addEventListener('resize', function() {
-    window.isResizing = true;
-    
-    // Desativar explicitamente o recarregamento dos gráficos durante o redimensionamento
-    window.disableChartsReload = true;
-    
-    clearTimeout(window.resizeEndTimer);
-    window.resizeEndTimer = setTimeout(function() {
-        window.isResizing = false;
-        
-        // Reativar o carregamento dos gráficos após o redimensionamento
-        window.disableChartsReload = false;
-    }, 1000); // Aumentar o tempo para garantir que o redimensionamento seja completamente concluído
-});
-
-// Adicionar evento de resize para ajustar os gráficos quando a janela for redimensionada
-// Usando debounce para evitar múltiplas chamadas durante o redimensionamento
-/*
-window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-        console.log('Janela redimensionada, atualizando gráficos...');
-        
-        // Usar a função de inicialização sequencial do charts.js
-        if (typeof window.initializeCharts === 'function') {
-            window.initializeCharts().catch(e => console.error('Erro ao reinicializar gráficos após resize:', e));
-        } else {
-            // Fallback para inicialização individual
-            if (typeof initMarketCapChart === 'function' && chartsInitialized && !chartsInitialized.marketCap) {
-                initMarketCapChart().catch(e => console.error('Erro ao reinicializar Market Cap Chart:', e));
-            }
-        }
-    }, 500);
-});
-*/
-
-// Função para formatar valores monetários de forma mais legível
-function formatCurrency(value) {
-    if (!value && value !== 0) return '$0';
-    
-    // Formatar para trilhões, bilhões ou milhões com 2 casas decimais
-    if (value >= 1e12) {
-        return '$' + (value / 1e12).toFixed(2) + 'T';
-    } else if (value >= 1e9) {
-        return '$' + (value / 1e9).toFixed(2) + 'B';
-    } else if (value >= 1e6) {
-        return '$' + (value / 1e6).toFixed(2) + 'M';
-    } else if (value >= 1e3) {
-        return '$' + (value / 1e3).toFixed(2) + 'K';
-    }
-    
-    // Para valores menores, usar formato padrão
-    return '$' + value.toFixed(2);
-}
-
-// Adicionar código para salvar e carregar preferências do usuário (tema e blockchain)
-function loadUserPreferences() {
-    // Carregar tema
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
-        const themeToggle = document.querySelector('.theme-toggle i');
-        if (themeToggle) {
-            themeToggle.classList.remove('fa-moon');
-            themeToggle.classList.add('fa-sun');
-        }
-    }
-    
-    // Carregar blockchain selecionada
-    const savedChain = localStorage.getItem('selectedChain');
-    if (savedChain) {
-        document.querySelectorAll('.crypto-price').forEach(el => {
-            el.classList.remove('active');
-            if (el.getAttribute('data-chain') === savedChain) {
-                el.classList.add('active');
-            }
-        });
-        
-        // Atualizar preços de gás para a blockchain selecionada
-        updateGasPrices(savedChain);
-    }
-}
-
-// Modificar a função getSolanaGasData para calcular corretamente as taxas da Solana
-async function getSolanaGasData() {
-    try {
-        // Taxa base da Solana (5000 lamports por assinatura)
-        const BASE_FEE_LAMPORTS = 5000;
-        
-        // Converter lamports para SOL (1 SOL = 1,000,000,000 lamports)
-        const LAMPORTS_TO_SOL = 0.000000001;
-        
-        // Transação padrão usa 1 assinatura
-        const STANDARD_SIGNATURES = 1;
-        
-        // Obter preço atual do SOL em USD
-        const priceResponse = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd');
-        const priceData = await priceResponse.json();
-        const solPrice = priceData?.solana?.usd || 0;
-        
-        console.log('Preço do SOL:', solPrice);
-        
+    async initializeMarketCapChart() {
         try {
-            // Tentar obter dados de priorização de taxas do RPC
-            const endpoint = 'https://solana-mainnet.g.alchemy.com/v2/demo';
-            
-            const rpcResponse = await fetch(endpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    "jsonrpc": "2.0",
-                    "id": 1,
-                    "method": "getRecentPrioritizationFees"
-                })
-            });
-            
-            const rpcData = await rpcResponse.json();
-            
-            if (rpcData && rpcData.result && rpcData.result.length > 0) {
-                // Extrair taxas de priorização em lamports
-                const priorityFees = rpcData.result.map(item => parseInt(item.prioritizationFee || 0));
-                
-                // Ordenar taxas para calcular percentis
-                priorityFees.sort((a, b) => a - b);
-                
-                // Calcular taxas para diferentes níveis de prioridade (10º, 50º e 90º percentis)
-                const slowIndex = Math.floor(priorityFees.length * 0.1);
-                const standardIndex = Math.floor(priorityFees.length * 0.5);
-                const fastIndex = Math.floor(priorityFees.length * 0.9);
-                
-                let slowPriorityFee = priorityFees[slowIndex] || 0;
-                let standardPriorityFee = priorityFees[standardIndex] || 0;
-                let fastPriorityFee = priorityFees[fastIndex] || 0;
-                
-                // Garantir valores mínimos razoáveis
-                slowPriorityFee = Math.max(slowPriorityFee, 1);
-                standardPriorityFee = Math.max(standardPriorityFee, 10);
-                fastPriorityFee = Math.max(fastPriorityFee, 100);
-                
-                // Calcular taxas totais em lamports (base + prioridade)
-                const slowTotalLamports = BASE_FEE_LAMPORTS + slowPriorityFee;
-                const standardTotalLamports = BASE_FEE_LAMPORTS + standardPriorityFee;
-                const fastTotalLamports = BASE_FEE_LAMPORTS + fastPriorityFee;
-                
-                // Converter para SOL
-                const slowSol = slowTotalLamports * LAMPORTS_TO_SOL;
-                const standardSol = standardTotalLamports * LAMPORTS_TO_SOL;
-                const fastSol = fastTotalLamports * LAMPORTS_TO_SOL;
-                
-                // Calcular valores em USD
-                const slowUsd = slowSol * solPrice;
-                const standardUsd = standardSol * solPrice;
-                const fastUsd = fastSol * solPrice;
-                
-                console.log('Dados de gás da Solana calculados (RPC):', {
-                    slow: slowSol,
-                    standard: standardSol,
-                    fast: fastSol,
-                    slowLamports: slowTotalLamports,
-                    standardLamports: standardTotalLamports,
-                    fastLamports: fastTotalLamports
-                });
-                
-                return {
-                    slow: slowSol,
-                    standard: standardSol,
-                    fast: fastSol,
-                    slowUsd,
-                    standardUsd,
-                    fastUsd,
-                    unit: 'SOL'
-                };
-            }
-        } catch (rpcError) {
-            console.warn('Erro ao obter dados do RPC da Solana:', rpcError);
-        }
-        
-        // Se não conseguimos dados do RPC, usar valores típicos com base no Solscan
-        // Valores de referência baseados no Solscan Fee Tracker
-        const slowPriorityFee = 1; // Quase nenhuma priorização
-        const standardPriorityFee = 13; // Valor médio típico
-        const fastPriorityFee = 1000; // Alta priorização
-        
-        // Calcular taxas totais em lamports (base + prioridade)
-        const slowTotalLamports = BASE_FEE_LAMPORTS + slowPriorityFee;
-        const standardTotalLamports = BASE_FEE_LAMPORTS + standardPriorityFee;
-        const fastTotalLamports = BASE_FEE_LAMPORTS + fastPriorityFee;
-        
-        // Converter para SOL
-        const slowSol = slowTotalLamports * LAMPORTS_TO_SOL;
-        const standardSol = standardTotalLamports * LAMPORTS_TO_SOL;
-        const fastSol = fastTotalLamports * LAMPORTS_TO_SOL;
-        
-        // Calcular valores em USD
-        const slowUsd = slowSol * solPrice;
-        const standardUsd = standardSol * solPrice;
-        const fastUsd = fastSol * solPrice;
-        
-        console.log('Dados de gás da Solana calculados (valores típicos):', {
-            slow: slowSol,
-            standard: standardSol,
-            fast: fastSol,
-            slowUsd,
-            standardUsd,
-            fastUsd
-        });
-        
-        return {
-            slow: slowSol,
-            standard: standardSol,
-            fast: fastSol,
-            slowUsd,
-            standardUsd,
-            fastUsd,
-            unit: 'SOL'
-        };
-    } catch (error) {
-        console.error('Erro ao calcular taxas da Solana:', error);
-        
-        // Em caso de falha total, retornar valores de referência do Solscan
-        // 5000 lamports base fee + pequena priorização = ~0.000018 SOL para taxa padrão
-        return {
-            slow: 0.000005,
-            standard: 0.000018,
-            fast: 0.000060,
-            slowUsd: 0.000005 * 125, // Assumindo preço de ~$125 por SOL
-            standardUsd: 0.000018 * 125,
-            fastUsd: 0.000060 * 125,
-            unit: 'SOL'
-        };
-    }
-}
+            const chartData = await this.fetchWithCache('/api_v2/?action=market_cap_chart', 3600000);
+            if (!chartData || !chartData.market_cap) return;
 
-// Modificar a função selectBlockchain para salvar a preferência
-const originalSelectBlockchain = selectBlockchain;
-selectBlockchain = function(blockchain) {
-    // Chamar a função original
-    originalSelectBlockchain(blockchain);
-    
-    // Salvar a preferência
-    localStorage.setItem('selectedBlockchain', blockchain);
-    
-    // Se for 'sol', usar dados da Solana
-    if (blockchain === 'sol') {
-        // Atualizar a unidade para SOL
-        document.querySelectorAll('.gwei').forEach(el => {
-            el.textContent = 'SOL';
-        });
-        
-        // Buscar e exibir dados da Solana
-        getSolanaGasData().then(data => {
-            if (data) {
-                const speeds = ['slow', 'standard', 'fast'];
-                
-                speeds.forEach(speed => {
-                    const card = document.getElementById(speed);
-                    if (card) {
-                        const priceElement = card.querySelector('.price');
-                        const usdPriceElement = card.querySelector('.usd-price');
-                        
-                        if (priceElement) {
-                            priceElement.innerHTML = `${data[speed].toFixed(5)} <span class="gwei">SOL</span>`;
+            const canvas = document.getElementById('marketCapChart');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+
+            // Destroy existing chart
+            if (this.charts.marketCap) {
+                this.charts.marketCap.destroy();
+            }
+
+            const timestamps = chartData.market_cap.timestamps || [];
+            const values = chartData.market_cap.values || [];
+            const volumeValues = chartData.volume?.values || [];
+
+            this.charts.marketCap = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: timestamps.map(ts => new Date(ts)),
+                    datasets: [
+                        {
+                            label: 'Market Cap',
+                            data: values,
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Volume',
+                            data: volumeValues,
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            borderWidth: 2,
+                            fill: false,
+                            tension: 0.4,
+                            yAxisID: 'y1'
                         }
-                        
-                        if (usdPriceElement) {
-                            usdPriceElement.textContent = `$${data[speed + 'Usd'].toFixed(4)}`;
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#3b82f6',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: (context) => {
+                                    const value = context.parsed.y;
+                                    const label = context.dataset.label;
+                                    return `${label}: $${this.formatLargeNumber(value)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day'
+                            },
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-muted')
+                            }
+                        },
+                        y: {
+                            position: 'left',
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)'
+                            },
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-muted'),
+                                callback: (value) => '$' + this.formatLargeNumber(value)
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: false,
+                            position: 'right'
                         }
                     }
-                });
-                
-                // Iniciar animação de temporizador
-                startTimerAnimation();
+                }
+            });
+        } catch (error) {
+            console.error('Error initializing market cap chart:', error);
+        }
+    }
+
+    updateChartsTheme() {
+        if (this.charts.marketCap) {
+            const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-muted');
+            this.charts.marketCap.options.scales.x.ticks.color = textColor;
+            this.charts.marketCap.options.scales.y.ticks.color = textColor;
+            this.charts.marketCap.update();
+        }
+    }
+
+    resizeCharts() {
+        Object.values(this.charts).forEach(chart => {
+            if (chart && typeof chart.resize === 'function') {
+                chart.resize();
             }
         });
     }
-};
 
-// Função para carregar as preferências do usuário
-function loadUserPreferences() {
-    // Carregar tema (claro/escuro)
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
+    selectBlockchain(blockchain) {
+        this.currentBlockchain = blockchain;
+        
+        // Update UI
+        document.querySelectorAll('.blockchain-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.querySelector(`[data-blockchain="${blockchain}"]`).classList.add('active');
+        
+        // Update gas prices
+        this.updateGasPrices();
+        
+        // Save preference
+        localStorage.setItem('gasnow-blockchain', blockchain);
     }
-    
-    // Carregar blockchain selecionada
-    const savedBlockchain = localStorage.getItem('selectedBlockchain');
-    if (savedBlockchain) {
-        selectBlockchain(savedBlockchain);
+
+    startAutoUpdate() {
+        setInterval(() => {
+            if (!this.isLoading) {
+                this.updateCryptoPrices();
+                this.updateGasPrices();
+            }
+        }, this.updateInterval);
+
+        // Update market data less frequently
+        setInterval(() => {
+            if (!this.isLoading) {
+                this.updateMarketData();
+            }
+        }, this.updateInterval * 10);
+
+        // Update news even less frequently
+        setInterval(() => {
+            if (!this.isLoading) {
+                this.updateNews();
+            }
+        }, this.updateInterval * 20);
+    }
+
+    async fetchWithCache(url, cacheTime = 300000) {
+        const cacheKey = url;
+        const cached = this.cache.get(cacheKey);
+        
+        if (cached && Date.now() - cached.timestamp < cacheTime) {
+            return cached.data;
+        }
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            
+            const data = await response.json();
+            this.cache.set(cacheKey, { data, timestamp: Date.now() });
+            return data;
+        } catch (error) {
+            console.error(`Fetch error for ${url}:`, error);
+            return cached?.data || null;
+        }
+    }
+
+    showLoading() {
+        this.isLoading = true;
+    }
+
+    hideLoading() {
+        this.isLoading = false;
+    }
+
+    hideLoadingScreen() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        if (loadingScreen) {
+            loadingScreen.classList.add('hidden');
+        }
+    }
+
+    showError(message) {
+        console.error(message);
+        // Could implement a toast notification system here
+    }
+
+    formatPrice(price) {
+        if (price === 0 || price === null || price === undefined) return '0.00';
+        
+        if (price < 0.01) {
+            return price.toFixed(6);
+        } else if (price < 1) {
+            return price.toFixed(4);
+        } else if (price < 100) {
+            return price.toFixed(2);
+        } else {
+            return Math.round(price).toLocaleString();
+        }
+    }
+
+    formatGasPrice(price) {
+        if (price === 0 || price === null || price === undefined) return '0';
+        
+        if (price < 1) {
+            return price.toFixed(3);
+        } else if (price < 100) {
+            return price.toFixed(1);
+        } else {
+            return Math.round(price).toString();
+        }
+    }
+
+    formatPercentage(value) {
+        if (value === 0 || value === null || value === undefined) return '0.00%';
+        return `${value >= 0 ? '+' : ''}${value.toFixed(2)}%`;
+    }
+
+    formatLargeNumber(num) {
+        if (num >= 1e12) {
+            return (num / 1e12).toFixed(2) + 'T';
+        } else if (num >= 1e9) {
+            return (num / 1e9).toFixed(2) + 'B';
+        } else if (num >= 1e6) {
+            return (num / 1e6).toFixed(2) + 'M';
+        } else if (num >= 1e3) {
+            return (num / 1e3).toFixed(2) + 'K';
+        }
+        return num.toFixed(2);
+    }
+
+    formatDate(dateString) {
+        if (!dateString) return 'Recently';
+        
+        const date = new Date(dateString);
+        const now = new Date();
+        const diffTime = Math.abs(now - date);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        if (diffDays === 1) return 'Yesterday';
+        if (diffDays < 7) return `${diffDays} days ago`;
+        
+        return date.toLocaleDateString();
+    }
+
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
     }
 }
 
-// Adicionar evento para salvar o tema
-document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            const isLightMode = document.body.classList.toggle('light-mode');
-            localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-        });
+// Modal functions
+function showDonationModal() {
+    const modal = document.getElementById('donationModal');
+    if (modal) {
+        modal.classList.add('active');
+    }
+}
+
+function closeDonationModal() {
+    const modal = document.getElementById('donationModal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
+}
+
+// Initialize app when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.gasNowApp = new GasNowApp();
+});
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('donationModal');
+    if (modal && e.target === modal) {
+        closeDonationModal();
+    }
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeDonationModal();
     }
     
-    // Carregar preferências do usuário ao iniciar
-    loadUserPreferences();
+    if (e.key === 't' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        document.getElementById('themeToggle').click();
+    }
 });

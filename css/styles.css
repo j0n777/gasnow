@@ -1,2255 +1,1241 @@
 :root {
-    --primary-blue: #3498db;
-    --secondary-blue: #2980b9;
-    --bright-blue: #00a8ff;
-    --dark-blue: #34495e;
-    --dark-gray: #2c3e50;
-    --light-gray: #ecf0f1;
-    --accent-color: #e74c3c;
-    --bright-blue-rgb: 0, 168, 255;
+    /* Color Palette */
+    --primary-blue: #3b82f6;
+    --secondary-blue: #1e40af;
+    --accent-blue: #60a5fa;
+    --success-green: #10b981;
+    --warning-orange: #f59e0b;
+    --danger-red: #ef4444;
     
-    /* Fear & Greed colors */
-    --extreme-fear: #e74c3c;
-    --fear: #e67e22;
-    --neutral: #f1c40f;
-    --greed: #2ecc71;
-    --extreme-greed: #27ae60;
-
-    /* Melhorias visuais para gráficos */
-    --chart-bg: rgba(0, 0, 0, 0.2);
-    --chart-border-radius: 12px;
-    --chart-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --chart-padding: 18px;
-
-    /* Variáveis para o tema escuro (padrão) */
-    --background-color: #0f1724;
-    --text-color: #ffffff;
-    --card-background: rgba(255, 255, 255, 0.1);
-    --card-header-background: rgba(255, 255, 255, 0.15);
-    --hover-background: rgba(255, 255, 255, 0.2);
-    --border-color: rgba(255, 255, 255, 0.1);
-    --tooltip-background: rgba(0, 0, 0, 0.8);
-    --tooltip-text: #fff;
-    --header-background: rgba(255, 255, 255, 0.1);
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --positive-color: #4caf50;
-    --negative-color: #f44336;
-    --chart-background: rgba(255, 255, 255, 0.05);
+    /* Background Colors */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --bg-card: rgba(30, 41, 59, 0.8);
+    --bg-card-hover: rgba(30, 41, 59, 0.9);
+    
+    /* Text Colors */
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #64748b;
+    
+    /* Border Colors */
+    --border-primary: rgba(148, 163, 184, 0.1);
+    --border-secondary: rgba(148, 163, 184, 0.2);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
 }
 
-/* Variáveis para o tema claro */
-.light-mode {
-    --background-color: #f0f2f5;
-    --text-color: #333333;
-    --card-background: #ffffff;
-    --card-header-background: #f5f5f5;
-    --hover-background: #e9e9e9;
-    --border-color: #dddddd;
-    --tooltip-background: rgba(0, 0, 0, 0.7);
-    --tooltip-text: #fff;
-    --header-background: #ffffff;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --positive-color: #4caf50;
-    --negative-color: #f44336;
-    --chart-background: rgba(0, 0, 0, 0.02);
+/* Light Theme */
+.light-theme {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e2e8f0;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-card-hover: rgba(255, 255, 255, 1);
+    
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    
+    --border-primary: rgba(148, 163, 184, 0.2);
+    --border-secondary: rgba(148, 163, 184, 0.3);
 }
 
-/* Botão para alternar entre os modos */
-.theme-toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1000;
-    background: var(--card-background);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    box-shadow: var(--box-shadow);
-    transition: background-color 0.3s, transform 0.2s;
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.theme-toggle:hover {
-    background: var(--hover-background);
-    transform: translateY(-2px);
-}
-
-.theme-toggle i {
-    font-size: 16px;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 3px;
-    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    transition: all var(--transition-normal);
 }
 
-#app {
-    max-width: 1200px;
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity var(--transition-slow), visibility var(--transition-slow);
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+}
+
+.loading-logo i {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-primary);
+    border-top: 3px solid var(--primary-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--spacing-md);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 1000;
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* App Container */
+.app {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
-    transition: all 0.3s;
+    padding: var(--spacing-lg);
+    opacity: 0;
+    animation: fadeIn var(--transition-slow) ease-out forwards;
 }
 
-/* Header styles */
-header {
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header */
+.header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: var(--header-background);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    box-shadow: var(--box-shadow);
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.header-content:hover {
+    box-shadow: var(--shadow-xl);
 }
 
 .logo {
     display: flex;
     align-items: center;
+    gap: var(--spacing-md);
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    filter: brightness(0) invert(1);
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
 }
 
-header h1 span:first-child {
-    color: white;
+.logo-gas {
+    color: var(--text-primary);
 }
 
-header h1 span:last-child {
+.logo-now {
     color: var(--primary-blue);
 }
 
-#crypto-prices {
+.crypto-prices {
     display: flex;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    margin-top: 10px;
-    gap: clamp(4px, 1vw, 10px);
+    gap: var(--spacing-md);
 }
 
 .crypto-price {
-    cursor: pointer;
     display: flex;
     align-items: center;
-    background-color: var(--card-background);
-    padding: clamp(3px, 1vw, 8px) clamp(5px, 1.5vw, 10px);
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-    white-space: nowrap;
-    flex: 0 1 auto;
-    min-width: 0;
-    font-size: 1.25em;
+    gap: var(--spacing-sm);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: all var(--transition-fast);
+    cursor: pointer;
 }
 
 .crypto-price:hover {
-    background-color: var(--hover-background);
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
 }
 
 .crypto-price img {
-    width: clamp(20px, 2.5vw, 30px);
-    height: auto;
-    aspect-ratio: 1/1;
-    margin-right: clamp(4px, 1vw, 8px);
-    filter: brightness(0) invert(1);
-}
-
-.crypto-price .price-value {
-    font-size: clamp(12px, 1.875vw, 17px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Gas prices styles */
-#gas-prices {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: clamp(8px, 3vw, 20px);
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    gap: clamp(4px, 1vw, 20px);
-    flex-wrap: nowrap;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.price-card {
-    background-color: var(--chart-background);
-    border-radius: 10px;
-    padding: 15px 15px 18px;
-    margin-bottom: 0;
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 0;
-    box-shadow: var(--box-shadow);
-    transition: background-color 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.price-card:nth-child(2) {
-    background: var(--dark-gray);
-    border: 2px solid var(--secondary-blue);
-}
-
-.price-card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-grow: 1;
-    width: calc(100% - 50px);
-    min-width: 0;
-}
-
-.price-card h2 {
-    font-size: clamp(10px, 2vw, 16px);
-    margin: 0 0 clamp(2px, 0.5vw, 4px) 0;
-    color: rgba(255, 255, 255, 0.8);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-}
-
-.price-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.price {
-    font-size: clamp(16px, 4vw, 32px);
-    font-weight: bold;
-    margin: 0;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.1;
-}
-
-.gwei {
-    font-size: clamp(8px, 1.5vw, 14px);
-    font-weight: normal;
-}
-
-.usd-price {
-    font-size: clamp(11px, 2.5vw, 18px);
-    margin: clamp(2px, 0.5vw, 4px) 0 0 0;
-    color: rgba(255, 255, 255, 0.8);
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.speed-icon {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-    filter: brightness(0) invert(1);
-}
-
-.speed-icon img {
-    width: 25px;
-    height: 25px;
-    filter: brightness(0) invert(1);
-}
-
-.light-mode .speed-icon img {
-    filter: none;
-}
-
-.progress-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    background-color: var(--primary-blue);
-    width: 0;
-    transition: width 30s linear;
-    z-index: 1;
-}
-
-/* Market cap styles */
-#market-cap {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-}
-
-#market-cap h2 {
-    color: var(--primary-blue);
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 24px;
-}
-
-#global-market-cap {
-    position: relative;
-    margin-bottom: 15px;
-    color: white;
-}
-
-#market-cap-progress-bar {
-    width: 100%;
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
-}
-
-#market-cap-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-blue), var(--bright-blue));
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#market-cap-info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    z-index: 2;
-}
-
-#market-cap-value {
-    font-weight: bold;
-    font-size: 18px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    position: relative;
-    cursor: pointer;
-}
-
-#market-cap-tooltip {
-    visibility: hidden;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 10px;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s;
-    font-size: 14px;
-    max-width: 300px;
-    white-space: normal;
-    word-wrap: break-word;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
-}
-
-#market-cap-change {
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-#market-cap-change.positive {
-    color: var(--positive-color);
-}
-
-#market-cap-change.negative {
-    color: var(--negative-color);
-}
-
-.market-cap-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.market-cap-card {
-    background-color: var(--chart-background);
-    border-radius: 10px;
-    padding: 15px;
-    border: 1px solid var(--border-color);
-    transition: background-color 0.3s;
-    box-shadow: var(--box-shadow);
-}
-
-.market-cap-card h3 {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 10px 0;
-}
-
-.token {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 0;
-    border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.3s;
-}
-
-.token:hover {
-    background-color: var(--hover-background);
-    border-radius: 10px;
-    transition: background-color 0.3s;
-}
-
-.token-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.token-icon {
     width: 24px;
     height: 24px;
     border-radius: 50%;
 }
 
-.token-info {
+.crypto-price-value {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-header h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    letter-spacing: -0.025em;
+}
+
+/* Gas Prices Section */
+.gas-prices-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.blockchain-selector {
+    display: flex;
+    gap: var(--spacing-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xs);
+}
+
+.blockchain-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-weight: 500;
+}
+
+.blockchain-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.blockchain-btn.active {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.blockchain-btn img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.gas-prices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.gas-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.gas-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--border-secondary);
+}
+
+.gas-card.featured {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 1px var(--primary-blue), var(--shadow-lg);
+}
+
+.gas-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.gas-card-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.gas-icon img {
+    width: 32px;
+    height: 32px;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+
+.gas-card:hover .gas-icon img {
+    opacity: 1;
+}
+
+.gas-card-content {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.gas-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.price-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.price-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.gas-usd {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.gas-card-footer {
+    margin-top: auto;
+}
+
+.progress-bar {
+    height: 4px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+    border-radius: var(--radius-sm);
+    width: 0%;
+    transition: width 30s linear;
+}
+
+/* Market Overview Section */
+.market-overview-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.market-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+}
+
+.market-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.market-card.main-chart {
+    grid-row: span 2;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.market-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.stat-value.positive {
+    color: var(--success-green);
+}
+
+.stat-value.negative {
+    color: var(--danger-red);
+}
+
+.chart-container {
+    height: 300px;
+    position: relative;
+}
+
+.chart-container canvas {
+    border-radius: var(--radius-md);
+}
+
+/* Info Tooltip */
+.info-tooltip {
+    position: relative;
+    cursor: help;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.info-tooltip:hover {
+    color: var(--primary-blue);
+}
+
+.info-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    z-index: 1000;
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.info-tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+/* Fear & Greed Gauge */
+.fear-greed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    position: relative;
+}
+
+.fear-greed-gauge {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+#fearGreedCanvas {
+    width: 100%;
+    height: 100%;
+}
+
+.gauge-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.gauge-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.gauge-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: var(--spacing-xs);
+}
+
+/* Altseason Index */
+.altseason-container {
+    padding: var(--spacing-md);
+}
+
+.altseason-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.altseason-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.altseason-max {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+}
+
+.altseason-status {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.altseason-status.bitcoin-season {
+    background: var(--warning-orange);
+    color: white;
+}
+
+.altseason-status.altcoin-season {
+    background: var(--success-green);
+    color: white;
+}
+
+.altseason-progress {
+    margin-bottom: var(--spacing-md);
+}
+
+.progress-track {
+    position: relative;
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.progress-track .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--warning-orange), var(--success-green));
+    border-radius: var(--radius-sm);
+    transition: width var(--transition-normal);
+}
+
+.progress-marker {
+    position: absolute;
+    top: -2px;
+    width: 4px;
+    height: 12px;
+    background: var(--text-primary);
+    border-radius: var(--radius-sm);
+    transform: translateX(-50%);
+    transition: left var(--transition-normal);
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Token Lists */
+.token-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.token-list-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+}
+
+.token-list-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.token-list {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: var(--spacing-sm);
 }
 
-.token-name {
+.token-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+}
+
+.token-item:hover {
+    background: var(--bg-tertiary);
+    transform: translateX(4px);
+}
+
+.token-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.token-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.token-details h4 {
+    font-size: 0.875rem;
     font-weight: 600;
-    font-size: 14px;
-    color: var(--light-gray);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
 }
 
-.token-symbol {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
+.token-details p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.token-right {
+.token-stats {
     text-align: right;
 }
 
 .token-price {
+    font-size: 0.875rem;
     font-weight: 600;
-    font-size: 14px;
-    color: var(--light-gray);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
 }
 
 .token-change {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 2px;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .token-change.positive {
-    color: var(--positive-color);
+    color: var(--success-green);
 }
 
 .token-change.negative {
-    color: var(--negative-color);
+    color: var(--danger-red);
 }
 
-/* News styles */
-#news {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* News Section */
+.news-section {
+    margin-bottom: var(--spacing-2xl);
 }
 
-#news h2 {
-    color: var(--primary-blue);
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#news-container {
+.news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
 }
 
-.news-article {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.news-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 400px;
+    transition: all var(--transition-normal);
+    cursor: pointer;
 }
 
-.news-article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
 }
 
 .news-image {
+    width: 100%;
     height: 200px;
     background-size: cover;
     background-position: center;
+    background-color: var(--bg-tertiary);
 }
 
 .news-content {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    padding: var(--spacing-lg);
 }
 
-.news-content h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.news-content h3 a {
-    color: var(--bright-blue);
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.news-content h3 a:hover {
-    color: var(--primary-blue);
-}
-
-.news-content p {
-    color: var(--light-gray);
-    font-size: 14px;
-    margin-bottom: 15px;
-    flex-grow: 1;
+.news-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+}
+
+.news-excerpt {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
 }
 
 .read-more {
-    display: inline-block;
     color: var(--primary-blue);
+    font-weight: 600;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    transition: color 0.3s ease;
-    align-self: flex-start;
+    transition: color var(--transition-fast);
 }
 
 .read-more:hover {
-    color: var(--bright-blue);
+    color: var(--accent-blue);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    header, #gas-prices, #market-cap, #news {
-        padding: 15px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo {
-        margin-bottom: 10px;
-    }
-
-    #crypto-prices {
-        justify-content: space-between;
-        margin-top: 15px;
-        width: 100%;
-        flex-wrap: nowrap;
-        gap: 4px;
-        overflow-x: auto;
-    }
-
-    .crypto-price {
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 0;
-        flex: 0 0 auto;
-        min-width: 0;
-        justify-content: center;
-        text-align: center;
-        padding: 8px 6px;
-        box-sizing: border-box;
-        white-space: nowrap;
-    }
-
-    #gas-prices {
-        flex-direction: row !important;
-        gap: 8px;
-        padding: 15px 5px !important;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-    
-    .price-card {
-        width: 31% !important;
-        margin: 0 1% !important;
-        padding: 10px 5px !important;
-        min-width: unset !important;
-        max-width: unset !important;
-    }
-    
-    .price-card h2 {
-        font-size: 0.8rem !important;
-        margin-bottom: 5px !important;
-    }
-    
-    .price {
-        font-size: 1.2rem !important;
-        line-height: 1.1 !important;
-    }
-    
-    .gwei {
-        font-size: 0.6rem !important;
-    }
-    
-    .usd-price {
-        font-size: 0.7rem !important;
-        margin-top: 2px !important;
-    }
-    
-    .speed-icon {
-        width: 25px;
-        height: 25px;
-        margin-left: 5px;
-        filter: brightness(0) invert(1);
-    }
-    
-    .speed-icon img {
-        width: 25px;
-        height: 25px;
-        filter: brightness(0) invert(1);
-    }
-    
-    .progress-bar {
-        height: 4px;
-        bottom: 0;
-        left: 0;
-        width: 0;
-    }
-
-    .market-cap-cards {
-        grid-template-columns: 1fr;
-    }
-
-    #news-container {
-        grid-template-columns: 1fr;
-    }
-
-    #market-cap {
-        padding: 12px;
-    }
-    
-    .market-cap-charts {
-        gap: 12px;
-    }
-
-    .market-cap-main-chart {
-        height: 420px !important;
-        min-height: 300px !important;
-    }
-
-    .market-cap-chart {
-        padding: 10px;
-        min-height: 150px !important;
-        height: 150px !important;
-    }
-
-    .market-cap-chart-header {
-        margin-bottom: 8px;
-        gap: 8px;
-    }
-    
-    .market-cap-chart-stats {
-        gap: 5px;
-    }
-    
-    .market-cap-stat {
-        min-width: calc(50% - 5px);
-        padding: 5px;
-        margin: 0;
-    }
-    
-
-    .fear-greed-container, .altseason-container {
-        height: 150px !important;
-        min-height: 150px !important;
-    }
-    
-    #fear-greed-gauge, .altseason-header, .altseason-progress-container {
-        height: 90px !important;
-    }
-    
-    .altseason-progress {
-        margin: 30px 0 10px 0;
-    }
-    
-    /* Hide elements marked with red X */
-    .market-cap-stat:nth-child(3) {
-        display: none;
-    }
-
-    /* Position the altseason progress bar better in mobile */
-    .altseason-progress {
-        margin: 30px 0 10px 0;
-    }
-    
-    /* Hide the chart container in mobile */
-    #altseason-chart {
-        display: none;
-    }
-    
-    /* Ensure the market cap stats are visible and well-positioned */
-    .market-cap-stat-value {
-        font-size: 16px;
-    }
-    
-    .market-cap-stat-label {
-        font-size: 12px;
-        margin-bottom: 3px;
-    }
-    
-    /* Fix the marker in mobile */
-    .altseason-marker {
-        width: 16px;
-        height: 16px;
-        top: -4px;
-    }
-    
-    .altseason-value {
-        top: -25px;
-        font-size: 11px;
-        padding: 3px 6px;
-    }
-    
-    /* Fix market cap padding */
-    .market-cap-main-chart {
-        padding: 10px;
-    }
-    
-    /* Reduce spacing in market cap header */
-    .market-cap-chart-header {
-        margin-bottom: 5px;
-    }
-
-    .market-cap-secondary-charts {
-        margin-bottom: 50px;
-    }
-
-    .market-cap-cards {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin-top: 30px;
-    }
-    
-    .market-cap-card {
-        padding: 15px;
-        margin-bottom: 10px;
-    }
-
-    /* Garantir que os ícones fiquem brancos no modo escuro em dispositivos móveis */
-    .speed-icon img {
-        filter: brightness(0) invert(1);
-    }
-    
-    .light-mode .speed-icon img {
-        filter: none;
-    }
+/* Footer */
+.footer {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
 }
 
-@media (max-width: 480px) {
-    .market-cap-secondary-charts {
-        min-height: 150px !important;
-    }
-    
-    #fear-greed-gauge, .altseason-header, .altseason-progress-container {
-        height: 90px !important;
-    }
-    
-    .market-cap-stat {
-        min-width: calc(50% - 2px);
-        padding: 4px;
-    }
-    
-    .stat-label {
-        font-size: 10px;
-    }
-    
-    .stat-value {
-        font-size: 14px;
-    }
-    
-    .market-cap-chart-title {
-        font-size: 14px;
-        margin-bottom: 5px;
-    }
-    
-    #market-cap-chart {
-        height: 200px !important;
-        min-height: 200px !important;
-        visibility: visible !important;
-        display: block !important;
-    }
-    
-    .fear-greed-container, .altseason-container {
-        height: 150px !important;
-        min-height: 150px !important;
-        max-height: 150px !important;
-        width: 100%;
-        margin-bottom: 0;
-        position: static;
-        visibility: visible !important;
-        display: block !important;
-        overflow: visible !important;
-    }
-    
-    .market-cap-stat-value {
-        font-size: 14px;
-    }
-    
-    .market-cap-stat-label {
-        font-size: 10px;
-    }
-    
-    .altseason-marker {
-        width: 14px;
-        height: 14px;
-    }
-    
-    .altseason-value {
-        font-size: 10px;
-        padding: 2px 5px;
-    }
-    
-    .market-cap-chart-title {
-        font-size: 14px;
-    }
-
-    .market-cap-main-chart {
-        height: 250px !important;
-    }
-
-    #fear-greed-chart {
-        height: 100px !important;
-        min-height: 100px !important;
-        visibility: visible !important;
-        display: block !important;
-    }
-    
-    #altseason-chart {
-        height: 100px !important;
-        min-height: 100px !important;
-        visibility: visible !important;
-        display: block !important;
-    }
-
-    .market-cap-secondary-charts {
-        margin-bottom: 50px !important;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding-bottom: 0;
-        border-bottom: none;
-        position: relative;
-    }
-    
-    .market-cap-cards {
-        margin-top: 30px !important;
-        padding-top: 0;
-        border-top: none;
-        position: relative;
-    }
-    
-    .market-cap-chart {
-        width: 100%;
-        margin-bottom: 20px;
-        height: auto !important;
-        min-height: 150px !important;
-        position: static;
-    }
-    
-    .market-cap-chart:last-child {
-        margin-bottom: 20px;
-    }
-    
-    .market-cap-cards {
-        margin-top: 40px; /* Espaço significativo antes dos cards */
-        padding-top: 20px;
-        border-top: 2px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .market-cap-card {
-        margin-bottom: 20px;
-    }
-    
-    /* Remover qualquer posicionamento absoluto ou relativo que possa causar sobreposição */
-    .market-cap-chart,
-    .fear-greed-container,
-    .altseason-container,
-    .market-cap-cards,
-    .market-cap-card {
-        position: static !important;
-        z-index: auto !important;
-    }
-
-    /* Solução final para o problema de sobreposição */
-    #market-cap {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .market-cap-charts {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-    }
-    
-    .market-cap-main-chart {
-        margin-bottom: 20px;
-    }
-    
-    .market-cap-secondary-charts {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-bottom: 50px; /* Espaço significativo após os gráficos secundários */
-        padding-bottom: 20px;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .market-cap-chart {
-        margin-bottom: 20px;
-        height: auto !important;
-        min-height: 150px !important;
-        position: static !important;
-    }
-    
-    .market-cap-chart:last-child {
-        margin-bottom: 0;
-    }
-    
-    .fear-greed-container, .altseason-container {
-        height: 150px !important;
-        min-height: 150px !important;
-        position: static !important;
-    }
-    
-    .market-cap-cards {
-        margin-top: 40px; /* Espaço significativo antes dos cards */
-        padding-top: 20px;
-        border-top: 2px solid rgba(255, 255, 255, 0.1);
-        position: static !important;
-        z-index: auto !important;
-    }
-    
-    .market-cap-card {
-        margin-bottom: 20px;
-        position: static !important;
-    }
-    
-    /* Remover qualquer pseudo-elemento que possa estar causando problemas */
-    .market-cap-secondary-charts::after,
-    .market-cap-secondary-charts::before,
-    .market-cap-cards::after,
-    .market-cap-cards::before {
-        display: none !important;
-    }
-
-    #crypto-prices {
-        gap: 2px;
-        padding-bottom: 5px;
-        justify-content: space-between;
-    }
-    
-    .crypto-price {
-        padding: 5px 3px;
-        flex: 1 1 auto;
-        min-width: 0;
-        max-width: 25%;
-    }
-    
-    .crypto-price img {
-        width: 14px;
-        margin-right: 2px;
-    }
-    
-    .crypto-price .price-value {
-        font-size: 10px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-    }
-
-    .price-card {
-        width: 30% !important;
-        padding: 8px 4px !important;
-        margin: 0 1% !important;
-    }
-    
-    .price-card h2 {
-        font-size: 0.7rem !important;
-    }
-    
-    .price {
-        font-size: 1.1rem !important;
-    }
-    
-    .usd-price {
-        font-size: 0.65rem !important;
-    }
-    
-    #gas-prices {
-        padding: 10px 5px !important;
-    }
-}
-
-@media (max-width: 360px) {
-    .crypto-price {
-        padding: 4px 2px;
-    }
-    
-    .crypto-price img {
-        width: 12px;
-        margin-right: 1px;
-    }
-    
-    .crypto-price .price-value {
-        font-size: 9px;
-    }
-}
-
-/* Add this to your existing CSS */
-.tooltip {
-    position: absolute;
-    background: var(--tooltip-background);
-    color: var(--tooltip-text);
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    max-width: 250px;
-    text-align: center;
-    box-shadow: var(--box-shadow);
-}
-
-#market-cap-value {
-    cursor: pointer;
-    text-decoration: underline dotted;
-}
-
-#market-cap {
-    position: relative;
-}
-
-.market-cap-charts {
+.footer-content {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(15px, 3vw, 25px);
-    margin-bottom: clamp(15px, 3vw, 25px);
-    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
 }
 
-.market-cap-main-chart, .market-cap-chart {
-    background: var(--chart-background);
-    border-radius: var(--chart-border-radius);
-    box-shadow: var(--chart-shadow);
-    padding: var(--chart-padding);
-    box-sizing: border-box;
+.footer-section h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.partner-links {
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow: visible !important;
-    contain: content !important;
-    border: 1px solid var(--border-color);
+    gap: var(--spacing-md);
 }
 
-.market-cap-main-chart {
-    min-height: 300px !important;
-    height: 420px !important;
-    padding: 10px;
+.partner-link {
+    display: block;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
 }
 
-.market-cap-main-chart .apexcharts-canvas {
-    margin-top: auto !important;
-    overflow: visible !important;
+.partner-link:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
 }
 
-.market-cap-secondary-charts {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(15px, 3vw, 25px);
-    width: 100%;
-    height: 100px;
-    min-height: 100px;
-    margin-bottom: 50px;
+.partner-link span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--spacing-xs);
 }
 
-/* Estilos para Fear & Greed e Altseason containers */
-.fear-greed-container, .altseason-container {
-    position: relative !important;
+.footer-actions {
     display: flex;
-    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-btn {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 8px;
-    text-align: center;
-    height: 90px !important;
-    min-height: 90px !important;
-    max-height: 90px !important;
-    overflow: visible !important;
-    box-sizing: border-box !important;
-    background: transparent !important;
-    z-index: 1 !important;
-}
-
-/* Garantir que o SVG do Fear & Greed Index seja exibido corretamente */
-.fear-greed-container svg {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 50% !important;
-    z-index: 1 !important;
-    pointer-events: none !important;
-}
-
-/* Estilos para o gauge do Fear & Greed Index */
-.fear-greed-gauge {
-    position: relative !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 2 !important;
-    padding-top: 0 !important;
-}
-
-.fear-greed-value {
-    font-size: 28px !important;
-    font-weight: bold !important;
-    margin-bottom: 0 !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-    z-index: 10 !important;
-    user-select: none;
-    line-height: 1 !important;
-    color: #fff;
-}
-
-.fear-greed-label {
-    font-size: 14px !important;
-    font-weight: bold !important;
-    border-radius: 4px !important;
-    padding: 2px 8px !important;
-    display: inline-block !important;
-    margin-top: 2px !important;
-    line-height: 1.2 !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Ajustando as cores para combinar com o Bitcoin/Altcoin Season */
-.fear-greed-label.extreme-fear {
-    background-color: #e15241 !important;
-    color: white !important;
-}
-
-.fear-greed-label.fear {
-    background-color: #e77c3c !important;
-    color: white !important;
-}
-
-.fear-greed-label.neutral {
-    background-color: #f1c40f !important;
-    color: #333 !important;
-}
-
-.fear-greed-label.greed {
-    background-color: #26a69a !important;
-    color: white !important;
-}
-
-.fear-greed-label.extreme-greed {
-    background-color: #00796b !important;
-    color: white !important;
-}
-
-/* Info icon styles */
-.info-icon {
-    position: relative;
-    display: inline-flex;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    align-items: center;
-    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-fast);
     cursor: pointer;
-    font-size: 11px;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
-    z-index: 10;
-    margin-left: 8px;
-    vertical-align: middle;
-    top: -1px;
 }
 
-.info-icon:hover {
-    background: rgba(255, 255, 255, 0.3);
+.footer-btn:hover {
+    background: var(--secondary-blue);
+    transform: translateY(-2px);
 }
 
-.info-icon:hover::after {
-    content: attr(title);
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    padding: 8px 12px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    font-size: 12px;
-    font-style: normal;
-    border-radius: 4px;
-    z-index: 100;
-    margin-top: 8px;
+.footer-support {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.footer-bottom {
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-primary);
+    color: var(--text-muted);
+    font-size: 0.875rem;
 }
 
-/* Title with info icon container */
-.title-with-info {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 4px;
-}
-
-/* Chart title styles */
-.market-cap-chart-title {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-    color: #fff;
-}
-
-/* Market Cap Stats */
-.market-cap-stat-value {
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-}
-
-.market-cap-stat-label {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 2px;
-}
-
-/* Altseason Stats */
-.altseason-stats {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.altseason-stat {
-    text-align: center;
-    padding: 0 5px;
-}
-
-.altseason-stat-value {
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-}
-
-.altseason-stat-label {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-top: 2px;
-}
-
-/* Cores para o Altseason Index */
-.bitcoin-season {
-    background-color: #f7931a;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.early-bitcoin-season {
-    background-color: #f9b654;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.early-altcoin-season {
-    background-color: #78b7e8;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.altcoin-season {
-    background-color: #4f9ef8;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-/* Ajustes para o ApexCharts */
-.apexcharts-canvas {
-    position: relative !important;
-    overflow: visible !important;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-}
-
-.apexcharts-svg, .apexcharts-canvas svg {
-    overflow: visible !important;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.apexcharts-inner, .apexcharts-graphical {
-    position: relative !important;
-    overflow: visible !important;
-    width: 100% !important;
-    height: 100% !important;
-    top: 0 !important;
-    left: 0 !important;
-}
-
-.apexcharts-datalabel-label, .apexcharts-datalabel-value {
-    user-select: none !important;
-    pointer-events: none !important;
-}
-
-/* Media queries para responsividade */
-@media (max-width: 768px) {
-    .market-cap-secondary-charts {
-        grid-template-columns: 1fr;
-        height: 250px;
-    }
-    
-    .market-cap-main-chart {
-        height: 420px !important;
-        min-height: 300px !important;
-    }
-    
-    .fear-greed-container, .altseason-container {
-        height: 150px !important;
-        min-height: 150px !important;
-    }
-    
-    #fear-greed-gauge, .altseason-header, .altseason-progress-container {
-        height: 90px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .market-cap-secondary-charts {
-        grid-template-columns: 1fr;
-        height: 250px;
-    }
-    .market-cap-main-chart {
-        height: 250px !important;
-    }
-    
-    .fear-greed-container, .altseason-container {
-        height: 150px !important;
-        min-height: 150px !important;
-    }
-    
-    .market-cap-stat {
-        padding: 5px;
-    }
-    
-    .market-cap-stat-value {
-        font-size: 14px;
-    }
-    
-    .market-cap-stat-label {
-        font-size: 12px;
-    }
-}
-
-/* Cores para o Fear & Greed Index */
-/* Estas regras foram movidas para acima e não são mais necessárias */
-/* 
-.fear-greed-label.extreme-fear {
-    background-color: #e15241;
-    color: white;
-}
-
-.fear-greed-label.fear {
-    background-color: #e77c3c;
-    color: white;
-}
-
-.fear-greed-label.neutral {
-    background-color: #f1c40f;
-    color: #333;
-}
-
-.fear-greed-label.greed {
-    background-color: #26a69a;
-    color: white;
-}
-
-.fear-greed-label.extreme-greed {
-    background-color: #00796b;
-    color: white;
-}
-*/
-
-.comparison-value.positive {
-    color: var(--positive-color);
-}
-
-.comparison-value.negative {
-    color: var(--negative-color);
-}
-
-.market-cap-chart-header {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-.market-cap-chart-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 10px 0;
-    color: white;
-}
-
-.market-cap-chart-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-}
-
-.market-cap-stat {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 8px 12px;
-    flex: 1 1 calc(33.333% - 10px);
-    min-width: 100px;
-    box-sizing: border-box;
-}
-
-.market-cap-stat-label {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 5px;
-}
-
-.market-cap-stat-value {
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-}
-
-#market-cap-chart {
-    height: 300px !important;
-    width: 100% !important;
-    overflow: visible !important;
-}
-
-.altseason-stat-value {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.altseason-stat-label {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 3px;
-}
-
-/* Altseason Index specific styles */
-.altseason-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.altseason-value-display {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.altseason-max {
-    font-size: 16px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.6);
-    margin-left: 2px;
-}
-
-.altseason-current-state {
-    font-size: 14px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-top: 5px;
-    color: white;
-}
-
-.altseason-progress-container {
-    width: 100%;
-    margin: 10px 0;
-}
-
-.altseason-progress {
-    width: 100%;
-    height: 8px;
-    background: transparent;
-    border-radius: 4px;
-    position: relative;
-    margin: 10px 0;
-    overflow: visible !important;
-}
-
-.altseason-progress-bg {
-    position: absolute;
+/* Modal */
+.modal {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
 }
 
-.altseason-progress-fill {
-    position: absolute;
-    height: 8px;
-    top: 0;
-    left: 0;
-    border-radius: 4px;
-    background: linear-gradient(to right, #ea3943, #f1bd15, #16c784);
-    z-index: 1 !important;
+.modal.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-.altseason-marker {
-    position: absolute;
-    top: -4px;
-    width: 4px;
-    height: 14px;
-    background-color: white;
-    border-radius: 2px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
-    transition: left 0.3s ease;
-    z-index: 6;
+.modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform var(--transition-normal);
 }
 
-.altseason-labels {
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 5px;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-primary);
 }
 
-.altseason-label-btc {
-    color: #f7931a;
-    font-weight: 500;
+.modal-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
-.altseason-label-alt {
-    color: #16c784;
-    font-weight: 500;
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
 }
 
-/* Season classes */
-.bitcoin-season {
-    background-color: #f7931a;
-    color: #fff;
+.modal-close:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
 }
 
-.early-bitcoin-season {
-    background-color: #ff9332;
-    color: #fff;
+.modal-body {
+    padding: var(--spacing-lg);
 }
 
-.early-altcoin-season {
-    background-color: #f1bd15;
-    color: #000;
+.donation-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
-.altcoin-season {
-    background-color: #16c784;
-    color: #fff;
+.donation-option {
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
 }
 
-#fear-greed-chart {
-    height: 90px !important;
-    width: 100% !important;
+.donation-option strong {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
 }
 
-#altseason-chart {
-    height: 90px !important;
-    width: 100% !important;
+.donation-option code {
+    display: block;
+    background: var(--bg-tertiary);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    word-break: break-all;
 }
 
-/* Definição específica para .market-cap-chart */
-.market-cap-chart {
-    height: 150px !important;
-    min-height: 150px !important;
-    max-height: 150px !important;
-    padding: 8px !important;
-    box-sizing: border-box !important;
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .market-card.main-chart {
+        grid-row: span 1;
+    }
+    
+    .market-stats {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
 }
 
-/* Garantir que a altura do container .market-cap-chart seja respeitada em todas as media queries */
 @media (max-width: 768px) {
-    .market-cap-chart {
-        height: 150px !important;
-        min-height: 150px !important;
+    .app {
+        padding: var(--spacing-md);
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .crypto-prices {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .blockchain-selector {
+        order: -1;
+    }
+    
+    .gas-prices-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .token-lists {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-actions {
+        flex-direction: column;
+    }
+    
+    .partner-links {
+        gap: var(--spacing-sm);
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+    
+    .fear-greed-container {
+        height: 150px;
+    }
+    
+    .fear-greed-gauge {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .gauge-value {
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    .market-cap-chart {
-        height: 150px !important;
-        min-height: 150px !important;
-    }
-}
-
-.light-mode img {
-    filter: none !important; /* Remover filtros de inversão em imagens */
-}
-
-.light-mode .crypto-price img {
-    filter: brightness(1) !important;
-}
-
-.light-mode .logo-icon {
-    filter: none !important;
-}
-
-.light-mode .info-icon::after {
-    background: rgba(0, 0, 0, 0.8) !important;
-    color: white !important;
-}
-
-/* Ajustes para gráficos no modo claro */
-.light-mode .apexcharts-canvas {
-    background: transparent !important;
-}
-
-.light-mode .apexcharts-text {
-    fill: var(--text-color) !important;
-}
-
-.light-mode .apexcharts-grid line {
-    stroke: rgba(0, 0, 0, 0.1) !important;
-}
-
-.light-mode .apexcharts-tooltip {
-    background: #fff !important;
-    color: #333 !important;
-    border-color: #ddd !important;
-}
-
-/* Correções para textos no modo light */
-.light-mode header h1 span:first-child {
-    color: #333333 !important;
-}
-
-.light-mode .price {
-    color: #333333 !important;
-}
-
-.light-mode .gwei {
-    color: #666666 !important;
-}
-
-.light-mode .usd-price {
-    color: #555555 !important;
-}
-
-.light-mode .market-cap-stat-value,
-.light-mode .market-cap-stat-label,
-.light-mode .altseason-stat-value,
-.light-mode .altseason-stat-label,
-.light-mode .market-cap-chart-title,
-.light-mode .token-name,
-.light-mode .token-symbol,
-.light-mode .token-price,
-.light-mode .news-content h3 a {
-    color: #333333 !important;
-}
-
-.light-mode .news-content p {
-    color: #555555 !important;
-}
-
-/* Manter a cor laranja do "Bitcoin Season" independente do tema */
-.light-mode .bitcoin-season,
-.light-mode .early-bitcoin-season,
-.light-mode .early-altcoin-season,
-.light-mode .altcoin-season,
-.light-mode .altseason-current-state {
-    color: white !important;
-}
-
-/* Garantir que o filtro funcione nos ícones de velocidade em dispositivos mobile */
-@media (max-width: 768px) {
-    .speed-icon img {
-        filter: brightness(0) invert(1);
+    .theme-toggle {
+        top: var(--spacing-md);
+        right: var(--spacing-md);
     }
     
-    .light-mode .speed-icon img {
-        filter: none;
-    }
-}
-
-/* Correções adicionais para o modo light */
-.light-mode .crypto-price .price-value {
-    color: #333333 !important;
-    text-shadow: none !important;
-}
-
-.light-mode .fear-greed-label {
-    /* Não precisamos alterar a cor do texto aqui, pois já definimos as cores de fundo e texto para cada estado */
-    /* color: #333333 !important; */
-}
-
-.light-mode .altseason-labels span {
-    color: #333333 !important;
-}
-
-.light-mode .read-more {
-    color: var(--primary-blue) !important;
-}
-
-.light-mode .token-change {
-    color: #333333 !important;
-}
-
-.light-mode .token-change.positive {
-    color: var(--positive-color) !important;
-}
-
-.light-mode .token-change.negative {
-    color: var(--negative-color) !important;
-}
-
-/* Mais correções para o modo light */
-.light-mode .fear-greed-value {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
-}
-
-.light-mode .altseason-value-display {
-    color: #333333 !important;
-}
-
-.light-mode .altseason-max {
-    color: #666666 !important;
-}
-
-.light-mode .altseason-current-state {
-    background-color: var(--primary-blue) !important;
-}
-
-.light-mode .market-cap-value {
-    color: #333333 !important;
-}
-
-.light-mode #market-cap-change {
-    color: #333333 !important;
-}
-
-.light-mode #market-cap-change.positive {
-    color: var(--positive-color) !important;
-}
-
-.light-mode #market-cap-change.negative {
-    color: var(--negative-color) !important;
-}
-
-/* Regra geral para garantir que todos os textos sejam legíveis no modo light */
-.light-mode h1, 
-.light-mode h2, 
-.light-mode h3, 
-.light-mode h4, 
-.light-mode h5, 
-.light-mode h6, 
-.light-mode p, 
-.light-mode span:not(.bitcoin-season):not(.early-bitcoin-season):not(.early-altcoin-season):not(.altcoin-season):not([class*="apexcharts"]), 
-.light-mode div:not(.bitcoin-season):not(.early-bitcoin-season):not(.early-altcoin-season):not(.altcoin-season):not([class*="apexcharts"]) {
-    color: #333333;
-}
-
-/* Correções específicas para elementos que podem ter sido ignorados */
-.light-mode .crypto-price {
-    background-color: rgba(0, 0, 0, 0.05) !important;
-}
-
-.light-mode .price-card {
-    background-color: rgba(0, 0, 0, 0.05) !important;
-}
-
-.light-mode .price-card:nth-child(2) {
-    background-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Manter a cor laranja do "Bitcoin Season" independente do tema */
-.light-mode .bitcoin-season,
-.light-mode .early-bitcoin-season,
-.light-mode .early-altcoin-season,
-.light-mode .altcoin-season,
-.light-mode .altseason-current-state {
-    color: white !important;
-}
-
-/* Correções adicionais para elementos específicos no modo light */
-.light-mode .price-card h2 {
-    color: #333333 !important;
-    text-shadow: none !important;
-}
-
-.light-mode .progress-bar {
-    background-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-.light-mode .market-cap-chart-header {
-    color: #333333 !important;
-}
-
-.light-mode .market-cap-chart-title {
-    color: #333333 !important;
-}
-
-.light-mode .market-cap-chart-stats {
-    color: #333333 !important;
-}
-
-.light-mode .news-article {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-}
-
-.light-mode .news-content h3 a {
-    color: #333333 !important;
-}
-
-.light-mode .news-content p {
-    color: #555555 !important;
-}
-
-.light-mode .read-more {
-    color: var(--primary-blue) !important;
-}
-
-/* Garantir que o filtro funcione nos ícones de velocidade em dispositivos mobile */
-@media (max-width: 768px) {
-    .speed-icon img {
-        filter: brightness(0) invert(1);
+    .app {
+        padding: var(--spacing-sm);
     }
     
-    .light-mode .speed-icon img {
-        filter: none;
+    .header-content {
+        padding: var(--spacing-md);
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .crypto-price {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .crypto-price img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .crypto-price-value {
+        font-size: 0.75rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gas-card,
+    .market-card,
+    .token-list-card {
+        padding: var(--spacing-md);
+    }
+    
+    .price-value {
+        font-size: 2rem;
+    }
+    
+    .chart-container {
+        height: 200px;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+    
+    .modal-header,
+    .modal-body {
+        padding: var(--spacing-md);
     }
 }
 
-/* Correções adicionais para o logo no modo light */
-.light-mode header h1 span:first-child {
-    color: #333333 !important;
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
 
-.light-mode header h1 span:last-child {
-    color: var(--primary-blue) !important;
+.loading {
+    animation: pulse 2s infinite;
 }
 
-.light-mode .info-icon::after {
-    background: rgba(0, 0, 0, 0.8) !important;
-    color: white !important;
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Garantir que o texto "Fear" seja branco no modo escuro */
-.light-mode .apexcharts-datalabel-label {
-    fill: var(--text-color) !important;
+.animate-slide-up {
+    animation: slideInUp 0.6s ease-out;
 }
 
-/* Garantir que o valor numérico do gráfico seja branco no modo escuro */
-.light-mode .apexcharts-datalabel-value {
-    fill: var(--text-color) !important;
-}
-
-.light-mode .fear-greed-label {
-    /* Não precisamos alterar a cor do texto aqui, pois já definimos as cores de fundo e texto para cada estado */
-    /* color: #333333 !important; */
-}
-
-/* Estilos para o Fear & Greed Index com GaugeJS */
-.fear-greed-container {
-    position: relative !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
+/* Utility Classes */
+.text-center {
     text-align: center;
-    height: 100px !important;
-    min-height: 100px !important;
-    max-height: 100px !important;
-    overflow: visible !important;
-    box-sizing: border-box !important;
-    background: transparent !important;
-    z-index: 1 !important;
 }
 
-.fear-greed-value {
-    font-size: 28px !important;
-    font-weight: bold !important;
-    margin-bottom: 0 !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-    z-index: 10 !important;
-    user-select: none;
-    line-height: 1 !important;
-    color: #fff;
+.text-left {
+    text-align: left;
 }
 
-.fear-greed-label.greed {
-    color: #2196F3 !important; /* Azul em vez de verde */
-}
-
-.fear-greed-label.extreme-greed {
-    color: #1565C0 !important; /* Azul escuro em vez de verde escuro */
-}
-
-/* Modo light para o Fear & Greed Index */
-.light-mode .fear-greed-value {
-    color: #333 !important;
-    text-shadow: none !important;
-}
-
-.light-mode .fear-greed-label {
-    color: #333 !important; /* Base escura para todos os rótulos no tema claro */
-    background-color: #f5f5f5 !important;
-}
-
-.light-mode .fear-greed-label.extreme-fear {
-    color: #C62828 !important; /* Vermelho escuro para tema claro */
-}
-
-.light-mode .fear-greed-label.fear {
-    color: #EF6C00 !important; /* Laranja escuro para tema claro */
-}
-
-.light-mode .fear-greed-label.neutral {
-    color: #F9A825 !important; /* Amarelo escuro para tema claro */
-}
-
-.light-mode .fear-greed-label.greed {
-    color: #1976D2 !important; /* Azul escuro para tema claro */
-}
-
-.light-mode .fear-greed-label.extreme-greed {
-    color: #0D47A1 !important; /* Azul mais escuro para tema claro */
-}
-
-/* Garantir que o canvas do gauge fique bem posicionado */
-#fear-greed-gauge-canvas {
-    display: block !important;
-    margin: 0 auto !important;
-    max-width: 100% !important;
-}
-
-/* Regra com maior especificidade para garantir que o marcador do Altseason Index seja sempre visível */
-.altseason-container .altseason-progress-container .altseason-progress .altseason-marker,
-.altseason-progress .altseason-marker {
-    position: absolute !important;
-    top: -4px !important;
-    width: 4px !important;
-    height: 14px !important;
-    background-color: white !important;
-    border-radius: 2px !important;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
-    transform: translateX(-50%) !important;
-    transition: left 0.3s ease !important;
-    z-index: 10 !important;
-}
-
-/* Alterar cores de verdes para azuis */
-.altseason-label-alt {
-    color: #2196F3 !important; /* Azul em vez de verde */
-}
-
-.altcoin-season {
-    background-color: #1565C0 !important; /* Azul escuro em vez de verde escuro */
-    color: white !important;
-}
-
-.early-altcoin-season {
-    background-color: #2196F3 !important; /* Azul médio em vez de verde médio */
-    color: white !important;
-}
-
-/* Corrigir cores do Fear and Greed no tema claro */
-.light-mode .fear-greed-value {
-    color: #333 !important; /* Cor escura para o valor no tema claro */
-    text-shadow: none !important;
-}
-
-.light-mode .fear-greed-label.greed {
-    color: #1976D2 !important; /* Azul escuro para tema claro */
-}
-
-.light-mode .fear-greed-label.extreme-greed {
-    color: #0D47A1 !important; /* Azul mais escuro para tema claro */
-}
-
-/* Atualizar cores para esquema azul */
-.market-cap-chart .line-series.up {
-    stroke: #2196F3 !important; /* Azul em vez de verde */
-}
-
-.market-cap-stat-value.positive,
-.token-change.positive,
-.comparison-value.positive {
-    color: #2196F3 !important; /* Azul em vez de verde */
-}
-
-.light-mode .token-change.positive,
-.light-mode .market-cap-change.positive {
-    color: #1565C0 !important; /* Azul escuro em vez de verde para tema claro */
-}
-
-.altseason-progress-fill {
-    background: linear-gradient(to right, 
-        #F57C00 0%, 
-        #FFA726 25%, 
-        #64B5F6 75%, 
-        #2196F3 100%) !important; /* Gradiente com azuis */
-}
-
-/* Corrigir progress bar no modo claro */
-.light-mode .altseason-progress-bg {
-    background-color: #e0e0e0 !important;
-}
-
-.light-mode .altseason-label-alt {
-    color: #1565C0 !important; /* Azul escuro no tema claro */
-}
-
-.light-mode .altseason-label-btc {
-    color: #E65100 !important; /* Laranja escuro no tema claro */
-}
-
-/* Título de seção padrão */
-.section-title {
-    color: var(--primary-blue);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 24px;
-    letter-spacing: 0.5px;
-}
-
-/* Footer ajustado para box visual */
-.site-footer {
-    background: var(--card-background);
-    border-radius: 12px 12px 0 0;
-    box-shadow: var(--box-shadow);
-    border: 1px solid var(--border-color);
-    margin-top: 32px;
-    padding: 32px 0 0 0;
-    color: var(--text-color);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.footer-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px 24px 24px;
-    gap: 24px;
-}
-.footer-actions {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-}
-.footer-btn {
-    display: inline-flex;
-    align-items: center;
-    background: var(--primary-blue);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.footer-btn:hover {
-    background: var(--secondary-blue);
-    color: #fff;
-}
-.footer-support {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text-color);
+.text-right {
     text-align: right;
-    flex: 1;
-}
-.footer-copyright {
-    text-align: center;
-    color: var(--text-color);
-    font-size: 0.95rem;
-    padding: 12px 0 10px 0;
-    border-top: 1px solid var(--border-color);
-    margin-top: 0;
-    background: transparent;
-    border-radius: 0 0 12px 12px;
 }
 
-@media (max-width: 700px) {
-    .partners-banners {
-        flex-direction: column;
-        gap: 16px;
-    }
-    .footer-main {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-        padding: 0 10px 18px 10px;
-    }
-    .footer-support {
-        text-align: left;
-        margin-top: 10px;
-    }
-    .site-footer {
-        border-radius: 12px 12px 0 0;
-    }
+.hidden {
+    display: none !important;
 }
 
-/* Partners & Sponsors Section ajustado */
-.partners-sponsors {
-    background: var(--card-background);
-    border-radius: 12px;
-    box-shadow: var(--box-shadow);
-    padding: 32px 24px;
-    margin: 40px 0 0 0;
-    text-align: center;
-    color: var(--text-color);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+.visible {
+    display: block !important;
 }
-.partners-sponsors .section-title {
-    color: var(--primary-blue);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 24px;
-}
-.partners-banners {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-}
-.partner-banner {
-    display: inline-block;
-    width: 260px;
-    min-width: 180px;
-    height: 90px;
-    background: var(--header-background);
-    color: var(--text-color);
-    border-radius: 10px;
-    text-align: center;
-    line-height: 1.2;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: var(--box-shadow);
-    border: 1px solid var(--border-color);
-    padding: 18px 10px 10px 10px;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.partner-banner span {
-    display: block;
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: var(--secondary-blue);
-    margin-top: 4px;
-}
-.partner-banner:hover {
-    background: var(--primary-blue);
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

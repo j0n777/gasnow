@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GasNow - Real-time Crypto Gas Tracker | ETH, BTC, TON Gas Fees</title>
+    <meta name="description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains. Monitor market cap, trending tokens, and crypto news.">
+    <meta name="keywords" content="crypto gas fees, ethereum gas, bitcoin fees, ton fees, gas tracker, cryptocurrency, blockchain fees, real-time gas">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="GasNow - Real-time Crypto Gas Tracker">
+    <meta property="og:description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gasnow.tools">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GasNow - Real-time Crypto Gas Tracker">
+    <meta name="twitter:description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains.">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-gas-pump"></i>
+                <span>GasNow</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p>Loading real-time data...</p>
+        </div>
+    </div>
+
+    <div class="app" id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/gasnow-icon.png" alt="GasNow Icon" class="logo-icon">
+                    <h1><span class="logo-gas">Gas</span><span class="logo-now">Now</span></h1>
+                </div>
+                
+                <div class="crypto-prices" id="cryptoPrices">
+                    <!-- Crypto prices will be populated by JavaScript -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Gas Prices Section -->
+            <section class="gas-prices-section">
+                <div class="section-header">
+                    <h2>Gas Fees</h2>
+                    <div class="blockchain-selector">
+                        <button class="blockchain-btn active" data-blockchain="ethereum">
+                            <img src="images/eth-icon.png" alt="Ethereum">
+                            <span>ETH</span>
+                        </button>
+                        <button class="blockchain-btn" data-blockchain="bitcoin">
+                            <img src="images/btc-icon.png" alt="Bitcoin">
+                            <span>BTC</span>
+                        </button>
+                        <button class="blockchain-btn" data-blockchain="ton">
+                            <img src="images/ton-icon.png" alt="TON">
+                            <span>TON</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="gas-prices-grid" id="gasPricesGrid">
+                    <div class="gas-card slow" data-speed="slow">
+                        <div class="gas-card-header">
+                            <h3>Slow</h3>
+                            <div class="gas-icon">
+                                <img src="images/turtle.png" alt="Slow">
+                            </div>
+                        </div>
+                        <div class="gas-card-content">
+                            <div class="gas-price">
+                                <span class="price-value" id="slowPrice">--</span>
+                                <span class="price-unit" id="slowUnit">Gwei</span>
+                            </div>
+                            <div class="gas-usd" id="slowUsd">$--</div>
+                        </div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gas-card standard featured" data-speed="standard">
+                        <div class="gas-card-header">
+                            <h3>Standard</h3>
+                            <div class="gas-icon">
+                                <img src="images/speed.png" alt="Standard">
+                            </div>
+                        </div>
+                        <div class="gas-card-content">
+                            <div class="gas-price">
+                                <span class="price-value" id="standardPrice">--</span>
+                                <span class="price-unit" id="standardUnit">Gwei</span>
+                            </div>
+                            <div class="gas-usd" id="standardUsd">$--</div>
+                        </div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gas-card fast" data-speed="fast">
+                        <div class="gas-card-header">
+                            <h3>Fast</h3>
+                            <div class="gas-icon">
+                                <img src="images/rocket.png" alt="Fast">
+                            </div>
+                        </div>
+                        <div class="gas-card-content">
+                            <div class="gas-price">
+                                <span class="price-value" id="fastPrice">--</span>
+                                <span class="price-unit" id="fastUnit">Gwei</span>
+                            </div>
+                            <div class="gas-usd" id="fastUsd">$--</div>
+                        </div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Market Overview Section -->
+            <section class="market-overview-section">
+                <div class="section-header">
+                    <h2>Crypto Market Overview</h2>
+                </div>
+                
+                <div class="market-grid">
+                    <!-- Global Market Cap Chart -->
+                    <div class="market-card main-chart">
+                        <div class="card-header">
+                            <h3>Global Market Cap</h3>
+                            <div class="market-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Total Market Cap</span>
+                                    <span class="stat-value" id="totalMarketCap">$--</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">24h Change</span>
+                                    <span class="stat-value" id="marketCapChange">--%</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">24h Volume</span>
+                                    <span class="stat-value" id="totalVolume">$--</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="marketCapChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Fear & Greed Index -->
+                    <div class="market-card">
+                        <div class="card-header">
+                            <h3>Fear & Greed Index</h3>
+                            <div class="info-tooltip" data-tooltip="The Fear & Greed Index measures market sentiment from 0 (Extreme Fear) to 100 (Extreme Greed)">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                        </div>
+                        <div class="fear-greed-container">
+                            <div class="fear-greed-gauge" id="fearGreedGauge">
+                                <canvas id="fearGreedCanvas"></canvas>
+                                <div class="gauge-center">
+                                    <div class="gauge-value" id="fearGreedValue">--</div>
+                                    <div class="gauge-label" id="fearGreedLabel">--</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Altseason Index -->
+                    <div class="market-card">
+                        <div class="card-header">
+                            <h3>Altseason Index</h3>
+                            <div class="info-tooltip" data-tooltip="Shows whether we're in Bitcoin Season (0-25) or Altcoin Season (75-100) based on altcoin performance vs Bitcoin">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                        </div>
+                        <div class="altseason-container">
+                            <div class="altseason-header">
+                                <div class="altseason-value">
+                                    <span id="altseasonValue">--</span>
+                                    <span class="altseason-max">/100</span>
+                                </div>
+                                <div class="altseason-status" id="altseasonStatus">--</div>
+                            </div>
+                            <div class="altseason-progress">
+                                <div class="progress-track">
+                                    <div class="progress-fill" id="altseasonProgress"></div>
+                                    <div class="progress-marker" id="altseasonMarker"></div>
+                                </div>
+                                <div class="progress-labels">
+                                    <span>Bitcoin Season</span>
+                                    <span>Altcoin Season</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Token Lists -->
+                <div class="token-lists">
+                    <div class="token-list-card">
+                        <div class="card-header">
+                            <h3>Trending Tokens</h3>
+                        </div>
+                        <div class="token-list" id="trendingTokens">
+                            <!-- Tokens will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="token-list-card">
+                        <div class="card-header">
+                            <h3>Top Gainers</h3>
+                        </div>
+                        <div class="token-list" id="topGainers">
+                            <!-- Tokens will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section class="news-section">
+                <div class="section-header">
+                    <h2>Latest Crypto News</h2>
+                </div>
+                <div class="news-grid" id="newsGrid">
+                    <!-- News articles will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Partners & Sponsors</h4>
+                    <div class="partner-links">
+                        <a href="https://kastfinance.app.link/HP8K5JYH" target="_blank" class="partner-link">
+                            KAST Finance
+                            <span>Card to use your Crypto</span>
+                        </a>
+                        <a href="https://bingx.com/pt-br/act/template/7457/?randomId=7549452152&ref=OOCUZI" target="_blank" class="partner-link">
+                            BingX Exchange
+                            <span>Crypto Trading</span>
+                        </a>
+                        <a href="https://www.okx.com/pt-br/campaigns/boas-vindas-novos-usuarios?channelId=JONATA" target="_blank" class="partner-link">
+                            OKX Exchange
+                            <span>Crypto Trading</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <div class="footer-actions">
+                        <a href="https://github.com/j0n777/gasnow" target="_blank" class="footer-btn">
+                            <i class="fab fa-github"></i>
+                            View on GitHub
+                        </a>
+                        <button class="footer-btn" onclick="showDonationModal()">
+                            <i class="fas fa-heart"></i>
+                            Donate
+                        </button>
+                    </div>
+                    <p class="footer-support">
+                        Support GasNow! Help keep this project alive and independent.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 GasNow. All rights reserved. | Powered by the community.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Donation Modal -->
+    <div class="modal" id="donationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Support GasNow</h3>
+                <button class="modal-close" onclick="closeDonationModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Help keep GasNow free and independent!</p>
+                <div class="donation-options">
+                    <div class="donation-option">
+                        <strong>USDT (ERC20):</strong>
+                        <code>0x4e21C77Ca734cb87cF034D31a72A2c3d74191E0d</code>
+                    </div>
+                    <div class="donation-option">
+                        <strong>BTC (Lightning):</strong>
+                        <code>jonata@walletofsatoshi.com</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
