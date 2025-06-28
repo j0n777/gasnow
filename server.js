@@ -43,8 +43,8 @@ function setCachedData(key, data) {
   });
 }
 
-// Gas Prices API
-app.get('/api_v2/', async (req, res) => {
+// Gas Prices API - Make trailing slash optional
+app.get('/api_v2/?', async (req, res) => {
   const action = req.query.action;
   
   try {
