@@ -1,34 +1,20 @@
 {
   "name": "gasnow",
   "version": "1.0.0",
-  "description": "Real-time cryptocurrency gas fees and transaction costs tracker for Ethereum, Bitcoin, and TON blockchains, with market data and news.",
-  "main": "index.php",
+  "description": "Crypto gas price and market data tracker",
+  "main": "server.js",
   "scripts": {
-    "dev": "php -S localhost:8000",
-    "start": "php -S localhost:8000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node server.js",
+    "start": "node server.js"
   },
-  "keywords": [
-    "crypto gas fees",
-    "ethereum gas",
-    "bitcoin fees",
-    "ton fees",
-    "gas tracker",
-    "cryptocurrency",
-    "blockchain fees",
-    "real-time gas",
-    "market cap",
-    "trending coins",
-    "crypto news",
-    "gasnow"
-  ],
-  "author": "GasNow Tools",
-  "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
   "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/j0n777/gasnow.git"
-  },
-  "homepage": "https://gasnow.tools"
+  "keywords": ["crypto", "gas", "ethereum", "blockchain"],
+  "author": "",
+  "license": "ISC"
 }
