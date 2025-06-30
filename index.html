@@ -52,12 +52,18 @@
         <header class="header">
             <div class="header-content">
                 <div class="logo">
-                    <img src="images/gasnow-icon.png" alt="GasNow Icon" class="logo-icon">
+                    <img src="images/gasnow-icon.png" alt="GasNow Icon" class="logo-icon" onerror="this.style.display='none'">
                     <h1><span class="logo-gas">Gas</span><span class="logo-now">Now</span></h1>
                 </div>
                 
                 <div class="crypto-prices" id="cryptoPrices">
                     <!-- Crypto prices will be populated by JavaScript -->
+                    <div class="crypto-price">
+                        <img src="images/eth-icon.png" alt="ETH" onerror="this.style.display='none'">
+                        <div class="crypto-price-info">
+                            <span class="crypto-price-value">Loading...</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -70,15 +76,15 @@
                     <h2>Gas Fees</h2>
                     <div class="blockchain-selector">
                         <button class="blockchain-btn active" data-blockchain="ethereum">
-                            <img src="images/eth-icon.png" alt="Ethereum">
+                            <img src="images/eth-icon.png" alt="Ethereum" onerror="this.style.display='none'">
                             <span>ETH</span>
                         </button>
                         <button class="blockchain-btn" data-blockchain="bitcoin">
-                            <img src="images/btc-icon.png" alt="Bitcoin">
+                            <img src="images/btc-icon.png" alt="Bitcoin" onerror="this.style.display='none'">
                             <span>BTC</span>
                         </button>
                         <button class="blockchain-btn" data-blockchain="ton">
-                            <img src="images/ton-icon.png" alt="TON">
+                            <img src="images/ton-icon.png" alt="TON" onerror="this.style.display='none'">
                             <span>TON</span>
                         </button>
                     </div>
@@ -89,7 +95,7 @@
                         <div class="gas-card-header">
                             <h3>Slow</h3>
                             <div class="gas-icon">
-                                <img src="images/turtle.png" alt="Slow">
+                                <img src="images/turtle.png" alt="Slow" onerror="this.style.display='none'">
                             </div>
                         </div>
                         <div class="gas-card-content">
@@ -110,7 +116,7 @@
                         <div class="gas-card-header">
                             <h3>Standard</h3>
                             <div class="gas-icon">
-                                <img src="images/speed.png" alt="Standard">
+                                <img src="images/speed.png" alt="Standard" onerror="this.style.display='none'">
                             </div>
                         </div>
                         <div class="gas-card-content">
@@ -131,7 +137,7 @@
                         <div class="gas-card-header">
                             <h3>Fast</h3>
                             <div class="gas-icon">
-                                <img src="images/rocket.png" alt="Fast">
+                                <img src="images/rocket.png" alt="Fast" onerror="this.style.display='none'">
                             </div>
                         </div>
                         <div class="gas-card-content">
@@ -335,6 +341,23 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script>
+        // Fallback error handling
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+        });
+
+        // Simple fallback if main app fails
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+                    console.warn('App taking too long to load, hiding loading screen');
+                    loadingScreen.classList.add('hidden');
+                }
+            }, 10000); // 10 second timeout
+        });
+    </script>
     <script src="js/app.js"></script>
 </body>
 </html>
