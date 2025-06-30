@@ -88,8 +88,7 @@ class GasNowApp {
             await Promise.allSettled([
                 this.updateCryptoPrices(),
                 this.updateGasPrices(),
-                this.updateMarketData(),
-                this.updateNews()
+                this.updateMarketData()
             ]);
             
             console.log('✅ Initial data loaded');
@@ -107,7 +106,9 @@ class GasNowApp {
             // Try to fetch from our API first, then fallback to direct API
             let prices;
             try {
-                const response = await fetch('/api_v2/?action=prices&coins=ethereum,bitcoin,solana,the-open-network&currencies=usd');
+                const response = await fetch('/api_v2/?action=prices&coins=ethereum,bitcoin,solana,the-open-network&currencies=usd', {
+                    timeout: 5000
+                });
                 if (response.ok) {
                     prices = await response.json();
                 }
@@ -138,10 +139,10 @@ class GasNowApp {
         if (!container) return;
 
         const cryptos = [
-            { id: 'ethereum', symbol: 'ETH', icon: 'eth-icon.png' },
-            { id: 'bitcoin', symbol: 'BTC', icon: 'btc-icon.png' },
-            { id: 'solana', symbol: 'SOL', icon: 'sol-icon.png' },
-            { id: 'the-open-network', symbol: 'TON', icon: 'ton-icon.png' }
+            { id: 'ethereum', symbol: 'ETH' },
+            { id: 'bitcoin', symbol: 'BTC' },
+            { id: 'solana', symbol: 'SOL' },
+            { id: 'the-open-network', symbol: 'TON' }
         ];
 
         container.innerHTML = cryptos.map(crypto => {
@@ -151,9 +152,8 @@ class GasNowApp {
             
             return `
                 <div class="crypto-price" data-crypto="${crypto.id}">
-                    <img src="images/${crypto.icon}" alt="${crypto.symbol}" onerror="this.style.display='none'">
                     <div class="crypto-price-info">
-                        <span class="crypto-price-value">$${this.formatPrice(price)}</span>
+                        <span class="crypto-price-value">${crypto.symbol}: $${this.formatPrice(price)}</span>
                         <span class="crypto-price-change ${changeClass}">${change >= 0 ? '+' : ''}${change.toFixed(2)}%</span>
                     </div>
                 </div>
@@ -179,7 +179,9 @@ class GasNowApp {
             
             // Try to fetch from our API first
             try {
-                const response = await fetch(`/api/gas-prices?blockchain=${this.currentBlockchain}`);
+                const response = await fetch(`/api/gas-prices?blockchain=${this.currentBlockchain}`, {
+                    timeout: 5000
+                });
                 if (response.ok) {
                     data = await response.json();
                 }
@@ -299,7 +301,7 @@ class GasNowApp {
             let marketCap, fearGreed, altseason;
             
             try {
-                const marketResponse = await fetch('/api_v2/?action=market_cap');
+                const marketResponse = await fetch('/api_v2/?action=market_cap', { timeout: 5000 });
                 if (marketResponse.ok) {
                     marketCap = await marketResponse.json();
                 }
@@ -308,7 +310,7 @@ class GasNowApp {
             }
 
             try {
-                const fearResponse = await fetch('/api_v2/?action=fear_greed');
+                const fearResponse = await fetch('/api_v2/?action=fear_greed', { timeout: 5000 });
                 if (fearResponse.ok) {
                     fearGreed = await fearResponse.json();
                 }
@@ -317,7 +319,7 @@ class GasNowApp {
             }
 
             try {
-                const altResponse = await fetch('/api_v2/?action=altseason');
+                const altResponse = await fetch('/api_v2/?action=altseason', { timeout: 5000 });
                 if (altResponse.ok) {
                     altseason = await altResponse.json();
                 }
@@ -354,7 +356,6 @@ class GasNowApp {
             this.renderMarketCap(marketCap);
             this.renderFearGreed(fearGreed);
             this.renderAltseason(altseason);
-            this.renderTokenLists({ trending: [], gainers: [] });
             
             // Try to initialize charts
             this.initializeCharts();
@@ -447,15 +448,11 @@ class GasNowApp {
     renderAltseason(data) {
         const valueElement = document.getElementById('altseasonValue');
         const statusElement = document.getElementById('altseasonStatus');
-        const progressElement = document.getElementById('altseasonProgress');
-        const markerElement = document.getElementById('altseasonMarker');
 
-        if (valueElement && statusElement && progressElement && markerElement) {
+        if (valueElement && statusElement) {
             const value = data.index || data.current?.index || 50;
             
             valueElement.textContent = Math.round(value);
-            progressElement.style.width = `${value}%`;
-            markerElement.style.left = `${value}%`;
 
             // Determine status
             let status, statusClass;
@@ -475,97 +472,16 @@ class GasNowApp {
         }
     }
 
-    renderTokenLists(data) {
-        // Render empty or fallback token lists
-        const trendingContainer = document.getElementById('trendingTokens');
-        const gainersContainer = document.getElementById('topGainers');
-
-        if (trendingContainer) {
-            trendingContainer.innerHTML = '<p>Loading trending tokens...</p>';
-        }
-
-        if (gainersContainer) {
-            gainersContainer.innerHTML = '<p>Loading top gainers...</p>';
-        }
-    }
-
-    async updateNews() {
-        try {
-            console.log('📰 Updating news...');
-            
-            let news;
-            try {
-                const response = await fetch('/api_v2/?action=news');
-                if (response.ok) {
-                    news = await response.json();
-                }
-            } catch (error) {
-                console.warn('News API failed, using fallback');
-            }
-
-            if (!news || !news.length) {
-                news = this.getMockNews();
-            }
-            
-            this.renderNews(news);
-            console.log('✅ News updated');
-        } catch (error) {
-            console.error('❌ Error updating news:', error);
-            this.renderNews(this.getMockNews());
-        }
-    }
-
-    getMockNews() {
-        return [
-            {
-                title: "Bitcoin Reaches New All-Time High",
-                excerpt: "Bitcoin continues its bullish momentum as institutional adoption grows...",
-                image: "images/default-crypto-news.jpg",
-                link: "#",
-                date: new Date().toISOString()
-            },
-            {
-                title: "Ethereum 2.0 Staking Rewards Increase",
-                excerpt: "Ethereum staking rewards see significant increase following network upgrades...",
-                image: "images/default-crypto-news.jpg",
-                link: "#",
-                date: new Date().toISOString()
-            },
-            {
-                title: "DeFi TVL Surpasses $100 Billion",
-                excerpt: "Decentralized Finance total value locked reaches new milestone...",
-                image: "images/default-crypto-news.jpg",
-                link: "#",
-                date: new Date().toISOString()
-            }
-        ];
-    }
-
-    renderNews(articles) {
-        const container = document.getElementById('newsGrid');
-        if (!container) return;
-
-        container.innerHTML = articles.slice(0, 6).map(article => `
-            <div class="news-card" onclick="window.open('${article.link}', '_blank')">
-                <div class="news-image" style="background-image: url('${article.image || 'images/default-crypto-news.jpg'}')"></div>
-                <div class="news-content">
-                    <h3 class="news-title">${article.title}</h3>
-                    <p class="news-excerpt">${article.excerpt || ''}</p>
-                    <div class="news-meta">
-                        <span class="news-date">${this.formatDate(article.date)}</span>
-                        <a href="${article.link}" class="read-more" target="_blank" onclick="event.stopPropagation()">Read more</a>
-                    </div>
-                </div>
-            </div>
-        `).join('');
-    }
-
     initializeCharts() {
         // Only try to initialize charts if Chart.js is available
         if (typeof Chart !== 'undefined') {
             this.initializeMarketCapChart();
         } else {
             console.warn('Chart.js not available, skipping chart initialization');
+            const fallback = document.getElementById('chartFallback');
+            if (fallback) {
+                fallback.textContent = 'Chart unavailable';
+            }
         }
     }
 
@@ -573,6 +489,12 @@ class GasNowApp {
         try {
             const canvas = document.getElementById('marketCapChart');
             if (!canvas) return;
+
+            // Hide fallback text
+            const fallback = document.getElementById('chartFallback');
+            if (fallback) {
+                fallback.style.display = 'none';
+            }
 
             // Generate simple mock data for the chart
             const now = Date.now();
@@ -618,7 +540,19 @@ class GasNowApp {
                     scales: {
                         y: {
                             ticks: {
-                                callback: (value) => '$' + this.formatLargeNumber(value)
+                                callback: (value) => '$' + this.formatLargeNumber(value),
+                                color: '#64748b'
+                            },
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#64748b'
+                            },
+                            grid: {
+                                display: false
                             }
                         }
                     }
@@ -628,6 +562,11 @@ class GasNowApp {
             console.log('✅ Market cap chart initialized');
         } catch (error) {
             console.error('❌ Error initializing market cap chart:', error);
+            const fallback = document.getElementById('chartFallback');
+            if (fallback) {
+                fallback.textContent = 'Chart error';
+                fallback.style.display = 'block';
+            }
         }
     }
 
@@ -682,13 +621,6 @@ class GasNowApp {
                 this.updateMarketData();
             }
         }, this.updateInterval * 10);
-
-        // Update news every 30 minutes
-        setInterval(() => {
-            if (!this.isLoading) {
-                this.updateNews();
-            }
-        }, this.updateInterval * 60);
     }
 
     showLoading() {
@@ -719,7 +651,10 @@ class GasNowApp {
         const volumeElement = document.getElementById('totalVolume');
         
         if (totalElement) totalElement.textContent = '$2.50T';
-        if (changeElement) changeElement.textContent = '+1.50%';
+        if (changeElement) {
+            changeElement.textContent = '+1.50%';
+            changeElement.className = 'stat-value positive';
+        }
         if (volumeElement) volumeElement.textContent = '$80.00B';
         
         // Set basic Fear & Greed
@@ -734,10 +669,10 @@ class GasNowApp {
         const altStatusElement = document.getElementById('altseasonStatus');
         
         if (altValueElement) altValueElement.textContent = '50';
-        if (altStatusElement) altStatusElement.textContent = 'Neutral';
-        
-        // Show basic news
-        this.renderNews(this.getMockNews());
+        if (altStatusElement) {
+            altStatusElement.textContent = 'Neutral';
+            altStatusElement.className = 'altseason-status neutral';
+        }
     }
 
     formatPrice(price) {
@@ -779,20 +714,6 @@ class GasNowApp {
         return num.toFixed(2);
     }
 
-    formatDate(dateString) {
-        if (!dateString) return 'Recently';
-        
-        const date = new Date(dateString);
-        const now = new Date();
-        const diffTime = Math.abs(now - date);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        
-        if (diffDays === 1) return 'Yesterday';
-        if (diffDays < 7) return `${diffDays} days ago`;
-        
-        return date.toLocaleDateString();
-    }
-
     debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {
@@ -803,21 +724,6 @@ class GasNowApp {
             clearTimeout(timeout);
             timeout = setTimeout(later, wait);
         };
-    }
-}
-
-// Modal functions
-function showDonationModal() {
-    const modal = document.getElementById('donationModal');
-    if (modal) {
-        modal.classList.add('active');
-    }
-}
-
-function closeDonationModal() {
-    const modal = document.getElementById('donationModal');
-    if (modal) {
-        modal.classList.remove('active');
     }
 }
 
@@ -832,29 +738,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingScreen = document.getElementById('loadingScreen');
         if (loadingScreen) {
             loadingScreen.classList.add('hidden');
-        }
-    }
-});
-
-// Close modal when clicking outside
-document.addEventListener('click', (e) => {
-    const modal = document.getElementById('donationModal');
-    if (modal && e.target === modal) {
-        closeDonationModal();
-    }
-});
-
-// Keyboard shortcuts
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeDonationModal();
-    }
-    
-    if (e.key === 't' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault();
-        const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) {
-            themeToggle.click();
         }
     }
 });

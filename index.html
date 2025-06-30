@@ -28,6 +28,488 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GasNow - Real-time Crypto Gas Tracker">
     <meta name="twitter:description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains.">
+
+    <style>
+        /* Emergency fallback styles to ensure content is visible */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(148, 163, 184, 0.1);
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .app {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .header {
+            margin-bottom: 3rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .logo-gas { color: #f8fafc; }
+        .logo-now { color: #3b82f6; }
+
+        .crypto-prices {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .crypto-price {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1e293b;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.15s ease-in-out;
+        }
+
+        .crypto-price:hover {
+            background: #334155;
+            transform: translateY(-2px);
+        }
+
+        .crypto-price img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin: 0;
+        }
+
+        .blockchain-selector {
+            display: flex;
+            gap: 0.25rem;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.25rem;
+        }
+
+        .blockchain-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            font-weight: 500;
+        }
+
+        .blockchain-btn:hover {
+            background: #334155;
+            color: #f8fafc;
+        }
+
+        .blockchain-btn.active {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .blockchain-btn img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .gas-prices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gas-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gas-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gas-card.featured {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 1px #3b82f6;
+        }
+
+        .gas-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .gas-card-header h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        .gas-card-content {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .gas-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1;
+        }
+
+        .price-unit {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        .gas-usd {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #334155;
+            border-radius: 0.375rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            border-radius: 0.375rem;
+            width: 0%;
+            transition: width 30s linear;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .market-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .market-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .market-card.main-chart {
+            grid-row: span 2;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin: 0;
+        }
+
+        .market-stats {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .stat-value.positive { color: #10b981; }
+        .stat-value.negative { color: #ef4444; }
+
+        .chart-container {
+            height: 300px;
+            position: relative;
+            background: #1e293b;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+
+        .fear-greed-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            position: relative;
+        }
+
+        .fear-greed-gauge {
+            position: relative;
+            width: 160px;
+            height: 160px;
+        }
+
+        .gauge-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .gauge-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1;
+        }
+
+        .gauge-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .altseason-container {
+            padding: 1rem;
+        }
+
+        .altseason-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .altseason-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 0.5rem;
+        }
+
+        .altseason-max {
+            font-size: 1.25rem;
+            color: #64748b;
+        }
+
+        .altseason-status {
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .altseason-status.bitcoin-season {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .altseason-status.altcoin-season {
+            background: #10b981;
+            color: white;
+        }
+
+        .altseason-status.neutral {
+            background: #64748b;
+            color: white;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.5rem 1rem;
+            color: #f8fafc;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            background: rgba(30, 41, 59, 0.9);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .market-card.main-chart {
+                grid-row: span 1;
+            }
+
+            .gas-prices-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Theme Toggle -->
@@ -52,17 +534,12 @@
         <header class="header">
             <div class="header-content">
                 <div class="logo">
-                    <img src="images/gasnow-icon.png" alt="GasNow Icon" class="logo-icon" onerror="this.style.display='none'">
                     <h1><span class="logo-gas">Gas</span><span class="logo-now">Now</span></h1>
                 </div>
                 
                 <div class="crypto-prices" id="cryptoPrices">
-                    <!-- Crypto prices will be populated by JavaScript -->
                     <div class="crypto-price">
-                        <img src="images/eth-icon.png" alt="ETH" onerror="this.style.display='none'">
-                        <div class="crypto-price-info">
-                            <span class="crypto-price-value">Loading...</span>
-                        </div>
+                        <span class="crypto-price-value">Loading...</span>
                     </div>
                 </div>
             </div>
@@ -76,15 +553,12 @@
                     <h2>Gas Fees</h2>
                     <div class="blockchain-selector">
                         <button class="blockchain-btn active" data-blockchain="ethereum">
-                            <img src="images/eth-icon.png" alt="Ethereum" onerror="this.style.display='none'">
                             <span>ETH</span>
                         </button>
                         <button class="blockchain-btn" data-blockchain="bitcoin">
-                            <img src="images/btc-icon.png" alt="Bitcoin" onerror="this.style.display='none'">
                             <span>BTC</span>
                         </button>
                         <button class="blockchain-btn" data-blockchain="ton">
-                            <img src="images/ton-icon.png" alt="TON" onerror="this.style.display='none'">
                             <span>TON</span>
                         </button>
                     </div>
@@ -94,9 +568,6 @@
                     <div class="gas-card slow" data-speed="slow">
                         <div class="gas-card-header">
                             <h3>Slow</h3>
-                            <div class="gas-icon">
-                                <img src="images/turtle.png" alt="Slow" onerror="this.style.display='none'">
-                            </div>
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -115,9 +586,6 @@
                     <div class="gas-card standard featured" data-speed="standard">
                         <div class="gas-card-header">
                             <h3>Standard</h3>
-                            <div class="gas-icon">
-                                <img src="images/speed.png" alt="Standard" onerror="this.style.display='none'">
-                            </div>
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -136,9 +604,6 @@
                     <div class="gas-card fast" data-speed="fast">
                         <div class="gas-card-header">
                             <h3>Fast</h3>
-                            <div class="gas-icon">
-                                <img src="images/rocket.png" alt="Fast" onerror="this.style.display='none'">
-                            </div>
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -170,20 +635,21 @@
                             <div class="market-stats">
                                 <div class="stat">
                                     <span class="stat-label">Total Market Cap</span>
-                                    <span class="stat-value" id="totalMarketCap">$--</span>
+                                    <span class="stat-value" id="totalMarketCap">$2.50T</span>
                                 </div>
                                 <div class="stat">
                                     <span class="stat-label">24h Change</span>
-                                    <span class="stat-value" id="marketCapChange">--%</span>
+                                    <span class="stat-value positive" id="marketCapChange">+1.50%</span>
                                 </div>
                                 <div class="stat">
                                     <span class="stat-label">24h Volume</span>
-                                    <span class="stat-value" id="totalVolume">$--</span>
+                                    <span class="stat-value" id="totalVolume">$80.00B</span>
                                 </div>
                             </div>
                         </div>
                         <div class="chart-container">
                             <canvas id="marketCapChart"></canvas>
+                            <div id="chartFallback">Chart loading...</div>
                         </div>
                     </div>
 
@@ -191,16 +657,13 @@
                     <div class="market-card">
                         <div class="card-header">
                             <h3>Fear & Greed Index</h3>
-                            <div class="info-tooltip" data-tooltip="The Fear & Greed Index measures market sentiment from 0 (Extreme Fear) to 100 (Extreme Greed)">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
                         </div>
                         <div class="fear-greed-container">
                             <div class="fear-greed-gauge" id="fearGreedGauge">
                                 <canvas id="fearGreedCanvas"></canvas>
                                 <div class="gauge-center">
-                                    <div class="gauge-value" id="fearGreedValue">--</div>
-                                    <div class="gauge-label" id="fearGreedLabel">--</div>
+                                    <div class="gauge-value" id="fearGreedValue">50</div>
+                                    <div class="gauge-label" id="fearGreedLabel">Neutral</div>
                                 </div>
                             </div>
                         </div>
@@ -210,144 +673,30 @@
                     <div class="market-card">
                         <div class="card-header">
                             <h3>Altseason Index</h3>
-                            <div class="info-tooltip" data-tooltip="Shows whether we're in Bitcoin Season (0-25) or Altcoin Season (75-100) based on altcoin performance vs Bitcoin">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
                         </div>
                         <div class="altseason-container">
                             <div class="altseason-header">
                                 <div class="altseason-value">
-                                    <span id="altseasonValue">--</span>
+                                    <span id="altseasonValue">50</span>
                                     <span class="altseason-max">/100</span>
                                 </div>
-                                <div class="altseason-status" id="altseasonStatus">--</div>
-                            </div>
-                            <div class="altseason-progress">
-                                <div class="progress-track">
-                                    <div class="progress-fill" id="altseasonProgress"></div>
-                                    <div class="progress-marker" id="altseasonMarker"></div>
-                                </div>
-                                <div class="progress-labels">
-                                    <span>Bitcoin Season</span>
-                                    <span>Altcoin Season</span>
-                                </div>
+                                <div class="altseason-status neutral" id="altseasonStatus">Neutral</div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Token Lists -->
-                <div class="token-lists">
-                    <div class="token-list-card">
-                        <div class="card-header">
-                            <h3>Trending Tokens</h3>
-                        </div>
-                        <div class="token-list" id="trendingTokens">
-                            <!-- Tokens will be populated by JavaScript -->
-                        </div>
-                    </div>
-
-                    <div class="token-list-card">
-                        <div class="card-header">
-                            <h3>Top Gainers</h3>
-                        </div>
-                        <div class="token-list" id="topGainers">
-                            <!-- Tokens will be populated by JavaScript -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- News Section -->
-            <section class="news-section">
-                <div class="section-header">
-                    <h2>Latest Crypto News</h2>
-                </div>
-                <div class="news-grid" id="newsGrid">
-                    <!-- News articles will be populated by JavaScript -->
                 </div>
             </section>
         </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Partners & Sponsors</h4>
-                    <div class="partner-links">
-                        <a href="https://kastfinance.app.link/HP8K5JYH" target="_blank" class="partner-link">
-                            KAST Finance
-                            <span>Card to use your Crypto</span>
-                        </a>
-                        <a href="https://bingx.com/pt-br/act/template/7457/?randomId=7549452152&ref=OOCUZI" target="_blank" class="partner-link">
-                            BingX Exchange
-                            <span>Crypto Trading</span>
-                        </a>
-                        <a href="https://www.okx.com/pt-br/campaigns/boas-vindas-novos-usuarios?channelId=JONATA" target="_blank" class="partner-link">
-                            OKX Exchange
-                            <span>Crypto Trading</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <div class="footer-actions">
-                        <a href="https://github.com/j0n777/gasnow" target="_blank" class="footer-btn">
-                            <i class="fab fa-github"></i>
-                            View on GitHub
-                        </a>
-                        <button class="footer-btn" onclick="showDonationModal()">
-                            <i class="fas fa-heart"></i>
-                            Donate
-                        </button>
-                    </div>
-                    <p class="footer-support">
-                        Support GasNow! Help keep this project alive and independent.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 GasNow. All rights reserved. | Powered by the community.</p>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Donation Modal -->
-    <div class="modal" id="donationModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Support GasNow</h3>
-                <button class="modal-close" onclick="closeDonationModal()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Help keep GasNow free and independent!</p>
-                <div class="donation-options">
-                    <div class="donation-option">
-                        <strong>USDT (ERC20):</strong>
-                        <code>0x4e21C77Ca734cb87cF034D31a72A2c3d74191E0d</code>
-                    </div>
-                    <div class="donation-option">
-                        <strong>BTC (Lightning):</strong>
-                        <code>jonata@walletofsatoshi.com</code>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script>
-        // Fallback error handling
+        // Fallback error handling and basic functionality
         window.addEventListener('error', function(e) {
             console.error('Global error:', e.error);
         });
 
-        // Simple fallback if main app fails
+        // Ensure loading screen is hidden after timeout
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 const loadingScreen = document.getElementById('loadingScreen');
@@ -355,9 +704,38 @@
                     console.warn('App taking too long to load, hiding loading screen');
                     loadingScreen.classList.add('hidden');
                 }
-            }, 10000); // 10 second timeout
+            }, 5000); // 5 second timeout
+
+            // Basic theme toggle functionality
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('light-theme');
+                    const icon = themeToggle.querySelector('i');
+                    if (icon) {
+                        if (document.body.classList.contains('light-theme')) {
+                            icon.className = 'fas fa-moon';
+                        } else {
+                            icon.className = 'fas fa-sun';
+                        }
+                    }
+                });
+            }
+
+            // Basic blockchain selector functionality
+            document.querySelectorAll('.blockchain-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.blockchain-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
         });
     </script>
-    <script src="js/app.js"></script>
+    
+    <!-- Load Chart.js with fallback -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="console.warn('Chart.js failed to load')"></script>
+    
+    <!-- Load main app -->
+    <script src="js/app.js" onerror="console.warn('Main app failed to load')"></script>
 </body>
 </html>
