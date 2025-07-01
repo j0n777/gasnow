@@ -1,12 +1,22 @@
 class GasNowApp {
     constructor() {
         this.currentBlockchain = 'ethereum';
+        this.currentNewsSource = 'general';
         this.updateInterval = 30000; // 30 seconds
         this.charts = {};
         this.cache = new Map();
         this.isLoading = false;
         this.retryAttempts = new Map();
         this.maxRetries = 3;
+        
+        // News sources configuration
+        this.newsSources = {
+            general: { name: 'General Crypto', category: 'cryptocurrency' },
+            bitcoin: { name: 'Bitcoin News', category: 'bitcoin' },
+            ethereum: { name: 'Ethereum News', category: 'ethereum' },
+            defi: { name: 'DeFi News', category: 'defi' },
+            nft: { name: 'NFT News', category: 'nft' }
+        };
         
         this.init();
     }
@@ -35,13 +45,6 @@ class GasNowApp {
                 this.toggleTheme();
             });
         }
-
-        // Blockchain selector
-        document.querySelectorAll('.blockchain-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                this.selectBlockchain(e.currentTarget.dataset.blockchain);
-            });
-        });
 
         // Window resize
         window.addEventListener('resize', this.debounce(() => {
@@ -88,7 +91,8 @@ class GasNowApp {
             await Promise.allSettled([
                 this.updateCryptoPrices(),
                 this.updateGasPrices(),
-                this.updateMarketData()
+                this.updateMarketData(),
+                this.updateNews()
             ]);
             
             console.log('✅ Initial data loaded');
@@ -106,11 +110,9 @@ class GasNowApp {
             // Try to fetch from our API first, then fallback to direct API
             let prices;
             try {
-                const response = await fetch('/api_v2/?action=prices&coins=ethereum,bitcoin,solana,the-open-network&currencies=usd', {
-                    timeout: 5000
-                });
-                if (response.ok) {
-                    prices = await response.json();
+                const response = await this.fetchWithCache('/api_v2/?action=prices&coins=ethereum,bitcoin,solana,the-open-network&currencies=usd', 180000);
+                if (response) {
+                    prices = response;
                 }
             } catch (error) {
                 console.warn('Local API failed, using fallback data');
@@ -119,10 +121,10 @@ class GasNowApp {
             if (!prices) {
                 // Use fallback data
                 prices = {
-                    ethereum: { usd: 2500, usd_24h_change: 1.5 },
-                    bitcoin: { usd: 45000, usd_24h_change: 2.1 },
-                    solana: { usd: 120, usd_24h_change: -0.8 },
-                    'the-open-network': { usd: 2.5, usd_24h_change: 3.2 }
+                    ethereum: { usd: 2442, usd_24h_change: -1.04 },
+                    bitcoin: { usd: 106605, usd_24h_change: -1.04 },
+                    solana: { usd: 148, usd_24h_change: -2.21 },
+                    'the-open-network': { usd: 2.81, usd_24h_change: -3.50 }
                 };
             }
             
@@ -139,22 +141,24 @@ class GasNowApp {
         if (!container) return;
 
         const cryptos = [
-            { id: 'ethereum', symbol: 'ETH' },
-            { id: 'bitcoin', symbol: 'BTC' },
-            { id: 'solana', symbol: 'SOL' },
-            { id: 'the-open-network', symbol: 'TON' }
+            { id: 'ethereum', symbol: 'ETH', blockchain: 'ethereum' },
+            { id: 'bitcoin', symbol: 'BTC', blockchain: 'bitcoin' },
+            { id: 'solana', symbol: 'SOL', blockchain: 'solana' },
+            { id: 'the-open-network', symbol: 'TON', blockchain: 'ton' }
         ];
 
         container.innerHTML = cryptos.map(crypto => {
             const price = prices[crypto.id]?.usd || 0;
             const change = prices[crypto.id]?.usd_24h_change || 0;
             const changeClass = change >= 0 ? 'positive' : 'negative';
+            const isActive = this.currentBlockchain === crypto.blockchain ? 'active' : '';
             
             return `
-                <div class="crypto-price" data-crypto="${crypto.id}">
+                <div class="crypto-price ${isActive}" data-blockchain="${crypto.blockchain}" onclick="window.gasNowApp?.selectBlockchain('${crypto.blockchain}')">
+                    <img src="images/${crypto.blockchain === 'solana' ? 'sol' : crypto.blockchain === 'the-open-network' ? 'ton' : crypto.blockchain}-icon.png" alt="${crypto.symbol}" onerror="this.style.display='none'">
                     <div class="crypto-price-info">
-                        <span class="crypto-price-value">${crypto.symbol}: $${this.formatPrice(price)}</span>
-                        <span class="crypto-price-change ${changeClass}">${change >= 0 ? '+' : ''}${change.toFixed(2)}%</span>
+                        <div class="crypto-price-value">${crypto.symbol}: $${this.formatPrice(price)}</div>
+                        <div class="crypto-price-change ${changeClass}">${change >= 0 ? '+' : ''}${change.toFixed(2)}%</div>
                     </div>
                 </div>
             `;
@@ -179,11 +183,9 @@ class GasNowApp {
             
             // Try to fetch from our API first
             try {
-                const response = await fetch(`/api/gas-prices?blockchain=${this.currentBlockchain}`, {
-                    timeout: 5000
-                });
-                if (response.ok) {
-                    data = await response.json();
+                const response = await this.fetchWithCache(`/api/gas-prices?blockchain=${this.currentBlockchain}`, 30000);
+                if (response) {
+                    data = response;
                 }
             } catch (error) {
                 console.warn('Gas API failed, using fallback data');
@@ -200,6 +202,9 @@ class GasNowApp {
                         break;
                     case 'ton':
                         data = { slow: 0.005, standard: 0.01, fast: 0.02, unit: 'TON' };
+                        break;
+                    case 'solana':
+                        data = { slow: 0.00025, standard: 0.0005, fast: 0.001, unit: 'SOL' };
                         break;
                     default:
                         data = { slow: 10, standard: 15, fast: 25, unit: 'Gwei' };
@@ -225,9 +230,18 @@ class GasNowApp {
             const usdElement = document.getElementById(`${speed}Usd`);
             
             if (priceElement && unitElement && usdElement) {
-                priceElement.textContent = this.formatGasPrice(gasData[speed]);
-                unitElement.textContent = gasData.unit;
-                usdElement.textContent = `$${this.formatPrice(usdPrices[`${speed}Usd`])}`;
+                // Fix: Ensure we always have a valid value for standard
+                const gasValue = gasData[speed];
+                if (gasValue !== undefined && gasValue !== null && gasValue !== 0) {
+                    priceElement.textContent = this.formatGasPrice(gasValue);
+                } else {
+                    // Fallback values if standard is missing
+                    const fallbackValues = { slow: 10, standard: 15, fast: 25 };
+                    priceElement.textContent = this.formatGasPrice(fallbackValues[speed]);
+                }
+                
+                unitElement.textContent = gasData.unit || 'Gwei';
+                usdElement.textContent = `$${this.formatPrice(usdPrices[`${speed}Usd`] || 0)}`;
             }
         });
     }
@@ -236,14 +250,13 @@ class GasNowApp {
         try {
             // Simple estimation for USD prices
             const estimatedPrices = {
-                ethereum: 2500,
-                bitcoin: 45000,
-                ton: 2.5
+                ethereum: 2442,
+                bitcoin: 106605,
+                ton: 2.81,
+                solana: 148
             };
 
-            let tokenPrice = estimatedPrices.ethereum;
-            if (this.currentBlockchain === 'bitcoin') tokenPrice = estimatedPrices.bitcoin;
-            if (this.currentBlockchain === 'ton') tokenPrice = estimatedPrices.ton;
+            let tokenPrice = estimatedPrices[this.currentBlockchain] || estimatedPrices.ethereum;
 
             if (this.currentBlockchain === 'ethereum') {
                 const gasLimit = 21000;
@@ -258,6 +271,12 @@ class GasNowApp {
                     slowUsd: (gasData.slow * avgTxSize / 100000000) * tokenPrice,
                     standardUsd: (gasData.standard * avgTxSize / 100000000) * tokenPrice,
                     fastUsd: (gasData.fast * avgTxSize / 100000000) * tokenPrice
+                };
+            } else if (this.currentBlockchain === 'solana') {
+                return {
+                    slowUsd: gasData.slow * tokenPrice,
+                    standardUsd: gasData.standard * tokenPrice,
+                    fastUsd: gasData.fast * tokenPrice
                 };
             } else {
                 return {
@@ -301,28 +320,19 @@ class GasNowApp {
             let marketCap, fearGreed, altseason;
             
             try {
-                const marketResponse = await fetch('/api_v2/?action=market_cap', { timeout: 5000 });
-                if (marketResponse.ok) {
-                    marketCap = await marketResponse.json();
-                }
+                marketCap = await this.fetchWithCache('/api_v2/?action=market_cap', 300000);
             } catch (error) {
                 console.warn('Market cap API failed');
             }
 
             try {
-                const fearResponse = await fetch('/api_v2/?action=fear_greed', { timeout: 5000 });
-                if (fearResponse.ok) {
-                    fearGreed = await fearResponse.json();
-                }
+                fearGreed = await this.fetchWithCache('/api_v2/?action=fear_greed', 3600000);
             } catch (error) {
                 console.warn('Fear & Greed API failed');
             }
 
             try {
-                const altResponse = await fetch('/api_v2/?action=altseason', { timeout: 5000 });
-                if (altResponse.ok) {
-                    altseason = await altResponse.json();
-                }
+                altseason = await this.fetchWithCache('/api_v2/?action=altseason', 3600000);
             } catch (error) {
                 console.warn('Altseason API failed');
             }
@@ -472,6 +482,161 @@ class GasNowApp {
         }
     }
 
+    async updateNews() {
+        try {
+            console.log(`📰 Updating news for ${this.currentNewsSource}...`);
+            
+            let news;
+            try {
+                news = await this.fetchWithCache(`/api_v2/?action=news&source=${this.currentNewsSource}`, 1800000);
+            } catch (error) {
+                console.warn('News API failed, using fallback data');
+            }
+
+            if (!news) {
+                news = this.generateMockNews();
+            }
+
+            this.renderNews(news);
+            console.log('✅ News updated');
+        } catch (error) {
+            console.error('❌ Error updating news:', error);
+            this.renderNews(this.generateMockNews());
+        }
+    }
+
+    generateMockNews() {
+        const newsTopics = {
+            general: [
+                {
+                    title: "Bitcoin Reaches New All-Time High",
+                    excerpt: "Bitcoin continues its bullish momentum as institutional adoption grows and regulatory clarity improves across major markets worldwide...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "2 hours ago"
+                },
+                {
+                    title: "Ethereum 2.0 Staking Rewards Increase",
+                    excerpt: "Ethereum staking rewards see significant increase following network upgrades and improved validator participation rates across the network...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "4 hours ago"
+                },
+                {
+                    title: "DeFi TVL Surpasses $100 Billion",
+                    excerpt: "Decentralized Finance total value locked reaches new milestone as more protocols launch and user adoption accelerates globally...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "6 hours ago"
+                }
+            ],
+            bitcoin: [
+                {
+                    title: "Bitcoin Mining Difficulty Reaches Record High",
+                    excerpt: "Bitcoin network difficulty adjustment shows continued growth in mining participation and network security...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "1 hour ago"
+                },
+                {
+                    title: "Major Corporation Adds Bitcoin to Treasury",
+                    excerpt: "Another Fortune 500 company announces Bitcoin treasury allocation as corporate adoption trend continues...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "3 hours ago"
+                }
+            ],
+            ethereum: [
+                {
+                    title: "Ethereum Layer 2 Solutions See Massive Growth",
+                    excerpt: "Layer 2 scaling solutions experience unprecedented transaction volume as users seek lower fees...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "2 hours ago"
+                },
+                {
+                    title: "New Ethereum Improvement Proposal Approved",
+                    excerpt: "Latest EIP promises to further optimize network efficiency and reduce transaction costs...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "5 hours ago"
+                }
+            ],
+            defi: [
+                {
+                    title: "New DeFi Protocol Launches with $50M TVL",
+                    excerpt: "Innovative decentralized finance protocol attracts significant liquidity on launch day...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "1 hour ago"
+                },
+                {
+                    title: "Yield Farming Strategies Evolve",
+                    excerpt: "DeFi users adopt new sophisticated strategies for maximizing returns while managing risks...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "4 hours ago"
+                }
+            ],
+            nft: [
+                {
+                    title: "NFT Market Shows Signs of Recovery",
+                    excerpt: "Non-fungible token trading volumes increase as new utility-focused projects gain traction...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "3 hours ago"
+                },
+                {
+                    title: "Major Brand Launches NFT Collection",
+                    excerpt: "Global brand enters NFT space with innovative digital collectibles and real-world utility...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "6 hours ago"
+                }
+            ]
+        };
+
+        return newsTopics[this.currentNewsSource] || newsTopics.general;
+    }
+
+    renderNews(news) {
+        const container = document.getElementById('newsGrid');
+        if (!container) return;
+
+        container.innerHTML = news.map(article => `
+            <div class="news-card" onclick="window.open('${article.link}', '_blank')">
+                <div class="news-image" style="background-image: url('${article.image}')"></div>
+                <div class="news-content">
+                    <h3 class="news-title">${article.title}</h3>
+                    <p class="news-excerpt">${article.excerpt}</p>
+                    <div class="news-meta">
+                        <span>${article.date}</span>
+                        <a href="${article.link}" class="read-more" target="_blank" onclick="event.stopPropagation()">Read more</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    selectNewsSource(source) {
+        this.currentNewsSource = source;
+        
+        // Update UI
+        document.querySelectorAll('.news-source-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        const activeBtn = document.querySelector(`[data-source="${source}"]`);
+        if (activeBtn) {
+            activeBtn.classList.add('active');
+        }
+        
+        // Update news
+        this.updateNews();
+        
+        // Save preference
+        localStorage.setItem('gasnow-news-source', source);
+    }
+
     initializeCharts() {
         // Only try to initialize charts if Chart.js is available
         if (typeof Chart !== 'undefined') {
@@ -590,8 +755,8 @@ class GasNowApp {
     selectBlockchain(blockchain) {
         this.currentBlockchain = blockchain;
         
-        // Update UI
-        document.querySelectorAll('.blockchain-btn').forEach(btn => {
+        // Update UI - crypto prices
+        document.querySelectorAll('.crypto-price').forEach(btn => {
             btn.classList.remove('active');
         });
         const activeBtn = document.querySelector(`[data-blockchain="${blockchain}"]`);
@@ -621,6 +786,40 @@ class GasNowApp {
                 this.updateMarketData();
             }
         }, this.updateInterval * 10);
+
+        // Update news every 30 minutes
+        setInterval(() => {
+            if (!this.isLoading) {
+                this.updateNews();
+            }
+        }, this.updateInterval * 60);
+    }
+
+    async fetchWithCache(url, cacheTime = 300000) {
+        const cacheKey = url;
+        const cached = this.cache.get(cacheKey);
+        
+        if (cached && Date.now() - cached.timestamp < cacheTime) {
+            return cached.data;
+        }
+
+        try {
+            const response = await fetch(url, { timeout: 10000 });
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            
+            const data = await response.json();
+            this.cache.set(cacheKey, {
+                data,
+                timestamp: Date.now()
+            });
+            
+            return data;
+        } catch (error) {
+            console.error(`Fetch error for ${url}:`, error);
+            throw error;
+        }
     }
 
     showLoading() {
@@ -673,6 +872,9 @@ class GasNowApp {
             altStatusElement.textContent = 'Neutral';
             altStatusElement.className = 'altseason-status neutral';
         }
+
+        // Set basic news
+        this.renderNews(this.generateMockNews());
     }
 
     formatPrice(price) {
