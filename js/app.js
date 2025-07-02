@@ -92,6 +92,7 @@ class GasNowApp {
                 this.updateCryptoPrices(),
                 this.updateGasPrices(),
                 this.updateMarketData(),
+                this.updateTrendingTokens(),
                 this.updateNews()
             ]);
             
@@ -141,10 +142,10 @@ class GasNowApp {
         if (!container) return;
 
         const cryptos = [
-            { id: 'ethereum', symbol: 'ETH', blockchain: 'ethereum' },
-            { id: 'bitcoin', symbol: 'BTC', blockchain: 'bitcoin' },
-            { id: 'solana', symbol: 'SOL', blockchain: 'solana' },
-            { id: 'the-open-network', symbol: 'TON', blockchain: 'ton' }
+            { id: 'ethereum', symbol: 'ETH', blockchain: 'ethereum', logo: 'https://cryptologos.cc/logos/ethereum-eth-logo.png' },
+            { id: 'bitcoin', symbol: 'BTC', blockchain: 'bitcoin', logo: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' },
+            { id: 'solana', symbol: 'SOL', blockchain: 'solana', logo: 'https://cryptologos.cc/logos/solana-sol-logo.png' },
+            { id: 'the-open-network', symbol: 'TON', blockchain: 'ton', logo: 'https://cryptologos.cc/logos/toncoin-ton-logo.png' }
         ];
 
         container.innerHTML = cryptos.map(crypto => {
@@ -153,9 +154,12 @@ class GasNowApp {
             const changeClass = change >= 0 ? 'positive' : 'negative';
             const isActive = this.currentBlockchain === crypto.blockchain ? 'active' : '';
             
+            // Fallback SVG for each crypto
+            const fallbackSvg = this.getCryptoFallbackSvg(crypto.symbol);
+            
             return `
                 <div class="crypto-price ${isActive}" data-blockchain="${crypto.blockchain}" onclick="window.gasNowApp?.selectBlockchain('${crypto.blockchain}')">
-                    <img src="images/${crypto.blockchain === 'solana' ? 'sol' : crypto.blockchain === 'the-open-network' ? 'ton' : crypto.blockchain}-icon.png" alt="${crypto.symbol}" onerror="this.style.display='none'">
+                    <img src="${crypto.logo}" alt="${crypto.symbol}" onerror="this.src='${fallbackSvg}'">
                     <div class="crypto-price-info">
                         <div class="crypto-price-value">${crypto.symbol}: $${this.formatPrice(price)}</div>
                         <div class="crypto-price-change ${changeClass}">${change >= 0 ? '+' : ''}${change.toFixed(2)}%</div>
@@ -163,6 +167,16 @@ class GasNowApp {
                 </div>
             `;
         }).join('');
+    }
+
+    getCryptoFallbackSvg(symbol) {
+        const svgs = {
+            'ETH': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxNCIgcj0iMTQiIGZpbGw9IiMzQzNDM0QiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI2IiB5PSI2Ij4KPHBhdGggZD0iTTggMUw4IDZMMTMgOEw4IDEwTDggMTVMMyA4TDggMVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K',
+            'BTC': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxNCIgcj0iMTQiIGZpbGw9IiNGNzkzMUEiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI2IiB5PSI2Ij4KPHBhdGggZD0iTTggMkM0LjY5IDIgMiA0LjY5IDIgOFM0LjY5IDE0IDggMTRTMTQgMTEuMzEgMTQgOFMxMS4zMSAyIDggMlpNMTAuNSA5SDlWMTBIOC41VjlINy41VjhIOC41VjdIOVY4SDEwLjVWOVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K',
+            'SOL': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxNCIgcj0iMTQiIGZpbGw9IiM5OTQ1RkYiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI2IiB5PSI2Ij4KPHBhdGggZD0iTTMgMTJMMTMgMkwxMyA2TDMgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9zdmc+Cg==',
+            'TON': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxNCIgcj0iMTQiIGZpbGw9IiMwMDg4Q0MiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI2IiB5PSI2Ij4KPHBhdGggZD0iTTggMkM0LjY5IDIgMiA0LjY5IDIgOFM0LjY5IDE0IDggMTRTMTQgMTEuMzEgMTQgOFMxMS4zMSAyIDggMlpNMTAuNSA5SDlWMTBIOC41VjlINy41VjhIOC41VjdIOVY4SDEwLjVWOVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K'
+        };
+        return svgs[symbol] || svgs['ETH'];
     }
 
     renderCryptoPricesError() {
@@ -230,12 +244,18 @@ class GasNowApp {
             const usdElement = document.getElementById(`${speed}Usd`);
             
             if (priceElement && unitElement && usdElement) {
-                // Fix: Ensure we always have a valid value for standard
-                const gasValue = gasData[speed];
-                if (gasValue !== undefined && gasValue !== null && gasValue !== 0) {
+                let gasValue = gasData[speed];
+                
+                // Fix: If standard is null, undefined, or 0, use slow value
+                if (speed === 'standard' && (gasValue === null || gasValue === undefined || gasValue === 0)) {
+                    gasValue = gasData.slow || 10; // Use slow value or fallback to 10
+                    console.log(`⚠️ Standard gas price was ${gasData[speed]}, using slow value: ${gasValue}`);
+                }
+                
+                if (gasValue !== undefined && gasValue !== null) {
                     priceElement.textContent = this.formatGasPrice(gasValue);
                 } else {
-                    // Fallback values if standard is missing
+                    // Final fallback values if everything fails
                     const fallbackValues = { slow: 10, standard: 15, fast: 25 };
                     priceElement.textContent = this.formatGasPrice(fallbackValues[speed]);
                 }
@@ -262,26 +282,26 @@ class GasNowApp {
                 const gasLimit = 21000;
                 return {
                     slowUsd: (gasData.slow / 1000000000) * gasLimit * tokenPrice,
-                    standardUsd: (gasData.standard / 1000000000) * gasLimit * tokenPrice,
+                    standardUsd: ((gasData.standard || gasData.slow) / 1000000000) * gasLimit * tokenPrice, // Use slow if standard is null
                     fastUsd: (gasData.fast / 1000000000) * gasLimit * tokenPrice
                 };
             } else if (this.currentBlockchain === 'bitcoin') {
                 const avgTxSize = 250;
                 return {
                     slowUsd: (gasData.slow * avgTxSize / 100000000) * tokenPrice,
-                    standardUsd: (gasData.standard * avgTxSize / 100000000) * tokenPrice,
+                    standardUsd: ((gasData.standard || gasData.slow) * avgTxSize / 100000000) * tokenPrice,
                     fastUsd: (gasData.fast * avgTxSize / 100000000) * tokenPrice
                 };
             } else if (this.currentBlockchain === 'solana') {
                 return {
                     slowUsd: gasData.slow * tokenPrice,
-                    standardUsd: gasData.standard * tokenPrice,
+                    standardUsd: (gasData.standard || gasData.slow) * tokenPrice,
                     fastUsd: gasData.fast * tokenPrice
                 };
             } else {
                 return {
                     slowUsd: gasData.slow * tokenPrice,
-                    standardUsd: gasData.standard * tokenPrice,
+                    standardUsd: (gasData.standard || gasData.slow) * tokenPrice,
                     fastUsd: gasData.fast * tokenPrice
                 };
             }
@@ -480,6 +500,82 @@ class GasNowApp {
             statusElement.textContent = status;
             statusElement.className = `altseason-status ${statusClass}`;
         }
+    }
+
+    async updateTrendingTokens() {
+        try {
+            console.log('🔥 Updating trending tokens...');
+            
+            // Mock trending tokens data
+            const trendingTokens = [
+                { name: 'Bitcoin', symbol: 'BTC', price: 106605, change: -1.04, logo: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' },
+                { name: 'Ethereum', symbol: 'ETH', price: 2442, change: -1.04, logo: 'https://cryptologos.cc/logos/ethereum-eth-logo.png' },
+                { name: 'Solana', symbol: 'SOL', price: 148, change: -2.21, logo: 'https://cryptologos.cc/logos/solana-sol-logo.png' },
+                { name: 'Cardano', symbol: 'ADA', price: 0.89, change: 3.45, logo: 'https://cryptologos.cc/logos/cardano-ada-logo.png' },
+                { name: 'Polkadot', symbol: 'DOT', price: 7.23, change: 1.87, logo: 'https://cryptologos.cc/logos/polkadot-new-dot-logo.png' }
+            ];
+
+            const highestGains = [
+                { name: 'Chainlink', symbol: 'LINK', price: 28.45, change: 12.34, logo: 'https://cryptologos.cc/logos/chainlink-link-logo.png' },
+                { name: 'Polygon', symbol: 'MATIC', price: 0.89, change: 8.76, logo: 'https://cryptologos.cc/logos/polygon-matic-logo.png' },
+                { name: 'Avalanche', symbol: 'AVAX', price: 45.67, change: 6.23, logo: 'https://cryptologos.cc/logos/avalanche-avax-logo.png' },
+                { name: 'Uniswap', symbol: 'UNI', price: 12.34, change: 5.67, logo: 'https://cryptologos.cc/logos/uniswap-uni-logo.png' },
+                { name: 'Cosmos', symbol: 'ATOM', price: 8.91, change: 4.32, logo: 'https://cryptologos.cc/logos/cosmos-atom-logo.png' }
+            ];
+
+            this.renderTrendingTokens(trendingTokens);
+            this.renderHighestGains(highestGains);
+            
+            console.log('✅ Trending tokens updated');
+        } catch (error) {
+            console.error('❌ Error updating trending tokens:', error);
+        }
+    }
+
+    renderTrendingTokens(tokens) {
+        const container = document.getElementById('trendingTokens');
+        if (!container) return;
+
+        container.innerHTML = tokens.map(token => `
+            <div class="token-item">
+                <div class="token-info">
+                    <img src="${token.logo}" alt="${token.symbol}" class="token-icon" onerror="this.style.display='none'">
+                    <div class="token-details">
+                        <h4>${token.name}</h4>
+                        <p>${token.symbol}</p>
+                    </div>
+                </div>
+                <div class="token-stats">
+                    <div class="token-price">$${this.formatPrice(token.price)}</div>
+                    <div class="token-change ${token.change >= 0 ? 'positive' : 'negative'}">
+                        ${token.change >= 0 ? '+' : ''}${token.change.toFixed(2)}%
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    renderHighestGains(tokens) {
+        const container = document.getElementById('highestGains');
+        if (!container) return;
+
+        container.innerHTML = tokens.map(token => `
+            <div class="token-item">
+                <div class="token-info">
+                    <img src="${token.logo}" alt="${token.symbol}" class="token-icon" onerror="this.style.display='none'">
+                    <div class="token-details">
+                        <h4>${token.name}</h4>
+                        <p>${token.symbol}</p>
+                    </div>
+                </div>
+                <div class="token-stats">
+                    <div class="token-price">$${this.formatPrice(token.price)}</div>
+                    <div class="token-change positive">
+                        +${token.change.toFixed(2)}%
+                    </div>
+                </div>
+            </div>
+        `).join('');
     }
 
     async updateNews() {
@@ -784,6 +880,7 @@ class GasNowApp {
         setInterval(() => {
             if (!this.isLoading) {
                 this.updateMarketData();
+                this.updateTrendingTokens();
             }
         }, this.updateInterval * 10);
 
@@ -875,6 +972,9 @@ class GasNowApp {
 
         // Set basic news
         this.renderNews(this.generateMockNews());
+        
+        // Set basic trending tokens
+        this.updateTrendingTokens();
     }
 
     formatPrice(price) {
