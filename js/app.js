@@ -142,10 +142,10 @@ class GasNowApp {
         if (!container) return;
 
         const cryptos = [
-            { id: 'ethereum', symbol: 'ETH', blockchain: 'ethereum', logo: 'https://cryptologos.cc/logos/ethereum-eth-logo.png' },
-            { id: 'bitcoin', symbol: 'BTC', blockchain: 'bitcoin', logo: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' },
-            { id: 'solana', symbol: 'SOL', blockchain: 'solana', logo: 'https://cryptologos.cc/logos/solana-sol-logo.png' },
-            { id: 'the-open-network', symbol: 'TON', blockchain: 'ton', logo: 'https://cryptologos.cc/logos/toncoin-ton-logo.png' }
+            { id: 'ethereum', symbol: 'ETH', blockchain: 'ethereum', logo: 'images/eth-icon.png', fallback: 'https://cryptologos.cc/logos/ethereum-eth-logo.png' },
+            { id: 'bitcoin', symbol: 'BTC', blockchain: 'bitcoin', logo: 'images/btc-icon.png', fallback: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' },
+            { id: 'solana', symbol: 'SOL', blockchain: 'solana', logo: 'images/sol-icon.png', fallback: 'https://cryptologos.cc/logos/solana-sol-logo.png' },
+            { id: 'the-open-network', symbol: 'TON', blockchain: 'ton', logo: 'images/ton-icon.png', fallback: 'https://cryptologos.cc/logos/toncoin-ton-logo.png' }
         ];
 
         container.innerHTML = cryptos.map(crypto => {
@@ -154,12 +154,9 @@ class GasNowApp {
             const changeClass = change >= 0 ? 'positive' : 'negative';
             const isActive = this.currentBlockchain === crypto.blockchain ? 'active' : '';
             
-            // Fallback SVG for each crypto
-            const fallbackSvg = this.getCryptoFallbackSvg(crypto.symbol);
-            
             return `
                 <div class="crypto-price ${isActive}" data-blockchain="${crypto.blockchain}" onclick="window.gasNowApp?.selectBlockchain('${crypto.blockchain}')">
-                    <img src="${crypto.logo}" alt="${crypto.symbol}" onerror="this.src='${fallbackSvg}'">
+                    <img src="${crypto.logo}" alt="${crypto.symbol}" onerror="this.src='${crypto.fallback}'">
                     <div class="crypto-price-info">
                         <div class="crypto-price-value">$${this.formatPrice(price)}</div>
                         <div class="crypto-price-change ${changeClass}">${change >= 0 ? '+' : ''}${change.toFixed(2)}%</div>
@@ -167,16 +164,6 @@ class GasNowApp {
                 </div>
             `;
         }).join('');
-    }
-
-    getCryptoFallbackSvg(symbol) {
-        const svgs = {
-            'ETH': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiMzQzNDM0QiLz4KPHBhdGggZD0iTTEyIDNMMTIgOUwxOCAxMkwxMiAxNUwxMiAyMUw2IDEyTDEyIDNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K',
-            'BTC': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiNGNzkzMUEiLz4KPHBhdGggZD0iTTEyIDNDNy4wMyAzIDMgNy4wMyAzIDEyUzcuMDMgMjEgMTIgMjFTMjEgMTYuOTcgMjEgMTJTMTYuOTcgMyAxMiAzWk0xNS41IDEzSDEzVjE1SDEyVjEzSDEwVjEySDEyVjEwSDEzVjEySDE1LjVWMTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K',
-            'SOL': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiM5OTQ1RkYiLz4KPHBhdGggZD0iTTUgMTdMMTkgM0wxOSA5TDUgMTdaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K',
-            'TON': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiMwMDg4Q0MiLz4KPHBhdGggZD0iTTEyIDNDNy4wMyAzIDMgNy4wMyAzIDEyUzcuMDMgMjEgMTIgMjFTMjEgMTYuOTcgMjEgMTJTMTYuOTcgMyAxMiAzWk0xNS5zIDEzSDEzVjE1SDEyVjEzSDEwVjEySDEyVjEwSDEzVjEySDEzLjVWMTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'
-        };
-        return svgs[symbol] || svgs['ETH'];
     }
 
     renderCryptoPricesError() {
@@ -386,6 +373,9 @@ class GasNowApp {
             this.renderMarketCap(marketCap);
             this.renderFearGreed(fearGreed);
             this.renderAltseason(altseason);
+            
+            // Try to initialize charts
+            this.initializeCharts();
             
             console.log('✅ Market data updated');
         } catch (error) {
@@ -730,6 +720,104 @@ class GasNowApp {
         
         // Save preference
         localStorage.setItem('gasnow-news-source', source);
+    }
+
+    initializeCharts() {
+        // Only try to initialize charts if Chart.js is available
+        if (typeof Chart !== 'undefined') {
+            this.initializeMarketCapChart();
+        } else {
+            console.warn('Chart.js not available, skipping chart initialization');
+            const fallback = document.getElementById('chartFallback');
+            if (fallback) {
+                fallback.textContent = 'Chart unavailable';
+            }
+        }
+    }
+
+    async initializeMarketCapChart() {
+        try {
+            const canvas = document.getElementById('marketCapChart');
+            if (!canvas) return;
+
+            // Hide fallback text
+            const fallback = document.getElementById('chartFallback');
+            if (fallback) {
+                fallback.style.display = 'none';
+            }
+
+            // Generate simple mock data for the chart
+            const now = Date.now();
+            const days = 7;
+            const labels = [];
+            const data = [];
+            
+            for (let i = days - 1; i >= 0; i--) {
+                const date = new Date(now - (i * 24 * 60 * 60 * 1000));
+                labels.push(date.toLocaleDateString());
+                data.push(2500000000000 + (Math.random() - 0.5) * 200000000000);
+            }
+
+            const ctx = canvas.getContext('2d');
+
+            // Destroy existing chart
+            if (this.charts.marketCap) {
+                this.charts.marketCap.destroy();
+            }
+
+            this.charts.marketCap = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Market Cap',
+                        data: data,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: (value) => '$' + this.formatLargeNumber(value),
+                                color: '#64748b'
+                            },
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#64748b'
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            console.log('✅ Market cap chart initialized');
+        } catch (error) {
+            console.error('❌ Error initializing market cap chart:', error);
+            const fallback = document.getElementById('chartFallback');
+            if (fallback) {
+                fallback.textContent = 'Chart error';
+                fallback.style.display = 'block';
+            }
+        }
     }
 
     updateChartsTheme() {

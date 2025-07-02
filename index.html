@@ -315,7 +315,7 @@
 
         .market-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 1rem;
             margin-bottom: 1rem;
         }
@@ -335,6 +335,10 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
+        .market-card.main-chart {
+            grid-row: span 1;
+        }
+
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -347,6 +351,46 @@
             font-weight: 600;
             color: #f8fafc;
             margin: 0;
+        }
+
+        .market-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .stat-value.positive { color: #10b981; }
+        .stat-value.negative { color: #ef4444; }
+
+        .chart-container {
+            height: 200px;
+            position: relative;
+            background: #1e293b;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
         }
 
         .info-icon {
@@ -492,7 +536,6 @@
             border-radius: 0.75rem;
             padding: 1.25rem;
             transition: all 0.3s ease-in-out;
-            min-height: 200px;
         }
 
         .token-list-card:hover {
@@ -504,8 +547,6 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
-            max-height: 160px;
-            overflow-y: auto;
         }
 
         .token-item {
@@ -814,6 +855,17 @@
         }
 
         /* Responsive */
+        @media (max-width: 1200px) {
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .market-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -887,28 +939,28 @@
                 
                 <div class="crypto-prices" id="cryptoPrices">
                     <div class="crypto-price active" data-blockchain="ethereum" onclick="window.gasNowApp?.selectBlockchain('ethereum')">
-                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiMzQzNDM0QiLz4KPHBhdGggZD0iTTEyIDNMMTIgOUwxOCAxMkwxMiAxNUwxMiAyMUw2IDEyTDEyIDNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'">
+                        <img src="images/eth-icon.png" alt="ETH" onerror="this.src='https://cryptologos.cc/logos/ethereum-eth-logo.png'">
                         <div class="crypto-price-info">
                             <div class="crypto-price-value">$2,442</div>
                             <div class="crypto-price-change negative">-1.04%</div>
                         </div>
                     </div>
                     <div class="crypto-price" data-blockchain="bitcoin" onclick="window.gasNowApp?.selectBlockchain('bitcoin')">
-                        <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiNGNzkzMUEiLz4KPHBhdGggZD0iTTEyIDNDNy4wMyAzIDMgNy4wMyAzIDEyUzcuMDMgMjEgMTIgMjFTMjEgMTYuOTcgMjEgMTJTMTYuOTcgMyAxMiAzWk0xNS41IDEzSDEzVjE1SDEyVjEzSDEwVjEySDEyVjEwSDEzVjEySDE1LjVWMTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'">
+                        <img src="images/btc-icon.png" alt="BTC" onerror="this.src='https://cryptologos.cc/logos/bitcoin-btc-logo.png'">
                         <div class="crypto-price-info">
                             <div class="crypto-price-value">$106,605</div>
                             <div class="crypto-price-change negative">-1.04%</div>
                         </div>
                     </div>
                     <div class="crypto-price" data-blockchain="solana" onclick="window.gasNowApp?.selectBlockchain('solana')">
-                        <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="SOL" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiM5OTQ1RkYiLz4KPHBhdGggZD0iTTUgMTdMMTkgM0wxOSA5TDUgMTdaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'">
+                        <img src="images/sol-icon.png" alt="SOL" onerror="this.src='https://cryptologos.cc/logos/solana-sol-logo.png'">
                         <div class="crypto-price-info">
                             <div class="crypto-price-value">$148</div>
                             <div class="crypto-price-change negative">-2.21%</div>
                         </div>
                     </div>
                     <div class="crypto-price" data-blockchain="ton" onclick="window.gasNowApp?.selectBlockchain('ton')">
-                        <img src="https://cryptologos.cc/logos/toncoin-ton-logo.png" alt="TON" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiMwMDg4Q0MiLz4KPHBhdGggZD0iTTEyIDNDNy4wMyAzIDMgNy4wMyAzIDEyUzcuMDMgMjEgMTIgMjFTMjEgMTYuOTcgMjEgMTJTMTYuOTcgMyAxMiAzWk0xNS41IDEzSDEzVjE1SDEyVjEzSDEwVjEySDEyVjEwSDEzVjEySDE1LjVWMTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'">
+                        <img src="images/ton-icon.png" alt="TON" onerror="this.src='https://cryptologos.cc/logos/toncoin-ton-logo.png'">
                         <div class="crypto-price-info">
                             <div class="crypto-price-value">$2.81</div>
                             <div class="crypto-price-change negative">-3.50%</div>
@@ -930,7 +982,7 @@
                     <div class="gas-card slow" data-speed="slow">
                         <div class="gas-card-header">
                             <h3>Slow</h3>
-                            <i class="fas fa-turtle gas-icon"></i>
+                            <img src="images/turtle.png" alt="Slow" class="gas-icon" onerror="this.style.display='none'">
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -947,7 +999,7 @@
                     <div class="gas-card standard featured" data-speed="standard">
                         <div class="gas-card-header">
                             <h3>Standard</h3>
-                            <i class="fas fa-tachometer-alt gas-icon"></i>
+                            <img src="images/speed.png" alt="Standard" class="gas-icon" onerror="this.style.display='none'">
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -964,7 +1016,7 @@
                     <div class="gas-card fast" data-speed="fast">
                         <div class="gas-card-header">
                             <h3>Fast</h3>
-                            <i class="fas fa-rocket gas-icon"></i>
+                            <img src="images/rocket.png" alt="Fast" class="gas-icon" onerror="this.style.display='none'">
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -987,6 +1039,31 @@
                 </div>
                 
                 <div class="market-grid">
+                    <!-- Global Market Cap Chart -->
+                    <div class="market-card main-chart">
+                        <div class="card-header">
+                            <h3>Global Market Cap</h3>
+                            <div class="market-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Total Market Cap</span>
+                                    <span class="stat-value" id="totalMarketCap">$2.50T</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">24h Change</span>
+                                    <span class="stat-value positive" id="marketCapChange">+1.50%</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">24h Volume</span>
+                                    <span class="stat-value" id="totalVolume">$80.00B</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="marketCapChart"></canvas>
+                            <div id="chartFallback">Chart loading...</div>
+                        </div>
+                    </div>
+
                     <!-- Fear & Greed Index -->
                     <div class="market-card">
                         <div class="card-header">
