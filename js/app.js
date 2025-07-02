@@ -161,7 +161,7 @@ class GasNowApp {
                 <div class="crypto-price ${isActive}" data-blockchain="${crypto.blockchain}" onclick="window.gasNowApp?.selectBlockchain('${crypto.blockchain}')">
                     <img src="${crypto.logo}" alt="${crypto.symbol}" onerror="this.src='${fallbackSvg}'">
                     <div class="crypto-price-info">
-                        <div class="crypto-price-value">${crypto.symbol}: $${this.formatPrice(price)}</div>
+                        <div class="crypto-price-value">$${this.formatPrice(price)}</div>
                         <div class="crypto-price-change ${changeClass}">${change >= 0 ? '+' : ''}${change.toFixed(2)}%</div>
                     </div>
                 </div>
@@ -171,10 +171,10 @@ class GasNowApp {
 
     getCryptoFallbackSvg(symbol) {
         const svgs = {
-            'ETH': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxNCIgcj0iMTQiIGZpbGw9IiMzQzNDM0QiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI2IiB5PSI2Ij4KPHBhdGggZD0iTTggMUw4IDZMMTMgOEw4IDEwTDggMTVMMyA4TDggMVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K',
-            'BTC': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxNCIgcj0iMTQiIGZpbGw9IiNGNzkzMUEiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI2IiB5PSI2Ij4KPHBhdGggZD0iTTggMkM0LjY5IDIgMiA0LjY5IDIgOFM0LjY5IDE0IDggMTRTMTQgMTEuMzEgMTQgOFMxMS4zMSAyIDggMlpNMTAuNSA5SDlWMTBIOC41VjlINy41VjhIOC41VjdIOVY4SDEwLjVWOVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K',
-            'SOL': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxNCIgcj0iMTQiIGZpbGw9IiM5OTQ1RkYiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI2IiB5PSI2Ij4KPHBhdGggZD0iTTMgMTJMMTMgMkwxMyA2TDMgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9zdmc+Cg==',
-            'TON': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTQiIGN5PSIxNCIgcj0iMTQiIGZpbGw9IiMwMDg4Q0MiLz4KPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI2IiB5PSI2Ij4KPHBhdGggZD0iTTggMkM0LjY5IDIgMiA0LjY5IDIgOFM0LjY5IDE0IDggMTRTMTQgMTEuMzEgMTQgOFMxMS4zMSAyIDggMlpNMTAuNSA5SDlWMTBIOC41VjlINy41VjhIOC41VjdIOVY4SDEwLjVWOVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K'
+            'ETH': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiMzQzNDM0QiLz4KPHBhdGggZD0iTTEyIDNMMTIgOUwxOCAxMkwxMiAxNUwxMiAyMUw2IDEyTDEyIDNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K',
+            'BTC': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiNGNzkzMUEiLz4KPHBhdGggZD0iTTEyIDNDNy4wMyAzIDMgNy4wMyAzIDEyUzcuMDMgMjEgMTIgMjFTMjEgMTYuOTcgMjEgMTJTMTYuOTcgMyAxMiAzWk0xNS41IDEzSDEzVjE1SDEyVjEzSDEwVjEySDEyVjEwSDEzVjEySDE1LjVWMTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K',
+            'SOL': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiM5OTQ1RkYiLz4KPHBhdGggZD0iTTUgMTdMMTkgM0wxOSA5TDUgMTdaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K',
+            'TON': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiMwMDg4Q0MiLz4KPHBhdGggZD0iTTEyIDNDNy4wMyAzIDMgNy4wMyAzIDEyUzcuMDMgMjEgMTIgMjFTMjEgMTYuOTcgMjEgMTJTMTYuOTcgMyAxMiAzWk0xNS5zIDEzSDEzVjE1SDEyVjEzSDEwVjEySDEyVjEwSDEzVjEySDEzLjVWMTNaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'
         };
         return svgs[symbol] || svgs['ETH'];
     }
@@ -387,9 +387,6 @@ class GasNowApp {
             this.renderFearGreed(fearGreed);
             this.renderAltseason(altseason);
             
-            // Try to initialize charts
-            this.initializeCharts();
-            
             console.log('✅ Market data updated');
         } catch (error) {
             console.error('❌ Error updating market data:', error);
@@ -452,7 +449,7 @@ class GasNowApp {
             // Draw background arc
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, Math.PI, 2 * Math.PI);
-            ctx.lineWidth = 20;
+            ctx.lineWidth = 15;
             ctx.strokeStyle = '#334155';
             ctx.stroke();
 
@@ -460,7 +457,7 @@ class GasNowApp {
             const angle = Math.PI + (value / 100) * Math.PI;
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, Math.PI, angle);
-            ctx.lineWidth = 20;
+            ctx.lineWidth = 15;
             
             // Color based on value
             if (value <= 20) ctx.strokeStyle = '#ef4444';
@@ -499,6 +496,12 @@ class GasNowApp {
 
             statusElement.textContent = status;
             statusElement.className = `altseason-status ${statusClass}`;
+
+            // Update progress bar
+            const progressFill = document.querySelector('.altseason-progress .progress-fill');
+            if (progressFill) {
+                progressFill.style.width = `${value}%`;
+            }
         }
     }
 
@@ -506,25 +509,21 @@ class GasNowApp {
         try {
             console.log('🔥 Updating trending tokens...');
             
-            // Mock trending tokens data
+            // Mock trending tokens data matching the original design
             const trendingTokens = [
-                { name: 'Bitcoin', symbol: 'BTC', price: 106605, change: -1.04, logo: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' },
-                { name: 'Ethereum', symbol: 'ETH', price: 2442, change: -1.04, logo: 'https://cryptologos.cc/logos/ethereum-eth-logo.png' },
-                { name: 'Solana', symbol: 'SOL', price: 148, change: -2.21, logo: 'https://cryptologos.cc/logos/solana-sol-logo.png' },
-                { name: 'Cardano', symbol: 'ADA', price: 0.89, change: 3.45, logo: 'https://cryptologos.cc/logos/cardano-ada-logo.png' },
-                { name: 'Polkadot', symbol: 'DOT', price: 7.23, change: 1.87, logo: 'https://cryptologos.cc/logos/polkadot-new-dot-logo.png' }
+                { name: 'Toncoin', symbol: 'TON', price: 2.89, change: 3.35, logo: 'https://cryptologos.cc/logos/toncoin-ton-logo.png' },
+                { name: 'Jupiter', symbol: 'JUP', price: 0.46, change: 7.14, logo: 'https://cryptologos.cc/logos/jupiter-jup-logo.png' },
+                { name: 'Pudgy Penguins', symbol: 'PENGU', price: 0.02, change: 5.76, logo: 'https://cryptologos.cc/logos/pudgy-penguins-pengu-logo.png' }
             ];
 
-            const highestGains = [
-                { name: 'Chainlink', symbol: 'LINK', price: 28.45, change: 12.34, logo: 'https://cryptologos.cc/logos/chainlink-link-logo.png' },
-                { name: 'Polygon', symbol: 'MATIC', price: 0.89, change: 8.76, logo: 'https://cryptologos.cc/logos/polygon-matic-logo.png' },
-                { name: 'Avalanche', symbol: 'AVAX', price: 45.67, change: 6.23, logo: 'https://cryptologos.cc/logos/avalanche-avax-logo.png' },
-                { name: 'Uniswap', symbol: 'UNI', price: 12.34, change: 5.67, logo: 'https://cryptologos.cc/logos/uniswap-uni-logo.png' },
-                { name: 'Cosmos', symbol: 'ATOM', price: 8.91, change: 4.32, logo: 'https://cryptologos.cc/logos/cosmos-atom-logo.png' }
+            const largestGainers = [
+                { name: 'Useless Coin', symbol: 'USELESS', price: 0.27, change: 26.34, logo: 'https://cryptologos.cc/logos/useless-useless-logo.png' },
+                { name: 'Keeta', symbol: 'KTA', price: 0.65, change: 20.29, logo: 'https://cryptologos.cc/logos/keeta-kta-logo.png' },
+                { name: 'Flume', symbol: 'FLUME', price: 0.11, change: 19.08, logo: 'https://cryptologos.cc/logos/flume-flume-logo.png' }
             ];
 
             this.renderTrendingTokens(trendingTokens);
-            this.renderHighestGains(highestGains);
+            this.renderLargestGainers(largestGainers);
             
             console.log('✅ Trending tokens updated');
         } catch (error) {
@@ -555,8 +554,8 @@ class GasNowApp {
         `).join('');
     }
 
-    renderHighestGains(tokens) {
-        const container = document.getElementById('highestGains');
+    renderLargestGainers(tokens) {
+        const container = document.getElementById('largestGainers');
         if (!container) return;
 
         container.innerHTML = tokens.map(token => `
@@ -731,104 +730,6 @@ class GasNowApp {
         
         // Save preference
         localStorage.setItem('gasnow-news-source', source);
-    }
-
-    initializeCharts() {
-        // Only try to initialize charts if Chart.js is available
-        if (typeof Chart !== 'undefined') {
-            this.initializeMarketCapChart();
-        } else {
-            console.warn('Chart.js not available, skipping chart initialization');
-            const fallback = document.getElementById('chartFallback');
-            if (fallback) {
-                fallback.textContent = 'Chart unavailable';
-            }
-        }
-    }
-
-    async initializeMarketCapChart() {
-        try {
-            const canvas = document.getElementById('marketCapChart');
-            if (!canvas) return;
-
-            // Hide fallback text
-            const fallback = document.getElementById('chartFallback');
-            if (fallback) {
-                fallback.style.display = 'none';
-            }
-
-            // Generate simple mock data for the chart
-            const now = Date.now();
-            const days = 7;
-            const labels = [];
-            const data = [];
-            
-            for (let i = days - 1; i >= 0; i--) {
-                const date = new Date(now - (i * 24 * 60 * 60 * 1000));
-                labels.push(date.toLocaleDateString());
-                data.push(2500000000000 + (Math.random() - 0.5) * 200000000000);
-            }
-
-            const ctx = canvas.getContext('2d');
-
-            // Destroy existing chart
-            if (this.charts.marketCap) {
-                this.charts.marketCap.destroy();
-            }
-
-            this.charts.marketCap = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Market Cap',
-                        data: data,
-                        borderColor: '#3b82f6',
-                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                        borderWidth: 2,
-                        fill: true,
-                        tension: 0.4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            ticks: {
-                                callback: (value) => '$' + this.formatLargeNumber(value),
-                                color: '#64748b'
-                            },
-                            grid: {
-                                color: 'rgba(148, 163, 184, 0.1)'
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                color: '#64748b'
-                            },
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-            
-            console.log('✅ Market cap chart initialized');
-        } catch (error) {
-            console.error('❌ Error initializing market cap chart:', error);
-            const fallback = document.getElementById('chartFallback');
-            if (fallback) {
-                fallback.textContent = 'Chart error';
-                fallback.style.display = 'block';
-            }
-        }
     }
 
     updateChartsTheme() {
