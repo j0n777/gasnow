@@ -9,13 +9,56 @@ class GasNowApp {
         this.retryAttempts = new Map();
         this.maxRetries = 3;
         
-        // News sources configuration
+        // Enhanced news sources configuration with RSS feeds
         this.newsSources = {
-            general: { name: 'General Crypto', category: 'cryptocurrency' },
-            bitcoin: { name: 'Bitcoin News', category: 'bitcoin' },
-            ethereum: { name: 'Ethereum News', category: 'ethereum' },
-            defi: { name: 'DeFi News', category: 'defi' },
-            nft: { name: 'NFT News', category: 'nft' }
+            general: { 
+                name: 'General Crypto', 
+                category: 'cryptocurrency',
+                feeds: [
+                    'https://cointelegraph.com/rss',
+                    'https://coindesk.com/arc/outboundfeeds/rss/',
+                    'https://decrypt.co/feed'
+                ]
+            },
+            bitcoin: { 
+                name: 'Bitcoin News', 
+                category: 'bitcoin',
+                feeds: [
+                    'https://bitcoinmagazine.com/.rss/full/',
+                    'https://cointelegraph.com/rss/tag/bitcoin'
+                ]
+            },
+            ethereum: { 
+                name: 'Ethereum News', 
+                category: 'ethereum',
+                feeds: [
+                    'https://cointelegraph.com/rss/tag/ethereum',
+                    'https://ethereum.org/en/blog/feed.xml'
+                ]
+            },
+            defi: { 
+                name: 'DeFi News', 
+                category: 'defi',
+                feeds: [
+                    'https://cointelegraph.com/rss/tag/defi',
+                    'https://thedefiant.io/feed/'
+                ]
+            },
+            nft: { 
+                name: 'NFT News', 
+                category: 'nft',
+                feeds: [
+                    'https://cointelegraph.com/rss/tag/nft',
+                    'https://nftnow.com/feed/'
+                ]
+            },
+            altcoins: { 
+                name: 'Altcoin News', 
+                category: 'altcoins',
+                feeds: [
+                    'https://cointelegraph.com/rss/tag/altcoin'
+                ]
+            }
         };
         
         this.init();
@@ -431,7 +474,7 @@ class GasNowApp {
             
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const radius = Math.min(centerX, centerY) - 10;
+            const radius = Math.min(centerX, centerY) - 15; // Increased radius for larger arc
 
             // Clear canvas
             ctx.clearRect(0, 0, rect.width, rect.height);
@@ -439,7 +482,7 @@ class GasNowApp {
             // Draw background arc
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, Math.PI, 2 * Math.PI);
-            ctx.lineWidth = 15;
+            ctx.lineWidth = 20; // Increased line width for larger arc
             ctx.strokeStyle = '#334155';
             ctx.stroke();
 
@@ -447,7 +490,7 @@ class GasNowApp {
             const angle = Math.PI + (value / 100) * Math.PI;
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, Math.PI, angle);
-            ctx.lineWidth = 15;
+            ctx.lineWidth = 20; // Increased line width for larger arc
             
             // Color based on value
             if (value <= 20) ctx.strokeStyle = '#ef4444';
@@ -499,17 +542,59 @@ class GasNowApp {
         try {
             console.log('🔥 Updating trending tokens...');
             
-            // Mock trending tokens data matching the original design
+            // Enhanced trending tokens data with proper logos
             const trendingTokens = [
-                { name: 'Toncoin', symbol: 'TON', price: 2.89, change: 3.35, logo: 'https://cryptologos.cc/logos/toncoin-ton-logo.png' },
-                { name: 'Jupiter', symbol: 'JUP', price: 0.46, change: 7.14, logo: 'https://cryptologos.cc/logos/jupiter-jup-logo.png' },
-                { name: 'Pudgy Penguins', symbol: 'PENGU', price: 0.02, change: 5.76, logo: 'https://cryptologos.cc/logos/pudgy-penguins-pengu-logo.png' }
+                { 
+                    name: 'Toncoin', 
+                    symbol: 'TON', 
+                    price: 2.89, 
+                    change: 3.35, 
+                    logo: 'https://assets.coingecko.com/coins/images/17980/small/ton_symbol.png',
+                    fallback: 'https://cryptologos.cc/logos/toncoin-ton-logo.png'
+                },
+                { 
+                    name: 'Jupiter', 
+                    symbol: 'JUP', 
+                    price: 0.46, 
+                    change: 7.14, 
+                    logo: 'https://assets.coingecko.com/coins/images/34188/small/jup.png',
+                    fallback: 'https://cryptologos.cc/logos/jupiter-jup-logo.png'
+                },
+                { 
+                    name: 'Pudgy Penguins', 
+                    symbol: 'PENGU', 
+                    price: 0.02, 
+                    change: 5.76, 
+                    logo: 'https://assets.coingecko.com/coins/images/35718/small/pengu.png',
+                    fallback: 'https://cryptologos.cc/logos/pudgy-penguins-pengu-logo.png'
+                }
             ];
 
             const largestGainers = [
-                { name: 'Useless Coin', symbol: 'USELESS', price: 0.27, change: 26.34, logo: 'https://cryptologos.cc/logos/useless-useless-logo.png' },
-                { name: 'Keeta', symbol: 'KTA', price: 0.65, change: 20.29, logo: 'https://cryptologos.cc/logos/keeta-kta-logo.png' },
-                { name: 'Flume', symbol: 'FLUME', price: 0.11, change: 19.08, logo: 'https://cryptologos.cc/logos/flume-flume-logo.png' }
+                { 
+                    name: 'Useless Coin', 
+                    symbol: 'USELESS', 
+                    price: 0.27, 
+                    change: 26.34, 
+                    logo: 'https://assets.coingecko.com/coins/images/17430/small/useless.png',
+                    fallback: 'https://cryptologos.cc/logos/useless-useless-logo.png'
+                },
+                { 
+                    name: 'Keeta', 
+                    symbol: 'KTA', 
+                    price: 0.65, 
+                    change: 20.29, 
+                    logo: 'https://assets.coingecko.com/coins/images/32659/small/keeta.png',
+                    fallback: 'https://cryptologos.cc/logos/keeta-kta-logo.png'
+                },
+                { 
+                    name: 'Flume', 
+                    symbol: 'FLUME', 
+                    price: 0.11, 
+                    change: 19.08, 
+                    logo: 'https://assets.coingecko.com/coins/images/33847/small/flume.png',
+                    fallback: 'https://cryptologos.cc/logos/flume-flume-logo.png'
+                }
             ];
 
             this.renderTrendingTokens(trendingTokens);
@@ -528,7 +613,7 @@ class GasNowApp {
         container.innerHTML = tokens.map(token => `
             <div class="token-item">
                 <div class="token-info">
-                    <img src="${token.logo}" alt="${token.symbol}" class="token-icon" onerror="this.style.display='none'">
+                    <img src="${token.logo}" alt="${token.symbol}" class="token-icon" onerror="this.src='${token.fallback}'; this.onerror=null;">
                     <div class="token-details">
                         <h4>${token.name}</h4>
                         <p>${token.symbol}</p>
@@ -551,7 +636,7 @@ class GasNowApp {
         container.innerHTML = tokens.map(token => `
             <div class="token-item">
                 <div class="token-info">
-                    <img src="${token.logo}" alt="${token.symbol}" class="token-icon" onerror="this.style.display='none'">
+                    <img src="${token.logo}" alt="${token.symbol}" class="token-icon" onerror="this.src='${token.fallback}'; this.onerror=null;">
                     <div class="token-details">
                         <h4>${token.name}</h4>
                         <p>${token.symbol}</p>
@@ -579,104 +664,133 @@ class GasNowApp {
             }
 
             if (!news) {
-                news = this.generateMockNews();
+                news = this.generateEnhancedMockNews();
             }
 
             this.renderNews(news);
             console.log('✅ News updated');
         } catch (error) {
             console.error('❌ Error updating news:', error);
-            this.renderNews(this.generateMockNews());
+            this.renderNews(this.generateEnhancedMockNews());
         }
     }
 
-    generateMockNews() {
+    generateEnhancedMockNews() {
         const newsTopics = {
             general: [
                 {
-                    title: "Bitcoin Reaches New All-Time High",
-                    excerpt: "Bitcoin continues its bullish momentum as institutional adoption grows and regulatory clarity improves across major markets worldwide...",
+                    title: "Bitcoin Reaches New All-Time High Amid Institutional Adoption",
+                    excerpt: "Bitcoin continues its bullish momentum as institutional adoption grows and regulatory clarity improves across major markets worldwide, with several Fortune 500 companies adding BTC to their treasury reserves...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "2 hours ago"
+                    date: "2 hours ago",
+                    source: "CoinTelegraph"
                 },
                 {
-                    title: "Ethereum 2.0 Staking Rewards Increase",
-                    excerpt: "Ethereum staking rewards see significant increase following network upgrades and improved validator participation rates across the network...",
+                    title: "Ethereum 2.0 Staking Rewards Increase Following Network Upgrades",
+                    excerpt: "Ethereum staking rewards see significant increase following network upgrades and improved validator participation rates across the network, with APY reaching new highs for long-term holders...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "4 hours ago"
+                    date: "4 hours ago",
+                    source: "CoinDesk"
                 },
                 {
-                    title: "DeFi TVL Surpasses $100 Billion",
-                    excerpt: "Decentralized Finance total value locked reaches new milestone as more protocols launch and user adoption accelerates globally...",
+                    title: "DeFi TVL Surpasses $100 Billion as Protocols Expand",
+                    excerpt: "Decentralized Finance total value locked reaches new milestone as more protocols launch and user adoption accelerates globally, driven by innovative yield farming strategies...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "6 hours ago"
+                    date: "6 hours ago",
+                    source: "The Defiant"
                 }
             ],
             bitcoin: [
                 {
                     title: "Bitcoin Mining Difficulty Reaches Record High",
-                    excerpt: "Bitcoin network difficulty adjustment shows continued growth in mining participation and network security...",
+                    excerpt: "Bitcoin network difficulty adjustment shows continued growth in mining participation and network security, with hash rate hitting new all-time highs...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "1 hour ago"
+                    date: "1 hour ago",
+                    source: "Bitcoin Magazine"
                 },
                 {
-                    title: "Major Corporation Adds Bitcoin to Treasury",
-                    excerpt: "Another Fortune 500 company announces Bitcoin treasury allocation as corporate adoption trend continues...",
+                    title: "Major Corporation Adds Bitcoin to Treasury Holdings",
+                    excerpt: "Another Fortune 500 company announces Bitcoin treasury allocation as corporate adoption trend continues, following MicroStrategy's successful strategy...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "3 hours ago"
+                    date: "3 hours ago",
+                    source: "CoinTelegraph"
                 }
             ],
             ethereum: [
                 {
                     title: "Ethereum Layer 2 Solutions See Massive Growth",
-                    excerpt: "Layer 2 scaling solutions experience unprecedented transaction volume as users seek lower fees...",
+                    excerpt: "Layer 2 scaling solutions experience unprecedented transaction volume as users seek lower fees, with Arbitrum and Optimism leading the charge...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "2 hours ago"
+                    date: "2 hours ago",
+                    source: "Ethereum.org"
                 },
                 {
                     title: "New Ethereum Improvement Proposal Approved",
-                    excerpt: "Latest EIP promises to further optimize network efficiency and reduce transaction costs...",
+                    excerpt: "Latest EIP promises to further optimize network efficiency and reduce transaction costs, improving user experience across the ecosystem...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "5 hours ago"
+                    date: "5 hours ago",
+                    source: "CoinDesk"
                 }
             ],
             defi: [
                 {
                     title: "New DeFi Protocol Launches with $50M TVL",
-                    excerpt: "Innovative decentralized finance protocol attracts significant liquidity on launch day...",
+                    excerpt: "Innovative decentralized finance protocol attracts significant liquidity on launch day, offering unique yield farming opportunities for users...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "1 hour ago"
+                    date: "1 hour ago",
+                    source: "The Defiant"
                 },
                 {
-                    title: "Yield Farming Strategies Evolve",
-                    excerpt: "DeFi users adopt new sophisticated strategies for maximizing returns while managing risks...",
+                    title: "Yield Farming Strategies Evolve with New Protocols",
+                    excerpt: "DeFi users adopt new sophisticated strategies for maximizing returns while managing risks, as protocol innovation continues to accelerate...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "4 hours ago"
+                    date: "4 hours ago",
+                    source: "DeFi Pulse"
                 }
             ],
             nft: [
                 {
                     title: "NFT Market Shows Signs of Recovery",
-                    excerpt: "Non-fungible token trading volumes increase as new utility-focused projects gain traction...",
+                    excerpt: "Non-fungible token trading volumes increase as new utility-focused projects gain traction, moving beyond simple collectibles to real-world applications...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "3 hours ago"
+                    date: "3 hours ago",
+                    source: "NFT Now"
                 },
                 {
-                    title: "Major Brand Launches NFT Collection",
-                    excerpt: "Global brand enters NFT space with innovative digital collectibles and real-world utility...",
+                    title: "Major Brand Launches Utility-Focused NFT Collection",
+                    excerpt: "Global brand enters NFT space with innovative digital collectibles and real-world utility, bridging traditional business with Web3 technology...",
                     image: "images/default-crypto-news.jpg",
                     link: "#",
-                    date: "6 hours ago"
+                    date: "6 hours ago",
+                    source: "CoinTelegraph"
+                }
+            ],
+            altcoins: [
+                {
+                    title: "Altcoin Season Indicators Point to Potential Rally",
+                    excerpt: "Technical analysis suggests altcoins may be preparing for significant price movements as Bitcoin dominance shows signs of weakening...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "2 hours ago",
+                    source: "CoinTelegraph"
+                },
+                {
+                    title: "Emerging Altcoins Gain Institutional Interest",
+                    excerpt: "Several promising altcoin projects attract institutional investment as the market matures and diversification strategies evolve...",
+                    image: "images/default-crypto-news.jpg",
+                    link: "#",
+                    date: "5 hours ago",
+                    source: "CoinDesk"
                 }
             ]
         };
@@ -720,6 +834,8 @@ class GasNowApp {
         
         // Save preference
         localStorage.setItem('gasnow-news-source', source);
+        
+        console.log(`📰 News source changed to: ${source}`);
     }
 
     initializeCharts() {
@@ -854,6 +970,8 @@ class GasNowApp {
         
         // Save preference
         localStorage.setItem('gasnow-blockchain', blockchain);
+        
+        console.log(`⛽ Blockchain changed to: ${blockchain}`);
     }
 
     startAutoUpdate() {
@@ -960,7 +1078,7 @@ class GasNowApp {
         }
 
         // Set basic news
-        this.renderNews(this.generateMockNews());
+        this.renderNews(this.generateEnhancedMockNews());
         
         // Set basic trending tokens
         this.updateTrendingTokens();

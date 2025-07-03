@@ -30,882 +30,111 @@
     <meta name="twitter:description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains.">
 
     <style>
-        /* Emergency fallback styles to ensure content is visible */
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #f8fafc;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-        }
-
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0f172a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loading-content {
-            text-align: center;
-        }
-
-        .loading-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(148, 163, 184, 0.1);
-            border-top: 3px solid #3b82f6;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .app {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem;
-            opacity: 0;
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Header matching original design */
-        .header {
-            margin-bottom: 2rem;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 1rem;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            color: #3b82f6;
-        }
-
-        .logo h1 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .logo-gas { color: #f8fafc; }
-        .logo-now { color: #3b82f6; }
-
-        .crypto-prices {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .crypto-price {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #334155;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.75rem;
-            padding: 0.5rem 0.75rem;
-            transition: all 0.15s ease-in-out;
-            cursor: pointer;
-            min-width: 120px;
-        }
-
-        .crypto-price:hover {
-            background: #475569;
-            transform: translateY(-1px);
-            border-color: #3b82f6;
-        }
-
-        .crypto-price.active {
-            background: #3b82f6;
-            border-color: #60a5fa;
-        }
-
-        .crypto-price img {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            filter: none !important;
-        }
-
-        .crypto-price-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.125rem;
-        }
-
-        .crypto-price-value {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #f8fafc;
-        }
-
-        .crypto-price-change {
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        .crypto-price-change.positive { color: #10b981; }
-        .crypto-price-change.negative { color: #ef4444; }
-
-        /* Gas Fees Section - matching original proportions */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: #3b82f6;
-            margin: 0;
-        }
-
-        .gas-prices-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .gas-card {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            transition: all 0.3s ease-in-out;
+        /* Enhanced tooltips */
+        .tooltip {
             position: relative;
-            overflow: hidden;
-            min-height: 140px;
-        }
-
-        .gas-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .gas-card.featured {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 1px #3b82f6;
-        }
-
-        .gas-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .gas-card-header h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #cbd5e1;
-            margin: 0;
-        }
-
-        .gas-icon {
-            width: 24px;
-            height: 24px;
-            opacity: 0.7;
-        }
-
-        .gas-card-content {
-            margin-bottom: 1rem;
-        }
-
-        .gas-price {
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .price-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #f8fafc;
-            line-height: 1;
-        }
-
-        .price-unit {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #cbd5e1;
-        }
-
-        .gas-usd {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #64748b;
-        }
-
-        .progress-bar {
-            height: 3px;
-            background: #334155;
-            border-radius: 0.375rem;
-            overflow: hidden;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #3b82f6, #60a5fa);
-            border-radius: 0.375rem;
-            width: 0%;
-            transition: width 30s linear;
-        }
-
-        /* Market Overview Section - matching original layout */
-        .market-overview-section {
-            margin-bottom: 2rem;
-        }
-
-        .market-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .market-card {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            transition: all 0.3s ease-in-out;
-            min-height: 200px;
-        }
-
-        .market-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .market-card.main-chart {
-            grid-row: span 1;
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .card-header h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #f8fafc;
-            margin: 0;
-        }
-
-        .market-stats {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-label {
-            display: block;
-            font-size: 0.75rem;
-            color: #64748b;
-            margin-bottom: 0.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .stat-value {
-            display: block;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #f8fafc;
-        }
-
-        .stat-value.positive { color: #10b981; }
-        .stat-value.negative { color: #ef4444; }
-
-        .chart-container {
-            height: 200px;
-            position: relative;
-            background: #1e293b;
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-        }
-
-        .info-icon {
-            width: 16px;
-            height: 16px;
-            background: #64748b;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            color: white;
             cursor: help;
         }
 
-        /* Fear & Greed Gauge */
-        .fear-greed-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 120px;
-            position: relative;
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-fast);
+            z-index: 1000;
+            border: 1px solid var(--border-primary);
+            box-shadow: var(--shadow-lg);
+            pointer-events: none;
         }
 
+        .tooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        /* Enhanced Fear & Greed gauge */
         .fear-greed-gauge {
             position: relative;
-            width: 120px;
-            height: 120px;
+            width: 180px;
+            height: 180px;
         }
 
-        .gauge-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .gauge-value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #f8fafc;
-            line-height: 1;
-        }
-
-        .gauge-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #cbd5e1;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 0.25rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.375rem;
-            background: #f59e0b;
-        }
-
-        /* Altseason Index */
-        .altseason-container {
-            padding: 0.5rem;
-        }
-
-        .altseason-header {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .altseason-value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #f8fafc;
-            margin-bottom: 0.5rem;
-        }
-
-        .altseason-max {
-            font-size: 1rem;
-            color: #64748b;
-        }
-
-        .altseason-status {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-        }
-
-        .altseason-status.bitcoin-season {
-            background: #f59e0b;
-            color: white;
-        }
-
-        .altseason-status.altcoin-season {
-            background: #10b981;
-            color: white;
-        }
-
-        .altseason-status.neutral {
-            background: #64748b;
-            color: white;
-        }
-
-        .altseason-progress {
-            margin-bottom: 0.5rem;
-        }
-
-        .progress-track {
-            position: relative;
-            height: 6px;
-            background: #334155;
-            border-radius: 0.375rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .progress-track .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #f59e0b, #10b981);
-            border-radius: 0.375rem;
-            transition: width 0.3s ease;
-        }
-
-        .progress-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            color: #64748b;
-        }
-
-        /* Token Lists - matching original design */
-        .token-lists {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .token-list-card {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .token-list-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .token-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .token-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.75rem;
-            background: #334155;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.5rem;
-            transition: all 0.15s ease-in-out;
-        }
-
-        .token-item:hover {
-            background: #475569;
-            transform: translateX(2px);
-        }
-
-        .token-info {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
+        /* Token icons in lists */
         .token-icon {
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
+            object-fit: cover;
         }
 
-        .token-details h4 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #f8fafc;
-            margin: 0 0 0.125rem 0;
-        }
-
-        .token-details p {
-            font-size: 0.75rem;
-            color: #64748b;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        .token-stats {
-            text-align: right;
-        }
-
-        .token-price {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #f8fafc;
-            margin-bottom: 0.125rem;
-        }
-
-        .token-change {
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .token-change.positive { color: #10b981; }
-        .token-change.negative { color: #ef4444; }
-
-        /* News Section */
-        .news-section {
-            margin-bottom: 2rem;
-        }
-
-        .news-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
+        /* News source selector improvements */
         .news-source-selector {
             display: flex;
             gap: 0.5rem;
-            background: rgba(30, 41, 59, 0.8);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.75rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-lg);
             padding: 0.25rem;
+            flex-wrap: wrap;
         }
 
         .news-source-btn {
             background: transparent;
             border: none;
-            border-radius: 0.5rem;
-            padding: 0.5rem 1rem;
-            color: #cbd5e1;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: var(--text-secondary);
             cursor: pointer;
-            transition: all 0.15s ease-in-out;
+            transition: all var(--transition-fast);
             font-weight: 500;
             font-size: 0.875rem;
+            white-space: nowrap;
         }
 
         .news-source-btn:hover {
-            background: #334155;
-            color: #f8fafc;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
         }
 
         .news-source-btn.active {
-            background: #3b82f6;
+            background: var(--primary-blue);
             color: white;
         }
 
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-
-        .news-card {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.75rem;
-            overflow: hidden;
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        .news-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .news-image {
-            width: 100%;
-            height: 160px;
-            background-size: cover;
-            background-position: center;
-            background-color: #334155;
-        }
-
-        .news-content {
-            padding: 1rem;
-        }
-
-        .news-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #f8fafc;
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .news-excerpt {
-            font-size: 0.875rem;
-            color: #cbd5e1;
-            line-height: 1.5;
-            margin-bottom: 0.75rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .news-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.75rem;
-            color: #64748b;
-        }
-
-        .read-more {
-            color: #3b82f6;
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.15s ease-in-out;
-        }
-
-        .read-more:hover {
-            color: #60a5fa;
-        }
-
-        /* Partners Section */
-        .partners-section {
-            margin-bottom: 2rem;
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .partner-card {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            text-align: center;
-            transition: all 0.3s ease-in-out;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .partner-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: #3b82f6;
-        }
-
-        .partner-name {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: #f8fafc;
-            margin-bottom: 0.5rem;
-        }
-
-        .partner-description {
-            font-size: 0.875rem;
-            color: #cbd5e1;
-        }
-
-        /* Footer */
-        .footer {
-            background: rgba(30, 41, 59, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section h4 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #f8fafc;
-            margin-bottom: 1rem;
-        }
-
-        .footer-actions {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-btn {
+        /* Logo improvements */
+        .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1rem;
-            background: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.15s ease-in-out;
-            cursor: pointer;
-            font-size: 0.875rem;
+            gap: var(--spacing-md);
         }
 
-        .footer-btn:hover {
-            background: #2563eb;
-            transform: translateY(-1px);
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
         }
 
-        .footer-support {
-            font-size: 0.875rem;
-            color: #cbd5e1;
-            line-height: 1.5;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            color: #64748b;
-            font-size: 0.875rem;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            z-index: 1000;
-            background: rgba(30, 41, 59, 0.8);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-            color: #f8fafc;
-            cursor: pointer;
-            transition: all 0.15s ease-in-out;
-            backdrop-filter: blur(10px);
-        }
-
-        .theme-toggle:hover {
-            background: rgba(30, 41, 59, 0.9);
-            transform: translateY(-1px);
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .market-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .market-stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
+        /* Responsive news controls */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .crypto-prices {
-                justify-content: center;
-            }
-
-            .gas-prices-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .market-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .token-lists {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
             .news-controls {
                 flex-direction: column;
                 gap: 1rem;
+                text-align: center;
             }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-actions {
-                flex-direction: column;
+            
+            .news-source-selector {
+                justify-content: center;
             }
         }
     </style>
@@ -920,7 +149,7 @@
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
             <div class="loading-logo">
-                <i class="fas fa-gas-pump"></i>
+                <img src="images/gasnow-icon.png" alt="GasNow" style="width: 48px; height: 48px;">
                 <span>GasNow</span>
             </div>
             <div class="loading-spinner"></div>
@@ -933,7 +162,7 @@
         <header class="header">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-gas-pump logo-icon"></i>
+                    <img src="images/gasnow-icon.png" alt="GasNow" class="logo-icon" onerror="this.style.display='none'">
                     <h1><span class="logo-gas">Gas</span><span class="logo-now">Now</span></h1>
                 </div>
                 
@@ -979,10 +208,10 @@
                 </div>
                 
                 <div class="gas-prices-grid" id="gasPricesGrid">
-                    <div class="gas-card slow" data-speed="slow">
+                    <div class="gas-card slow tooltip" data-speed="slow" data-tooltip="Cheapest transaction fees">
                         <div class="gas-card-header">
                             <h3>Slow</h3>
-                            <img src="images/turtle.png" alt="Slow" class="gas-icon" onerror="this.style.display='none'">
+                            <img src="images/turtle.png" alt="Slow" class="gas-icon" onerror="this.innerHTML='<i class=\"fas fa-turtle\"></i>'">
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -996,10 +225,10 @@
                         </div>
                     </div>
 
-                    <div class="gas-card standard featured" data-speed="standard">
+                    <div class="gas-card standard featured tooltip" data-speed="standard" data-tooltip="Recommended transaction speed">
                         <div class="gas-card-header">
                             <h3>Standard</h3>
-                            <img src="images/speed.png" alt="Standard" class="gas-icon" onerror="this.style.display='none'">
+                            <img src="images/speed.png" alt="Standard" class="gas-icon" onerror="this.innerHTML='<i class=\"fas fa-tachometer-alt\"></i>'">
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -1013,10 +242,10 @@
                         </div>
                     </div>
 
-                    <div class="gas-card fast" data-speed="fast">
+                    <div class="gas-card fast tooltip" data-speed="fast" data-tooltip="Fastest transaction confirmation">
                         <div class="gas-card-header">
                             <h3>Fast</h3>
-                            <img src="images/rocket.png" alt="Fast" class="gas-icon" onerror="this.style.display='none'">
+                            <img src="images/rocket.png" alt="Fast" class="gas-icon" onerror="this.innerHTML='<i class=\"fas fa-rocket\"></i>'">
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -1040,7 +269,7 @@
                 
                 <div class="market-grid">
                     <!-- Global Market Cap Chart -->
-                    <div class="market-card main-chart">
+                    <div class="market-card main-chart tooltip" data-tooltip="Total cryptocurrency market capitalization">
                         <div class="card-header">
                             <h3>Global Market Cap</h3>
                             <div class="market-stats">
@@ -1065,7 +294,7 @@
                     </div>
 
                     <!-- Fear & Greed Index -->
-                    <div class="market-card">
+                    <div class="market-card tooltip" data-tooltip="Market sentiment indicator">
                         <div class="card-header">
                             <h3>Fear & Greed Index</h3>
                             <div class="info-icon">i</div>
@@ -1082,7 +311,7 @@
                     </div>
 
                     <!-- Altseason Index -->
-                    <div class="market-card">
+                    <div class="market-card tooltip" data-tooltip="Bitcoin vs Altcoin dominance">
                         <div class="card-header">
                             <h3>Altseason Index</h3>
                             <div class="info-icon">i</div>
@@ -1111,7 +340,7 @@
                 <!-- Token Lists -->
                 <div class="token-lists">
                     <!-- Trending Tokens -->
-                    <div class="token-list-card">
+                    <div class="token-list-card tooltip" data-tooltip="Most searched cryptocurrencies">
                         <div class="card-header">
                             <h3>Trending Tokens</h3>
                         </div>
@@ -1159,7 +388,7 @@
                     </div>
 
                     <!-- Largest Gainers -->
-                    <div class="token-list-card">
+                    <div class="token-list-card tooltip" data-tooltip="Top performing cryptocurrencies today">
                         <div class="card-header">
                             <h3>Largest Gainers</h3>
                         </div>
@@ -1218,6 +447,7 @@
                         <button class="news-source-btn" data-source="ethereum" onclick="window.gasNowApp?.selectNewsSource('ethereum')">Ethereum</button>
                         <button class="news-source-btn" data-source="defi" onclick="window.gasNowApp?.selectNewsSource('defi')">DeFi</button>
                         <button class="news-source-btn" data-source="nft" onclick="window.gasNowApp?.selectNewsSource('nft')">NFT</button>
+                        <button class="news-source-btn" data-source="altcoins" onclick="window.gasNowApp?.selectNewsSource('altcoins')">Altcoins</button>
                     </div>
                 </div>
                 
@@ -1266,15 +496,15 @@
                 </div>
                 
                 <div class="partners-grid">
-                    <a href="https://kastfinance.app.link/HP8K5JYH" target="_blank" class="partner-card">
+                    <a href="https://kastfinance.app.link/HP8K5JYH" target="_blank" class="partner-card tooltip" data-tooltip="Crypto debit card solution">
                         <div class="partner-name">KAST Finance</div>
                         <div class="partner-description">Card to use your Crypto</div>
                     </a>
-                    <a href="https://bingx.com/pt-br/act/template/7457/?randomId=7549452152&ref=OOCUZI" target="_blank" class="partner-card">
+                    <a href="https://bingx.com/pt-br/act/template/7457/?randomId=7549452152&ref=OOCUZI" target="_blank" class="partner-card tooltip" data-tooltip="Advanced crypto trading platform">
                         <div class="partner-name">BingX Exchange</div>
                         <div class="partner-description">Crypto Trading Platform</div>
                     </a>
-                    <a href="https://www.okx.com/pt-br/campaigns/boas-vindas-novos-usuarios?channelId=JONATA" target="_blank" class="partner-card">
+                    <a href="https://www.okx.com/pt-br/campaigns/boas-vindas-novos-usuarios?channelId=JONATA" target="_blank" class="partner-card tooltip" data-tooltip="Global cryptocurrency exchange">
                         <div class="partner-name">OKX Exchange</div>
                         <div class="partner-description">Global Crypto Exchange</div>
                     </a>
