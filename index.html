@@ -28,116 +28,6 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GasNow - Real-time Crypto Gas Tracker">
     <meta name="twitter:description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains.">
-
-    <style>
-        /* Enhanced tooltips */
-        .tooltip {
-            position: relative;
-            cursor: help;
-        }
-
-        .tooltip::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            padding: var(--spacing-sm) var(--spacing-md);
-            border-radius: var(--radius-md);
-            font-size: 0.75rem;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition-fast);
-            z-index: 1000;
-            border: 1px solid var(--border-primary);
-            box-shadow: var(--shadow-lg);
-            pointer-events: none;
-        }
-
-        .tooltip:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(-4px);
-        }
-
-        /* Enhanced Fear & Greed gauge */
-        .fear-greed-gauge {
-            position: relative;
-            width: 180px;
-            height: 180px;
-        }
-
-        /* Token icons in lists */
-        .token-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* News source selector improvements */
-        .news-source-selector {
-            display: flex;
-            gap: 0.5rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-primary);
-            border-radius: var(--radius-lg);
-            padding: 0.25rem;
-            flex-wrap: wrap;
-        }
-
-        .news-source-btn {
-            background: transparent;
-            border: none;
-            border-radius: var(--radius-md);
-            padding: var(--spacing-sm) var(--spacing-md);
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            font-weight: 500;
-            font-size: 0.875rem;
-            white-space: nowrap;
-        }
-
-        .news-source-btn:hover {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-        }
-
-        .news-source-btn.active {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        /* Logo improvements */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-        }
-
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: var(--radius-md);
-        }
-
-        /* Responsive news controls */
-        @media (max-width: 768px) {
-            .news-controls {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .news-source-selector {
-                justify-content: center;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Theme Toggle -->
@@ -149,7 +39,7 @@
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
             <div class="loading-logo">
-                <img src="images/gasnow-icon.png" alt="GasNow" style="width: 48px; height: 48px;">
+                <img src="images/gasnow-icon.png" alt="GasNow" style="width: 48px; height: 48px;" onerror="this.style.display='none'">
                 <span>GasNow</span>
             </div>
             <div class="loading-spinner"></div>
@@ -211,7 +101,9 @@
                     <div class="gas-card slow tooltip" data-speed="slow" data-tooltip="Cheapest transaction fees">
                         <div class="gas-card-header">
                             <h3>Slow</h3>
-                            <img src="images/turtle.png" alt="Slow" class="gas-icon" onerror="this.innerHTML='<i class=\"fas fa-turtle\"></i>'">
+                            <div class="gas-icon">
+                                <img src="images/turtle.png" alt="Slow" onerror="this.innerHTML='<i class=\"fas fa-turtle\"></i>'">
+                            </div>
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -220,15 +112,19 @@
                             </div>
                             <div class="gas-usd" id="slowUsd">$0.52</div>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="gas-card standard featured tooltip" data-speed="standard" data-tooltip="Recommended transaction speed">
                         <div class="gas-card-header">
                             <h3>Standard</h3>
-                            <img src="images/speed.png" alt="Standard" class="gas-icon" onerror="this.innerHTML='<i class=\"fas fa-tachometer-alt\"></i>'">
+                            <div class="gas-icon">
+                                <img src="images/speed.png" alt="Standard" onerror="this.innerHTML='<i class=\"fas fa-tachometer-alt\"></i>'">
+                            </div>
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -237,15 +133,19 @@
                             </div>
                             <div class="gas-usd" id="standardUsd">$0.79</div>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="gas-card fast tooltip" data-speed="fast" data-tooltip="Fastest transaction confirmation">
                         <div class="gas-card-header">
                             <h3>Fast</h3>
-                            <img src="images/rocket.png" alt="Fast" class="gas-icon" onerror="this.innerHTML='<i class=\"fas fa-rocket\"></i>'">
+                            <div class="gas-icon">
+                                <img src="images/rocket.png" alt="Fast" onerror="this.innerHTML='<i class=\"fas fa-rocket\"></i>'">
+                            </div>
                         </div>
                         <div class="gas-card-content">
                             <div class="gas-price">
@@ -254,8 +154,10 @@
                             </div>
                             <div class="gas-usd" id="fastUsd">$1.31</div>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,7 +191,7 @@
                         </div>
                         <div class="chart-container">
                             <canvas id="marketCapChart"></canvas>
-                            <div id="chartFallback">Chart loading...</div>
+                            <div id="chartFallback" style="display: none;">Chart loading...</div>
                         </div>
                     </div>
 
@@ -297,7 +199,6 @@
                     <div class="market-card tooltip" data-tooltip="Market sentiment indicator">
                         <div class="card-header">
                             <h3>Fear & Greed Index</h3>
-                            <div class="info-icon">i</div>
                         </div>
                         <div class="fear-greed-container">
                             <div class="fear-greed-gauge" id="fearGreedGauge">
@@ -314,7 +215,6 @@
                     <div class="market-card tooltip" data-tooltip="Bitcoin vs Altcoin dominance">
                         <div class="card-header">
                             <h3>Altseason Index</h3>
-                            <div class="info-icon">i</div>
                         </div>
                         <div class="altseason-container">
                             <div class="altseason-header">
@@ -347,7 +247,7 @@
                         <div class="token-list" id="trendingTokens">
                             <div class="token-item">
                                 <div class="token-info">
-                                    <img src="https://cryptologos.cc/logos/toncoin-ton-logo.png" alt="TON" class="token-icon" onerror="this.style.display='none'">
+                                    <img src="https://assets.coingecko.com/coins/images/17980/small/ton_symbol.png" alt="TON" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/toncoin-ton-logo.png'; this.onerror=null;">
                                     <div class="token-details">
                                         <h4>Toncoin</h4>
                                         <p>TON</p>
@@ -360,7 +260,7 @@
                             </div>
                             <div class="token-item">
                                 <div class="token-info">
-                                    <img src="https://cryptologos.cc/logos/jupiter-jup-logo.png" alt="JUP" class="token-icon" onerror="this.style.display='none'">
+                                    <img src="https://assets.coingecko.com/coins/images/34188/small/jup.png" alt="JUP" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/jupiter-jup-logo.png'; this.onerror=null;">
                                     <div class="token-details">
                                         <h4>Jupiter</h4>
                                         <p>JUP</p>
@@ -373,7 +273,7 @@
                             </div>
                             <div class="token-item">
                                 <div class="token-info">
-                                    <img src="https://cryptologos.cc/logos/pudgy-penguins-pengu-logo.png" alt="PENGU" class="token-icon" onerror="this.style.display='none'">
+                                    <img src="https://assets.coingecko.com/coins/images/35718/small/pengu.png" alt="PENGU" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/pudgy-penguins-pengu-logo.png'; this.onerror=null;">
                                     <div class="token-details">
                                         <h4>Pudgy Penguins</h4>
                                         <p>PENGU</p>
@@ -395,7 +295,7 @@
                         <div class="token-list" id="largestGainers">
                             <div class="token-item">
                                 <div class="token-info">
-                                    <img src="https://cryptologos.cc/logos/useless-useless-logo.png" alt="USELESS" class="token-icon" onerror="this.style.display='none'">
+                                    <img src="https://assets.coingecko.com/coins/images/17430/small/useless.png" alt="USELESS" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/useless-useless-logo.png'; this.onerror=null;">
                                     <div class="token-details">
                                         <h4>Useless Coin</h4>
                                         <p>USELESS</p>
@@ -408,7 +308,7 @@
                             </div>
                             <div class="token-item">
                                 <div class="token-info">
-                                    <img src="https://cryptologos.cc/logos/keeta-kta-logo.png" alt="KTA" class="token-icon" onerror="this.style.display='none'">
+                                    <img src="https://assets.coingecko.com/coins/images/32659/small/keeta.png" alt="KTA" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/keeta-kta-logo.png'; this.onerror=null;">
                                     <div class="token-details">
                                         <h4>Keeta</h4>
                                         <p>KTA</p>
@@ -421,7 +321,7 @@
                             </div>
                             <div class="token-item">
                                 <div class="token-info">
-                                    <img src="https://cryptologos.cc/logos/flume-flume-logo.png" alt="FLUME" class="token-icon" onerror="this.style.display='none'">
+                                    <img src="https://assets.coingecko.com/coins/images/33847/small/flume.png" alt="FLUME" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/flume-flume-logo.png'; this.onerror=null;">
                                     <div class="token-details">
                                         <h4>Flume</h4>
                                         <p>FLUME</p>
@@ -439,7 +339,7 @@
 
             <!-- News Section -->
             <section class="news-section">
-                <div class="news-controls">
+                <div class="section-header">
                     <h2>Latest Crypto News</h2>
                     <div class="news-source-selector">
                         <button class="news-source-btn active" data-source="general" onclick="window.gasNowApp?.selectNewsSource('general')">General</button>
@@ -552,10 +452,17 @@
         // Fallback error handling and basic functionality
         window.addEventListener('error', function(e) {
             console.error('Global error:', e.error);
+            // Hide loading screen on error
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+            }
         });
 
         // Ensure loading screen is hidden after timeout
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, setting up fallbacks...');
+            
             setTimeout(function() {
                 const loadingScreen = document.getElementById('loadingScreen');
                 if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
@@ -579,6 +486,13 @@
                     }
                 });
             }
+
+            // Ensure app is visible
+            const app = document.getElementById('app');
+            if (app) {
+                app.style.opacity = '1';
+                console.log('App made visible');
+            }
         });
     </script>
     
@@ -586,6 +500,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="console.warn('Chart.js failed to load')"></script>
     
     <!-- Load main app -->
-    <script src="js/app.js" onerror="console.warn('Main app failed to load')"></script>
+    <script src="js/app.js" onerror="console.warn('Main app failed to load'); document.getElementById('loadingScreen').classList.add('hidden');"></script>
 </body>
 </html>

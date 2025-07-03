@@ -67,6 +67,10 @@ class GasNowApp {
     async init() {
         try {
             console.log('🚀 Initializing GasNow App...');
+            
+            // Ensure app is visible first
+            this.showApp();
+            
             this.setupEventListeners();
             this.setupTheme();
             await this.loadInitialData();
@@ -77,6 +81,15 @@ class GasNowApp {
             console.error('❌ Failed to initialize app:', error);
             this.hideLoadingScreen();
             this.showBasicContent();
+        }
+    }
+
+    showApp() {
+        const app = document.getElementById('app');
+        if (app) {
+            app.style.opacity = '1';
+            app.style.visibility = 'visible';
+            console.log('📱 App made visible');
         }
     }
 
@@ -474,7 +487,7 @@ class GasNowApp {
             
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const radius = Math.min(centerX, centerY) - 15; // Increased radius for larger arc
+            const radius = Math.min(centerX, centerY) - 20; // Increased radius for larger arc
 
             // Clear canvas
             ctx.clearRect(0, 0, rect.width, rect.height);
@@ -482,7 +495,7 @@ class GasNowApp {
             // Draw background arc
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, Math.PI, 2 * Math.PI);
-            ctx.lineWidth = 20; // Increased line width for larger arc
+            ctx.lineWidth = 25; // Increased line width for larger arc
             ctx.strokeStyle = '#334155';
             ctx.stroke();
 
@@ -490,7 +503,7 @@ class GasNowApp {
             const angle = Math.PI + (value / 100) * Math.PI;
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, Math.PI, angle);
-            ctx.lineWidth = 20; // Increased line width for larger arc
+            ctx.lineWidth = 25; // Increased line width for larger arc
             
             // Color based on value
             if (value <= 20) ctx.strokeStyle = '#ef4444';
@@ -675,7 +688,7 @@ class GasNowApp {
         }
     }
 
-    generateEnhancedMockNews() {
+    generateEnhancedMockNews(source = 'general') {
         const newsTopics = {
             general: [
                 {
@@ -795,7 +808,7 @@ class GasNowApp {
             ]
         };
 
-        return newsTopics[this.currentNewsSource] || newsTopics.general;
+        return newsTopics[source] || newsTopics.general;
     }
 
     renderNews(news) {
@@ -818,6 +831,8 @@ class GasNowApp {
     }
 
     selectNewsSource(source) {
+        if (!source) return;
+        
         this.currentNewsSource = source;
         
         // Update UI
@@ -847,6 +862,7 @@ class GasNowApp {
             const fallback = document.getElementById('chartFallback');
             if (fallback) {
                 fallback.textContent = 'Chart unavailable';
+                fallback.style.display = 'block';
             }
         }
     }
@@ -954,6 +970,8 @@ class GasNowApp {
     }
 
     selectBlockchain(blockchain) {
+        if (!blockchain) return;
+        
         this.currentBlockchain = blockchain;
         
         // Update UI - crypto prices
@@ -1044,6 +1062,9 @@ class GasNowApp {
     showBasicContent() {
         // Show basic content even if APIs fail
         console.log('📄 Showing basic content due to API failures');
+        
+        // Ensure app is visible
+        this.showApp();
         
         // Set basic gas prices
         this.renderGasPricesError();
@@ -1147,6 +1168,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingScreen = document.getElementById('loadingScreen');
         if (loadingScreen) {
             loadingScreen.classList.add('hidden');
+        }
+        // Ensure app is visible
+        const app = document.getElementById('app');
+        if (app) {
+            app.style.opacity = '1';
+            app.style.visibility = 'visible';
         }
     }
 });
