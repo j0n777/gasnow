@@ -487,7 +487,7 @@ class GasNowApp {
             
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const radius = Math.min(centerX, centerY) - 20; // Increased radius for larger arc
+            const radius = Math.min(centerX, centerY) - 30; // Increased margin for larger arc
 
             // Clear canvas
             ctx.clearRect(0, 0, rect.width, rect.height);
@@ -495,7 +495,7 @@ class GasNowApp {
             // Draw background arc
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, Math.PI, 2 * Math.PI);
-            ctx.lineWidth = 25; // Increased line width for larger arc
+            ctx.lineWidth = 30; // Much larger line width
             ctx.strokeStyle = '#334155';
             ctx.stroke();
 
@@ -503,7 +503,7 @@ class GasNowApp {
             const angle = Math.PI + (value / 100) * Math.PI;
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, Math.PI, angle);
-            ctx.lineWidth = 25; // Increased line width for larger arc
+            ctx.lineWidth = 30; // Much larger line width
             
             // Color based on value
             if (value <= 20) ctx.strokeStyle = '#ef4444';
@@ -590,7 +590,7 @@ class GasNowApp {
                     price: 0.27, 
                     change: 26.34, 
                     logo: 'https://assets.coingecko.com/coins/images/17430/small/useless.png',
-                    fallback: 'https://cryptologos.cc/logos/useless-useless-logo.png'
+                    fallback: 'https://via.placeholder.com/32x32/10b981/ffffff?text=U'
                 },
                 { 
                     name: 'Keeta', 
@@ -598,7 +598,7 @@ class GasNowApp {
                     price: 0.65, 
                     change: 20.29, 
                     logo: 'https://assets.coingecko.com/coins/images/32659/small/keeta.png',
-                    fallback: 'https://cryptologos.cc/logos/keeta-kta-logo.png'
+                    fallback: 'https://via.placeholder.com/32x32/f59e0b/ffffff?text=K'
                 },
                 { 
                     name: 'Flume', 
@@ -606,7 +606,7 @@ class GasNowApp {
                     price: 0.11, 
                     change: 19.08, 
                     logo: 'https://assets.coingecko.com/coins/images/33847/small/flume.png',
-                    fallback: 'https://cryptologos.cc/logos/flume-flume-logo.png'
+                    fallback: 'https://via.placeholder.com/32x32/3b82f6/ffffff?text=F'
                 }
             ];
 
@@ -1177,3 +1177,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// Make functions globally available for onclick handlers
+window.selectBlockchain = (blockchain) => {
+    if (window.gasNowApp) {
+        window.gasNowApp.selectBlockchain(blockchain);
+    }
+};
+
+window.selectNewsSource = (source) => {
+    if (window.gasNowApp) {
+        window.gasNowApp.selectNewsSource(source);
+    }
+};

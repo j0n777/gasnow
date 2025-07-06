@@ -85,6 +85,20 @@ body {
     transition: all var(--transition-normal);
 }
 
+/* Force white icons in dark mode */
+body:not(.light-theme) img {
+    filter: brightness(0) invert(1);
+}
+
+/* Restore normal colors for specific images */
+body:not(.light-theme) .crypto-price img,
+body:not(.light-theme) .token-icon,
+body:not(.light-theme) .news-image,
+body:not(.light-theme) .partner-logo,
+body:not(.light-theme) .logo-icon {
+    filter: none;
+}
+
 /* Loading Screen */
 .loading-screen {
     position: fixed;
@@ -246,6 +260,11 @@ body {
     transform: translateY(-2px);
 }
 
+.crypto-price.active {
+    background: var(--primary-blue);
+    color: white;
+}
+
 .crypto-price img {
     width: 24px;
     height: 24px;
@@ -255,6 +274,19 @@ body {
 .crypto-price-value {
     font-weight: 600;
     font-size: 0.875rem;
+}
+
+.crypto-price-change {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.crypto-price-change.positive {
+    color: var(--success-green);
+}
+
+.crypto-price-change.negative {
+    color: var(--danger-red);
 }
 
 /* Section Headers */
@@ -275,45 +307,6 @@ body {
 /* Gas Prices Section */
 .gas-prices-section {
     margin-bottom: var(--spacing-2xl);
-}
-
-.blockchain-selector {
-    display: flex;
-    gap: var(--spacing-sm);
-    background: var(--bg-card);
-    border: 1px solid var(--border-primary);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-xs);
-}
-
-.blockchain-btn {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    background: transparent;
-    border: none;
-    border-radius: var(--radius-md);
-    padding: var(--spacing-sm) var(--spacing-md);
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    font-weight: 500;
-}
-
-.blockchain-btn:hover {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-}
-
-.blockchain-btn.active {
-    background: var(--primary-blue);
-    color: white;
-}
-
-.blockchain-btn img {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
 }
 
 .gas-prices-grid {
@@ -429,6 +422,7 @@ body {
     grid-template-columns: 2fr 1fr 1fr;
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
+    min-height: 400px;
 }
 
 .market-card {
@@ -438,6 +432,8 @@ body {
     border-radius: var(--radius-xl);
     padding: var(--spacing-lg);
     transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
 }
 
 .market-card:hover {
@@ -498,6 +494,7 @@ body {
 .chart-container {
     height: 300px;
     position: relative;
+    flex: 1;
 }
 
 .chart-container canvas {
@@ -549,6 +546,7 @@ body {
     align-items: center;
     height: 200px;
     position: relative;
+    flex: 1;
 }
 
 .fear-greed-gauge {
@@ -589,6 +587,10 @@ body {
 /* Altseason Index */
 .altseason-container {
     padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
 }
 
 .altseason-header {
@@ -679,6 +681,7 @@ body {
     border-radius: var(--radius-xl);
     padding: var(--spacing-lg);
     transition: all var(--transition-normal);
+    min-height: 300px;
 }
 
 .token-list-card:hover {
@@ -718,6 +721,7 @@ body {
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .token-details h4 {
@@ -761,6 +765,37 @@ body {
 /* News Section */
 .news-section {
     margin-bottom: var(--spacing-2xl);
+}
+
+.news-source-selector {
+    display: flex;
+    gap: var(--spacing-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xs);
+}
+
+.news-source-btn {
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.news-source-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.news-source-btn.active {
+    background: var(--primary-blue);
+    color: white;
 }
 
 .news-grid {
@@ -838,6 +873,67 @@ body {
     color: var(--accent-blue);
 }
 
+/* Partners Section */
+.partners-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.partner-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-normal);
+}
+
+.partner-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-blue);
+}
+
+.partner-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+}
+
+.partner-info {
+    flex: 1;
+}
+
+.partner-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.partner-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
 /* Footer */
 .footer {
     background: var(--bg-card);
@@ -860,35 +956,6 @@ body {
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: var(--spacing-lg);
-}
-
-.partner-links {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.partner-link {
-    display: block;
-    padding: var(--spacing-md);
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: all var(--transition-fast);
-}
-
-.partner-link:hover {
-    background: var(--bg-tertiary);
-    transform: translateY(-2px);
-}
-
-.partner-link span {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: var(--spacing-xs);
 }
 
 .footer-actions {
@@ -931,113 +998,11 @@ body {
     font-size: 0.875rem;
 }
 
-/* Modal */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-normal);
-}
-
-.modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border-primary);
-    border-radius: var(--radius-xl);
-    max-width: 500px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
-    transform: scale(0.9);
-    transition: transform var(--transition-normal);
-}
-
-.modal.active .modal-content {
-    transform: scale(1);
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-lg);
-    border-bottom: 1px solid var(--border-primary);
-}
-
-.modal-header h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.modal-close {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-size: 1.25rem;
-    cursor: pointer;
-    padding: var(--spacing-sm);
-    border-radius: var(--radius-md);
-    transition: all var(--transition-fast);
-}
-
-.modal-close:hover {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-}
-
-.modal-body {
-    padding: var(--spacing-lg);
-}
-
-.donation-options {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-}
-
-.donation-option {
-    padding: var(--spacing-lg);
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
-    border-radius: var(--radius-lg);
-}
-
-.donation-option strong {
-    display: block;
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-primary);
-}
-
-.donation-option code {
-    display: block;
-    background: var(--bg-tertiary);
-    padding: var(--spacing-sm);
-    border-radius: var(--radius-md);
-    font-family: 'Monaco', 'Menlo', monospace;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    word-break: break-all;
-}
-
 /* Responsive Design */
 @media (max-width: 1200px) {
     .market-grid {
         grid-template-columns: 1fr;
+        min-height: auto;
     }
     
     .market-card.main-chart {
@@ -1072,8 +1037,9 @@ body {
         text-align: center;
     }
     
-    .blockchain-selector {
+    .news-source-selector {
         order: -1;
+        flex-wrap: wrap;
     }
     
     .gas-prices-grid {
@@ -1088,6 +1054,10 @@ body {
         grid-template-columns: 1fr;
     }
     
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -1095,10 +1065,6 @@ body {
     
     .footer-actions {
         flex-direction: column;
-    }
-    
-    .partner-links {
-        gap: var(--spacing-sm);
     }
     
     .chart-container {
@@ -1166,15 +1132,6 @@ body {
     
     .chart-container {
         height: 200px;
-    }
-    
-    .modal-content {
-        width: 95%;
-    }
-    
-    .modal-header,
-    .modal-body {
-        padding: var(--spacing-md);
     }
 }
 
