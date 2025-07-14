@@ -87,7 +87,7 @@ body {
 
 /* Force white icons in dark mode */
 body:not(.light-theme) img {
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1) !important;
 }
 
 /* Restore normal colors for specific images */
@@ -95,8 +95,23 @@ body:not(.light-theme) .crypto-price img,
 body:not(.light-theme) .token-icon,
 body:not(.light-theme) .news-image,
 body:not(.light-theme) .partner-logo,
-body:not(.light-theme) .logo-icon {
+body:not(.light-theme) .logo-icon,
+body:not(.light-theme) .gas-icon img {
     filter: none;
+}
+
+/* Special handling for GasNow logo and crypto icons in dark mode */
+body:not(.light-theme) .logo-icon {
+    filter: brightness(1.2) contrast(1.1) !important;
+}
+
+body:not(.light-theme) .crypto-price img {
+    filter: brightness(1.1) contrast(1.05) !important;
+}
+
+/* Gas fees icons should be white in dark mode */
+body:not(.light-theme) .gas-icon img {
+    filter: brightness(0) invert(1) !important;
 }
 
 /* Loading Screen */
@@ -306,13 +321,15 @@ body:not(.light-theme) .logo-icon {
 
 /* Gas Prices Section */
 .gas-prices-section {
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
 }
 
 .gas-prices-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .gas-card {
@@ -320,10 +337,13 @@ body:not(.light-theme) .logo-icon {
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-primary);
     border-radius: var(--radius-xl);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
 }
 
 .gas-card:hover {
@@ -341,18 +361,18 @@ body:not(.light-theme) .logo-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .gas-card-header h3 {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-secondary);
 }
 
 .gas-icon img {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     opacity: 0.7;
     transition: opacity var(--transition-fast);
 }
@@ -363,7 +383,11 @@ body:not(.light-theme) .logo-icon {
 
 .gas-card-content {
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .gas-price {
@@ -371,34 +395,34 @@ body:not(.light-theme) .logo-icon {
     align-items: baseline;
     justify-content: center;
     gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .price-value {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1;
 }
 
 .price-unit {
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-secondary);
 }
 
 .gas-usd {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-muted);
 }
 
 .gas-card-footer {
-    margin-top: auto;
+    margin-top: var(--spacing-sm);
 }
 
 .progress-bar {
-    height: 4px;
+    height: 3px;
     background: var(--bg-tertiary);
     border-radius: var(--radius-sm);
     overflow: hidden;
@@ -1044,6 +1068,27 @@ body:not(.light-theme) .logo-icon {
     
     .gas-prices-grid {
         grid-template-columns: 1fr;
+        max-width: none;
+    }
+    
+    .gas-card {
+        min-height: 140px;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .price-value {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gas-card {
+        min-height: 120px;
+        padding: var(--spacing-sm);
+    }
+    
+    .price-value {
+        font-size: 1.5rem;
     }
     
     .token-lists {
