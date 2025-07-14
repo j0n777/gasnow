@@ -85,23 +85,22 @@ body {
     transition: all var(--transition-normal);
 }
 
-/* Force white icons in dark mode */
-body:not(.light-theme) img {
+/* Icon filters for dark mode - SPECIFIC TARGETING */
+body:not(.light-theme) .logo-icon {
+    filter: brightness(0) invert(1) brightness(1.2) !important;
+}
+
+body:not(.light-theme) .crypto-price img {
+    filter: brightness(0) invert(1) brightness(1.1) !important;
+}
+
+body:not(.light-theme) .gas-icon img {
     filter: brightness(0) invert(1) !important;
 }
 
-/* Restore normal colors for specific images */
-body:not(.light-theme) .crypto-price img,
-body:not(.light-theme) .token-icon,
-body:not(.light-theme) .news-image,
-body:not(.light-theme) .partner-logo,
-body:not(.light-theme) .logo-icon,
-body:not(.light-theme) .gas-icon img {
-body:not(.light-theme) .token-icon,
-/* Make GasNow logo and crypto icons bright in dark mode */
-body:not(.light-theme) .logo-icon,
-body:not(.light-theme) .crypto-price img {
-    filter: brightness(0) invert(1) brightness(1.2) !important;
+/* Keep token icons with original colors */
+body:not(.light-theme) .token-icon {
+    filter: none !important;
 }
 
 /* Loading Screen */
@@ -185,7 +184,8 @@ body:not(.light-theme) .crypto-price img {
     max-width: 1400px;
     margin: 0 auto;
     padding: var(--spacing-lg);
-    opacity: 0;
+    opacity: 1;
+    visibility: visible;
     animation: fadeIn var(--transition-slow) ease-out forwards;
 }
 
@@ -318,6 +318,8 @@ body:not(.light-theme) .crypto-price img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .gas-card {
@@ -346,38 +348,19 @@ body:not(.light-theme) .crypto-price img {
 }
 
 .gas-card-header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-sm);
     margin-bottom: var(--spacing-md);
 }
 
-.gas-card-header .gas-icon {
-    order: 1;
-}
-
 .gas-card-header h3 {
-    order: 2;
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-secondary);
-}
-
-.gas-card-header .gas-price-inline {
-    order: 3;
     display: flex;
-    align-items: baseline;
-    gap: var(--spacing-xs);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.gas-price-inline .price-unit {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .gas-icon {
@@ -398,6 +381,21 @@ body:not(.light-theme) .crypto-price img {
 .gas-card:hover .gas-icon img,
 .gas-card:hover .gas-icon i {
     opacity: 1;
+}
+
+.gas-price-inline {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.price-unit {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
 
 .gas-card-content {
@@ -523,44 +521,6 @@ body:not(.light-theme) .crypto-price img {
     border-radius: var(--radius-md);
 }
 
-/* Info Tooltip */
-.info-tooltip {
-    position: relative;
-    cursor: help;
-    color: var(--text-muted);
-    transition: color var(--transition-fast);
-}
-
-.info-tooltip:hover {
-    color: var(--primary-blue);
-}
-
-.info-tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--radius-md);
-    font-size: 0.75rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-fast);
-    z-index: 1000;
-    border: 1px solid var(--border-primary);
-    box-shadow: var(--shadow-lg);
-}
-
-.info-tooltip:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-4px);
-}
-
 /* Fear & Greed Gauge */
 .fear-greed-container {
     display: flex;
@@ -573,8 +533,8 @@ body:not(.light-theme) .crypto-price img {
 
 .fear-greed-gauge {
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
 }
 
 #fearGreedCanvas {
@@ -652,6 +612,11 @@ body:not(.light-theme) .crypto-price img {
     color: white;
 }
 
+.altseason-status.neutral {
+    background: var(--text-muted);
+    color: white;
+}
+
 .altseason-progress {
     margin-bottom: var(--spacing-md);
 }
@@ -669,17 +634,6 @@ body:not(.light-theme) .crypto-price img {
     background: linear-gradient(90deg, var(--warning-orange), var(--success-green));
     border-radius: var(--radius-sm);
     transition: width var(--transition-normal);
-}
-
-.progress-marker {
-    position: absolute;
-    top: -2px;
-    width: 4px;
-    height: 12px;
-    background: var(--text-primary);
-    border-radius: var(--radius-sm);
-    transform: translateX(-50%);
-    transition: left var(--transition-normal);
 }
 
 .progress-labels {
@@ -796,6 +750,7 @@ body:not(.light-theme) .crypto-price img {
     border: 1px solid var(--border-primary);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xs);
+    backdrop-filter: blur(20px);
 }
 
 .news-source-btn {
@@ -1020,6 +975,38 @@ body:not(.light-theme) .crypto-price img {
     font-size: 0.875rem;
 }
 
+/* Tooltips */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    z-index: 1000;
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-lg);
+    pointer-events: none;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-4px);
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .market-grid {
@@ -1073,59 +1060,6 @@ body:not(.light-theme) .crypto-price img {
         min-height: 140px;
         padding: var(--spacing-sm) var(--spacing-md);
     }
-    
-    .price-value {
-        font-size: 1.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .gas-card {
-        min-height: 120px;
-        padding: var(--spacing-sm);
-    }
-    
-    .price-value {
-        font-size: 1.5rem;
-    }
-    
-    .token-lists {
-        grid-template-columns: 1fr;
-    }
-    
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .partners-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .footer-actions {
-        flex-direction: column;
-    }
-    
-    .chart-container {
-        height: 250px;
-    }
-    
-    .fear-greed-container {
-        height: 150px;
-    }
-    
-    .fear-greed-gauge {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .gauge-value {
-        font-size: 1.5rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1169,12 +1103,42 @@ body:not(.light-theme) .crypto-price img {
         padding: var(--spacing-md);
     }
     
-    .price-value {
-        font-size: 2rem;
-    }
-    
     .chart-container {
         height: 200px;
+    }
+    
+    .token-lists {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-actions {
+        flex-direction: column;
+    }
+    
+    .fear-greed-container {
+        height: 150px;
+    }
+    
+    .fear-greed-gauge {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .gauge-value {
+        font-size: 1.5rem;
     }
 }
 
