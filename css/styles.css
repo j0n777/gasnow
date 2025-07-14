@@ -97,21 +97,11 @@ body:not(.light-theme) .news-image,
 body:not(.light-theme) .partner-logo,
 body:not(.light-theme) .logo-icon,
 body:not(.light-theme) .gas-icon img {
-    filter: none;
-}
-
-/* Special handling for GasNow logo and crypto icons in dark mode */
-body:not(.light-theme) .logo-icon {
-    filter: brightness(1.2) contrast(1.1) !important;
-}
-
+body:not(.light-theme) .token-icon,
+/* Make GasNow logo and crypto icons bright in dark mode */
+body:not(.light-theme) .logo-icon,
 body:not(.light-theme) .crypto-price img {
-    filter: brightness(1.1) contrast(1.05) !important;
-}
-
-/* Gas fees icons should be white in dark mode */
-body:not(.light-theme) .gas-icon img {
-    filter: brightness(0) invert(1) !important;
+    filter: brightness(0) invert(1) brightness(1.2) !important;
 }
 
 /* Loading Screen */
@@ -326,10 +316,8 @@ body:not(.light-theme) .gas-icon img {
 
 .gas-prices-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-lg);
-    max-width: 1000px;
-    margin: 0 auto;
 }
 
 .gas-card {
@@ -337,11 +325,11 @@ body:not(.light-theme) .gas-icon img {
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-primary);
     border-radius: var(--radius-xl);
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-lg);
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
-    min-height: 160px;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
 }
@@ -358,61 +346,71 @@ body:not(.light-theme) .gas-icon img {
 }
 
 .gas-card-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
+    gap: var(--spacing-sm);
     margin-bottom: var(--spacing-md);
 }
 
+.gas-card-header .gas-icon {
+    order: 1;
+}
+
 .gas-card-header h3 {
+    order: 2;
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-secondary);
 }
 
-.gas-icon img {
+.gas-card-header .gas-price-inline {
+    order: 3;
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.gas-price-inline .price-unit {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.gas-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gas-icon img,
+.gas-icon i {
     width: 24px;
     height: 24px;
     opacity: 0.7;
     transition: opacity var(--transition-fast);
+    color: var(--text-muted);
 }
 
-.gas-card:hover .gas-icon img {
+.gas-card:hover .gas-icon img,
+.gas-card:hover .gas-icon i {
     opacity: 1;
 }
 
 .gas-card-content {
     text-align: center;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.gas-price {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-xs);
-}
-
-.price-value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1;
-}
-
-.price-unit {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-}
-
 .gas-usd {
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--text-muted);
 }
@@ -694,7 +692,7 @@ body:not(.light-theme) .gas-icon img {
 /* Token Lists */
 .token-lists {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-lg);
 }
 
@@ -904,7 +902,7 @@ body:not(.light-theme) .gas-icon img {
 
 .partners-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-lg);
 }
 
