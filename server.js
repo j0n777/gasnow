@@ -87,10 +87,13 @@ app.use('/api_v2', async (req, res) => {
       case 'news':
         await handleNewsRequest(req, res);
         break;
+      case 'trending_tokens':
+        await handleTrendingTokensRequest(req, res);
+        break;
       default:
         res.status(400).json({ 
           error: `Invalid action: ${action}`,
-          available_actions: ['prices', 'market_cap', 'market_cap_chart', 'fear_greed', 'altseason', 'news']
+          available_actions: ['prices', 'market_cap', 'market_cap_chart', 'fear_greed', 'altseason', 'news', 'trending_tokens']
         });
     }
   } catch (error) {
