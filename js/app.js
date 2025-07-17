@@ -555,68 +555,82 @@ class GasNowApp {
         try {
             console.log('🔥 Updating trending tokens...');
             
-            // Enhanced trending tokens data with proper logos
-            const trendingTokens = [
+            // Try to fetch from API first
+            let marketData;
+            try {
+                marketData = await this.fetchWithCache('/api_v2/?action=trending_tokens', 600000);
+            } catch (error) {
+                console.warn('Trending tokens API failed, using fallback data');
+            }
+
+            if (marketData && marketData.trendingTokens && marketData.largestGainers) {
+                this.renderTrendingTokens(marketData.trendingTokens);
+                this.renderLargestGainers(marketData.largestGainers);
+            } else {
+                // Use fallback data with proper structure
+                const fallbackData = this.generateFallbackTokenData();
+                this.renderTrendingTokens(fallbackData.trendingTokens);
+                this.renderLargestGainers(fallbackData.largestGainers);
+            }
+            
+            console.log('✅ Trending tokens updated');
+        } catch (error) {
+            console.error('❌ Error updating trending tokens:', error);
+            const fallbackData = this.generateFallbackTokenData();
+            this.renderTrendingTokens(fallbackData.trendingTokens);
+            this.renderLargestGainers(fallbackData.largestGainers);
+        }
+    }
+
+    generateFallbackTokenData() {
+        return {
+            trendingTokens: [
                 { 
                     name: 'Toncoin', 
                     symbol: 'TON', 
                     price: 2.89, 
-                    change: 3.35, 
-                    logo: 'https://assets.coingecko.com/coins/images/17980/small/ton_symbol.png',
-                    fallback: 'https://cryptologos.cc/logos/toncoin-ton-logo.png'
+                    change24h: 3.35, 
+                    icon: 'https://coin-images.coingecko.com/coins/images/17980/small/ton_symbol.png'
                 },
                 { 
                     name: 'Jupiter', 
                     symbol: 'JUP', 
                     price: 0.46, 
-                    change: 7.14, 
-                    logo: 'https://assets.coingecko.com/coins/images/34188/small/jup.png',
-                    fallback: 'https://cryptologos.cc/logos/jupiter-jup-logo.png'
+                    change24h: 7.14, 
+                    icon: 'https://coin-images.coingecko.com/coins/images/34188/small/jup.png'
                 },
                 { 
                     name: 'Pudgy Penguins', 
                     symbol: 'PENGU', 
                     price: 0.02, 
-                    change: 5.76, 
-                    logo: 'https://assets.coingecko.com/coins/images/35718/small/pengu.png',
-                    fallback: 'https://cryptologos.cc/logos/pudgy-penguins-pengu-logo.png'
+                    change24h: 5.76, 
+                    icon: 'https://coin-images.coingecko.com/coins/images/35718/small/pengu.png'
                 }
-            ];
-
-            const largestGainers = [
+            ],
+            largestGainers: [
                 { 
-                    name: 'Useless Coin', 
-                    symbol: 'USELESS', 
-                    price: 0.27, 
-                    change: 26.34, 
-                    logo: 'https://assets.coingecko.com/coins/images/17430/small/useless.png',
-                    fallback: 'https://via.placeholder.com/32x32/10b981/ffffff?text=U'
+                    name: 'Bonk', 
+                    symbol: 'BONK', 
+                    price: 0.00003419, 
+                    change24h: 18.84, 
+                    icon: 'https://coin-images.coingecko.com/coins/images/28600/small/bonk.jpg'
                 },
                 { 
-                    name: 'Keeta', 
-                    symbol: 'KTA', 
+                    name: 'Pump.fun', 
+                    symbol: 'PUMP', 
                     price: 0.65, 
-                    change: 20.29, 
-                    logo: 'https://assets.coingecko.com/coins/images/32659/small/keeta.png',
-                    fallback: 'https://via.placeholder.com/32x32/f59e0b/ffffff?text=K'
+                    change24h: 20.29, 
+                    icon: 'https://coin-images.coingecko.com/coins/images/33440/small/pump.png'
                 },
                 { 
-                    name: 'Flume', 
-                    symbol: 'FLUME', 
+                    name: 'SPX6900', 
+                    symbol: 'SPX', 
                     price: 0.11, 
-                    change: 19.08, 
-                    logo: 'https://assets.coingecko.com/coins/images/33847/small/flume.png',
-                    fallback: 'https://via.placeholder.com/32x32/3b82f6/ffffff?text=F'
+                    change24h: 19.08, 
+                    icon: 'https://coin-images.coingecko.com/coins/images/33051/small/spx.png'
                 }
-            ];
-
-            this.renderTrendingTokens(trendingTokens);
-            this.renderLargestGainers(largestGainers);
-            
-            console.log('✅ Trending tokens updated');
-        } catch (error) {
-            console.error('❌ Error updating trending tokens:', error);
-        }
+            ]
+        };
     }
 
     renderTrendingTokens(tokens) {
@@ -626,7 +640,7 @@ class GasNowApp {
         container.innerHTML = tokens.map(token => `
             <div class="token-item">
                 <div class="token-info">
-                    <img src="${token.logo}" alt="${token.symbol}" class="token-icon" onerror="this.src='${token.fallback}'; this.onerror=null;">
+                    <img src="${token.icon}" alt="${token.symbol}" class="token-icon" onerror="this.src='https://via.placeholder.com/32x32/3b82f6/ffffff?text=${token.symbol.charAt(0)}'; this.onerror=null;">
                     <div class="token-details">
                         <h4>${token.name}</h4>
                         <p>${token.symbol}</p>
@@ -634,8 +648,8 @@ class GasNowApp {
                 </div>
                 <div class="token-stats">
                     <div class="token-price">$${this.formatPrice(token.price)}</div>
-                    <div class="token-change ${token.change >= 0 ? 'positive' : 'negative'}">
-                        ${token.change >= 0 ? '+' : ''}${token.change.toFixed(2)}%
+                    <div class="token-change ${token.change24h >= 0 ? 'positive' : 'negative'}">
+                        ${token.change24h >= 0 ? '+' : ''}${token.change24h.toFixed(2)}%
                     </div>
                 </div>
             </div>
@@ -649,7 +663,7 @@ class GasNowApp {
         container.innerHTML = tokens.map(token => `
             <div class="token-item">
                 <div class="token-info">
-                    <img src="${token.logo}" alt="${token.symbol}" class="token-icon" onerror="this.src='${token.fallback}'; this.onerror=null;">
+                    <img src="${token.icon}" alt="${token.symbol}" class="token-icon" onerror="this.src='https://via.placeholder.com/32x32/10b981/ffffff?text=${token.symbol.charAt(0)}'; this.onerror=null;">
                     <div class="token-details">
                         <h4>${token.name}</h4>
                         <p>${token.symbol}</p>
@@ -658,7 +672,7 @@ class GasNowApp {
                 <div class="token-stats">
                     <div class="token-price">$${this.formatPrice(token.price)}</div>
                     <div class="token-change positive">
-                        +${token.change.toFixed(2)}%
+                        +${token.change24h.toFixed(2)}%
                     </div>
                 </div>
             </div>
