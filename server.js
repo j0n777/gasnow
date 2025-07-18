@@ -166,6 +166,82 @@ async function handlePricesRequest(req, res) {
   res.json(fallbackData);
 }
 
+// Handle trending tokens request
+async function handleTrendingTokensRequest(req, res) {
+  const cacheKey = 'trending-tokens';
+  const cached = getCachedData(cacheKey, CACHE_DURATION.prices);
+  
+  if (cached) {
+    console.log('[CACHE HIT] Trending tokens');
+    return res.json(cached);
+  }
+
+  try {
+    console.log('[API CALL] Fetching trending tokens and gainers');
+    
+    // Fetch trending tokens and top gainers in parallel
+    const [trendingResponse, gainersResponse] = await Promise.allSettled([
+      axios.get('https://api.coingecko.com/api/v3/search/trending', {
+        headers: process.env.COINGECKO_API_KEY ? {
+          'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
+        } : {},
+        timeout: 10000
+      }),
+      axios.get('https://api.coingecko.com/api/v3/coins/markets', {
+        params: {
+          vs_currency: 'usd',
+          order: 'percent_change_24h_desc',
+          per_page: 10,
+          page: 1,
+          sparkline: false
+        },
+        headers: process.env.COINGECKO_API_KEY ? {
+          'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
+        } : {},
+        timeout: 10000
+      })
+    ]);
+
+    let trendingTokens = [];
+    let largestGainers = [];
+
+    // Process trending tokens
+    if (trendingResponse.status === 'fulfilled') {
+      trendingTokens = trendingResponse.value.data.coins.slice(0, 5).map(coin => ({
+        name: coin.item.name,
+        symbol: coin.item.symbol.toUpperCase(),
+        price: 0, // Trending API doesn't include price
+        change24h: 0, // Trending API doesn't include change
+        icon: coin.item.large || coin.item.small || coin.item.thumb
+      }));
+    }
+
+    // Process largest gainers
+    if (gainersResponse.status === 'fulfilled') {
+      largestGainers = gainersResponse.value.data.slice(0, 5).map(coin => ({
+        name: coin.name,
+        symbol: coin.symbol.toUpperCase(),
+        price: coin.current_price,
+        change24h: coin.price_change_percentage_24h || 0,
+        icon: coin.image
+      }));
+    }
+
+    const result = { trendingTokens, largestGainers };
+    
+    console.log('[API SUCCESS] Trending tokens and gainers fetched');
+    setCachedData(cacheKey, result);
+    res.json(result);
+  } catch (error) {
+    logApiError('trending_tokens', error, true);
+    
+    // Return fallback data
+    const fallbackData = generateFallbackTrendingData();
+    setCachedData(cacheKey, fallbackData);
+    res.json(fallbackData);
+  }
+}
+
 // Handle market cap data with enhanced error handling
 async function handleMarketCapRequest(req, res) {
   const cacheKey = 'market-cap';
@@ -596,6 +672,58 @@ function generateEnhancedMockNews(source = 'general') {
   };
 
   return newsTopics[source] || newsTopics.general;
+}
+
+// Generate fallback trending data
+function generateFallbackTrendingData() {
+  return {
+    trendingTokens: [
+      {
+        name: "Toncoin",
+        symbol: "TON",
+        price: 2.89,
+        change24h: 3.35,
+        icon: "https://coin-images.coingecko.com/coins/images/17980/small/ton_symbol.png"
+      },
+      {
+        name: "Jupiter",
+        symbol: "JUP",
+        price: 0.4600,
+        change24h: 7.14,
+        icon: "https://coin-images.coingecko.com/coins/images/34188/small/jup.png"
+      },
+      {
+        name: "Pudgy Penguins",
+        symbol: "PENGU",
+        price: 0.0200,
+        change24h: 5.76,
+        icon: "https://coin-images.coingecko.com/coins/images/35718/small/pengu.png"
+      }
+    ],
+    largestGainers: [
+      {
+        name: "Bonk",
+        symbol: "BONK",
+        price: 0.00003419,
+        change24h: 18.84,
+        icon: "https://coin-images.coingecko.com/coins/images/28600/small/bonk.jpg"
+      },
+      {
+        name: "Pump.fun",
+        symbol: "PUMP",
+        price: 0.6500,
+        change24h: 20.29,
+        icon: "https://coin-images.coingecko.com/coins/images/33440/small/pump.png"
+      },
+      {
+        name: "Flume",
+        symbol: "FLUME",
+        price: 0.1100,
+        change24h: 19.08,
+        icon: "https://coin-images.coingecko.com/coins/images/35234/small/flume.png"
+      }
+    ]
+  };
 }
 
 // Gas prices endpoint (legacy support)
