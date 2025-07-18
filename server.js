@@ -206,7 +206,10 @@ async function handleTrendingTokensRequest(req, res) {
     let largestGainers = [];
 
     // Process trending tokens
-    if (trendingResponse.status === 'fulfilled') {
+    if (trendingResponse.status === 'fulfilled' && 
+        trendingResponse.value.data && 
+        trendingResponse.value.data.coins && 
+        Array.isArray(trendingResponse.value.data.coins)) {
       trendingTokens = trendingResponse.value.data.coins.slice(0, 5).map(coin => ({
         name: coin.item.name,
         symbol: coin.item.symbol.toUpperCase(),
@@ -214,10 +217,14 @@ async function handleTrendingTokensRequest(req, res) {
         change24h: 0, // Trending API doesn't include change
         icon: coin.item.large || coin.item.small || coin.item.thumb
       }));
+    } else {
+      console.log('[API WARNING] Trending tokens API returned unexpected structure');
     }
 
     // Process largest gainers
-    if (gainersResponse.status === 'fulfilled') {
+    if (gainersResponse.status === 'fulfilled' && 
+        gainersResponse.value.data && 
+        Array.isArray(gainersResponse.value.data)) {
       largestGainers = gainersResponse.value.data.slice(0, 5).map(coin => ({
         name: coin.name,
         symbol: coin.symbol.toUpperCase(),
@@ -225,6 +232,8 @@ async function handleTrendingTokensRequest(req, res) {
         change24h: coin.price_change_percentage_24h || 0,
         icon: coin.image
       }));
+    } else {
+      console.log('[API WARNING] Gainers API returned unexpected structure');
     }
 
     const result = { trendingTokens, largestGainers };
