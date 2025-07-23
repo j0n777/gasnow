@@ -365,10 +365,11 @@ body:not(.light-theme) .token-icon {
 
 .gas-price-main {
     grid-column: 2;
-    text-align: right;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 
 .gas-price-value {
