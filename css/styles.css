@@ -348,25 +348,59 @@ body:not(.light-theme) .token-icon {
 }
 
 .gas-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--spacing-md);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    margin-bottom: var(--spacing-sm);
+    gap: var(--spacing-sm);
 }
 
 .gas-card-header h3 {
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-secondary);
+    margin: 0;
+    grid-column: 1;
+}
+
+.gas-price-main {
+    grid-column: 2;
+    text-align: right;
     display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.gas-price-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+}
+
+.gas-price-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.gas-usd-price {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: var(--spacing-xs);
 }
 
 .gas-icon {
+    grid-column: 3;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 32px;
+    height: 32px;
 }
 
 .gas-icon img,
@@ -383,38 +417,13 @@ body:not(.light-theme) .token-icon {
     opacity: 1;
 }
 
-.gas-price-inline {
-    display: flex;
-    align-items: baseline;
-    gap: var(--spacing-xs);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.price-unit {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-}
-
 .gas-card-content {
-    text-align: center;
-    margin-bottom: var(--spacing-sm);
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.gas-usd {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
 }
 
 .gas-card-footer {
-    margin-top: var(--spacing-sm);
+    margin-top: auto;
 }
 
 .progress-bar {
