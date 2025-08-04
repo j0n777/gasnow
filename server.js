@@ -179,61 +179,92 @@ async function handleTrendingTokensRequest(req, res) {
   try {
     console.log('[API CALL] Fetching trending tokens and gainers');
     
-    // Fetch trending tokens and top gainers in parallel
-    const [trendingResponse, gainersResponse] = await Promise.allSettled([
-      axios.get('https://api.coingecko.com/api/v3/search/trending', {
-        headers: process.env.COINGECKO_API_KEY ? {
-          'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
-        } : {},
-        timeout: 10000
-      }),
-      axios.get('https://api.coingecko.com/api/v3/coins/markets', {
-        params: {
-          vs_currency: 'usd',
-          order: 'percent_change_24h_desc',
-          per_page: 10,
-          page: 1,
-          sparkline: false
-        },
-        headers: process.env.COINGECKO_API_KEY ? {
-          'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
-        } : {},
-        timeout: 10000
-      })
-    ]);
-
+    // Try Gemini API first for better data
     let trendingTokens = [];
     let largestGainers = [];
+    
+    try {
+      console.log('[API CALL] Trying Gemini API for price data');
+      const geminiResponse = await axios.get('https://api.gemini.com/v1/pricefeed', {
+        headers: { 'Content-Type': 'application/json' },
+        timeout: 10000
+      });
+      
+      if (geminiResponse.data && Array.isArray(geminiResponse.data)) {
+        // Process Gemini data and sort by 24h change
+        const processedGemini = geminiResponse.data
+          .filter(item => item.percentChange24h && parseFloat(item.percentChange24h) > 0)
+          .sort((a, b) => parseFloat(b.percentChange24h) - parseFloat(a.percentChange24h))
+          .slice(0, 10)
+          .map(item => ({
+            name: item.pair.replace('USD', '').replace('BTC', 'Bitcoin').replace('ETH', 'Ethereum'),
+            symbol: item.pair.replace('USD', ''),
+            price: parseFloat(item.price),
+            change24h: parseFloat(item.percentChange24h),
+            icon: getTokenIcon(item.pair.replace('USD', ''))
+          }));
+        
+        largestGainers = processedGemini.slice(0, 5);
+        trendingTokens = processedGemini.slice(0, 3);
+        
+        console.log('[API SUCCESS] Gemini data processed');
+      }
+    } catch (geminiError) {
+      console.log('[API WARNING] Gemini API failed, trying CoinGecko fallback');
+      
+      // Fallback to CoinGecko
+      const [trendingResponse, gainersResponse] = await Promise.allSettled([
+        axios.get('https://api.coingecko.com/api/v3/search/trending', {
+          headers: process.env.COINGECKO_API_KEY ? {
+            'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
+          } : {},
+          timeout: 10000
+        }),
+        axios.get('https://api.coingecko.com/api/v3/coins/markets', {
+          params: {
+            vs_currency: 'usd',
+            order: 'percent_change_24h_desc',
+            per_page: 10,
+            page: 1,
+            sparkline: false
+          },
+          headers: process.env.COINGECKO_API_KEY ? {
+            'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
+          } : {},
+          timeout: 10000
+        })
+      ]);
 
-    // Process trending tokens
-    if (trendingResponse.status === 'fulfilled' && 
-        trendingResponse.value.data && 
-        trendingResponse.value.data.coins && 
-        Array.isArray(trendingResponse.value.data.coins)) {
-      trendingTokens = trendingResponse.value.data.coins.slice(0, 5).map(coin => ({
-        name: coin.item.name,
-        symbol: coin.item.symbol.toUpperCase(),
-        price: 0, // Trending API doesn't include price
-        change24h: 0, // Trending API doesn't include change
-        icon: coin.item.large || coin.item.small || coin.item.thumb
-      }));
-    } else {
-      console.log('[API WARNING] Trending tokens API returned unexpected structure');
-    }
+      // Process trending tokens
+      if (trendingResponse.status === 'fulfilled' && 
+          trendingResponse.value.data && 
+          trendingResponse.value.data.coins && 
+          Array.isArray(trendingResponse.value.data.coins)) {
+        trendingTokens = trendingResponse.value.data.coins.slice(0, 5).map(coin => ({
+          name: coin.item.name,
+          symbol: coin.item.symbol.toUpperCase(),
+          price: 0, // Trending API doesn't include price
+          change24h: 0, // Trending API doesn't include change
+          icon: coin.item.large || coin.item.small || coin.item.thumb
+        }));
+      } else {
+        console.log('[API WARNING] Trending tokens API returned unexpected structure');
+      }
 
-    // Process largest gainers
-    if (gainersResponse.status === 'fulfilled' && 
-        gainersResponse.value.data && 
-        Array.isArray(gainersResponse.value.data)) {
-      largestGainers = gainersResponse.value.data.slice(0, 5).map(coin => ({
-        name: coin.name,
-        symbol: coin.symbol.toUpperCase(),
-        price: coin.current_price,
-        change24h: coin.price_change_percentage_24h || 0,
-        icon: coin.image
-      }));
-    } else {
-      console.log('[API WARNING] Gainers API returned unexpected structure');
+      // Process largest gainers
+      if (gainersResponse.status === 'fulfilled' && 
+          gainersResponse.value.data && 
+          Array.isArray(gainersResponse.value.data)) {
+        largestGainers = gainersResponse.value.data.slice(0, 5).map(coin => ({
+          name: coin.name,
+          symbol: coin.symbol.toUpperCase(),
+          price: coin.current_price,
+          change24h: coin.price_change_percentage_24h || 0,
+          icon: coin.image
+        }));
+      } else {
+        console.log('[API WARNING] Gainers API returned unexpected structure');
+      }
     }
 
     const result = { trendingTokens, largestGainers };
@@ -249,6 +280,24 @@ async function handleTrendingTokensRequest(req, res) {
     setCachedData(cacheKey, fallbackData);
     res.json(fallbackData);
   }
+}
+
+// Helper function to get token icons
+function getTokenIcon(symbol) {
+  const iconMap = {
+    'BTC': 'https://coin-images.coingecko.com/coins/images/1/small/bitcoin.png',
+    'ETH': 'https://coin-images.coingecko.com/coins/images/279/small/ethereum.png',
+    'SOL': 'https://coin-images.coingecko.com/coins/images/4128/small/solana.png',
+    'ADA': 'https://coin-images.coingecko.com/coins/images/975/small/cardano.png',
+    'DOT': 'https://coin-images.coingecko.com/coins/images/12171/small/polkadot.png',
+    'AVAX': 'https://coin-images.coingecko.com/coins/images/12559/small/avalanche.png',
+    'MATIC': 'https://coin-images.coingecko.com/coins/images/4713/small/matic.png',
+    'LINK': 'https://coin-images.coingecko.com/coins/images/877/small/chainlink.png',
+    'UNI': 'https://coin-images.coingecko.com/coins/images/12504/small/uniswap.png',
+    'LTC': 'https://coin-images.coingecko.com/coins/images/2/small/litecoin.png'
+  };
+  
+  return iconMap[symbol] || `https://via.placeholder.com/32x32/3b82f6/ffffff?text=${symbol.charAt(0)}`;
 }
 
 // Handle market cap data with enhanced error handling
