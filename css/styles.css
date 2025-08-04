@@ -70,6 +70,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
 }
 
 html {
@@ -246,6 +248,7 @@ body:not(.light-theme) .token-icon {
 .crypto-prices {
     display: flex;
     gap: var(--spacing-md);
+    flex-wrap: wrap;
 }
 
 .crypto-price {
@@ -292,6 +295,21 @@ body:not(.light-theme) .token-icon {
 
 .crypto-price-change.negative {
     color: var(--danger-red);
+}
+
+/* Mobile: 2x2 grid for crypto prices */
+@media (max-width: 768px) {
+    .crypto-prices {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+        width: 100%;
+    }
+    
+    .crypto-price {
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 /* Section Headers */
@@ -452,7 +470,7 @@ body:not(.light-theme) .token-icon {
     grid-template-columns: 2fr 1fr 1fr;
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
-    min-height: 400px;
+    align-items: stretch;
 }
 
 .market-card {
@@ -464,6 +482,7 @@ body:not(.light-theme) .token-icon {
     transition: all var(--transition-normal);
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .market-card:hover {
@@ -472,7 +491,18 @@ body:not(.light-theme) .token-icon {
 }
 
 .market-card.main-chart {
-    grid-row: span 2;
+    grid-row: span 1;
+}
+
+/* Ensure all market cards have same height on desktop */
+@media (min-width: 1201px) {
+    .market-grid {
+        grid-template-rows: 400px;
+    }
+    
+    .market-card {
+        height: 400px;
+    }
 }
 
 .card-header {
@@ -522,9 +552,9 @@ body:not(.light-theme) .token-icon {
 }
 
 .chart-container {
-    height: 300px;
-    position: relative;
     flex: 1;
+    min-height: 250px;
+    position: relative;
 }
 
 .chart-container canvas {
@@ -1017,15 +1047,44 @@ body:not(.light-theme) .token-icon {
     transform: translateX(-50%) translateY(-4px);
 }
 
+/* Custom scrollbar styles - semi-invisible */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 3px;
+    transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.5);
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .market-grid {
         grid-template-columns: 1fr;
-        min-height: auto;
+        grid-template-rows: auto;
     }
     
     .market-card.main-chart {
         grid-row: span 1;
+    }
+    
+    .market-card {
+        height: auto;
+        min-height: 300px;
+    }
+    
+    .chart-container {
+        min-height: 200px;
     }
     
     .market-stats {
@@ -1043,11 +1102,6 @@ body:not(.light-theme) .token-icon {
         flex-direction: column;
         gap: var(--spacing-lg);
         text-align: center;
-    }
-    
-    .crypto-prices {
-        flex-wrap: wrap;
-        justify-content: center;
     }
     
     .section-header {
