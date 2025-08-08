@@ -647,9 +647,9 @@ class GasNowApp {
                     </div>
                 </div>
                 <div class="token-stats">
-                    <div class="token-price">$${this.formatPrice(token.price)}</div>
+                    <div class="token-price">${token.price > 0 ? '$' + this.formatPrice(token.price) : 'N/A'}</div>
                     <div class="token-change ${token.change24h >= 0 ? 'positive' : 'negative'}">
-                        ${token.change24h >= 0 ? '+' : ''}${token.change24h.toFixed(2)}%
+                        ${token.change24h > 0 ? (token.change24h >= 0 ? '+' : '') + token.change24h.toFixed(2) + '%' : 'N/A'}
                     </div>
                 </div>
             </div>
@@ -671,8 +671,8 @@ class GasNowApp {
                 </div>
                 <div class="token-stats">
                     <div class="token-price">$${this.formatPrice(token.price)}</div>
-                    <div class="token-change ${token.change24h >= 0 ? 'positive' : 'negative'}">
-                        ${token.change24h >= 0 ? '+' : ''}${token.change24h.toFixed(2)}%
+                    <div class="token-change positive">
+                        +${token.change24h.toFixed(2)}%
                     </div>
                 </div>
             </div>

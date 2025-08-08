@@ -179,14 +179,179 @@ async function handleTrendingTokensRequest(req, res) {
   try {
     console.log('[API CALL] Fetching trending tokens and gainers');
     
-    // Try Gemini API first for better data
-    let trendingTokens = [];
-    let largestGainers = [];
+    // Try CoinGecko API first (primary)
+    let result = null;
     
     try {
-      console.log('[API CALL] Trying Gemini API for price data');
-      const geminiResponse = await axios.get('https://api.gemini.com/v1/pricefeed', {
-        headers: { 'Content-Type': 'application/json' },
+      console.log('[API CALL] Trying CoinGecko APIs');
+      
+      // Fetch all required data from CoinGecko
+      const [trendingResponse, topCoinsResponse] = await Promise.all([
+        axios.get('https://api.coingecko.com/api/v3/search/trending', {
+          headers: process.env.COINGECKO_API_KEY ? {
+            'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
+          } : {},
+          timeout: 10000
+        }),
+        axios.get('https://api.coingecko.com/api/v3/coins/markets', {
+          params: {
+            vs_currency: 'usd',
+            order: 'market_cap_desc',
+            per_page: 250,
+            page: 1,
+            sparkline: false,
+            price_change_percentage: '24h'
+          },
+          headers: process.env.COINGECKO_API_KEY ? {
+            'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
+          } : {},
+          timeout: 10000
+        })
+      ]);
+
+      // Process trending tokens (from trending endpoint)
+      let trendingTokens = [];
+      if (trendingResponse.data && 
+          trendingResponse.data.coins && 
+          Array.isArray(trendingResponse.data.coins)) {
+        trendingTokens = trendingResponse.data.coins.slice(0, 3).map(coin => ({
+          name: coin.item.name,
+          symbol: coin.item.symbol.toUpperCase(),
+          icon: coin.item.small || coin.item.thumb,
+          price: 0, // Trending endpoint doesn't provide current price
+          change24h: 0 // Trending endpoint doesn't provide 24h change
+        }));
+      }
+
+      // Process largest gainers (from markets endpoint, sorted by 24h change)
+      let largestGainers = [];
+      if (topCoinsResponse.data && Array.isArray(topCoinsResponse.data)) {
+        // Sort by 24h percentage change (descending)
+        const sortedCoins = topCoinsResponse.data
+          .filter(coin => coin.price_change_percentage_24h && coin.price_change_percentage_24h > 0)
+          .sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h);
+        
+        largestGainers = sortedCoins.slice(0, 3).map(coin => ({
+          name: coin.name,
+          symbol: coin.symbol.toUpperCase(),
+          icon: coin.image,
+          price: coin.current_price,
+          change24h: coin.price_change_percentage_24h
+        }));
+      }
+
+      result = { trendingTokens, largestGainers };
+      console.log('[API SUCCESS] CoinGecko data processed successfully');
+      
+    } catch (coingeckoError) {
+      console.log('[API WARNING] CoinGecko API failed, trying Gemini fallback');
+      logApiError('coingecko-trending', coingeckoError);
+      
+      // Fallback to Gemini API
+      try {
+        console.log('[API CALL] Trying Gemini API as fallback');
+        const geminiResponse = await axios.get('https://api.gemini.com/v1/pricefeed', {
+          headers: { 'Content-Type': 'application/json' },
+          timeout: 10000
+        });
+        
+        if (geminiResponse.data && Array.isArray(geminiResponse.data)) {
+          // Process Gemini data and sort by 24h change
+          const processedGemini = geminiResponse.data
+            .filter(item => item.percentChange24h && parseFloat(item.percentChange24h) > 0)
+            .sort((a, b) => parseFloat(b.percentChange24h) - parseFloat(a.percentChange24h))
+            .slice(0, 6)
+            .map(item => ({
+              name: item.pair.replace('USD', '').replace('BTC', 'Bitcoin').replace('ETH', 'Ethereum'),
+              symbol: item.pair.replace('USD', ''),
+              price: parseFloat(item.price),
+              change24h: parseFloat(item.percentChange24h),
+              icon: getTokenIcon(item.pair.replace('USD', ''))
+            }));
+          
+          result = {
+            trendingTokens: processedGemini.slice(0, 3),
+            largestGainers: processedGemini.slice(0, 3)
+          };
+          
+          console.log('[API SUCCESS] Gemini fallback data processed');
+        }
+      } catch (geminiError) {
+        console.log('[API WARNING] Gemini fallback also failed');
+        logApiError('gemini-fallback', geminiError);
+      }
+    }
+
+    // If both APIs failed, use enhanced fallback data
+    if (!result) {
+      console.log('[FALLBACK] Using enhanced fallback data');
+      result = generateFallbackTrendingData();
+    }
+
+    console.log('[API SUCCESS] Trending tokens and gainers ready');
+    setCachedData(cacheKey, result);
+    res.json(result);
+  } catch (error) {
+    logApiError('trending_tokens', error, true);
+    
+    // Return fallback data
+    const fallbackData = generateFallbackTrendingData();
+    setCachedData(cacheKey, fallbackData);
+    res.json(fallbackData);
+  }
+}
+
+// Generate enhanced fallback trending data with real CoinGecko structure
+function generateFallbackTrendingData() {
+  return {
+    trendingTokens: [
+      {
+        name: "Toncoin",
+        symbol: "TON",
+        icon: "https://coin-images.coingecko.com/coins/images/17980/small/ton_symbol.png",
+        price: 2.89,
+        change24h: 3.35
+      },
+      {
+        name: "Jupiter",
+        symbol: "JUP", 
+        icon: "https://coin-images.coingecko.com/coins/images/34188/small/jup.png",
+        price: 0.46,
+        change24h: 7.14
+      },
+      {
+        name: "Pudgy Penguins",
+        symbol: "PENGU",
+        icon: "https://coin-images.coingecko.com/coins/images/35718/small/pengu.png",
+        price: 0.02,
+        change24h: 5.76
+      }
+    ],
+    largestGainers: [
+      {
+        name: "Bonk",
+        symbol: "BONK",
+        icon: "https://coin-images.coingecko.com/coins/images/28600/small/bonk.jpg",
+        price: 0.00003419,
+        change24h: 18.84
+      },
+      {
+        name: "Pump.fun", 
+        symbol: "PUMP",
+        icon: "https://coin-images.coingecko.com/coins/images/33440/small/pump.png",
+        price: 0.65,
+        change24h: 20.29
+      },
+      {
+        name: "SPX6900",
+        symbol: "SPX",
+        icon: "https://coin-images.coingecko.com/coins/images/33051/small/spx.png",
+        price: 0.11,
+        change24h: 19.08
+      }
+    ]
+  };
+}
         timeout: 10000
       });
       
