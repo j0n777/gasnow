@@ -352,6 +352,28 @@ function generateFallbackTrendingData() {
     ]
   };
 }
+
+// Handle trending tokens request (duplicate function - removing duplicate code)
+async function handleTrendingTokensRequestDuplicate(req, res) {
+  const cacheKey = 'trending-tokens';
+  const cached = getCachedData(cacheKey, CACHE_DURATION.prices);
+  
+  if (cached) {
+    console.log('[CACHE HIT] Trending tokens');
+    return res.json(cached);
+  }
+
+  try {
+    console.log('[API CALL] Fetching trending tokens and gainers');
+    
+    let trendingTokens = [];
+    let largestGainers = [];
+
+    // Try Gemini API first
+    try {
+      console.log('[API CALL] Trying Gemini API');
+      const geminiResponse = await axios.get('https://api.gemini.com/v1/pricefeed', {
+        headers: { 'Content-Type': 'application/json' },
         timeout: 10000
       });
       
@@ -895,58 +917,6 @@ function generateEnhancedMockNews(source = 'general') {
   };
 
   return newsTopics[source] || newsTopics.general;
-}
-
-// Generate fallback trending data
-function generateFallbackTrendingData() {
-  return {
-    trendingTokens: [
-      {
-        name: "Toncoin",
-        symbol: "TON",
-        price: 2.89,
-        change24h: 3.35,
-        icon: "https://coin-images.coingecko.com/coins/images/17980/small/ton_symbol.png"
-      },
-      {
-        name: "Jupiter",
-        symbol: "JUP",
-        price: 0.4600,
-        change24h: 7.14,
-        icon: "https://coin-images.coingecko.com/coins/images/34188/small/jup.png"
-      },
-      {
-        name: "Pudgy Penguins",
-        symbol: "PENGU",
-        price: 0.0200,
-        change24h: 5.76,
-        icon: "https://coin-images.coingecko.com/coins/images/35718/small/pengu.png"
-      }
-    ],
-    largestGainers: [
-      {
-        name: "Bonk",
-        symbol: "BONK",
-        price: 0.00003419,
-        change24h: 18.84,
-        icon: "https://coin-images.coingecko.com/coins/images/28600/small/bonk.jpg"
-      },
-      {
-        name: "Pump.fun",
-        symbol: "PUMP",
-        price: 0.6500,
-        change24h: 20.29,
-        icon: "https://coin-images.coingecko.com/coins/images/33440/small/pump.png"
-      },
-      {
-        name: "Flume",
-        symbol: "FLUME",
-        price: 0.1100,
-        change24h: 19.08,
-        icon: "https://coin-images.coingecko.com/coins/images/35234/small/flume.png"
-      }
-    ]
-  };
 }
 
 // Gas prices endpoint (legacy support)
