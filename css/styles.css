@@ -247,68 +247,56 @@ body:not(.light-theme) .token-icon {
 
 .crypto-prices {
     display: flex;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     flex-wrap: wrap;
 }
 
-.crypto-price {
+.crypto-price-icon {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    justify-content: center;
     background: var(--bg-secondary);
     border: 1px solid var(--border-primary);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-md);
     transition: all var(--transition-fast);
     cursor: pointer;
+    width: 56px;
+    height: 56px;
 }
 
-.crypto-price:hover {
+.crypto-price-icon:hover {
     background: var(--bg-tertiary);
     transform: translateY(-2px);
 }
 
-.crypto-price.active {
+.crypto-price-icon.active {
     background: var(--primary-blue);
     color: white;
+    box-shadow: 0 0 0 2px var(--accent-blue);
 }
 
-.crypto-price img {
-    width: 24px;
-    height: 24px;
+.crypto-price-icon img {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
 }
 
-.crypto-price-value {
-    font-weight: 600;
-    font-size: 0.875rem;
-}
-
-.crypto-price-change {
-    font-size: 0.75rem;
-    font-weight: 500;
-}
-
-.crypto-price-change.positive {
-    color: var(--success-green);
-}
-
-.crypto-price-change.negative {
-    color: var(--danger-red);
-}
-
-/* Mobile: 2x2 grid for crypto prices */
+/* Mobile: Keep icons in a row */
 @media (max-width: 768px) {
     .crypto-prices {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-sm);
-        width: 100%;
+        justify-content: center;
+        gap: var(--spacing-xl);
     }
     
-    .crypto-price {
-        justify-content: center;
-        text-align: center;
+    .crypto-price-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .crypto-price-icon img {
+        width: 28px;
+        height: 28px;
     }
 }
 
@@ -686,7 +674,7 @@ body:not(.light-theme) .token-icon {
 /* Token Lists */
 .token-lists {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--spacing-lg);
 }
 

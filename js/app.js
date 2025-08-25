@@ -199,24 +199,15 @@ class GasNowApp {
 
         const cryptos = [
             { id: 'ethereum', symbol: 'ETH', blockchain: 'ethereum', logo: 'images/eth-icon.png', fallback: 'https://cryptologos.cc/logos/ethereum-eth-logo.png' },
-            { id: 'bitcoin', symbol: 'BTC', blockchain: 'bitcoin', logo: 'images/btc-icon.png', fallback: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' },
-            { id: 'solana', symbol: 'SOL', blockchain: 'solana', logo: 'images/sol-icon.png', fallback: 'https://cryptologos.cc/logos/solana-sol-logo.png' },
-            { id: 'the-open-network', symbol: 'TON', blockchain: 'ton', logo: 'images/ton-icon.png', fallback: 'https://cryptologos.cc/logos/toncoin-ton-logo.png' }
+            { id: 'bitcoin', symbol: 'BTC', blockchain: 'bitcoin', logo: 'images/btc-icon.png', fallback: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' }
         ];
 
         container.innerHTML = cryptos.map(crypto => {
-            const price = prices[crypto.id]?.usd || 0;
-            const change = prices[crypto.id]?.usd_24h_change || 0;
-            const changeClass = change >= 0 ? 'positive' : 'negative';
             const isActive = this.currentBlockchain === crypto.blockchain ? 'active' : '';
             
             return `
-                <div class="crypto-price ${isActive}" data-blockchain="${crypto.blockchain}" onclick="window.gasNowApp?.selectBlockchain('${crypto.blockchain}')">
+                <div class="crypto-price-icon ${isActive}" data-blockchain="${crypto.blockchain}" onclick="window.gasNowApp?.selectBlockchain('${crypto.blockchain}')">
                     <img src="${crypto.logo}" alt="${crypto.symbol}" onerror="this.src='${crypto.fallback}'">
-                    <div class="crypto-price-info">
-                        <div class="crypto-price-value">$${this.formatPrice(price)}</div>
-                        <div class="crypto-price-change ${changeClass}">${change >= 0 ? '+' : ''}${change.toFixed(2)}%</div>
-                    </div>
                 </div>
             `;
         }).join('');
@@ -227,8 +218,8 @@ class GasNowApp {
         if (!container) return;
 
         container.innerHTML = `
-            <div class="crypto-price error">
-                <span class="crypto-price-value">Error loading prices</span>
+            <div class="crypto-price-icon error">
+                <span>Error</span>
             </div>
         `;
     }
@@ -563,14 +554,16 @@ class GasNowApp {
                 console.warn('Trending tokens API failed, using fallback data');
             }
 
-            if (marketData && marketData.trendingTokens && marketData.largestGainers) {
+            if (marketData && marketData.trendingTokens && marketData.largestGainers && marketData.top3) {
                 this.renderTrendingTokens(marketData.trendingTokens);
                 this.renderLargestGainers(marketData.largestGainers);
+                this.renderTop3Tokens(marketData.top3);
             } else {
                 // Use fallback data with proper structure
                 const fallbackData = this.generateFallbackTokenData();
                 this.renderTrendingTokens(fallbackData.trendingTokens);
                 this.renderLargestGainers(fallbackData.largestGainers);
+                this.renderTop3Tokens(fallbackData.top3);
             }
             
             console.log('✅ Trending tokens updated');
@@ -579,6 +572,7 @@ class GasNowApp {
             const fallbackData = this.generateFallbackTokenData();
             this.renderTrendingTokens(fallbackData.trendingTokens);
             this.renderLargestGainers(fallbackData.largestGainers);
+            this.renderTop3Tokens(fallbackData.top3);
         }
     }
 
@@ -629,6 +623,29 @@ class GasNowApp {
                     change24h: 19.08, 
                     icon: 'https://coin-images.coingecko.com/coins/images/33051/small/spx.png'
                 }
+            ],
+            top3: [
+                {
+                    name: 'Bitcoin',
+                    symbol: 'BTC',
+                    price: 106605,
+                    change24h: -1.04,
+                    icon: 'https://coin-images.coingecko.com/coins/images/1/small/bitcoin.png'
+                },
+                {
+                    name: 'Ethereum',
+                    symbol: 'ETH',
+                    price: 2442,
+                    change24h: -1.04,
+                    icon: 'https://coin-images.coingecko.com/coins/images/279/small/ethereum.png'
+                },
+                {
+                    name: 'Tether',
+                    symbol: 'USDT',
+                    price: 1.00,
+                    change24h: 0.01,
+                    icon: 'https://coin-images.coingecko.com/coins/images/325/small/Tether.png'
+                }
             ]
         };
     }
@@ -649,13 +666,35 @@ class GasNowApp {
                 <div class="token-stats">
                     <div class="token-price">${token.price > 0 ? '$' + this.formatPrice(token.price) : 'N/A'}</div>
                     <div class="token-change ${token.change24h >= 0 ? 'positive' : 'negative'}">
-                        ${token.change24h > 0 ? (token.change24h >= 0 ? '+' : '') + token.change24h.toFixed(2) + '%' : 'N/A'}
+                        ${token.change24h !== 0 ? (token.change24h >= 0 ? '+' : '') + token.change24h.toFixed(2) + '%' : 'N/A'}
                     </div>
                 </div>
             </div>
         `).join('');
     }
 
+    renderTop3Tokens(tokens) {
+        const container = document.getElementById('top3Tokens');
+        if (!container) return;
+
+        container.innerHTML = tokens.map(token => `
+            <div class="token-item">
+                <div class="token-info">
+                    <img src="${token.icon}" alt="${token.symbol}" class="token-icon" onerror="this.src='https://via.placeholder.com/32x32/3b82f6/ffffff?text=${token.symbol.charAt(0)}'; this.onerror=null;">
+                    <div class="token-details">
+                        <h4>${token.name}</h4>
+                        <p>${token.symbol}</p>
+                    </div>
+                </div>
+                <div class="token-stats">
+                    <div class="token-price">$${this.formatPrice(token.price)}</div>
+                    <div class="token-change ${token.change24h >= 0 ? 'positive' : 'negative'}">
+                        ${token.change24h >= 0 ? '+' : ''}${token.change24h.toFixed(2)}%
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
     renderLargestGainers(tokens) {
         const container = document.getElementById('largestGainers');
         if (!container) return;
@@ -988,8 +1027,8 @@ class GasNowApp {
         
         this.currentBlockchain = blockchain;
         
-        // Update UI - crypto prices
-        document.querySelectorAll('.crypto-price').forEach(btn => {
+        // Update UI - crypto price icons
+        document.querySelectorAll('.crypto-price-icon').forEach(btn => {
             btn.classList.remove('active');
         });
         const activeBtn = document.querySelector(`[data-blockchain="${blockchain}"]`);

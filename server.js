@@ -179,68 +179,71 @@ async function handleTrendingTokensRequest(req, res) {
   try {
     console.log('[API CALL] Fetching trending tokens and gainers');
     
-    // Try CoinGecko API first (primary)
     let result = null;
     
     try {
-      console.log('[API CALL] Trying CoinGecko APIs');
+      console.log('[API CALL] Trying CoinGecko markets API');
       
-      // Fetch all required data from CoinGecko
-      const [trendingResponse, topCoinsResponse] = await Promise.all([
-        axios.get('https://api.coingecko.com/api/v3/search/trending', {
-          headers: process.env.COINGECKO_API_KEY ? {
-            'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
-          } : {},
-          timeout: 10000
-        }),
-        axios.get('https://api.coingecko.com/api/v3/coins/markets', {
-          params: {
-            vs_currency: 'usd',
-            order: 'market_cap_desc',
-            per_page: 250,
-            page: 1,
-            sparkline: false,
-            price_change_percentage: '24h'
-          },
-          headers: process.env.COINGECKO_API_KEY ? {
-            'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
-          } : {},
-          timeout: 10000
-        })
-      ]);
+      // Fetch market data from CoinGecko
+      const marketsResponse = await axios.get('https://api.coingecko.com/api/v3/coins/markets', {
+        params: {
+          vs_currency: 'usd',
+          order: 'market_cap_desc',
+          per_page: 50,
+          page: 1,
+          sparkline: false,
+          price_change_percentage: '24h'
+        },
+        headers: process.env.COINGECKO_API_KEY ? {
+          'X-CG-Demo-API-Key': process.env.COINGECKO_API_KEY
+        } : {},
+        timeout: 10000
+      });
 
-      // Process trending tokens (from trending endpoint)
+      const marketData = marketsResponse.data;
+      
+      // Top 3 by market cap (first 3 from the list)
+      const top3 = marketData.slice(0, 3).map(coin => ({
+        name: coin.name,
+        symbol: coin.symbol.toUpperCase(),
+        icon: coin.image,
+        price: coin.current_price,
+        change24h: coin.price_change_percentage_24h || 0
+      }));
+      
+      // Trending tokens (highest absolute percentage change)
       let trendingTokens = [];
-      if (trendingResponse.data && 
-          trendingResponse.data.coins && 
-          Array.isArray(trendingResponse.data.coins)) {
-        trendingTokens = trendingResponse.data.coins.slice(0, 3).map(coin => ({
-          name: coin.item.name,
-          symbol: coin.item.symbol.toUpperCase(),
-          icon: coin.item.small || coin.item.thumb,
-          price: 0, // Trending endpoint doesn't provide current price
-          change24h: 0 // Trending endpoint doesn't provide 24h change
-        }));
+      if (marketData && Array.isArray(marketData)) {
+        trendingTokens = marketData
+          .filter(coin => coin.price_change_percentage_24h !== null)
+          .sort((a, b) => Math.abs(b.price_change_percentage_24h) - Math.abs(a.price_change_percentage_24h))
+          .slice(0, 3)
+          .map(coin => ({
+            name: coin.name,
+            symbol: coin.symbol.toUpperCase(),
+            icon: coin.image,
+            price: coin.current_price,
+            change24h: coin.price_change_percentage_24h || 0
+          }));
       }
 
-      // Process largest gainers (from markets endpoint, sorted by 24h change)
+      // Largest gainers (only positive changes, sorted by highest gain)
       let largestGainers = [];
-      if (topCoinsResponse.data && Array.isArray(topCoinsResponse.data)) {
-        // Sort by 24h percentage change (descending)
-        const sortedCoins = topCoinsResponse.data
-          .filter(coin => coin.price_change_percentage_24h && coin.price_change_percentage_24h > 0)
-          .sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h);
-        
-        largestGainers = sortedCoins.slice(0, 3).map(coin => ({
-          name: coin.name,
-          symbol: coin.symbol.toUpperCase(),
-          icon: coin.image,
-          price: coin.current_price,
-          change24h: coin.price_change_percentage_24h
-        }));
+      if (marketData && Array.isArray(marketData)) {
+        largestGainers = marketData
+          .filter(coin => coin.price_change_percentage_24h > 0)
+          .sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h)
+          .slice(0, 3)
+          .map(coin => ({
+            name: coin.name,
+            symbol: coin.symbol.toUpperCase(),
+            icon: coin.image,
+            price: coin.current_price,
+            change24h: coin.price_change_percentage_24h
+          }));
       }
 
-      result = { trendingTokens, largestGainers };
+      result = { trendingTokens, largestGainers, top3 };
       console.log('[API SUCCESS] CoinGecko data processed successfully');
       
     } catch (coingeckoError) {
@@ -271,7 +274,8 @@ async function handleTrendingTokensRequest(req, res) {
           
           result = {
             trendingTokens: processedGemini.slice(0, 3),
-            largestGainers: processedGemini.slice(0, 3)
+            largestGainers: processedGemini.slice(0, 3),
+            top3: processedGemini.slice(0, 3)
           };
           
           console.log('[API SUCCESS] Gemini fallback data processed');
@@ -348,6 +352,29 @@ function generateFallbackTrendingData() {
         icon: "https://coin-images.coingecko.com/coins/images/33051/small/spx.png",
         price: 0.11,
         change24h: 19.08
+      }
+    ],
+    top3: [
+      {
+        name: "Bitcoin",
+        symbol: "BTC",
+        icon: "https://coin-images.coingecko.com/coins/images/1/small/bitcoin.png",
+        price: 106605,
+        change24h: -1.04
+      },
+      {
+        name: "Ethereum",
+        symbol: "ETH",
+        icon: "https://coin-images.coingecko.com/coins/images/279/small/ethereum.png",
+        price: 2442,
+        change24h: -1.04
+      },
+      {
+        name: "Tether",
+        symbol: "USDT",
+        icon: "https://coin-images.coingecko.com/coins/images/325/small/Tether.png",
+        price: 1.00,
+        change24h: 0.01
       }
     ]
   };
