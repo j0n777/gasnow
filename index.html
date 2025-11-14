@@ -1,24 +1,516 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7136177e-4ac5-4d64-b7be-a9a2a6c50393</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GasNow - Real-time Crypto Gas Tracker | ETH, BTC, TON Gas Fees</title>
+    <meta name="description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains. Monitor market cap, trending tokens, and crypto news.">
+    <meta name="keywords" content="crypto gas fees, ethereum gas, bitcoin fees, ton fees, gas tracker, cryptocurrency, blockchain fees, real-time gas">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="GasNow - Real-time Crypto Gas Tracker">
+    <meta property="og:description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gasnow.tools">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GasNow - Real-time Crypto Gas Tracker">
+    <meta name="twitter:description" content="Track real-time cryptocurrency gas fees and transaction costs for Ethereum, Bitcoin, and TON blockchains.">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
 
-    <meta property="og:title" content="7136177e-4ac5-4d64-b7be-a9a2a6c50393" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="images/gasnow-icon.png" alt="GasNow" style="width: 48px; height: 48px;" onerror="this.style.display='none'">
+                <span>GasNow</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p>Loading real-time data...</p>
+        </div>
+    </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <div class="app" id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/gasnow-icon.png" alt="GasNow" class="logo-icon" onerror="this.style.display='none'">
+                    <h1><span class="logo-gas">Gas</span><span class="logo-now">Now</span></h1>
+                </div>
+                
+                <div class="crypto-prices" id="cryptoPrices">
+                    <div class="crypto-price-icon active" data-blockchain="ethereum" onclick="window.gasNowApp?.selectBlockchain('ethereum')">
+                        <img src="images/eth-icon.png" alt="ETH" onerror="this.src='https://cryptologos.cc/logos/ethereum-eth-logo.png'">
+                    </div>
+                    <div class="crypto-price-icon" data-blockchain="bitcoin" onclick="window.gasNowApp?.selectBlockchain('bitcoin')">
+                        <img src="images/btc-icon.png" alt="BTC" onerror="this.src='https://cryptologos.cc/logos/bitcoin-btc-logo.png'">
+                    </div>
+                </div>
+            </div>
+        </header>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Gas Prices Section -->
+            <section class="gas-prices-section">
+                <div class="section-header">
+                    <h2>Gas Fees</h2>
+                </div>
+                
+                <div class="gas-prices-grid" id="gasPricesGrid">
+                    <div class="gas-card slow tooltip" data-speed="slow" data-tooltip="Cheapest transaction fees">
+                        <div class="gas-card-header">
+                            <h3>Slow</h3>
+                            <div class="gas-price-main">
+                                <div class="gas-price-value">
+                                    <span id="slowPrice">10</span>
+                                    <span class="gas-price-unit" id="slowUnit">Gwei</span>
+                                </div>
+                                <div class="gas-usd-price" id="slowUsd">$0.52</div>
+                            </div>
+                            <div class="gas-icon">
+                                <img src="images/turtle.png" alt="Slow" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=&quot;fas fa-turtle&quot; style=&quot;font-size: 20px; color: var(--text-muted);&quot;></i>'">
+                            </div>
+                        </div>
+                        <div class="gas-card-content"></div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gas-card standard featured tooltip" data-speed="standard" data-tooltip="Recommended transaction speed">
+                        <div class="gas-card-header">
+                            <h3>Standard</h3>
+                            <div class="gas-price-main">
+                                <div class="gas-price-value">
+                                    <span id="standardPrice">15</span>
+                                    <span class="gas-price-unit" id="standardUnit">Gwei</span>
+                                </div>
+                                <div class="gas-usd-price" id="standardUsd">$0.79</div>
+                            </div>
+                            <div class="gas-icon">
+                                <img src="images/speed.png" alt="Standard" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=&quot;fas fa-tachometer-alt&quot; style=&quot;font-size: 20px; color: var(--text-muted);&quot;></i>'">
+                            </div>
+                        </div>
+                        <div class="gas-card-content"></div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gas-card fast tooltip" data-speed="fast" data-tooltip="Fastest transaction confirmation">
+                        <div class="gas-card-header">
+                            <h3>Fast</h3>
+                            <div class="gas-price-main">
+                                <div class="gas-price-value">
+                                    <span id="fastPrice">25</span>
+                                    <span class="gas-price-unit" id="fastUnit">Gwei</span>
+                                </div>
+                                <div class="gas-usd-price" id="fastUsd">$1.31</div>
+                            </div>
+                            <div class="gas-icon">
+                                <img src="images/rocket.png" alt="Fast" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=&quot;fas fa-rocket&quot; style=&quot;font-size: 20px; color: var(--text-muted);&quot;></i>'">
+                            </div>
+                        </div>
+                        <div class="gas-card-content"></div>
+                        <div class="gas-card-footer">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Market Overview Section -->
+            <section class="market-overview-section">
+                <div class="section-header">
+                    <h2>Crypto Market Overview</h2>
+                </div>
+                
+                <div class="market-grid">
+                    <!-- Global Market Cap Chart -->
+                    <div class="market-card main-chart tooltip" data-tooltip="Total cryptocurrency market capitalization">
+                        <div class="card-header">
+                            <h3>Global Market Cap</h3>
+                            <div class="market-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Total Market Cap</span>
+                                    <span class="stat-value" id="totalMarketCap">$2.50T</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">24h Change</span>
+                                    <span class="stat-value positive" id="marketCapChange">+1.50%</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">24h Volume</span>
+                                    <span class="stat-value" id="totalVolume">$80.00B</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="marketCapChart"></canvas>
+                            <div id="chartFallback" style="display: none;">Chart loading...</div>
+                        </div>
+                    </div>
+
+                    <!-- Fear & Greed Index -->
+                    <div class="market-card tooltip" data-tooltip="Market sentiment indicator">
+                        <div class="card-header">
+                            <h3>Fear & Greed Index</h3>
+                        </div>
+                        <div class="fear-greed-container">
+                            <div class="fear-greed-gauge" id="fearGreedGauge">
+                                <canvas id="fearGreedCanvas"></canvas>
+                                <div class="gauge-center">
+                                    <div class="gauge-value" id="fearGreedValue">50</div>
+                                    <div class="gauge-label" id="fearGreedLabel">Neutral</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Altseason Index -->
+                    <div class="market-card tooltip" data-tooltip="Bitcoin vs Altcoin dominance">
+                        <div class="card-header">
+                            <h3>Altseason Index</h3>
+                        </div>
+                        <div class="altseason-container">
+                            <div class="altseason-header">
+                                <div class="altseason-value">
+                                    <span id="altseasonValue">50</span>
+                                    <span class="altseason-max">/100</span>
+                                </div>
+                                <div class="altseason-status neutral" id="altseasonStatus">Bitcoin Season</div>
+                            </div>
+                            <div class="altseason-progress">
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="width: 50%"></div>
+                                </div>
+                                <div class="progress-labels">
+                                    <span>Bitcoin Season</span>
+                                    <span>Altcoin Season</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Token Lists -->
+                <div class="token-lists">
+                    <!-- Trending Tokens -->
+                    <div class="token-list-card tooltip" data-tooltip="Most searched cryptocurrencies">
+                        <div class="card-header">
+                            <h3>Trending Tokens</h3>
+                        </div>
+                        <div class="token-list" id="trendingTokens">
+                            <div class="token-item">
+                                <div class="token-info">
+                                    <img src="https://assets.coingecko.com/coins/images/17980/small/ton_symbol.png" alt="TON" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/toncoin-ton-logo.png'; this.onerror=null;">
+                                    <div class="token-details">
+                                        <h4>Toncoin</h4>
+                                        <p>TON</p>
+                                    </div>
+                                </div>
+                                <div class="token-stats">
+                                    <div class="token-price">$2.89</div>
+                                    <div class="token-change positive">+3.35%</div>
+                                </div>
+                            </div>
+                            <div class="token-item">
+                                <div class="token-info">
+                                    <img src="https://assets.coingecko.com/coins/images/34188/small/jup.png" alt="JUP" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/jupiter-jup-logo.png'; this.onerror=null;">
+                    <!-- Top 3 by Market Cap -->
+                    <div class="token-list-card tooltip" data-tooltip="Top 3 cryptocurrencies by market cap">
+                        <div class="card-header">
+                            <h3>Top 3</h3>
+                        </div>
+                        <div class="token-list" id="top3Tokens">
+                            <div class="token-item">
+                                <div class="token-info">
+                                    <img src="https://coin-images.coingecko.com/coins/images/1/small/bitcoin.png" alt="BTC" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/bitcoin-btc-logo.png'; this.onerror=null;">
+                                    <div class="token-details">
+                                        <h4>Bitcoin</h4>
+                                        <p>BTC</p>
+                                    </div>
+                                </div>
+                                <div class="token-stats">
+                                    <div class="token-price">$106,605</div>
+                                    <div class="token-change negative">-1.04%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="token-details">
+                                        <h4>Jupiter</h4>
+                                        <p>JUP</p>
+                                    </div>
+                                </div>
+                                <div class="token-stats">
+                                    <div class="token-price">$0.46</div>
+                                    <div class="token-change positive">+7.14%</div>
+                                </div>
+                            </div>
+                            <div class="token-item">
+                                <div class="token-info">
+                                    <img src="https://assets.coingecko.com/coins/images/35718/small/pengu.png" alt="PENGU" class="token-icon" onerror="this.src='https://cryptologos.cc/logos/pudgy-penguins-pengu-logo.png'; this.onerror=null;">
+                                    <div class="token-details">
+                                        <h4>Pudgy Penguins</h4>
+                                        <p>PENGU</p>
+                                    </div>
+                                </div>
+                                <div class="token-stats">
+                                    <div class="token-price">$0.02</div>
+                                    <div class="token-change positive">+5.76%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- By Market Cap -->
+                    <div class="token-list-card tooltip" data-tooltip="Largest gainers today">
+                        <div class="card-header">
+                            <h3>Largest Gainers</h3>
+                        </div>
+                        <div class="token-list" id="largestGainers">
+                            <div class="token-item">
+                                <div class="token-info">
+                                    <img src="https://assets.coingecko.com/coins/images/17430/small/useless.png" alt="USELESS" class="token-icon" onerror="this.src='https://via.placeholder.com/32x32/10b981/ffffff?text=U'; this.onerror=null;">
+                                    <div class="token-details">
+                                        <h4>Useless Coin</h4>
+                                        <p>USELESS</p>
+                                    </div>
+                                </div>
+                                <div class="token-stats">
+                                    <div class="token-price">$0.27</div>
+                                    <div class="token-change positive">+26.34%</div>
+                                </div>
+                            </div>
+                            <div class="token-item">
+                                <div class="token-info">
+                                    <img src="https://assets.coingecko.com/coins/images/32659/small/keeta.png" alt="KTA" class="token-icon" onerror="this.src='https://via.placeholder.com/32x32/f59e0b/ffffff?text=K'; this.onerror=null;">
+                                    <div class="token-details">
+                                        <h4>Keeta</h4>
+                                        <p>KTA</p>
+                                    </div>
+                                </div>
+                                <div class="token-stats">
+                                    <div class="token-price">$0.65</div>
+                                    <div class="token-change positive">+20.29%</div>
+                                </div>
+                            </div>
+                            <div class="token-item">
+                                <div class="token-info">
+                                    <img src="https://assets.coingecko.com/coins/images/33847/small/flume.png" alt="FLUME" class="token-icon" onerror="this.src='https://via.placeholder.com/32x32/3b82f6/ffffff?text=F'; this.onerror=null;">
+                                    <div class="token-details">
+                                        <h4>Flume</h4>
+                                        <p>FLUME</p>
+                                    </div>
+                                </div>
+                                <div class="token-stats">
+                                    <div class="token-price">$0.11</div>
+                                    <div class="token-change positive">+19.08%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section class="news-section">
+                <div class="section-header">
+                    <h2>Latest Crypto News</h2>
+                    <div class="news-source-selector">
+                        <button class="news-source-btn active" data-source="general" onclick="window.gasNowApp?.selectNewsSource('general')">General</button>
+                        <button class="news-source-btn" data-source="bitcoin" onclick="window.gasNowApp?.selectNewsSource('bitcoin')">Bitcoin</button>
+                        <button class="news-source-btn" data-source="ethereum" onclick="window.gasNowApp?.selectNewsSource('ethereum')">Ethereum</button>
+                        <button class="news-source-btn" data-source="defi" onclick="window.gasNowApp?.selectNewsSource('defi')">DeFi</button>
+                        <button class="news-source-btn" data-source="nft" onclick="window.gasNowApp?.selectNewsSource('nft')">NFT</button>
+                        <button class="news-source-btn" data-source="altcoins" onclick="window.gasNowApp?.selectNewsSource('altcoins')">Altcoins</button>
+                    </div>
+                </div>
+                
+                <div class="news-grid" id="newsGrid">
+                    <!-- News will be loaded here -->
+                    <div class="news-card">
+                        <div class="news-image" style="background-image: url('images/default-crypto-news.jpg')"></div>
+                        <div class="news-content">
+                            <h3 class="news-title">Bitcoin Reaches New All-Time High</h3>
+                            <p class="news-excerpt">Bitcoin continues its bullish momentum as institutional adoption grows and regulatory clarity improves across major markets worldwide...</p>
+                            <div class="news-meta">
+                                <span>2 hours ago</span>
+                                <a href="#" class="read-more">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image" style="background-image: url('images/default-crypto-news.jpg')"></div>
+                        <div class="news-content">
+                            <h3 class="news-title">Ethereum 2.0 Staking Rewards Increase</h3>
+                            <p class="news-excerpt">Ethereum staking rewards see significant increase following network upgrades and improved validator participation rates across the network...</p>
+                            <div class="news-meta">
+                                <span>4 hours ago</span>
+                                <a href="#" class="read-more">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image" style="background-image: url('images/default-crypto-news.jpg')"></div>
+                        <div class="news-content">
+                            <h3 class="news-title">DeFi TVL Surpasses $100 Billion</h3>
+                            <p class="news-excerpt">Decentralized Finance total value locked reaches new milestone as more protocols launch and user adoption accelerates globally...</p>
+                            <div class="news-meta">
+                                <span>6 hours ago</span>
+                                <a href="#" class="read-more">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partners Section -->
+            <section class="partners-section">
+                <div class="section-header">
+                    <h2>Partners & Sponsors</h2>
+                </div>
+                
+                <div class="partners-grid">
+                    <a href="https://kastfinance.app.link/HP8K5JYH" target="_blank" class="partner-card tooltip" data-tooltip="Crypto debit card solution">
+                        <div class="partner-logo">K</div>
+                        <div class="partner-info">
+                            <div class="partner-name">KAST Finance</div>
+                            <div class="partner-description">Card to use your Crypto</div>
+                        </div>
+                    </a>
+                    <a href="https://bingx.com/pt-br/act/template/7457/?randomId=7549452152&ref=OOCUZI" target="_blank" class="partner-card tooltip" data-tooltip="Advanced crypto trading platform">
+                        <div class="partner-logo">B</div>
+                        <div class="partner-info">
+                            <div class="partner-name">BingX Exchange</div>
+                            <div class="partner-description">Crypto Trading Platform</div>
+                        </div>
+                    </a>
+                    <a href="https://www.okx.com/pt-br/campaigns/boas-vindas-novos-usuarios?channelId=JONATA" target="_blank" class="partner-card tooltip" data-tooltip="Global cryptocurrency exchange">
+                        <div class="partner-logo">O</div>
+                        <div class="partner-info">
+                            <div class="partner-name">OKX Exchange</div>
+                            <div class="partner-description">Global Crypto Exchange</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Support GasNow</h4>
+                    <div class="footer-actions">
+                        <a href="https://github.com/j0n777/gasnow" target="_blank" class="footer-btn">
+                            <i class="fab fa-github"></i>
+                            View on GitHub
+                        </a>
+                        <button class="footer-btn" onclick="alert('Donation instructions:\n\nUSDT (ERC20): 0x4e21C77Ca734cb87cF034D31a72A2c3d74191E0d\nBTC (Lightning): jonata@walletofsatoshi.com')">
+                            <i class="fas fa-heart"></i>
+                            Donate
+                        </button>
+                    </div>
+                    <div class="footer-support">
+                        Support GasNow! Help keep this project alive and independent. Every donation makes a difference!
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#" style="color: #cbd5e1; text-decoration: none;">API Documentation</a>
+                        <a href="#" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+                        <a href="#" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+                        <a href="#" style="color: #cbd5e1; text-decoration: none;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 GasNow. All rights reserved. | Powered by the community.
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Fallback error handling and basic functionality
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+            // Hide loading screen on error
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+            }
+        });
+
+        // Ensure loading screen is hidden after timeout
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, setting up fallbacks...');
+            
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+                    console.warn('App taking too long to load, hiding loading screen');
+                    loadingScreen.classList.add('hidden');
+                }
+            }, 5000); // 5 second timeout
+
+            // Basic theme toggle functionality
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('light-theme');
+                    const icon = themeToggle.querySelector('i');
+                    if (icon) {
+                        if (document.body.classList.contains('light-theme')) {
+                            icon.className = 'fas fa-moon';
+                        } else {
+                            icon.className = 'fas fa-sun';
+                        }
+                    }
+                });
+            }
+
+            // Ensure app is visible
+            const app = document.getElementById('app');
+            if (app) {
+                app.style.opacity = '1';
+                console.log('App made visible');
+            }
+        });
+    </script>
+    
+    <!-- Load Chart.js with fallback -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" onerror="console.warn('Chart.js failed to load')"></script>
+    
+    <!-- Load main app -->
+    <script src="js/app.js" onerror="console.warn('Main app failed to load'); document.getElementById('loadingScreen').classList.add('hidden');"></script>
+</body>
 </html>

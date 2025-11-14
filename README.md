@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
+# GasNow Tools
 
-## Project info
+[![Site](https://img.shields.io/badge/Visit%20Site-gasnow.tools-blue)](https://gasnow.tools)
+[![GitHub](https://img.shields.io/github/stars/j0n777/gasnow?style=social)](https://github.com/j0n777/gasnow)
 
-**URL**: https://lovable.dev/projects/7136177e-4ac5-4d64-b7be-a9a2a6c50393
+## 🚀 What is GasNow?
 
-## How can I edit this code?
+**GasNow** is a source-available platform for real-time monitoring of transaction fees (gas fees) on major blockchains like Ethereum, Bitcoin, and TON. The project also provides global market cap data, trending tokens, Fear & Greed Index, crypto news, and SEO/automation integrations.
 
-There are several ways of editing your application.
+- **Real-time Gas Fees** (ETH, BTC, TON)
+- **Global and Token Market Cap**
+- **Fear & Greed Index**
+- **Trending Tokens & Top Gainers**
+- **Integrated Crypto News**
+- **Light/Dark Mode**
+- **Public API & Multi-provider Fallback**
+- **Modern, Responsive Design**
 
-**Use Lovable**
+Visit: [https://gasnow.tools](https://gasnow.tools)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7136177e-4ac5-4d64-b7be-a9a2a6c50393) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📦 Installation & Usage
 
-**Use your preferred IDE**
+1. Clone the repository:
+   ```sh
+   # Cloning or copying this repository is NOT permitted. Please contribute via pull requests or issues only.
+   # git clone https://github.com/j0n777/gasnow.git
+   # cd gasnow
+   ```
+2. To contribute, fork the repository on GitHub and submit a pull request with your proposed changes.
+3. For questions or partnership inquiries, contact: contact@gasnow.tools
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🌐 Features
 
-Follow these steps:
+- **Frontend:**
+  - View gas fees, market cap, Fear & Greed, news, and more.
+  - Automatic updates and local cache for performance.
+  - Full light/dark mode and responsive design.
+- **Backend/API:**
+  - Endpoints for gas, market cap, news, Fear & Greed.
+  - Multi-provider fallback (CoinGecko, Binance, CryptoCompare).
+  - Dynamic SEO and Google/Bing integration.
+- **Partners & Sponsors:**
+  - Space for banners and partner integrations.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🤝 Contribute
 
-# Step 3: Install the necessary dependencies.
-npm i
+GasNow is a collaborative project. All help is welcome:
+- Report bugs and suggest improvements via [Issues](https://github.com/j0n777/gasnow/issues)
+- Submit Pull Requests
+- Suggest new integrations, providers, or UX/UI improvements
+- Help with translations and documentation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+**Please note:** You are NOT permitted to copy, clone, redistribute, or use this codebase outside the official repository. All contributions must be made via pull requests or issues on GitHub.
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 💚 Support the Project
 
-**Use GitHub Codespaces**
+GasNow is maintained independently and non-profit. If this project helps you, consider donating to help cover server and API costs:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **USDT (ERC20):** 0x4e21C77Ca734cb87cF034D31a72A2c3d74191E0d
+- **BTC (Lightning):** jonata@walletofsatoshi.com
+- Or contact us for other ways to support!
 
-## What technologies are used for this project?
+Every donation makes a difference and helps keep the project online and free for everyone.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔗 Useful Links
 
-## How can I deploy this project?
+- [Official Website](https://gasnow.tools)
+- [GitHub Repository](https://github.com/j0n777/gasnow)
+- [API Docs](https://gasnow.tools/api)
+- [Partners & Sponsors](https://gasnow.tools/#partners-sponsors)
 
-Simply open [Lovable](https://lovable.dev/projects/7136177e-4ac5-4d64-b7be-a9a2a6c50393) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 📄 License & Usage Policy
 
-Yes, you can!
+**This project is NOT open source.**
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- You are NOT permitted to copy, clone, redistribute, or use this codebase, in whole or in part, outside the official repository.
+- Contributions are welcome via pull requests and issues on GitHub only.
+- For partnership, licensing, or other inquiries, please contact: gasnow@protonmail.com
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+See the LICENSE file for full details.
+
+---
+
+> Made with 💙 by the crypto community. Join us! 
