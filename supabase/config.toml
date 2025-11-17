@@ -1,1 +1,13 @@
 project_id = "pqmfzeqczfsidxaabvok"
+
+[functions.get-gas-prices]
+verify_jwt = false
+
+[functions.get-crypto-prices]
+verify_jwt = false
+
+[functions.get-crypto-news]
+verify_jwt = false
+
+[functions.get-fear-greed-index]
+verify_jwt = false
