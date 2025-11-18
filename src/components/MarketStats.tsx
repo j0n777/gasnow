@@ -4,7 +4,7 @@ import { useGlobalMarketCap } from '@/hooks/useCryptoPrices';
 import { TrendingUp, Activity, PieChart } from 'lucide-react';
 
 export const MarketStats = () => {
-  const { data, isLoading } = useGlobalMarketCap();
+  const { data, isLoading, error } = useGlobalMarketCap();
 
   const formatLargeNumber = (num: number) => {
     if (num >= 1e12) return `$${(num / 1e12).toFixed(2)}T`;
@@ -47,6 +47,10 @@ export const MarketStats = () => {
               <div className="space-y-2">
                 <Skeleton className="h-4 w-24" />
                 <Skeleton className="h-8 w-32" />
+              </div>
+            ) : error ? (
+              <div className="text-center py-4">
+                <p className="text-sm text-destructive">Failed to load</p>
               </div>
             ) : (
               <div className="flex items-center gap-4">

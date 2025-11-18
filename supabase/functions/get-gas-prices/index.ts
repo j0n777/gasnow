@@ -16,8 +16,50 @@ async function getEthereumGasPrices(): Promise<GasPrices> {
   console.log('[get-gas-prices] Fetching Ethereum gas prices...');
   
   if (!ETHERSCAN_API_KEY) {
-    console.error('[get-gas-prices] ETHERSCAN_API_KEY not found!');
-    throw new Error('ETHERSCAN_API_KEY not configured');
+    console.warn('[get-gas-prices] ETHERSCAN_API_KEY not found, using free endpoint');
+    
+    // Try free Etherscan endpoint (no API key required, but rate limited)
+    try {
+      const freeUrl = 'https://api.etherscan.io/api?module=gastracker&action=gasoracle';
+      const response = await fetch(freeUrl);
+      const data = await response.json();
+      
+      if (data.status === '1' && data.result) {
+        const result = {
+          slow: parseInt(data.result.SafeGasPrice),
+          standard: parseInt(data.result.ProposeGasPrice),
+          fast: parseInt(data.result.FastGasPrice),
+          timestamp: Date.now()
+        };
+        console.log('[get-gas-prices] Ethereum gas prices from free endpoint:', result);
+        return result;
+      }
+    } catch (err) {
+      console.error('[get-gas-prices] Free Etherscan endpoint failed:', err);
+    }
+    
+    // Fallback to EthGasStation alternative
+    console.log('[get-gas-prices] Trying alternative gas price source...');
+    const altUrl = 'https://beaconcha.in/api/v1/execution/gasnow';
+    try {
+      const altResponse = await fetch(altUrl);
+      const altData = await altResponse.json();
+      
+      if (altData.data) {
+        const result = {
+          slow: Math.round(altData.data.slow / 1e9),
+          standard: Math.round(altData.data.standard / 1e9),
+          fast: Math.round(altData.data.fast / 1e9),
+          timestamp: Date.now()
+        };
+        console.log('[get-gas-prices] Ethereum gas prices from beaconcha.in:', result);
+        return result;
+      }
+    } catch (err) {
+      console.error('[get-gas-prices] Beaconcha.in failed:', err);
+    }
+    
+    throw new Error('ETHERSCAN_API_KEY not configured and fallback endpoints failed');
   }
   
   try {

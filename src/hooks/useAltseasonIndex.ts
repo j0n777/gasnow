@@ -12,9 +12,15 @@ export const useAltseasonIndex = () => {
   return useQuery({
     queryKey: ['altseasonIndex'],
     queryFn: async () => {
+      console.log('[useAltseasonIndex] Fetching Altseason Index...');
       const { data, error } = await supabase.functions.invoke('get-altseason-index');
       
-      if (error) throw error;
+      if (error) {
+        console.error('[useAltseasonIndex] Error:', error);
+        throw error;
+      }
+      
+      console.log('[useAltseasonIndex] Success:', data);
       return data.data as AltseasonData;
     },
     refetchInterval: 3600000, // 1 hour
