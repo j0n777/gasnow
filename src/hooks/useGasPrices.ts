@@ -12,11 +12,17 @@ export const useGasPrices = (blockchain: 'ethereum' | 'bitcoin') => {
   return useQuery({
     queryKey: ['gasPrices', blockchain],
     queryFn: async () => {
+      console.log(`[useGasPrices] Fetching gas prices for ${blockchain}...`);
       const { data, error } = await supabase.functions.invoke('get-gas-prices', {
         body: { blockchain }
       });
       
-      if (error) throw error;
+      if (error) {
+        console.error('[useGasPrices] Error:', error);
+        throw error;
+      }
+      
+      console.log('[useGasPrices] Success:', data);
       return data.data as GasPrices;
     },
     refetchInterval: 30000, // Refresh every 30 seconds

@@ -11,9 +11,15 @@ export const useFearGreedIndex = () => {
   return useQuery({
     queryKey: ['fearGreedIndex'],
     queryFn: async () => {
+      console.log('[useFearGreedIndex] Fetching Fear & Greed Index...');
       const { data, error } = await supabase.functions.invoke('get-fear-greed-index');
       
-      if (error) throw error;
+      if (error) {
+        console.error('[useFearGreedIndex] Error:', error);
+        throw error;
+      }
+      
+      console.log('[useFearGreedIndex] Success:', data);
       return data.data as FearGreedIndex;
     },
     refetchInterval: 60000,

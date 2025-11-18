@@ -12,7 +12,7 @@ const getColorByValue = (value: number) => {
 };
 
 export const FearGreedWidget = () => {
-  const { data, isLoading } = useFearGreedIndex();
+  const { data, isLoading, error } = useFearGreedIndex();
 
   return (
     <Card>
@@ -25,6 +25,10 @@ export const FearGreedWidget = () => {
           <div className="space-y-4">
             <Skeleton className="h-12 w-full" />
             <Skeleton className="h-4 w-full" />
+          </div>
+        ) : error ? (
+          <div className="text-center py-4">
+            <p className="text-sm text-destructive">Failed to load data</p>
           </div>
         ) : (
           <div className="space-y-4">

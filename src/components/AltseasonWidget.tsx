@@ -11,7 +11,7 @@ const getColorByValue = (value: number) => {
 };
 
 export const AltseasonWidget = () => {
-  const { data, isLoading } = useAltseasonIndex();
+  const { data, isLoading, error } = useAltseasonIndex();
 
   return (
     <Card>
@@ -24,6 +24,10 @@ export const AltseasonWidget = () => {
           <div className="space-y-4">
             <Skeleton className="h-12 w-full" />
             <Skeleton className="h-4 w-full" />
+          </div>
+        ) : error ? (
+          <div className="text-center py-4">
+            <p className="text-sm text-destructive">Failed to load data</p>
           </div>
         ) : (
           <div className="space-y-4">
