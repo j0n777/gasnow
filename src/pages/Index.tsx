@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { GasPriceCard } from '@/components/GasPriceCard';
 import { NewsSection } from '@/components/NewsSection';
 import { FearGreedWidget } from '@/components/FearGreedWidget';
+import { AltseasonWidget } from '@/components/AltseasonWidget';
 import { MarketStats } from '@/components/MarketStats';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { useGasPrices } from '@/hooks/useGasPrices';
@@ -50,13 +51,14 @@ const Index = () => {
             </div>
           </section>
 
-          {/* News and Fear & Greed */}
+          {/* News and Market Indicators */}
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <NewsSection />
             </div>
-            <div>
+            <div className="space-y-6">
               <FearGreedWidget />
+              <AltseasonWidget />
             </div>
           </div>
         </main>

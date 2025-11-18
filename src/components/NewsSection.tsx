@@ -54,9 +54,19 @@ export const NewsSection = () => {
                     rel="noopener noreferrer"
                     className="block p-4 rounded-lg border border-border hover:bg-accent transition-colors group"
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex-1 space-y-1">
-                        <h4 className="font-semibold text-sm leading-tight group-hover:text-primary transition-colors">
+                    <div className="flex gap-4">
+                      {article.image && (
+                        <img 
+                          src={article.image} 
+                          alt={article.title}
+                          className="w-20 h-20 object-cover rounded flex-shrink-0"
+                          onError={(e) => {
+                            e.currentTarget.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80';
+                          }}
+                        />
+                      )}
+                      <div className="flex-1 min-w-0 space-y-1">
+                        <h4 className="font-semibold text-sm leading-tight group-hover:text-primary transition-colors line-clamp-2">
                           {article.title}
                         </h4>
                         <p className="text-xs text-muted-foreground line-clamp-2">
@@ -68,7 +78,7 @@ export const NewsSection = () => {
                           <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
                         </div>
                       </div>
-                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
                     </div>
                   </a>
                 ))}

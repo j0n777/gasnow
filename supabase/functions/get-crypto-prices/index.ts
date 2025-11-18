@@ -7,19 +7,30 @@ const COINGECKO_API_KEY = Deno.env.get('COINGECKO_API_KEY');
 const CMC_API_KEY = Deno.env.get('CMC_API_KEY');
 
 async function getCryptoPrices() {
+  console.log('[get-crypto-prices] Fetching crypto prices...');
+  
+  if (!COINGECKO_API_KEY) {
+    console.error('[get-crypto-prices] COINGECKO_API_KEY not found!');
+    throw new Error('COINGECKO_API_KEY not configured');
+  }
+  
   try {
-    const response = await fetch(
-      'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,toncoin&vs_currencies=usd&include_24hr_change=true',
-      {
-        headers: {
-          'x-cg-pro-api-key': COINGECKO_API_KEY || ''
-        }
+    const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,the-open-network&vs_currencies=usd&include_24hr_change=true';
+    console.log('[get-crypto-prices] Calling CoinGecko API...');
+    
+    const response = await fetch(url, {
+      headers: {
+        'x-cg-demo-api-key': COINGECKO_API_KEY
       }
-    );
+    });
+    
+    if (!response.ok) {
+      throw new Error(`CoinGecko API error: ${response.status} ${response.statusText}`);
+    }
     
     const data = await response.json();
     
-    return {
+    const result = {
       btc: {
         price: data.bitcoin?.usd || 0,
         change24h: data.bitcoin?.usd_24h_change || 0
@@ -33,48 +44,55 @@ async function getCryptoPrices() {
         change24h: data.solana?.usd_24h_change || 0
       },
       ton: {
-        price: data.toncoin?.usd || 0,
-        change24h: data.toncoin?.usd_24h_change || 0
+        price: data['the-open-network']?.usd || 0,
+        change24h: data['the-open-network']?.usd_24h_change || 0
       }
     };
+    
+    console.log('[get-crypto-prices] Crypto prices fetched successfully');
+    return result;
   } catch (error) {
-    console.error('Error fetching crypto prices:', error);
-    return {
-      btc: { price: 45000, change24h: 2.5 },
-      eth: { price: 2500, change24h: 1.8 },
-      sol: { price: 100, change24h: -0.5 },
-      ton: { price: 2.5, change24h: 3.2 }
-    };
+    console.error('[get-crypto-prices] Error fetching crypto prices:', error);
+    throw error;
   }
 }
 
 async function getGlobalMarketCap() {
+  console.log('[get-crypto-prices] Fetching global market cap...');
+  
+  if (!COINGECKO_API_KEY) {
+    console.error('[get-crypto-prices] COINGECKO_API_KEY not found!');
+    throw new Error('COINGECKO_API_KEY not configured');
+  }
+  
   try {
-    const response = await fetch(
-      'https://api.coingecko.com/api/v3/global',
-      {
-        headers: {
-          'x-cg-pro-api-key': COINGECKO_API_KEY || ''
-        }
+    const url = 'https://api.coingecko.com/api/v3/global';
+    console.log('[get-crypto-prices] Calling CoinGecko Global API...');
+    
+    const response = await fetch(url, {
+      headers: {
+        'x-cg-demo-api-key': COINGECKO_API_KEY
       }
-    );
+    });
+    
+    if (!response.ok) {
+      throw new Error(`CoinGecko API error: ${response.status} ${response.statusText}`);
+    }
     
     const data = await response.json();
     
-    return {
+    const result = {
       totalMarketCap: data.data?.total_market_cap?.usd || 0,
       totalVolume24h: data.data?.total_volume?.usd || 0,
       btcDominance: data.data?.market_cap_percentage?.btc || 0,
       ethDominance: data.data?.market_cap_percentage?.eth || 0
     };
+    
+    console.log('[get-crypto-prices] Global market cap fetched successfully');
+    return result;
   } catch (error) {
-    console.error('Error fetching global market cap:', error);
-    return {
-      totalMarketCap: 1500000000000,
-      totalVolume24h: 80000000000,
-      btcDominance: 50,
-      ethDominance: 18
-    };
+    console.error('[get-crypto-prices] Error fetching global market cap:', error);
+    throw error;
   }
 }
 
