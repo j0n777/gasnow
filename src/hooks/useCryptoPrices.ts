@@ -18,8 +18,8 @@ export const useCryptoPrices = () => {
     queryKey: ['cryptoPrices'],
     queryFn: async () => {
       console.log('[useCryptoPrices] Fetching crypto prices...');
-      const { data, error } = await supabase.functions.invoke('get-crypto-prices', {
-        body: { type: 'prices' }
+      const { data, error } = await supabase.functions.invoke('get-crypto-data', {
+        body: { type: 'crypto_prices' }
       });
       
       if (error) {
@@ -30,7 +30,7 @@ export const useCryptoPrices = () => {
       console.log('[useCryptoPrices] Success:', data);
       return data.data as CryptoPrices;
     },
-    refetchInterval: 30000,
+    refetchInterval: 5000,
   });
 };
 
@@ -39,8 +39,8 @@ export const useGlobalMarketCap = () => {
     queryKey: ['globalMarketCap'],
     queryFn: async () => {
       console.log('[useGlobalMarketCap] Fetching global market cap...');
-      const { data, error } = await supabase.functions.invoke('get-crypto-prices', {
-        body: { type: 'global' }
+      const { data, error } = await supabase.functions.invoke('get-crypto-data', {
+        body: { type: 'market_data' }
       });
       
       if (error) {
@@ -56,6 +56,6 @@ export const useGlobalMarketCap = () => {
         ethDominance: number;
       };
     },
-    refetchInterval: 3600000, // 1 hour
+    refetchInterval: 60000, // 1 minute
   });
 };

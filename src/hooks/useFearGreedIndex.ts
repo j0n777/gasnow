@@ -12,7 +12,9 @@ export const useFearGreedIndex = () => {
     queryKey: ['fearGreedIndex'],
     queryFn: async () => {
       console.log('[useFearGreedIndex] Fetching Fear & Greed Index...');
-      const { data, error } = await supabase.functions.invoke('get-fear-greed-index');
+      const { data, error } = await supabase.functions.invoke('get-crypto-data', {
+        body: { type: 'fear_greed' }
+      });
       
       if (error) {
         console.error('[useFearGreedIndex] Error:', error);
@@ -22,6 +24,6 @@ export const useFearGreedIndex = () => {
       console.log('[useFearGreedIndex] Success:', data);
       return data.data as FearGreedIndex;
     },
-    refetchInterval: 60000,
+    refetchInterval: 10000,
   });
 };
