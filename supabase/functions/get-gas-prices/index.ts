@@ -13,53 +13,68 @@ interface GasPrices {
 }
 
 async function getEthereumGasPrices(): Promise<GasPrices> {
+  console.log('[get-gas-prices] Fetching Ethereum gas prices...');
+  
+  if (!ETHERSCAN_API_KEY) {
+    console.error('[get-gas-prices] ETHERSCAN_API_KEY not found!');
+    throw new Error('ETHERSCAN_API_KEY not configured');
+  }
+  
   try {
-    const response = await fetch(
-      `https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${ETHERSCAN_API_KEY}`
-    );
+    const url = `https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${ETHERSCAN_API_KEY}`;
+    console.log('[get-gas-prices] Calling Etherscan API...');
     
+    const response = await fetch(url);
     const data = await response.json();
     
-    if (data.status === '1' && data.result) {
-      return {
-        slow: parseInt(data.result.SafeGasPrice),
-        standard: parseInt(data.result.ProposeGasPrice),
-        fast: parseInt(data.result.FastGasPrice),
-        timestamp: Date.now()
-      };
+    console.log('[get-gas-prices] Etherscan response status:', data.status);
+    
+    if (data.status !== '1') {
+      throw new Error(`Etherscan API error: ${data.message || 'Unknown error'}`);
     }
     
-    throw new Error('Invalid response from Etherscan');
-  } catch (error) {
-    console.error('Error fetching Ethereum gas prices:', error);
-    return {
-      slow: 15,
-      standard: 20,
-      fast: 30,
+    const result = {
+      slow: parseInt(data.result.SafeGasPrice),
+      standard: parseInt(data.result.ProposeGasPrice),
+      fast: parseInt(data.result.FastGasPrice),
       timestamp: Date.now()
     };
+    
+    console.log('[get-gas-prices] Ethereum gas prices fetched successfully:', result);
+    return result;
+  } catch (error) {
+    console.error('[get-gas-prices] Error fetching Ethereum gas prices:', error);
+    throw error;
   }
 }
 
 async function getBitcoinFees(): Promise<GasPrices> {
+  console.log('[get-gas-prices] Fetching Bitcoin fees...');
+  
   try {
-    const response = await fetch('https://mempool.space/api/v1/fees/recommended');
+    const url = 'https://mempool.space/api/v1/fees/recommended';
+    console.log('[get-gas-prices] Calling Mempool.space API...');
+    
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`Mempool.space API error: ${response.status} ${response.statusText}`);
+    }
+    
     const data = await response.json();
     
-    return {
+    const result = {
       slow: data.hourFee || 10,
       standard: data.halfHourFee || 15,
       fast: data.fastestFee || 20,
       timestamp: Date.now()
     };
+    
+    console.log('[get-gas-prices] Bitcoin fees fetched successfully:', result);
+    return result;
   } catch (error) {
-    console.error('Error fetching Bitcoin fees:', error);
-    return {
-      slow: 10,
-      standard: 15,
-      fast: 20,
-      timestamp: Date.now()
-    };
+    console.error('[get-gas-prices] Error fetching Bitcoin fees:', error);
+    throw error;
   }
 }
 

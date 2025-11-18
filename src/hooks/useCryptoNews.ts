@@ -21,6 +21,6 @@ export const useCryptoNews = (category: string = 'general') => {
       if (error) throw error;
       return data.data as NewsArticle[];
     },
-    refetchInterval: 300000, // Refresh every 5 minutes
+    refetchInterval: 1800000, // 30 minutes
   });
 };

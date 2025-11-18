@@ -44,6 +44,6 @@ export const useGlobalMarketCap = () => {
         ethDominance: number;
       };
     },
-    refetchInterval: 60000,
+    refetchInterval: 3600000, // 1 hour
   });
 };

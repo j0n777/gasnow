@@ -11,3 +11,6 @@ verify_jwt = false
 
 [functions.get-fear-greed-index]
 verify_jwt = false
+
+[functions.get-altseason-index]
+verify_jwt = false

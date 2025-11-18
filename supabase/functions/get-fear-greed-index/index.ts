@@ -4,27 +4,36 @@ const corsHeaders = {
 };
 
 async function getFearGreedIndex() {
+  console.log('[get-fear-greed-index] Fetching Fear & Greed Index...');
+  
   try {
-    const response = await fetch('https://api.alternative.me/fng/?limit=1');
-    const data = await response.json();
+    const url = 'https://api.alternative.me/fng/?limit=1';
+    console.log('[get-fear-greed-index] Calling Alternative.me API...');
     
-    if (data.data && data.data[0]) {
-      const index = data.data[0];
-      return {
-        value: parseInt(index.value),
-        classification: index.value_classification,
-        timestamp: parseInt(index.timestamp) * 1000
-      };
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`Alternative.me API error: ${response.status} ${response.statusText}`);
     }
     
-    throw new Error('Invalid response');
-  } catch (error) {
-    console.error('Error fetching Fear & Greed Index:', error);
-    return {
-      value: 50,
-      classification: 'Neutral',
-      timestamp: Date.now()
+    const data = await response.json();
+    
+    if (!data.data || !data.data[0]) {
+      throw new Error('Invalid response format from Alternative.me');
+    }
+    
+    const index = data.data[0];
+    const result = {
+      value: parseInt(index.value),
+      classification: index.value_classification,
+      timestamp: parseInt(index.timestamp) * 1000
     };
+    
+    console.log('[get-fear-greed-index] Fear & Greed Index fetched successfully:', result);
+    return result;
+  } catch (error) {
+    console.error('[get-fear-greed-index] Error fetching Fear & Greed Index:', error);
+    throw error;
   }
 }
 
