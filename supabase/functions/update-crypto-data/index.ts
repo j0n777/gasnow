@@ -1,0 +1,325 @@
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.4';
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+};
+
+interface UpdateRequest {
+  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'fear_greed' | 'altseason' | 'news';
+  blockchain?: 'ethereum' | 'bitcoin';
+}
+
+Deno.serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    const { type, blockchain } = await req.json() as UpdateRequest;
+    console.log(`[update-crypto-data] Processing update for type: ${type}`);
+
+    let result;
+    switch (type) {
+      case 'gas_prices':
+        result = await updateGasPrices(supabase, blockchain || 'ethereum');
+        break;
+      case 'crypto_prices':
+        result = await updateCryptoPrices(supabase);
+        break;
+      case 'market_data':
+        result = await updateMarketData(supabase);
+        break;
+      case 'fear_greed':
+        result = await updateFearGreed(supabase);
+        break;
+      case 'altseason':
+        result = await updateAltseason(supabase);
+        break;
+      case 'news':
+        result = await updateNews(supabase);
+        break;
+      default:
+        throw new Error(`Unknown update type: ${type}`);
+    }
+
+    return new Response(JSON.stringify({ success: true, data: result }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.error('[update-crypto-data] Error:', error);
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    return new Response(JSON.stringify({ error: message }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+});
+
+async function updateGasPrices(supabase: any, blockchain: string) {
+  console.log(`[updateGasPrices] Fetching ${blockchain} gas prices...`);
+  
+  if (blockchain === 'ethereum') {
+    const etherscanApiKey = Deno.env.get('ETHERSCAN_API_KEY');
+    
+    // Try Etherscan v2 API first
+    if (etherscanApiKey) {
+      try {
+        const url = `https://api.etherscan.io/v2/api?chainid=1&module=gastracker&action=gasoracle&apikey=${etherscanApiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        if (data.status === '1' && data.result) {
+          const { SafeGasPrice, ProposeGasPrice, FastGasPrice } = data.result;
+          
+          const { error } = await supabase.from('gas_prices').insert({
+            blockchain: 'ethereum',
+            slow: parseFloat(SafeGasPrice),
+            standard: parseFloat(ProposeGasPrice),
+            fast: parseFloat(FastGasPrice),
+          });
+          
+          if (error) throw error;
+          
+          console.log('[updateGasPrices] Ethereum prices updated via Etherscan v2');
+          return { blockchain: 'ethereum', source: 'etherscan_v2' };
+        }
+      } catch (error) {
+        console.error('[updateGasPrices] Etherscan v2 API error:', error);
+      }
+    }
+    
+    // Fallback to beaconcha.in
+    try {
+      const response = await fetch('https://beaconcha.in/api/v1/execution/gasnow');
+      const data = await response.json();
+      
+      if (data.data) {
+        const slow = Math.round(data.data.slow / 1000000000);
+        const standard = Math.round(data.data.standard / 1000000000);
+        const fast = Math.round(data.data.fast / 1000000000);
+        
+        const { error } = await supabase.from('gas_prices').insert({
+          blockchain: 'ethereum',
+          slow,
+          standard,
+          fast,
+        });
+        
+        if (error) throw error;
+        
+        console.log('[updateGasPrices] Ethereum prices updated via beaconcha.in');
+        return { blockchain: 'ethereum', source: 'beaconcha' };
+      }
+    } catch (error) {
+      console.error('[updateGasPrices] beaconcha.in error:', error);
+      throw new Error('All Ethereum gas price sources failed');
+    }
+  } else if (blockchain === 'bitcoin') {
+    try {
+      const response = await fetch('https://mempool.space/api/v1/fees/recommended');
+      const data = await response.json();
+      
+      const { error } = await supabase.from('gas_prices').insert({
+        blockchain: 'bitcoin',
+        slow: data.hourFee,
+        standard: data.halfHourFee,
+        fast: data.fastestFee,
+      });
+      
+      if (error) throw error;
+      
+      console.log('[updateGasPrices] Bitcoin fees updated');
+      return { blockchain: 'bitcoin', source: 'mempool.space' };
+    } catch (error) {
+      console.error('[updateGasPrices] Bitcoin error:', error);
+      throw error;
+    }
+  }
+}
+
+async function updateCryptoPrices(supabase: any) {
+  console.log('[updateCryptoPrices] Fetching crypto prices...');
+  
+  const coingeckoApiKey = Deno.env.get('COINGECKO_API_KEY');
+  const coins = ['bitcoin', 'ethereum', 'solana', 'the-open-network'];
+  const symbols = ['btc', 'eth', 'sol', 'ton'];
+  
+  try {
+    const params = new URLSearchParams({
+      ids: coins.join(','),
+      vs_currencies: 'usd',
+      include_24hr_change: 'true',
+    });
+    
+    const headers: any = { 'Accept': 'application/json' };
+    if (coingeckoApiKey) {
+      headers['x-cg-demo-api-key'] = coingeckoApiKey;
+    }
+    
+    const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?${params}`, { headers });
+    const data = await response.json();
+    
+    for (let i = 0; i < coins.length; i++) {
+      const coinData = data[coins[i]];
+      if (coinData) {
+        const { error } = await supabase.from('crypto_prices').insert({
+          symbol: symbols[i],
+          price: coinData.usd,
+          change_24h: coinData.usd_24h_change || 0,
+        });
+        
+        if (error) console.error(`Error inserting ${symbols[i]}:`, error);
+      }
+    }
+    
+    console.log('[updateCryptoPrices] Crypto prices updated');
+    return { updated: symbols.length };
+  } catch (error) {
+    console.error('[updateCryptoPrices] Error:', error);
+    throw error;
+  }
+}
+
+async function updateMarketData(supabase: any) {
+  console.log('[updateMarketData] Fetching market data...');
+  
+  const coingeckoApiKey = Deno.env.get('COINGECKO_API_KEY');
+  
+  try {
+    const headers: any = { 'Accept': 'application/json' };
+    if (coingeckoApiKey) {
+      headers['x-cg-demo-api-key'] = coingeckoApiKey;
+    }
+    
+    const response = await fetch('https://api.coingecko.com/api/v3/global', { headers });
+    const data = await response.json();
+    
+    const { error } = await supabase.from('market_data').insert({
+      total_market_cap: data.data.total_market_cap.usd,
+      total_volume_24h: data.data.total_volume.usd,
+      btc_dominance: data.data.market_cap_percentage.btc,
+      eth_dominance: data.data.market_cap_percentage.eth,
+    });
+    
+    if (error) throw error;
+    
+    console.log('[updateMarketData] Market data updated');
+    return { success: true };
+  } catch (error) {
+    console.error('[updateMarketData] Error:', error);
+    throw error;
+  }
+}
+
+async function updateFearGreed(supabase: any) {
+  console.log('[updateFearGreed] Fetching Fear & Greed Index...');
+  
+  try {
+    const response = await fetch('https://api.alternative.me/fng/?limit=1');
+    const data = await response.json();
+    
+    const indexData = data.data[0];
+    const { error } = await supabase.from('fear_greed_index').insert({
+      value: parseInt(indexData.value),
+      classification: indexData.value_classification,
+    });
+    
+    if (error) throw error;
+    
+    console.log('[updateFearGreed] Fear & Greed Index updated');
+    return { value: indexData.value, classification: indexData.value_classification };
+  } catch (error) {
+    console.error('[updateFearGreed] Error:', error);
+    throw error;
+  }
+}
+
+async function updateAltseason(supabase: any) {
+  console.log('[updateAltseason] Calculating Altseason Index...');
+  
+  const coingeckoApiKey = Deno.env.get('COINGECKO_API_KEY');
+  
+  try {
+    const headers: any = { 'Accept': 'application/json' };
+    if (coingeckoApiKey) {
+      headers['x-cg-demo-api-key'] = coingeckoApiKey;
+    }
+    
+    const response = await fetch('https://api.coingecko.com/api/v3/global', { headers });
+    const data = await response.json();
+    
+    const btcDominance = data.data.market_cap_percentage.btc;
+    const altDominance = 100 - btcDominance;
+    
+    let classification = 'Neutral';
+    if (altDominance > 60) classification = 'Altseason';
+    else if (altDominance < 40) classification = 'Bitcoin Season';
+    
+    const { error } = await supabase.from('altseason_index').insert({
+      value: altDominance,
+      btc_dominance: btcDominance,
+      classification,
+    });
+    
+    if (error) throw error;
+    
+    console.log('[updateAltseason] Altseason Index updated');
+    return { value: altDominance, classification };
+  } catch (error) {
+    console.error('[updateAltseason] Error:', error);
+    throw error;
+  }
+}
+
+async function updateNews(supabase: any) {
+  console.log('[updateNews] Fetching crypto news...');
+  
+  const feeds = [
+    { url: 'https://www.coindesk.com/arc/outboundfeeds/rss/', source: 'CoinDesk' },
+    { url: 'https://cointelegraph.com/rss', source: 'Cointelegraph' },
+    { url: 'https://decrypt.co/feed', source: 'Decrypt' },
+  ];
+  
+  let insertedCount = 0;
+  
+  for (const feed of feeds) {
+    try {
+      const response = await fetch(feed.url);
+      const text = await response.text();
+      
+      // Simple RSS parsing
+      const items = text.match(/<item>[\s\S]*?<\/item>/g) || [];
+      
+      for (const item of items.slice(0, 5)) {
+        const titleMatch = item.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || item.match(/<title>(.*?)<\/title>/);
+        const linkMatch = item.match(/<link>(.*?)<\/link>/);
+        const descMatch = item.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/) || item.match(/<description>(.*?)<\/description>/);
+        const pubDateMatch = item.match(/<pubDate>(.*?)<\/pubDate>/);
+        
+        if (titleMatch && linkMatch) {
+          const { error } = await supabase.from('crypto_news').insert({
+            title: titleMatch[1].trim(),
+            description: descMatch ? descMatch[1].trim().replace(/<[^>]*>/g, '').slice(0, 500) : null,
+            url: linkMatch[1].trim(),
+            image_url: '/images/default-crypto-news.jpg',
+            source: feed.source,
+            category: 'general',
+            published_at: pubDateMatch ? new Date(pubDateMatch[1]).toISOString() : new Date().toISOString(),
+          }).select();
+          
+          if (!error) insertedCount++;
+        }
+      }
+    } catch (error) {
+      console.error(`[updateNews] Error fetching ${feed.source}:`, error);
+    }
+  }
+  
+  console.log(`[updateNews] Inserted ${insertedCount} news articles`);
+  return { inserted: insertedCount };
+}

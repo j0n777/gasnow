@@ -13,7 +13,9 @@ export const useAltseasonIndex = () => {
     queryKey: ['altseasonIndex'],
     queryFn: async () => {
       console.log('[useAltseasonIndex] Fetching Altseason Index...');
-      const { data, error } = await supabase.functions.invoke('get-altseason-index');
+      const { data, error } = await supabase.functions.invoke('get-crypto-data', {
+        body: { type: 'altseason' }
+      });
       
       if (error) {
         console.error('[useAltseasonIndex] Error:', error);
@@ -23,6 +25,6 @@ export const useAltseasonIndex = () => {
       console.log('[useAltseasonIndex] Success:', data);
       return data.data as AltseasonData;
     },
-    refetchInterval: 3600000, // 1 hour
+    refetchInterval: 60000, // 1 minute
   });
 };

@@ -15,8 +15,8 @@ export const useCryptoNews = (category: string = 'general') => {
     queryKey: ['cryptoNews', category],
     queryFn: async () => {
       console.log(`[useCryptoNews] Fetching news for category: ${category}...`);
-      const { data, error } = await supabase.functions.invoke('get-crypto-news', {
-        body: { category }
+      const { data, error } = await supabase.functions.invoke('get-crypto-data', {
+        body: { type: 'news', category }
       });
       
       if (error) {
@@ -27,6 +27,6 @@ export const useCryptoNews = (category: string = 'general') => {
       console.log('[useCryptoNews] Success:', data);
       return data.data as NewsArticle[];
     },
-    refetchInterval: 1800000, // 30 minutes
+    refetchInterval: 60000, // 1 minute
   });
 };

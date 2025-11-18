@@ -14,7 +14,165 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      altseason_index: {
+        Row: {
+          btc_dominance: number
+          classification: string
+          created_at: string | null
+          id: number
+          value: number
+        }
+        Insert: {
+          btc_dominance: number
+          classification: string
+          created_at?: string | null
+          id?: number
+          value: number
+        }
+        Update: {
+          btc_dominance?: number
+          classification?: string
+          created_at?: string | null
+          id?: number
+          value?: number
+        }
+        Relationships: []
+      }
+      crypto_news: {
+        Row: {
+          category: string | null
+          created_at: string | null
+          description: string | null
+          id: number
+          image_url: string | null
+          published_at: string | null
+          source: string
+          title: string
+          url: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: number
+          image_url?: string | null
+          published_at?: string | null
+          source: string
+          title: string
+          url: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: number
+          image_url?: string | null
+          published_at?: string | null
+          source?: string
+          title?: string
+          url?: string
+        }
+        Relationships: []
+      }
+      crypto_prices: {
+        Row: {
+          change_24h: number
+          created_at: string | null
+          id: number
+          price: number
+          symbol: string
+        }
+        Insert: {
+          change_24h: number
+          created_at?: string | null
+          id?: number
+          price: number
+          symbol: string
+        }
+        Update: {
+          change_24h?: number
+          created_at?: string | null
+          id?: number
+          price?: number
+          symbol?: string
+        }
+        Relationships: []
+      }
+      fear_greed_index: {
+        Row: {
+          classification: string
+          created_at: string | null
+          id: number
+          value: number
+        }
+        Insert: {
+          classification: string
+          created_at?: string | null
+          id?: number
+          value: number
+        }
+        Update: {
+          classification?: string
+          created_at?: string | null
+          id?: number
+          value?: number
+        }
+        Relationships: []
+      }
+      gas_prices: {
+        Row: {
+          blockchain: string
+          created_at: string | null
+          fast: number
+          id: number
+          slow: number
+          standard: number
+        }
+        Insert: {
+          blockchain: string
+          created_at?: string | null
+          fast: number
+          id?: number
+          slow: number
+          standard: number
+        }
+        Update: {
+          blockchain?: string
+          created_at?: string | null
+          fast?: number
+          id?: number
+          slow?: number
+          standard?: number
+        }
+        Relationships: []
+      }
+      market_data: {
+        Row: {
+          btc_dominance: number
+          created_at: string | null
+          eth_dominance: number
+          id: number
+          total_market_cap: number
+          total_volume_24h: number
+        }
+        Insert: {
+          btc_dominance: number
+          created_at?: string | null
+          eth_dominance: number
+          id?: number
+          total_market_cap: number
+          total_volume_24h: number
+        }
+        Update: {
+          btc_dominance?: number
+          created_at?: string | null
+          eth_dominance?: number
+          id?: number
+          total_market_cap?: number
+          total_volume_24h?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
