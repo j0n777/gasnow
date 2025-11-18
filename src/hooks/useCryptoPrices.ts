@@ -30,7 +30,7 @@ export const useCryptoPrices = () => {
       console.log('[useCryptoPrices] Success:', data);
       return data.data as CryptoPrices;
     },
-    refetchInterval: 5000,
+    refetchInterval: 300000, // 5 minutes
   });
 };
 
@@ -56,6 +56,6 @@ export const useGlobalMarketCap = () => {
         ethDominance: number;
       };
     },
-    refetchInterval: 60000, // 1 minute
+    refetchInterval: 3600000, // 1 hour
   });
 };

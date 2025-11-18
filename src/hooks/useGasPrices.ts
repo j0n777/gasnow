@@ -25,6 +25,6 @@ export const useGasPrices = (blockchain: 'ethereum' | 'bitcoin') => {
       console.log('[useGasPrices] Success:', data);
       return data.data as GasPrices;
     },
-    refetchInterval: 5000, // Read from DB every 5 seconds
+    refetchInterval: 120000, // 2 minutes
   });
 };

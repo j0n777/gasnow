@@ -27,6 +27,6 @@ export const useCryptoNews = (category: string = 'general') => {
       console.log('[useCryptoNews] Success:', data);
       return data.data as NewsArticle[];
     },
-    refetchInterval: 60000, // 1 minute
+    refetchInterval: 1800000, // 30 minutes
   });
 };
