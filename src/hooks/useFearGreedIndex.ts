@@ -24,6 +24,6 @@ export const useFearGreedIndex = () => {
       console.log('[useFearGreedIndex] Success:', data);
       return data.data as FearGreedIndex;
     },
-    refetchInterval: 10000,
+    refetchInterval: 3600000, // 1 hour
   });
 };

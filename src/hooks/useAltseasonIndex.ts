@@ -25,6 +25,6 @@ export const useAltseasonIndex = () => {
       console.log('[useAltseasonIndex] Success:', data);
       return data.data as AltseasonData;
     },
-    refetchInterval: 60000, // 1 minute
+    refetchInterval: 3600000, // 1 hour
   });
 };
