@@ -173,12 +173,48 @@ export type Database = {
         }
         Relationships: []
       }
+      trending_tokens: {
+        Row: {
+          created_at: string | null
+          id: number
+          market_cap_rank: number | null
+          name: string
+          price_btc: number | null
+          rank: number | null
+          symbol: string
+          token_id: string
+          token_type: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          market_cap_rank?: number | null
+          name: string
+          price_btc?: number | null
+          rank?: number | null
+          symbol: string
+          token_id: string
+          token_type: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          market_cap_rank?: number | null
+          name?: string
+          price_btc?: number | null
+          rank?: number | null
+          symbol?: string
+          token_id?: string
+          token_type?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      cleanup_old_trending_tokens: { Args: never; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
