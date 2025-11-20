@@ -2,6 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useGlobalMarketCap } from '@/hooks/useCryptoPrices';
 import { TrendingUp, Activity, PieChart } from 'lucide-react';
+import { LineChart, Line, ResponsiveContainer } from 'recharts';
 
 export const MarketStats = () => {
   const { data, isLoading, error } = useGlobalMarketCap();
@@ -12,6 +13,10 @@ export const MarketStats = () => {
     if (num >= 1e6) return `$${(num / 1e6).toFixed(2)}M`;
     return `$${num.toLocaleString()}`;
   };
+
+  // Generate mock trend data for mini charts
+  const generateMockTrend = () => 
+    Array.from({ length: 7 }, (_, i) => ({ value: Math.random() * 30 + 70 }));
 
   const stats = [
     {
@@ -57,12 +62,23 @@ export const MarketStats = () => {
                 <div className={`p-3 rounded-lg ${stat.bgColor}`}>
                   <stat.icon className={`h-6 w-6 ${stat.color}`} />
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                   <p className="text-2xl font-bold">
                     {stat.isPercentage ? stat.value : formatLargeNumber(Number(stat.value))}
                   </p>
                 </div>
+                <ResponsiveContainer width={60} height={40}>
+                  <LineChart data={generateMockTrend()}>
+                    <Line 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="hsl(var(--primary))"
+                      strokeWidth={2} 
+                      dot={false} 
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
               </div>
             )}
           </CardContent>

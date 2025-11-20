@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Skeleton } from '@/components/ui/skeleton';
 import { useFearGreedIndex } from '@/hooks/useFearGreedIndex';
 import { Progress } from '@/components/ui/progress';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const getColorByValue = (value: number) => {
   if (value < 25) return 'text-red-500';
@@ -40,6 +41,29 @@ export const FearGreedWidget = () => {
                 {data?.classification}
               </div>
             </div>
+            
+            {/* Visual gauge chart */}
+            <ResponsiveContainer width="100%" height={120}>
+              <PieChart>
+                <Pie
+                  data={[
+                    { value: data?.value || 0 },
+                    { value: 100 - (data?.value || 0) }
+                  ]}
+                  cx="50%"
+                  cy="50%"
+                  startAngle={180}
+                  endAngle={0}
+                  innerRadius={50}
+                  outerRadius={70}
+                  paddingAngle={0}
+                  dataKey="value"
+                >
+                  <Cell fill="hsl(var(--primary))" />
+                  <Cell fill="hsl(var(--muted))" />
+                </Pie>
+              </PieChart>
+            </ResponsiveContainer>
             
             <Progress value={data?.value} className="h-2" />
             
