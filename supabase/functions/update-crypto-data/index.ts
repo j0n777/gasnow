@@ -6,7 +6,7 @@ const corsHeaders = {
 };
 
 interface UpdateRequest {
-  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'fear_greed' | 'altseason' | 'news';
+  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens';
   blockchain?: 'ethereum' | 'bitcoin';
 }
 
@@ -42,6 +42,9 @@ Deno.serve(async (req) => {
         break;
       case 'news':
         result = await updateNews(supabase);
+        break;
+      case 'trending_tokens':
+        result = await updateTrendingTokens(supabase);
         break;
       default:
         throw new Error(`Unknown update type: ${type}`);
@@ -297,16 +300,26 @@ async function updateNews(supabase: any) {
       
       for (const item of items.slice(0, 5)) {
         const titleMatch = item.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || item.match(/<title>(.*?)<\/title>/);
-        const linkMatch = item.match(/<link>(.*?)<\/link>/);
+        const linkMatch = item.match(/<link>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/link>/);
         const descMatch = item.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/) || item.match(/<description>(.*?)<\/description>/);
         const pubDateMatch = item.match(/<pubDate>(.*?)<\/pubDate>/);
+        
+        // Extract image from various RSS formats
+        let imageUrl = '/images/default-crypto-news.jpg';
+        const mediaMatch = item.match(/<media:content[^>]*url=["'](.*?)["']/);
+        const enclosureMatch = item.match(/<enclosure[^>]*url=["'](.*?)["']/);
+        const contentMatch = item.match(/<content:encoded><!\[CDATA\[[\s\S]*?<img[^>]*src=["'](.*?)["']/);
+        
+        if (mediaMatch) imageUrl = mediaMatch[1];
+        else if (enclosureMatch) imageUrl = enclosureMatch[1];
+        else if (contentMatch) imageUrl = contentMatch[1];
         
         if (titleMatch && linkMatch) {
           const { error } = await supabase.from('crypto_news').insert({
             title: titleMatch[1].trim(),
             description: descMatch ? descMatch[1].trim().replace(/<[^>]*>/g, '').slice(0, 500) : null,
             url: linkMatch[1].trim(),
-            image_url: '/images/default-crypto-news.jpg',
+            image_url: imageUrl,
             source: feed.source,
             category: 'general',
             published_at: pubDateMatch ? new Date(pubDateMatch[1]).toISOString() : new Date().toISOString(),
@@ -322,4 +335,78 @@ async function updateNews(supabase: any) {
   
   console.log(`[updateNews] Inserted ${insertedCount} news articles`);
   return { inserted: insertedCount };
+}
+
+async function updateTrendingTokens(supabase: any) {
+  console.log('[updateTrendingTokens] Fetching trending tokens...');
+  
+  const coingeckoApiKey = Deno.env.get('COINGECKO_API_KEY');
+  const headers: any = { 'Accept': 'application/json' };
+  if (coingeckoApiKey) {
+    headers['x-cg-demo-api-key'] = coingeckoApiKey;
+  }
+  
+  try {
+    // 1. Fetch trending coins
+    const trendingRes = await fetch('https://api.coingecko.com/api/v3/search/trending', { headers });
+    const trendingData = await trendingRes.json();
+    
+    for (const coin of trendingData.coins.slice(0, 5)) {
+      await supabase.from('trending_tokens').insert({
+        token_id: coin.item.id,
+        symbol: coin.item.symbol,
+        name: coin.item.name,
+        rank: coin.item.market_cap_rank,
+        price_btc: coin.item.price_btc,
+        market_cap_rank: coin.item.market_cap_rank,
+        token_type: 'trending',
+      });
+    }
+    
+    // 2. Fetch top gainers (24h)
+    const marketsRes = await fetch(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&sparkline=false&price_change_percentage=24h',
+      { headers }
+    );
+    const marketsData = await marketsRes.json();
+    
+    // Sort by highest 24h gain
+    const gainers = marketsData
+      .filter((coin: any) => coin.price_change_percentage_24h > 0)
+      .sort((a: any, b: any) => b.price_change_percentage_24h - a.price_change_percentage_24h)
+      .slice(0, 5);
+    
+    for (const coin of gainers) {
+      await supabase.from('trending_tokens').insert({
+        token_id: coin.id,
+        symbol: coin.symbol,
+        name: coin.name,
+        rank: coin.market_cap_rank,
+        price_btc: null,
+        market_cap_rank: coin.market_cap_rank,
+        token_type: 'gainer',
+      });
+    }
+    
+    // 3. Top 5 by market cap
+    const top5 = marketsData.slice(0, 5);
+    
+    for (const coin of top5) {
+      await supabase.from('trending_tokens').insert({
+        token_id: coin.id,
+        symbol: coin.symbol,
+        name: coin.name,
+        rank: coin.market_cap_rank,
+        price_btc: null,
+        market_cap_rank: coin.market_cap_rank,
+        token_type: 'top5',
+      });
+    }
+    
+    console.log('[updateTrendingTokens] Trending tokens updated');
+    return { success: true };
+  } catch (error) {
+    console.error('[updateTrendingTokens] Error:', error);
+    throw error;
+  }
 }

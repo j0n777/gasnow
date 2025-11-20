@@ -33,13 +33,13 @@ export const AltseasonWidget = () => {
           <div className="space-y-4">
             <div className="text-center space-y-2">
               <div className={`text-5xl font-bold ${getColorByValue(data?.value || 50)}`}>
-                {data?.value}
+                {data?.value?.toFixed(2)}
               </div>
               <div className="text-lg font-semibold text-muted-foreground">
                 {data?.classification}
               </div>
               <div className="text-xs text-muted-foreground">
-                BTC Dominance: {data?.btcDominance}%
+                BTC Dominance: {data?.btcDominance?.toFixed(2)}%
               </div>
             </div>
             

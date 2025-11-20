@@ -6,7 +6,7 @@ const corsHeaders = {
 };
 
 interface DataRequest {
-  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'fear_greed' | 'altseason' | 'news';
+  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens';
   blockchain?: 'ethereum' | 'bitcoin';
   category?: string;
 }
@@ -21,6 +21,7 @@ const CACHE_TTL = {
   fear_greed: 55 * 60 * 1000, // 55 minutes
   altseason: 55 * 60 * 1000, // 55 minutes
   news: 25 * 60 * 1000, // 25 minutes
+  trending_tokens: 60 * 60 * 1000, // 1 hour
 };
 
 Deno.serve(async (req) => {
@@ -69,6 +70,9 @@ Deno.serve(async (req) => {
         break;
       case 'news':
         result = await getNews(supabase, category);
+        break;
+      case 'trending_tokens':
+        result = await getTrendingTokens(supabase);
         break;
       default:
         throw new Error(`Unknown data type: ${type}`);
@@ -211,4 +215,21 @@ async function getNews(supabase: any, category?: string) {
     publishedAt: article.published_at,
     source: article.source,
   }));
+}
+
+async function getTrendingTokens(supabase: any) {
+  const { data, error } = await supabase
+    .from('trending_tokens')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(15); // 5 of each type
+  
+  if (error) throw error;
+  
+  // Organize by type
+  return {
+    trending: data.filter((t: any) => t.token_type === 'trending').slice(0, 5),
+    gainers: data.filter((t: any) => t.token_type === 'gainer').slice(0, 5),
+    top5: data.filter((t: any) => t.token_type === 'top5').slice(0, 5),
+  };
 }

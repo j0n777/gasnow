@@ -5,6 +5,7 @@ import { NewsSection } from '@/components/NewsSection';
 import { FearGreedWidget } from '@/components/FearGreedWidget';
 import { AltseasonWidget } from '@/components/AltseasonWidget';
 import { MarketStats } from '@/components/MarketStats';
+import { TrendingTokens } from '@/components/TrendingTokens';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { useGasPrices } from '@/hooks/useGasPrices';
 
@@ -21,10 +22,7 @@ const Index = () => {
         />
 
         <main className="container mx-auto px-4 py-8 space-y-8">
-          {/* Market Stats */}
-          <MarketStats />
-
-          {/* Gas Prices */}
+          {/* 1. Gas Prices - FIRST */}
           <section>
             <h2 className="text-2xl font-bold mb-4">
               {selectedBlockchain === 'ethereum' ? 'Ethereum' : 'Bitcoin'} Gas Fees
@@ -51,7 +49,10 @@ const Index = () => {
             </div>
           </section>
 
-          {/* News and Market Indicators */}
+          {/* 2. Market Stats - SECOND */}
+          <MarketStats />
+
+          {/* 3. News and Market Indicators - THIRD */}
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <NewsSection />
@@ -59,6 +60,7 @@ const Index = () => {
             <div className="space-y-6">
               <FearGreedWidget />
               <AltseasonWidget />
+              <TrendingTokens />
             </div>
           </div>
         </main>
