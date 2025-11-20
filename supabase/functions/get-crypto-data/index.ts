@@ -11,19 +11,6 @@ interface DataRequest {
   category?: string;
 }
 
-// Deno KV cache with TTLs per data type
-const kv = await Deno.openKv();
-
-const CACHE_TTL = {
-  gas_prices: 90 * 1000, // 90 seconds
-  crypto_prices: 4 * 60 * 1000, // 4 minutes
-  market_data: 55 * 60 * 1000, // 55 minutes
-  fear_greed: 55 * 60 * 1000, // 55 minutes
-  altseason: 55 * 60 * 1000, // 55 minutes
-  news: 25 * 60 * 1000, // 25 minutes
-  trending_tokens: 60 * 60 * 1000, // 1 hour
-};
-
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -36,20 +23,6 @@ Deno.serve(async (req) => {
 
     const { type, blockchain, category } = await req.json() as DataRequest;
     console.log(`[get-crypto-data] Fetching data for type: ${type}`);
-
-    // Generate cache key
-    const cacheKey = ['crypto_data', type, blockchain || '', category || ''].filter(Boolean);
-    
-    // Check cache
-    const cached = await kv.get(cacheKey);
-    if (cached.value) {
-      console.log(`[get-crypto-data] Cache HIT for ${type}`);
-      return new Response(JSON.stringify({ data: cached.value }), {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
-    }
-
-    console.log(`[get-crypto-data] Cache MISS for ${type}, fetching from DB`);
 
     let result;
     switch (type) {
@@ -77,11 +50,6 @@ Deno.serve(async (req) => {
       default:
         throw new Error(`Unknown data type: ${type}`);
     }
-
-    // Store in cache with appropriate TTL
-    const ttl = CACHE_TTL[type];
-    await kv.set(cacheKey, result, { expireIn: ttl });
-    console.log(`[get-crypto-data] Cached ${type} for ${ttl / 1000}s`);
 
     return new Response(JSON.stringify({ data: result }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
