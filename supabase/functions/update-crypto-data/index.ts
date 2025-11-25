@@ -347,11 +347,36 @@ async function updateTrendingTokens(supabase: any) {
   }
   
   try {
+    // Clear old data first
+    await supabase.from('trending_tokens').delete().neq('id', 0);
+    
     // 1. Fetch trending coins
     const trendingRes = await fetch('https://api.coingecko.com/api/v3/search/trending', { headers });
     const trendingData = await trendingRes.json();
     
+    // Get IDs to fetch prices
+    const trendingIds = trendingData.coins.slice(0, 5).map((c: any) => c.item.id);
+    
+    // Fetch prices for trending tokens
+    const trendingPricesRes = await fetch(
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${trendingIds.join(',')}&price_change_percentage=24h`,
+      { headers }
+    );
+    const trendingPricesData = await trendingPricesRes.json();
+    
+    // Create price map
+    const priceMap: Record<string, any> = {};
+    for (const coin of trendingPricesData) {
+      priceMap[coin.id] = {
+        price: coin.current_price,
+        change_24h: coin.price_change_percentage_24h,
+        image: coin.image
+      };
+    }
+    
+    // Insert trending tokens with prices
     for (const coin of trendingData.coins.slice(0, 5)) {
+      const priceInfo = priceMap[coin.item.id] || { price: null, change_24h: null, image: null };
       await supabase.from('trending_tokens').insert({
         token_id: coin.item.id,
         symbol: coin.item.symbol,
@@ -360,25 +385,20 @@ async function updateTrendingTokens(supabase: any) {
         price_btc: coin.item.price_btc,
         market_cap_rank: coin.item.market_cap_rank,
         token_type: 'trending',
-        price: null, // Will be fetched separately if needed
-        change_24h: null,
+        price: priceInfo.price,
+        change_24h: priceInfo.change_24h,
+        image_url: priceInfo.image || coin.item.thumb,
       });
     }
     
     // 2. Fetch top gainers (24h) with detailed market data
-    const marketsRes = await fetch(
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&sparkline=false&price_change_percentage=24h',
+    const gainersRes = await fetch(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=price_change_percentage_24h_desc&per_page=5&page=1&sparkline=false&price_change_percentage=24h',
       { headers }
     );
-    const marketsData = await marketsRes.json();
+    const gainersData = await gainersRes.json();
     
-    // Sort by highest 24h gain
-    const gainers = marketsData
-      .filter((coin: any) => coin.price_change_percentage_24h > 0)
-      .sort((a: any, b: any) => b.price_change_percentage_24h - a.price_change_percentage_24h)
-      .slice(0, 5);
-    
-    for (const coin of gainers) {
+    for (const coin of gainersData) {
       await supabase.from('trending_tokens').insert({
         token_id: coin.id,
         symbol: coin.symbol,
@@ -389,13 +409,18 @@ async function updateTrendingTokens(supabase: any) {
         token_type: 'gainer',
         price: coin.current_price,
         change_24h: coin.price_change_percentage_24h,
+        image_url: coin.image,
       });
     }
     
     // 3. Top 5 by market cap
-    const top5 = marketsData.slice(0, 5);
+    const top5Res = await fetch(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false&price_change_percentage=24h',
+      { headers }
+    );
+    const top5Data = await top5Res.json();
     
-    for (const coin of top5) {
+    for (const coin of top5Data) {
       await supabase.from('trending_tokens').insert({
         token_id: coin.id,
         symbol: coin.symbol,
@@ -406,6 +431,7 @@ async function updateTrendingTokens(supabase: any) {
         token_type: 'top5',
         price: coin.current_price,
         change_24h: coin.price_change_percentage_24h,
+        image_url: coin.image,
       });
     }
     
