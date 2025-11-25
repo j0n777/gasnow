@@ -1,7 +1,7 @@
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useGlobalMarketCap } from '@/hooks/useCryptoPrices';
-import { TrendingUp, Activity, PieChart } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
 
 export const MarketStats = () => {
@@ -14,76 +14,94 @@ export const MarketStats = () => {
     return `$${num.toLocaleString()}`;
   };
 
-  // Generate mock trend data for mini charts
-  const generateMockTrend = () => 
-    Array.from({ length: 7 }, (_, i) => ({ value: Math.random() * 30 + 70 }));
-
-  const stats = [
-    {
-      icon: TrendingUp,
-      label: 'Total Market Cap',
-      value: data?.totalMarketCap || 0,
-      color: 'text-blue-500',
-      bgColor: 'bg-blue-500/10',
-    },
-    {
-      icon: Activity,
-      label: '24h Volume',
-      value: data?.totalVolume24h || 0,
-      color: 'text-purple-500',
-      bgColor: 'bg-purple-500/10',
-    },
-    {
-      icon: PieChart,
-      label: 'BTC Dominance',
-      value: `${data?.btcDominance.toFixed(1)}%` || '0%',
-      color: 'text-orange-500',
-      bgColor: 'bg-orange-500/10',
-      isPercentage: true,
-    },
-  ];
+  // Generate mock trend data for mini chart
+  const chartData = Array.from({ length: 7 }, (_, i) => ({ 
+    value: Math.random() * 0.2 + 2.9 
+  }));
 
   return (
-    <div className="grid gap-4 md:grid-cols-3">
-      {stats.map((stat) => (
-        <Card key={stat.label}>
-          <CardContent className="pt-6">
-            {isLoading ? (
-              <div className="space-y-2">
-                <Skeleton className="h-4 w-24" />
-                <Skeleton className="h-8 w-32" />
+    <div className="grid gap-4 md:grid-cols-2">
+      {/* Combined Market Cap + Volume */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-lg">Global Market</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {isLoading ? (
+            <>
+              <Skeleton className="h-8 w-32" />
+              <Skeleton className="h-8 w-32" />
+              <Skeleton className="h-16 w-full" />
+            </>
+          ) : error ? (
+            <div className="text-center py-4">
+              <p className="text-sm text-destructive">Failed to load</p>
+            </div>
+          ) : (
+            <>
+              {/* Total Market Cap */}
+              <div>
+                <p className="text-sm text-muted-foreground">Total Market Cap</p>
+                <p className="text-3xl font-bold">
+                  {formatLargeNumber(data?.totalMarketCap || 0)}
+                </p>
               </div>
-            ) : error ? (
-              <div className="text-center py-4">
-                <p className="text-sm text-destructive">Failed to load</p>
+              
+              {/* 24h Volume */}
+              <div>
+                <p className="text-sm text-muted-foreground">24h Volume</p>
+                <p className="text-2xl font-bold">
+                  {formatLargeNumber(data?.totalVolume24h || 0)}
+                </p>
               </div>
-            ) : (
-              <div className="flex items-center gap-4">
-                <div className={`p-3 rounded-lg ${stat.bgColor}`}>
-                  <stat.icon className={`h-6 w-6 ${stat.color}`} />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                  <p className="text-2xl font-bold">
-                    {stat.isPercentage ? stat.value : formatLargeNumber(Number(stat.value))}
-                  </p>
-                </div>
-                <ResponsiveContainer width={60} height={40}>
-                  <LineChart data={generateMockTrend()}>
-                    <Line 
-                      type="monotone" 
-                      dataKey="value" 
-                      stroke="hsl(var(--primary))"
-                      strokeWidth={2} 
-                      dot={false} 
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
+              
+              {/* Mini chart */}
+              <ResponsiveContainer width="100%" height={60}>
+                <LineChart data={chartData}>
+                  <Line 
+                    type="monotone" 
+                    dataKey="value" 
+                    stroke="hsl(var(--primary))"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </>
+          )}
+        </CardContent>
+      </Card>
+      
+      {/* BTC Dominance */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-lg">BTC Dominance</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {isLoading ? (
+            <>
+              <Skeleton className="h-12 w-24" />
+              <Skeleton className="h-2 w-full" />
+            </>
+          ) : error ? (
+            <div className="text-center py-4">
+              <p className="text-sm text-destructive">Failed to load</p>
+            </div>
+          ) : (
+            <>
+              <div className="text-4xl font-bold">
+                {data?.btcDominance?.toFixed(2)}%
               </div>
-            )}
-          </CardContent>
-        </Card>
-      ))}
+              <Progress value={data?.btcDominance} className="h-2" />
+              <div className="flex justify-between text-xs text-muted-foreground">
+                <span>0%</span>
+                <span>50%</span>
+                <span>100%</span>
+              </div>
+            </>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 };

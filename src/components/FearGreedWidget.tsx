@@ -1,10 +1,16 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useFearGreedIndex } from '@/hooks/useFearGreedIndex';
-import { Progress } from '@/components/ui/progress';
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-const getColorByValue = (value: number) => {
+const getGaugeColor = (value: number): string => {
+  if (value < 25) return 'hsl(0, 84%, 60%)'; // Red
+  if (value < 45) return 'hsl(25, 95%, 53%)'; // Orange
+  if (value < 55) return 'hsl(45, 93%, 58%)'; // Yellow
+  if (value < 75) return 'hsl(142, 71%, 45%)'; // Green
+  return 'hsl(142, 76%, 36%)'; // Emerald
+};
+
+const getTextColorClass = (value: number): string => {
   if (value < 25) return 'text-red-500';
   if (value < 45) return 'text-orange-500';
   if (value < 55) return 'text-yellow-500';
@@ -33,8 +39,56 @@ export const FearGreedWidget = () => {
           </div>
         ) : (
           <div className="space-y-4">
-            <div className="text-center space-y-2">
-              <div className={`text-5xl font-bold ${getColorByValue(data?.value || 50)}`}>
+            {/* Semi-circle gauge */}
+            <div className="relative h-32 flex items-end justify-center">
+              <svg viewBox="0 0 200 110" className="w-full">
+                {/* Background arc */}
+                <path
+                  d="M 20 100 A 80 80 0 0 1 180 100"
+                  fill="none"
+                  stroke="hsl(var(--muted))"
+                  strokeWidth="16"
+                  strokeLinecap="round"
+                />
+                
+                {/* Gradient arc */}
+                <defs>
+                  <linearGradient id="fearGreedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="hsl(0, 84%, 60%)" />
+                    <stop offset="25%" stopColor="hsl(25, 95%, 53%)" />
+                    <stop offset="50%" stopColor="hsl(45, 93%, 58%)" />
+                    <stop offset="75%" stopColor="hsl(142, 71%, 45%)" />
+                    <stop offset="100%" stopColor="hsl(142, 76%, 36%)" />
+                  </linearGradient>
+                </defs>
+                
+                <path
+                  d="M 20 100 A 80 80 0 0 1 180 100"
+                  fill="none"
+                  stroke="url(#fearGreedGradient)"
+                  strokeWidth="16"
+                  strokeLinecap="round"
+                  strokeDasharray={`${((data?.value || 0) / 100) * 251} 251`}
+                />
+                
+                {/* Pointer */}
+                <line
+                  x1="100"
+                  y1="100"
+                  x2="100"
+                  y2="35"
+                  stroke="hsl(var(--foreground))"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  transform={`rotate(${((data?.value || 0) / 100) * 180 - 90} 100 100)`}
+                />
+                <circle cx="100" cy="100" r="6" fill="hsl(var(--foreground))" />
+              </svg>
+            </div>
+            
+            {/* Value and classification */}
+            <div className="text-center -mt-4 space-y-1">
+              <div className={`text-5xl font-bold ${getTextColorClass(data?.value || 50)}`}>
                 {data?.value}
               </div>
               <div className="text-lg font-semibold text-muted-foreground">
@@ -42,32 +96,8 @@ export const FearGreedWidget = () => {
               </div>
             </div>
             
-            {/* Visual gauge chart */}
-            <ResponsiveContainer width="100%" height={120}>
-              <PieChart>
-                <Pie
-                  data={[
-                    { value: data?.value || 0 },
-                    { value: 100 - (data?.value || 0) }
-                  ]}
-                  cx="50%"
-                  cy="50%"
-                  startAngle={180}
-                  endAngle={0}
-                  innerRadius={50}
-                  outerRadius={70}
-                  paddingAngle={0}
-                  dataKey="value"
-                >
-                  <Cell fill="hsl(var(--primary))" />
-                  <Cell fill="hsl(var(--muted))" />
-                </Pie>
-              </PieChart>
-            </ResponsiveContainer>
-            
-            <Progress value={data?.value} className="h-2" />
-            
-            <div className="flex justify-between text-xs text-muted-foreground">
+            {/* Labels */}
+            <div className="flex justify-between text-xs text-muted-foreground pt-4">
               <span>Extreme Fear</span>
               <span>Neutral</span>
               <span>Extreme Greed</span>

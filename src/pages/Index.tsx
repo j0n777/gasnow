@@ -3,7 +3,7 @@ import { Header } from '@/components/Header';
 import { GasPriceCard } from '@/components/GasPriceCard';
 import { NewsSection } from '@/components/NewsSection';
 import { FearGreedWidget } from '@/components/FearGreedWidget';
-import { AltseasonWidget } from '@/components/AltseasonWidget';
+import { MarketCycleWidget } from '@/components/MarketCycleWidget';
 import { MarketStats } from '@/components/MarketStats';
 import { TrendingTokens } from '@/components/TrendingTokens';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -11,7 +11,7 @@ import { useGasPrices } from '@/hooks/useGasPrices';
 
 const Index = () => {
   const [selectedBlockchain, setSelectedBlockchain] = useState<'ethereum' | 'bitcoin'>('ethereum');
-  const { data: gasPrices, isLoading } = useGasPrices(selectedBlockchain);
+  const gasPrices = useGasPrices(selectedBlockchain);
 
   return (
     <ThemeProvider>
@@ -22,7 +22,7 @@ const Index = () => {
         />
 
         <main className="container mx-auto px-4 py-8 space-y-8">
-          {/* 1. Gas Prices - FIRST */}
+          {/* 1. Gas Prices */}
           <section>
             <h2 className="text-2xl font-bold mb-4">
               {selectedBlockchain === 'ethereum' ? 'Ethereum' : 'Bitcoin'} Gas Fees
@@ -30,37 +30,48 @@ const Index = () => {
             <div className="grid gap-4 md:grid-cols-3">
               <GasPriceCard
                 speed="slow"
-                price={gasPrices?.slow || 0}
+                price={gasPrices?.data?.slow || 0}
                 blockchain={selectedBlockchain}
-                isLoading={isLoading}
+                isLoading={gasPrices.isLoading}
+                usdValue={gasPrices?.data?.slowUsd}
               />
               <GasPriceCard
                 speed="standard"
-                price={gasPrices?.standard || 0}
+                price={gasPrices?.data?.standard || 0}
                 blockchain={selectedBlockchain}
-                isLoading={isLoading}
+                isLoading={gasPrices.isLoading}
+                usdValue={gasPrices?.data?.standardUsd}
               />
               <GasPriceCard
                 speed="fast"
-                price={gasPrices?.fast || 0}
+                price={gasPrices?.data?.fast || 0}
                 blockchain={selectedBlockchain}
-                isLoading={isLoading}
+                isLoading={gasPrices.isLoading}
+                usdValue={gasPrices?.data?.fastUsd}
               />
             </div>
           </section>
 
-          {/* 2. Market Stats - SECOND */}
-          <MarketStats />
+          {/* 2. Market Stats */}
+          <section>
+            <h2 className="text-2xl font-bold mb-4">Market Overview</h2>
+            <MarketStats />
+          </section>
 
-          {/* 3. News and Market Indicators - THIRD */}
+          {/* 3. Layout with News and Sidebar */}
           <div className="grid gap-8 lg:grid-cols-3">
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 space-y-8">
+              {/* Market Leaders - Full width in main column */}
+              <TrendingTokens />
+              
+              {/* News Section */}
               <NewsSection />
             </div>
+            
+            {/* Sidebar with widgets */}
             <div className="space-y-6">
               <FearGreedWidget />
-              <AltseasonWidget />
-              <TrendingTokens />
+              <MarketCycleWidget />
             </div>
           </div>
         </main>
