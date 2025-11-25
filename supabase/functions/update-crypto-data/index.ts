@@ -360,10 +360,12 @@ async function updateTrendingTokens(supabase: any) {
         price_btc: coin.item.price_btc,
         market_cap_rank: coin.item.market_cap_rank,
         token_type: 'trending',
+        price: null, // Will be fetched separately if needed
+        change_24h: null,
       });
     }
     
-    // 2. Fetch top gainers (24h)
+    // 2. Fetch top gainers (24h) with detailed market data
     const marketsRes = await fetch(
       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&sparkline=false&price_change_percentage=24h',
       { headers }
@@ -385,6 +387,8 @@ async function updateTrendingTokens(supabase: any) {
         price_btc: null,
         market_cap_rank: coin.market_cap_rank,
         token_type: 'gainer',
+        price: coin.current_price,
+        change_24h: coin.price_change_percentage_24h,
       });
     }
     
@@ -400,6 +404,8 @@ async function updateTrendingTokens(supabase: any) {
         price_btc: null,
         market_cap_rank: coin.market_cap_rank,
         token_type: 'top5',
+        price: coin.current_price,
+        change_24h: coin.price_change_percentage_24h,
       });
     }
     

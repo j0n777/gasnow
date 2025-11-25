@@ -7,7 +7,15 @@ interface GasPriceCardProps {
   price: number;
   blockchain: 'ethereum' | 'bitcoin';
   isLoading?: boolean;
+  usdValue?: number;
 }
+
+const formatGasPrice = (price: number): string => {
+  if (price >= 1) return price.toFixed(2);
+  if (price >= 0.1) return price.toFixed(3);
+  if (price >= 0.01) return price.toFixed(4);
+  return price.toFixed(5);
+};
 
 const speedConfig = {
   slow: {
@@ -30,7 +38,7 @@ const speedConfig = {
   },
 };
 
-export const GasPriceCard = ({ speed, price, blockchain, isLoading }: GasPriceCardProps) => {
+export const GasPriceCard = ({ speed, price, blockchain, isLoading, usdValue }: GasPriceCardProps) => {
   const config = speedConfig[speed];
   const Icon = config.icon;
   const unit = blockchain === 'ethereum' ? 'Gwei' : 'sat/vB';
@@ -49,16 +57,16 @@ export const GasPriceCard = ({ speed, price, blockchain, isLoading }: GasPriceCa
         {isLoading ? (
           <Skeleton className="h-10 w-full" />
         ) : (
-          <div className="space-y-1">
+          <div className="space-y-2">
             <div className="text-3xl font-bold">
-              {price}
+              {formatGasPrice(price)}
               <span className="text-sm font-normal text-muted-foreground ml-2">{unit}</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              {speed === 'slow' && 'Lower fees, longer wait'}
-              {speed === 'standard' && 'Balanced speed & cost'}
-              {speed === 'fast' && 'Quick confirmation'}
-            </p>
+            {usdValue && (
+              <div className="text-sm text-muted-foreground">
+                ≈ ${usdValue.toFixed(2)} USD
+              </div>
+            )}
           </div>
         )}
       </CardContent>

@@ -1,11 +1,71 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTrendingTokens } from '@/hooks/useTrendingTokens';
 import { TrendingUp, Award, Crown } from 'lucide-react';
 
 export const TrendingTokens = () => {
   const { data, isLoading, error } = useTrendingTokens();
+
+  const renderTokenList = (tokens: any[], title: string, icon: React.ReactNode) => (
+    <div className="space-y-3">
+      <div className="flex items-center gap-2 border-b border-border pb-2">
+        {icon}
+        <h3 className="font-semibold text-sm">{title}</h3>
+      </div>
+      
+      {isLoading ? (
+        <div className="space-y-2">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <Skeleton key={i} className="h-12 w-full" />
+          ))}
+        </div>
+      ) : error ? (
+        <div className="text-center py-4">
+          <p className="text-xs text-destructive">Failed to load</p>
+        </div>
+      ) : (
+        <div className="space-y-2">
+          {tokens?.slice(0, 5).map((token, index) => (
+            <div 
+              key={token.id}
+              className="flex items-center justify-between text-sm hover:bg-accent p-2 rounded-lg transition-colors"
+            >
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <span className="text-xs text-muted-foreground font-medium">#{index + 1}</span>
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-xs truncate">{token.name}</p>
+                  <p className="text-[10px] text-muted-foreground uppercase">
+                    {token.symbol}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="text-right">
+                {token.price && (
+                  <p className="text-xs font-semibold">
+                    ${token.price.toFixed(2)}
+                  </p>
+                )}
+                {token.change_24h !== undefined && token.change_24h !== null && (
+                  <p className={`text-[10px] font-medium ${
+                    token.change_24h > 0 ? 'text-green-500' : 'text-red-500'
+                  }`}>
+                    {token.change_24h > 0 ? '+' : ''}
+                    {token.change_24h.toFixed(2)}%
+                  </p>
+                )}
+                {token.market_cap_rank && !token.price && (
+                  <p className="text-[10px] text-muted-foreground">
+                    Rank #{token.market_cap_rank}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <Card>
@@ -14,64 +74,25 @@ export const TrendingTokens = () => {
         <CardDescription>Top performing tokens</CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="trending">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="trending">
-              <TrendingUp className="h-4 w-4 mr-1" />
-              Trending
-            </TabsTrigger>
-            <TabsTrigger value="gainers">
-              <Award className="h-4 w-4 mr-1" />
-              Gainers
-            </TabsTrigger>
-            <TabsTrigger value="top5">
-              <Crown className="h-4 w-4 mr-1" />
-              Top 5
-            </TabsTrigger>
-          </TabsList>
-
-          {['trending', 'gainers', 'top5'].map((type) => (
-            <TabsContent key={type} value={type} className="mt-4">
-              {isLoading ? (
-                <div className="space-y-2">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Skeleton key={i} className="h-10 w-full" />
-                  ))}
-                </div>
-              ) : error ? (
-                <div className="text-center py-4">
-                  <p className="text-sm text-destructive">Failed to load</p>
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  {data?.[type as keyof typeof data]?.map((token, index) => (
-                    <div
-                      key={token.id}
-                      className="flex items-center justify-between p-2 rounded-lg border border-border hover:bg-accent transition-colors"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-muted-foreground w-4">
-                          #{index + 1}
-                        </span>
-                        <div>
-                          <p className="font-semibold text-sm">{token.name}</p>
-                          <p className="text-xs text-muted-foreground uppercase">
-                            {token.symbol}
-                          </p>
-                        </div>
-                      </div>
-                      {token.market_cap_rank && (
-                        <span className="text-xs text-muted-foreground">
-                          Rank #{token.market_cap_rank}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-          ))}
-        </Tabs>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {renderTokenList(
+            data?.trending || [], 
+            'Trending',
+            <TrendingUp className="h-4 w-4 text-blue-500" />
+          )}
+          
+          {renderTokenList(
+            data?.gainers || [], 
+            'Gainers',
+            <Award className="h-4 w-4 text-green-500" />
+          )}
+          
+          {renderTokenList(
+            data?.top5 || [], 
+            'Top 5',
+            <Crown className="h-4 w-4 text-yellow-500" />
+          )}
+        </div>
       </CardContent>
     </Card>
   );

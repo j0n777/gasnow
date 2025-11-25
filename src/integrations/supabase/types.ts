@@ -175,10 +175,12 @@ export type Database = {
       }
       trending_tokens: {
         Row: {
+          change_24h: number | null
           created_at: string | null
           id: number
           market_cap_rank: number | null
           name: string
+          price: number | null
           price_btc: number | null
           rank: number | null
           symbol: string
@@ -186,10 +188,12 @@ export type Database = {
           token_type: string
         }
         Insert: {
+          change_24h?: number | null
           created_at?: string | null
           id?: number
           market_cap_rank?: number | null
           name: string
+          price?: number | null
           price_btc?: number | null
           rank?: number | null
           symbol: string
@@ -197,10 +201,12 @@ export type Database = {
           token_type: string
         }
         Update: {
+          change_24h?: number | null
           created_at?: string | null
           id?: number
           market_cap_rank?: number | null
           name?: string
+          price?: number | null
           price_btc?: number | null
           rank?: number | null
           symbol?: string
