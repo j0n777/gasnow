@@ -20,7 +20,7 @@ export const MarketStats = () => {
   }));
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid gap-4">
       {/* Combined Market Cap + Volume */}
       <Card>
         <CardHeader>
@@ -67,37 +67,6 @@ export const MarketStats = () => {
                   />
                 </LineChart>
               </ResponsiveContainer>
-            </>
-          )}
-        </CardContent>
-      </Card>
-      
-      {/* BTC Dominance */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-lg">BTC Dominance</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {isLoading ? (
-            <>
-              <Skeleton className="h-12 w-24" />
-              <Skeleton className="h-2 w-full" />
-            </>
-          ) : error ? (
-            <div className="text-center py-4">
-              <p className="text-sm text-destructive">Failed to load</p>
-            </div>
-          ) : (
-            <>
-              <div className="text-4xl font-bold">
-                {data?.btcDominance?.toFixed(2)}%
-              </div>
-              <Progress value={data?.btcDominance} className="h-2" />
-              <div className="flex justify-between text-xs text-muted-foreground">
-                <span>0%</span>
-                <span>50%</span>
-                <span>100%</span>
-              </div>
             </>
           )}
         </CardContent>

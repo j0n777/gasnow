@@ -18,8 +18,11 @@ export const Header = ({ selectedBlockchain, onBlockchainSelect }: HeaderProps) 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-primary">Gas</span>
-              <span className="text-2xl font-bold text-accent-foreground">Now</span>
+              <img src="/images/gasnow-icon.png" alt="GasNow" className="w-8 h-8" />
+              <div className="text-2xl font-bold">
+                <span className="text-primary">Gas</span>
+                <span className="text-accent-foreground">Now</span>
+              </div>
             </div>
           </div>
 

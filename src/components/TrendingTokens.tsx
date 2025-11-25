@@ -32,6 +32,14 @@ export const TrendingTokens = () => {
             >
               <div className="flex items-center gap-2 flex-1 min-w-0">
                 <span className="text-xs text-muted-foreground font-medium">#{index + 1}</span>
+                <img 
+                  src={token.image_url || `https://assets.coingecko.com/coins/images/${token.token_id}/small/${token.token_id}.png`}
+                  alt={token.symbol}
+                  className="w-5 h-5 rounded-full"
+                  onError={(e) => { 
+                    e.currentTarget.src = '/images/default-crypto-news.jpg'; 
+                  }}
+                />
                 <div className="min-w-0 flex-1">
                   <p className="font-semibold text-xs truncate">{token.name}</p>
                   <p className="text-[10px] text-muted-foreground uppercase">

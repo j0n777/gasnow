@@ -178,6 +178,7 @@ export type Database = {
           change_24h: number | null
           created_at: string | null
           id: number
+          image_url: string | null
           market_cap_rank: number | null
           name: string
           price: number | null
@@ -191,6 +192,7 @@ export type Database = {
           change_24h?: number | null
           created_at?: string | null
           id?: number
+          image_url?: string | null
           market_cap_rank?: number | null
           name: string
           price?: number | null
@@ -204,6 +206,7 @@ export type Database = {
           change_24h?: number | null
           created_at?: string | null
           id?: number
+          image_url?: string | null
           market_cap_rank?: number | null
           name?: string
           price?: number | null
