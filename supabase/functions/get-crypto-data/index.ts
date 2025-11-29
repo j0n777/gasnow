@@ -6,9 +6,10 @@ const corsHeaders = {
 };
 
 interface DataRequest {
-  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens';
+  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'market_data_history' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens';
   blockchain?: 'ethereum' | 'bitcoin';
   category?: string;
+  days?: number;
 }
 
 Deno.serve(async (req) => {
@@ -21,7 +22,7 @@ Deno.serve(async (req) => {
     const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    const { type, blockchain, category } = await req.json() as DataRequest;
+    const { type, blockchain, category, days } = await req.json() as DataRequest;
     console.log(`[get-crypto-data] Fetching data for type: ${type}`);
 
     let result;
@@ -34,6 +35,9 @@ Deno.serve(async (req) => {
         break;
       case 'market_data':
         result = await getMarketData(supabase);
+        break;
+      case 'market_data_history':
+        result = await getMarketDataHistory(supabase, days || 30);
         break;
       case 'fear_greed':
         result = await getFearGreed(supabase);
@@ -123,6 +127,21 @@ async function getMarketData(supabase: any) {
     btcDominance: parseFloat(data.btc_dominance),
     ethDominance: parseFloat(data.eth_dominance),
   };
+}
+
+async function getMarketDataHistory(supabase: any, days: number) {
+  const { data, error } = await supabase
+    .from('market_data')
+    .select('total_market_cap, created_at')
+    .order('created_at', { ascending: true })
+    .limit(days);
+
+  if (error) throw error;
+
+  return data.map((d: any) => ({
+    value: parseFloat(d.total_market_cap) / 1e12, // Em trilhões
+    date: d.created_at,
+  }));
 }
 
 async function getFearGreed(supabase: any) {
