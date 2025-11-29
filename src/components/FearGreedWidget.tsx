@@ -38,16 +38,16 @@ export const FearGreedWidget = () => {
             <p className="text-sm text-destructive">Failed to load data</p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-2">
             {/* Semi-circle gauge */}
-            <div className="relative h-20 flex items-end justify-center overflow-hidden mb-2">
-              <svg viewBox="0 0 200 110" className="w-full">
+            <div className="relative h-16 w-full max-w-[200px] mx-auto flex items-end justify-center overflow-hidden">
+              <svg viewBox="0 0 200 100" className="w-full h-full" preserveAspectRatio="xMidYMax meet">
                 {/* Background arc */}
                 <path
-                  d="M 20 100 A 80 80 0 0 1 180 100"
+                  d="M 20 95 A 75 75 0 0 1 180 95"
                   fill="none"
                   stroke="hsl(var(--muted))"
-                  strokeWidth="16"
+                  strokeWidth="14"
                   strokeLinecap="round"
                 />
                 
@@ -63,35 +63,35 @@ export const FearGreedWidget = () => {
                 </defs>
                 
                 <path
-                  d="M 20 100 A 80 80 0 0 1 180 100"
+                  d="M 20 95 A 75 75 0 0 1 180 95"
                   fill="none"
                   stroke="url(#fearGreedGradient)"
-                  strokeWidth="16"
+                  strokeWidth="14"
                   strokeLinecap="round"
-                  strokeDasharray={`${((data?.value || 0) / 100) * 251} 251`}
+                  strokeDasharray={`${((data?.value || 0) / 100) * 236} 236`}
                 />
                 
                 {/* Pointer */}
                 <line
                   x1="100"
-                  y1="100"
+                  y1="95"
                   x2="100"
-                  y2="35"
+                  y2="30"
                   stroke="hsl(var(--foreground))"
-                  strokeWidth="3"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
-                  transform={`rotate(${((data?.value || 0) / 100) * 180 - 90} 100 100)`}
+                  transform={`rotate(${((data?.value || 0) / 100) * 180 - 90} 100 95)`}
                 />
-                <circle cx="100" cy="100" r="6" fill="hsl(var(--foreground))" />
+                <circle cx="100" cy="95" r="5" fill="hsl(var(--foreground))" />
               </svg>
             </div>
             
             {/* Value and classification */}
-            <div className="text-center space-y-1">
-              <div className={`text-4xl font-bold ${getTextColorClass(data?.value || 50)}`}>
+            <div className="text-center space-y-1 pt-2">
+              <div className={`text-3xl font-bold ${getTextColorClass(data?.value || 50)}`}>
                 {data?.value}
               </div>
-              <div className="text-lg font-semibold text-muted-foreground">
+              <div className="text-base font-semibold text-muted-foreground">
                 {data?.classification}
               </div>
             </div>
