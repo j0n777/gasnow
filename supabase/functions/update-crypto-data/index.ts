@@ -338,105 +338,95 @@ async function updateNews(supabase: any) {
 }
 
 async function updateTrendingTokens(supabase: any) {
+  const apiKey = Deno.env.get('COINGECKO_API_KEY');
+  const headers: Record<string, string> = apiKey ? { 'x-cg-demo-api-key': apiKey } : {};
+  
   console.log('[updateTrendingTokens] Fetching trending tokens...');
-  
-  const coingeckoApiKey = Deno.env.get('COINGECKO_API_KEY');
-  const headers: any = { 'Accept': 'application/json' };
-  if (coingeckoApiKey) {
-    headers['x-cg-demo-api-key'] = coingeckoApiKey;
-  }
-  
+
   try {
-    // Clear old data first
-    await supabase.from('trending_tokens').delete().neq('id', 0);
-    
     // 1. Fetch trending coins
     const trendingRes = await fetch('https://api.coingecko.com/api/v3/search/trending', { headers });
     const trendingData = await trendingRes.json();
     
-    // Get IDs to fetch prices
-    const trendingIds = trendingData.coins.slice(0, 5).map((c: any) => c.item.id);
-    
-    // Fetch prices for trending tokens
-    const trendingPricesRes = await fetch(
-      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${trendingIds.join(',')}&price_change_percentage=24h`,
+    // 2. Fetch 100 coins to get gainers and top 5
+    const marketsRes = await fetch(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=1&sparkline=false&price_change_percentage=24h',
       { headers }
     );
-    const trendingPricesData = await trendingPricesRes.json();
-    
-    // Create price map
-    const priceMap: Record<string, any> = {};
-    for (const coin of trendingPricesData) {
-      priceMap[coin.id] = {
-        price: coin.current_price,
-        change_24h: coin.price_change_percentage_24h,
-        image: coin.image
-      };
-    }
-    
-    // Insert trending tokens with prices
-    for (const coin of trendingData.coins.slice(0, 5)) {
-      const priceInfo = priceMap[coin.item.id] || { price: null, change_24h: null, image: null };
-      await supabase.from('trending_tokens').insert({
+    const allCoins = await marketsRes.json();
+
+    // 3. Get Gainers: top 5 with highest positive 24h change
+    const gainers = [...allCoins]
+      .filter((c: any) => c.price_change_percentage_24h > 0)
+      .sort((a: any, b: any) => b.price_change_percentage_24h - a.price_change_percentage_24h)
+      .slice(0, 5);
+
+    // 4. Get Top 5: by market cap rank (1-5)
+    const top5 = [...allCoins]
+      .sort((a: any, b: any) => a.market_cap_rank - b.market_cap_rank)
+      .slice(0, 5);
+
+    // Delete old trending tokens
+    await supabase.from('trending_tokens').delete().neq('id', 0);
+
+    // 5. Insert trending coins with enriched data
+    const trendingTokens = trendingData.coins.slice(0, 5).map((coin: any) => {
+      const marketData = allCoins.find((c: any) => c.id === coin.item.id);
+      return {
         token_id: coin.item.id,
         symbol: coin.item.symbol,
         name: coin.item.name,
-        rank: coin.item.market_cap_rank,
-        price_btc: coin.item.price_btc,
-        market_cap_rank: coin.item.market_cap_rank,
+        rank: coin.item.market_cap_rank || 0,
+        price_btc: coin.item.price_btc || 0,
+        market_cap_rank: coin.item.market_cap_rank || 0,
         token_type: 'trending',
-        price: priceInfo.price,
-        change_24h: priceInfo.change_24h,
-        image_url: priceInfo.image || coin.item.thumb,
-      });
+        price: marketData?.current_price || null,
+        change_24h: marketData?.price_change_percentage_24h || null,
+        image_url: coin.item.large || coin.item.thumb,
+      };
+    });
+
+    // 6. Insert gainers
+    const gainerTokens = gainers.map((coin: any, index: number) => ({
+      token_id: coin.id,
+      symbol: coin.symbol,
+      name: coin.name,
+      rank: index + 1,
+      price_btc: null,
+      market_cap_rank: coin.market_cap_rank,
+      token_type: 'gainer',
+      price: coin.current_price,
+      change_24h: coin.price_change_percentage_24h,
+      image_url: coin.image,
+    }));
+
+    // 7. Insert top 5
+    const top5Tokens = top5.map((coin: any, index: number) => ({
+      token_id: coin.id,
+      symbol: coin.symbol,
+      name: coin.name,
+      rank: index + 1,
+      price_btc: null,
+      market_cap_rank: coin.market_cap_rank,
+      token_type: 'top5',
+      price: coin.current_price,
+      change_24h: coin.price_change_percentage_24h,
+      image_url: coin.image,
+    }));
+
+    const allTokens = [...trendingTokens, ...gainerTokens, ...top5Tokens];
+
+    const { error: insertError } = await supabase
+      .from('trending_tokens')
+      .insert(allTokens);
+
+    if (insertError) {
+      console.error('[updateTrendingTokens] Insert error:', insertError);
+      throw insertError;
     }
-    
-    // 2. Fetch top gainers (24h) with detailed market data
-    const gainersRes = await fetch(
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=price_change_percentage_24h_desc&per_page=5&page=1&sparkline=false&price_change_percentage=24h',
-      { headers }
-    );
-    const gainersData = await gainersRes.json();
-    
-    for (const coin of gainersData) {
-      await supabase.from('trending_tokens').insert({
-        token_id: coin.id,
-        symbol: coin.symbol,
-        name: coin.name,
-        rank: coin.market_cap_rank,
-        price_btc: null,
-        market_cap_rank: coin.market_cap_rank,
-        token_type: 'gainer',
-        price: coin.current_price,
-        change_24h: coin.price_change_percentage_24h,
-        image_url: coin.image,
-      });
-    }
-    
-    // 3. Top 5 by market cap
-    const top5Res = await fetch(
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false&price_change_percentage=24h',
-      { headers }
-    );
-    const top5Data = await top5Res.json();
-    
-    for (const coin of top5Data) {
-      await supabase.from('trending_tokens').insert({
-        token_id: coin.id,
-        symbol: coin.symbol,
-        name: coin.name,
-        rank: coin.market_cap_rank,
-        price_btc: null,
-        market_cap_rank: coin.market_cap_rank,
-        token_type: 'top5',
-        price: coin.current_price,
-        change_24h: coin.price_change_percentage_24h,
-        image_url: coin.image,
-      });
-    }
-    
+
     console.log('[updateTrendingTokens] Trending tokens updated');
-    return { success: true };
+    return { success: true, count: allTokens.length };
   } catch (error) {
     console.error('[updateTrendingTokens] Error:', error);
     throw error;

@@ -40,7 +40,7 @@ export const FearGreedWidget = () => {
         ) : (
           <div className="space-y-4">
             {/* Semi-circle gauge */}
-            <div className="relative h-24 flex items-end justify-center overflow-hidden">
+            <div className="relative h-20 flex items-end justify-center overflow-hidden mb-2">
               <svg viewBox="0 0 200 110" className="w-full">
                 {/* Background arc */}
                 <path
@@ -88,7 +88,7 @@ export const FearGreedWidget = () => {
             
             {/* Value and classification */}
             <div className="text-center space-y-1">
-              <div className={`text-5xl font-bold ${getTextColorClass(data?.value || 50)}`}>
+              <div className={`text-4xl font-bold ${getTextColorClass(data?.value || 50)}`}>
                 {data?.value}
               </div>
               <div className="text-lg font-semibold text-muted-foreground">
