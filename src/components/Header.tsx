@@ -36,7 +36,7 @@ export const Header = ({ selectedBlockchain, onBlockchainSelect }: HeaderProps) 
                     : 'bg-secondary hover:bg-secondary/80'
                 }`}
               >
-                <img src="/images/eth-icon.png" alt="ETH" className="w-5 h-5 dark:brightness-0 dark:invert" />
+                <img src="/images/eth-icon.png" alt="ETH" className="w-5 h-5 dark:invert" />
                 <span className="font-semibold">ETH</span>
                 {prices?.eth && (
                   <span className="text-sm font-medium">
@@ -53,7 +53,7 @@ export const Header = ({ selectedBlockchain, onBlockchainSelect }: HeaderProps) 
                     : 'bg-secondary hover:bg-secondary/80'
                 }`}
               >
-                <img src="/images/btc-icon.png" alt="BTC" className="w-5 h-5 dark:brightness-0 dark:invert" />
+                <img src="/images/btc-icon.png" alt="BTC" className="w-5 h-5 dark:invert" />
                 <span className="font-semibold">BTC</span>
                 {prices?.btc && (
                   <span className="text-sm font-medium">
