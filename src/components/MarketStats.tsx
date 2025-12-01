@@ -20,13 +20,13 @@ export const MarketStats = () => {
       <Card className="relative overflow-hidden">
         {/* Background chart */}
         {!historyLoading && historyData && historyData.length > 0 && (
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-20">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={historyData}>
                 <defs>
                   <linearGradient id="marketCapGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.9}/>
+                    <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.1}/>
                   </linearGradient>
                 </defs>
                 <YAxis domain={['dataMin', 'dataMax']} hide />
@@ -34,7 +34,7 @@ export const MarketStats = () => {
                   type="monotone" 
                   dataKey="value" 
                   stroke="hsl(var(--primary))" 
-                  strokeWidth={2}
+                  strokeWidth={2.5}
                   fill="url(#marketCapGradient)" 
                 />
               </AreaChart>

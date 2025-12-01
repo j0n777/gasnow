@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTrendingTokens } from '@/hooks/useTrendingTokens';
 import { TrendingUp, Award, Crown } from 'lucide-react';
+import { LineChart, Line, ResponsiveContainer } from 'recharts';
 
 export const TrendingTokens = () => {
   const { data, isLoading, error } = useTrendingTokens();
@@ -47,6 +48,23 @@ export const TrendingTokens = () => {
                   </p>
                 </div>
               </div>
+              
+              {/* Sparkline chart */}
+              {token.sparkline_7d && token.sparkline_7d.length > 0 && (
+                <div className="w-16 h-8">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={token.sparkline_7d.map((value: number) => ({ value }))}>
+                      <Line 
+                        type="monotone" 
+                        dataKey="value" 
+                        stroke={token.change_24h >= 0 ? '#22c55e' : '#ef4444'}
+                        strokeWidth={1.5}
+                        dot={false}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              )}
               
               <div className="text-right">
                 {token.price && (
