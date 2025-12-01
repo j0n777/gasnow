@@ -6,6 +6,7 @@ import { FearGreedWidget } from '@/components/FearGreedWidget';
 import { MarketCycleWidget } from '@/components/MarketCycleWidget';
 import { MarketStats } from '@/components/MarketStats';
 import { TrendingTokens } from '@/components/TrendingTokens';
+import { Sponsors } from '@/components/Sponsors';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { useGasPrices } from '@/hooks/useGasPrices';
 
@@ -74,6 +75,9 @@ const Index = () => {
               <MarketCycleWidget />
             </div>
           </div>
+
+          {/* 4. Sponsors Section */}
+          <Sponsors />
         </main>
 
         <footer className="border-t border-border mt-16">
