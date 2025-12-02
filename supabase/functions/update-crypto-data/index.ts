@@ -348,9 +348,9 @@ async function updateTrendingTokens(supabase: any) {
     const trendingRes = await fetch('https://api.coingecko.com/api/v3/search/trending', { headers });
     const trendingData = await trendingRes.json();
     
-    // 2. Fetch 100 coins to get gainers and top 5
+    // 2. Fetch 100 coins to get gainers and top 5 (with sparkline data)
     const marketsRes = await fetch(
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=1&sparkline=false&price_change_percentage=24h',
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=100&page=1&sparkline=true&price_change_percentage=24h',
       { headers }
     );
     const allCoins = await marketsRes.json();
@@ -383,6 +383,7 @@ async function updateTrendingTokens(supabase: any) {
         price: marketData?.current_price || null,
         change_24h: marketData?.price_change_percentage_24h || null,
         image_url: coin.item.large || coin.item.thumb,
+        sparkline_7d: marketData?.sparkline_in_7d?.price || null,
       };
     });
 
@@ -398,6 +399,7 @@ async function updateTrendingTokens(supabase: any) {
       price: coin.current_price,
       change_24h: coin.price_change_percentage_24h,
       image_url: coin.image,
+      sparkline_7d: coin.sparkline_in_7d?.price || null,
     }));
 
     // 7. Insert top 5
@@ -412,6 +414,7 @@ async function updateTrendingTokens(supabase: any) {
       price: coin.current_price,
       change_24h: coin.price_change_percentage_24h,
       image_url: coin.image,
+      sparkline_7d: coin.sparkline_in_7d?.price || null,
     }));
 
     const allTokens = [...trendingTokens, ...gainerTokens, ...top5Tokens];

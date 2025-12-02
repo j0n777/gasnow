@@ -184,6 +184,7 @@ export type Database = {
           price: number | null
           price_btc: number | null
           rank: number | null
+          sparkline_7d: Json | null
           symbol: string
           token_id: string
           token_type: string
@@ -198,6 +199,7 @@ export type Database = {
           price?: number | null
           price_btc?: number | null
           rank?: number | null
+          sparkline_7d?: Json | null
           symbol: string
           token_id: string
           token_type: string
@@ -212,6 +214,7 @@ export type Database = {
           price?: number | null
           price_btc?: number | null
           rank?: number | null
+          sparkline_7d?: Json | null
           symbol?: string
           token_id?: string
           token_type?: string

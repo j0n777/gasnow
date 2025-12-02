@@ -11,6 +11,10 @@ export interface TrendingToken {
   market_cap_rank: number;
   token_type: string;
   created_at: string;
+  price: number | null;
+  change_24h: number | null;
+  image_url: string | null;
+  sparkline_7d: number[] | null;
 }
 
 export interface TrendingData {
