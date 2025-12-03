@@ -9,7 +9,6 @@ import { TrendingTokens } from '@/components/TrendingTokens';
 import { Sponsors } from '@/components/Sponsors';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { useGasPrices } from '@/hooks/useGasPrices';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const Index = () => {
   const [selectedBlockchain, setSelectedBlockchain] = useState<'ethereum' | 'bitcoin'>('ethereum');
@@ -25,37 +24,35 @@ const Index = () => {
 
         <main className="container mx-auto px-4 py-8 space-y-8">
           {/* 1. Gas Prices */}
-          <Card>
-            <CardHeader>
-              <CardTitle>{selectedBlockchain === 'ethereum' ? 'Ethereum' : 'Bitcoin'} Gas Fees</CardTitle>
-              <CardDescription>Real-time network transaction fees</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 md:grid-cols-3">
-                <GasPriceCard
-                  speed="slow"
-                  price={gasPrices?.data?.slow || 0}
-                  blockchain={selectedBlockchain}
-                  isLoading={gasPrices.isLoading}
-                  usdValue={gasPrices?.data?.slowUsd}
-                />
-                <GasPriceCard
-                  speed="standard"
-                  price={gasPrices?.data?.standard || 0}
-                  blockchain={selectedBlockchain}
-                  isLoading={gasPrices.isLoading}
-                  usdValue={gasPrices?.data?.standardUsd}
-                />
-                <GasPriceCard
-                  speed="fast"
-                  price={gasPrices?.data?.fast || 0}
-                  blockchain={selectedBlockchain}
-                  isLoading={gasPrices.isLoading}
-                  usdValue={gasPrices?.data?.fastUsd}
-                />
-              </div>
-            </CardContent>
-          </Card>
+          <section>
+            <h2 className="text-2xl font-bold mb-2">
+              {selectedBlockchain === 'ethereum' ? 'Ethereum' : 'Bitcoin'} Gas Fees
+            </h2>
+            <p className="text-sm text-muted-foreground mb-4">Real-time network transaction fees</p>
+            <div className="grid gap-4 md:grid-cols-3">
+              <GasPriceCard
+                speed="slow"
+                price={gasPrices?.data?.slow || 0}
+                blockchain={selectedBlockchain}
+                isLoading={gasPrices.isLoading}
+                usdValue={gasPrices?.data?.slowUsd}
+              />
+              <GasPriceCard
+                speed="standard"
+                price={gasPrices?.data?.standard || 0}
+                blockchain={selectedBlockchain}
+                isLoading={gasPrices.isLoading}
+                usdValue={gasPrices?.data?.standardUsd}
+              />
+              <GasPriceCard
+                speed="fast"
+                price={gasPrices?.data?.fast || 0}
+                blockchain={selectedBlockchain}
+                isLoading={gasPrices.isLoading}
+                usdValue={gasPrices?.data?.fastUsd}
+              />
+            </div>
+          </section>
 
           {/* 2. Market Stats */}
           <MarketStats />

@@ -52,7 +52,7 @@ export const NewsSection = () => {
                     href={article.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block p-4 rounded-lg border border-border hover:bg-accent transition-colors group"
+                    className="block p-4 rounded-lg border border-border hover:bg-muted/50 hover:border-primary/30 transition-colors group"
                   >
                     <div className="flex gap-4">
                       {article.image && (
