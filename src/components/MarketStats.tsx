@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useGlobalMarketCap } from '@/hooks/useCryptoPrices';
 import { useMarketCapHistory } from '@/hooks/useMarketCapHistory';
@@ -43,7 +43,8 @@ export const MarketStats = () => {
         )}
 
         <CardHeader className="relative z-10">
-          <CardTitle className="text-lg">Global Market</CardTitle>
+          <CardTitle>Market Overview</CardTitle>
+          <CardDescription>Global cryptocurrency market data</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 relative z-10">
           {isLoading ? (

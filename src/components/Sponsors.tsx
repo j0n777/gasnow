@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 
 export const Sponsors = () => {
@@ -18,23 +18,22 @@ export const Sponsors = () => {
   ];
 
   return (
-    <section className="py-8">
-      <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold mb-2">Our Sponsors</h2>
-        <p className="text-sm text-muted-foreground">Supporting the crypto community</p>
-      </div>
-      
-      <div className="grid gap-4 md:grid-cols-2 max-w-2xl mx-auto">
-        {sponsors.map((sponsor) => (
-          <a
-            key={sponsor.name}
-            href={sponsor.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group"
-          >
-            <Card className="transition-all hover:shadow-lg hover:border-primary/50">
-              <CardContent className="p-6 flex items-center gap-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Our Sponsors</CardTitle>
+        <CardDescription>Supporting the crypto community</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="grid gap-4 md:grid-cols-2">
+          {sponsors.map((sponsor) => (
+            <a
+              key={sponsor.name}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <div className="rounded-lg border bg-card p-6 flex items-center gap-4 transition-all hover:shadow-lg hover:border-primary/50">
                 <div className="text-4xl">{sponsor.logo}</div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-bold text-lg flex items-center gap-2 group-hover:text-primary transition-colors">
@@ -43,11 +42,11 @@ export const Sponsors = () => {
                   </h3>
                   <p className="text-sm text-muted-foreground">{sponsor.description}</p>
                 </div>
-              </CardContent>
-            </Card>
-          </a>
-        ))}
-      </div>
-    </section>
+              </div>
+            </a>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
