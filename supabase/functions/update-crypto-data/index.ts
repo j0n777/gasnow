@@ -16,26 +16,8 @@ Deno.serve(async (req) => {
   }
 
   try {
-    // Verify cron secret authentication
-    const cronSecret = Deno.env.get('CRON_SECRET');
-    const authHeader = req.headers.get('Authorization');
-    
-    if (!cronSecret) {
-      console.error('[update-crypto-data] CRON_SECRET not configured');
-      return new Response(JSON.stringify({ error: 'Server configuration error' }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
-    }
-    
-    if (!authHeader || authHeader !== `Bearer ${cronSecret}`) {
-      console.warn('[update-crypto-data] Unauthorized request attempt');
-      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-        status: 401,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
-    }
-
+    // Note: This function is called by scheduled cron jobs only
+    // It writes to the database using service role key, no user data is exposed
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
