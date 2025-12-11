@@ -96,12 +96,6 @@ export const FearGreedWidget = () => {
               </div>
             </div>
             
-            {/* Labels */}
-            <div className="flex justify-between text-xs text-muted-foreground pt-4">
-              <span>Extreme Fear</span>
-              <span>Neutral</span>
-              <span>Extreme Greed</span>
-            </div>
           </div>
         )}
       </CardContent>

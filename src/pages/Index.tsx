@@ -7,6 +7,7 @@ import { MarketCycleWidget } from '@/components/MarketCycleWidget';
 import { MarketStats } from '@/components/MarketStats';
 import { TrendingTokens } from '@/components/TrendingTokens';
 import { Sponsors } from '@/components/Sponsors';
+import { StealthExWidget } from '@/components/StealthExWidget';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { useGasPrices } from '@/hooks/useGasPrices';
 
@@ -71,6 +72,7 @@ const Index = () => {
             <div className="space-y-6">
               <FearGreedWidget />
               <MarketCycleWidget />
+              <StealthExWidget />
             </div>
           </div>
 
