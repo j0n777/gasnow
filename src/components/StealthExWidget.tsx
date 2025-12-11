@@ -21,8 +21,8 @@ export const StealthExWidget = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Exchange Crypto</CardTitle>
-        <CardDescription>Swap cryptocurrencies instantly with StealthEX</CardDescription>
+        <CardTitle>Cross-Chain Swap</CardTitle>
+        <CardDescription>Swap across networks privately — no signup, no KYC</CardDescription>
       </CardHeader>
       <CardContent className="flex justify-center">
         <div 
