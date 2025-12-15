@@ -12,6 +12,28 @@ interface DataRequest {
   days?: number;
 }
 
+// Retry helper for transient network errors
+async function withRetry<T>(fn: () => Promise<T>, retries = 2, delay = 500): Promise<T> {
+  let lastError: Error | null = null;
+  for (let i = 0; i <= retries; i++) {
+    try {
+      return await fn();
+    } catch (error) {
+      lastError = error as Error;
+      const isRetryable = lastError.message?.includes('connection') || 
+                          lastError.message?.includes('reset') ||
+                          lastError.message?.includes('timeout');
+      if (i < retries && isRetryable) {
+        console.log(`[get-crypto-data] Retry ${i + 1}/${retries} after error: ${lastError.message}`);
+        await new Promise(r => setTimeout(r, delay * (i + 1)));
+      } else {
+        throw lastError;
+      }
+    }
+  }
+  throw lastError;
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -28,37 +50,37 @@ Deno.serve(async (req) => {
     let result;
     switch (type) {
       case 'gas_prices':
-        result = await getGasPrices(supabase, blockchain || 'ethereum');
+        result = await withRetry(() => getGasPrices(supabase, blockchain || 'ethereum'));
         break;
       case 'crypto_prices':
-        result = await getCryptoPrices(supabase);
+        result = await withRetry(() => getCryptoPrices(supabase));
         break;
       case 'market_data':
-        result = await getMarketData(supabase);
+        result = await withRetry(() => getMarketData(supabase));
         break;
       case 'market_data_history':
-        result = await getMarketDataHistory(supabase, days || 30);
+        result = await withRetry(() => getMarketDataHistory(supabase, days || 30));
         break;
       case 'fear_greed':
-        result = await getFearGreed(supabase);
+        result = await withRetry(() => getFearGreed(supabase));
         break;
       case 'altseason':
-        result = await getAltseason(supabase);
+        result = await withRetry(() => getAltseason(supabase));
         break;
       case 'news':
-        result = await getNews(supabase, category);
+        result = await withRetry(() => getNews(supabase, category));
         break;
       case 'trending_tokens':
-        result = await getTrendingTokens(supabase);
+        result = await withRetry(() => getTrendingTokens(supabase));
         break;
       case 'derivatives_data':
-        result = await getDerivativesData(supabase);
+        result = await withRetry(() => getDerivativesData(supabase));
         break;
       case 'market_stress':
-        result = await getMarketStress(supabase);
+        result = await withRetry(() => getMarketStress(supabase));
         break;
       case 'stablecoin_supply':
-        result = await getStablecoinSupply(supabase);
+        result = await withRetry(() => getStablecoinSupply(supabase));
         break;
       default:
         throw new Error(`Unknown data type: ${type}`);
@@ -70,13 +92,12 @@ Deno.serve(async (req) => {
   } catch (error) {
     console.error('[get-crypto-data] Error:', error);
     const message = error instanceof Error ? error.message : 'Unknown error';
-    return new Response(JSON.stringify({ error: message }), {
+    return new Response(JSON.stringify({ error: message, details: String(error) }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }
 });
-
 async function getGasPrices(supabase: any, blockchain: string) {
   const { data, error } = await supabase
     .from('gas_prices')
