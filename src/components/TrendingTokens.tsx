@@ -3,15 +3,17 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useTrendingTokens } from '@/hooks/useTrendingTokens';
 import { TrendingUp, Award, Crown } from 'lucide-react';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
+import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
 
 export const TrendingTokens = () => {
   const { data, isLoading, error } = useTrendingTokens();
 
-  const renderTokenList = (tokens: any[], title: string, icon: React.ReactNode) => (
+  const renderTokenList = (tokens: any[], title: string, icon: React.ReactNode, tooltip: string) => (
     <div className="space-y-3">
       <div className="flex items-center gap-2 border-b border-border pb-2">
         {icon}
         <h3 className="font-semibold text-sm">{title}</h3>
+        <InfoTooltip content={tooltip} />
       </div>
       
       {isLoading ? (
@@ -35,7 +37,7 @@ export const TrendingTokens = () => {
                 <span className="text-xs text-muted-foreground font-medium">#{index + 1}</span>
                 <img 
                   src={token.image_url || `https://assets.coingecko.com/coins/images/${token.token_id}/small/${token.token_id}.png`}
-                  alt={token.symbol}
+                  alt={`${token.name} icon`}
                   className="w-5 h-5 rounded-full"
                   onError={(e) => { 
                     e.currentTarget.src = '/images/default-crypto-news.jpg'; 
@@ -51,7 +53,7 @@ export const TrendingTokens = () => {
               
               {/* Sparkline chart */}
               {token.sparkline_7d && token.sparkline_7d.length > 0 && (
-                <div className="w-16 h-8">
+                <div className="w-16 h-8" aria-label={`${token.name} 7-day price trend`}>
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={token.sparkline_7d.map((value: number) => ({ value }))}>
                       <Line 
@@ -104,19 +106,22 @@ export const TrendingTokens = () => {
           {renderTokenList(
             data?.trending || [], 
             'Trending',
-            <TrendingUp className="h-4 w-4 text-blue-500" />
+            <TrendingUp className="h-4 w-4 text-blue-500" />,
+            tooltipContent.trending
           )}
           
           {renderTokenList(
             data?.gainers || [], 
             'Gainers',
-            <Award className="h-4 w-4 text-green-500" />
+            <Award className="h-4 w-4 text-green-500" />,
+            tooltipContent.gainers
           )}
           
           {renderTokenList(
             data?.top5 || [], 
             'Top 5',
-            <Crown className="h-4 w-4 text-yellow-500" />
+            <Crown className="h-4 w-4 text-yellow-500" />,
+            tooltipContent.top5
           )}
         </div>
       </CardContent>

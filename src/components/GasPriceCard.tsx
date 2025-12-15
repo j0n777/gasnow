@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Zap, TrendingUp, Rocket } from 'lucide-react';
+import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
 
 interface GasPriceCardProps {
   speed: 'slow' | 'standard' | 'fast';
@@ -23,18 +24,21 @@ const speedConfig = {
     label: 'Slow',
     color: 'text-green-500',
     bgColor: 'bg-green-500/10',
+    tooltip: tooltipContent.gasFeeSlow,
   },
   standard: {
     icon: Zap,
     label: 'Standard',
     color: 'text-yellow-500',
     bgColor: 'bg-yellow-500/10',
+    tooltip: tooltipContent.gasFeeStandard,
   },
   fast: {
     icon: Rocket,
     label: 'Fast',
     color: 'text-red-500',
     bgColor: 'bg-red-500/10',
+    tooltip: tooltipContent.gasFeeFast,
   },
 };
 
@@ -47,7 +51,10 @@ export const GasPriceCard = ({ speed, price, blockchain, isLoading, usdValue }: 
     <Card className="hover:shadow-lg transition-shadow">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-lg font-semibold">{config.label}</CardTitle>
+          <div className="flex items-center gap-1.5">
+            <CardTitle className="text-lg font-semibold">{config.label}</CardTitle>
+            <InfoTooltip content={config.tooltip} />
+          </div>
           <div className={`p-2 rounded-lg ${config.bgColor}`}>
             <Icon className={`h-5 w-5 ${config.color}`} />
           </div>

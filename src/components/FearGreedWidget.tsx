@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useFearGreedIndex } from '@/hooks/useFearGreedIndex';
+import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
 
 const getGaugeColor = (value: number): string => {
   if (value < 25) return 'hsl(0, 84%, 60%)'; // Red
@@ -24,8 +25,13 @@ export const FearGreedWidget = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Fear & Greed Index</CardTitle>
-        <CardDescription>Market sentiment indicator</CardDescription>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle>Fear & Greed Index</CardTitle>
+            <CardDescription>Market sentiment indicator</CardDescription>
+          </div>
+          <InfoTooltip content={tooltipContent.fearGreed} />
+        </div>
       </CardHeader>
       <CardContent>
         {isLoading ? (
