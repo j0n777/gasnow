@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useAltseasonIndex } from '@/hooks/useAltseasonIndex';
+import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
 
 const getColorByPosition = (value: number): string => {
   // Orange (Bitcoin Season) -> Blue (Altseason)
@@ -19,8 +20,13 @@ export const MarketCycleWidget = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Market Cycle</CardTitle>
-        <CardDescription>BTC vs Altcoins dominance</CardDescription>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle>Market Cycle</CardTitle>
+            <CardDescription>BTC vs Altcoins dominance</CardDescription>
+          </div>
+          <InfoTooltip content={tooltipContent.marketCycle} />
+        </div>
       </CardHeader>
       <CardContent>
         {isLoading ? (

@@ -193,8 +193,86 @@
           "position": 1,
           "name": "Home",
           "item": "https://gasnow.tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Gas Fees",
+          "item": "https://gasnow.tools/#gas-fees"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Market Overview",
+          "item": "https://gasnow.tools/#market-overview"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Derivatives",
+          "item": "https://gasnow.tools/#derivatives"
         }
       ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "GasNow Cryptocurrency Gas Prices",
+      "description": "Real-time Ethereum and Bitcoin gas/transaction fee data updated every 2 minutes",
+      "url": "https://gasnow.tools/",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": {
+        "@type": "Organization",
+        "name": "GasNow"
+      },
+      "temporalCoverage": "2021/..",
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://gasnow.tools/"
+      },
+      "variableMeasured": [
+        {
+          "@type": "PropertyValue",
+          "name": "Ethereum Gas Price (Gwei)",
+          "description": "Current Ethereum network gas price in Gwei"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Bitcoin Transaction Fee (sat/vB)",
+          "description": "Current Bitcoin transaction fee in satoshis per virtual byte"
+        }
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Trending Cryptocurrencies",
+      "description": "Live list of trending cryptocurrencies by social buzz and trading activity",
+      "url": "https://gasnow.tools/#trending",
+      "numberOfItems": 5,
+      "itemListOrder": "https://schema.org/ItemListOrderDescending"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialProduct",
+      "name": "GasNow Gas Fee Tracker",
+      "description": "Free real-time cryptocurrency gas fee tracking tool for Ethereum and Bitcoin networks",
+      "url": "https://gasnow.tools/",
+      "provider": {
+        "@type": "Organization",
+        "name": "GasNow"
+      },
+      "feesAndCommissionsSpecification": "Free to use, no hidden fees"
     }
     </script>
   </head>

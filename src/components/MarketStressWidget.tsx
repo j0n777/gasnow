@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useMarketStress } from '@/hooks/useMarketStress';
+import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
 
 const getGaugeColor = (value: number): string => {
   if (value <= 30) return 'hsl(142, 76%, 36%)'; // Green - Low Stress
@@ -20,8 +21,13 @@ export const MarketStressWidget = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Market Stress Index</CardTitle>
-        <CardDescription>Derivatives-based risk indicator</CardDescription>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle>Market Stress Index</CardTitle>
+            <CardDescription>Derivatives-based risk indicator</CardDescription>
+          </div>
+          <InfoTooltip content={tooltipContent.marketStress} />
+        </div>
       </CardHeader>
       <CardContent>
         {isLoading ? (

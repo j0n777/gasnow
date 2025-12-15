@@ -3,6 +3,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useGlobalMarketCap } from '@/hooks/useCryptoPrices';
 import { useMarketCapHistory } from '@/hooks/useMarketCapHistory';
 import { AreaChart, Area, ResponsiveContainer, YAxis } from 'recharts';
+import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
 
 export const MarketStats = () => {
   const { data, isLoading, error } = useGlobalMarketCap();
@@ -60,7 +61,10 @@ export const MarketStats = () => {
             <>
               {/* Total Market Cap */}
               <div>
-                <p className="text-sm text-muted-foreground">Total Market Cap</p>
+                <div className="flex items-center gap-1.5">
+                  <p className="text-sm text-muted-foreground">Total Market Cap</p>
+                  <InfoTooltip content={tooltipContent.totalMarketCap} />
+                </div>
                 <p className="text-3xl font-bold">
                   {formatLargeNumber(data?.totalMarketCap || 0)}
                 </p>
@@ -68,7 +72,10 @@ export const MarketStats = () => {
               
               {/* 24h Volume */}
               <div>
-                <p className="text-sm text-muted-foreground">24h Volume</p>
+                <div className="flex items-center gap-1.5">
+                  <p className="text-sm text-muted-foreground">24h Volume</p>
+                  <InfoTooltip content={tooltipContent.volume24h} />
+                </div>
                 <p className="text-2xl font-bold">
                   {formatLargeNumber(data?.totalVolume24h || 0)}
                 </p>

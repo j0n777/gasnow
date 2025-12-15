@@ -1,5 +1,6 @@
 # GasNow Robots.txt
 # https://gasnow.tools
+# Domain established 2021 - Crypto Analytics Authority
 
 User-agent: *
 Allow: /
@@ -10,13 +11,22 @@ Sitemap: https://gasnow.tools/sitemap.xml
 # Crawl-delay for polite crawling
 Crawl-delay: 1
 
-# Block common non-content paths
+# Block non-content paths
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/chunks/
+Disallow: /*.json$
+Disallow: /*.map$
 
 # Allow all major search engines
 User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
 Allow: /
 
 User-agent: Bingbot
@@ -34,6 +44,15 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
+User-agent: Sogou
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
 # AI Crawlers - Allow for better AI model understanding
 User-agent: GPTBot
 Allow: /
@@ -45,6 +64,9 @@ User-agent: Claude-Web
 Allow: /
 
 User-agent: anthropic-ai
+Allow: /
+
+User-agent: Anthropic-AI
 Allow: /
 
 User-agent: Google-Extended
@@ -59,6 +81,30 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
 # Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
@@ -70,4 +116,23 @@ User-agent: LinkedInBot
 Allow: /
 
 User-agent: Discordbot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+# Financial/Crypto specific crawlers
+User-agent: CoinMarketCapBot
+Allow: /
+
+User-agent: CoinGeckoBot
 Allow: /
