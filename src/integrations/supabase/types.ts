@@ -98,6 +98,45 @@ export type Database = {
         }
         Relationships: []
       }
+      derivatives_data: {
+        Row: {
+          created_at: string | null
+          funding_rate: number | null
+          id: number
+          liquidations_24h: number | null
+          long_short_ratio: number | null
+          open_interest: number | null
+          open_interest_usd: number | null
+          price: number | null
+          price_change_24h: number | null
+          symbol: string
+        }
+        Insert: {
+          created_at?: string | null
+          funding_rate?: number | null
+          id?: number
+          liquidations_24h?: number | null
+          long_short_ratio?: number | null
+          open_interest?: number | null
+          open_interest_usd?: number | null
+          price?: number | null
+          price_change_24h?: number | null
+          symbol: string
+        }
+        Update: {
+          created_at?: string | null
+          funding_rate?: number | null
+          id?: number
+          liquidations_24h?: number | null
+          long_short_ratio?: number | null
+          open_interest?: number | null
+          open_interest_usd?: number | null
+          price?: number | null
+          price_change_24h?: number | null
+          symbol?: string
+        }
+        Relationships: []
+      }
       fear_greed_index: {
         Row: {
           classification: string
@@ -170,6 +209,75 @@ export type Database = {
           id?: number
           total_market_cap?: number
           total_volume_24h?: number
+        }
+        Relationships: []
+      }
+      market_stress_index: {
+        Row: {
+          btc_dominance_score: number | null
+          classification: string
+          created_at: string | null
+          funding_score: number | null
+          id: number
+          insights: Json | null
+          liquidation_score: number | null
+          oi_score: number | null
+          stablecoin_score: number | null
+          value: number
+          volatility_score: number | null
+        }
+        Insert: {
+          btc_dominance_score?: number | null
+          classification: string
+          created_at?: string | null
+          funding_score?: number | null
+          id?: number
+          insights?: Json | null
+          liquidation_score?: number | null
+          oi_score?: number | null
+          stablecoin_score?: number | null
+          value: number
+          volatility_score?: number | null
+        }
+        Update: {
+          btc_dominance_score?: number | null
+          classification?: string
+          created_at?: string | null
+          funding_score?: number | null
+          id?: number
+          insights?: Json | null
+          liquidation_score?: number | null
+          oi_score?: number | null
+          stablecoin_score?: number | null
+          value?: number
+          volatility_score?: number | null
+        }
+        Relationships: []
+      }
+      stablecoin_supply: {
+        Row: {
+          change_24h: number | null
+          created_at: string | null
+          id: number
+          total_supply: number | null
+          usdc_market_cap: number | null
+          usdt_market_cap: number | null
+        }
+        Insert: {
+          change_24h?: number | null
+          created_at?: string | null
+          id?: number
+          total_supply?: number | null
+          usdc_market_cap?: number | null
+          usdt_market_cap?: number | null
+        }
+        Update: {
+          change_24h?: number | null
+          created_at?: string | null
+          id?: number
+          total_supply?: number | null
+          usdc_market_cap?: number | null
+          usdt_market_cap?: number | null
         }
         Relationships: []
       }

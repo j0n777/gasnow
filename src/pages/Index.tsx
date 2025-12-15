@@ -8,6 +8,8 @@ import { MarketStats } from '@/components/MarketStats';
 import { TrendingTokens } from '@/components/TrendingTokens';
 import { Sponsors } from '@/components/Sponsors';
 import { StealthExWidget } from '@/components/StealthExWidget';
+import { MarketStressWidget } from '@/components/MarketStressWidget';
+import { LeveragePanel } from '@/components/LeveragePanel';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { useGasPrices } from '@/hooks/useGasPrices';
 
@@ -58,7 +60,10 @@ const Index = () => {
           {/* 2. Market Stats */}
           <MarketStats />
 
-          {/* 3. Layout with News and Sidebar */}
+          {/* 3. Liquidity & Leverage Panel - Full width */}
+          <LeveragePanel />
+
+          {/* 4. Layout with News and Sidebar */}
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-8">
               {/* Market Leaders - Full width in main column */}
@@ -71,12 +76,13 @@ const Index = () => {
             {/* Sidebar with widgets */}
             <div className="space-y-6">
               <FearGreedWidget />
+              <MarketStressWidget />
               <MarketCycleWidget />
               <StealthExWidget />
             </div>
           </div>
 
-          {/* 4. Sponsors Section */}
+          {/* 5. Sponsors Section */}
           <Sponsors />
         </main>
 

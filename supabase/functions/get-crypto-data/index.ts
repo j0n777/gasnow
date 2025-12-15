@@ -6,7 +6,7 @@ const corsHeaders = {
 };
 
 interface DataRequest {
-  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'market_data_history' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens';
+  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'market_data_history' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens' | 'derivatives_data' | 'market_stress' | 'stablecoin_supply';
   blockchain?: 'ethereum' | 'bitcoin';
   category?: string;
   days?: number;
@@ -50,6 +50,15 @@ Deno.serve(async (req) => {
         break;
       case 'trending_tokens':
         result = await getTrendingTokens(supabase);
+        break;
+      case 'derivatives_data':
+        result = await getDerivativesData(supabase);
+        break;
+      case 'market_stress':
+        result = await getMarketStress(supabase);
+        break;
+      case 'stablecoin_supply':
+        result = await getStablecoinSupply(supabase);
         break;
       default:
         throw new Error(`Unknown data type: ${type}`);
@@ -218,5 +227,87 @@ async function getTrendingTokens(supabase: any) {
     trending: data.filter((t: any) => t.token_type === 'trending').slice(0, 5),
     gainers: data.filter((t: any) => t.token_type === 'gainer').slice(0, 5),
     top5: data.filter((t: any) => t.token_type === 'top5').slice(0, 5),
+  };
+}
+
+// ========== NEW FUNCTIONS ==========
+
+async function getDerivativesData(supabase: any) {
+  const symbols = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'];
+  const result: any[] = [];
+
+  for (const symbol of symbols) {
+    const { data, error } = await supabase
+      .from('derivatives_data')
+      .select('*')
+      .eq('symbol', symbol)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .single();
+
+    if (!error && data) {
+      result.push({
+        symbol: data.symbol,
+        funding_rate: parseFloat(data.funding_rate) || 0,
+        open_interest: parseFloat(data.open_interest) || 0,
+        open_interest_usd: parseFloat(data.open_interest_usd) || 0,
+        long_short_ratio: parseFloat(data.long_short_ratio) || 1,
+        liquidations_24h: parseFloat(data.liquidations_24h) || 0,
+        price: parseFloat(data.price) || 0,
+        price_change_24h: parseFloat(data.price_change_24h) || 0,
+        created_at: data.created_at,
+      });
+    }
+  }
+
+  return result;
+}
+
+async function getMarketStress(supabase: any) {
+  const { data, error } = await supabase
+    .from('market_stress_index')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .single();
+
+  if (error) {
+    console.log('[getMarketStress] No data yet:', error.message);
+    return null;
+  }
+
+  return {
+    value: data.value,
+    classification: data.classification,
+    funding_score: parseFloat(data.funding_score) || 0,
+    oi_score: parseFloat(data.oi_score) || 0,
+    volatility_score: parseFloat(data.volatility_score) || 0,
+    liquidation_score: parseFloat(data.liquidation_score) || 0,
+    btc_dominance_score: parseFloat(data.btc_dominance_score) || 0,
+    stablecoin_score: parseFloat(data.stablecoin_score) || 0,
+    insights: data.insights || [],
+    timestamp: new Date(data.created_at).getTime(),
+  };
+}
+
+async function getStablecoinSupply(supabase: any) {
+  const { data, error } = await supabase
+    .from('stablecoin_supply')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .single();
+
+  if (error) {
+    console.log('[getStablecoinSupply] No data yet:', error.message);
+    return null;
+  }
+
+  return {
+    usdt_market_cap: parseFloat(data.usdt_market_cap) || 0,
+    usdc_market_cap: parseFloat(data.usdc_market_cap) || 0,
+    total_supply: parseFloat(data.total_supply) || 0,
+    change_24h: parseFloat(data.change_24h) || 0,
+    timestamp: new Date(data.created_at).getTime(),
   };
 }
