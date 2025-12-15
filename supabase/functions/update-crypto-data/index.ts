@@ -6,7 +6,7 @@ const corsHeaders = {
 };
 
 interface UpdateRequest {
-  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens';
+  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens' | 'derivatives' | 'stablecoin_supply' | 'market_stress';
   blockchain?: 'ethereum' | 'bitcoin';
 }
 
@@ -47,6 +47,15 @@ Deno.serve(async (req) => {
         break;
       case 'trending_tokens':
         result = await updateTrendingTokens(supabase);
+        break;
+      case 'derivatives':
+        result = await updateDerivativesData(supabase);
+        break;
+      case 'stablecoin_supply':
+        result = await updateStablecoinSupply(supabase);
+        break;
+      case 'market_stress':
+        result = await updateMarketStressIndex(supabase);
         break;
       default:
         throw new Error(`Unknown update type: ${type}`);
@@ -434,6 +443,231 @@ async function updateTrendingTokens(supabase: any) {
     return { success: true, count: allTokens.length };
   } catch (error) {
     console.error('[updateTrendingTokens] Error:', error);
+    throw error;
+  }
+}
+
+// ========== NEW FUNCTIONS FOR MARKET STRESS INDEX ==========
+
+async function updateDerivativesData(supabase: any) {
+  console.log('[updateDerivativesData] Fetching derivatives data from Binance...');
+  
+  const symbols = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'];
+  
+  try {
+    for (const symbol of symbols) {
+      // Fetch funding rate and mark price
+      const premiumRes = await fetch(`https://fapi.binance.com/fapi/v1/premiumIndex?symbol=${symbol}`);
+      const premiumData = await premiumRes.json();
+      
+      // Fetch open interest
+      const oiRes = await fetch(`https://fapi.binance.com/fapi/v1/openInterest?symbol=${symbol}`);
+      const oiData = await oiRes.json();
+      
+      // Fetch long/short ratio
+      let longShortRatio = 1;
+      try {
+        const lsRes = await fetch(`https://fapi.binance.com/futures/data/globalLongShortAccountRatio?symbol=${symbol}&period=1h&limit=1`);
+        const lsData = await lsRes.json();
+        if (lsData && lsData[0]) {
+          longShortRatio = parseFloat(lsData[0].longShortRatio);
+        }
+      } catch (e) {
+        console.log(`[updateDerivativesData] Could not fetch L/S ratio for ${symbol}`);
+      }
+      
+      // Calculate OI in USD
+      const markPrice = parseFloat(premiumData.markPrice) || 0;
+      const openInterest = parseFloat(oiData.openInterest) || 0;
+      const openInterestUsd = openInterest * markPrice;
+      
+      // Get 24h price change from spot
+      const tickerRes = await fetch(`https://api.binance.com/api/v3/ticker/24hr?symbol=${symbol}`);
+      const tickerData = await tickerRes.json();
+      const priceChange24h = parseFloat(tickerData.priceChangePercent) || 0;
+      
+      const { error } = await supabase.from('derivatives_data').insert({
+        symbol,
+        funding_rate: parseFloat(premiumData.lastFundingRate) || 0,
+        open_interest: openInterest,
+        open_interest_usd: openInterestUsd,
+        long_short_ratio: longShortRatio,
+        liquidations_24h: 0, // Would need separate API call
+        price: markPrice,
+        price_change_24h: priceChange24h,
+      });
+      
+      if (error) {
+        console.error(`[updateDerivativesData] Error inserting ${symbol}:`, error);
+      }
+    }
+    
+    console.log('[updateDerivativesData] Derivatives data updated');
+    return { success: true, symbols };
+  } catch (error) {
+    console.error('[updateDerivativesData] Error:', error);
+    throw error;
+  }
+}
+
+async function updateStablecoinSupply(supabase: any) {
+  console.log('[updateStablecoinSupply] Fetching stablecoin supply...');
+  
+  const coingeckoApiKey = Deno.env.get('COINGECKO_API_KEY');
+  
+  try {
+    const headers: any = { 'Accept': 'application/json' };
+    if (coingeckoApiKey) {
+      headers['x-cg-demo-api-key'] = coingeckoApiKey;
+    }
+    
+    const response = await fetch(
+      'https://api.coingecko.com/api/v3/simple/price?ids=tether,usd-coin&vs_currencies=usd&include_market_cap=true&include_24hr_change=true',
+      { headers }
+    );
+    const data = await response.json();
+    
+    const usdtMarketCap = data.tether?.usd_market_cap || 0;
+    const usdcMarketCap = data['usd-coin']?.usd_market_cap || 0;
+    const totalSupply = usdtMarketCap + usdcMarketCap;
+    
+    // Get previous entry to calculate change
+    const { data: prevData } = await supabase
+      .from('stablecoin_supply')
+      .select('total_supply')
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .single();
+    
+    const change24h = prevData ? ((totalSupply - prevData.total_supply) / prevData.total_supply) * 100 : 0;
+    
+    const { error } = await supabase.from('stablecoin_supply').insert({
+      usdt_market_cap: usdtMarketCap,
+      usdc_market_cap: usdcMarketCap,
+      total_supply: totalSupply,
+      change_24h: change24h,
+    });
+    
+    if (error) throw error;
+    
+    console.log('[updateStablecoinSupply] Stablecoin supply updated');
+    return { success: true, totalSupply };
+  } catch (error) {
+    console.error('[updateStablecoinSupply] Error:', error);
+    throw error;
+  }
+}
+
+async function updateMarketStressIndex(supabase: any) {
+  console.log('[updateMarketStressIndex] Calculating Market Stress Index...');
+  
+  try {
+    // 1. Get latest derivatives data
+    const { data: derivativesData } = await supabase
+      .from('derivatives_data')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(3);
+    
+    // 2. Get latest market data (for BTC dominance)
+    const { data: marketData } = await supabase
+      .from('market_data')
+      .select('btc_dominance')
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .single();
+    
+    // 3. Get latest stablecoin supply
+    const { data: stablecoinData } = await supabase
+      .from('stablecoin_supply')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .single();
+    
+    // Calculate component scores (0-100)
+    const insights: string[] = [];
+    
+    // Funding Score (25%): Higher absolute funding = more stress
+    let fundingScore = 0;
+    if (derivativesData && derivativesData.length > 0) {
+      const avgFunding = derivativesData.reduce((sum: number, d: any) => sum + Math.abs(d.funding_rate || 0), 0) / derivativesData.length;
+      fundingScore = Math.min(100, avgFunding * 100000); // Scale: 0.001 = 100
+      if (avgFunding > 0.0003) insights.push('Funding elevated');
+    }
+    
+    // OI Score (20%): Based on total OI level
+    let oiScore = 0;
+    if (derivativesData && derivativesData.length > 0) {
+      const totalOI = derivativesData.reduce((sum: number, d: any) => sum + (d.open_interest_usd || 0), 0);
+      oiScore = Math.min(100, (totalOI / 50e9) * 100); // Scale: 50B = 100
+      if (totalOI > 30e9) insights.push('High open interest');
+    }
+    
+    // Volatility Score (20%): Based on 24h price changes
+    let volatilityScore = 0;
+    if (derivativesData && derivativesData.length > 0) {
+      const avgVolatility = derivativesData.reduce((sum: number, d: any) => sum + Math.abs(d.price_change_24h || 0), 0) / derivativesData.length;
+      volatilityScore = Math.min(100, avgVolatility * 10); // Scale: 10% = 100
+      if (avgVolatility > 5) insights.push('Volatility expanding');
+    }
+    
+    // Liquidation Score (15%): Not available from free API, use 0
+    const liquidationScore = 0;
+    
+    // BTC Dominance Score (10%): Lower dominance = more risk (altcoin season = more volatile)
+    let btcDominanceScore = 0;
+    if (marketData) {
+      const btcDom = marketData.btc_dominance || 50;
+      btcDominanceScore = Math.max(0, 100 - btcDom * 2); // 50% dom = 0 score, 0% = 100
+      if (btcDom < 45) insights.push('Low BTC dominance');
+    }
+    
+    // Stablecoin Score (10%): Decreasing supply = more stress
+    let stablecoinScore = 0;
+    if (stablecoinData && stablecoinData.change_24h !== null) {
+      stablecoinScore = Math.max(0, Math.min(100, -stablecoinData.change_24h * 10)); // -10% change = 100
+      if (stablecoinData.change_24h < -1) insights.push('Stablecoin outflow detected');
+    }
+    
+    // Calculate weighted total
+    const totalScore = Math.round(
+      fundingScore * 0.25 +
+      oiScore * 0.20 +
+      volatilityScore * 0.20 +
+      liquidationScore * 0.15 +
+      btcDominanceScore * 0.10 +
+      stablecoinScore * 0.10
+    );
+    
+    // Classify
+    let classification = 'Neutral';
+    if (totalScore <= 30) classification = 'Low Stress';
+    else if (totalScore >= 61) classification = 'High Stress';
+    
+    // Add classification insight if none
+    if (insights.length === 0) {
+      insights.push('Market conditions stable');
+    }
+    
+    const { error } = await supabase.from('market_stress_index').insert({
+      value: totalScore,
+      classification,
+      funding_score: fundingScore,
+      oi_score: oiScore,
+      volatility_score: volatilityScore,
+      liquidation_score: liquidationScore,
+      btc_dominance_score: btcDominanceScore,
+      stablecoin_score: stablecoinScore,
+      insights,
+    });
+    
+    if (error) throw error;
+    
+    console.log('[updateMarketStressIndex] Market Stress Index updated:', totalScore, classification);
+    return { value: totalScore, classification, insights };
+  } catch (error) {
+    console.error('[updateMarketStressIndex] Error:', error);
     throw error;
   }
 }
