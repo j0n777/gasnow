@@ -1,0 +1,7002 @@
+[
+  {
+    "id": 3701,
+    "value": 42.65804521907243,
+    "btc_dominance": 57.34195478092757,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:10:08.470735+00:00"
+  },
+  {
+    "id": 3702,
+    "value": 42.65804521907243,
+    "btc_dominance": 57.34195478092757,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:12:03.906621+00:00"
+  },
+  {
+    "id": 3703,
+    "value": 42.65320865947195,
+    "btc_dominance": 57.34679134052805,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:14:05.405783+00:00"
+  },
+  {
+    "id": 3704,
+    "value": 42.65320865947195,
+    "btc_dominance": 57.34679134052805,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:16:01.11731+00:00"
+  },
+  {
+    "id": 3705,
+    "value": 42.65320865947195,
+    "btc_dominance": 57.34679134052805,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:18:03.250876+00:00"
+  },
+  {
+    "id": 3706,
+    "value": 42.65320865947195,
+    "btc_dominance": 57.34679134052805,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:20:10.992535+00:00"
+  },
+  {
+    "id": 3707,
+    "value": 42.65320865947195,
+    "btc_dominance": 57.34679134052805,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:22:04.658413+00:00"
+  },
+  {
+    "id": 3708,
+    "value": 42.64894083910325,
+    "btc_dominance": 57.35105916089675,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:24:03.980165+00:00"
+  },
+  {
+    "id": 3709,
+    "value": 42.64894083910325,
+    "btc_dominance": 57.35105916089675,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:26:03.526544+00:00"
+  },
+  {
+    "id": 3710,
+    "value": 42.64894083910325,
+    "btc_dominance": 57.35105916089675,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:28:04.004034+00:00"
+  },
+  {
+    "id": 3711,
+    "value": 42.64894083910325,
+    "btc_dominance": 57.35105916089675,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:30:11.88571+00:00"
+  },
+  {
+    "id": 3712,
+    "value": 42.64894083910325,
+    "btc_dominance": 57.35105916089675,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:32:03.732819+00:00"
+  },
+  {
+    "id": 3713,
+    "value": 42.64906819987304,
+    "btc_dominance": 57.35093180012696,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:34:05.459775+00:00"
+  },
+  {
+    "id": 3714,
+    "value": 42.64906819987304,
+    "btc_dominance": 57.35093180012696,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:36:05.197143+00:00"
+  },
+  {
+    "id": 3715,
+    "value": 42.64906819987304,
+    "btc_dominance": 57.35093180012696,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:38:05.781518+00:00"
+  },
+  {
+    "id": 3716,
+    "value": 42.64906819987304,
+    "btc_dominance": 57.35093180012696,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:40:08.041148+00:00"
+  },
+  {
+    "id": 3717,
+    "value": 42.64906819987304,
+    "btc_dominance": 57.35093180012696,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:42:03.183302+00:00"
+  },
+  {
+    "id": 3718,
+    "value": 42.67369784327298,
+    "btc_dominance": 57.32630215672702,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:44:04.502063+00:00"
+  },
+  {
+    "id": 3719,
+    "value": 42.67369784327298,
+    "btc_dominance": 57.32630215672702,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:46:03.78881+00:00"
+  },
+  {
+    "id": 3720,
+    "value": 42.67369784327298,
+    "btc_dominance": 57.32630215672702,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:48:04.208324+00:00"
+  },
+  {
+    "id": 3721,
+    "value": 42.67369784327298,
+    "btc_dominance": 57.32630215672702,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:50:08.499262+00:00"
+  },
+  {
+    "id": 3722,
+    "value": 42.67369784327298,
+    "btc_dominance": 57.32630215672702,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:52:05.408785+00:00"
+  },
+  {
+    "id": 3723,
+    "value": 42.66468740304489,
+    "btc_dominance": 57.33531259695511,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:54:05.384683+00:00"
+  },
+  {
+    "id": 3724,
+    "value": 42.66468740304489,
+    "btc_dominance": 57.33531259695511,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:56:04.153314+00:00"
+  },
+  {
+    "id": 3725,
+    "value": 42.66468740304489,
+    "btc_dominance": 57.33531259695511,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T00:58:03.25953+00:00"
+  },
+  {
+    "id": 3726,
+    "value": 42.66468740304489,
+    "btc_dominance": 57.33531259695511,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:00:16.728471+00:00"
+  },
+  {
+    "id": 3727,
+    "value": 42.66468740304489,
+    "btc_dominance": 57.33531259695511,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:02:02.117023+00:00"
+  },
+  {
+    "id": 3728,
+    "value": 42.65626253985077,
+    "btc_dominance": 57.34373746014923,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:04:03.278749+00:00"
+  },
+  {
+    "id": 3729,
+    "value": 42.65626253985077,
+    "btc_dominance": 57.34373746014923,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:06:03.520578+00:00"
+  },
+  {
+    "id": 3730,
+    "value": 42.65626253985077,
+    "btc_dominance": 57.34373746014923,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:08:02.722065+00:00"
+  },
+  {
+    "id": 3731,
+    "value": 42.65626253985077,
+    "btc_dominance": 57.34373746014923,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:10:08.181871+00:00"
+  },
+  {
+    "id": 3732,
+    "value": 42.65626253985077,
+    "btc_dominance": 57.34373746014923,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:12:03.642429+00:00"
+  },
+  {
+    "id": 3733,
+    "value": 42.65099923629339,
+    "btc_dominance": 57.34900076370661,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:14:03.973442+00:00"
+  },
+  {
+    "id": 3734,
+    "value": 42.65099923629339,
+    "btc_dominance": 57.34900076370661,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:16:04.009393+00:00"
+  },
+  {
+    "id": 3735,
+    "value": 42.65099923629339,
+    "btc_dominance": 57.34900076370661,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:18:04.863068+00:00"
+  },
+  {
+    "id": 3736,
+    "value": 42.65099923629339,
+    "btc_dominance": 57.34900076370661,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:20:09.091812+00:00"
+  },
+  {
+    "id": 3737,
+    "value": 42.65099923629339,
+    "btc_dominance": 57.34900076370661,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:22:04.482656+00:00"
+  },
+  {
+    "id": 3738,
+    "value": 42.65049138076491,
+    "btc_dominance": 57.34950861923509,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:24:04.048191+00:00"
+  },
+  {
+    "id": 3739,
+    "value": 42.65049138076491,
+    "btc_dominance": 57.34950861923509,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:26:04.722832+00:00"
+  },
+  {
+    "id": 3740,
+    "value": 42.65049138076491,
+    "btc_dominance": 57.34950861923509,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:28:03.996506+00:00"
+  },
+  {
+    "id": 3741,
+    "value": 42.65049138076491,
+    "btc_dominance": 57.34950861923509,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:30:10.610071+00:00"
+  },
+  {
+    "id": 3742,
+    "value": 42.65049138076491,
+    "btc_dominance": 57.34950861923509,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:32:03.733597+00:00"
+  },
+  {
+    "id": 3743,
+    "value": 42.65192469758611,
+    "btc_dominance": 57.34807530241389,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:34:04.0734+00:00"
+  },
+  {
+    "id": 3744,
+    "value": 42.65192469758611,
+    "btc_dominance": 57.34807530241389,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:36:03.287165+00:00"
+  },
+  {
+    "id": 3745,
+    "value": 42.65192469758611,
+    "btc_dominance": 57.34807530241389,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:38:03.101201+00:00"
+  },
+  {
+    "id": 3746,
+    "value": 42.65192469758611,
+    "btc_dominance": 57.34807530241389,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:40:08.304734+00:00"
+  },
+  {
+    "id": 3747,
+    "value": 42.65192469758611,
+    "btc_dominance": 57.34807530241389,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:42:04.877351+00:00"
+  },
+  {
+    "id": 3748,
+    "value": 42.65535040354722,
+    "btc_dominance": 57.34464959645278,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:44:04.332726+00:00"
+  },
+  {
+    "id": 3749,
+    "value": 42.65535040354722,
+    "btc_dominance": 57.34464959645278,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:46:03.836713+00:00"
+  },
+  {
+    "id": 3750,
+    "value": 42.65535040354722,
+    "btc_dominance": 57.34464959645278,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:48:03.501624+00:00"
+  },
+  {
+    "id": 3751,
+    "value": 42.65535040354722,
+    "btc_dominance": 57.34464959645278,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:50:09.147171+00:00"
+  },
+  {
+    "id": 3752,
+    "value": 42.65535040354722,
+    "btc_dominance": 57.34464959645278,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:52:06.040767+00:00"
+  },
+  {
+    "id": 3753,
+    "value": 42.65961979570121,
+    "btc_dominance": 57.34038020429879,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:54:06.584792+00:00"
+  },
+  {
+    "id": 3754,
+    "value": 42.65961979570121,
+    "btc_dominance": 57.34038020429879,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:56:03.690944+00:00"
+  },
+  {
+    "id": 3755,
+    "value": 42.65961979570121,
+    "btc_dominance": 57.34038020429879,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T01:58:02.983822+00:00"
+  },
+  {
+    "id": 3756,
+    "value": 42.65961979570121,
+    "btc_dominance": 57.34038020429879,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:02:06.831887+00:00"
+  },
+  {
+    "id": 3757,
+    "value": 42.642101876510075,
+    "btc_dominance": 57.357898123489925,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:04:04.742557+00:00"
+  },
+  {
+    "id": 3758,
+    "value": 42.642101876510075,
+    "btc_dominance": 57.357898123489925,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:06:04.123245+00:00"
+  },
+  {
+    "id": 3759,
+    "value": 42.642101876510075,
+    "btc_dominance": 57.357898123489925,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:08:05.492335+00:00"
+  },
+  {
+    "id": 3760,
+    "value": 42.642101876510075,
+    "btc_dominance": 57.357898123489925,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:10:06.33577+00:00"
+  },
+  {
+    "id": 3761,
+    "value": 42.642101876510075,
+    "btc_dominance": 57.357898123489925,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:12:03.529624+00:00"
+  },
+  {
+    "id": 3762,
+    "value": 42.63499157555969,
+    "btc_dominance": 57.36500842444031,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:14:05.48802+00:00"
+  },
+  {
+    "id": 3763,
+    "value": 42.63499157555969,
+    "btc_dominance": 57.36500842444031,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:16:01.098641+00:00"
+  },
+  {
+    "id": 3764,
+    "value": 42.63499157555969,
+    "btc_dominance": 57.36500842444031,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:18:04.103217+00:00"
+  },
+  {
+    "id": 3765,
+    "value": 42.63499157555969,
+    "btc_dominance": 57.36500842444031,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:20:08.698493+00:00"
+  },
+  {
+    "id": 3766,
+    "value": 42.63499157555969,
+    "btc_dominance": 57.36500842444031,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:22:04.812514+00:00"
+  },
+  {
+    "id": 3767,
+    "value": 42.635479234499584,
+    "btc_dominance": 57.364520765500416,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:24:04.154859+00:00"
+  },
+  {
+    "id": 3768,
+    "value": 42.635479234499584,
+    "btc_dominance": 57.364520765500416,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:26:03.298348+00:00"
+  },
+  {
+    "id": 3769,
+    "value": 42.635479234499584,
+    "btc_dominance": 57.364520765500416,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:28:02.219833+00:00"
+  },
+  {
+    "id": 3770,
+    "value": 42.635479234499584,
+    "btc_dominance": 57.364520765500416,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:30:22.594841+00:00"
+  },
+  {
+    "id": 3771,
+    "value": 42.635479234499584,
+    "btc_dominance": 57.364520765500416,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:32:04.684133+00:00"
+  },
+  {
+    "id": 3772,
+    "value": 42.63681261137745,
+    "btc_dominance": 57.36318738862255,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:34:03.414996+00:00"
+  },
+  {
+    "id": 3773,
+    "value": 42.63681261137745,
+    "btc_dominance": 57.36318738862255,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:36:00.83515+00:00"
+  },
+  {
+    "id": 3774,
+    "value": 42.63681261137745,
+    "btc_dominance": 57.36318738862255,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:38:05.520738+00:00"
+  },
+  {
+    "id": 3775,
+    "value": 42.63681261137745,
+    "btc_dominance": 57.36318738862255,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:40:08.387354+00:00"
+  },
+  {
+    "id": 3776,
+    "value": 42.63681261137745,
+    "btc_dominance": 57.36318738862255,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:42:04.61963+00:00"
+  },
+  {
+    "id": 3777,
+    "value": 42.62723986720782,
+    "btc_dominance": 57.37276013279218,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:44:03.833563+00:00"
+  },
+  {
+    "id": 3778,
+    "value": 42.62723986720782,
+    "btc_dominance": 57.37276013279218,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:46:02.389258+00:00"
+  },
+  {
+    "id": 3779,
+    "value": 42.62723986720782,
+    "btc_dominance": 57.37276013279218,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:48:03.719451+00:00"
+  },
+  {
+    "id": 3780,
+    "value": 42.62723986720782,
+    "btc_dominance": 57.37276013279218,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:50:08.221781+00:00"
+  },
+  {
+    "id": 3781,
+    "value": 42.62723986720782,
+    "btc_dominance": 57.37276013279218,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:52:05.117419+00:00"
+  },
+  {
+    "id": 3782,
+    "value": 42.632158893279126,
+    "btc_dominance": 57.367841106720874,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:54:04.363066+00:00"
+  },
+  {
+    "id": 3783,
+    "value": 42.632158893279126,
+    "btc_dominance": 57.367841106720874,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:56:05.894042+00:00"
+  },
+  {
+    "id": 3784,
+    "value": 42.632158893279126,
+    "btc_dominance": 57.367841106720874,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T02:58:04.582747+00:00"
+  },
+  {
+    "id": 3785,
+    "value": 42.632158893279126,
+    "btc_dominance": 57.367841106720874,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:00:28.440028+00:00"
+  },
+  {
+    "id": 3786,
+    "value": 42.632158893279126,
+    "btc_dominance": 57.367841106720874,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:02:00.971898+00:00"
+  },
+  {
+    "id": 3787,
+    "value": 42.64106392268925,
+    "btc_dominance": 57.35893607731075,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:04:04.306138+00:00"
+  },
+  {
+    "id": 3788,
+    "value": 42.64106392268925,
+    "btc_dominance": 57.35893607731075,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:06:05.412074+00:00"
+  },
+  {
+    "id": 3789,
+    "value": 42.64106392268925,
+    "btc_dominance": 57.35893607731075,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:08:04.721296+00:00"
+  },
+  {
+    "id": 3790,
+    "value": 42.64106392268925,
+    "btc_dominance": 57.35893607731075,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:10:06.680861+00:00"
+  },
+  {
+    "id": 3791,
+    "value": 42.64106392268925,
+    "btc_dominance": 57.35893607731075,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:12:05.410359+00:00"
+  },
+  {
+    "id": 3792,
+    "value": 42.636446340147735,
+    "btc_dominance": 57.363553659852265,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:14:04.772195+00:00"
+  },
+  {
+    "id": 3793,
+    "value": 42.636446340147735,
+    "btc_dominance": 57.363553659852265,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:16:03.525628+00:00"
+  },
+  {
+    "id": 3794,
+    "value": 42.636446340147735,
+    "btc_dominance": 57.363553659852265,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:18:04.015758+00:00"
+  },
+  {
+    "id": 3795,
+    "value": 42.636446340147735,
+    "btc_dominance": 57.363553659852265,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:20:07.54075+00:00"
+  },
+  {
+    "id": 3796,
+    "value": 42.636446340147735,
+    "btc_dominance": 57.363553659852265,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:22:03.729088+00:00"
+  },
+  {
+    "id": 3797,
+    "value": 42.63500356526237,
+    "btc_dominance": 57.36499643473763,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:24:02.8081+00:00"
+  },
+  {
+    "id": 3798,
+    "value": 42.63500356526237,
+    "btc_dominance": 57.36499643473763,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:26:03.645915+00:00"
+  },
+  {
+    "id": 3799,
+    "value": 42.63500356526237,
+    "btc_dominance": 57.36499643473763,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:28:03.499747+00:00"
+  },
+  {
+    "id": 3800,
+    "value": 42.63500356526237,
+    "btc_dominance": 57.36499643473763,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:30:10.921551+00:00"
+  },
+  {
+    "id": 3801,
+    "value": 42.63500356526237,
+    "btc_dominance": 57.36499643473763,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:32:01.745361+00:00"
+  },
+  {
+    "id": 3802,
+    "value": 42.62790539005273,
+    "btc_dominance": 57.37209460994727,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:34:03.205917+00:00"
+  },
+  {
+    "id": 3803,
+    "value": 42.62790539005273,
+    "btc_dominance": 57.37209460994727,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:36:05.469973+00:00"
+  },
+  {
+    "id": 3804,
+    "value": 42.62790539005273,
+    "btc_dominance": 57.37209460994727,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:38:04.141142+00:00"
+  },
+  {
+    "id": 3805,
+    "value": 42.62790539005273,
+    "btc_dominance": 57.37209460994727,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:40:09.845035+00:00"
+  },
+  {
+    "id": 3806,
+    "value": 42.62790539005273,
+    "btc_dominance": 57.37209460994727,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:42:05.432754+00:00"
+  },
+  {
+    "id": 3807,
+    "value": 42.622284691778034,
+    "btc_dominance": 57.377715308221966,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:44:04.599157+00:00"
+  },
+  {
+    "id": 3808,
+    "value": 42.622284691778034,
+    "btc_dominance": 57.377715308221966,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:46:05.048089+00:00"
+  },
+  {
+    "id": 3809,
+    "value": 42.622284691778034,
+    "btc_dominance": 57.377715308221966,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:48:03.113776+00:00"
+  },
+  {
+    "id": 3810,
+    "value": 42.622284691778034,
+    "btc_dominance": 57.377715308221966,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:50:08.184032+00:00"
+  },
+  {
+    "id": 3811,
+    "value": 42.622284691778034,
+    "btc_dominance": 57.377715308221966,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:52:03.539929+00:00"
+  },
+  {
+    "id": 3812,
+    "value": 42.620557015324856,
+    "btc_dominance": 57.379442984675144,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:54:05.479412+00:00"
+  },
+  {
+    "id": 3813,
+    "value": 42.620557015324856,
+    "btc_dominance": 57.379442984675144,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:56:02.995806+00:00"
+  },
+  {
+    "id": 3814,
+    "value": 42.620557015324856,
+    "btc_dominance": 57.379442984675144,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T03:58:00.831363+00:00"
+  },
+  {
+    "id": 3815,
+    "value": 42.620557015324856,
+    "btc_dominance": 57.379442984675144,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:02:01.325778+00:00"
+  },
+  {
+    "id": 3816,
+    "value": 42.622424103960824,
+    "btc_dominance": 57.377575896039176,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:04:03.105652+00:00"
+  },
+  {
+    "id": 3817,
+    "value": 42.622424103960824,
+    "btc_dominance": 57.377575896039176,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:06:03.42628+00:00"
+  },
+  {
+    "id": 3818,
+    "value": 42.622424103960824,
+    "btc_dominance": 57.377575896039176,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:08:04.723938+00:00"
+  },
+  {
+    "id": 3819,
+    "value": 42.622424103960824,
+    "btc_dominance": 57.377575896039176,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:10:06.348759+00:00"
+  },
+  {
+    "id": 3820,
+    "value": 42.622424103960824,
+    "btc_dominance": 57.377575896039176,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:12:04.137565+00:00"
+  },
+  {
+    "id": 3821,
+    "value": 42.633538787212245,
+    "btc_dominance": 57.366461212787755,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:14:04.773753+00:00"
+  },
+  {
+    "id": 3822,
+    "value": 42.633538787212245,
+    "btc_dominance": 57.366461212787755,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:16:06.700385+00:00"
+  },
+  {
+    "id": 3823,
+    "value": 42.633538787212245,
+    "btc_dominance": 57.366461212787755,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:18:04.007597+00:00"
+  },
+  {
+    "id": 3824,
+    "value": 42.633538787212245,
+    "btc_dominance": 57.366461212787755,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:20:08.538301+00:00"
+  },
+  {
+    "id": 3825,
+    "value": 42.633538787212245,
+    "btc_dominance": 57.366461212787755,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:22:05.118715+00:00"
+  },
+  {
+    "id": 3826,
+    "value": 42.66029371711624,
+    "btc_dominance": 57.33970628288376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:24:04.146028+00:00"
+  },
+  {
+    "id": 3827,
+    "value": 42.66029371711624,
+    "btc_dominance": 57.33970628288376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:26:04.513778+00:00"
+  },
+  {
+    "id": 3828,
+    "value": 42.66029371711624,
+    "btc_dominance": 57.33970628288376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:28:03.668842+00:00"
+  },
+  {
+    "id": 3829,
+    "value": 42.66029371711624,
+    "btc_dominance": 57.33970628288376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:30:11.891259+00:00"
+  },
+  {
+    "id": 3830,
+    "value": 42.66029371711624,
+    "btc_dominance": 57.33970628288376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:32:05.508924+00:00"
+  },
+  {
+    "id": 3831,
+    "value": 42.65614620541761,
+    "btc_dominance": 57.34385379458239,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:34:08.005369+00:00"
+  },
+  {
+    "id": 3832,
+    "value": 42.65614620541761,
+    "btc_dominance": 57.34385379458239,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:36:05.981097+00:00"
+  },
+  {
+    "id": 3833,
+    "value": 42.65614620541761,
+    "btc_dominance": 57.34385379458239,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:38:05.388456+00:00"
+  },
+  {
+    "id": 3834,
+    "value": 42.65614620541761,
+    "btc_dominance": 57.34385379458239,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:40:09.638519+00:00"
+  },
+  {
+    "id": 3835,
+    "value": 42.65614620541761,
+    "btc_dominance": 57.34385379458239,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:42:04.674381+00:00"
+  },
+  {
+    "id": 3836,
+    "value": 42.66545479706559,
+    "btc_dominance": 57.33454520293441,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:44:03.986204+00:00"
+  },
+  {
+    "id": 3837,
+    "value": 42.66545479706559,
+    "btc_dominance": 57.33454520293441,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:46:03.768757+00:00"
+  },
+  {
+    "id": 3838,
+    "value": 42.66545479706559,
+    "btc_dominance": 57.33454520293441,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:48:05.124132+00:00"
+  },
+  {
+    "id": 3839,
+    "value": 42.66545479706559,
+    "btc_dominance": 57.33454520293441,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:50:07.911461+00:00"
+  },
+  {
+    "id": 3840,
+    "value": 42.66545479706559,
+    "btc_dominance": 57.33454520293441,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:52:04.229364+00:00"
+  },
+  {
+    "id": 3841,
+    "value": 42.646540638215654,
+    "btc_dominance": 57.353459361784346,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:54:05.667897+00:00"
+  },
+  {
+    "id": 3842,
+    "value": 42.646540638215654,
+    "btc_dominance": 57.353459361784346,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:56:05.465272+00:00"
+  },
+  {
+    "id": 3843,
+    "value": 42.646540638215654,
+    "btc_dominance": 57.353459361784346,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T04:58:04.161424+00:00"
+  },
+  {
+    "id": 3844,
+    "value": 42.646540638215654,
+    "btc_dominance": 57.353459361784346,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:00:15.284475+00:00"
+  },
+  {
+    "id": 3845,
+    "value": 42.646540638215654,
+    "btc_dominance": 57.353459361784346,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:02:04.319609+00:00"
+  },
+  {
+    "id": 3846,
+    "value": 42.65003632434832,
+    "btc_dominance": 57.34996367565168,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:04:00.95331+00:00"
+  },
+  {
+    "id": 3847,
+    "value": 42.65003632434832,
+    "btc_dominance": 57.34996367565168,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:06:06.112251+00:00"
+  },
+  {
+    "id": 3848,
+    "value": 42.65003632434832,
+    "btc_dominance": 57.34996367565168,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:08:02.904371+00:00"
+  },
+  {
+    "id": 3849,
+    "value": 42.65003632434832,
+    "btc_dominance": 57.34996367565168,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:10:08.739712+00:00"
+  },
+  {
+    "id": 3850,
+    "value": 42.65003632434832,
+    "btc_dominance": 57.34996367565168,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:12:04.494979+00:00"
+  },
+  {
+    "id": 3851,
+    "value": 42.6540442823723,
+    "btc_dominance": 57.3459557176277,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:14:05.136603+00:00"
+  },
+  {
+    "id": 3852,
+    "value": 42.6540442823723,
+    "btc_dominance": 57.3459557176277,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:16:03.525946+00:00"
+  },
+  {
+    "id": 3853,
+    "value": 42.6540442823723,
+    "btc_dominance": 57.3459557176277,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:18:05.602187+00:00"
+  },
+  {
+    "id": 3854,
+    "value": 42.6540442823723,
+    "btc_dominance": 57.3459557176277,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:20:08.389658+00:00"
+  },
+  {
+    "id": 3855,
+    "value": 42.6540442823723,
+    "btc_dominance": 57.3459557176277,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:22:04.413747+00:00"
+  },
+  {
+    "id": 3856,
+    "value": 42.657011379711975,
+    "btc_dominance": 57.342988620288025,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:24:05.29099+00:00"
+  },
+  {
+    "id": 3857,
+    "value": 42.657011379711975,
+    "btc_dominance": 57.342988620288025,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:26:04.431715+00:00"
+  },
+  {
+    "id": 3858,
+    "value": 42.657011379711975,
+    "btc_dominance": 57.342988620288025,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:28:05.303839+00:00"
+  },
+  {
+    "id": 3859,
+    "value": 42.657011379711975,
+    "btc_dominance": 57.342988620288025,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:30:10.271954+00:00"
+  },
+  {
+    "id": 3860,
+    "value": 42.657011379711975,
+    "btc_dominance": 57.342988620288025,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:32:03.715358+00:00"
+  },
+  {
+    "id": 3861,
+    "value": 42.68318125741214,
+    "btc_dominance": 57.31681874258786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:34:04.919342+00:00"
+  },
+  {
+    "id": 3862,
+    "value": 42.68318125741214,
+    "btc_dominance": 57.31681874258786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:36:04.399507+00:00"
+  },
+  {
+    "id": 3863,
+    "value": 42.68318125741214,
+    "btc_dominance": 57.31681874258786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:38:03.879826+00:00"
+  },
+  {
+    "id": 3864,
+    "value": 42.68318125741214,
+    "btc_dominance": 57.31681874258786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:40:09.74363+00:00"
+  },
+  {
+    "id": 3865,
+    "value": 42.68318125741214,
+    "btc_dominance": 57.31681874258786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:42:03.623041+00:00"
+  },
+  {
+    "id": 3866,
+    "value": 42.685093020051255,
+    "btc_dominance": 57.314906979948745,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:44:05.384097+00:00"
+  },
+  {
+    "id": 3867,
+    "value": 42.685093020051255,
+    "btc_dominance": 57.314906979948745,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:46:03.94582+00:00"
+  },
+  {
+    "id": 3868,
+    "value": 42.685093020051255,
+    "btc_dominance": 57.314906979948745,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:48:04.550228+00:00"
+  },
+  {
+    "id": 3869,
+    "value": 42.685093020051255,
+    "btc_dominance": 57.314906979948745,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:50:08.572036+00:00"
+  },
+  {
+    "id": 3870,
+    "value": 42.685093020051255,
+    "btc_dominance": 57.314906979948745,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:52:06.019908+00:00"
+  },
+  {
+    "id": 3871,
+    "value": 42.68082083124865,
+    "btc_dominance": 57.31917916875135,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:54:03.643682+00:00"
+  },
+  {
+    "id": 3872,
+    "value": 42.68082083124865,
+    "btc_dominance": 57.31917916875135,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:56:04.115586+00:00"
+  },
+  {
+    "id": 3873,
+    "value": 42.68082083124865,
+    "btc_dominance": 57.31917916875135,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T05:58:03.497194+00:00"
+  },
+  {
+    "id": 3874,
+    "value": 42.68082083124865,
+    "btc_dominance": 57.31917916875135,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:00:30.411151+00:00"
+  },
+  {
+    "id": 3875,
+    "value": 42.68082083124865,
+    "btc_dominance": 57.31917916875135,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:02:05.592709+00:00"
+  },
+  {
+    "id": 3876,
+    "value": 42.67709193327883,
+    "btc_dominance": 57.32290806672117,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:04:03.499812+00:00"
+  },
+  {
+    "id": 3877,
+    "value": 42.67709193327883,
+    "btc_dominance": 57.32290806672117,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:06:03.875178+00:00"
+  },
+  {
+    "id": 3878,
+    "value": 42.67709193327883,
+    "btc_dominance": 57.32290806672117,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:08:14.702423+00:00"
+  },
+  {
+    "id": 3879,
+    "value": 42.67709193327883,
+    "btc_dominance": 57.32290806672117,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:10:07.32081+00:00"
+  },
+  {
+    "id": 3880,
+    "value": 42.67709193327883,
+    "btc_dominance": 57.32290806672117,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:12:04.533492+00:00"
+  },
+  {
+    "id": 3881,
+    "value": 42.67876837276299,
+    "btc_dominance": 57.32123162723701,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:14:03.438272+00:00"
+  },
+  {
+    "id": 3882,
+    "value": 42.67876837276299,
+    "btc_dominance": 57.32123162723701,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:16:03.942951+00:00"
+  },
+  {
+    "id": 3883,
+    "value": 42.67876837276299,
+    "btc_dominance": 57.32123162723701,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:18:04.020631+00:00"
+  },
+  {
+    "id": 3884,
+    "value": 42.67876837276299,
+    "btc_dominance": 57.32123162723701,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:20:08.741784+00:00"
+  },
+  {
+    "id": 3885,
+    "value": 42.67876837276299,
+    "btc_dominance": 57.32123162723701,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:22:02.493054+00:00"
+  },
+  {
+    "id": 3886,
+    "value": 42.68831612774052,
+    "btc_dominance": 57.31168387225948,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:24:04.034438+00:00"
+  },
+  {
+    "id": 3887,
+    "value": 42.68831612774052,
+    "btc_dominance": 57.31168387225948,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:26:04.017683+00:00"
+  },
+  {
+    "id": 3888,
+    "value": 42.68831612774052,
+    "btc_dominance": 57.31168387225948,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:28:03.716056+00:00"
+  },
+  {
+    "id": 3889,
+    "value": 42.68831612774052,
+    "btc_dominance": 57.31168387225948,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:30:11.397405+00:00"
+  },
+  {
+    "id": 3890,
+    "value": 42.68831612774052,
+    "btc_dominance": 57.31168387225948,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:32:04.22101+00:00"
+  },
+  {
+    "id": 3891,
+    "value": 42.6883363778219,
+    "btc_dominance": 57.3116636221781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:34:03.480534+00:00"
+  },
+  {
+    "id": 3892,
+    "value": 42.6883363778219,
+    "btc_dominance": 57.3116636221781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:36:04.619184+00:00"
+  },
+  {
+    "id": 3893,
+    "value": 42.6883363778219,
+    "btc_dominance": 57.3116636221781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:38:04.306025+00:00"
+  },
+  {
+    "id": 3894,
+    "value": 42.6883363778219,
+    "btc_dominance": 57.3116636221781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:40:08.393567+00:00"
+  },
+  {
+    "id": 3895,
+    "value": 42.6883363778219,
+    "btc_dominance": 57.3116636221781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:42:05.497651+00:00"
+  },
+  {
+    "id": 3896,
+    "value": 42.6783138533324,
+    "btc_dominance": 57.3216861466676,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:44:03.521935+00:00"
+  },
+  {
+    "id": 3897,
+    "value": 42.6783138533324,
+    "btc_dominance": 57.3216861466676,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:46:04.211484+00:00"
+  },
+  {
+    "id": 3898,
+    "value": 42.6783138533324,
+    "btc_dominance": 57.3216861466676,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:48:05.386942+00:00"
+  },
+  {
+    "id": 3899,
+    "value": 42.6783138533324,
+    "btc_dominance": 57.3216861466676,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:50:07.889338+00:00"
+  },
+  {
+    "id": 3900,
+    "value": 42.6783138533324,
+    "btc_dominance": 57.3216861466676,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:52:03.716219+00:00"
+  },
+  {
+    "id": 3901,
+    "value": 42.67484046528348,
+    "btc_dominance": 57.32515953471652,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:54:05.394513+00:00"
+  },
+  {
+    "id": 3902,
+    "value": 42.67484046528348,
+    "btc_dominance": 57.32515953471652,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:56:04.289622+00:00"
+  },
+  {
+    "id": 3903,
+    "value": 42.67484046528348,
+    "btc_dominance": 57.32515953471652,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T06:58:02.322449+00:00"
+  },
+  {
+    "id": 3904,
+    "value": 42.67484046528348,
+    "btc_dominance": 57.32515953471652,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:00:26.160305+00:00"
+  },
+  {
+    "id": 3905,
+    "value": 42.67484046528348,
+    "btc_dominance": 57.32515953471652,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:02:03.687376+00:00"
+  },
+  {
+    "id": 3906,
+    "value": 42.66948977682452,
+    "btc_dominance": 57.33051022317548,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:04:05.000001+00:00"
+  },
+  {
+    "id": 3907,
+    "value": 42.66948977682452,
+    "btc_dominance": 57.33051022317548,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:06:04.496073+00:00"
+  },
+  {
+    "id": 3908,
+    "value": 42.66948977682452,
+    "btc_dominance": 57.33051022317548,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:08:02.234634+00:00"
+  },
+  {
+    "id": 3909,
+    "value": 42.66948977682452,
+    "btc_dominance": 57.33051022317548,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:10:08.464555+00:00"
+  },
+  {
+    "id": 3910,
+    "value": 42.66948977682452,
+    "btc_dominance": 57.33051022317548,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:12:04.809199+00:00"
+  },
+  {
+    "id": 3911,
+    "value": 42.67076892794089,
+    "btc_dominance": 57.32923107205911,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:14:03.845659+00:00"
+  },
+  {
+    "id": 3912,
+    "value": 42.67076892794089,
+    "btc_dominance": 57.32923107205911,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:16:04.414248+00:00"
+  },
+  {
+    "id": 3913,
+    "value": 42.67076892794089,
+    "btc_dominance": 57.32923107205911,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:18:04.89592+00:00"
+  },
+  {
+    "id": 3914,
+    "value": 42.67076892794089,
+    "btc_dominance": 57.32923107205911,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:20:08.409723+00:00"
+  },
+  {
+    "id": 3915,
+    "value": 42.67076892794089,
+    "btc_dominance": 57.32923107205911,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:22:04.993982+00:00"
+  },
+  {
+    "id": 3916,
+    "value": 42.67440749078264,
+    "btc_dominance": 57.32559250921736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:24:04.050339+00:00"
+  },
+  {
+    "id": 3917,
+    "value": 42.67440749078264,
+    "btc_dominance": 57.32559250921736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:26:05.110438+00:00"
+  },
+  {
+    "id": 3918,
+    "value": 42.67440749078264,
+    "btc_dominance": 57.32559250921736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:28:04.003562+00:00"
+  },
+  {
+    "id": 3919,
+    "value": 42.67440749078264,
+    "btc_dominance": 57.32559250921736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:30:11.133+00:00"
+  },
+  {
+    "id": 3920,
+    "value": 42.67440749078264,
+    "btc_dominance": 57.32559250921736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:32:03.772579+00:00"
+  },
+  {
+    "id": 3921,
+    "value": 42.6696514197904,
+    "btc_dominance": 57.3303485802096,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:34:05.391736+00:00"
+  },
+  {
+    "id": 3922,
+    "value": 42.6696514197904,
+    "btc_dominance": 57.3303485802096,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:36:03.264002+00:00"
+  },
+  {
+    "id": 3923,
+    "value": 42.6696514197904,
+    "btc_dominance": 57.3303485802096,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:38:03.196066+00:00"
+  },
+  {
+    "id": 3924,
+    "value": 42.6696514197904,
+    "btc_dominance": 57.3303485802096,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:40:08.038595+00:00"
+  },
+  {
+    "id": 3925,
+    "value": 42.6696514197904,
+    "btc_dominance": 57.3303485802096,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:42:05.45644+00:00"
+  },
+  {
+    "id": 3926,
+    "value": 42.67433297654287,
+    "btc_dominance": 57.32566702345713,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:44:04.498111+00:00"
+  },
+  {
+    "id": 3927,
+    "value": 42.67433297654287,
+    "btc_dominance": 57.32566702345713,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:46:03.713341+00:00"
+  },
+  {
+    "id": 3928,
+    "value": 42.67433297654287,
+    "btc_dominance": 57.32566702345713,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:48:05.529558+00:00"
+  },
+  {
+    "id": 3929,
+    "value": 42.67433297654287,
+    "btc_dominance": 57.32566702345713,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:50:07.745946+00:00"
+  },
+  {
+    "id": 3930,
+    "value": 42.67433297654287,
+    "btc_dominance": 57.32566702345713,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:52:05.013741+00:00"
+  },
+  {
+    "id": 3931,
+    "value": 42.66838205787163,
+    "btc_dominance": 57.33161794212837,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:54:04.157034+00:00"
+  },
+  {
+    "id": 3932,
+    "value": 42.66838205787163,
+    "btc_dominance": 57.33161794212837,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:56:03.774307+00:00"
+  },
+  {
+    "id": 3933,
+    "value": 42.66838205787163,
+    "btc_dominance": 57.33161794212837,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T07:58:03.228731+00:00"
+  },
+  {
+    "id": 3934,
+    "value": 42.66838205787163,
+    "btc_dominance": 57.33161794212837,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:02:03.787156+00:00"
+  },
+  {
+    "id": 3935,
+    "value": 42.66787823747919,
+    "btc_dominance": 57.33212176252081,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:04:02.364479+00:00"
+  },
+  {
+    "id": 3936,
+    "value": 42.66787823747919,
+    "btc_dominance": 57.33212176252081,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:06:05.398508+00:00"
+  },
+  {
+    "id": 3937,
+    "value": 42.66787823747919,
+    "btc_dominance": 57.33212176252081,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:08:03.219333+00:00"
+  },
+  {
+    "id": 3938,
+    "value": 42.66787823747919,
+    "btc_dominance": 57.33212176252081,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:10:08.397758+00:00"
+  },
+  {
+    "id": 3939,
+    "value": 42.66787823747919,
+    "btc_dominance": 57.33212176252081,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:12:02.576698+00:00"
+  },
+  {
+    "id": 3940,
+    "value": 42.65229536306714,
+    "btc_dominance": 57.34770463693286,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:14:04.883676+00:00"
+  },
+  {
+    "id": 3941,
+    "value": 42.65229536306714,
+    "btc_dominance": 57.34770463693286,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:16:01.90538+00:00"
+  },
+  {
+    "id": 3942,
+    "value": 42.65229536306714,
+    "btc_dominance": 57.34770463693286,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:18:00.60868+00:00"
+  },
+  {
+    "id": 3943,
+    "value": 42.65229536306714,
+    "btc_dominance": 57.34770463693286,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:20:08.570353+00:00"
+  },
+  {
+    "id": 3944,
+    "value": 42.65229536306714,
+    "btc_dominance": 57.34770463693286,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:22:05.466545+00:00"
+  },
+  {
+    "id": 3945,
+    "value": 42.661140032402436,
+    "btc_dominance": 57.338859967597564,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:24:03.617646+00:00"
+  },
+  {
+    "id": 3946,
+    "value": 42.661140032402436,
+    "btc_dominance": 57.338859967597564,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:26:03.006738+00:00"
+  },
+  {
+    "id": 3947,
+    "value": 42.661140032402436,
+    "btc_dominance": 57.338859967597564,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:28:05.776966+00:00"
+  },
+  {
+    "id": 3948,
+    "value": 42.661140032402436,
+    "btc_dominance": 57.338859967597564,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:30:10.813161+00:00"
+  },
+  {
+    "id": 3949,
+    "value": 42.661140032402436,
+    "btc_dominance": 57.338859967597564,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:32:04.796869+00:00"
+  },
+  {
+    "id": 3950,
+    "value": 42.664955060738876,
+    "btc_dominance": 57.335044939261124,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:34:05.006978+00:00"
+  },
+  {
+    "id": 3951,
+    "value": 42.664955060738876,
+    "btc_dominance": 57.335044939261124,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:36:03.303901+00:00"
+  },
+  {
+    "id": 3952,
+    "value": 42.664955060738876,
+    "btc_dominance": 57.335044939261124,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:38:04.328881+00:00"
+  },
+  {
+    "id": 3953,
+    "value": 42.664955060738876,
+    "btc_dominance": 57.335044939261124,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:40:08.413373+00:00"
+  },
+  {
+    "id": 3954,
+    "value": 42.664955060738876,
+    "btc_dominance": 57.335044939261124,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:42:04.852067+00:00"
+  },
+  {
+    "id": 3955,
+    "value": 42.66741826617641,
+    "btc_dominance": 57.33258173382359,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:44:04.111847+00:00"
+  },
+  {
+    "id": 3956,
+    "value": 42.66741826617641,
+    "btc_dominance": 57.33258173382359,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:46:04.545869+00:00"
+  },
+  {
+    "id": 3957,
+    "value": 42.66741826617641,
+    "btc_dominance": 57.33258173382359,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:48:01.000267+00:00"
+  },
+  {
+    "id": 3958,
+    "value": 42.66741826617641,
+    "btc_dominance": 57.33258173382359,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:50:08.121961+00:00"
+  },
+  {
+    "id": 3959,
+    "value": 42.66741826617641,
+    "btc_dominance": 57.33258173382359,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:52:05.430907+00:00"
+  },
+  {
+    "id": 3960,
+    "value": 42.675355953015746,
+    "btc_dominance": 57.324644046984254,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:54:06.093501+00:00"
+  },
+  {
+    "id": 3961,
+    "value": 42.675355953015746,
+    "btc_dominance": 57.324644046984254,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:56:04.404247+00:00"
+  },
+  {
+    "id": 3962,
+    "value": 42.675355953015746,
+    "btc_dominance": 57.324644046984254,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T08:58:04.698378+00:00"
+  },
+  {
+    "id": 3963,
+    "value": 42.675355953015746,
+    "btc_dominance": 57.324644046984254,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:00:06.091398+00:00"
+  },
+  {
+    "id": 3964,
+    "value": 42.675355953015746,
+    "btc_dominance": 57.324644046984254,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:02:03.738469+00:00"
+  },
+  {
+    "id": 3965,
+    "value": 42.68317924162087,
+    "btc_dominance": 57.31682075837913,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:04:02.824736+00:00"
+  },
+  {
+    "id": 3966,
+    "value": 42.68317924162087,
+    "btc_dominance": 57.31682075837913,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:06:03.029058+00:00"
+  },
+  {
+    "id": 3967,
+    "value": 42.68317924162087,
+    "btc_dominance": 57.31682075837913,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:08:02.916895+00:00"
+  },
+  {
+    "id": 3968,
+    "value": 42.68317924162087,
+    "btc_dominance": 57.31682075837913,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:10:09.685421+00:00"
+  },
+  {
+    "id": 3969,
+    "value": 42.68317924162087,
+    "btc_dominance": 57.31682075837913,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:12:05.470575+00:00"
+  },
+  {
+    "id": 3970,
+    "value": 42.693769626793866,
+    "btc_dominance": 57.306230373206134,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:14:01.932554+00:00"
+  },
+  {
+    "id": 3971,
+    "value": 42.693769626793866,
+    "btc_dominance": 57.306230373206134,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:16:05.390256+00:00"
+  },
+  {
+    "id": 3972,
+    "value": 42.693769626793866,
+    "btc_dominance": 57.306230373206134,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:18:04.710184+00:00"
+  },
+  {
+    "id": 3973,
+    "value": 42.693769626793866,
+    "btc_dominance": 57.306230373206134,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:20:08.42369+00:00"
+  },
+  {
+    "id": 3974,
+    "value": 42.693769626793866,
+    "btc_dominance": 57.306230373206134,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:22:04.210165+00:00"
+  },
+  {
+    "id": 3975,
+    "value": 42.68633071512399,
+    "btc_dominance": 57.31366928487601,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:24:04.822659+00:00"
+  },
+  {
+    "id": 3976,
+    "value": 42.68633071512399,
+    "btc_dominance": 57.31366928487601,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:26:04.368191+00:00"
+  },
+  {
+    "id": 3977,
+    "value": 42.68633071512399,
+    "btc_dominance": 57.31366928487601,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:28:03.548791+00:00"
+  },
+  {
+    "id": 3978,
+    "value": 42.68633071512399,
+    "btc_dominance": 57.31366928487601,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:30:10.636962+00:00"
+  },
+  {
+    "id": 3979,
+    "value": 42.68633071512399,
+    "btc_dominance": 57.31366928487601,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:32:04.993749+00:00"
+  },
+  {
+    "id": 3980,
+    "value": 42.685582526353414,
+    "btc_dominance": 57.314417473646586,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:34:03.450338+00:00"
+  },
+  {
+    "id": 3981,
+    "value": 42.685582526353414,
+    "btc_dominance": 57.314417473646586,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:36:04.28515+00:00"
+  },
+  {
+    "id": 3982,
+    "value": 42.685582526353414,
+    "btc_dominance": 57.314417473646586,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:38:03.541813+00:00"
+  },
+  {
+    "id": 3983,
+    "value": 42.685582526353414,
+    "btc_dominance": 57.314417473646586,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:40:08.402983+00:00"
+  },
+  {
+    "id": 3984,
+    "value": 42.685582526353414,
+    "btc_dominance": 57.314417473646586,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:42:04.201162+00:00"
+  },
+  {
+    "id": 3985,
+    "value": 42.6801349464462,
+    "btc_dominance": 57.3198650535538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:44:04.865107+00:00"
+  },
+  {
+    "id": 3986,
+    "value": 42.6801349464462,
+    "btc_dominance": 57.3198650535538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:46:02.94846+00:00"
+  },
+  {
+    "id": 3987,
+    "value": 42.6801349464462,
+    "btc_dominance": 57.3198650535538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:48:03.232182+00:00"
+  },
+  {
+    "id": 3988,
+    "value": 42.6801349464462,
+    "btc_dominance": 57.3198650535538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:50:08.320707+00:00"
+  },
+  {
+    "id": 3989,
+    "value": 42.6801349464462,
+    "btc_dominance": 57.3198650535538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:52:03.901543+00:00"
+  },
+  {
+    "id": 3990,
+    "value": 42.68162624978567,
+    "btc_dominance": 57.31837375021433,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:54:05.409999+00:00"
+  },
+  {
+    "id": 3991,
+    "value": 42.68162624978567,
+    "btc_dominance": 57.31837375021433,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:56:03.459705+00:00"
+  },
+  {
+    "id": 3992,
+    "value": 42.68162624978567,
+    "btc_dominance": 57.31837375021433,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T09:58:05.389111+00:00"
+  },
+  {
+    "id": 3993,
+    "value": 42.68162624978567,
+    "btc_dominance": 57.31837375021433,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:00:30.680554+00:00"
+  },
+  {
+    "id": 3994,
+    "value": 42.68162624978567,
+    "btc_dominance": 57.31837375021433,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:02:04.80362+00:00"
+  },
+  {
+    "id": 3995,
+    "value": 42.672216818752105,
+    "btc_dominance": 57.327783181247895,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:04:03.269965+00:00"
+  },
+  {
+    "id": 3996,
+    "value": 42.672216818752105,
+    "btc_dominance": 57.327783181247895,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:06:04.300662+00:00"
+  },
+  {
+    "id": 3997,
+    "value": 42.672216818752105,
+    "btc_dominance": 57.327783181247895,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:08:04.932208+00:00"
+  },
+  {
+    "id": 3998,
+    "value": 42.672216818752105,
+    "btc_dominance": 57.327783181247895,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:10:08.364055+00:00"
+  },
+  {
+    "id": 3999,
+    "value": 42.672216818752105,
+    "btc_dominance": 57.327783181247895,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:12:03.917868+00:00"
+  },
+  {
+    "id": 4000,
+    "value": 42.67909849286651,
+    "btc_dominance": 57.32090150713349,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:14:00.926452+00:00"
+  },
+  {
+    "id": 4001,
+    "value": 42.67909849286651,
+    "btc_dominance": 57.32090150713349,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:16:03.631598+00:00"
+  },
+  {
+    "id": 4002,
+    "value": 42.67909849286651,
+    "btc_dominance": 57.32090150713349,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:18:00.733833+00:00"
+  },
+  {
+    "id": 4003,
+    "value": 42.67909849286651,
+    "btc_dominance": 57.32090150713349,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:20:07.121351+00:00"
+  },
+  {
+    "id": 4004,
+    "value": 42.67909849286651,
+    "btc_dominance": 57.32090150713349,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:22:03.810863+00:00"
+  },
+  {
+    "id": 4005,
+    "value": 42.6950393771715,
+    "btc_dominance": 57.3049606228285,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:24:03.583013+00:00"
+  },
+  {
+    "id": 4006,
+    "value": 42.6950393771715,
+    "btc_dominance": 57.3049606228285,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:26:04.279308+00:00"
+  },
+  {
+    "id": 4007,
+    "value": 42.6950393771715,
+    "btc_dominance": 57.3049606228285,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:28:03.84+00:00"
+  },
+  {
+    "id": 4008,
+    "value": 42.6950393771715,
+    "btc_dominance": 57.3049606228285,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:30:10.752222+00:00"
+  },
+  {
+    "id": 4009,
+    "value": 42.6950393771715,
+    "btc_dominance": 57.3049606228285,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:32:28.008211+00:00"
+  },
+  {
+    "id": 4010,
+    "value": 42.68846361115202,
+    "btc_dominance": 57.31153638884798,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:34:04.759532+00:00"
+  },
+  {
+    "id": 4011,
+    "value": 42.68846361115202,
+    "btc_dominance": 57.31153638884798,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:36:01.569504+00:00"
+  },
+  {
+    "id": 4012,
+    "value": 42.68846361115202,
+    "btc_dominance": 57.31153638884798,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:38:04.287679+00:00"
+  },
+  {
+    "id": 4013,
+    "value": 42.68846361115202,
+    "btc_dominance": 57.31153638884798,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:40:09.415641+00:00"
+  },
+  {
+    "id": 4014,
+    "value": 42.68846361115202,
+    "btc_dominance": 57.31153638884798,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:42:04.604866+00:00"
+  },
+  {
+    "id": 4015,
+    "value": 42.69080988076747,
+    "btc_dominance": 57.30919011923253,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:44:03.314727+00:00"
+  },
+  {
+    "id": 4016,
+    "value": 42.69080988076747,
+    "btc_dominance": 57.30919011923253,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:46:04.816714+00:00"
+  },
+  {
+    "id": 4017,
+    "value": 42.69080988076747,
+    "btc_dominance": 57.30919011923253,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:48:03.401109+00:00"
+  },
+  {
+    "id": 4018,
+    "value": 42.69080988076747,
+    "btc_dominance": 57.30919011923253,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:50:08.052011+00:00"
+  },
+  {
+    "id": 4019,
+    "value": 42.69080988076747,
+    "btc_dominance": 57.30919011923253,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:52:05.048924+00:00"
+  },
+  {
+    "id": 4020,
+    "value": 42.69159042101306,
+    "btc_dominance": 57.30840957898694,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:54:02.880029+00:00"
+  },
+  {
+    "id": 4021,
+    "value": 42.69159042101306,
+    "btc_dominance": 57.30840957898694,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:56:05.032744+00:00"
+  },
+  {
+    "id": 4022,
+    "value": 42.69159042101306,
+    "btc_dominance": 57.30840957898694,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T10:58:00.924654+00:00"
+  },
+  {
+    "id": 4023,
+    "value": 42.69159042101306,
+    "btc_dominance": 57.30840957898694,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:00:17.277408+00:00"
+  },
+  {
+    "id": 4024,
+    "value": 42.69159042101306,
+    "btc_dominance": 57.30840957898694,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:02:00.915867+00:00"
+  },
+  {
+    "id": 4025,
+    "value": 42.69534238943227,
+    "btc_dominance": 57.30465761056773,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:04:02.635536+00:00"
+  },
+  {
+    "id": 4026,
+    "value": 42.69534238943227,
+    "btc_dominance": 57.30465761056773,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:06:05.172369+00:00"
+  },
+  {
+    "id": 4027,
+    "value": 42.69534238943227,
+    "btc_dominance": 57.30465761056773,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:08:04.086075+00:00"
+  },
+  {
+    "id": 4028,
+    "value": 42.69534238943227,
+    "btc_dominance": 57.30465761056773,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:10:06.958569+00:00"
+  },
+  {
+    "id": 4029,
+    "value": 42.69534238943227,
+    "btc_dominance": 57.30465761056773,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:12:04.037984+00:00"
+  },
+  {
+    "id": 4030,
+    "value": 42.692400496531505,
+    "btc_dominance": 57.307599503468495,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:14:04.20754+00:00"
+  },
+  {
+    "id": 4031,
+    "value": 42.692400496531505,
+    "btc_dominance": 57.307599503468495,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:16:05.417558+00:00"
+  },
+  {
+    "id": 4032,
+    "value": 42.692400496531505,
+    "btc_dominance": 57.307599503468495,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:18:04.000501+00:00"
+  },
+  {
+    "id": 4033,
+    "value": 42.692400496531505,
+    "btc_dominance": 57.307599503468495,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:20:06.84123+00:00"
+  },
+  {
+    "id": 4034,
+    "value": 42.692400496531505,
+    "btc_dominance": 57.307599503468495,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:22:06.000766+00:00"
+  },
+  {
+    "id": 4035,
+    "value": 42.685808002874445,
+    "btc_dominance": 57.314191997125555,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:24:04.346245+00:00"
+  },
+  {
+    "id": 4036,
+    "value": 42.685808002874445,
+    "btc_dominance": 57.314191997125555,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:26:03.893086+00:00"
+  },
+  {
+    "id": 4037,
+    "value": 42.685808002874445,
+    "btc_dominance": 57.314191997125555,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:28:04.546347+00:00"
+  },
+  {
+    "id": 4038,
+    "value": 42.685808002874445,
+    "btc_dominance": 57.314191997125555,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:30:12.22535+00:00"
+  },
+  {
+    "id": 4039,
+    "value": 42.685808002874445,
+    "btc_dominance": 57.314191997125555,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:32:03.301992+00:00"
+  },
+  {
+    "id": 4040,
+    "value": 42.67636784129502,
+    "btc_dominance": 57.32363215870498,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:34:05.428677+00:00"
+  },
+  {
+    "id": 4041,
+    "value": 42.67636784129502,
+    "btc_dominance": 57.32363215870498,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:36:03.968134+00:00"
+  },
+  {
+    "id": 4042,
+    "value": 42.67636784129502,
+    "btc_dominance": 57.32363215870498,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:38:02.234198+00:00"
+  },
+  {
+    "id": 4043,
+    "value": 42.67636784129502,
+    "btc_dominance": 57.32363215870498,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:40:09.599487+00:00"
+  },
+  {
+    "id": 4044,
+    "value": 42.67636784129502,
+    "btc_dominance": 57.32363215870498,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:42:03.956993+00:00"
+  },
+  {
+    "id": 4045,
+    "value": 42.67636784129502,
+    "btc_dominance": 57.32363215870498,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:44:03.925488+00:00"
+  },
+  {
+    "id": 4046,
+    "value": 42.685552882235434,
+    "btc_dominance": 57.314447117764566,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:46:04.587297+00:00"
+  },
+  {
+    "id": 4047,
+    "value": 42.685552882235434,
+    "btc_dominance": 57.314447117764566,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:48:05.284272+00:00"
+  },
+  {
+    "id": 4048,
+    "value": 42.685552882235434,
+    "btc_dominance": 57.314447117764566,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:50:09.924562+00:00"
+  },
+  {
+    "id": 4049,
+    "value": 42.685552882235434,
+    "btc_dominance": 57.314447117764566,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:52:05.138754+00:00"
+  },
+  {
+    "id": 4050,
+    "value": 42.685552882235434,
+    "btc_dominance": 57.314447117764566,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:54:04.108641+00:00"
+  },
+  {
+    "id": 4051,
+    "value": 42.679444070234005,
+    "btc_dominance": 57.320555929765995,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:56:02.660076+00:00"
+  },
+  {
+    "id": 4052,
+    "value": 42.679444070234005,
+    "btc_dominance": 57.320555929765995,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T11:58:03.589832+00:00"
+  },
+  {
+    "id": 4053,
+    "value": 42.679444070234005,
+    "btc_dominance": 57.320555929765995,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:00:33.084542+00:00"
+  },
+  {
+    "id": 4054,
+    "value": 42.679444070234005,
+    "btc_dominance": 57.320555929765995,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:02:01.698194+00:00"
+  },
+  {
+    "id": 4055,
+    "value": 42.679444070234005,
+    "btc_dominance": 57.320555929765995,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:04:04.411321+00:00"
+  },
+  {
+    "id": 4056,
+    "value": 42.6709787300565,
+    "btc_dominance": 57.3290212699435,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:06:05.404878+00:00"
+  },
+  {
+    "id": 4057,
+    "value": 42.6709787300565,
+    "btc_dominance": 57.3290212699435,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:08:04.320991+00:00"
+  },
+  {
+    "id": 4058,
+    "value": 42.6709787300565,
+    "btc_dominance": 57.3290212699435,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:10:09.732428+00:00"
+  },
+  {
+    "id": 4059,
+    "value": 42.6709787300565,
+    "btc_dominance": 57.3290212699435,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:12:04.012614+00:00"
+  },
+  {
+    "id": 4060,
+    "value": 42.6709787300565,
+    "btc_dominance": 57.3290212699435,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:14:03.097247+00:00"
+  },
+  {
+    "id": 4061,
+    "value": 42.67131000469807,
+    "btc_dominance": 57.32868999530193,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:16:04.310388+00:00"
+  },
+  {
+    "id": 4062,
+    "value": 42.67131000469807,
+    "btc_dominance": 57.32868999530193,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:18:02.651733+00:00"
+  },
+  {
+    "id": 4063,
+    "value": 42.67131000469807,
+    "btc_dominance": 57.32868999530193,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:20:08.7084+00:00"
+  },
+  {
+    "id": 4064,
+    "value": 42.67131000469807,
+    "btc_dominance": 57.32868999530193,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:22:04.399477+00:00"
+  },
+  {
+    "id": 4065,
+    "value": 42.67131000469807,
+    "btc_dominance": 57.32868999530193,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:24:04.310397+00:00"
+  },
+  {
+    "id": 4066,
+    "value": 42.657500107875364,
+    "btc_dominance": 57.342499892124636,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:26:05.532895+00:00"
+  },
+  {
+    "id": 4067,
+    "value": 42.657500107875364,
+    "btc_dominance": 57.342499892124636,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:28:03.855942+00:00"
+  },
+  {
+    "id": 4068,
+    "value": 42.657500107875364,
+    "btc_dominance": 57.342499892124636,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:30:22.17836+00:00"
+  },
+  {
+    "id": 4069,
+    "value": 42.657500107875364,
+    "btc_dominance": 57.342499892124636,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:32:05.392713+00:00"
+  },
+  {
+    "id": 4070,
+    "value": 42.657500107875364,
+    "btc_dominance": 57.342499892124636,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:34:03.637541+00:00"
+  },
+  {
+    "id": 4071,
+    "value": 42.651545021677805,
+    "btc_dominance": 57.348454978322195,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:36:04.693095+00:00"
+  },
+  {
+    "id": 4072,
+    "value": 42.651545021677805,
+    "btc_dominance": 57.348454978322195,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:38:03.925757+00:00"
+  },
+  {
+    "id": 4073,
+    "value": 42.651545021677805,
+    "btc_dominance": 57.348454978322195,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:40:09.760007+00:00"
+  },
+  {
+    "id": 4074,
+    "value": 42.651545021677805,
+    "btc_dominance": 57.348454978322195,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:42:04.013048+00:00"
+  },
+  {
+    "id": 4075,
+    "value": 42.651545021677805,
+    "btc_dominance": 57.348454978322195,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:44:05.321269+00:00"
+  },
+  {
+    "id": 4076,
+    "value": 42.644650827157015,
+    "btc_dominance": 57.355349172842985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:46:01.326399+00:00"
+  },
+  {
+    "id": 4077,
+    "value": 42.644650827157015,
+    "btc_dominance": 57.355349172842985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:48:05.539008+00:00"
+  },
+  {
+    "id": 4078,
+    "value": 42.644650827157015,
+    "btc_dominance": 57.355349172842985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:50:08.973557+00:00"
+  },
+  {
+    "id": 4079,
+    "value": 42.644650827157015,
+    "btc_dominance": 57.355349172842985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:52:04.024743+00:00"
+  },
+  {
+    "id": 4080,
+    "value": 42.644650827157015,
+    "btc_dominance": 57.355349172842985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:54:03.896363+00:00"
+  },
+  {
+    "id": 4081,
+    "value": 42.651540061777084,
+    "btc_dominance": 57.348459938222916,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:56:03.522531+00:00"
+  },
+  {
+    "id": 4082,
+    "value": 42.651540061777084,
+    "btc_dominance": 57.348459938222916,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T12:58:05.351923+00:00"
+  },
+  {
+    "id": 4083,
+    "value": 42.651540061777084,
+    "btc_dominance": 57.348459938222916,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:00:27.523483+00:00"
+  },
+  {
+    "id": 4084,
+    "value": 42.651540061777084,
+    "btc_dominance": 57.348459938222916,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:02:04.882727+00:00"
+  },
+  {
+    "id": 4085,
+    "value": 42.651540061777084,
+    "btc_dominance": 57.348459938222916,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:04:03.56027+00:00"
+  },
+  {
+    "id": 4086,
+    "value": 42.660096845225226,
+    "btc_dominance": 57.339903154774774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:06:04.755027+00:00"
+  },
+  {
+    "id": 4087,
+    "value": 42.660096845225226,
+    "btc_dominance": 57.339903154774774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:08:04.592538+00:00"
+  },
+  {
+    "id": 4088,
+    "value": 42.660096845225226,
+    "btc_dominance": 57.339903154774774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:10:09.192527+00:00"
+  },
+  {
+    "id": 4089,
+    "value": 42.660096845225226,
+    "btc_dominance": 57.339903154774774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:12:04.472208+00:00"
+  },
+  {
+    "id": 4090,
+    "value": 42.660096845225226,
+    "btc_dominance": 57.339903154774774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:14:04.316797+00:00"
+  },
+  {
+    "id": 4091,
+    "value": 42.66892068424569,
+    "btc_dominance": 57.33107931575431,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:16:04.033155+00:00"
+  },
+  {
+    "id": 4092,
+    "value": 42.66892068424569,
+    "btc_dominance": 57.33107931575431,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:18:03.548152+00:00"
+  },
+  {
+    "id": 4093,
+    "value": 42.66892068424569,
+    "btc_dominance": 57.33107931575431,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:20:06.27844+00:00"
+  },
+  {
+    "id": 4094,
+    "value": 42.66892068424569,
+    "btc_dominance": 57.33107931575431,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:22:03.23419+00:00"
+  },
+  {
+    "id": 4095,
+    "value": 42.66892068424569,
+    "btc_dominance": 57.33107931575431,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:24:01.171403+00:00"
+  },
+  {
+    "id": 4096,
+    "value": 42.669710064062,
+    "btc_dominance": 57.330289935938,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:26:01.644404+00:00"
+  },
+  {
+    "id": 4097,
+    "value": 42.669710064062,
+    "btc_dominance": 57.330289935938,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:28:03.220252+00:00"
+  },
+  {
+    "id": 4098,
+    "value": 42.669710064062,
+    "btc_dominance": 57.330289935938,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:30:11.841806+00:00"
+  },
+  {
+    "id": 4099,
+    "value": 42.669710064062,
+    "btc_dominance": 57.330289935938,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:32:04.372536+00:00"
+  },
+  {
+    "id": 4100,
+    "value": 42.669710064062,
+    "btc_dominance": 57.330289935938,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:34:04.231386+00:00"
+  },
+  {
+    "id": 4101,
+    "value": 42.6689704886282,
+    "btc_dominance": 57.3310295113718,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:36:04.432277+00:00"
+  },
+  {
+    "id": 4102,
+    "value": 42.6689704886282,
+    "btc_dominance": 57.3310295113718,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:38:04.900914+00:00"
+  },
+  {
+    "id": 4103,
+    "value": 42.6689704886282,
+    "btc_dominance": 57.3310295113718,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:40:08.0768+00:00"
+  },
+  {
+    "id": 4104,
+    "value": 42.6689704886282,
+    "btc_dominance": 57.3310295113718,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:42:04.142221+00:00"
+  },
+  {
+    "id": 4105,
+    "value": 42.6689704886282,
+    "btc_dominance": 57.3310295113718,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:44:04.451882+00:00"
+  },
+  {
+    "id": 4106,
+    "value": 42.66948721606766,
+    "btc_dominance": 57.33051278393234,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:46:03.792732+00:00"
+  },
+  {
+    "id": 4107,
+    "value": 42.66948721606766,
+    "btc_dominance": 57.33051278393234,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:48:03.599776+00:00"
+  },
+  {
+    "id": 4108,
+    "value": 42.66948721606766,
+    "btc_dominance": 57.33051278393234,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:50:06.04463+00:00"
+  },
+  {
+    "id": 4109,
+    "value": 42.66948721606766,
+    "btc_dominance": 57.33051278393234,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:52:03.968821+00:00"
+  },
+  {
+    "id": 4110,
+    "value": 42.66948721606766,
+    "btc_dominance": 57.33051278393234,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:54:03.404187+00:00"
+  },
+  {
+    "id": 4111,
+    "value": 42.68395581164752,
+    "btc_dominance": 57.31604418835248,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:56:04.298143+00:00"
+  },
+  {
+    "id": 4112,
+    "value": 42.68395581164752,
+    "btc_dominance": 57.31604418835248,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T13:58:05.353943+00:00"
+  },
+  {
+    "id": 4113,
+    "value": 42.68395581164752,
+    "btc_dominance": 57.31604418835248,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:00:27.366952+00:00"
+  },
+  {
+    "id": 4114,
+    "value": 42.68395581164752,
+    "btc_dominance": 57.31604418835248,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:02:02.915227+00:00"
+  },
+  {
+    "id": 4115,
+    "value": 42.68395581164752,
+    "btc_dominance": 57.31604418835248,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:04:03.864953+00:00"
+  },
+  {
+    "id": 4116,
+    "value": 42.68279605241173,
+    "btc_dominance": 57.31720394758827,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:06:05.544348+00:00"
+  },
+  {
+    "id": 4117,
+    "value": 42.68279605241173,
+    "btc_dominance": 57.31720394758827,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:08:04.014561+00:00"
+  },
+  {
+    "id": 4118,
+    "value": 42.68279605241173,
+    "btc_dominance": 57.31720394758827,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:10:07.194038+00:00"
+  },
+  {
+    "id": 4119,
+    "value": 42.68279605241173,
+    "btc_dominance": 57.31720394758827,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:12:04.915485+00:00"
+  },
+  {
+    "id": 4120,
+    "value": 42.68279605241173,
+    "btc_dominance": 57.31720394758827,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:14:05.600417+00:00"
+  },
+  {
+    "id": 4121,
+    "value": 42.6852441106568,
+    "btc_dominance": 57.3147558893432,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:16:07.321712+00:00"
+  },
+  {
+    "id": 4122,
+    "value": 42.6852441106568,
+    "btc_dominance": 57.3147558893432,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:18:04.18357+00:00"
+  },
+  {
+    "id": 4123,
+    "value": 42.6852441106568,
+    "btc_dominance": 57.3147558893432,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:20:08.199002+00:00"
+  },
+  {
+    "id": 4124,
+    "value": 42.6852441106568,
+    "btc_dominance": 57.3147558893432,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:22:04.126838+00:00"
+  },
+  {
+    "id": 4125,
+    "value": 42.6852441106568,
+    "btc_dominance": 57.3147558893432,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:24:03.519349+00:00"
+  },
+  {
+    "id": 4126,
+    "value": 42.66876272406677,
+    "btc_dominance": 57.33123727593323,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:26:03.094248+00:00"
+  },
+  {
+    "id": 4127,
+    "value": 42.66876272406677,
+    "btc_dominance": 57.33123727593323,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:28:01.966162+00:00"
+  },
+  {
+    "id": 4128,
+    "value": 42.66876272406677,
+    "btc_dominance": 57.33123727593323,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:30:13.416399+00:00"
+  },
+  {
+    "id": 4129,
+    "value": 42.66876272406677,
+    "btc_dominance": 57.33123727593323,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:32:03.794592+00:00"
+  },
+  {
+    "id": 4130,
+    "value": 42.66876272406677,
+    "btc_dominance": 57.33123727593323,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:34:03.147007+00:00"
+  },
+  {
+    "id": 4131,
+    "value": 42.659348063856015,
+    "btc_dominance": 57.340651936143985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:36:05.319377+00:00"
+  },
+  {
+    "id": 4132,
+    "value": 42.659348063856015,
+    "btc_dominance": 57.340651936143985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:38:02.560482+00:00"
+  },
+  {
+    "id": 4133,
+    "value": 42.659348063856015,
+    "btc_dominance": 57.340651936143985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:40:07.924274+00:00"
+  },
+  {
+    "id": 4134,
+    "value": 42.659348063856015,
+    "btc_dominance": 57.340651936143985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:42:04.920757+00:00"
+  },
+  {
+    "id": 4135,
+    "value": 42.659348063856015,
+    "btc_dominance": 57.340651936143985,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:44:03.505104+00:00"
+  },
+  {
+    "id": 4136,
+    "value": 42.66784940508786,
+    "btc_dominance": 57.33215059491214,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:46:03.444189+00:00"
+  },
+  {
+    "id": 4137,
+    "value": 42.66784940508786,
+    "btc_dominance": 57.33215059491214,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:48:02.766091+00:00"
+  },
+  {
+    "id": 4138,
+    "value": 42.66784940508786,
+    "btc_dominance": 57.33215059491214,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:50:05.914953+00:00"
+  },
+  {
+    "id": 4139,
+    "value": 42.66784940508786,
+    "btc_dominance": 57.33215059491214,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:52:05.513313+00:00"
+  },
+  {
+    "id": 4140,
+    "value": 42.66784940508786,
+    "btc_dominance": 57.33215059491214,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:54:05.172312+00:00"
+  },
+  {
+    "id": 4141,
+    "value": 42.673074638850025,
+    "btc_dominance": 57.326925361149975,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:56:03.066018+00:00"
+  },
+  {
+    "id": 4142,
+    "value": 42.673074638850025,
+    "btc_dominance": 57.326925361149975,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T14:58:01.996185+00:00"
+  },
+  {
+    "id": 4143,
+    "value": 42.673074638850025,
+    "btc_dominance": 57.326925361149975,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:00:25.994816+00:00"
+  },
+  {
+    "id": 4144,
+    "value": 42.673074638850025,
+    "btc_dominance": 57.326925361149975,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:02:03.550078+00:00"
+  },
+  {
+    "id": 4145,
+    "value": 42.673074638850025,
+    "btc_dominance": 57.326925361149975,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:04:02.635314+00:00"
+  },
+  {
+    "id": 4146,
+    "value": 42.67168112604261,
+    "btc_dominance": 57.32831887395739,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:06:03.586913+00:00"
+  },
+  {
+    "id": 4147,
+    "value": 42.67168112604261,
+    "btc_dominance": 57.32831887395739,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:08:04.995836+00:00"
+  },
+  {
+    "id": 4148,
+    "value": 42.67168112604261,
+    "btc_dominance": 57.32831887395739,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:10:06.914458+00:00"
+  },
+  {
+    "id": 4149,
+    "value": 42.67168112604261,
+    "btc_dominance": 57.32831887395739,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:12:03.096011+00:00"
+  },
+  {
+    "id": 4150,
+    "value": 42.67168112604261,
+    "btc_dominance": 57.32831887395739,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:14:04.594052+00:00"
+  },
+  {
+    "id": 4151,
+    "value": 42.667066755865555,
+    "btc_dominance": 57.332933244134445,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:16:04.290367+00:00"
+  },
+  {
+    "id": 4152,
+    "value": 42.667066755865555,
+    "btc_dominance": 57.332933244134445,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:18:04.488675+00:00"
+  },
+  {
+    "id": 4153,
+    "value": 42.667066755865555,
+    "btc_dominance": 57.332933244134445,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:20:08.53495+00:00"
+  },
+  {
+    "id": 4154,
+    "value": 42.667066755865555,
+    "btc_dominance": 57.332933244134445,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:22:05.811303+00:00"
+  },
+  {
+    "id": 4155,
+    "value": 42.667066755865555,
+    "btc_dominance": 57.332933244134445,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:24:03.795527+00:00"
+  },
+  {
+    "id": 4156,
+    "value": 42.65925740939795,
+    "btc_dominance": 57.34074259060205,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:26:04.332992+00:00"
+  },
+  {
+    "id": 4157,
+    "value": 42.65925740939795,
+    "btc_dominance": 57.34074259060205,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:28:03.848075+00:00"
+  },
+  {
+    "id": 4158,
+    "value": 42.65925740939795,
+    "btc_dominance": 57.34074259060205,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:30:12.687003+00:00"
+  },
+  {
+    "id": 4159,
+    "value": 42.65925740939795,
+    "btc_dominance": 57.34074259060205,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:32:05.443469+00:00"
+  },
+  {
+    "id": 4160,
+    "value": 42.65925740939795,
+    "btc_dominance": 57.34074259060205,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:34:03.981095+00:00"
+  },
+  {
+    "id": 4161,
+    "value": 42.655328112489755,
+    "btc_dominance": 57.344671887510245,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:36:02.932682+00:00"
+  },
+  {
+    "id": 4162,
+    "value": 42.655328112489755,
+    "btc_dominance": 57.344671887510245,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:38:03.334717+00:00"
+  },
+  {
+    "id": 4163,
+    "value": 42.655328112489755,
+    "btc_dominance": 57.344671887510245,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:40:08.782455+00:00"
+  },
+  {
+    "id": 4164,
+    "value": 42.655328112489755,
+    "btc_dominance": 57.344671887510245,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:42:04.604421+00:00"
+  },
+  {
+    "id": 4165,
+    "value": 42.655328112489755,
+    "btc_dominance": 57.344671887510245,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:44:03.534961+00:00"
+  },
+  {
+    "id": 4166,
+    "value": 42.67069391704642,
+    "btc_dominance": 57.32930608295358,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:46:05.0188+00:00"
+  },
+  {
+    "id": 4167,
+    "value": 42.67069391704642,
+    "btc_dominance": 57.32930608295358,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:48:03.713694+00:00"
+  },
+  {
+    "id": 4168,
+    "value": 42.67069391704642,
+    "btc_dominance": 57.32930608295358,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:50:06.514199+00:00"
+  },
+  {
+    "id": 4169,
+    "value": 42.67069391704642,
+    "btc_dominance": 57.32930608295358,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:52:03.22442+00:00"
+  },
+  {
+    "id": 4170,
+    "value": 42.67069391704642,
+    "btc_dominance": 57.32930608295358,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:54:03.907896+00:00"
+  },
+  {
+    "id": 4171,
+    "value": 42.69206063336796,
+    "btc_dominance": 57.30793936663204,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:56:04.496307+00:00"
+  },
+  {
+    "id": 4172,
+    "value": 42.69206063336796,
+    "btc_dominance": 57.30793936663204,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T15:58:04.239702+00:00"
+  },
+  {
+    "id": 4173,
+    "value": 42.69206063336796,
+    "btc_dominance": 57.30793936663204,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:00:24.550926+00:00"
+  },
+  {
+    "id": 4174,
+    "value": 42.69206063336796,
+    "btc_dominance": 57.30793936663204,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:02:05.723671+00:00"
+  },
+  {
+    "id": 4175,
+    "value": 42.69206063336796,
+    "btc_dominance": 57.30793936663204,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:04:02.849173+00:00"
+  },
+  {
+    "id": 4176,
+    "value": 42.70049751513658,
+    "btc_dominance": 57.29950248486342,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:06:04.852814+00:00"
+  },
+  {
+    "id": 4177,
+    "value": 42.70049751513658,
+    "btc_dominance": 57.29950248486342,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:08:05.393148+00:00"
+  },
+  {
+    "id": 4178,
+    "value": 42.70049751513658,
+    "btc_dominance": 57.29950248486342,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:10:09.867982+00:00"
+  },
+  {
+    "id": 4179,
+    "value": 42.70049751513658,
+    "btc_dominance": 57.29950248486342,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:12:05.07363+00:00"
+  },
+  {
+    "id": 4180,
+    "value": 42.70049751513658,
+    "btc_dominance": 57.29950248486342,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:14:03.619649+00:00"
+  },
+  {
+    "id": 4181,
+    "value": 42.70972160816252,
+    "btc_dominance": 57.29027839183748,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:16:04.916264+00:00"
+  },
+  {
+    "id": 4182,
+    "value": 42.70972160816252,
+    "btc_dominance": 57.29027839183748,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:18:04.658947+00:00"
+  },
+  {
+    "id": 4183,
+    "value": 42.70972160816252,
+    "btc_dominance": 57.29027839183748,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:20:09.67257+00:00"
+  },
+  {
+    "id": 4184,
+    "value": 42.70972160816252,
+    "btc_dominance": 57.29027839183748,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:22:04.151268+00:00"
+  },
+  {
+    "id": 4185,
+    "value": 42.70972160816252,
+    "btc_dominance": 57.29027839183748,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:24:04.518137+00:00"
+  },
+  {
+    "id": 4186,
+    "value": 42.709984095471995,
+    "btc_dominance": 57.290015904528005,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:26:04.930356+00:00"
+  },
+  {
+    "id": 4187,
+    "value": 42.709984095471995,
+    "btc_dominance": 57.290015904528005,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:28:06.470264+00:00"
+  },
+  {
+    "id": 4188,
+    "value": 42.709984095471995,
+    "btc_dominance": 57.290015904528005,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:30:22.827198+00:00"
+  },
+  {
+    "id": 4189,
+    "value": 42.709984095471995,
+    "btc_dominance": 57.290015904528005,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:32:04.590486+00:00"
+  },
+  {
+    "id": 4190,
+    "value": 42.709984095471995,
+    "btc_dominance": 57.290015904528005,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:34:01.945283+00:00"
+  },
+  {
+    "id": 4191,
+    "value": 42.706252349075214,
+    "btc_dominance": 57.293747650924786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:36:06.72964+00:00"
+  },
+  {
+    "id": 4192,
+    "value": 42.706252349075214,
+    "btc_dominance": 57.293747650924786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:38:03.902353+00:00"
+  },
+  {
+    "id": 4193,
+    "value": 42.706252349075214,
+    "btc_dominance": 57.293747650924786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:40:07.117637+00:00"
+  },
+  {
+    "id": 4194,
+    "value": 42.706252349075214,
+    "btc_dominance": 57.293747650924786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:42:05.629156+00:00"
+  },
+  {
+    "id": 4195,
+    "value": 42.706252349075214,
+    "btc_dominance": 57.293747650924786,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:44:04.136472+00:00"
+  },
+  {
+    "id": 4196,
+    "value": 42.70045556112462,
+    "btc_dominance": 57.29954443887538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:46:04.796135+00:00"
+  },
+  {
+    "id": 4197,
+    "value": 42.70045556112462,
+    "btc_dominance": 57.29954443887538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:48:05.097043+00:00"
+  },
+  {
+    "id": 4198,
+    "value": 42.70045556112462,
+    "btc_dominance": 57.29954443887538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:50:08.901065+00:00"
+  },
+  {
+    "id": 4199,
+    "value": 42.70045556112462,
+    "btc_dominance": 57.29954443887538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:52:01.555272+00:00"
+  },
+  {
+    "id": 4200,
+    "value": 42.70045556112462,
+    "btc_dominance": 57.29954443887538,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:54:05.764394+00:00"
+  },
+  {
+    "id": 4201,
+    "value": 42.68331321247767,
+    "btc_dominance": 57.31668678752233,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:56:03.994776+00:00"
+  },
+  {
+    "id": 4202,
+    "value": 42.68331321247767,
+    "btc_dominance": 57.31668678752233,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T16:58:05.440284+00:00"
+  },
+  {
+    "id": 4203,
+    "value": 42.68331321247767,
+    "btc_dominance": 57.31668678752233,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:00:13.732232+00:00"
+  },
+  {
+    "id": 4204,
+    "value": 42.68331321247767,
+    "btc_dominance": 57.31668678752233,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:02:05.390465+00:00"
+  },
+  {
+    "id": 4205,
+    "value": 42.68331321247767,
+    "btc_dominance": 57.31668678752233,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:04:03.993429+00:00"
+  },
+  {
+    "id": 4206,
+    "value": 42.68572585115679,
+    "btc_dominance": 57.31427414884321,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:06:03.606633+00:00"
+  },
+  {
+    "id": 4207,
+    "value": 42.68572585115679,
+    "btc_dominance": 57.31427414884321,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:08:05.608925+00:00"
+  },
+  {
+    "id": 4208,
+    "value": 42.68572585115679,
+    "btc_dominance": 57.31427414884321,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:10:04.325543+00:00"
+  },
+  {
+    "id": 4209,
+    "value": 42.68572585115679,
+    "btc_dominance": 57.31427414884321,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:12:04.625953+00:00"
+  },
+  {
+    "id": 4210,
+    "value": 42.68572585115679,
+    "btc_dominance": 57.31427414884321,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:14:04.057015+00:00"
+  },
+  {
+    "id": 4211,
+    "value": 42.6982949234443,
+    "btc_dominance": 57.3017050765557,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:16:03.614354+00:00"
+  },
+  {
+    "id": 4212,
+    "value": 42.6982949234443,
+    "btc_dominance": 57.3017050765557,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:18:03.792863+00:00"
+  },
+  {
+    "id": 4213,
+    "value": 42.6982949234443,
+    "btc_dominance": 57.3017050765557,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:20:07.337997+00:00"
+  },
+  {
+    "id": 4214,
+    "value": 42.6982949234443,
+    "btc_dominance": 57.3017050765557,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:22:05.047627+00:00"
+  },
+  {
+    "id": 4215,
+    "value": 42.6982949234443,
+    "btc_dominance": 57.3017050765557,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:24:04.1667+00:00"
+  },
+  {
+    "id": 4216,
+    "value": 42.69073681897183,
+    "btc_dominance": 57.30926318102817,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:26:05.018902+00:00"
+  },
+  {
+    "id": 4217,
+    "value": 42.69073681897183,
+    "btc_dominance": 57.30926318102817,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:28:05.369906+00:00"
+  },
+  {
+    "id": 4218,
+    "value": 42.69073681897183,
+    "btc_dominance": 57.30926318102817,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:30:24.613077+00:00"
+  },
+  {
+    "id": 4219,
+    "value": 42.69073681897183,
+    "btc_dominance": 57.30926318102817,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:32:04.784548+00:00"
+  },
+  {
+    "id": 4220,
+    "value": 42.69073681897183,
+    "btc_dominance": 57.30926318102817,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:34:05.781606+00:00"
+  },
+  {
+    "id": 4221,
+    "value": 42.687045809939896,
+    "btc_dominance": 57.312954190060104,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:36:03.484707+00:00"
+  },
+  {
+    "id": 4222,
+    "value": 42.687045809939896,
+    "btc_dominance": 57.312954190060104,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:38:05.497609+00:00"
+  },
+  {
+    "id": 4223,
+    "value": 42.687045809939896,
+    "btc_dominance": 57.312954190060104,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:40:08.699895+00:00"
+  },
+  {
+    "id": 4224,
+    "value": 42.687045809939896,
+    "btc_dominance": 57.312954190060104,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:42:05.381134+00:00"
+  },
+  {
+    "id": 4225,
+    "value": 42.687045809939896,
+    "btc_dominance": 57.312954190060104,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:44:04.246383+00:00"
+  },
+  {
+    "id": 4226,
+    "value": 42.65039841018587,
+    "btc_dominance": 57.34960158981413,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:46:03.896276+00:00"
+  },
+  {
+    "id": 4227,
+    "value": 42.65039841018587,
+    "btc_dominance": 57.34960158981413,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:48:08.343213+00:00"
+  },
+  {
+    "id": 4228,
+    "value": 42.65039841018587,
+    "btc_dominance": 57.34960158981413,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:50:09.300143+00:00"
+  },
+  {
+    "id": 4229,
+    "value": 42.65039841018587,
+    "btc_dominance": 57.34960158981413,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:52:05.418604+00:00"
+  },
+  {
+    "id": 4230,
+    "value": 42.65039841018587,
+    "btc_dominance": 57.34960158981413,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:54:04.800009+00:00"
+  },
+  {
+    "id": 4231,
+    "value": 42.66718896376827,
+    "btc_dominance": 57.33281103623173,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:56:03.530816+00:00"
+  },
+  {
+    "id": 4232,
+    "value": 42.66718896376827,
+    "btc_dominance": 57.33281103623173,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T17:58:03.753707+00:00"
+  },
+  {
+    "id": 4233,
+    "value": 42.66718896376827,
+    "btc_dominance": 57.33281103623173,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:02:05.908928+00:00"
+  },
+  {
+    "id": 4234,
+    "value": 42.66718896376827,
+    "btc_dominance": 57.33281103623173,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:04:03.067273+00:00"
+  },
+  {
+    "id": 4235,
+    "value": 42.6595158397172,
+    "btc_dominance": 57.3404841602828,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:06:05.380446+00:00"
+  },
+  {
+    "id": 4236,
+    "value": 42.6595158397172,
+    "btc_dominance": 57.3404841602828,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:08:05.382134+00:00"
+  },
+  {
+    "id": 4237,
+    "value": 42.6595158397172,
+    "btc_dominance": 57.3404841602828,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:10:07.076016+00:00"
+  },
+  {
+    "id": 4238,
+    "value": 42.6595158397172,
+    "btc_dominance": 57.3404841602828,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:12:03.470669+00:00"
+  },
+  {
+    "id": 4239,
+    "value": 42.6595158397172,
+    "btc_dominance": 57.3404841602828,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:14:02.225815+00:00"
+  },
+  {
+    "id": 4240,
+    "value": 42.65948932481716,
+    "btc_dominance": 57.34051067518284,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:16:04.351889+00:00"
+  },
+  {
+    "id": 4241,
+    "value": 42.65948932481716,
+    "btc_dominance": 57.34051067518284,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:18:05.244991+00:00"
+  },
+  {
+    "id": 4242,
+    "value": 42.65948932481716,
+    "btc_dominance": 57.34051067518284,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:20:10.220327+00:00"
+  },
+  {
+    "id": 4243,
+    "value": 42.65948932481716,
+    "btc_dominance": 57.34051067518284,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:22:01.505284+00:00"
+  },
+  {
+    "id": 4244,
+    "value": 42.65948932481716,
+    "btc_dominance": 57.34051067518284,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:24:04.900704+00:00"
+  },
+  {
+    "id": 4245,
+    "value": 42.694882337028794,
+    "btc_dominance": 57.305117662971206,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:26:03.945665+00:00"
+  },
+  {
+    "id": 4246,
+    "value": 42.694882337028794,
+    "btc_dominance": 57.305117662971206,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:28:01.334549+00:00"
+  },
+  {
+    "id": 4247,
+    "value": 42.694882337028794,
+    "btc_dominance": 57.305117662971206,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:30:10.748594+00:00"
+  },
+  {
+    "id": 4248,
+    "value": 42.694882337028794,
+    "btc_dominance": 57.305117662971206,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:32:02.745365+00:00"
+  },
+  {
+    "id": 4249,
+    "value": 42.694882337028794,
+    "btc_dominance": 57.305117662971206,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:34:04.323376+00:00"
+  },
+  {
+    "id": 4250,
+    "value": 42.69406657799496,
+    "btc_dominance": 57.30593342200504,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:36:05.379851+00:00"
+  },
+  {
+    "id": 4251,
+    "value": 42.69406657799496,
+    "btc_dominance": 57.30593342200504,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:38:04.831525+00:00"
+  },
+  {
+    "id": 4252,
+    "value": 42.69406657799496,
+    "btc_dominance": 57.30593342200504,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:40:08.62557+00:00"
+  },
+  {
+    "id": 4253,
+    "value": 42.69406657799496,
+    "btc_dominance": 57.30593342200504,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:42:03.962269+00:00"
+  },
+  {
+    "id": 4254,
+    "value": 42.69406657799496,
+    "btc_dominance": 57.30593342200504,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:44:04.998476+00:00"
+  },
+  {
+    "id": 4255,
+    "value": 42.69038176376311,
+    "btc_dominance": 57.30961823623689,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:46:03.618188+00:00"
+  },
+  {
+    "id": 4256,
+    "value": 42.69038176376311,
+    "btc_dominance": 57.30961823623689,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:48:05.403467+00:00"
+  },
+  {
+    "id": 4257,
+    "value": 42.69038176376311,
+    "btc_dominance": 57.30961823623689,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:50:07.776696+00:00"
+  },
+  {
+    "id": 4258,
+    "value": 42.69038176376311,
+    "btc_dominance": 57.30961823623689,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:52:03.679734+00:00"
+  },
+  {
+    "id": 4259,
+    "value": 42.69038176376311,
+    "btc_dominance": 57.30961823623689,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:54:03.211324+00:00"
+  },
+  {
+    "id": 4260,
+    "value": 42.691120487344605,
+    "btc_dominance": 57.308879512655395,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:56:05.367619+00:00"
+  },
+  {
+    "id": 4261,
+    "value": 42.691120487344605,
+    "btc_dominance": 57.308879512655395,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T18:58:05.308094+00:00"
+  },
+  {
+    "id": 4262,
+    "value": 42.691120487344605,
+    "btc_dominance": 57.308879512655395,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:00:19.11032+00:00"
+  },
+  {
+    "id": 4263,
+    "value": 42.691120487344605,
+    "btc_dominance": 57.308879512655395,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:02:01.280176+00:00"
+  },
+  {
+    "id": 4264,
+    "value": 42.691120487344605,
+    "btc_dominance": 57.308879512655395,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:04:06.030299+00:00"
+  },
+  {
+    "id": 4265,
+    "value": 42.702145030546944,
+    "btc_dominance": 57.297854969453056,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:06:02.703199+00:00"
+  },
+  {
+    "id": 4266,
+    "value": 42.702145030546944,
+    "btc_dominance": 57.297854969453056,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:08:05.365825+00:00"
+  },
+  {
+    "id": 4267,
+    "value": 42.702145030546944,
+    "btc_dominance": 57.297854969453056,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:10:08.355802+00:00"
+  },
+  {
+    "id": 4268,
+    "value": 42.702145030546944,
+    "btc_dominance": 57.297854969453056,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:12:04.570161+00:00"
+  },
+  {
+    "id": 4269,
+    "value": 42.702145030546944,
+    "btc_dominance": 57.297854969453056,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:14:06.061783+00:00"
+  },
+  {
+    "id": 4270,
+    "value": 42.71133114311695,
+    "btc_dominance": 57.28866885688305,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:16:05.030296+00:00"
+  },
+  {
+    "id": 4271,
+    "value": 42.71133114311695,
+    "btc_dominance": 57.28866885688305,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:18:03.435094+00:00"
+  },
+  {
+    "id": 4272,
+    "value": 42.71133114311695,
+    "btc_dominance": 57.28866885688305,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:20:06.097285+00:00"
+  },
+  {
+    "id": 4273,
+    "value": 42.71133114311695,
+    "btc_dominance": 57.28866885688305,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:22:02.422742+00:00"
+  },
+  {
+    "id": 4274,
+    "value": 42.71133114311695,
+    "btc_dominance": 57.28866885688305,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:24:04.722956+00:00"
+  },
+  {
+    "id": 4275,
+    "value": 42.708262765955936,
+    "btc_dominance": 57.291737234044064,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:26:05.546347+00:00"
+  },
+  {
+    "id": 4276,
+    "value": 42.708262765955936,
+    "btc_dominance": 57.291737234044064,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:28:04.743069+00:00"
+  },
+  {
+    "id": 4277,
+    "value": 42.708262765955936,
+    "btc_dominance": 57.291737234044064,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:30:11.76807+00:00"
+  },
+  {
+    "id": 4278,
+    "value": 42.708262765955936,
+    "btc_dominance": 57.291737234044064,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:32:05.374591+00:00"
+  },
+  {
+    "id": 4279,
+    "value": 42.708262765955936,
+    "btc_dominance": 57.291737234044064,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:34:05.43189+00:00"
+  },
+  {
+    "id": 4280,
+    "value": 42.70623804956578,
+    "btc_dominance": 57.29376195043422,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:36:03.001724+00:00"
+  },
+  {
+    "id": 4281,
+    "value": 42.70623804956578,
+    "btc_dominance": 57.29376195043422,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:38:00.997812+00:00"
+  },
+  {
+    "id": 4282,
+    "value": 42.70623804956578,
+    "btc_dominance": 57.29376195043422,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:40:09.391266+00:00"
+  },
+  {
+    "id": 4283,
+    "value": 42.70623804956578,
+    "btc_dominance": 57.29376195043422,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:42:01.717763+00:00"
+  },
+  {
+    "id": 4284,
+    "value": 42.70623804956578,
+    "btc_dominance": 57.29376195043422,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:44:04.94919+00:00"
+  },
+  {
+    "id": 4285,
+    "value": 42.70279805466264,
+    "btc_dominance": 57.29720194533736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:46:03.334212+00:00"
+  },
+  {
+    "id": 4286,
+    "value": 42.70279805466264,
+    "btc_dominance": 57.29720194533736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:48:05.617972+00:00"
+  },
+  {
+    "id": 4287,
+    "value": 42.70279805466264,
+    "btc_dominance": 57.29720194533736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:50:07.66484+00:00"
+  },
+  {
+    "id": 4288,
+    "value": 42.70279805466264,
+    "btc_dominance": 57.29720194533736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:52:04.463468+00:00"
+  },
+  {
+    "id": 4289,
+    "value": 42.70279805466264,
+    "btc_dominance": 57.29720194533736,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:54:01.665932+00:00"
+  },
+  {
+    "id": 4290,
+    "value": 42.692362443518725,
+    "btc_dominance": 57.307637556481275,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:56:02.992239+00:00"
+  },
+  {
+    "id": 4291,
+    "value": 42.692362443518725,
+    "btc_dominance": 57.307637556481275,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T19:58:01.484638+00:00"
+  },
+  {
+    "id": 4292,
+    "value": 42.692362443518725,
+    "btc_dominance": 57.307637556481275,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:00:36.541598+00:00"
+  },
+  {
+    "id": 4293,
+    "value": 42.692362443518725,
+    "btc_dominance": 57.307637556481275,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:02:03.943329+00:00"
+  },
+  {
+    "id": 4294,
+    "value": 42.692362443518725,
+    "btc_dominance": 57.307637556481275,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:04:04.436189+00:00"
+  },
+  {
+    "id": 4295,
+    "value": 42.71562304627685,
+    "btc_dominance": 57.28437695372315,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:06:04.161464+00:00"
+  },
+  {
+    "id": 4296,
+    "value": 42.71562304627685,
+    "btc_dominance": 57.28437695372315,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:08:04.103374+00:00"
+  },
+  {
+    "id": 4297,
+    "value": 42.71562304627685,
+    "btc_dominance": 57.28437695372315,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:10:12.100953+00:00"
+  },
+  {
+    "id": 4298,
+    "value": 42.71562304627685,
+    "btc_dominance": 57.28437695372315,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:12:04.979307+00:00"
+  },
+  {
+    "id": 4299,
+    "value": 42.71562304627685,
+    "btc_dominance": 57.28437695372315,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:14:03.263417+00:00"
+  },
+  {
+    "id": 4300,
+    "value": 42.71854235971092,
+    "btc_dominance": 57.28145764028908,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:16:03.9297+00:00"
+  },
+  {
+    "id": 4301,
+    "value": 42.71854235971092,
+    "btc_dominance": 57.28145764028908,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:18:03.521867+00:00"
+  },
+  {
+    "id": 4302,
+    "value": 42.71854235971092,
+    "btc_dominance": 57.28145764028908,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:20:09.208311+00:00"
+  },
+  {
+    "id": 4303,
+    "value": 42.71854235971092,
+    "btc_dominance": 57.28145764028908,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:22:03.48532+00:00"
+  },
+  {
+    "id": 4304,
+    "value": 42.71854235971092,
+    "btc_dominance": 57.28145764028908,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:24:05.507623+00:00"
+  },
+  {
+    "id": 4305,
+    "value": 42.70719435778915,
+    "btc_dominance": 57.29280564221085,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:26:04.101771+00:00"
+  },
+  {
+    "id": 4306,
+    "value": 42.70719435778915,
+    "btc_dominance": 57.29280564221085,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:28:04.247819+00:00"
+  },
+  {
+    "id": 4307,
+    "value": 42.70719435778915,
+    "btc_dominance": 57.29280564221085,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:30:12.166608+00:00"
+  },
+  {
+    "id": 4308,
+    "value": 42.70719435778915,
+    "btc_dominance": 57.29280564221085,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:32:04.310282+00:00"
+  },
+  {
+    "id": 4309,
+    "value": 42.70719435778915,
+    "btc_dominance": 57.29280564221085,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:34:03.481589+00:00"
+  },
+  {
+    "id": 4310,
+    "value": 42.69980882416817,
+    "btc_dominance": 57.30019117583183,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:36:04.550206+00:00"
+  },
+  {
+    "id": 4311,
+    "value": 42.69980882416817,
+    "btc_dominance": 57.30019117583183,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:38:03.718744+00:00"
+  },
+  {
+    "id": 4312,
+    "value": 42.69980882416817,
+    "btc_dominance": 57.30019117583183,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:40:08.387203+00:00"
+  },
+  {
+    "id": 4313,
+    "value": 42.69980882416817,
+    "btc_dominance": 57.30019117583183,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:42:03.400718+00:00"
+  },
+  {
+    "id": 4314,
+    "value": 42.69980882416817,
+    "btc_dominance": 57.30019117583183,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:44:04.453671+00:00"
+  },
+  {
+    "id": 4315,
+    "value": 42.697460767609606,
+    "btc_dominance": 57.302539232390394,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:46:01.780882+00:00"
+  },
+  {
+    "id": 4316,
+    "value": 42.697460767609606,
+    "btc_dominance": 57.302539232390394,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:48:04.97755+00:00"
+  },
+  {
+    "id": 4317,
+    "value": 42.697460767609606,
+    "btc_dominance": 57.302539232390394,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:50:09.385828+00:00"
+  },
+  {
+    "id": 4318,
+    "value": 42.697460767609606,
+    "btc_dominance": 57.302539232390394,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:52:03.952877+00:00"
+  },
+  {
+    "id": 4319,
+    "value": 42.697460767609606,
+    "btc_dominance": 57.302539232390394,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:54:05.092406+00:00"
+  },
+  {
+    "id": 4320,
+    "value": 42.70401501819624,
+    "btc_dominance": 57.29598498180376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:56:01.991327+00:00"
+  },
+  {
+    "id": 4321,
+    "value": 42.70401501819624,
+    "btc_dominance": 57.29598498180376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T20:58:01.906158+00:00"
+  },
+  {
+    "id": 4322,
+    "value": 42.70401501819624,
+    "btc_dominance": 57.29598498180376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:00:16.620334+00:00"
+  },
+  {
+    "id": 4323,
+    "value": 42.70401501819624,
+    "btc_dominance": 57.29598498180376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:02:04.862924+00:00"
+  },
+  {
+    "id": 4324,
+    "value": 42.70401501819624,
+    "btc_dominance": 57.29598498180376,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:04:04.187299+00:00"
+  },
+  {
+    "id": 4325,
+    "value": 42.71071631499226,
+    "btc_dominance": 57.28928368500774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:06:05.611564+00:00"
+  },
+  {
+    "id": 4326,
+    "value": 42.71071631499226,
+    "btc_dominance": 57.28928368500774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:08:04.678274+00:00"
+  },
+  {
+    "id": 4327,
+    "value": 42.71071631499226,
+    "btc_dominance": 57.28928368500774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:10:09.849168+00:00"
+  },
+  {
+    "id": 4328,
+    "value": 42.71071631499226,
+    "btc_dominance": 57.28928368500774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:12:05.914025+00:00"
+  },
+  {
+    "id": 4329,
+    "value": 42.71071631499226,
+    "btc_dominance": 57.28928368500774,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:14:04.318759+00:00"
+  },
+  {
+    "id": 4330,
+    "value": 42.707139110288516,
+    "btc_dominance": 57.292860889711484,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:16:05.373235+00:00"
+  },
+  {
+    "id": 4331,
+    "value": 42.707139110288516,
+    "btc_dominance": 57.292860889711484,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:18:04.539721+00:00"
+  },
+  {
+    "id": 4332,
+    "value": 42.707139110288516,
+    "btc_dominance": 57.292860889711484,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:20:09.110149+00:00"
+  },
+  {
+    "id": 4333,
+    "value": 42.707139110288516,
+    "btc_dominance": 57.292860889711484,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:22:02.451647+00:00"
+  },
+  {
+    "id": 4334,
+    "value": 42.707139110288516,
+    "btc_dominance": 57.292860889711484,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:24:04.460757+00:00"
+  },
+  {
+    "id": 4335,
+    "value": 42.6936224761573,
+    "btc_dominance": 57.3063775238427,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:26:04.965601+00:00"
+  },
+  {
+    "id": 4336,
+    "value": 42.6936224761573,
+    "btc_dominance": 57.3063775238427,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:28:05.375365+00:00"
+  },
+  {
+    "id": 4337,
+    "value": 42.6936224761573,
+    "btc_dominance": 57.3063775238427,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:30:10.968559+00:00"
+  },
+  {
+    "id": 4338,
+    "value": 42.6936224761573,
+    "btc_dominance": 57.3063775238427,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:32:04.45909+00:00"
+  },
+  {
+    "id": 4339,
+    "value": 42.6936224761573,
+    "btc_dominance": 57.3063775238427,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:34:05.581423+00:00"
+  },
+  {
+    "id": 4340,
+    "value": 42.688979311877574,
+    "btc_dominance": 57.311020688122426,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:36:05.007777+00:00"
+  },
+  {
+    "id": 4341,
+    "value": 42.688979311877574,
+    "btc_dominance": 57.311020688122426,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:38:04.123266+00:00"
+  },
+  {
+    "id": 4342,
+    "value": 42.688979311877574,
+    "btc_dominance": 57.311020688122426,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:40:06.332462+00:00"
+  },
+  {
+    "id": 4343,
+    "value": 42.688979311877574,
+    "btc_dominance": 57.311020688122426,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:42:04.477659+00:00"
+  },
+  {
+    "id": 4344,
+    "value": 42.688979311877574,
+    "btc_dominance": 57.311020688122426,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:44:04.466962+00:00"
+  },
+  {
+    "id": 4345,
+    "value": 42.68076140716845,
+    "btc_dominance": 57.31923859283155,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:46:04.36973+00:00"
+  },
+  {
+    "id": 4346,
+    "value": 42.68076140716845,
+    "btc_dominance": 57.31923859283155,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:48:03.906463+00:00"
+  },
+  {
+    "id": 4347,
+    "value": 42.68076140716845,
+    "btc_dominance": 57.31923859283155,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:50:09.072532+00:00"
+  },
+  {
+    "id": 4348,
+    "value": 42.68076140716845,
+    "btc_dominance": 57.31923859283155,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:52:03.961614+00:00"
+  },
+  {
+    "id": 4349,
+    "value": 42.68076140716845,
+    "btc_dominance": 57.31923859283155,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:54:05.515532+00:00"
+  },
+  {
+    "id": 4350,
+    "value": 42.68210632809756,
+    "btc_dominance": 57.31789367190244,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:56:01.697943+00:00"
+  },
+  {
+    "id": 4351,
+    "value": 42.68210632809756,
+    "btc_dominance": 57.31789367190244,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T21:58:02.992321+00:00"
+  },
+  {
+    "id": 4352,
+    "value": 42.68210632809756,
+    "btc_dominance": 57.31789367190244,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:02:04.625635+00:00"
+  },
+  {
+    "id": 4353,
+    "value": 42.68210632809756,
+    "btc_dominance": 57.31789367190244,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:04:04.092257+00:00"
+  },
+  {
+    "id": 4354,
+    "value": 42.677185301191045,
+    "btc_dominance": 57.322814698808955,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:06:04.10065+00:00"
+  },
+  {
+    "id": 4355,
+    "value": 42.677185301191045,
+    "btc_dominance": 57.322814698808955,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:08:04.732946+00:00"
+  },
+  {
+    "id": 4356,
+    "value": 42.677185301191045,
+    "btc_dominance": 57.322814698808955,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:10:08.224654+00:00"
+  },
+  {
+    "id": 4357,
+    "value": 42.677185301191045,
+    "btc_dominance": 57.322814698808955,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:12:04.414144+00:00"
+  },
+  {
+    "id": 4358,
+    "value": 42.677185301191045,
+    "btc_dominance": 57.322814698808955,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:14:04.033148+00:00"
+  },
+  {
+    "id": 4359,
+    "value": 42.664920176685165,
+    "btc_dominance": 57.335079823314835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:16:03.682321+00:00"
+  },
+  {
+    "id": 4360,
+    "value": 42.664920176685165,
+    "btc_dominance": 57.335079823314835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:18:03.825016+00:00"
+  },
+  {
+    "id": 4361,
+    "value": 42.664920176685165,
+    "btc_dominance": 57.335079823314835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:20:07.944572+00:00"
+  },
+  {
+    "id": 4362,
+    "value": 42.664920176685165,
+    "btc_dominance": 57.335079823314835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:22:03.718936+00:00"
+  },
+  {
+    "id": 4363,
+    "value": 42.664920176685165,
+    "btc_dominance": 57.335079823314835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:24:05.38814+00:00"
+  },
+  {
+    "id": 4364,
+    "value": 42.662477338189206,
+    "btc_dominance": 57.337522661810794,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:26:04.609734+00:00"
+  },
+  {
+    "id": 4365,
+    "value": 42.662477338189206,
+    "btc_dominance": 57.337522661810794,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:28:05.3277+00:00"
+  },
+  {
+    "id": 4366,
+    "value": 42.662477338189206,
+    "btc_dominance": 57.337522661810794,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:30:11.837612+00:00"
+  },
+  {
+    "id": 4367,
+    "value": 42.662477338189206,
+    "btc_dominance": 57.337522661810794,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:32:04.011369+00:00"
+  },
+  {
+    "id": 4368,
+    "value": 42.662477338189206,
+    "btc_dominance": 57.337522661810794,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:34:05.578963+00:00"
+  },
+  {
+    "id": 4369,
+    "value": 42.65645094113819,
+    "btc_dominance": 57.34354905886181,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:36:03.969204+00:00"
+  },
+  {
+    "id": 4370,
+    "value": 42.65645094113819,
+    "btc_dominance": 57.34354905886181,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:38:05.025753+00:00"
+  },
+  {
+    "id": 4371,
+    "value": 42.65645094113819,
+    "btc_dominance": 57.34354905886181,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:40:08.400303+00:00"
+  },
+  {
+    "id": 4372,
+    "value": 42.65645094113819,
+    "btc_dominance": 57.34354905886181,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:42:03.725456+00:00"
+  },
+  {
+    "id": 4373,
+    "value": 42.65645094113819,
+    "btc_dominance": 57.34354905886181,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:44:05.699625+00:00"
+  },
+  {
+    "id": 4374,
+    "value": 42.66489813005205,
+    "btc_dominance": 57.33510186994795,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:46:05.839454+00:00"
+  },
+  {
+    "id": 4375,
+    "value": 42.66489813005205,
+    "btc_dominance": 57.33510186994795,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:48:03.160139+00:00"
+  },
+  {
+    "id": 4376,
+    "value": 42.66489813005205,
+    "btc_dominance": 57.33510186994795,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:50:07.909419+00:00"
+  },
+  {
+    "id": 4377,
+    "value": 42.66489813005205,
+    "btc_dominance": 57.33510186994795,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:52:05.363947+00:00"
+  },
+  {
+    "id": 4378,
+    "value": 42.66489813005205,
+    "btc_dominance": 57.33510186994795,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:54:05.357738+00:00"
+  },
+  {
+    "id": 4379,
+    "value": 42.65040823771358,
+    "btc_dominance": 57.34959176228642,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:56:04.704947+00:00"
+  },
+  {
+    "id": 4380,
+    "value": 42.65040823771358,
+    "btc_dominance": 57.34959176228642,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T22:58:01.144577+00:00"
+  },
+  {
+    "id": 4381,
+    "value": 42.65040823771358,
+    "btc_dominance": 57.34959176228642,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:00:19.975194+00:00"
+  },
+  {
+    "id": 4382,
+    "value": 42.65040823771358,
+    "btc_dominance": 57.34959176228642,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:02:03.129802+00:00"
+  },
+  {
+    "id": 4383,
+    "value": 42.65040823771358,
+    "btc_dominance": 57.34959176228642,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:04:04.170292+00:00"
+  },
+  {
+    "id": 4384,
+    "value": 42.66885691003049,
+    "btc_dominance": 57.33114308996951,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:06:04.811488+00:00"
+  },
+  {
+    "id": 4385,
+    "value": 42.66885691003049,
+    "btc_dominance": 57.33114308996951,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:08:03.920322+00:00"
+  },
+  {
+    "id": 4386,
+    "value": 42.66885691003049,
+    "btc_dominance": 57.33114308996951,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:10:09.096333+00:00"
+  },
+  {
+    "id": 4387,
+    "value": 42.66885691003049,
+    "btc_dominance": 57.33114308996951,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:12:05.274941+00:00"
+  },
+  {
+    "id": 4388,
+    "value": 42.66885691003049,
+    "btc_dominance": 57.33114308996951,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:14:04.290601+00:00"
+  },
+  {
+    "id": 4389,
+    "value": 42.69981797224457,
+    "btc_dominance": 57.30018202775543,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:16:04.259187+00:00"
+  },
+  {
+    "id": 4390,
+    "value": 42.69981797224457,
+    "btc_dominance": 57.30018202775543,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:18:04.194277+00:00"
+  },
+  {
+    "id": 4391,
+    "value": 42.69981797224457,
+    "btc_dominance": 57.30018202775543,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:20:21.182822+00:00"
+  },
+  {
+    "id": 4392,
+    "value": 42.69981797224457,
+    "btc_dominance": 57.30018202775543,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:22:05.450797+00:00"
+  },
+  {
+    "id": 4393,
+    "value": 42.69981797224457,
+    "btc_dominance": 57.30018202775543,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:24:04.154921+00:00"
+  },
+  {
+    "id": 4394,
+    "value": 42.67686244259813,
+    "btc_dominance": 57.32313755740187,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:26:03.403789+00:00"
+  },
+  {
+    "id": 4395,
+    "value": 42.67686244259813,
+    "btc_dominance": 57.32313755740187,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:28:05.616475+00:00"
+  },
+  {
+    "id": 4396,
+    "value": 42.67686244259813,
+    "btc_dominance": 57.32313755740187,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:30:11.837966+00:00"
+  },
+  {
+    "id": 4397,
+    "value": 42.67686244259813,
+    "btc_dominance": 57.32313755740187,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:32:03.728388+00:00"
+  },
+  {
+    "id": 4398,
+    "value": 42.67686244259813,
+    "btc_dominance": 57.32313755740187,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:34:05.509138+00:00"
+  },
+  {
+    "id": 4399,
+    "value": 42.677372471253165,
+    "btc_dominance": 57.322627528746835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:36:03.633458+00:00"
+  },
+  {
+    "id": 4400,
+    "value": 42.677372471253165,
+    "btc_dominance": 57.322627528746835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:38:05.630138+00:00"
+  },
+  {
+    "id": 4401,
+    "value": 42.677372471253165,
+    "btc_dominance": 57.322627528746835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:40:08.417085+00:00"
+  },
+  {
+    "id": 4402,
+    "value": 42.677372471253165,
+    "btc_dominance": 57.322627528746835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:42:02.695583+00:00"
+  },
+  {
+    "id": 4403,
+    "value": 42.677372471253165,
+    "btc_dominance": 57.322627528746835,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:44:05.417684+00:00"
+  },
+  {
+    "id": 4404,
+    "value": 42.67117662566219,
+    "btc_dominance": 57.32882337433781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:46:01.489739+00:00"
+  },
+  {
+    "id": 4405,
+    "value": 42.67117662566219,
+    "btc_dominance": 57.32882337433781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:48:04.918099+00:00"
+  },
+  {
+    "id": 4406,
+    "value": 42.67117662566219,
+    "btc_dominance": 57.32882337433781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:50:08.630027+00:00"
+  },
+  {
+    "id": 4407,
+    "value": 42.67117662566219,
+    "btc_dominance": 57.32882337433781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:52:03.728962+00:00"
+  },
+  {
+    "id": 4408,
+    "value": 42.67117662566219,
+    "btc_dominance": 57.32882337433781,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:54:04.595831+00:00"
+  },
+  {
+    "id": 4409,
+    "value": 42.660934604443014,
+    "btc_dominance": 57.339065395556986,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:56:03.710893+00:00"
+  },
+  {
+    "id": 4410,
+    "value": 42.660934604443014,
+    "btc_dominance": 57.339065395556986,
+    "classification": "Neutral",
+    "created_at": "2026-01-01T23:58:05.612673+00:00"
+  },
+  {
+    "id": 4411,
+    "value": 42.660934604443014,
+    "btc_dominance": 57.339065395556986,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:02:08.385087+00:00"
+  },
+  {
+    "id": 4412,
+    "value": 42.660934604443014,
+    "btc_dominance": 57.339065395556986,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:04:06.558087+00:00"
+  },
+  {
+    "id": 4413,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:06:06.131286+00:00"
+  },
+  {
+    "id": 4414,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:08:04.819278+00:00"
+  },
+  {
+    "id": 4415,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:10:08.713071+00:00"
+  },
+  {
+    "id": 4416,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:12:03.907377+00:00"
+  },
+  {
+    "id": 4417,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:14:03.663421+00:00"
+  },
+  {
+    "id": 4418,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:16:03.487856+00:00"
+  },
+  {
+    "id": 4419,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:18:04.608847+00:00"
+  },
+  {
+    "id": 4420,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:20:09.064629+00:00"
+  },
+  {
+    "id": 4421,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:22:03.775941+00:00"
+  },
+  {
+    "id": 4422,
+    "value": 42.66113683512541,
+    "btc_dominance": 57.33886316487459,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:24:05.608364+00:00"
+  },
+  {
+    "id": 4423,
+    "value": 42.68782985422245,
+    "btc_dominance": 57.31217014577755,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:26:04.971507+00:00"
+  },
+  {
+    "id": 4424,
+    "value": 42.68782985422245,
+    "btc_dominance": 57.31217014577755,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:28:02.517621+00:00"
+  },
+  {
+    "id": 4425,
+    "value": 42.68782985422245,
+    "btc_dominance": 57.31217014577755,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:30:10.865041+00:00"
+  },
+  {
+    "id": 4426,
+    "value": 42.68782985422245,
+    "btc_dominance": 57.31217014577755,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:32:04.45578+00:00"
+  },
+  {
+    "id": 4427,
+    "value": 42.68782985422245,
+    "btc_dominance": 57.31217014577755,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:34:03.844832+00:00"
+  },
+  {
+    "id": 4428,
+    "value": 42.658442064613745,
+    "btc_dominance": 57.341557935386255,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:36:03.997681+00:00"
+  },
+  {
+    "id": 4429,
+    "value": 42.658442064613745,
+    "btc_dominance": 57.341557935386255,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:38:03.073187+00:00"
+  },
+  {
+    "id": 4430,
+    "value": 42.658442064613745,
+    "btc_dominance": 57.341557935386255,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:40:08.630683+00:00"
+  },
+  {
+    "id": 4431,
+    "value": 42.658442064613745,
+    "btc_dominance": 57.341557935386255,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:42:03.946018+00:00"
+  },
+  {
+    "id": 4432,
+    "value": 42.658442064613745,
+    "btc_dominance": 57.341557935386255,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:44:05.708069+00:00"
+  },
+  {
+    "id": 4433,
+    "value": 42.653040268507844,
+    "btc_dominance": 57.346959731492156,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:46:02.016719+00:00"
+  },
+  {
+    "id": 4434,
+    "value": 42.653040268507844,
+    "btc_dominance": 57.346959731492156,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:48:04.295085+00:00"
+  },
+  {
+    "id": 4435,
+    "value": 42.653040268507844,
+    "btc_dominance": 57.346959731492156,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:50:06.001015+00:00"
+  },
+  {
+    "id": 4436,
+    "value": 42.653040268507844,
+    "btc_dominance": 57.346959731492156,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:52:04.064457+00:00"
+  },
+  {
+    "id": 4437,
+    "value": 42.653040268507844,
+    "btc_dominance": 57.346959731492156,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:54:05.109339+00:00"
+  },
+  {
+    "id": 4438,
+    "value": 42.63481540248907,
+    "btc_dominance": 57.36518459751093,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:56:02.634316+00:00"
+  },
+  {
+    "id": 4439,
+    "value": 42.63481540248907,
+    "btc_dominance": 57.36518459751093,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T00:58:02.391475+00:00"
+  },
+  {
+    "id": 4440,
+    "value": 42.63481540248907,
+    "btc_dominance": 57.36518459751093,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:00:16.660158+00:00"
+  },
+  {
+    "id": 4441,
+    "value": 42.63481540248907,
+    "btc_dominance": 57.36518459751093,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:02:01.111413+00:00"
+  },
+  {
+    "id": 4442,
+    "value": 42.63481540248907,
+    "btc_dominance": 57.36518459751093,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:04:05.391194+00:00"
+  },
+  {
+    "id": 4443,
+    "value": 42.64940897275977,
+    "btc_dominance": 57.35059102724023,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:06:03.687614+00:00"
+  },
+  {
+    "id": 4444,
+    "value": 42.64940897275977,
+    "btc_dominance": 57.35059102724023,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:08:04.606409+00:00"
+  },
+  {
+    "id": 4445,
+    "value": 42.64940897275977,
+    "btc_dominance": 57.35059102724023,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:10:09.028448+00:00"
+  },
+  {
+    "id": 4446,
+    "value": 42.64940897275977,
+    "btc_dominance": 57.35059102724023,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:12:05.914409+00:00"
+  },
+  {
+    "id": 4447,
+    "value": 42.64940897275977,
+    "btc_dominance": 57.35059102724023,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:14:03.438828+00:00"
+  },
+  {
+    "id": 4448,
+    "value": 42.6588232923682,
+    "btc_dominance": 57.3411767076318,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:16:04.40862+00:00"
+  },
+  {
+    "id": 4449,
+    "value": 42.6588232923682,
+    "btc_dominance": 57.3411767076318,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:18:05.455078+00:00"
+  },
+  {
+    "id": 4450,
+    "value": 42.6588232923682,
+    "btc_dominance": 57.3411767076318,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:20:09.41908+00:00"
+  },
+  {
+    "id": 4451,
+    "value": 42.6588232923682,
+    "btc_dominance": 57.3411767076318,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:22:02.330884+00:00"
+  },
+  {
+    "id": 4452,
+    "value": 42.6588232923682,
+    "btc_dominance": 57.3411767076318,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:24:04.016686+00:00"
+  },
+  {
+    "id": 4453,
+    "value": 42.66134161305243,
+    "btc_dominance": 57.33865838694757,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:26:03.694409+00:00"
+  },
+  {
+    "id": 4454,
+    "value": 42.66134161305243,
+    "btc_dominance": 57.33865838694757,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:28:05.010139+00:00"
+  },
+  {
+    "id": 4455,
+    "value": 42.66134161305243,
+    "btc_dominance": 57.33865838694757,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:30:12.477765+00:00"
+  },
+  {
+    "id": 4456,
+    "value": 42.66134161305243,
+    "btc_dominance": 57.33865838694757,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:32:04.873014+00:00"
+  },
+  {
+    "id": 4457,
+    "value": 42.66134161305243,
+    "btc_dominance": 57.33865838694757,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:34:04.18932+00:00"
+  },
+  {
+    "id": 4458,
+    "value": 42.664207436779165,
+    "btc_dominance": 57.335792563220835,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:36:04.006782+00:00"
+  },
+  {
+    "id": 4459,
+    "value": 42.664207436779165,
+    "btc_dominance": 57.335792563220835,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:38:05.459618+00:00"
+  },
+  {
+    "id": 4460,
+    "value": 42.664207436779165,
+    "btc_dominance": 57.335792563220835,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:40:08.479234+00:00"
+  },
+  {
+    "id": 4461,
+    "value": 42.664207436779165,
+    "btc_dominance": 57.335792563220835,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:42:04.678588+00:00"
+  },
+  {
+    "id": 4462,
+    "value": 42.664207436779165,
+    "btc_dominance": 57.335792563220835,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:44:04.248771+00:00"
+  },
+  {
+    "id": 4463,
+    "value": 42.664883405356036,
+    "btc_dominance": 57.335116594643964,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:46:04.289019+00:00"
+  },
+  {
+    "id": 4464,
+    "value": 42.664883405356036,
+    "btc_dominance": 57.335116594643964,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:48:04.12816+00:00"
+  },
+  {
+    "id": 4465,
+    "value": 42.664883405356036,
+    "btc_dominance": 57.335116594643964,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:50:08.590762+00:00"
+  },
+  {
+    "id": 4466,
+    "value": 42.664883405356036,
+    "btc_dominance": 57.335116594643964,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:52:04.323547+00:00"
+  },
+  {
+    "id": 4467,
+    "value": 42.664883405356036,
+    "btc_dominance": 57.335116594643964,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:54:04.484041+00:00"
+  },
+  {
+    "id": 4468,
+    "value": 42.667317819632956,
+    "btc_dominance": 57.332682180367044,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:56:03.179872+00:00"
+  },
+  {
+    "id": 4469,
+    "value": 42.667317819632956,
+    "btc_dominance": 57.332682180367044,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T01:58:03.854721+00:00"
+  },
+  {
+    "id": 4470,
+    "value": 42.667317819632956,
+    "btc_dominance": 57.332682180367044,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:00:16.786331+00:00"
+  },
+  {
+    "id": 4471,
+    "value": 42.667317819632956,
+    "btc_dominance": 57.332682180367044,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:02:04.354494+00:00"
+  },
+  {
+    "id": 4472,
+    "value": 42.667317819632956,
+    "btc_dominance": 57.332682180367044,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:04:02.139928+00:00"
+  },
+  {
+    "id": 4473,
+    "value": 42.67223066726976,
+    "btc_dominance": 57.32776933273024,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:06:04.54791+00:00"
+  },
+  {
+    "id": 4474,
+    "value": 42.67223066726976,
+    "btc_dominance": 57.32776933273024,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:08:04.378984+00:00"
+  },
+  {
+    "id": 4475,
+    "value": 42.67223066726976,
+    "btc_dominance": 57.32776933273024,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:10:09.219562+00:00"
+  },
+  {
+    "id": 4476,
+    "value": 42.67223066726976,
+    "btc_dominance": 57.32776933273024,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:12:03.561753+00:00"
+  },
+  {
+    "id": 4477,
+    "value": 42.67223066726976,
+    "btc_dominance": 57.32776933273024,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:14:03.913442+00:00"
+  },
+  {
+    "id": 4478,
+    "value": 42.68615536142423,
+    "btc_dominance": 57.31384463857577,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:16:03.294585+00:00"
+  },
+  {
+    "id": 4479,
+    "value": 42.68615536142423,
+    "btc_dominance": 57.31384463857577,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:18:06.17957+00:00"
+  },
+  {
+    "id": 4480,
+    "value": 42.68615536142423,
+    "btc_dominance": 57.31384463857577,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:20:09.228526+00:00"
+  },
+  {
+    "id": 4481,
+    "value": 42.68615536142423,
+    "btc_dominance": 57.31384463857577,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:22:04.484575+00:00"
+  },
+  {
+    "id": 4482,
+    "value": 42.68615536142423,
+    "btc_dominance": 57.31384463857577,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:24:04.690385+00:00"
+  },
+  {
+    "id": 4483,
+    "value": 42.687036408497605,
+    "btc_dominance": 57.312963591502395,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:26:05.595625+00:00"
+  },
+  {
+    "id": 4484,
+    "value": 42.687036408497605,
+    "btc_dominance": 57.312963591502395,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:28:04.661314+00:00"
+  },
+  {
+    "id": 4485,
+    "value": 42.687036408497605,
+    "btc_dominance": 57.312963591502395,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:30:11.730017+00:00"
+  },
+  {
+    "id": 4486,
+    "value": 42.687036408497605,
+    "btc_dominance": 57.312963591502395,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:32:03.800497+00:00"
+  },
+  {
+    "id": 4487,
+    "value": 42.687036408497605,
+    "btc_dominance": 57.312963591502395,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:34:02.213138+00:00"
+  },
+  {
+    "id": 4488,
+    "value": 42.689572681155674,
+    "btc_dominance": 57.310427318844326,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:36:00.728352+00:00"
+  },
+  {
+    "id": 4489,
+    "value": 42.689572681155674,
+    "btc_dominance": 57.310427318844326,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:38:04.676271+00:00"
+  },
+  {
+    "id": 4490,
+    "value": 42.689572681155674,
+    "btc_dominance": 57.310427318844326,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:40:07.595839+00:00"
+  },
+  {
+    "id": 4491,
+    "value": 42.689572681155674,
+    "btc_dominance": 57.310427318844326,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:42:03.213388+00:00"
+  },
+  {
+    "id": 4492,
+    "value": 42.689572681155674,
+    "btc_dominance": 57.310427318844326,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:44:04.518219+00:00"
+  },
+  {
+    "id": 4493,
+    "value": 42.689564099584146,
+    "btc_dominance": 57.310435900415854,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:46:04.088508+00:00"
+  },
+  {
+    "id": 4494,
+    "value": 42.689564099584146,
+    "btc_dominance": 57.310435900415854,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:48:05.388319+00:00"
+  },
+  {
+    "id": 4495,
+    "value": 42.689564099584146,
+    "btc_dominance": 57.310435900415854,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:50:08.029255+00:00"
+  },
+  {
+    "id": 4496,
+    "value": 42.689564099584146,
+    "btc_dominance": 57.310435900415854,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:52:04.30019+00:00"
+  },
+  {
+    "id": 4497,
+    "value": 42.689564099584146,
+    "btc_dominance": 57.310435900415854,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:54:03.755337+00:00"
+  },
+  {
+    "id": 4498,
+    "value": 42.68601639673217,
+    "btc_dominance": 57.31398360326783,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:56:05.53972+00:00"
+  },
+  {
+    "id": 4499,
+    "value": 42.68601639673217,
+    "btc_dominance": 57.31398360326783,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T02:58:04.350067+00:00"
+  },
+  {
+    "id": 4500,
+    "value": 42.68601639673217,
+    "btc_dominance": 57.31398360326783,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:00:17.769604+00:00"
+  },
+  {
+    "id": 4501,
+    "value": 42.68601639673217,
+    "btc_dominance": 57.31398360326783,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:02:03.298847+00:00"
+  },
+  {
+    "id": 4502,
+    "value": 42.68601639673217,
+    "btc_dominance": 57.31398360326783,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:04:05.61052+00:00"
+  },
+  {
+    "id": 4503,
+    "value": 42.68737304910708,
+    "btc_dominance": 57.31262695089292,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:06:03.32303+00:00"
+  },
+  {
+    "id": 4504,
+    "value": 42.68737304910708,
+    "btc_dominance": 57.31262695089292,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:08:03.38147+00:00"
+  },
+  {
+    "id": 4505,
+    "value": 42.68737304910708,
+    "btc_dominance": 57.31262695089292,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:12:03.769517+00:00"
+  },
+  {
+    "id": 4506,
+    "value": 42.68737304910708,
+    "btc_dominance": 57.31262695089292,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:14:05.395784+00:00"
+  },
+  {
+    "id": 4507,
+    "value": 42.68045739887193,
+    "btc_dominance": 57.31954260112807,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:16:03.817921+00:00"
+  },
+  {
+    "id": 4508,
+    "value": 42.68045739887193,
+    "btc_dominance": 57.31954260112807,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:18:04.115795+00:00"
+  },
+  {
+    "id": 4509,
+    "value": 42.68045739887193,
+    "btc_dominance": 57.31954260112807,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:20:08.7999+00:00"
+  },
+  {
+    "id": 4510,
+    "value": 42.68045739887193,
+    "btc_dominance": 57.31954260112807,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:22:05.55318+00:00"
+  },
+  {
+    "id": 4511,
+    "value": 42.68045739887193,
+    "btc_dominance": 57.31954260112807,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:24:05.782967+00:00"
+  },
+  {
+    "id": 4512,
+    "value": 42.6838560377812,
+    "btc_dominance": 57.3161439622188,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:26:04.955688+00:00"
+  },
+  {
+    "id": 4513,
+    "value": 42.6838560377812,
+    "btc_dominance": 57.3161439622188,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:28:04.178503+00:00"
+  },
+  {
+    "id": 4514,
+    "value": 42.6838560377812,
+    "btc_dominance": 57.3161439622188,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:30:12.56474+00:00"
+  },
+  {
+    "id": 4515,
+    "value": 42.6838560377812,
+    "btc_dominance": 57.3161439622188,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:32:04.755344+00:00"
+  },
+  {
+    "id": 4516,
+    "value": 42.6838560377812,
+    "btc_dominance": 57.3161439622188,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:34:04.016277+00:00"
+  },
+  {
+    "id": 4517,
+    "value": 42.67792087459551,
+    "btc_dominance": 57.32207912540449,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:36:03.718951+00:00"
+  },
+  {
+    "id": 4518,
+    "value": 42.67792087459551,
+    "btc_dominance": 57.32207912540449,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:38:03.410643+00:00"
+  },
+  {
+    "id": 4519,
+    "value": 42.67792087459551,
+    "btc_dominance": 57.32207912540449,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:40:07.646318+00:00"
+  },
+  {
+    "id": 4520,
+    "value": 42.67792087459551,
+    "btc_dominance": 57.32207912540449,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:42:01.582707+00:00"
+  },
+  {
+    "id": 4521,
+    "value": 42.67792087459551,
+    "btc_dominance": 57.32207912540449,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:44:04.409792+00:00"
+  },
+  {
+    "id": 4522,
+    "value": 42.69639342647261,
+    "btc_dominance": 57.30360657352739,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:46:03.623825+00:00"
+  },
+  {
+    "id": 4523,
+    "value": 42.69639342647261,
+    "btc_dominance": 57.30360657352739,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:48:03.821525+00:00"
+  },
+  {
+    "id": 4524,
+    "value": 42.69639342647261,
+    "btc_dominance": 57.30360657352739,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:50:08.420936+00:00"
+  },
+  {
+    "id": 4525,
+    "value": 42.69639342647261,
+    "btc_dominance": 57.30360657352739,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:52:05.07077+00:00"
+  },
+  {
+    "id": 4526,
+    "value": 42.69639342647261,
+    "btc_dominance": 57.30360657352739,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:54:05.338699+00:00"
+  },
+  {
+    "id": 4527,
+    "value": 42.708857244854634,
+    "btc_dominance": 57.291142755145366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:56:03.382365+00:00"
+  },
+  {
+    "id": 4528,
+    "value": 42.708857244854634,
+    "btc_dominance": 57.291142755145366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T03:58:06.711279+00:00"
+  },
+  {
+    "id": 4529,
+    "value": 42.708857244854634,
+    "btc_dominance": 57.291142755145366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:00:30.76258+00:00"
+  },
+  {
+    "id": 4530,
+    "value": 42.708857244854634,
+    "btc_dominance": 57.291142755145366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:02:04.244078+00:00"
+  },
+  {
+    "id": 4531,
+    "value": 42.708857244854634,
+    "btc_dominance": 57.291142755145366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:04:05.408733+00:00"
+  },
+  {
+    "id": 4532,
+    "value": 42.72473703499781,
+    "btc_dominance": 57.27526296500219,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:06:03.660846+00:00"
+  },
+  {
+    "id": 4533,
+    "value": 42.72473703499781,
+    "btc_dominance": 57.27526296500219,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:08:05.128642+00:00"
+  },
+  {
+    "id": 4534,
+    "value": 42.72473703499781,
+    "btc_dominance": 57.27526296500219,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:10:08.131486+00:00"
+  },
+  {
+    "id": 4535,
+    "value": 42.72473703499781,
+    "btc_dominance": 57.27526296500219,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:12:04.315892+00:00"
+  },
+  {
+    "id": 4536,
+    "value": 42.72473703499781,
+    "btc_dominance": 57.27526296500219,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:14:03.849174+00:00"
+  },
+  {
+    "id": 4537,
+    "value": 42.74323064468799,
+    "btc_dominance": 57.25676935531201,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:16:04.261846+00:00"
+  },
+  {
+    "id": 4538,
+    "value": 42.74323064468799,
+    "btc_dominance": 57.25676935531201,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:18:05.359909+00:00"
+  },
+  {
+    "id": 4539,
+    "value": 42.74323064468799,
+    "btc_dominance": 57.25676935531201,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:20:07.887922+00:00"
+  },
+  {
+    "id": 4540,
+    "value": 42.74323064468799,
+    "btc_dominance": 57.25676935531201,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:22:04.299337+00:00"
+  },
+  {
+    "id": 4541,
+    "value": 42.74323064468799,
+    "btc_dominance": 57.25676935531201,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:24:04.81475+00:00"
+  },
+  {
+    "id": 4542,
+    "value": 42.73187162313471,
+    "btc_dominance": 57.26812837686529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:26:05.118974+00:00"
+  },
+  {
+    "id": 4543,
+    "value": 42.73187162313471,
+    "btc_dominance": 57.26812837686529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:28:05.395453+00:00"
+  },
+  {
+    "id": 4544,
+    "value": 42.73187162313471,
+    "btc_dominance": 57.26812837686529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:30:11.356176+00:00"
+  },
+  {
+    "id": 4545,
+    "value": 42.73187162313471,
+    "btc_dominance": 57.26812837686529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:32:04.915004+00:00"
+  },
+  {
+    "id": 4546,
+    "value": 42.73187162313471,
+    "btc_dominance": 57.26812837686529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:34:02.041825+00:00"
+  },
+  {
+    "id": 4547,
+    "value": 42.73109140678679,
+    "btc_dominance": 57.26890859321321,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:36:02.131963+00:00"
+  },
+  {
+    "id": 4548,
+    "value": 42.73109140678679,
+    "btc_dominance": 57.26890859321321,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:38:03.537727+00:00"
+  },
+  {
+    "id": 4549,
+    "value": 42.73109140678679,
+    "btc_dominance": 57.26890859321321,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:40:08.694071+00:00"
+  },
+  {
+    "id": 4550,
+    "value": 42.73109140678679,
+    "btc_dominance": 57.26890859321321,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:42:04.1059+00:00"
+  },
+  {
+    "id": 4551,
+    "value": 42.73109140678679,
+    "btc_dominance": 57.26890859321321,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:44:06.015622+00:00"
+  },
+  {
+    "id": 4552,
+    "value": 42.71779864715178,
+    "btc_dominance": 57.28220135284822,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:46:05.439028+00:00"
+  },
+  {
+    "id": 4553,
+    "value": 42.71779864715178,
+    "btc_dominance": 57.28220135284822,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:48:01.110864+00:00"
+  },
+  {
+    "id": 4554,
+    "value": 42.71779864715178,
+    "btc_dominance": 57.28220135284822,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:50:09.525281+00:00"
+  },
+  {
+    "id": 4555,
+    "value": 42.71779864715178,
+    "btc_dominance": 57.28220135284822,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:52:05.438574+00:00"
+  },
+  {
+    "id": 4556,
+    "value": 42.71779864715178,
+    "btc_dominance": 57.28220135284822,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:54:03.751944+00:00"
+  },
+  {
+    "id": 4557,
+    "value": 42.72624896973938,
+    "btc_dominance": 57.27375103026062,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:56:04.124629+00:00"
+  },
+  {
+    "id": 4558,
+    "value": 42.72624896973938,
+    "btc_dominance": 57.27375103026062,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T04:58:05.494177+00:00"
+  },
+  {
+    "id": 4559,
+    "value": 42.72624896973938,
+    "btc_dominance": 57.27375103026062,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:00:16.007964+00:00"
+  },
+  {
+    "id": 4560,
+    "value": 42.72624896973938,
+    "btc_dominance": 57.27375103026062,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:02:05.164033+00:00"
+  },
+  {
+    "id": 4561,
+    "value": 42.72624896973938,
+    "btc_dominance": 57.27375103026062,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:04:04.681472+00:00"
+  },
+  {
+    "id": 4562,
+    "value": 42.741699724944425,
+    "btc_dominance": 57.258300275055575,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:06:04.212927+00:00"
+  },
+  {
+    "id": 4563,
+    "value": 42.741699724944425,
+    "btc_dominance": 57.258300275055575,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:08:05.410055+00:00"
+  },
+  {
+    "id": 4564,
+    "value": 42.741699724944425,
+    "btc_dominance": 57.258300275055575,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:10:09.589857+00:00"
+  },
+  {
+    "id": 4565,
+    "value": 42.741699724944425,
+    "btc_dominance": 57.258300275055575,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:12:03.484697+00:00"
+  },
+  {
+    "id": 4566,
+    "value": 42.741699724944425,
+    "btc_dominance": 57.258300275055575,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:14:05.386845+00:00"
+  },
+  {
+    "id": 4567,
+    "value": 42.73289843225471,
+    "btc_dominance": 57.26710156774529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:16:03.458496+00:00"
+  },
+  {
+    "id": 4568,
+    "value": 42.73289843225471,
+    "btc_dominance": 57.26710156774529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:18:03.696479+00:00"
+  },
+  {
+    "id": 4569,
+    "value": 42.73289843225471,
+    "btc_dominance": 57.26710156774529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:20:08.571593+00:00"
+  },
+  {
+    "id": 4570,
+    "value": 42.73289843225471,
+    "btc_dominance": 57.26710156774529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:22:04.716288+00:00"
+  },
+  {
+    "id": 4571,
+    "value": 42.73289843225471,
+    "btc_dominance": 57.26710156774529,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:24:04.660505+00:00"
+  },
+  {
+    "id": 4572,
+    "value": 42.73028530788824,
+    "btc_dominance": 57.26971469211176,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:26:04.773398+00:00"
+  },
+  {
+    "id": 4573,
+    "value": 42.73028530788824,
+    "btc_dominance": 57.26971469211176,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:28:03.685814+00:00"
+  },
+  {
+    "id": 4574,
+    "value": 42.73028530788824,
+    "btc_dominance": 57.26971469211176,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:30:15.201566+00:00"
+  },
+  {
+    "id": 4575,
+    "value": 42.73028530788824,
+    "btc_dominance": 57.26971469211176,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:32:03.695964+00:00"
+  },
+  {
+    "id": 4576,
+    "value": 42.73028530788824,
+    "btc_dominance": 57.26971469211176,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:34:11.660871+00:00"
+  },
+  {
+    "id": 4577,
+    "value": 42.73191692491826,
+    "btc_dominance": 57.26808307508174,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:36:03.011099+00:00"
+  },
+  {
+    "id": 4578,
+    "value": 42.73191692491826,
+    "btc_dominance": 57.26808307508174,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:38:05.198472+00:00"
+  },
+  {
+    "id": 4579,
+    "value": 42.73191692491826,
+    "btc_dominance": 57.26808307508174,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:40:08.398239+00:00"
+  },
+  {
+    "id": 4580,
+    "value": 42.73191692491826,
+    "btc_dominance": 57.26808307508174,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:42:01.284963+00:00"
+  },
+  {
+    "id": 4581,
+    "value": 42.73191692491826,
+    "btc_dominance": 57.26808307508174,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:44:05.122146+00:00"
+  },
+  {
+    "id": 4582,
+    "value": 42.72246193391634,
+    "btc_dominance": 57.27753806608366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:46:04.80058+00:00"
+  },
+  {
+    "id": 4583,
+    "value": 42.72246193391634,
+    "btc_dominance": 57.27753806608366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:48:04.404819+00:00"
+  },
+  {
+    "id": 4584,
+    "value": 42.72246193391634,
+    "btc_dominance": 57.27753806608366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:50:09.459728+00:00"
+  },
+  {
+    "id": 4585,
+    "value": 42.72246193391634,
+    "btc_dominance": 57.27753806608366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:52:05.394946+00:00"
+  },
+  {
+    "id": 4586,
+    "value": 42.72246193391634,
+    "btc_dominance": 57.27753806608366,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:54:04.928234+00:00"
+  },
+  {
+    "id": 4587,
+    "value": 42.724901949942684,
+    "btc_dominance": 57.275098050057316,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:56:03.424242+00:00"
+  },
+  {
+    "id": 4588,
+    "value": 42.724901949942684,
+    "btc_dominance": 57.275098050057316,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T05:58:04.00385+00:00"
+  },
+  {
+    "id": 4589,
+    "value": 42.724901949942684,
+    "btc_dominance": 57.275098050057316,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:02:04.888256+00:00"
+  },
+  {
+    "id": 4590,
+    "value": 42.724901949942684,
+    "btc_dominance": 57.275098050057316,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:04:02.923465+00:00"
+  },
+  {
+    "id": 4591,
+    "value": 42.731285596337834,
+    "btc_dominance": 57.268714403662166,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:06:05.598448+00:00"
+  },
+  {
+    "id": 4592,
+    "value": 42.731285596337834,
+    "btc_dominance": 57.268714403662166,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:08:03.635385+00:00"
+  },
+  {
+    "id": 4593,
+    "value": 42.731285596337834,
+    "btc_dominance": 57.268714403662166,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:10:08.148404+00:00"
+  },
+  {
+    "id": 4594,
+    "value": 42.731285596337834,
+    "btc_dominance": 57.268714403662166,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:12:04.811817+00:00"
+  },
+  {
+    "id": 4595,
+    "value": 42.731285596337834,
+    "btc_dominance": 57.268714403662166,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:14:06.055191+00:00"
+  },
+  {
+    "id": 4596,
+    "value": 42.73135845266859,
+    "btc_dominance": 57.26864154733141,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:16:05.00696+00:00"
+  },
+  {
+    "id": 4597,
+    "value": 42.73135845266859,
+    "btc_dominance": 57.26864154733141,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:18:03.570242+00:00"
+  },
+  {
+    "id": 4598,
+    "value": 42.73135845266859,
+    "btc_dominance": 57.26864154733141,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:20:08.093701+00:00"
+  },
+  {
+    "id": 4599,
+    "value": 42.73135845266859,
+    "btc_dominance": 57.26864154733141,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:22:03.575021+00:00"
+  },
+  {
+    "id": 4600,
+    "value": 42.73135845266859,
+    "btc_dominance": 57.26864154733141,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:24:05.442078+00:00"
+  },
+  {
+    "id": 4601,
+    "value": 42.729815646204514,
+    "btc_dominance": 57.270184353795486,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:26:03.510842+00:00"
+  },
+  {
+    "id": 4602,
+    "value": 42.729815646204514,
+    "btc_dominance": 57.270184353795486,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:28:03.783586+00:00"
+  },
+  {
+    "id": 4603,
+    "value": 42.729815646204514,
+    "btc_dominance": 57.270184353795486,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:30:18.814533+00:00"
+  },
+  {
+    "id": 4604,
+    "value": 42.729815646204514,
+    "btc_dominance": 57.270184353795486,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:32:03.148787+00:00"
+  },
+  {
+    "id": 4605,
+    "value": 42.729815646204514,
+    "btc_dominance": 57.270184353795486,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:34:04.593866+00:00"
+  },
+  {
+    "id": 4606,
+    "value": 42.70644711541024,
+    "btc_dominance": 57.29355288458976,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:36:03.691729+00:00"
+  },
+  {
+    "id": 4607,
+    "value": 42.70644711541024,
+    "btc_dominance": 57.29355288458976,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:38:03.537278+00:00"
+  },
+  {
+    "id": 4608,
+    "value": 42.70644711541024,
+    "btc_dominance": 57.29355288458976,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:40:06.550315+00:00"
+  },
+  {
+    "id": 4609,
+    "value": 42.70644711541024,
+    "btc_dominance": 57.29355288458976,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:42:04.852238+00:00"
+  },
+  {
+    "id": 4610,
+    "value": 42.70644711541024,
+    "btc_dominance": 57.29355288458976,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:44:04.117907+00:00"
+  },
+  {
+    "id": 4611,
+    "value": 42.711393409231,
+    "btc_dominance": 57.288606590769,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:46:03.223485+00:00"
+  },
+  {
+    "id": 4612,
+    "value": 42.711393409231,
+    "btc_dominance": 57.288606590769,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:48:04.483264+00:00"
+  },
+  {
+    "id": 4613,
+    "value": 42.711393409231,
+    "btc_dominance": 57.288606590769,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:50:03.020107+00:00"
+  },
+  {
+    "id": 4614,
+    "value": 42.711393409231,
+    "btc_dominance": 57.288606590769,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:52:04.565893+00:00"
+  },
+  {
+    "id": 4615,
+    "value": 42.711393409231,
+    "btc_dominance": 57.288606590769,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:54:04.141966+00:00"
+  },
+  {
+    "id": 4616,
+    "value": 42.71666804336589,
+    "btc_dominance": 57.28333195663411,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:56:05.226572+00:00"
+  },
+  {
+    "id": 4617,
+    "value": 42.71666804336589,
+    "btc_dominance": 57.28333195663411,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T06:58:03.000291+00:00"
+  },
+  {
+    "id": 4618,
+    "value": 42.71666804336589,
+    "btc_dominance": 57.28333195663411,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:00:29.41434+00:00"
+  },
+  {
+    "id": 4619,
+    "value": 42.71666804336589,
+    "btc_dominance": 57.28333195663411,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:02:20.263097+00:00"
+  },
+  {
+    "id": 4620,
+    "value": 42.71666804336589,
+    "btc_dominance": 57.28333195663411,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:04:02.871132+00:00"
+  },
+  {
+    "id": 4621,
+    "value": 42.71591816110738,
+    "btc_dominance": 57.28408183889262,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:06:04.602507+00:00"
+  },
+  {
+    "id": 4622,
+    "value": 42.71591816110738,
+    "btc_dominance": 57.28408183889262,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:08:04.596865+00:00"
+  },
+  {
+    "id": 4623,
+    "value": 42.71591816110738,
+    "btc_dominance": 57.28408183889262,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:10:09.001868+00:00"
+  },
+  {
+    "id": 4624,
+    "value": 42.71591816110738,
+    "btc_dominance": 57.28408183889262,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:12:02.38301+00:00"
+  },
+  {
+    "id": 4625,
+    "value": 42.71591816110738,
+    "btc_dominance": 57.28408183889262,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:14:04.038462+00:00"
+  },
+  {
+    "id": 4626,
+    "value": 42.70720282064085,
+    "btc_dominance": 57.29279717935915,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:16:04.018553+00:00"
+  },
+  {
+    "id": 4627,
+    "value": 42.70720282064085,
+    "btc_dominance": 57.29279717935915,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:18:04.003142+00:00"
+  },
+  {
+    "id": 4628,
+    "value": 42.70720282064085,
+    "btc_dominance": 57.29279717935915,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:20:08.821689+00:00"
+  },
+  {
+    "id": 4629,
+    "value": 42.70720282064085,
+    "btc_dominance": 57.29279717935915,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:22:05.704474+00:00"
+  },
+  {
+    "id": 4630,
+    "value": 42.70720282064085,
+    "btc_dominance": 57.29279717935915,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:24:03.611059+00:00"
+  },
+  {
+    "id": 4631,
+    "value": 42.7024774896439,
+    "btc_dominance": 57.2975225103561,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:26:02.42406+00:00"
+  },
+  {
+    "id": 4632,
+    "value": 42.7024774896439,
+    "btc_dominance": 57.2975225103561,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:28:05.333299+00:00"
+  },
+  {
+    "id": 4633,
+    "value": 42.7024774896439,
+    "btc_dominance": 57.2975225103561,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:30:11.48849+00:00"
+  },
+  {
+    "id": 4634,
+    "value": 42.7024774896439,
+    "btc_dominance": 57.2975225103561,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:32:03.632504+00:00"
+  },
+  {
+    "id": 4635,
+    "value": 42.7024774896439,
+    "btc_dominance": 57.2975225103561,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:34:00.602746+00:00"
+  },
+  {
+    "id": 4636,
+    "value": 42.69256087605903,
+    "btc_dominance": 57.30743912394097,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:36:03.911382+00:00"
+  },
+  {
+    "id": 4637,
+    "value": 42.69256087605903,
+    "btc_dominance": 57.30743912394097,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:38:04.948792+00:00"
+  },
+  {
+    "id": 4638,
+    "value": 42.69256087605903,
+    "btc_dominance": 57.30743912394097,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:40:07.653163+00:00"
+  },
+  {
+    "id": 4639,
+    "value": 42.69256087605903,
+    "btc_dominance": 57.30743912394097,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:42:05.410711+00:00"
+  },
+  {
+    "id": 4640,
+    "value": 42.69256087605903,
+    "btc_dominance": 57.30743912394097,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:44:03.309473+00:00"
+  },
+  {
+    "id": 4641,
+    "value": 42.68045344147925,
+    "btc_dominance": 57.31954655852075,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:46:03.947618+00:00"
+  },
+  {
+    "id": 4642,
+    "value": 42.68045344147925,
+    "btc_dominance": 57.31954655852075,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:48:05.114649+00:00"
+  },
+  {
+    "id": 4643,
+    "value": 42.68045344147925,
+    "btc_dominance": 57.31954655852075,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:50:07.357325+00:00"
+  },
+  {
+    "id": 4644,
+    "value": 42.68045344147925,
+    "btc_dominance": 57.31954655852075,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:52:04.813897+00:00"
+  },
+  {
+    "id": 4645,
+    "value": 42.68045344147925,
+    "btc_dominance": 57.31954655852075,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:54:04.313652+00:00"
+  },
+  {
+    "id": 4646,
+    "value": 42.67777783243785,
+    "btc_dominance": 57.32222216756215,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:56:03.213993+00:00"
+  },
+  {
+    "id": 4647,
+    "value": 42.67777783243785,
+    "btc_dominance": 57.32222216756215,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T07:58:03.925231+00:00"
+  },
+  {
+    "id": 4648,
+    "value": 42.67777783243785,
+    "btc_dominance": 57.32222216756215,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:02:03.912789+00:00"
+  },
+  {
+    "id": 4649,
+    "value": 42.67777783243785,
+    "btc_dominance": 57.32222216756215,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:04:06.014479+00:00"
+  },
+  {
+    "id": 4650,
+    "value": 42.67924819736915,
+    "btc_dominance": 57.32075180263085,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:06:03.572442+00:00"
+  },
+  {
+    "id": 4651,
+    "value": 42.67924819736915,
+    "btc_dominance": 57.32075180263085,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:08:01.249228+00:00"
+  },
+  {
+    "id": 4652,
+    "value": 42.67924819736915,
+    "btc_dominance": 57.32075180263085,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:10:08.688486+00:00"
+  },
+  {
+    "id": 4653,
+    "value": 42.67924819736915,
+    "btc_dominance": 57.32075180263085,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:12:03.531876+00:00"
+  },
+  {
+    "id": 4654,
+    "value": 42.67924819736915,
+    "btc_dominance": 57.32075180263085,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:14:03.837105+00:00"
+  },
+  {
+    "id": 4655,
+    "value": 42.683236190366536,
+    "btc_dominance": 57.316763809633464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:16:03.482354+00:00"
+  },
+  {
+    "id": 4656,
+    "value": 42.683236190366536,
+    "btc_dominance": 57.316763809633464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:18:04.118376+00:00"
+  },
+  {
+    "id": 4657,
+    "value": 42.683236190366536,
+    "btc_dominance": 57.316763809633464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:20:08.803181+00:00"
+  },
+  {
+    "id": 4658,
+    "value": 42.683236190366536,
+    "btc_dominance": 57.316763809633464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:22:03.16464+00:00"
+  },
+  {
+    "id": 4659,
+    "value": 42.683236190366536,
+    "btc_dominance": 57.316763809633464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:24:04.109628+00:00"
+  },
+  {
+    "id": 4660,
+    "value": 42.67237044934515,
+    "btc_dominance": 57.32762955065485,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:26:06.587284+00:00"
+  },
+  {
+    "id": 4661,
+    "value": 42.67237044934515,
+    "btc_dominance": 57.32762955065485,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:28:05.575077+00:00"
+  },
+  {
+    "id": 4662,
+    "value": 42.67237044934515,
+    "btc_dominance": 57.32762955065485,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:30:21.839616+00:00"
+  },
+  {
+    "id": 4663,
+    "value": 42.67237044934515,
+    "btc_dominance": 57.32762955065485,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:32:01.558027+00:00"
+  },
+  {
+    "id": 4664,
+    "value": 42.67237044934515,
+    "btc_dominance": 57.32762955065485,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:34:06.162242+00:00"
+  },
+  {
+    "id": 4665,
+    "value": 42.667192775013206,
+    "btc_dominance": 57.332807224986794,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:36:05.382881+00:00"
+  },
+  {
+    "id": 4666,
+    "value": 42.667192775013206,
+    "btc_dominance": 57.332807224986794,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:38:04.059676+00:00"
+  },
+  {
+    "id": 4667,
+    "value": 42.667192775013206,
+    "btc_dominance": 57.332807224986794,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:40:07.923043+00:00"
+  },
+  {
+    "id": 4668,
+    "value": 42.667192775013206,
+    "btc_dominance": 57.332807224986794,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:42:01.712178+00:00"
+  },
+  {
+    "id": 4669,
+    "value": 42.667192775013206,
+    "btc_dominance": 57.332807224986794,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:44:04.00159+00:00"
+  },
+  {
+    "id": 4670,
+    "value": 42.65783565420087,
+    "btc_dominance": 57.34216434579913,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:46:04.807434+00:00"
+  },
+  {
+    "id": 4671,
+    "value": 42.65783565420087,
+    "btc_dominance": 57.34216434579913,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:48:05.470696+00:00"
+  },
+  {
+    "id": 4672,
+    "value": 42.65783565420087,
+    "btc_dominance": 57.34216434579913,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:50:08.205072+00:00"
+  },
+  {
+    "id": 4673,
+    "value": 42.65783565420087,
+    "btc_dominance": 57.34216434579913,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:52:05.361767+00:00"
+  },
+  {
+    "id": 4674,
+    "value": 42.65783565420087,
+    "btc_dominance": 57.34216434579913,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:54:04.436053+00:00"
+  },
+  {
+    "id": 4675,
+    "value": 42.66539232770358,
+    "btc_dominance": 57.33460767229642,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:56:04.914346+00:00"
+  },
+  {
+    "id": 4676,
+    "value": 42.66539232770358,
+    "btc_dominance": 57.33460767229642,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T08:58:05.093619+00:00"
+  },
+  {
+    "id": 4677,
+    "value": 42.66539232770358,
+    "btc_dominance": 57.33460767229642,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:02:06.607968+00:00"
+  },
+  {
+    "id": 4678,
+    "value": 42.66539232770358,
+    "btc_dominance": 57.33460767229642,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:04:04.733885+00:00"
+  },
+  {
+    "id": 4679,
+    "value": 42.660661162584546,
+    "btc_dominance": 57.339338837415454,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:06:05.406524+00:00"
+  },
+  {
+    "id": 4680,
+    "value": 42.660661162584546,
+    "btc_dominance": 57.339338837415454,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:08:00.984784+00:00"
+  },
+  {
+    "id": 4681,
+    "value": 42.660661162584546,
+    "btc_dominance": 57.339338837415454,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:10:09.052322+00:00"
+  },
+  {
+    "id": 4682,
+    "value": 42.660661162584546,
+    "btc_dominance": 57.339338837415454,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:12:04.170181+00:00"
+  },
+  {
+    "id": 4683,
+    "value": 42.660661162584546,
+    "btc_dominance": 57.339338837415454,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:14:04.17537+00:00"
+  },
+  {
+    "id": 4684,
+    "value": 42.667574169788615,
+    "btc_dominance": 57.332425830211385,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:16:04.598764+00:00"
+  },
+  {
+    "id": 4685,
+    "value": 42.667574169788615,
+    "btc_dominance": 57.332425830211385,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:18:04.006946+00:00"
+  },
+  {
+    "id": 4686,
+    "value": 42.667574169788615,
+    "btc_dominance": 57.332425830211385,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:20:08.211739+00:00"
+  },
+  {
+    "id": 4687,
+    "value": 42.667574169788615,
+    "btc_dominance": 57.332425830211385,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:22:02.272141+00:00"
+  },
+  {
+    "id": 4688,
+    "value": 42.667574169788615,
+    "btc_dominance": 57.332425830211385,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:24:01.831563+00:00"
+  },
+  {
+    "id": 4689,
+    "value": 42.70357343121536,
+    "btc_dominance": 57.29642656878464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:26:05.40801+00:00"
+  },
+  {
+    "id": 4690,
+    "value": 42.70357343121536,
+    "btc_dominance": 57.29642656878464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:28:04.600266+00:00"
+  },
+  {
+    "id": 4691,
+    "value": 42.70357343121536,
+    "btc_dominance": 57.29642656878464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:30:11.430068+00:00"
+  },
+  {
+    "id": 4692,
+    "value": 42.70357343121536,
+    "btc_dominance": 57.29642656878464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:32:05.400132+00:00"
+  },
+  {
+    "id": 4693,
+    "value": 42.70357343121536,
+    "btc_dominance": 57.29642656878464,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:34:04.136944+00:00"
+  },
+  {
+    "id": 4694,
+    "value": 42.702938415581656,
+    "btc_dominance": 57.297061584418344,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:36:05.111737+00:00"
+  },
+  {
+    "id": 4695,
+    "value": 42.702938415581656,
+    "btc_dominance": 57.297061584418344,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:38:03.492157+00:00"
+  },
+  {
+    "id": 4696,
+    "value": 42.702938415581656,
+    "btc_dominance": 57.297061584418344,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:40:08.638606+00:00"
+  },
+  {
+    "id": 4697,
+    "value": 42.702938415581656,
+    "btc_dominance": 57.297061584418344,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:42:05.8862+00:00"
+  },
+  {
+    "id": 4698,
+    "value": 42.702938415581656,
+    "btc_dominance": 57.297061584418344,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:44:05.346341+00:00"
+  },
+  {
+    "id": 4699,
+    "value": 42.71326182819125,
+    "btc_dominance": 57.28673817180875,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:46:03.864192+00:00"
+  },
+  {
+    "id": 4700,
+    "value": 42.71326182819125,
+    "btc_dominance": 57.28673817180875,
+    "classification": "Neutral",
+    "created_at": "2026-01-02T09:48:03.122926+00:00"
+  }
+]

@@ -4,12 +4,13 @@ import { GasPriceCard } from '@/components/GasPriceCard';
 import { NewsSection } from '@/components/NewsSection';
 import { FearGreedWidget } from '@/components/FearGreedWidget';
 import { MarketCycleWidget } from '@/components/MarketCycleWidget';
+import { BitcoinCycleWidget } from '@/components/BitcoinCycleWidget';
 import { MarketStats } from '@/components/MarketStats';
 import { TrendingTokens } from '@/components/TrendingTokens';
 import { Sponsors } from '@/components/Sponsors';
 import { StealthExWidget } from '@/components/StealthExWidget';
 import { MarketStressWidget } from '@/components/MarketStressWidget';
-import { LeveragePanel } from '@/components/LeveragePanel';
+import { LeverageIndexWidget } from '@/components/LeverageIndexWidget';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { SEOHead } from '@/components/SEOHead';
 import { useGasPrices } from '@/hooks/useGasPrices';
@@ -65,38 +66,44 @@ const Index = () => {
             <MarketStats />
           </section>
 
-          {/* 3. Liquidity & Leverage Panel */}
-          <section aria-labelledby="leverage-heading">
-            <h2 id="leverage-heading" className="sr-only">Derivatives Market Data</h2>
-            <LeveragePanel />
-          </section>
-
-          {/* 4. Layout with News and Sidebar */}
-          <div className="grid gap-8 lg:grid-cols-3">
-            <div className="lg:col-span-2 space-y-8">
-              {/* Market Leaders */}
-              <section aria-labelledby="trending-heading">
-                <h2 id="trending-heading" className="sr-only">Trending Cryptocurrencies</h2>
-                <TrendingTokens />
-              </section>
-              
-              {/* News Section */}
-              <section aria-labelledby="news-heading">
-                <h2 id="news-heading" className="sr-only">Latest Crypto News</h2>
-                <NewsSection />
-              </section>
-            </div>
-            
-            {/* Sidebar with widgets */}
-            <aside className="space-y-6" aria-label="Market indicators">
+          {/* 3. Market Indices - 3 Gauges Side by Side */}
+          <section aria-labelledby="indices-heading">
+            <h2 id="indices-heading" className="sr-only">Market Indicators</h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              <LeverageIndexWidget />
               <FearGreedWidget />
               <MarketStressWidget />
-              <MarketCycleWidget />
-              <StealthExWidget />
-            </aside>
-          </div>
+            </div>
+          </section>
 
-          {/* 5. Sponsors Section */}
+          {/* 4. Cycle Widgets - 2 Side by Side */}
+          <section aria-labelledby="cycles-heading">
+            <h2 id="cycles-heading" className="sr-only">Market Cycles</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              <BitcoinCycleWidget />
+              <MarketCycleWidget />
+            </div>
+          </section>
+
+          {/* 5. Market Leaders - Full Width */}
+          <section aria-labelledby="trending-heading">
+            <h2 id="trending-heading" className="sr-only">Trending Cryptocurrencies</h2>
+            <TrendingTokens />
+          </section>
+
+          {/* 6. News Section - Full Width */}
+          <section aria-labelledby="news-heading">
+            <h2 id="news-heading" className="sr-only">Latest Crypto News</h2>
+            <NewsSection />
+          </section>
+
+          {/* 7. StealthEx Sponsor - Full Width */}
+          <section aria-labelledby="exchange-heading">
+            <h2 id="exchange-heading" className="sr-only">Exchange Partner</h2>
+            <StealthExWidget />
+          </section>
+
+          {/* 8. Sponsors Section */}
           <section aria-labelledby="sponsors-heading">
             <h2 id="sponsors-heading" className="sr-only">Our Partners and Sponsors</h2>
             <Sponsors />
@@ -116,3 +123,4 @@ const Index = () => {
 };
 
 export default Index;
+

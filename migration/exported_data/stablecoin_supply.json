@@ -1,0 +1,1514 @@
+[
+  {
+    "id": 862,
+    "created_at": "2026-01-22T00:00:03.25309+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 863,
+    "created_at": "2026-01-22T01:00:06.929979+00:00",
+    "usdt_market_cap": 186765552808.03757,
+    "usdc_market_cap": 74434842934.20276,
+    "total_supply": 261200395742.24033,
+    "change_24h": null
+  },
+  {
+    "id": 864,
+    "created_at": "2026-01-22T02:00:03.148309+00:00",
+    "usdt_market_cap": 186749119095.73114,
+    "usdc_market_cap": 74409085649.54402,
+    "total_supply": 261158204745.27515,
+    "change_24h": -0.016152730873660186
+  },
+  {
+    "id": 865,
+    "created_at": "2026-01-22T03:00:10.983414+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 866,
+    "created_at": "2026-01-22T04:00:04.045594+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 867,
+    "created_at": "2026-01-22T05:00:10.051437+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 868,
+    "created_at": "2026-01-22T06:00:08.881877+00:00",
+    "usdt_market_cap": 186722419671.72696,
+    "usdc_market_cap": 74354617570.87677,
+    "total_supply": 261077037242.60373,
+    "change_24h": null
+  },
+  {
+    "id": 869,
+    "created_at": "2026-01-22T07:00:08.814608+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 870,
+    "created_at": "2026-01-22T08:00:11.344922+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 871,
+    "created_at": "2026-01-22T09:00:14.025555+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 872,
+    "created_at": "2026-01-22T10:00:05.383626+00:00",
+    "usdt_market_cap": 186769724147.75638,
+    "usdc_market_cap": 74298184665.46707,
+    "total_supply": 261067908813.22345,
+    "change_24h": null
+  },
+  {
+    "id": 873,
+    "created_at": "2026-01-22T11:00:13.277151+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 874,
+    "created_at": "2026-01-22T12:00:14.55079+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 875,
+    "created_at": "2026-01-22T13:00:11.724831+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 876,
+    "created_at": "2026-01-22T14:00:12.303584+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 877,
+    "created_at": "2026-01-22T15:00:13.152239+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 878,
+    "created_at": "2026-01-22T16:00:11.968021+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 879,
+    "created_at": "2026-01-22T17:00:14.126145+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 880,
+    "created_at": "2026-01-22T18:00:05.089818+00:00",
+    "usdt_market_cap": 186747508689.8111,
+    "usdc_market_cap": 73615953713.5522,
+    "total_supply": 260363462403.36328,
+    "change_24h": null
+  },
+  {
+    "id": 881,
+    "created_at": "2026-01-22T19:00:11.436354+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 882,
+    "created_at": "2026-01-22T20:00:13.674171+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 883,
+    "created_at": "2026-01-22T21:00:04.717409+00:00",
+    "usdt_market_cap": 186740043806.80753,
+    "usdc_market_cap": 73714231122.44658,
+    "total_supply": 260454274929.2541,
+    "change_24h": null
+  },
+  {
+    "id": 884,
+    "created_at": "2026-01-22T22:00:13.495443+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 885,
+    "created_at": "2026-01-22T23:00:05.828915+00:00",
+    "usdt_market_cap": 186740848874.2378,
+    "usdc_market_cap": 73720805874.89967,
+    "total_supply": 260461654749.13745,
+    "change_24h": null
+  },
+  {
+    "id": 886,
+    "created_at": "2026-01-23T00:00:13.810362+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 887,
+    "created_at": "2026-01-23T01:00:03.471132+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 888,
+    "created_at": "2026-01-23T02:00:04.245852+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 889,
+    "created_at": "2026-01-23T03:00:12.03255+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 890,
+    "created_at": "2026-01-23T04:00:13.744293+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 891,
+    "created_at": "2026-01-23T05:00:10.842695+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 892,
+    "created_at": "2026-01-23T06:00:15.850738+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 893,
+    "created_at": "2026-01-23T07:00:05.04764+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 894,
+    "created_at": "2026-01-23T08:00:14.81075+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 895,
+    "created_at": "2026-01-23T09:00:11.943198+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 896,
+    "created_at": "2026-01-23T10:00:06.505401+00:00",
+    "usdt_market_cap": 186675712885.00546,
+    "usdc_market_cap": 73447981689.09508,
+    "total_supply": 260123694574.10052,
+    "change_24h": null
+  },
+  {
+    "id": 897,
+    "created_at": "2026-01-23T11:00:12.499447+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 898,
+    "created_at": "2026-01-23T12:00:13.185961+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 899,
+    "created_at": "2026-01-23T13:00:15.953106+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 900,
+    "created_at": "2026-01-23T14:00:13.13049+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 901,
+    "created_at": "2026-01-23T15:00:12.898749+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 902,
+    "created_at": "2026-01-23T16:00:14.147616+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 903,
+    "created_at": "2026-01-23T17:00:12.868479+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 904,
+    "created_at": "2026-01-23T18:00:06.011853+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 905,
+    "created_at": "2026-01-23T19:00:10.486957+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 906,
+    "created_at": "2026-01-23T20:00:03.971421+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 907,
+    "created_at": "2026-01-23T21:00:01.280888+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 908,
+    "created_at": "2026-01-23T22:00:03.10246+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 909,
+    "created_at": "2026-01-23T23:00:11.654052+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 910,
+    "created_at": "2026-01-24T00:00:12.489731+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 911,
+    "created_at": "2026-01-24T01:00:15.534779+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 912,
+    "created_at": "2026-01-24T02:00:12.813357+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 913,
+    "created_at": "2026-01-24T03:00:13.062598+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 914,
+    "created_at": "2026-01-24T04:00:13.576419+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 915,
+    "created_at": "2026-01-24T05:00:10.6163+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 916,
+    "created_at": "2026-01-24T06:00:02.687247+00:00",
+    "usdt_market_cap": 186666466198.39557,
+    "usdc_market_cap": 72714219055.1254,
+    "total_supply": 259380685253.52097,
+    "change_24h": null
+  },
+  {
+    "id": 917,
+    "created_at": "2026-01-24T07:00:17.666667+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 918,
+    "created_at": "2026-01-24T08:00:02.82165+00:00",
+    "usdt_market_cap": 186630906472.92508,
+    "usdc_market_cap": 72642903119.80182,
+    "total_supply": 259273809592.7269,
+    "change_24h": null
+  },
+  {
+    "id": 919,
+    "created_at": "2026-01-24T09:00:14.339275+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 920,
+    "created_at": "2026-01-24T10:00:14.926759+00:00",
+    "usdt_market_cap": 186621075669.2594,
+    "usdc_market_cap": 72633247197.7037,
+    "total_supply": 259254322866.9631,
+    "change_24h": null
+  },
+  {
+    "id": 921,
+    "created_at": "2026-01-24T11:00:13.45611+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 922,
+    "created_at": "2026-01-24T12:00:03.292519+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 923,
+    "created_at": "2026-01-24T13:00:06.690512+00:00",
+    "usdt_market_cap": 186618675009.87692,
+    "usdc_market_cap": 72611577946.37952,
+    "total_supply": 259230252956.25644,
+    "change_24h": null
+  },
+  {
+    "id": 924,
+    "created_at": "2026-01-24T14:00:05.5642+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 925,
+    "created_at": "2026-01-24T15:00:13.488629+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 926,
+    "created_at": "2026-01-24T16:00:12.441642+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 927,
+    "created_at": "2026-01-24T17:00:10.713815+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 928,
+    "created_at": "2026-01-24T18:00:13.759046+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 929,
+    "created_at": "2026-01-24T19:00:03.359953+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 930,
+    "created_at": "2026-01-24T20:00:11.936004+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 931,
+    "created_at": "2026-01-24T21:00:10.745733+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 932,
+    "created_at": "2026-01-24T22:00:05.434773+00:00",
+    "usdt_market_cap": 186632174959.69492,
+    "usdc_market_cap": 72507966540.83206,
+    "total_supply": 259140141500.52698,
+    "change_24h": null
+  },
+  {
+    "id": 933,
+    "created_at": "2026-01-24T23:00:11.495843+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 934,
+    "created_at": "2026-01-25T00:00:06.522342+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 935,
+    "created_at": "2026-01-25T01:00:10.050524+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 936,
+    "created_at": "2026-01-25T02:00:15.972833+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 937,
+    "created_at": "2026-01-25T03:00:05.650527+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 938,
+    "created_at": "2026-01-25T04:00:01.69501+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 939,
+    "created_at": "2026-01-25T05:00:06.150784+00:00",
+    "usdt_market_cap": 186633547194.998,
+    "usdc_market_cap": 72499673465.30771,
+    "total_supply": 259133220660.3057,
+    "change_24h": null
+  },
+  {
+    "id": 940,
+    "created_at": "2026-01-25T06:00:14.383358+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 941,
+    "created_at": "2026-01-25T07:00:06.176283+00:00",
+    "usdt_market_cap": 186631581177.82803,
+    "usdc_market_cap": 72496284094.31738,
+    "total_supply": 259127865272.14542,
+    "change_24h": null
+  },
+  {
+    "id": 942,
+    "created_at": "2026-01-25T08:00:05.143271+00:00",
+    "usdt_market_cap": 186628971462.4444,
+    "usdc_market_cap": 72489263797.52788,
+    "total_supply": 259118235259.9723,
+    "change_24h": -0.0037163167160785414
+  },
+  {
+    "id": 943,
+    "created_at": "2026-01-25T09:00:12.628085+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 944,
+    "created_at": "2026-01-25T10:00:13.036268+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 945,
+    "created_at": "2026-01-25T11:00:12.601892+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 946,
+    "created_at": "2026-01-25T12:00:11.962731+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 947,
+    "created_at": "2026-01-25T13:00:06.369792+00:00",
+    "usdt_market_cap": 186623348296.01257,
+    "usdc_market_cap": 72427296058.31349,
+    "total_supply": 259050644354.32605,
+    "change_24h": null
+  },
+  {
+    "id": 948,
+    "created_at": "2026-01-25T14:00:01.133724+00:00",
+    "usdt_market_cap": 186626560443.05087,
+    "usdc_market_cap": 72416019128.58037,
+    "total_supply": 259042579571.63123,
+    "change_24h": -0.003113206961876271
+  },
+  {
+    "id": 949,
+    "created_at": "2026-01-25T15:00:06.274191+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 950,
+    "created_at": "2026-01-25T16:00:09.364539+00:00",
+    "usdt_market_cap": 186647001069.47546,
+    "usdc_market_cap": 72422315800.74687,
+    "total_supply": 259069316870.22235,
+    "change_24h": null
+  },
+  {
+    "id": 951,
+    "created_at": "2026-01-25T17:00:10.204648+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 952,
+    "created_at": "2026-01-25T18:00:09.269773+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 953,
+    "created_at": "2026-01-25T19:00:12.088054+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 954,
+    "created_at": "2026-01-25T20:00:12.829405+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 955,
+    "created_at": "2026-01-25T21:00:11.598681+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 956,
+    "created_at": "2026-01-25T22:00:11.581401+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 957,
+    "created_at": "2026-01-25T23:00:08.146433+00:00",
+    "usdt_market_cap": 186708279525.42224,
+    "usdc_market_cap": 72414697711.52945,
+    "total_supply": 259122977236.9517,
+    "change_24h": null
+  },
+  {
+    "id": 958,
+    "created_at": "2026-01-26T00:00:04.846082+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 959,
+    "created_at": "2026-01-26T01:00:11.239923+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 960,
+    "created_at": "2026-01-26T02:00:02.833873+00:00",
+    "usdt_market_cap": 186662742906.6518,
+    "usdc_market_cap": 72398471359.32033,
+    "total_supply": 259061214265.9721,
+    "change_24h": null
+  },
+  {
+    "id": 961,
+    "created_at": "2026-01-26T03:00:13.288029+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 962,
+    "created_at": "2026-01-26T04:00:03.358946+00:00",
+    "usdt_market_cap": 186635399304.9697,
+    "usdc_market_cap": 72389631660.55157,
+    "total_supply": 259025030965.52127,
+    "change_24h": null
+  },
+  {
+    "id": 963,
+    "created_at": "2026-01-26T05:00:11.147534+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 964,
+    "created_at": "2026-01-26T06:00:10.726801+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 965,
+    "created_at": "2026-01-26T07:00:04.964332+00:00",
+    "usdt_market_cap": 186634105896.84113,
+    "usdc_market_cap": 72443229723.13748,
+    "total_supply": 259077335619.9786,
+    "change_24h": null
+  },
+  {
+    "id": 966,
+    "created_at": "2026-01-26T08:00:09.652806+00:00",
+    "usdt_market_cap": 186658093483.21268,
+    "usdc_market_cap": 72433766960.4898,
+    "total_supply": 259091860443.70248,
+    "change_24h": 0.005606366025464436
+  },
+  {
+    "id": 967,
+    "created_at": "2026-01-26T09:00:00.940056+00:00",
+    "usdt_market_cap": 186668778376.31122,
+    "usdc_market_cap": 72437358745.42133,
+    "total_supply": 259106137121.73254,
+    "change_24h": 0.005510276550413656
+  },
+  {
+    "id": 968,
+    "created_at": "2026-01-26T10:00:12.013585+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 969,
+    "created_at": "2026-01-26T11:00:07.252629+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 970,
+    "created_at": "2026-01-26T12:00:09.135957+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 971,
+    "created_at": "2026-01-26T13:00:11.464798+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 972,
+    "created_at": "2026-01-26T14:00:07.485745+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 973,
+    "created_at": "2026-01-26T15:00:07.316999+00:00",
+    "usdt_market_cap": 186701852951.72385,
+    "usdc_market_cap": 72341203155.87587,
+    "total_supply": 259043056107.59973,
+    "change_24h": null
+  },
+  {
+    "id": 974,
+    "created_at": "2026-01-26T16:00:24.167552+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 975,
+    "created_at": "2026-01-26T17:00:01.950446+00:00",
+    "usdt_market_cap": 186703442388.6578,
+    "usdc_market_cap": 72211979950.75316,
+    "total_supply": 258915422339.41095,
+    "change_24h": null
+  },
+  {
+    "id": 976,
+    "created_at": "2026-01-26T18:00:10.019586+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 977,
+    "created_at": "2026-01-26T19:00:11.121285+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 978,
+    "created_at": "2026-01-26T20:00:11.984216+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 979,
+    "created_at": "2026-01-26T21:00:04.234333+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 980,
+    "created_at": "2026-01-26T22:00:10.192649+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 981,
+    "created_at": "2026-01-26T23:00:09.697255+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 982,
+    "created_at": "2026-01-27T00:00:05.10785+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 983,
+    "created_at": "2026-01-27T01:00:10.563529+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 984,
+    "created_at": "2026-01-27T02:00:04.15453+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 985,
+    "created_at": "2026-01-27T03:00:03.373663+00:00",
+    "usdt_market_cap": 186328787983.2941,
+    "usdc_market_cap": 72048880231.58846,
+    "total_supply": 258377668214.88257,
+    "change_24h": null
+  },
+  {
+    "id": 986,
+    "created_at": "2026-01-27T04:00:04.720974+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 987,
+    "created_at": "2026-01-27T05:00:08.68102+00:00",
+    "usdt_market_cap": 186310240730.63977,
+    "usdc_market_cap": 72059076656.78902,
+    "total_supply": 258369317387.42877,
+    "change_24h": null
+  },
+  {
+    "id": 988,
+    "created_at": "2026-01-27T06:00:06.224042+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 989,
+    "created_at": "2026-01-27T07:00:04.199455+00:00",
+    "usdt_market_cap": 186310644055.31592,
+    "usdc_market_cap": 71949764735.61064,
+    "total_supply": 258260408790.92657,
+    "change_24h": null
+  },
+  {
+    "id": 990,
+    "created_at": "2026-01-27T08:00:06.710892+00:00",
+    "usdt_market_cap": 186312112307.6172,
+    "usdc_market_cap": 71941155569.80824,
+    "total_supply": 258253267877.4254,
+    "change_24h": -0.002765005110380879
+  },
+  {
+    "id": 991,
+    "created_at": "2026-01-27T09:00:13.731431+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 992,
+    "created_at": "2026-01-27T10:00:09.505714+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 993,
+    "created_at": "2026-01-27T11:00:08.301969+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 994,
+    "created_at": "2026-01-27T12:00:11.979401+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 995,
+    "created_at": "2026-01-27T13:00:09.63357+00:00",
+    "usdt_market_cap": 186288275265.1089,
+    "usdc_market_cap": 71846579967.05693,
+    "total_supply": 258134855232.16583,
+    "change_24h": null
+  },
+  {
+    "id": 996,
+    "created_at": "2026-01-27T14:00:06.329633+00:00",
+    "usdt_market_cap": 186297771466.38263,
+    "usdc_market_cap": 71849124407.24554,
+    "total_supply": 258146895873.62817,
+    "change_24h": 0.004664477197979322
+  },
+  {
+    "id": 997,
+    "created_at": "2026-01-27T15:00:11.140293+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 998,
+    "created_at": "2026-01-27T16:00:12.463302+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 999,
+    "created_at": "2026-01-27T17:00:13.503554+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1000,
+    "created_at": "2026-01-27T18:00:08.359473+00:00",
+    "usdt_market_cap": 186330097190.17038,
+    "usdc_market_cap": 71680131749.06932,
+    "total_supply": 258010228939.2397,
+    "change_24h": null
+  },
+  {
+    "id": 1001,
+    "created_at": "2026-01-27T19:00:11.121274+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1002,
+    "created_at": "2026-01-27T20:00:09.263575+00:00",
+    "usdt_market_cap": 186302320600.79425,
+    "usdc_market_cap": 71538687171.84244,
+    "total_supply": 257841007772.6367,
+    "change_24h": null
+  },
+  {
+    "id": 1003,
+    "created_at": "2026-01-27T21:00:11.981959+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1004,
+    "created_at": "2026-01-27T22:00:05.841938+00:00",
+    "usdt_market_cap": 186317500069.6088,
+    "usdc_market_cap": 71545216273.23056,
+    "total_supply": 257862716342.83936,
+    "change_24h": null
+  },
+  {
+    "id": 1005,
+    "created_at": "2026-01-27T23:00:03.217239+00:00",
+    "usdt_market_cap": 186321203299.1777,
+    "usdc_market_cap": 71544575424.32161,
+    "total_supply": 257865778723.49933,
+    "change_24h": 0.0011876011791877583
+  },
+  {
+    "id": 1006,
+    "created_at": "2026-01-28T00:00:05.343255+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1007,
+    "created_at": "2026-01-28T01:00:16.108625+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1008,
+    "created_at": "2026-01-28T02:00:12.567222+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1009,
+    "created_at": "2026-01-28T03:00:14.294511+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1010,
+    "created_at": "2026-01-28T04:00:04.584613+00:00",
+    "usdt_market_cap": 186280629091.10382,
+    "usdc_market_cap": 71600517561.7522,
+    "total_supply": 257881146652.85602,
+    "change_24h": null
+  },
+  {
+    "id": 1011,
+    "created_at": "2026-01-28T05:00:11.603592+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1012,
+    "created_at": "2026-01-28T06:00:03.274288+00:00",
+    "usdt_market_cap": 186282811948.48825,
+    "usdc_market_cap": 71606605002.65332,
+    "total_supply": 257889416951.14157,
+    "change_24h": null
+  },
+  {
+    "id": 1013,
+    "created_at": "2026-01-28T07:00:06.062243+00:00",
+    "usdt_market_cap": 186297701039.94525,
+    "usdc_market_cap": 71591597747.23993,
+    "total_supply": 257889298787.18518,
+    "change_24h": -0.00004581962214167463
+  },
+  {
+    "id": 1014,
+    "created_at": "2026-01-28T08:00:12.709563+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1015,
+    "created_at": "2026-01-28T09:00:13.631515+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1016,
+    "created_at": "2026-01-28T10:00:12.611498+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1017,
+    "created_at": "2026-01-28T11:00:03.927864+00:00",
+    "usdt_market_cap": 186166502476.01807,
+    "usdc_market_cap": 71480314322.60974,
+    "total_supply": 257646816798.6278,
+    "change_24h": null
+  },
+  {
+    "id": 1018,
+    "created_at": "2026-01-28T12:00:12.535934+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1019,
+    "created_at": "2026-01-28T13:00:06.813896+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1020,
+    "created_at": "2026-01-28T14:00:12.944233+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1021,
+    "created_at": "2026-01-28T15:00:10.05077+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1022,
+    "created_at": "2026-01-28T16:00:11.215518+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1023,
+    "created_at": "2026-01-28T17:00:03.244434+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1024,
+    "created_at": "2026-01-28T18:00:13.530918+00:00",
+    "usdt_market_cap": 186199089009.20975,
+    "usdc_market_cap": 71313768416.95126,
+    "total_supply": 257512857426.161,
+    "change_24h": null
+  },
+  {
+    "id": 1025,
+    "created_at": "2026-01-28T19:00:19.660142+00:00",
+    "usdt_market_cap": 186189406384.56668,
+    "usdc_market_cap": 71267880676.59337,
+    "total_supply": 257457287061.16003,
+    "change_24h": -0.021579646762651745
+  },
+  {
+    "id": 1026,
+    "created_at": "2026-01-28T20:00:02.909282+00:00",
+    "usdt_market_cap": 186186178257.59448,
+    "usdc_market_cap": 71307335325.28,
+    "total_supply": 257493513582.87448,
+    "change_24h": 0.014070886137257113
+  },
+  {
+    "id": 1027,
+    "created_at": "2026-01-28T21:00:15.43544+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1028,
+    "created_at": "2026-01-28T22:00:04.017027+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1029,
+    "created_at": "2026-01-28T23:00:10.565932+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1030,
+    "created_at": "2026-01-29T00:00:07.60842+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1031,
+    "created_at": "2026-01-29T01:00:04.377642+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1032,
+    "created_at": "2026-01-29T02:00:08.885889+00:00",
+    "usdt_market_cap": 186075510842.4996,
+    "usdc_market_cap": 71241205563.2564,
+    "total_supply": 257316716405.75598,
+    "change_24h": null
+  },
+  {
+    "id": 1033,
+    "created_at": "2026-01-29T03:00:13.449762+00:00",
+    "usdt_market_cap": 186064189431.8684,
+    "usdc_market_cap": 71240874948.12138,
+    "total_supply": 257305064379.9898,
+    "change_24h": -0.004528281694610366
+  },
+  {
+    "id": 1034,
+    "created_at": "2026-01-29T04:00:09.026993+00:00",
+    "usdt_market_cap": 186050113726.80096,
+    "usdc_market_cap": 71184237931.24603,
+    "total_supply": 257234351658.047,
+    "change_24h": -0.027482056022955323
+  },
+  {
+    "id": 1035,
+    "created_at": "2026-01-29T05:00:06.961529+00:00",
+    "usdt_market_cap": 186067229985.76013,
+    "usdc_market_cap": 71149280296.94135,
+    "total_supply": 257216510282.70148,
+    "change_24h": -0.006935844777542523
+  },
+  {
+    "id": 1036,
+    "created_at": "2026-01-29T06:00:12.532091+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1037,
+    "created_at": "2026-01-29T07:00:08.427626+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1038,
+    "created_at": "2026-01-29T08:00:03.845606+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1039,
+    "created_at": "2026-01-29T09:00:08.729147+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1040,
+    "created_at": "2026-01-29T10:00:06.489909+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1041,
+    "created_at": "2026-01-29T11:00:09.791895+00:00",
+    "usdt_market_cap": 186053940502.64236,
+    "usdc_market_cap": 71072038532.36832,
+    "total_supply": 257125979035.01068,
+    "change_24h": null
+  },
+  {
+    "id": 1042,
+    "created_at": "2026-01-29T12:00:04.145567+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": -100
+  },
+  {
+    "id": 1043,
+    "created_at": "2026-01-29T13:00:11.384551+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1044,
+    "created_at": "2026-01-29T14:00:11.711612+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1045,
+    "created_at": "2026-01-29T15:00:08.463131+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1046,
+    "created_at": "2026-01-29T16:00:07.838366+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1047,
+    "created_at": "2026-01-29T17:00:11.365726+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1048,
+    "created_at": "2026-01-29T18:00:10.7676+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1049,
+    "created_at": "2026-01-29T19:00:01.965367+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  },
+  {
+    "id": 1050,
+    "created_at": "2026-01-29T20:00:10.383442+00:00",
+    "usdt_market_cap": 0,
+    "usdc_market_cap": 0,
+    "total_supply": 0,
+    "change_24h": null
+  }
+]

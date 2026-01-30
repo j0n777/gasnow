@@ -1,0 +1,4136 @@
+[
+  {
+    "id": 938,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T00:00:14.161313+00:00"
+  },
+  {
+    "id": 939,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T01:00:15.61029+00:00"
+  },
+  {
+    "id": 940,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T02:00:27.383789+00:00"
+  },
+  {
+    "id": 941,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T03:00:28.975079+00:00"
+  },
+  {
+    "id": 942,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T04:00:18.640096+00:00"
+  },
+  {
+    "id": 943,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T05:00:15.424708+00:00"
+  },
+  {
+    "id": 944,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T06:00:29.408339+00:00"
+  },
+  {
+    "id": 945,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T07:00:28.338912+00:00"
+  },
+  {
+    "id": 946,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T08:00:20.474327+00:00"
+  },
+  {
+    "id": 947,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T09:00:35.976671+00:00"
+  },
+  {
+    "id": 948,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T10:00:28.786293+00:00"
+  },
+  {
+    "id": 949,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T11:00:16.859799+00:00"
+  },
+  {
+    "id": 950,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T13:00:07.327667+00:00"
+  },
+  {
+    "id": 951,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T14:00:15.4514+00:00"
+  },
+  {
+    "id": 952,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T15:00:14.517028+00:00"
+  },
+  {
+    "id": 953,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T19:00:14.858021+00:00"
+  },
+  {
+    "id": 954,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T20:00:28.863962+00:00"
+  },
+  {
+    "id": 955,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T21:00:26.257698+00:00"
+  },
+  {
+    "id": 956,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T22:00:16.516994+00:00"
+  },
+  {
+    "id": 957,
+    "value": 23,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-30T23:00:20.653055+00:00"
+  },
+  {
+    "id": 958,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T01:00:18.75688+00:00"
+  },
+  {
+    "id": 959,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T02:00:04.40904+00:00"
+  },
+  {
+    "id": 960,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T03:00:02.56342+00:00"
+  },
+  {
+    "id": 961,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T04:00:11.125453+00:00"
+  },
+  {
+    "id": 962,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T05:00:31.832532+00:00"
+  },
+  {
+    "id": 963,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T07:00:16.828571+00:00"
+  },
+  {
+    "id": 964,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T08:00:10.953347+00:00"
+  },
+  {
+    "id": 965,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T09:00:16.814075+00:00"
+  },
+  {
+    "id": 966,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T10:00:16.004886+00:00"
+  },
+  {
+    "id": 967,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T11:00:12.021568+00:00"
+  },
+  {
+    "id": 968,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T12:00:15.828637+00:00"
+  },
+  {
+    "id": 969,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T13:00:29.625947+00:00"
+  },
+  {
+    "id": 970,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T14:00:07.001208+00:00"
+  },
+  {
+    "id": 971,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T15:00:15.941637+00:00"
+  },
+  {
+    "id": 972,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T16:00:14.992733+00:00"
+  },
+  {
+    "id": 973,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T17:00:17.09944+00:00"
+  },
+  {
+    "id": 974,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T18:00:29.283529+00:00"
+  },
+  {
+    "id": 975,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T19:00:03.368275+00:00"
+  },
+  {
+    "id": 976,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T20:00:21.167492+00:00"
+  },
+  {
+    "id": 977,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T21:00:12.742569+00:00"
+  },
+  {
+    "id": 978,
+    "value": 21,
+    "classification": "Extreme Fear",
+    "created_at": "2025-12-31T23:00:40.215434+00:00"
+  },
+  {
+    "id": 979,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T01:00:15.839886+00:00"
+  },
+  {
+    "id": 980,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T02:00:18.099875+00:00"
+  },
+  {
+    "id": 981,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T03:00:30.816093+00:00"
+  },
+  {
+    "id": 982,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T04:00:15.91244+00:00"
+  },
+  {
+    "id": 983,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T05:00:16.006283+00:00"
+  },
+  {
+    "id": 984,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T06:00:31.612805+00:00"
+  },
+  {
+    "id": 985,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T07:00:14.722274+00:00"
+  },
+  {
+    "id": 986,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T09:00:07.929435+00:00"
+  },
+  {
+    "id": 987,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T10:00:34.661241+00:00"
+  },
+  {
+    "id": 988,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T11:00:32.679011+00:00"
+  },
+  {
+    "id": 989,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T13:00:20.41392+00:00"
+  },
+  {
+    "id": 990,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T15:00:21.823168+00:00"
+  },
+  {
+    "id": 991,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T16:00:32.29537+00:00"
+  },
+  {
+    "id": 992,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T18:00:39.472327+00:00"
+  },
+  {
+    "id": 993,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T19:00:26.484935+00:00"
+  },
+  {
+    "id": 994,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T20:00:27.636396+00:00"
+  },
+  {
+    "id": 995,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T21:00:06.707105+00:00"
+  },
+  {
+    "id": 996,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T22:00:29.484442+00:00"
+  },
+  {
+    "id": 997,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-01T23:00:19.519203+00:00"
+  },
+  {
+    "id": 998,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T00:00:15.25313+00:00"
+  },
+  {
+    "id": 999,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T01:00:32.134647+00:00"
+  },
+  {
+    "id": 1000,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T03:00:29.926911+00:00"
+  },
+  {
+    "id": 1001,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T04:00:17.44254+00:00"
+  },
+  {
+    "id": 1002,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T07:00:25.610381+00:00"
+  },
+  {
+    "id": 1003,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T08:00:12.326577+00:00"
+  },
+  {
+    "id": 1004,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T10:00:30.667596+00:00"
+  },
+  {
+    "id": 1005,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T11:00:13.057399+00:00"
+  },
+  {
+    "id": 1006,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T12:00:28.916036+00:00"
+  },
+  {
+    "id": 1007,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T13:00:34.425423+00:00"
+  },
+  {
+    "id": 1008,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T14:00:06.908922+00:00"
+  },
+  {
+    "id": 1009,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T16:00:13.358465+00:00"
+  },
+  {
+    "id": 1010,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T17:00:22.11986+00:00"
+  },
+  {
+    "id": 1011,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T19:00:15.978107+00:00"
+  },
+  {
+    "id": 1012,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T20:00:45.345702+00:00"
+  },
+  {
+    "id": 1013,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T21:00:25.767074+00:00"
+  },
+  {
+    "id": 1014,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-02T22:00:37.855728+00:00"
+  },
+  {
+    "id": 1015,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-03T02:00:14.243957+00:00"
+  },
+  {
+    "id": 1016,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-03T03:00:19.791044+00:00"
+  },
+  {
+    "id": 1017,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-03T06:00:15.171919+00:00"
+  },
+  {
+    "id": 1018,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-03T12:00:25.636997+00:00"
+  },
+  {
+    "id": 1019,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-03T14:00:06.019773+00:00"
+  },
+  {
+    "id": 1020,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-03T15:00:41.29834+00:00"
+  },
+  {
+    "id": 1021,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-03T19:00:19.414734+00:00"
+  },
+  {
+    "id": 1022,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-03T22:00:43.703914+00:00"
+  },
+  {
+    "id": 1023,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T03:00:19.393074+00:00"
+  },
+  {
+    "id": 1024,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T07:00:16.614294+00:00"
+  },
+  {
+    "id": 1025,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T13:00:46.441594+00:00"
+  },
+  {
+    "id": 1026,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T14:00:38.845806+00:00"
+  },
+  {
+    "id": 1027,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T17:00:02.928586+00:00"
+  },
+  {
+    "id": 1028,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T19:00:40.757614+00:00"
+  },
+  {
+    "id": 1029,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T20:00:10.56914+00:00"
+  },
+  {
+    "id": 1030,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T21:00:27.936845+00:00"
+  },
+  {
+    "id": 1031,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T22:00:13.216582+00:00"
+  },
+  {
+    "id": 1032,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-04T23:00:12.60887+00:00"
+  },
+  {
+    "id": 1033,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T00:00:06.902856+00:00"
+  },
+  {
+    "id": 1034,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T01:00:15.284083+00:00"
+  },
+  {
+    "id": 1035,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T02:00:32.380593+00:00"
+  },
+  {
+    "id": 1036,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T03:00:15.876423+00:00"
+  },
+  {
+    "id": 1037,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T04:00:10.996833+00:00"
+  },
+  {
+    "id": 1038,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T05:00:13.070128+00:00"
+  },
+  {
+    "id": 1039,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T06:00:20.183806+00:00"
+  },
+  {
+    "id": 1040,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T07:00:13.490163+00:00"
+  },
+  {
+    "id": 1041,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T08:00:15.864336+00:00"
+  },
+  {
+    "id": 1042,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T09:00:13.845897+00:00"
+  },
+  {
+    "id": 1043,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T10:00:05.607988+00:00"
+  },
+  {
+    "id": 1044,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T11:00:14.019626+00:00"
+  },
+  {
+    "id": 1045,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T12:00:06.319568+00:00"
+  },
+  {
+    "id": 1046,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T13:00:05.725833+00:00"
+  },
+  {
+    "id": 1047,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T14:00:11.616736+00:00"
+  },
+  {
+    "id": 1048,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T15:00:10.259165+00:00"
+  },
+  {
+    "id": 1049,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T16:00:10.497592+00:00"
+  },
+  {
+    "id": 1050,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T17:00:15.09329+00:00"
+  },
+  {
+    "id": 1051,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T18:00:14.431996+00:00"
+  },
+  {
+    "id": 1052,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T19:00:09.367375+00:00"
+  },
+  {
+    "id": 1053,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T20:00:12.805063+00:00"
+  },
+  {
+    "id": 1054,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T21:00:03.700079+00:00"
+  },
+  {
+    "id": 1055,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T22:00:14.104824+00:00"
+  },
+  {
+    "id": 1056,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-05T23:00:12.806668+00:00"
+  },
+  {
+    "id": 1057,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T00:00:11.279689+00:00"
+  },
+  {
+    "id": 1058,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T01:00:06.844453+00:00"
+  },
+  {
+    "id": 1059,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T02:00:12.005191+00:00"
+  },
+  {
+    "id": 1060,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T03:00:11.899417+00:00"
+  },
+  {
+    "id": 1061,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T04:00:11.871513+00:00"
+  },
+  {
+    "id": 1062,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T05:00:12.391632+00:00"
+  },
+  {
+    "id": 1063,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T06:00:14.551568+00:00"
+  },
+  {
+    "id": 1064,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T07:00:11.019772+00:00"
+  },
+  {
+    "id": 1065,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T08:00:18.383788+00:00"
+  },
+  {
+    "id": 1066,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T09:00:14.712727+00:00"
+  },
+  {
+    "id": 1067,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T10:00:12.936846+00:00"
+  },
+  {
+    "id": 1068,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T11:00:09.322464+00:00"
+  },
+  {
+    "id": 1069,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T12:00:10.942392+00:00"
+  },
+  {
+    "id": 1070,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T13:00:14.173797+00:00"
+  },
+  {
+    "id": 1071,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T14:00:12.558498+00:00"
+  },
+  {
+    "id": 1072,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T15:00:11.371264+00:00"
+  },
+  {
+    "id": 1073,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T16:00:09.807018+00:00"
+  },
+  {
+    "id": 1074,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T17:00:12.89191+00:00"
+  },
+  {
+    "id": 1075,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T18:00:16.120309+00:00"
+  },
+  {
+    "id": 1076,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T19:00:11.877346+00:00"
+  },
+  {
+    "id": 1077,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T20:00:12.435187+00:00"
+  },
+  {
+    "id": 1078,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T21:00:10.925204+00:00"
+  },
+  {
+    "id": 1079,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T22:00:13.134606+00:00"
+  },
+  {
+    "id": 1080,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-06T23:00:05.822926+00:00"
+  },
+  {
+    "id": 1081,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T00:00:11.036644+00:00"
+  },
+  {
+    "id": 1082,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T01:00:13.989898+00:00"
+  },
+  {
+    "id": 1083,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T02:00:14.177453+00:00"
+  },
+  {
+    "id": 1084,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T03:00:10.685421+00:00"
+  },
+  {
+    "id": 1085,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T04:00:12.800566+00:00"
+  },
+  {
+    "id": 1086,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T05:00:10.750972+00:00"
+  },
+  {
+    "id": 1087,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T06:00:15.934447+00:00"
+  },
+  {
+    "id": 1088,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T07:00:12.028424+00:00"
+  },
+  {
+    "id": 1089,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T08:00:14.277322+00:00"
+  },
+  {
+    "id": 1090,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T09:00:16.793515+00:00"
+  },
+  {
+    "id": 1091,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T10:00:13.696892+00:00"
+  },
+  {
+    "id": 1092,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T11:00:17.523662+00:00"
+  },
+  {
+    "id": 1093,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T12:00:15.359947+00:00"
+  },
+  {
+    "id": 1094,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T13:00:08.173286+00:00"
+  },
+  {
+    "id": 1095,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T14:00:11.507411+00:00"
+  },
+  {
+    "id": 1096,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T15:00:11.410953+00:00"
+  },
+  {
+    "id": 1097,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T16:00:12.33306+00:00"
+  },
+  {
+    "id": 1098,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T17:00:11.717992+00:00"
+  },
+  {
+    "id": 1099,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T18:00:03.653699+00:00"
+  },
+  {
+    "id": 1100,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T19:00:11.292488+00:00"
+  },
+  {
+    "id": 1101,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T20:00:11.423097+00:00"
+  },
+  {
+    "id": 1102,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T21:00:11.283013+00:00"
+  },
+  {
+    "id": 1103,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T22:00:11.750713+00:00"
+  },
+  {
+    "id": 1104,
+    "value": 42,
+    "classification": "Fear",
+    "created_at": "2026-01-07T23:00:09.592049+00:00"
+  },
+  {
+    "id": 1105,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T00:00:11.958991+00:00"
+  },
+  {
+    "id": 1106,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T01:00:05.757666+00:00"
+  },
+  {
+    "id": 1107,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T02:00:12.728731+00:00"
+  },
+  {
+    "id": 1108,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T03:00:09.227153+00:00"
+  },
+  {
+    "id": 1109,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T04:00:09.553066+00:00"
+  },
+  {
+    "id": 1110,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T05:00:10.417796+00:00"
+  },
+  {
+    "id": 1111,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T06:00:27.473649+00:00"
+  },
+  {
+    "id": 1112,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T07:00:03.864781+00:00"
+  },
+  {
+    "id": 1113,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T08:00:12.491181+00:00"
+  },
+  {
+    "id": 1114,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T09:00:17.051576+00:00"
+  },
+  {
+    "id": 1115,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T10:00:14.011344+00:00"
+  },
+  {
+    "id": 1116,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T11:00:09.861044+00:00"
+  },
+  {
+    "id": 1117,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T12:00:13.29274+00:00"
+  },
+  {
+    "id": 1118,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T13:00:13.128929+00:00"
+  },
+  {
+    "id": 1119,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T14:00:12.52445+00:00"
+  },
+  {
+    "id": 1120,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T15:00:01.950604+00:00"
+  },
+  {
+    "id": 1121,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T16:00:10.275855+00:00"
+  },
+  {
+    "id": 1122,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T17:00:14.192563+00:00"
+  },
+  {
+    "id": 1123,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T18:00:27.943931+00:00"
+  },
+  {
+    "id": 1124,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T19:00:12.300393+00:00"
+  },
+  {
+    "id": 1125,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T20:00:07.157045+00:00"
+  },
+  {
+    "id": 1126,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T21:00:16.461281+00:00"
+  },
+  {
+    "id": 1127,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T22:00:19.729726+00:00"
+  },
+  {
+    "id": 1128,
+    "value": 28,
+    "classification": "Fear",
+    "created_at": "2026-01-08T23:00:13.118335+00:00"
+  },
+  {
+    "id": 1129,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T00:00:07.140403+00:00"
+  },
+  {
+    "id": 1130,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T01:00:12.724608+00:00"
+  },
+  {
+    "id": 1131,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T02:00:13.530189+00:00"
+  },
+  {
+    "id": 1132,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T03:00:14.946258+00:00"
+  },
+  {
+    "id": 1133,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T04:00:13.631983+00:00"
+  },
+  {
+    "id": 1134,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T05:00:13.260008+00:00"
+  },
+  {
+    "id": 1135,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T06:00:15.180368+00:00"
+  },
+  {
+    "id": 1136,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T07:00:12.759321+00:00"
+  },
+  {
+    "id": 1137,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T08:00:07.192899+00:00"
+  },
+  {
+    "id": 1138,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T09:00:04.509046+00:00"
+  },
+  {
+    "id": 1139,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T10:00:32.010323+00:00"
+  },
+  {
+    "id": 1140,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T11:00:16.289798+00:00"
+  },
+  {
+    "id": 1141,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T12:00:14.603913+00:00"
+  },
+  {
+    "id": 1142,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T13:00:11.561323+00:00"
+  },
+  {
+    "id": 1143,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T14:00:13.763913+00:00"
+  },
+  {
+    "id": 1144,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T15:00:14.93614+00:00"
+  },
+  {
+    "id": 1145,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T16:00:13.877732+00:00"
+  },
+  {
+    "id": 1146,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T17:00:11.240031+00:00"
+  },
+  {
+    "id": 1147,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T18:00:28.82434+00:00"
+  },
+  {
+    "id": 1148,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T19:00:11.580794+00:00"
+  },
+  {
+    "id": 1149,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T20:00:13.969429+00:00"
+  },
+  {
+    "id": 1150,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T21:00:04.155191+00:00"
+  },
+  {
+    "id": 1151,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T22:00:13.91565+00:00"
+  },
+  {
+    "id": 1152,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-09T23:00:12.317803+00:00"
+  },
+  {
+    "id": 1153,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T00:00:24.014591+00:00"
+  },
+  {
+    "id": 1154,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T01:00:12.51342+00:00"
+  },
+  {
+    "id": 1155,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T02:00:13.101362+00:00"
+  },
+  {
+    "id": 1156,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T03:00:12.919476+00:00"
+  },
+  {
+    "id": 1157,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T04:00:14.07135+00:00"
+  },
+  {
+    "id": 1158,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T05:00:06.328501+00:00"
+  },
+  {
+    "id": 1159,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T06:00:27.976687+00:00"
+  },
+  {
+    "id": 1160,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T07:00:15.093647+00:00"
+  },
+  {
+    "id": 1161,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T08:00:08.764649+00:00"
+  },
+  {
+    "id": 1162,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T09:00:11.054589+00:00"
+  },
+  {
+    "id": 1163,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T10:00:15.787772+00:00"
+  },
+  {
+    "id": 1164,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T11:00:11.319732+00:00"
+  },
+  {
+    "id": 1165,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T12:00:30.311383+00:00"
+  },
+  {
+    "id": 1166,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T13:00:10.239316+00:00"
+  },
+  {
+    "id": 1167,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T14:00:01.542547+00:00"
+  },
+  {
+    "id": 1168,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T15:00:09.015473+00:00"
+  },
+  {
+    "id": 1169,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T16:00:14.014963+00:00"
+  },
+  {
+    "id": 1170,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T17:00:19.709751+00:00"
+  },
+  {
+    "id": 1171,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T18:00:10.632471+00:00"
+  },
+  {
+    "id": 1172,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T19:00:14.084508+00:00"
+  },
+  {
+    "id": 1173,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T20:00:14.130975+00:00"
+  },
+  {
+    "id": 1174,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T21:00:11.192539+00:00"
+  },
+  {
+    "id": 1175,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T22:00:11.935245+00:00"
+  },
+  {
+    "id": 1176,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-10T23:00:12.686561+00:00"
+  },
+  {
+    "id": 1177,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T00:00:15.315306+00:00"
+  },
+  {
+    "id": 1178,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T01:00:14.208219+00:00"
+  },
+  {
+    "id": 1179,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T02:00:15.794772+00:00"
+  },
+  {
+    "id": 1180,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T03:00:12.718335+00:00"
+  },
+  {
+    "id": 1181,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T04:00:10.774712+00:00"
+  },
+  {
+    "id": 1182,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T05:00:09.856136+00:00"
+  },
+  {
+    "id": 1183,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T06:00:24.352946+00:00"
+  },
+  {
+    "id": 1184,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T07:00:12.496052+00:00"
+  },
+  {
+    "id": 1185,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T08:00:11.934853+00:00"
+  },
+  {
+    "id": 1186,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T09:00:11.66955+00:00"
+  },
+  {
+    "id": 1187,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T10:00:15.565628+00:00"
+  },
+  {
+    "id": 1188,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T11:00:05.804157+00:00"
+  },
+  {
+    "id": 1189,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T12:00:12.58154+00:00"
+  },
+  {
+    "id": 1190,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T13:00:07.566665+00:00"
+  },
+  {
+    "id": 1191,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T14:00:13.154398+00:00"
+  },
+  {
+    "id": 1192,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T15:00:14.910836+00:00"
+  },
+  {
+    "id": 1193,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T16:00:12.935841+00:00"
+  },
+  {
+    "id": 1194,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T17:00:21.944902+00:00"
+  },
+  {
+    "id": 1195,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T18:00:13.976925+00:00"
+  },
+  {
+    "id": 1196,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T19:00:04.605712+00:00"
+  },
+  {
+    "id": 1197,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T20:00:11.440658+00:00"
+  },
+  {
+    "id": 1198,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T21:00:12.034031+00:00"
+  },
+  {
+    "id": 1199,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T22:00:13.475941+00:00"
+  },
+  {
+    "id": 1200,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-11T23:00:10.51944+00:00"
+  },
+  {
+    "id": 1201,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T00:00:14.846559+00:00"
+  },
+  {
+    "id": 1202,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T01:00:09.699552+00:00"
+  },
+  {
+    "id": 1203,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T02:00:22.616665+00:00"
+  },
+  {
+    "id": 1204,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T03:00:10.70368+00:00"
+  },
+  {
+    "id": 1205,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T04:00:09.47461+00:00"
+  },
+  {
+    "id": 1206,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T05:00:10.952436+00:00"
+  },
+  {
+    "id": 1207,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T06:00:18.075158+00:00"
+  },
+  {
+    "id": 1208,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T07:00:04.332238+00:00"
+  },
+  {
+    "id": 1209,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T08:00:17.301293+00:00"
+  },
+  {
+    "id": 1210,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T09:00:13.212375+00:00"
+  },
+  {
+    "id": 1211,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T10:00:04.674648+00:00"
+  },
+  {
+    "id": 1212,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T11:00:08.543647+00:00"
+  },
+  {
+    "id": 1213,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T12:00:24.211541+00:00"
+  },
+  {
+    "id": 1214,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T13:00:12.419828+00:00"
+  },
+  {
+    "id": 1215,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T14:00:13.297544+00:00"
+  },
+  {
+    "id": 1216,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T15:00:11.347067+00:00"
+  },
+  {
+    "id": 1217,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T16:00:14.204287+00:00"
+  },
+  {
+    "id": 1218,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T17:00:12.062765+00:00"
+  },
+  {
+    "id": 1219,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T18:00:24.835798+00:00"
+  },
+  {
+    "id": 1220,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T19:00:25.243183+00:00"
+  },
+  {
+    "id": 1221,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T20:00:28.033435+00:00"
+  },
+  {
+    "id": 1222,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T21:00:13.023937+00:00"
+  },
+  {
+    "id": 1223,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T22:00:12.436566+00:00"
+  },
+  {
+    "id": 1224,
+    "value": 27,
+    "classification": "Fear",
+    "created_at": "2026-01-12T23:00:12.609112+00:00"
+  },
+  {
+    "id": 1225,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T00:00:12.824238+00:00"
+  },
+  {
+    "id": 1226,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T01:00:12.490214+00:00"
+  },
+  {
+    "id": 1227,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T02:00:12.452526+00:00"
+  },
+  {
+    "id": 1228,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T03:00:09.24575+00:00"
+  },
+  {
+    "id": 1229,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T04:00:13.964906+00:00"
+  },
+  {
+    "id": 1230,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T05:00:13.314818+00:00"
+  },
+  {
+    "id": 1231,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T06:00:15.449521+00:00"
+  },
+  {
+    "id": 1232,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T07:00:03.821712+00:00"
+  },
+  {
+    "id": 1233,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T08:00:17.595704+00:00"
+  },
+  {
+    "id": 1234,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T09:00:24.525106+00:00"
+  },
+  {
+    "id": 1235,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T10:00:14.415996+00:00"
+  },
+  {
+    "id": 1236,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T11:00:13.546832+00:00"
+  },
+  {
+    "id": 1237,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T12:00:03.512932+00:00"
+  },
+  {
+    "id": 1238,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T13:00:13.06076+00:00"
+  },
+  {
+    "id": 1239,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T14:00:16.636444+00:00"
+  },
+  {
+    "id": 1240,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T15:00:12.470944+00:00"
+  },
+  {
+    "id": 1241,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T16:00:11.615035+00:00"
+  },
+  {
+    "id": 1242,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T17:00:25.236753+00:00"
+  },
+  {
+    "id": 1243,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T18:00:14.508621+00:00"
+  },
+  {
+    "id": 1244,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T19:00:13.572498+00:00"
+  },
+  {
+    "id": 1245,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T20:00:13.175447+00:00"
+  },
+  {
+    "id": 1246,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T21:00:14.215288+00:00"
+  },
+  {
+    "id": 1247,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T22:00:21.779321+00:00"
+  },
+  {
+    "id": 1248,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-13T23:00:14.454029+00:00"
+  },
+  {
+    "id": 1249,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T00:00:15.170548+00:00"
+  },
+  {
+    "id": 1250,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T01:00:12.943841+00:00"
+  },
+  {
+    "id": 1251,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T02:00:15.138891+00:00"
+  },
+  {
+    "id": 1252,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T03:00:13.555669+00:00"
+  },
+  {
+    "id": 1253,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T04:00:28.117584+00:00"
+  },
+  {
+    "id": 1254,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T05:00:12.113212+00:00"
+  },
+  {
+    "id": 1255,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T06:00:18.112788+00:00"
+  },
+  {
+    "id": 1256,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T07:00:06.029572+00:00"
+  },
+  {
+    "id": 1257,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T08:00:15.081799+00:00"
+  },
+  {
+    "id": 1258,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T09:00:25.271024+00:00"
+  },
+  {
+    "id": 1259,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T10:00:09.171027+00:00"
+  },
+  {
+    "id": 1260,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T11:00:12.26778+00:00"
+  },
+  {
+    "id": 1261,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T12:00:16.124994+00:00"
+  },
+  {
+    "id": 1262,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T14:00:08.892161+00:00"
+  },
+  {
+    "id": 1263,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T15:00:05.597825+00:00"
+  },
+  {
+    "id": 1264,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T16:00:04.558206+00:00"
+  },
+  {
+    "id": 1265,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T17:00:05.156459+00:00"
+  },
+  {
+    "id": 1266,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T18:00:04.932105+00:00"
+  },
+  {
+    "id": 1267,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T19:00:03.979805+00:00"
+  },
+  {
+    "id": 1268,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T20:00:03.721803+00:00"
+  },
+  {
+    "id": 1269,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T21:00:05.695999+00:00"
+  },
+  {
+    "id": 1270,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T22:00:07.178008+00:00"
+  },
+  {
+    "id": 1271,
+    "value": 48,
+    "classification": "Neutral",
+    "created_at": "2026-01-14T23:00:05.877389+00:00"
+  },
+  {
+    "id": 1272,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T00:00:05.284922+00:00"
+  },
+  {
+    "id": 1273,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T01:00:05.667695+00:00"
+  },
+  {
+    "id": 1274,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T02:00:05.922048+00:00"
+  },
+  {
+    "id": 1275,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T03:00:08.271369+00:00"
+  },
+  {
+    "id": 1276,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T04:00:08.493227+00:00"
+  },
+  {
+    "id": 1277,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T05:00:05.65782+00:00"
+  },
+  {
+    "id": 1278,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T06:00:05.008576+00:00"
+  },
+  {
+    "id": 1279,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T07:00:06.703139+00:00"
+  },
+  {
+    "id": 1280,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T08:00:06.763257+00:00"
+  },
+  {
+    "id": 1281,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T09:00:01.989079+00:00"
+  },
+  {
+    "id": 1282,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T10:00:06.117914+00:00"
+  },
+  {
+    "id": 1283,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T11:00:12.812759+00:00"
+  },
+  {
+    "id": 1284,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T12:00:05.342465+00:00"
+  },
+  {
+    "id": 1285,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T13:00:05.820031+00:00"
+  },
+  {
+    "id": 1286,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T14:00:02.26026+00:00"
+  },
+  {
+    "id": 1287,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T15:00:06.092525+00:00"
+  },
+  {
+    "id": 1288,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T16:00:05.622445+00:00"
+  },
+  {
+    "id": 1289,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T17:00:06.312446+00:00"
+  },
+  {
+    "id": 1290,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T18:00:05.84761+00:00"
+  },
+  {
+    "id": 1291,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T19:00:04.391938+00:00"
+  },
+  {
+    "id": 1292,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T20:00:04.90971+00:00"
+  },
+  {
+    "id": 1293,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T21:00:05.7782+00:00"
+  },
+  {
+    "id": 1294,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T22:00:03.406269+00:00"
+  },
+  {
+    "id": 1295,
+    "value": 61,
+    "classification": "Greed",
+    "created_at": "2026-01-15T23:00:05.69133+00:00"
+  },
+  {
+    "id": 1296,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T00:00:11.891926+00:00"
+  },
+  {
+    "id": 1297,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T01:00:05.885496+00:00"
+  },
+  {
+    "id": 1298,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T02:00:06.293015+00:00"
+  },
+  {
+    "id": 1299,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T03:00:06.571652+00:00"
+  },
+  {
+    "id": 1300,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T04:00:16.640679+00:00"
+  },
+  {
+    "id": 1301,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T05:00:02.003496+00:00"
+  },
+  {
+    "id": 1302,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T06:00:09.009737+00:00"
+  },
+  {
+    "id": 1303,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T07:00:05.811839+00:00"
+  },
+  {
+    "id": 1304,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T08:00:09.544316+00:00"
+  },
+  {
+    "id": 1305,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T09:00:06.145061+00:00"
+  },
+  {
+    "id": 1306,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T10:00:08.128229+00:00"
+  },
+  {
+    "id": 1307,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T11:00:05.159542+00:00"
+  },
+  {
+    "id": 1308,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T12:00:09.406913+00:00"
+  },
+  {
+    "id": 1309,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T13:00:07.124076+00:00"
+  },
+  {
+    "id": 1310,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T14:00:07.595709+00:00"
+  },
+  {
+    "id": 1311,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T15:00:07.636905+00:00"
+  },
+  {
+    "id": 1312,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T16:00:07.282587+00:00"
+  },
+  {
+    "id": 1313,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T17:00:05.354145+00:00"
+  },
+  {
+    "id": 1314,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T18:00:07.192533+00:00"
+  },
+  {
+    "id": 1315,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T19:00:06.338474+00:00"
+  },
+  {
+    "id": 1316,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T20:00:01.524394+00:00"
+  },
+  {
+    "id": 1317,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T21:00:03.002985+00:00"
+  },
+  {
+    "id": 1318,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T22:00:04.851532+00:00"
+  },
+  {
+    "id": 1319,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-16T23:00:11.300821+00:00"
+  },
+  {
+    "id": 1320,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T00:00:06.548512+00:00"
+  },
+  {
+    "id": 1321,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T01:00:08.265773+00:00"
+  },
+  {
+    "id": 1322,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T02:00:08.659825+00:00"
+  },
+  {
+    "id": 1323,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T03:00:01.362046+00:00"
+  },
+  {
+    "id": 1324,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T04:00:03.704707+00:00"
+  },
+  {
+    "id": 1325,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T05:00:05.793492+00:00"
+  },
+  {
+    "id": 1326,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T06:00:02.271041+00:00"
+  },
+  {
+    "id": 1327,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T07:00:02.684852+00:00"
+  },
+  {
+    "id": 1328,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T08:00:08.692245+00:00"
+  },
+  {
+    "id": 1329,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T09:00:04.547332+00:00"
+  },
+  {
+    "id": 1330,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T10:00:06.675811+00:00"
+  },
+  {
+    "id": 1331,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T11:00:06.26455+00:00"
+  },
+  {
+    "id": 1332,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T12:00:08.013891+00:00"
+  },
+  {
+    "id": 1333,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T13:00:04.074516+00:00"
+  },
+  {
+    "id": 1334,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T14:00:11.171276+00:00"
+  },
+  {
+    "id": 1335,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T15:00:02.273992+00:00"
+  },
+  {
+    "id": 1336,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T16:00:04.759185+00:00"
+  },
+  {
+    "id": 1337,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T17:00:04.325835+00:00"
+  },
+  {
+    "id": 1338,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T18:00:08.117069+00:00"
+  },
+  {
+    "id": 1339,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T19:00:08.244241+00:00"
+  },
+  {
+    "id": 1340,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T20:00:08.225265+00:00"
+  },
+  {
+    "id": 1341,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T21:00:07.973143+00:00"
+  },
+  {
+    "id": 1342,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T22:00:06.568114+00:00"
+  },
+  {
+    "id": 1343,
+    "value": 50,
+    "classification": "Neutral",
+    "created_at": "2026-01-17T23:00:06.080688+00:00"
+  },
+  {
+    "id": 1344,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T00:00:09.179401+00:00"
+  },
+  {
+    "id": 1345,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T01:00:08.444161+00:00"
+  },
+  {
+    "id": 1346,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T02:00:06.905304+00:00"
+  },
+  {
+    "id": 1347,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T03:00:01.969333+00:00"
+  },
+  {
+    "id": 1348,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T04:00:07.36652+00:00"
+  },
+  {
+    "id": 1349,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T05:00:04.169105+00:00"
+  },
+  {
+    "id": 1350,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T06:00:07.376374+00:00"
+  },
+  {
+    "id": 1351,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T07:00:02.954597+00:00"
+  },
+  {
+    "id": 1352,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T08:00:07.856484+00:00"
+  },
+  {
+    "id": 1353,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T09:00:10.39841+00:00"
+  },
+  {
+    "id": 1354,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T10:00:05.807558+00:00"
+  },
+  {
+    "id": 1355,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T11:00:09.574447+00:00"
+  },
+  {
+    "id": 1356,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T12:00:01.885756+00:00"
+  },
+  {
+    "id": 1357,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T13:00:08.6524+00:00"
+  },
+  {
+    "id": 1358,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T14:00:01.552871+00:00"
+  },
+  {
+    "id": 1359,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T15:00:07.564895+00:00"
+  },
+  {
+    "id": 1360,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T16:00:01.93109+00:00"
+  },
+  {
+    "id": 1361,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T17:00:07.909454+00:00"
+  },
+  {
+    "id": 1362,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T18:00:08.119825+00:00"
+  },
+  {
+    "id": 1363,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T19:00:05.225364+00:00"
+  },
+  {
+    "id": 1364,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T20:00:06.596237+00:00"
+  },
+  {
+    "id": 1365,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T21:00:08.140552+00:00"
+  },
+  {
+    "id": 1366,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T22:00:06.716979+00:00"
+  },
+  {
+    "id": 1367,
+    "value": 49,
+    "classification": "Neutral",
+    "created_at": "2026-01-18T23:00:01.907943+00:00"
+  },
+  {
+    "id": 1368,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T00:00:08.730065+00:00"
+  },
+  {
+    "id": 1369,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T01:00:06.557686+00:00"
+  },
+  {
+    "id": 1370,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T02:00:09.545822+00:00"
+  },
+  {
+    "id": 1371,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T03:00:03.087803+00:00"
+  },
+  {
+    "id": 1372,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T04:00:07.267795+00:00"
+  },
+  {
+    "id": 1373,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T05:00:08.78068+00:00"
+  },
+  {
+    "id": 1374,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T06:00:06.612537+00:00"
+  },
+  {
+    "id": 1375,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T07:00:08.949649+00:00"
+  },
+  {
+    "id": 1376,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T08:00:09.439523+00:00"
+  },
+  {
+    "id": 1377,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T09:00:08.790714+00:00"
+  },
+  {
+    "id": 1378,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T10:00:07.159685+00:00"
+  },
+  {
+    "id": 1379,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T11:00:06.847456+00:00"
+  },
+  {
+    "id": 1380,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T12:00:03.311283+00:00"
+  },
+  {
+    "id": 1381,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T13:00:08.994638+00:00"
+  },
+  {
+    "id": 1382,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T14:00:02.685269+00:00"
+  },
+  {
+    "id": 1383,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T15:00:07.513571+00:00"
+  },
+  {
+    "id": 1384,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T16:00:07.391414+00:00"
+  },
+  {
+    "id": 1385,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T17:00:06.561224+00:00"
+  },
+  {
+    "id": 1386,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T18:00:04.544058+00:00"
+  },
+  {
+    "id": 1387,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T19:00:07.409506+00:00"
+  },
+  {
+    "id": 1388,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T20:00:07.476865+00:00"
+  },
+  {
+    "id": 1389,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T21:00:07.300459+00:00"
+  },
+  {
+    "id": 1390,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T22:00:07.045866+00:00"
+  },
+  {
+    "id": 1391,
+    "value": 44,
+    "classification": "Fear",
+    "created_at": "2026-01-19T23:00:07.908615+00:00"
+  },
+  {
+    "id": 1392,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T00:00:08.135998+00:00"
+  },
+  {
+    "id": 1393,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T01:00:02.42732+00:00"
+  },
+  {
+    "id": 1394,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T02:00:06.180852+00:00"
+  },
+  {
+    "id": 1395,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T03:00:07.467666+00:00"
+  },
+  {
+    "id": 1396,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T04:00:05.950353+00:00"
+  },
+  {
+    "id": 1397,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T05:00:07.684492+00:00"
+  },
+  {
+    "id": 1398,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T06:00:08.773296+00:00"
+  },
+  {
+    "id": 1399,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T07:00:07.915846+00:00"
+  },
+  {
+    "id": 1400,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T08:00:02.195979+00:00"
+  },
+  {
+    "id": 1401,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T09:00:09.260539+00:00"
+  },
+  {
+    "id": 1402,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T10:00:07.373553+00:00"
+  },
+  {
+    "id": 1403,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T11:00:07.344991+00:00"
+  },
+  {
+    "id": 1404,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T12:00:08.844875+00:00"
+  },
+  {
+    "id": 1405,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T13:00:07.160224+00:00"
+  },
+  {
+    "id": 1406,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T14:00:07.183159+00:00"
+  },
+  {
+    "id": 1407,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T15:00:07.631627+00:00"
+  },
+  {
+    "id": 1408,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T16:00:07.36507+00:00"
+  },
+  {
+    "id": 1409,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T17:00:06.008441+00:00"
+  },
+  {
+    "id": 1410,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T18:00:07.702336+00:00"
+  },
+  {
+    "id": 1411,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T19:00:04.667754+00:00"
+  },
+  {
+    "id": 1412,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T20:00:05.99631+00:00"
+  },
+  {
+    "id": 1413,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T21:00:04.852419+00:00"
+  },
+  {
+    "id": 1414,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T22:00:06.428421+00:00"
+  },
+  {
+    "id": 1415,
+    "value": 32,
+    "classification": "Fear",
+    "created_at": "2026-01-20T23:00:08.226256+00:00"
+  },
+  {
+    "id": 1416,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T00:00:05.295721+00:00"
+  },
+  {
+    "id": 1417,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T01:00:05.844772+00:00"
+  },
+  {
+    "id": 1418,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T02:00:08.045674+00:00"
+  },
+  {
+    "id": 1419,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T03:00:07.780909+00:00"
+  },
+  {
+    "id": 1420,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T04:00:06.583495+00:00"
+  },
+  {
+    "id": 1421,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T05:00:03.770257+00:00"
+  },
+  {
+    "id": 1422,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T07:00:08.806541+00:00"
+  },
+  {
+    "id": 1423,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T08:00:11.027765+00:00"
+  },
+  {
+    "id": 1424,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T09:00:10.524552+00:00"
+  },
+  {
+    "id": 1425,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T10:00:09.430606+00:00"
+  },
+  {
+    "id": 1426,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T11:00:09.740377+00:00"
+  },
+  {
+    "id": 1427,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T12:00:05.935935+00:00"
+  },
+  {
+    "id": 1428,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T13:00:08.548284+00:00"
+  },
+  {
+    "id": 1429,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T14:00:09.466475+00:00"
+  },
+  {
+    "id": 1430,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T15:00:06.813684+00:00"
+  },
+  {
+    "id": 1431,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T16:00:10.952381+00:00"
+  },
+  {
+    "id": 1432,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T17:00:08.179061+00:00"
+  },
+  {
+    "id": 1433,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T18:00:08.509343+00:00"
+  },
+  {
+    "id": 1434,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T19:00:08.396464+00:00"
+  },
+  {
+    "id": 1435,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T20:00:07.572186+00:00"
+  },
+  {
+    "id": 1436,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T21:00:07.521732+00:00"
+  },
+  {
+    "id": 1437,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T22:00:07.675689+00:00"
+  },
+  {
+    "id": 1438,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-21T23:00:07.732644+00:00"
+  },
+  {
+    "id": 1439,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T00:00:07.733273+00:00"
+  },
+  {
+    "id": 1440,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T01:00:07.908026+00:00"
+  },
+  {
+    "id": 1441,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T02:00:08.585496+00:00"
+  },
+  {
+    "id": 1442,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T03:00:09.341202+00:00"
+  },
+  {
+    "id": 1443,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T05:00:10.190033+00:00"
+  },
+  {
+    "id": 1444,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T06:00:13.056867+00:00"
+  },
+  {
+    "id": 1445,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T07:00:10.593502+00:00"
+  },
+  {
+    "id": 1446,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T08:00:12.239518+00:00"
+  },
+  {
+    "id": 1447,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T09:00:14.227305+00:00"
+  },
+  {
+    "id": 1448,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T10:00:13.481706+00:00"
+  },
+  {
+    "id": 1449,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T11:00:07.145827+00:00"
+  },
+  {
+    "id": 1450,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T12:00:30.268549+00:00"
+  },
+  {
+    "id": 1451,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T13:00:14.105857+00:00"
+  },
+  {
+    "id": 1452,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T14:00:13.501047+00:00"
+  },
+  {
+    "id": 1453,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T15:00:13.189386+00:00"
+  },
+  {
+    "id": 1454,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T16:00:13.822461+00:00"
+  },
+  {
+    "id": 1455,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T17:00:12.349493+00:00"
+  },
+  {
+    "id": 1456,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T18:00:18.688411+00:00"
+  },
+  {
+    "id": 1457,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T19:00:11.912649+00:00"
+  },
+  {
+    "id": 1458,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T20:00:12.938761+00:00"
+  },
+  {
+    "id": 1459,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T21:00:13.031384+00:00"
+  },
+  {
+    "id": 1460,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T22:00:12.588616+00:00"
+  },
+  {
+    "id": 1461,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-22T23:00:08.17029+00:00"
+  },
+  {
+    "id": 1462,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T00:00:16.822098+00:00"
+  },
+  {
+    "id": 1463,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T01:00:12.366627+00:00"
+  },
+  {
+    "id": 1464,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T02:00:13.611949+00:00"
+  },
+  {
+    "id": 1465,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T03:00:12.859009+00:00"
+  },
+  {
+    "id": 1466,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T04:00:10.936862+00:00"
+  },
+  {
+    "id": 1467,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T05:00:11.60027+00:00"
+  },
+  {
+    "id": 1468,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T06:00:15.28544+00:00"
+  },
+  {
+    "id": 1469,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T07:00:02.483405+00:00"
+  },
+  {
+    "id": 1470,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T08:00:13.59558+00:00"
+  },
+  {
+    "id": 1471,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T09:00:10.911044+00:00"
+  },
+  {
+    "id": 1472,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T10:00:13.087607+00:00"
+  },
+  {
+    "id": 1473,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T11:00:11.980446+00:00"
+  },
+  {
+    "id": 1474,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T12:00:10.73005+00:00"
+  },
+  {
+    "id": 1475,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T13:00:11.51273+00:00"
+  },
+  {
+    "id": 1476,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T14:00:07.687875+00:00"
+  },
+  {
+    "id": 1477,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T15:00:12.805591+00:00"
+  },
+  {
+    "id": 1478,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T16:00:13.587478+00:00"
+  },
+  {
+    "id": 1479,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T17:00:10.972702+00:00"
+  },
+  {
+    "id": 1480,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T18:00:12.56298+00:00"
+  },
+  {
+    "id": 1481,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T19:00:05.395045+00:00"
+  },
+  {
+    "id": 1482,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T20:00:14.455567+00:00"
+  },
+  {
+    "id": 1483,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T21:00:14.351609+00:00"
+  },
+  {
+    "id": 1484,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T22:00:08.564367+00:00"
+  },
+  {
+    "id": 1485,
+    "value": 24,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-23T23:00:14.67279+00:00"
+  },
+  {
+    "id": 1486,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T00:00:09.807297+00:00"
+  },
+  {
+    "id": 1487,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T01:00:12.584238+00:00"
+  },
+  {
+    "id": 1488,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T02:00:12.659176+00:00"
+  },
+  {
+    "id": 1489,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T03:00:13.164154+00:00"
+  },
+  {
+    "id": 1490,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T04:00:08.02438+00:00"
+  },
+  {
+    "id": 1491,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T05:00:11.913669+00:00"
+  },
+  {
+    "id": 1492,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T06:00:14.890964+00:00"
+  },
+  {
+    "id": 1493,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T07:00:12.311802+00:00"
+  },
+  {
+    "id": 1494,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T08:00:14.707298+00:00"
+  },
+  {
+    "id": 1495,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T09:00:13.703268+00:00"
+  },
+  {
+    "id": 1496,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T10:00:13.861369+00:00"
+  },
+  {
+    "id": 1497,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T11:00:12.304631+00:00"
+  },
+  {
+    "id": 1498,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T12:00:26.327097+00:00"
+  },
+  {
+    "id": 1499,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T13:00:13.21441+00:00"
+  },
+  {
+    "id": 1500,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T14:00:10.821679+00:00"
+  },
+  {
+    "id": 1501,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T15:00:13.447578+00:00"
+  },
+  {
+    "id": 1502,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T16:00:12.68+00:00"
+  },
+  {
+    "id": 1503,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T17:00:10.847406+00:00"
+  },
+  {
+    "id": 1504,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T18:00:14.004653+00:00"
+  },
+  {
+    "id": 1505,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T19:00:11.055658+00:00"
+  },
+  {
+    "id": 1506,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T20:00:20.427112+00:00"
+  },
+  {
+    "id": 1507,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T21:00:12.387775+00:00"
+  },
+  {
+    "id": 1508,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T22:00:09.600632+00:00"
+  },
+  {
+    "id": 1509,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-24T23:00:12.33658+00:00"
+  },
+  {
+    "id": 1510,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T00:00:07.234143+00:00"
+  },
+  {
+    "id": 1511,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T01:00:12.746887+00:00"
+  },
+  {
+    "id": 1512,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T02:00:12.849466+00:00"
+  },
+  {
+    "id": 1513,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T03:00:11.693607+00:00"
+  },
+  {
+    "id": 1514,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T04:00:13.685623+00:00"
+  },
+  {
+    "id": 1515,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T05:00:12.199064+00:00"
+  },
+  {
+    "id": 1516,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T06:00:15.438929+00:00"
+  },
+  {
+    "id": 1517,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T07:00:11.049739+00:00"
+  },
+  {
+    "id": 1518,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T08:00:12.730351+00:00"
+  },
+  {
+    "id": 1519,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T09:00:04.622329+00:00"
+  },
+  {
+    "id": 1520,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T10:00:07.622259+00:00"
+  },
+  {
+    "id": 1521,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T11:00:12.053819+00:00"
+  },
+  {
+    "id": 1522,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T12:00:16.609821+00:00"
+  },
+  {
+    "id": 1523,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T13:00:16.030445+00:00"
+  },
+  {
+    "id": 1524,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T14:00:10.722568+00:00"
+  },
+  {
+    "id": 1525,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T15:00:11.641573+00:00"
+  },
+  {
+    "id": 1526,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T16:00:11.187251+00:00"
+  },
+  {
+    "id": 1527,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T17:00:12.209348+00:00"
+  },
+  {
+    "id": 1528,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T18:00:08.696684+00:00"
+  },
+  {
+    "id": 1529,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T19:00:10.201594+00:00"
+  },
+  {
+    "id": 1530,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T20:00:12.129864+00:00"
+  },
+  {
+    "id": 1531,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T21:00:10.621266+00:00"
+  },
+  {
+    "id": 1532,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T22:00:12.168161+00:00"
+  },
+  {
+    "id": 1533,
+    "value": 25,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-25T23:00:09.593272+00:00"
+  },
+  {
+    "id": 1534,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T00:00:15.421151+00:00"
+  },
+  {
+    "id": 1535,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T01:00:16.353462+00:00"
+  },
+  {
+    "id": 1536,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T02:00:06.851024+00:00"
+  },
+  {
+    "id": 1537,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T03:00:13.680804+00:00"
+  },
+  {
+    "id": 1538,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T04:00:06.477251+00:00"
+  },
+  {
+    "id": 1539,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T05:00:12.425702+00:00"
+  },
+  {
+    "id": 1540,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T06:00:14.405556+00:00"
+  },
+  {
+    "id": 1541,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T07:00:12.33909+00:00"
+  },
+  {
+    "id": 1542,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T08:00:11.007583+00:00"
+  },
+  {
+    "id": 1543,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T09:00:12.332678+00:00"
+  },
+  {
+    "id": 1544,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T10:00:10.548922+00:00"
+  },
+  {
+    "id": 1545,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T11:00:17.808469+00:00"
+  },
+  {
+    "id": 1546,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T12:00:13.653627+00:00"
+  },
+  {
+    "id": 1547,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T13:00:03.550281+00:00"
+  },
+  {
+    "id": 1548,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T14:00:12.810801+00:00"
+  },
+  {
+    "id": 1549,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T15:00:08.423699+00:00"
+  },
+  {
+    "id": 1550,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T16:00:11.811619+00:00"
+  },
+  {
+    "id": 1551,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T17:00:11.105469+00:00"
+  },
+  {
+    "id": 1552,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T18:00:11.314382+00:00"
+  },
+  {
+    "id": 1553,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T19:00:10.346962+00:00"
+  },
+  {
+    "id": 1554,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T20:00:11.775492+00:00"
+  },
+  {
+    "id": 1555,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T21:00:06.808189+00:00"
+  },
+  {
+    "id": 1556,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T22:00:11.980139+00:00"
+  },
+  {
+    "id": 1557,
+    "value": 20,
+    "classification": "Extreme Fear",
+    "created_at": "2026-01-26T23:00:10.478265+00:00"
+  },
+  {
+    "id": 1558,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T00:00:09.548518+00:00"
+  },
+  {
+    "id": 1559,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T01:00:09.688285+00:00"
+  },
+  {
+    "id": 1560,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T02:00:12.923104+00:00"
+  },
+  {
+    "id": 1561,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T03:00:11.03605+00:00"
+  },
+  {
+    "id": 1562,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T04:00:12.610428+00:00"
+  },
+  {
+    "id": 1563,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T05:00:11.259633+00:00"
+  },
+  {
+    "id": 1564,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T06:00:04.020287+00:00"
+  },
+  {
+    "id": 1565,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T07:00:10.514421+00:00"
+  },
+  {
+    "id": 1566,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T08:00:13.568366+00:00"
+  },
+  {
+    "id": 1567,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T09:00:13.960766+00:00"
+  },
+  {
+    "id": 1568,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T10:00:05.050654+00:00"
+  },
+  {
+    "id": 1569,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T11:00:12.496173+00:00"
+  },
+  {
+    "id": 1570,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T12:00:10.429532+00:00"
+  },
+  {
+    "id": 1571,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T13:00:10.437392+00:00"
+  },
+  {
+    "id": 1572,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T14:00:11.122735+00:00"
+  },
+  {
+    "id": 1573,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T15:00:13.497188+00:00"
+  },
+  {
+    "id": 1574,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T16:00:11.81545+00:00"
+  },
+  {
+    "id": 1575,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T17:00:10.276387+00:00"
+  },
+  {
+    "id": 1576,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T18:00:05.300684+00:00"
+  },
+  {
+    "id": 1577,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T19:00:11.442289+00:00"
+  },
+  {
+    "id": 1578,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T20:00:15.25744+00:00"
+  },
+  {
+    "id": 1579,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T21:00:06.224824+00:00"
+  },
+  {
+    "id": 1580,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T22:00:11.698832+00:00"
+  },
+  {
+    "id": 1581,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-27T23:00:12.100307+00:00"
+  },
+  {
+    "id": 1582,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T00:00:12.144226+00:00"
+  },
+  {
+    "id": 1583,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T01:00:12.452865+00:00"
+  },
+  {
+    "id": 1584,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T02:00:06.087175+00:00"
+  },
+  {
+    "id": 1585,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T03:00:12.432276+00:00"
+  },
+  {
+    "id": 1586,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T04:00:11.705598+00:00"
+  },
+  {
+    "id": 1587,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T05:00:11.82419+00:00"
+  },
+  {
+    "id": 1588,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T06:00:12.242067+00:00"
+  },
+  {
+    "id": 1589,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T07:00:10.791584+00:00"
+  },
+  {
+    "id": 1590,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T08:00:05.799533+00:00"
+  },
+  {
+    "id": 1591,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T09:00:04.83235+00:00"
+  },
+  {
+    "id": 1592,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T10:00:11.659721+00:00"
+  },
+  {
+    "id": 1593,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T11:00:11.047013+00:00"
+  },
+  {
+    "id": 1594,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T12:00:11.875588+00:00"
+  },
+  {
+    "id": 1595,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T13:00:09.905095+00:00"
+  },
+  {
+    "id": 1596,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T14:00:13.120114+00:00"
+  },
+  {
+    "id": 1597,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T15:00:06.575723+00:00"
+  },
+  {
+    "id": 1598,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T16:00:13.052012+00:00"
+  },
+  {
+    "id": 1599,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T17:00:14.185427+00:00"
+  },
+  {
+    "id": 1600,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T18:00:12.216373+00:00"
+  },
+  {
+    "id": 1601,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T19:00:10.887704+00:00"
+  },
+  {
+    "id": 1602,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T20:00:09.26219+00:00"
+  },
+  {
+    "id": 1603,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T21:00:11.232959+00:00"
+  },
+  {
+    "id": 1604,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T22:00:11.045236+00:00"
+  },
+  {
+    "id": 1605,
+    "value": 29,
+    "classification": "Fear",
+    "created_at": "2026-01-28T23:00:10.825834+00:00"
+  },
+  {
+    "id": 1606,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T00:00:12.65655+00:00"
+  },
+  {
+    "id": 1607,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T01:00:12.433486+00:00"
+  },
+  {
+    "id": 1608,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T02:00:11.844475+00:00"
+  },
+  {
+    "id": 1609,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T03:00:04.185152+00:00"
+  },
+  {
+    "id": 1610,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T04:00:11.431826+00:00"
+  },
+  {
+    "id": 1611,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T05:00:10.795056+00:00"
+  },
+  {
+    "id": 1612,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T06:00:14.301376+00:00"
+  },
+  {
+    "id": 1613,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T07:00:12.022418+00:00"
+  },
+  {
+    "id": 1614,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T08:00:12.664756+00:00"
+  },
+  {
+    "id": 1615,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T09:00:22.141239+00:00"
+  },
+  {
+    "id": 1616,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T10:00:09.340414+00:00"
+  },
+  {
+    "id": 1617,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T11:00:09.40279+00:00"
+  },
+  {
+    "id": 1618,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T12:00:03.871873+00:00"
+  },
+  {
+    "id": 1619,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T13:00:15.723489+00:00"
+  },
+  {
+    "id": 1620,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T14:00:11.433559+00:00"
+  },
+  {
+    "id": 1621,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T15:00:10.565837+00:00"
+  },
+  {
+    "id": 1622,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T16:00:10.167346+00:00"
+  },
+  {
+    "id": 1623,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T17:00:11.214769+00:00"
+  },
+  {
+    "id": 1624,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T18:00:11.577632+00:00"
+  },
+  {
+    "id": 1625,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T19:00:10.20203+00:00"
+  },
+  {
+    "id": 1626,
+    "value": 26,
+    "classification": "Fear",
+    "created_at": "2026-01-29T20:00:09.908411+00:00"
+  }
+]

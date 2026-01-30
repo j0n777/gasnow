@@ -1,0 +1,8002 @@
+[
+  {
+    "id": 113821,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:00:06.319597+00:00"
+  },
+  {
+    "id": 113822,
+    "blockchain": "ethereum",
+    "slow": 0.044307521,
+    "standard": 0.044307531,
+    "fast": 0.048738284,
+    "created_at": "2026-01-22T00:00:06.609545+00:00"
+  },
+  {
+    "id": 113823,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:02:02.22117+00:00"
+  },
+  {
+    "id": 113824,
+    "blockchain": "ethereum",
+    "slow": 0.049932917,
+    "standard": 0.054926208,
+    "fast": 0.054926978,
+    "created_at": "2026-01-22T00:02:02.395512+00:00"
+  },
+  {
+    "id": 113825,
+    "blockchain": "ethereum",
+    "slow": 0.045081903,
+    "standard": 0.045081903,
+    "fast": 0.049590093,
+    "created_at": "2026-01-22T00:04:01.298305+00:00"
+  },
+  {
+    "id": 113826,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:04:03.033968+00:00"
+  },
+  {
+    "id": 113827,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:06:02.658715+00:00"
+  },
+  {
+    "id": 113828,
+    "blockchain": "ethereum",
+    "slow": 0.043949979,
+    "standard": 0.048344976,
+    "fast": 0.048344984,
+    "created_at": "2026-01-22T00:06:03.648618+00:00"
+  },
+  {
+    "id": 113829,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:08:00.860966+00:00"
+  },
+  {
+    "id": 113830,
+    "blockchain": "ethereum",
+    "slow": 0.038420353,
+    "standard": 0.03842036,
+    "fast": 0.042262396,
+    "created_at": "2026-01-22T00:08:02.060803+00:00"
+  },
+  {
+    "id": 113831,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:10:03.772414+00:00"
+  },
+  {
+    "id": 113832,
+    "blockchain": "ethereum",
+    "slow": 0.045702993,
+    "standard": 0.045702997,
+    "fast": 0.045703393,
+    "created_at": "2026-01-22T00:10:10.607947+00:00"
+  },
+  {
+    "id": 113833,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:12:04.001268+00:00"
+  },
+  {
+    "id": 113834,
+    "blockchain": "ethereum",
+    "slow": 0.04578788,
+    "standard": 0.045787884,
+    "fast": 0.04678788,
+    "created_at": "2026-01-22T00:12:04.476711+00:00"
+  },
+  {
+    "id": 113835,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T00:14:01.23273+00:00"
+  },
+  {
+    "id": 113836,
+    "blockchain": "ethereum",
+    "slow": 0.0434409,
+    "standard": 0.0435409,
+    "fast": 0.04778499,
+    "created_at": "2026-01-22T00:14:01.608783+00:00"
+  },
+  {
+    "id": 113837,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T00:16:01.521144+00:00"
+  },
+  {
+    "id": 113838,
+    "blockchain": "ethereum",
+    "slow": 0.036094732,
+    "standard": 0.036094747,
+    "fast": 0.039704221,
+    "created_at": "2026-01-22T00:16:02.601851+00:00"
+  },
+  {
+    "id": 113839,
+    "blockchain": "ethereum",
+    "slow": 0.038934478,
+    "standard": 0.038934482,
+    "fast": 0.039934478,
+    "created_at": "2026-01-22T00:18:01.463667+00:00"
+  },
+  {
+    "id": 113840,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:18:01.974837+00:00"
+  },
+  {
+    "id": 113841,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:20:01.818244+00:00"
+  },
+  {
+    "id": 113842,
+    "blockchain": "ethereum",
+    "slow": 0.049106412,
+    "standard": 0.049106416,
+    "fast": 0.049406412,
+    "created_at": "2026-01-22T00:20:03.492654+00:00"
+  },
+  {
+    "id": 113843,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:22:02.335134+00:00"
+  },
+  {
+    "id": 113844,
+    "blockchain": "ethereum",
+    "slow": 0.044856306,
+    "standard": 0.04485631,
+    "fast": 0.049341941,
+    "created_at": "2026-01-22T00:22:02.817128+00:00"
+  },
+  {
+    "id": 113845,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:24:01.103843+00:00"
+  },
+  {
+    "id": 113846,
+    "blockchain": "ethereum",
+    "slow": 0.046230322,
+    "standard": 0.046230326,
+    "fast": 0.046330322,
+    "created_at": "2026-01-22T00:24:02.490324+00:00"
+  },
+  {
+    "id": 113847,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:26:01.584335+00:00"
+  },
+  {
+    "id": 113848,
+    "blockchain": "ethereum",
+    "slow": 0.043521337,
+    "standard": 0.043521341,
+    "fast": 0.043521437,
+    "created_at": "2026-01-22T00:26:01.764668+00:00"
+  },
+  {
+    "id": 113849,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:28:01.008229+00:00"
+  },
+  {
+    "id": 113850,
+    "blockchain": "ethereum",
+    "slow": 0.041736868,
+    "standard": 0.041736868,
+    "fast": 0.045910554,
+    "created_at": "2026-01-22T00:28:02.766305+00:00"
+  },
+  {
+    "id": 113851,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:30:01.759286+00:00"
+  },
+  {
+    "id": 113852,
+    "blockchain": "ethereum",
+    "slow": 0.046058002,
+    "standard": 0.046058004,
+    "fast": 0.047058002,
+    "created_at": "2026-01-22T00:30:04.083192+00:00"
+  },
+  {
+    "id": 113853,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:32:00.931662+00:00"
+  },
+  {
+    "id": 113854,
+    "blockchain": "ethereum",
+    "slow": 0.057708312,
+    "standard": 0.057708314,
+    "fast": 0.063479473,
+    "created_at": "2026-01-22T00:32:03.018381+00:00"
+  },
+  {
+    "id": 113855,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:34:02.104481+00:00"
+  },
+  {
+    "id": 113856,
+    "blockchain": "ethereum",
+    "slow": 0.049730847,
+    "standard": 0.049730851,
+    "fast": 0.052730847,
+    "created_at": "2026-01-22T00:34:02.484371+00:00"
+  },
+  {
+    "id": 113857,
+    "blockchain": "ethereum",
+    "slow": 0.041051878,
+    "standard": 0.04105188,
+    "fast": 0.045157068,
+    "created_at": "2026-01-22T00:36:01.681547+00:00"
+  },
+  {
+    "id": 113858,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:36:04.95898+00:00"
+  },
+  {
+    "id": 113859,
+    "blockchain": "ethereum",
+    "slow": 0.034597372,
+    "standard": 0.034597374,
+    "fast": 0.03467465,
+    "created_at": "2026-01-22T00:38:01.288463+00:00"
+  },
+  {
+    "id": 113860,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:38:01.845846+00:00"
+  },
+  {
+    "id": 113861,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:40:02.40847+00:00"
+  },
+  {
+    "id": 113862,
+    "blockchain": "ethereum",
+    "slow": 0.033927105,
+    "standard": 0.033927121,
+    "fast": 0.034927105,
+    "created_at": "2026-01-22T00:40:04.7626+00:00"
+  },
+  {
+    "id": 113863,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:42:01.537358+00:00"
+  },
+  {
+    "id": 113864,
+    "blockchain": "ethereum",
+    "slow": 0.033093837,
+    "standard": 0.033675949,
+    "fast": 0.03640322,
+    "created_at": "2026-01-22T00:42:02.647435+00:00"
+  },
+  {
+    "id": 113865,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:44:00.688607+00:00"
+  },
+  {
+    "id": 113866,
+    "blockchain": "ethereum",
+    "slow": 0.033328644,
+    "standard": 0.033328646,
+    "fast": 0.034328644,
+    "created_at": "2026-01-22T00:44:02.168911+00:00"
+  },
+  {
+    "id": 113867,
+    "blockchain": "ethereum",
+    "slow": 0.031103573,
+    "standard": 0.031103588,
+    "fast": 0.031887799,
+    "created_at": "2026-01-22T00:46:01.476202+00:00"
+  },
+  {
+    "id": 113868,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:46:02.539992+00:00"
+  },
+  {
+    "id": 113869,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:48:01.531792+00:00"
+  },
+  {
+    "id": 113870,
+    "blockchain": "ethereum",
+    "slow": 0.031658642,
+    "standard": 0.031658644,
+    "fast": 0.031758642,
+    "created_at": "2026-01-22T00:48:01.839429+00:00"
+  },
+  {
+    "id": 113871,
+    "blockchain": "ethereum",
+    "slow": 0.031516649,
+    "standard": 0.031516849,
+    "fast": 0.034668533,
+    "created_at": "2026-01-22T00:50:02.687915+00:00"
+  },
+  {
+    "id": 113872,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T00:50:03.688893+00:00"
+  },
+  {
+    "id": 113873,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T00:52:01.33368+00:00"
+  },
+  {
+    "id": 113874,
+    "blockchain": "ethereum",
+    "slow": 0.037510456,
+    "standard": 0.037510656,
+    "fast": 0.038510456,
+    "created_at": "2026-01-22T00:52:02.727592+00:00"
+  },
+  {
+    "id": 113875,
+    "blockchain": "ethereum",
+    "slow": 0.029473965,
+    "standard": 0.029474165,
+    "fast": 0.032421581,
+    "created_at": "2026-01-22T00:54:02.368247+00:00"
+  },
+  {
+    "id": 113876,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T00:54:02.72064+00:00"
+  },
+  {
+    "id": 113877,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T00:56:01.268987+00:00"
+  },
+  {
+    "id": 113878,
+    "blockchain": "ethereum",
+    "slow": 0.031952417,
+    "standard": 0.031952417,
+    "fast": 0.035147658,
+    "created_at": "2026-01-22T00:56:01.907476+00:00"
+  },
+  {
+    "id": 113879,
+    "blockchain": "ethereum",
+    "slow": 0.032893133,
+    "standard": 0.032893333,
+    "fast": 0.033279137,
+    "created_at": "2026-01-22T00:58:01.216194+00:00"
+  },
+  {
+    "id": 113880,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T00:58:02.736154+00:00"
+  },
+  {
+    "id": 113881,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:00:06.508965+00:00"
+  },
+  {
+    "id": 113882,
+    "blockchain": "ethereum",
+    "slow": 0.03096274,
+    "standard": 0.030962742,
+    "fast": 0.030964862,
+    "created_at": "2026-01-22T01:00:07.203716+00:00"
+  },
+  {
+    "id": 113883,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:02:01.263488+00:00"
+  },
+  {
+    "id": 113884,
+    "blockchain": "ethereum",
+    "slow": 0.032617316,
+    "standard": 0.032617318,
+    "fast": 0.032617856,
+    "created_at": "2026-01-22T01:02:01.529703+00:00"
+  },
+  {
+    "id": 113885,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:04:01.14908+00:00"
+  },
+  {
+    "id": 113886,
+    "blockchain": "ethereum",
+    "slow": 0.042264496,
+    "standard": 0.046490945,
+    "fast": 0.046490946,
+    "created_at": "2026-01-22T01:04:01.992526+00:00"
+  },
+  {
+    "id": 113887,
+    "blockchain": "ethereum",
+    "slow": 0.04844139,
+    "standard": 0.048441405,
+    "fast": 0.04882589,
+    "created_at": "2026-01-22T01:06:02.880611+00:00"
+  },
+  {
+    "id": 113888,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:06:03.281159+00:00"
+  },
+  {
+    "id": 113889,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:08:03.569015+00:00"
+  },
+  {
+    "id": 113890,
+    "blockchain": "ethereum",
+    "slow": 0.044731113,
+    "standard": 0.044731128,
+    "fast": 0.045731113,
+    "created_at": "2026-01-22T01:08:04.084999+00:00"
+  },
+  {
+    "id": 113891,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:10:04.075777+00:00"
+  },
+  {
+    "id": 113892,
+    "blockchain": "ethereum",
+    "slow": 0.041287696,
+    "standard": 0.041287696,
+    "fast": 0.045416465,
+    "created_at": "2026-01-22T01:10:04.493967+00:00"
+  },
+  {
+    "id": 113893,
+    "blockchain": "ethereum",
+    "slow": 0.037420013,
+    "standard": 0.037420028,
+    "fast": 0.038420013,
+    "created_at": "2026-01-22T01:12:02.3712+00:00"
+  },
+  {
+    "id": 113894,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:12:02.391719+00:00"
+  },
+  {
+    "id": 113895,
+    "blockchain": "ethereum",
+    "slow": 0.035602279,
+    "standard": 0.035602294,
+    "fast": 0.039162523,
+    "created_at": "2026-01-22T01:14:01.685106+00:00"
+  },
+  {
+    "id": 113896,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:14:02.576339+00:00"
+  },
+  {
+    "id": 113897,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:16:05.352675+00:00"
+  },
+  {
+    "id": 113898,
+    "blockchain": "ethereum",
+    "slow": 0.034460692,
+    "standard": 0.034460702,
+    "fast": 0.035460692,
+    "created_at": "2026-01-22T01:16:05.524559+00:00"
+  },
+  {
+    "id": 113899,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:18:01.597322+00:00"
+  },
+  {
+    "id": 113900,
+    "blockchain": "ethereum",
+    "slow": 0.03387086,
+    "standard": 0.033870871,
+    "fast": 0.03387186,
+    "created_at": "2026-01-22T01:18:02.297026+00:00"
+  },
+  {
+    "id": 113901,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T01:20:03.059695+00:00"
+  },
+  {
+    "id": 113902,
+    "blockchain": "ethereum",
+    "slow": 0.028067063,
+    "standard": 0.028217056,
+    "fast": 0.031038761,
+    "created_at": "2026-01-22T01:20:04.250847+00:00"
+  },
+  {
+    "id": 113903,
+    "blockchain": "ethereum",
+    "slow": 0.035539596,
+    "standard": 0.035539611,
+    "fast": 0.039094655,
+    "created_at": "2026-01-22T01:22:01.973637+00:00"
+  },
+  {
+    "id": 113904,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T01:22:01.973793+00:00"
+  },
+  {
+    "id": 113905,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:24:01.466165+00:00"
+  },
+  {
+    "id": 113906,
+    "blockchain": "ethereum",
+    "slow": 0.036593211,
+    "standard": 0.036593221,
+    "fast": 0.036594211,
+    "created_at": "2026-01-22T01:24:01.512056+00:00"
+  },
+  {
+    "id": 113907,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:26:00.940107+00:00"
+  },
+  {
+    "id": 113908,
+    "blockchain": "ethereum",
+    "slow": 0.034378464,
+    "standard": 0.034378474,
+    "fast": 0.037816321,
+    "created_at": "2026-01-22T01:26:01.798659+00:00"
+  },
+  {
+    "id": 113909,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:28:03.866407+00:00"
+  },
+  {
+    "id": 113910,
+    "blockchain": "ethereum",
+    "slow": 0.031753127,
+    "standard": 0.031754127,
+    "fast": 0.034928439,
+    "created_at": "2026-01-22T01:28:04.362539+00:00"
+  },
+  {
+    "id": 113911,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:30:03.441552+00:00"
+  },
+  {
+    "id": 113912,
+    "blockchain": "ethereum",
+    "slow": 0.029004571,
+    "standard": 0.029004571,
+    "fast": 0.029504561,
+    "created_at": "2026-01-22T01:30:05.630537+00:00"
+  },
+  {
+    "id": 113913,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:32:02.040152+00:00"
+  },
+  {
+    "id": 113914,
+    "blockchain": "ethereum",
+    "slow": 0.035952362,
+    "standard": 0.035952412,
+    "fast": 0.040647598,
+    "created_at": "2026-01-22T01:32:02.410253+00:00"
+  },
+  {
+    "id": 113915,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:34:01.384003+00:00"
+  },
+  {
+    "id": 113916,
+    "blockchain": "ethereum",
+    "slow": 0.033431428,
+    "standard": 0.033431438,
+    "fast": 0.033682169,
+    "created_at": "2026-01-22T01:34:02.008703+00:00"
+  },
+  {
+    "id": 113917,
+    "blockchain": "ethereum",
+    "slow": 0.03240471,
+    "standard": 0.03240472,
+    "fast": 0.03290471,
+    "created_at": "2026-01-22T01:36:02.445303+00:00"
+  },
+  {
+    "id": 113918,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:36:02.807896+00:00"
+  },
+  {
+    "id": 113919,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:38:02.017717+00:00"
+  },
+  {
+    "id": 113920,
+    "blockchain": "ethereum",
+    "slow": 0.038075544,
+    "standard": 0.038075554,
+    "fast": 0.038076744,
+    "created_at": "2026-01-22T01:38:02.033989+00:00"
+  },
+  {
+    "id": 113921,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:40:05.528018+00:00"
+  },
+  {
+    "id": 113922,
+    "blockchain": "ethereum",
+    "slow": 0.036785462,
+    "standard": 0.036785462,
+    "fast": 0.040464008,
+    "created_at": "2026-01-22T01:40:06.005838+00:00"
+  },
+  {
+    "id": 113923,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:42:02.503211+00:00"
+  },
+  {
+    "id": 113924,
+    "blockchain": "ethereum",
+    "slow": 0.036171163,
+    "standard": 0.03617117,
+    "fast": 0.036520011,
+    "created_at": "2026-01-22T01:42:03.072538+00:00"
+  },
+  {
+    "id": 113925,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:44:00.961743+00:00"
+  },
+  {
+    "id": 113926,
+    "blockchain": "ethereum",
+    "slow": 0.04185581,
+    "standard": 0.041855811,
+    "fast": 0.047141386,
+    "created_at": "2026-01-22T01:44:01.709913+00:00"
+  },
+  {
+    "id": 113927,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:46:01.500815+00:00"
+  },
+  {
+    "id": 113928,
+    "blockchain": "ethereum",
+    "slow": 0.038521369,
+    "standard": 0.038521373,
+    "fast": 0.038521769,
+    "created_at": "2026-01-22T01:46:02.147504+00:00"
+  },
+  {
+    "id": 113929,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T01:48:00.939547+00:00"
+  },
+  {
+    "id": 113930,
+    "blockchain": "ethereum",
+    "slow": 0.034965996,
+    "standard": 0.034966016,
+    "fast": 0.035965996,
+    "created_at": "2026-01-22T01:48:02.197992+00:00"
+  },
+  {
+    "id": 113931,
+    "blockchain": "ethereum",
+    "slow": 0.033413611,
+    "standard": 0.033413615,
+    "fast": 0.033413626,
+    "created_at": "2026-01-22T01:50:03.130083+00:00"
+  },
+  {
+    "id": 113932,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:50:03.418201+00:00"
+  },
+  {
+    "id": 113933,
+    "blockchain": "ethereum",
+    "slow": 0.038720394,
+    "standard": 0.038720398,
+    "fast": 0.042592873,
+    "created_at": "2026-01-22T01:52:02.093938+00:00"
+  },
+  {
+    "id": 113934,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:52:02.189278+00:00"
+  },
+  {
+    "id": 113935,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:54:01.722352+00:00"
+  },
+  {
+    "id": 113936,
+    "blockchain": "ethereum",
+    "slow": 0.042213061,
+    "standard": 0.04221307,
+    "fast": 0.047534367,
+    "created_at": "2026-01-22T01:54:02.44319+00:00"
+  },
+  {
+    "id": 113937,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:56:01.553672+00:00"
+  },
+  {
+    "id": 113938,
+    "blockchain": "ethereum",
+    "slow": 0.038946887,
+    "standard": 0.038946891,
+    "fast": 0.038947287,
+    "created_at": "2026-01-22T01:56:02.356128+00:00"
+  },
+  {
+    "id": 113939,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T01:58:04.959749+00:00"
+  },
+  {
+    "id": 113940,
+    "blockchain": "ethereum",
+    "slow": 0.033806884,
+    "standard": 0.033806888,
+    "fast": 0.033807284,
+    "created_at": "2026-01-22T01:58:05.177309+00:00"
+  },
+  {
+    "id": 113941,
+    "blockchain": "ethereum",
+    "slow": 0.03110449,
+    "standard": 0.031104492,
+    "fast": 0.034214941,
+    "created_at": "2026-01-22T02:00:08.409112+00:00"
+  },
+  {
+    "id": 113942,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:00:08.60431+00:00"
+  },
+  {
+    "id": 113943,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:02:04.967535+00:00"
+  },
+  {
+    "id": 113944,
+    "blockchain": "ethereum",
+    "slow": 0.030680975,
+    "standard": 0.030680977,
+    "fast": 0.033749074,
+    "created_at": "2026-01-22T02:02:05.502491+00:00"
+  },
+  {
+    "id": 113945,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:04:02.419969+00:00"
+  },
+  {
+    "id": 113946,
+    "blockchain": "ethereum",
+    "slow": 0.029655393,
+    "standard": 0.029655395,
+    "fast": 0.032620934,
+    "created_at": "2026-01-22T02:04:02.634428+00:00"
+  },
+  {
+    "id": 113947,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:06:00.725357+00:00"
+  },
+  {
+    "id": 113948,
+    "blockchain": "ethereum",
+    "slow": 0.031667726,
+    "standard": 0.031667728,
+    "fast": 0.032650664,
+    "created_at": "2026-01-22T02:06:01.451812+00:00"
+  },
+  {
+    "id": 113949,
+    "blockchain": "ethereum",
+    "slow": 0.0340636,
+    "standard": 0.034063602,
+    "fast": 0.0340638,
+    "created_at": "2026-01-22T02:08:01.559493+00:00"
+  },
+  {
+    "id": 113950,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:08:02.020189+00:00"
+  },
+  {
+    "id": 113951,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:10:03.346333+00:00"
+  },
+  {
+    "id": 113952,
+    "blockchain": "ethereum",
+    "slow": 0.029573697,
+    "standard": 0.029573699,
+    "fast": 0.029673697,
+    "created_at": "2026-01-22T02:10:04.481252+00:00"
+  },
+  {
+    "id": 113953,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:12:01.286846+00:00"
+  },
+  {
+    "id": 113954,
+    "blockchain": "ethereum",
+    "slow": 0.037285211,
+    "standard": 0.037285213,
+    "fast": 0.038285211,
+    "created_at": "2026-01-22T02:12:02.517971+00:00"
+  },
+  {
+    "id": 113955,
+    "blockchain": "ethereum",
+    "slow": 0.0396336,
+    "standard": 0.039633798,
+    "fast": 0.039708034,
+    "created_at": "2026-01-22T02:14:02.402987+00:00"
+  },
+  {
+    "id": 113956,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:14:02.483337+00:00"
+  },
+  {
+    "id": 113957,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:16:02.847599+00:00"
+  },
+  {
+    "id": 113958,
+    "blockchain": "ethereum",
+    "slow": 0.037467671,
+    "standard": 0.037467674,
+    "fast": 0.038467671,
+    "created_at": "2026-01-22T02:16:04.630164+00:00"
+  },
+  {
+    "id": 113959,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:18:02.52713+00:00"
+  },
+  {
+    "id": 113960,
+    "blockchain": "ethereum",
+    "slow": 0,
+    "standard": 0,
+    "fast": 0,
+    "created_at": "2026-01-22T02:18:17.99755+00:00"
+  },
+  {
+    "id": 113961,
+    "blockchain": "ethereum",
+    "slow": 0.056887173,
+    "standard": 0.06257589,
+    "fast": 0.06367589,
+    "created_at": "2026-01-22T02:20:03.263974+00:00"
+  },
+  {
+    "id": 113962,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:20:04.215658+00:00"
+  },
+  {
+    "id": 113963,
+    "blockchain": "ethereum",
+    "slow": 0.062390077,
+    "standard": 0.062390317,
+    "fast": 0.063390077,
+    "created_at": "2026-01-22T02:22:03.014756+00:00"
+  },
+  {
+    "id": 113964,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:22:03.494501+00:00"
+  },
+  {
+    "id": 113965,
+    "blockchain": "ethereum",
+    "slow": 0.074178508,
+    "standard": 0.075178508,
+    "fast": 0.082696358,
+    "created_at": "2026-01-22T02:24:02.570693+00:00"
+  },
+  {
+    "id": 113966,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:24:02.94007+00:00"
+  },
+  {
+    "id": 113967,
+    "blockchain": "ethereum",
+    "slow": 0.072160368,
+    "standard": 0.072160568,
+    "fast": 0.073160368,
+    "created_at": "2026-01-22T02:26:02.313325+00:00"
+  },
+  {
+    "id": 113968,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:26:02.704455+00:00"
+  },
+  {
+    "id": 113969,
+    "blockchain": "ethereum",
+    "slow": 0.098042936,
+    "standard": 0.098043134,
+    "fast": 0.108947227,
+    "created_at": "2026-01-22T02:28:01.644008+00:00"
+  },
+  {
+    "id": 113970,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:28:02.237448+00:00"
+  },
+  {
+    "id": 113971,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:30:04.838695+00:00"
+  },
+  {
+    "id": 113972,
+    "blockchain": "ethereum",
+    "slow": 0.10357617,
+    "standard": 0.10357637,
+    "fast": 0.10457617,
+    "created_at": "2026-01-22T02:30:05.929522+00:00"
+  },
+  {
+    "id": 113973,
+    "blockchain": "ethereum",
+    "slow": 0.086570748,
+    "standard": 0.086570748,
+    "fast": 0.095227822,
+    "created_at": "2026-01-22T02:32:02.374658+00:00"
+  },
+  {
+    "id": 113974,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:32:02.403975+00:00"
+  },
+  {
+    "id": 113975,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:34:00.67996+00:00"
+  },
+  {
+    "id": 113976,
+    "blockchain": "ethereum",
+    "slow": 0.079777697,
+    "standard": 0.079777712,
+    "fast": 0.081777697,
+    "created_at": "2026-01-22T02:34:01.67462+00:00"
+  },
+  {
+    "id": 113977,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:36:00.493758+00:00"
+  },
+  {
+    "id": 113978,
+    "blockchain": "ethereum",
+    "slow": 0.071456093,
+    "standard": 0.071456108,
+    "fast": 0.078601718,
+    "created_at": "2026-01-22T02:36:01.511997+00:00"
+  },
+  {
+    "id": 113979,
+    "blockchain": "ethereum",
+    "slow": 0.065719056,
+    "standard": 0.065719254,
+    "fast": 0.072291179,
+    "created_at": "2026-01-22T02:38:01.023423+00:00"
+  },
+  {
+    "id": 113980,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:38:01.708002+00:00"
+  },
+  {
+    "id": 113981,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:40:01.542665+00:00"
+  },
+  {
+    "id": 113982,
+    "blockchain": "ethereum",
+    "slow": 0.063190497,
+    "standard": 0.063190697,
+    "fast": 0.064190497,
+    "created_at": "2026-01-22T02:40:02.445975+00:00"
+  },
+  {
+    "id": 113983,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:42:05.146183+00:00"
+  },
+  {
+    "id": 113984,
+    "blockchain": "ethereum",
+    "slow": 0.057225176,
+    "standard": 0.057225276,
+    "fast": 0.057225376,
+    "created_at": "2026-01-22T02:42:05.663945+00:00"
+  },
+  {
+    "id": 113985,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:44:02.115921+00:00"
+  },
+  {
+    "id": 113986,
+    "blockchain": "ethereum",
+    "slow": 0.054807568,
+    "standard": 0.05480757,
+    "fast": 0.055807568,
+    "created_at": "2026-01-22T02:44:02.115928+00:00"
+  },
+  {
+    "id": 113987,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:46:01.208149+00:00"
+  },
+  {
+    "id": 113988,
+    "blockchain": "ethereum",
+    "slow": 0.049821934,
+    "standard": 0.049821934,
+    "fast": 0.054804127,
+    "created_at": "2026-01-22T02:46:02.291897+00:00"
+  },
+  {
+    "id": 113989,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:48:04.117016+00:00"
+  },
+  {
+    "id": 113990,
+    "blockchain": "ethereum",
+    "slow": 0.047253335,
+    "standard": 0.047253337,
+    "fast": 0.047253339,
+    "created_at": "2026-01-22T02:48:04.588943+00:00"
+  },
+  {
+    "id": 113991,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:50:01.857772+00:00"
+  },
+  {
+    "id": 113992,
+    "blockchain": "ethereum",
+    "slow": 0.046186108,
+    "standard": 0.04618611,
+    "fast": 0.047186108,
+    "created_at": "2026-01-22T02:50:04.653053+00:00"
+  },
+  {
+    "id": 113993,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:52:01.460043+00:00"
+  },
+  {
+    "id": 113994,
+    "blockchain": "ethereum",
+    "slow": 0.047489794,
+    "standard": 0.047489992,
+    "fast": 0.047490032,
+    "created_at": "2026-01-22T02:52:01.906338+00:00"
+  },
+  {
+    "id": 113995,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T02:54:01.284572+00:00"
+  },
+  {
+    "id": 113996,
+    "blockchain": "ethereum",
+    "slow": 0.046988058,
+    "standard": 0.046988258,
+    "fast": 0.046988298,
+    "created_at": "2026-01-22T02:54:01.480901+00:00"
+  },
+  {
+    "id": 113997,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:56:01.662745+00:00"
+  },
+  {
+    "id": 113998,
+    "blockchain": "ethereum",
+    "slow": 0.051608741,
+    "standard": 0.051608756,
+    "fast": 0.056769631,
+    "created_at": "2026-01-22T02:56:01.843731+00:00"
+  },
+  {
+    "id": 113999,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T02:58:01.10728+00:00"
+  },
+  {
+    "id": 114000,
+    "blockchain": "ethereum",
+    "slow": 0.046309068,
+    "standard": 0.04630907,
+    "fast": 0.050939977,
+    "created_at": "2026-01-22T02:58:01.997041+00:00"
+  },
+  {
+    "id": 114001,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:00:04.728667+00:00"
+  },
+  {
+    "id": 114002,
+    "blockchain": "ethereum",
+    "slow": 0.042224025,
+    "standard": 0.04222404,
+    "fast": 0.042224565,
+    "created_at": "2026-01-22T03:00:11.022631+00:00"
+  },
+  {
+    "id": 114003,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:02:01.57343+00:00"
+  },
+  {
+    "id": 114004,
+    "blockchain": "ethereum",
+    "slow": 0.040925986,
+    "standard": 0.040925988,
+    "fast": 0.040926286,
+    "created_at": "2026-01-22T03:02:02.343245+00:00"
+  },
+  {
+    "id": 114005,
+    "blockchain": "ethereum",
+    "slow": 0.039672642,
+    "standard": 0.039672657,
+    "fast": 0.041504502,
+    "created_at": "2026-01-22T03:04:01.330526+00:00"
+  },
+  {
+    "id": 114006,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:04:01.795769+00:00"
+  },
+  {
+    "id": 114007,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:06:01.870151+00:00"
+  },
+  {
+    "id": 114008,
+    "blockchain": "ethereum",
+    "slow": 0.041021927,
+    "standard": 0.04102193,
+    "fast": 0.04105919,
+    "created_at": "2026-01-22T03:06:02.326314+00:00"
+  },
+  {
+    "id": 114009,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:08:00.768038+00:00"
+  },
+  {
+    "id": 114010,
+    "blockchain": "ethereum",
+    "slow": 0.03574199,
+    "standard": 0.035741992,
+    "fast": 0.03674199,
+    "created_at": "2026-01-22T03:08:01.448822+00:00"
+  },
+  {
+    "id": 114011,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:10:02.99773+00:00"
+  },
+  {
+    "id": 114012,
+    "blockchain": "ethereum",
+    "slow": 0.0322787,
+    "standard": 0.032278701,
+    "fast": 0.032278899,
+    "created_at": "2026-01-22T03:10:04.643274+00:00"
+  },
+  {
+    "id": 114013,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:12:02.282811+00:00"
+  },
+  {
+    "id": 114014,
+    "blockchain": "ethereum",
+    "slow": 0.032264494,
+    "standard": 0.032264509,
+    "fast": 0.032364604,
+    "created_at": "2026-01-22T03:12:02.327991+00:00"
+  },
+  {
+    "id": 114015,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:14:05.424544+00:00"
+  },
+  {
+    "id": 114016,
+    "blockchain": "ethereum",
+    "slow": 0.033254089,
+    "standard": 0.033254091,
+    "fast": 0.033254289,
+    "created_at": "2026-01-22T03:14:05.858572+00:00"
+  },
+  {
+    "id": 114017,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T03:16:04.052662+00:00"
+  },
+  {
+    "id": 114018,
+    "blockchain": "ethereum",
+    "slow": 0.030770138,
+    "standard": 0.030770338,
+    "fast": 0.033847371,
+    "created_at": "2026-01-22T03:16:04.380588+00:00"
+  },
+  {
+    "id": 114019,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:18:01.19079+00:00"
+  },
+  {
+    "id": 114020,
+    "blockchain": "ethereum",
+    "slow": 0.029901444,
+    "standard": 0.032666052,
+    "fast": 0.032891588,
+    "created_at": "2026-01-22T03:18:02.306344+00:00"
+  },
+  {
+    "id": 114021,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:20:02.447616+00:00"
+  },
+  {
+    "id": 114022,
+    "blockchain": "ethereum",
+    "slow": 0.03526964,
+    "standard": 0.03526985,
+    "fast": 0.03626964,
+    "created_at": "2026-01-22T03:20:03.499051+00:00"
+  },
+  {
+    "id": 114023,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:22:01.215624+00:00"
+  },
+  {
+    "id": 114024,
+    "blockchain": "ethereum",
+    "slow": 0.037081545,
+    "standard": 0.03708303,
+    "fast": 0.03847622,
+    "created_at": "2026-01-22T03:22:02.436297+00:00"
+  },
+  {
+    "id": 114025,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:24:01.849097+00:00"
+  },
+  {
+    "id": 114026,
+    "blockchain": "ethereum",
+    "slow": 0.033957779,
+    "standard": 0.033957794,
+    "fast": 0.037353573,
+    "created_at": "2026-01-22T03:24:03.735133+00:00"
+  },
+  {
+    "id": 114027,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:26:02.26679+00:00"
+  },
+  {
+    "id": 114028,
+    "blockchain": "ethereum",
+    "slow": 0.032766683,
+    "standard": 0.032766698,
+    "fast": 0.032866683,
+    "created_at": "2026-01-22T03:26:03.817975+00:00"
+  },
+  {
+    "id": 114029,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:28:01.508284+00:00"
+  },
+  {
+    "id": 114030,
+    "blockchain": "ethereum",
+    "slow": 0.028621112,
+    "standard": 0.028621127,
+    "fast": 0.031483239,
+    "created_at": "2026-01-22T03:28:02.355765+00:00"
+  },
+  {
+    "id": 114031,
+    "blockchain": "ethereum",
+    "slow": 0.030628397,
+    "standard": 0.030629897,
+    "fast": 0.031628397,
+    "created_at": "2026-01-22T03:30:01.928482+00:00"
+  },
+  {
+    "id": 114032,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:30:03.092561+00:00"
+  },
+  {
+    "id": 114033,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:32:02.989418+00:00"
+  },
+  {
+    "id": 114034,
+    "blockchain": "ethereum",
+    "slow": 0.035150133,
+    "standard": 0.035150133,
+    "fast": 0.038665146,
+    "created_at": "2026-01-22T03:32:05.863596+00:00"
+  },
+  {
+    "id": 114035,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:34:02.579095+00:00"
+  },
+  {
+    "id": 114036,
+    "blockchain": "ethereum",
+    "slow": 0.037152751,
+    "standard": 0.037154251,
+    "fast": 0.037155451,
+    "created_at": "2026-01-22T03:34:03.069645+00:00"
+  },
+  {
+    "id": 114037,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:36:02.143015+00:00"
+  },
+  {
+    "id": 114038,
+    "blockchain": "ethereum",
+    "slow": 0.041202442,
+    "standard": 0.045322686,
+    "fast": 0.046422686,
+    "created_at": "2026-01-22T03:36:02.733725+00:00"
+  },
+  {
+    "id": 114039,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T03:38:00.713935+00:00"
+  },
+  {
+    "id": 114040,
+    "blockchain": "ethereum",
+    "slow": 0.042463623,
+    "standard": 0.042465123,
+    "fast": 0.04736397,
+    "created_at": "2026-01-22T03:38:02.60128+00:00"
+  },
+  {
+    "id": 114041,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T03:40:01.749303+00:00"
+  },
+  {
+    "id": 114042,
+    "blockchain": "ethereum",
+    "slow": 0.044689655,
+    "standard": 0.044689761,
+    "fast": 0.045689655,
+    "created_at": "2026-01-22T03:40:03.329045+00:00"
+  },
+  {
+    "id": 114043,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:42:00.913421+00:00"
+  },
+  {
+    "id": 114044,
+    "blockchain": "ethereum",
+    "slow": 0.044988485,
+    "standard": 0.04498901,
+    "fast": 0.045988485,
+    "created_at": "2026-01-22T03:42:01.090735+00:00"
+  },
+  {
+    "id": 114045,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:44:01.657919+00:00"
+  },
+  {
+    "id": 114046,
+    "blockchain": "ethereum",
+    "slow": 0.051693218,
+    "standard": 0.051694717,
+    "fast": 0.057962538,
+    "created_at": "2026-01-22T03:44:02.403978+00:00"
+  },
+  {
+    "id": 114047,
+    "blockchain": "ethereum",
+    "slow": 0.051620738,
+    "standard": 0.051620738,
+    "fast": 0.051720723,
+    "created_at": "2026-01-22T03:46:01.292256+00:00"
+  },
+  {
+    "id": 114048,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:46:01.967886+00:00"
+  },
+  {
+    "id": 114049,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:48:01.831968+00:00"
+  },
+  {
+    "id": 114050,
+    "blockchain": "ethereum",
+    "slow": 0.042584162,
+    "standard": 0.042585662,
+    "fast": 0.046844228,
+    "created_at": "2026-01-22T03:48:02.721221+00:00"
+  },
+  {
+    "id": 114051,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:50:03.843337+00:00"
+  },
+  {
+    "id": 114052,
+    "blockchain": "ethereum",
+    "slow": 0.036432718,
+    "standard": 0.036432733,
+    "fast": 0.040076006,
+    "created_at": "2026-01-22T03:50:05.945453+00:00"
+  },
+  {
+    "id": 114053,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:52:01.546978+00:00"
+  },
+  {
+    "id": 114054,
+    "blockchain": "ethereum",
+    "slow": 0.033314033,
+    "standard": 0.033314048,
+    "fast": 0.034314033,
+    "created_at": "2026-01-22T03:52:02.018882+00:00"
+  },
+  {
+    "id": 114055,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:54:02.73259+00:00"
+  },
+  {
+    "id": 114056,
+    "blockchain": "ethereum",
+    "slow": 0.037539806,
+    "standard": 0.041293786,
+    "fast": 0.042393786,
+    "created_at": "2026-01-22T03:54:03.616632+00:00"
+  },
+  {
+    "id": 114057,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:56:02.434615+00:00"
+  },
+  {
+    "id": 114058,
+    "blockchain": "ethereum",
+    "slow": 0.045229544,
+    "standard": 0.045231044,
+    "fast": 0.046229544,
+    "created_at": "2026-01-22T03:56:03.313095+00:00"
+  },
+  {
+    "id": 114059,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T03:58:02.091461+00:00"
+  },
+  {
+    "id": 114060,
+    "blockchain": "ethereum",
+    "slow": 0.041890844,
+    "standard": 0.041892344,
+    "fast": 0.046081578,
+    "created_at": "2026-01-22T03:58:03.290735+00:00"
+  },
+  {
+    "id": 114061,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:00:17.638787+00:00"
+  },
+  {
+    "id": 114062,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:02:00.574793+00:00"
+  },
+  {
+    "id": 114063,
+    "blockchain": "ethereum",
+    "slow": 0.043713951,
+    "standard": 0.043715451,
+    "fast": 0.044713951,
+    "created_at": "2026-01-22T04:02:04.467199+00:00"
+  },
+  {
+    "id": 114064,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:04:01.875751+00:00"
+  },
+  {
+    "id": 114065,
+    "blockchain": "ethereum",
+    "slow": 0.0448814,
+    "standard": 0.044881415,
+    "fast": 0.0458814,
+    "created_at": "2026-01-22T04:04:01.936496+00:00"
+  },
+  {
+    "id": 114066,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:06:01.60174+00:00"
+  },
+  {
+    "id": 114067,
+    "blockchain": "ethereum",
+    "slow": 0.054616144,
+    "standard": 0.054616159,
+    "fast": 0.055616144,
+    "created_at": "2026-01-22T04:06:02.512018+00:00"
+  },
+  {
+    "id": 114068,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:08:01.316362+00:00"
+  },
+  {
+    "id": 114069,
+    "blockchain": "ethereum",
+    "slow": 0.056004871,
+    "standard": 0.056004886,
+    "fast": 0.062705358,
+    "created_at": "2026-01-22T04:08:02.227489+00:00"
+  },
+  {
+    "id": 114070,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:10:05.599429+00:00"
+  },
+  {
+    "id": 114071,
+    "blockchain": "ethereum",
+    "slow": 0.060717669,
+    "standard": 0.060718869,
+    "fast": 0.061717669,
+    "created_at": "2026-01-22T04:10:05.814783+00:00"
+  },
+  {
+    "id": 114072,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:12:02.685369+00:00"
+  },
+  {
+    "id": 114073,
+    "blockchain": "ethereum",
+    "slow": 0.058373452,
+    "standard": 0.058373467,
+    "fast": 0.065003017,
+    "created_at": "2026-01-22T04:12:03.548107+00:00"
+  },
+  {
+    "id": 114074,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:14:02.925519+00:00"
+  },
+  {
+    "id": 114075,
+    "blockchain": "ethereum",
+    "slow": 0.074115539,
+    "standard": 0.074115554,
+    "fast": 0.083062414,
+    "created_at": "2026-01-22T04:14:02.969965+00:00"
+  },
+  {
+    "id": 114076,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:16:01.033262+00:00"
+  },
+  {
+    "id": 114077,
+    "blockchain": "ethereum",
+    "slow": 0.070225811,
+    "standard": 0.070226811,
+    "fast": 0.071225811,
+    "created_at": "2026-01-22T04:16:01.743068+00:00"
+  },
+  {
+    "id": 114078,
+    "blockchain": "ethereum",
+    "slow": 0.067724336,
+    "standard": 0.067726576,
+    "fast": 0.068724326,
+    "created_at": "2026-01-22T04:18:02.878908+00:00"
+  },
+  {
+    "id": 114079,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:18:03.502771+00:00"
+  },
+  {
+    "id": 114080,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:20:01.184662+00:00"
+  },
+  {
+    "id": 114081,
+    "blockchain": "ethereum",
+    "slow": 0.050192453,
+    "standard": 0.050192463,
+    "fast": 0.055211709,
+    "created_at": "2026-01-22T04:20:05.290741+00:00"
+  },
+  {
+    "id": 114082,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:22:03.019519+00:00"
+  },
+  {
+    "id": 114083,
+    "blockchain": "ethereum",
+    "slow": 0.04862207,
+    "standard": 0.04862307,
+    "fast": 0.04962207,
+    "created_at": "2026-01-22T04:22:03.815847+00:00"
+  },
+  {
+    "id": 114084,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:24:02.496752+00:00"
+  },
+  {
+    "id": 114085,
+    "blockchain": "ethereum",
+    "slow": 0.053194677,
+    "standard": 0.053195676,
+    "fast": 0.054590423,
+    "created_at": "2026-01-22T04:24:02.581157+00:00"
+  },
+  {
+    "id": 114086,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:26:02.874183+00:00"
+  },
+  {
+    "id": 114087,
+    "blockchain": "ethereum",
+    "slow": 0.048159252,
+    "standard": 0.048259252,
+    "fast": 0.053085177,
+    "created_at": "2026-01-22T04:26:03.324082+00:00"
+  },
+  {
+    "id": 114088,
+    "blockchain": "ethereum",
+    "slow": 0.048869713,
+    "standard": 0.048869728,
+    "fast": 0.0537567,
+    "created_at": "2026-01-22T04:28:01.939894+00:00"
+  },
+  {
+    "id": 114089,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:28:02.794746+00:00"
+  },
+  {
+    "id": 114090,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:30:04.845144+00:00"
+  },
+  {
+    "id": 114091,
+    "blockchain": "ethereum",
+    "slow": 0.047474335,
+    "standard": 0.047474335,
+    "fast": 0.047574325,
+    "created_at": "2026-01-22T04:30:07.094151+00:00"
+  },
+  {
+    "id": 114092,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:32:01.829433+00:00"
+  },
+  {
+    "id": 114093,
+    "blockchain": "ethereum",
+    "slow": 0.045692218,
+    "standard": 0.045692228,
+    "fast": 0.045692298,
+    "created_at": "2026-01-22T04:32:02.78298+00:00"
+  },
+  {
+    "id": 114094,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:34:02.895836+00:00"
+  },
+  {
+    "id": 114095,
+    "blockchain": "ethereum",
+    "slow": 0.04440383,
+    "standard": 0.04440482,
+    "fast": 0.048845302,
+    "created_at": "2026-01-22T04:34:03.053699+00:00"
+  },
+  {
+    "id": 114096,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:36:02.552256+00:00"
+  },
+  {
+    "id": 114097,
+    "blockchain": "ethereum",
+    "slow": 0.04506868,
+    "standard": 0.04506869,
+    "fast": 0.049575559,
+    "created_at": "2026-01-22T04:36:03.395583+00:00"
+  },
+  {
+    "id": 114098,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:38:01.509585+00:00"
+  },
+  {
+    "id": 114099,
+    "blockchain": "ethereum",
+    "slow": 0.045795712,
+    "standard": 0.045796712,
+    "fast": 0.046795712,
+    "created_at": "2026-01-22T04:38:02.48919+00:00"
+  },
+  {
+    "id": 114100,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:40:04.123973+00:00"
+  },
+  {
+    "id": 114101,
+    "blockchain": "ethereum",
+    "slow": 0.056810674,
+    "standard": 0.057810674,
+    "fast": 0.058435674,
+    "created_at": "2026-01-22T04:40:05.575099+00:00"
+  },
+  {
+    "id": 114102,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:42:02.505678+00:00"
+  },
+  {
+    "id": 114103,
+    "blockchain": "ethereum",
+    "slow": 0.046363328,
+    "standard": 0.046364318,
+    "fast": 0.051000749,
+    "created_at": "2026-01-22T04:42:03.386771+00:00"
+  },
+  {
+    "id": 114104,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:44:02.768884+00:00"
+  },
+  {
+    "id": 114105,
+    "blockchain": "ethereum",
+    "slow": 0.04622563,
+    "standard": 0.04622662,
+    "fast": 0.050849282,
+    "created_at": "2026-01-22T04:44:03.176855+00:00"
+  },
+  {
+    "id": 114106,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:46:01.992141+00:00"
+  },
+  {
+    "id": 114107,
+    "blockchain": "ethereum",
+    "slow": 0.052307714,
+    "standard": 0.052308704,
+    "fast": 0.053307704,
+    "created_at": "2026-01-22T04:46:02.187535+00:00"
+  },
+  {
+    "id": 114108,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:48:02.256861+00:00"
+  },
+  {
+    "id": 114109,
+    "blockchain": "ethereum",
+    "slow": 0.048190496,
+    "standard": 0.048191486,
+    "fast": 0.053010634,
+    "created_at": "2026-01-22T04:48:02.683579+00:00"
+  },
+  {
+    "id": 114110,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:50:03.845938+00:00"
+  },
+  {
+    "id": 114111,
+    "blockchain": "ethereum",
+    "slow": 0.049566617,
+    "standard": 0.049567607,
+    "fast": 0.049567807,
+    "created_at": "2026-01-22T04:50:04.076728+00:00"
+  },
+  {
+    "id": 114112,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T04:52:05.376593+00:00"
+  },
+  {
+    "id": 114113,
+    "blockchain": "ethereum",
+    "slow": 0.052398621,
+    "standard": 0.052399621,
+    "fast": 0.053786399,
+    "created_at": "2026-01-22T04:52:05.80526+00:00"
+  },
+  {
+    "id": 114114,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:54:02.984726+00:00"
+  },
+  {
+    "id": 114115,
+    "blockchain": "ethereum",
+    "slow": 0.053233187,
+    "standard": 0.053233217,
+    "fast": 0.053234187,
+    "created_at": "2026-01-22T04:54:02.985924+00:00"
+  },
+  {
+    "id": 114116,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:56:02.483037+00:00"
+  },
+  {
+    "id": 114117,
+    "blockchain": "ethereum",
+    "slow": 0.049003222,
+    "standard": 0.049053722,
+    "fast": 0.053959094,
+    "created_at": "2026-01-22T04:56:03.874815+00:00"
+  },
+  {
+    "id": 114118,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T04:58:00.752942+00:00"
+  },
+  {
+    "id": 114119,
+    "blockchain": "ethereum",
+    "slow": 0.048403191,
+    "standard": 0.048404191,
+    "fast": 0.049403191,
+    "created_at": "2026-01-22T04:58:03.444248+00:00"
+  },
+  {
+    "id": 114120,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:00:09.317189+00:00"
+  },
+  {
+    "id": 114121,
+    "blockchain": "ethereum",
+    "slow": 0.046135283,
+    "standard": 0.046136283,
+    "fast": 0.047760283,
+    "created_at": "2026-01-22T05:00:09.690662+00:00"
+  },
+  {
+    "id": 114122,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:02:02.645345+00:00"
+  },
+  {
+    "id": 114123,
+    "blockchain": "ethereum",
+    "slow": 0.046806369,
+    "standard": 0.046807369,
+    "fast": 0.048409994,
+    "created_at": "2026-01-22T05:02:03.2727+00:00"
+  },
+  {
+    "id": 114124,
+    "blockchain": "ethereum",
+    "slow": 0.04052996,
+    "standard": 0.04053095,
+    "fast": 0.042155109,
+    "created_at": "2026-01-22T05:04:03.267863+00:00"
+  },
+  {
+    "id": 114125,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:04:03.467734+00:00"
+  },
+  {
+    "id": 114126,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:06:05.632953+00:00"
+  },
+  {
+    "id": 114127,
+    "blockchain": "ethereum",
+    "slow": 0.041162247,
+    "standard": 0.041163247,
+    "fast": 0.047066146,
+    "created_at": "2026-01-22T05:06:05.843842+00:00"
+  },
+  {
+    "id": 114128,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:08:03.141711+00:00"
+  },
+  {
+    "id": 114129,
+    "blockchain": "ethereum",
+    "slow": 0.040759324,
+    "standard": 0.040760314,
+    "fast": 0.04158534,
+    "created_at": "2026-01-22T05:08:03.996282+00:00"
+  },
+  {
+    "id": 114130,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:10:01.780697+00:00"
+  },
+  {
+    "id": 114131,
+    "blockchain": "ethereum",
+    "slow": 0.036741363,
+    "standard": 0.036741383,
+    "fast": 0.036742363,
+    "created_at": "2026-01-22T05:10:06.019865+00:00"
+  },
+  {
+    "id": 114132,
+    "blockchain": "ethereum",
+    "slow": 0.039013385,
+    "standard": 0.039014385,
+    "fast": 0.040013385,
+    "created_at": "2026-01-22T05:12:02.129984+00:00"
+  },
+  {
+    "id": 114133,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:12:02.715732+00:00"
+  },
+  {
+    "id": 114134,
+    "blockchain": "ethereum",
+    "slow": 0.039390127,
+    "standard": 0.039391127,
+    "fast": 0.040785874,
+    "created_at": "2026-01-22T05:14:02.793671+00:00"
+  },
+  {
+    "id": 114135,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:14:02.814743+00:00"
+  },
+  {
+    "id": 114136,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T05:16:01.896202+00:00"
+  },
+  {
+    "id": 114137,
+    "blockchain": "ethereum",
+    "slow": 0.035843454,
+    "standard": 0.035844444,
+    "fast": 0.037468603,
+    "created_at": "2026-01-22T05:16:02.352825+00:00"
+  },
+  {
+    "id": 114138,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T05:18:05.521771+00:00"
+  },
+  {
+    "id": 114139,
+    "blockchain": "ethereum",
+    "slow": 0.035641811,
+    "standard": 0.035642811,
+    "fast": 0.036641811,
+    "created_at": "2026-01-22T05:18:05.69932+00:00"
+  },
+  {
+    "id": 114140,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T05:20:04.864649+00:00"
+  },
+  {
+    "id": 114141,
+    "blockchain": "ethereum",
+    "slow": 0.037208758,
+    "standard": 0.037209748,
+    "fast": 0.040930722,
+    "created_at": "2026-01-22T05:20:05.058051+00:00"
+  },
+  {
+    "id": 114142,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T05:22:02.622586+00:00"
+  },
+  {
+    "id": 114143,
+    "blockchain": "ethereum",
+    "slow": 0.037039459,
+    "standard": 0.037040459,
+    "fast": 0.038039459,
+    "created_at": "2026-01-22T05:22:02.895305+00:00"
+  },
+  {
+    "id": 114144,
+    "blockchain": "ethereum",
+    "slow": 0.037458094,
+    "standard": 0.037459094,
+    "fast": 0.03787265,
+    "created_at": "2026-01-22T05:24:02.423214+00:00"
+  },
+  {
+    "id": 114145,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T05:24:02.812768+00:00"
+  },
+  {
+    "id": 114146,
+    "blockchain": "ethereum",
+    "slow": 0.035379566,
+    "standard": 0.035380566,
+    "fast": 0.036379566,
+    "created_at": "2026-01-22T05:26:01.883101+00:00"
+  },
+  {
+    "id": 114147,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T05:26:02.630196+00:00"
+  },
+  {
+    "id": 114148,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:28:02.440875+00:00"
+  },
+  {
+    "id": 114149,
+    "blockchain": "ethereum",
+    "slow": 0.033443828,
+    "standard": 0.033444818,
+    "fast": 0.034214074,
+    "created_at": "2026-01-22T05:28:03.424986+00:00"
+  },
+  {
+    "id": 114150,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:30:00.925705+00:00"
+  },
+  {
+    "id": 114151,
+    "blockchain": "ethereum",
+    "slow": 0.036820775,
+    "standard": 0.036821775,
+    "fast": 0.040503952,
+    "created_at": "2026-01-22T05:30:04.167811+00:00"
+  },
+  {
+    "id": 114152,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:32:02.78821+00:00"
+  },
+  {
+    "id": 114153,
+    "blockchain": "ethereum",
+    "slow": 0.054846765,
+    "standard": 0.054847755,
+    "fast": 0.055196845,
+    "created_at": "2026-01-22T05:32:03.606626+00:00"
+  },
+  {
+    "id": 114154,
+    "blockchain": "ethereum",
+    "slow": 0.054309732,
+    "standard": 0.054310732,
+    "fast": 0.055309732,
+    "created_at": "2026-01-22T05:34:02.593131+00:00"
+  },
+  {
+    "id": 114155,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:34:02.698162+00:00"
+  },
+  {
+    "id": 114156,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:36:02.210865+00:00"
+  },
+  {
+    "id": 114157,
+    "blockchain": "ethereum",
+    "slow": 0.054859559,
+    "standard": 0.054860759,
+    "fast": 0.064859559,
+    "created_at": "2026-01-22T05:36:05.54014+00:00"
+  },
+  {
+    "id": 114158,
+    "blockchain": "ethereum",
+    "slow": 0.054809367,
+    "standard": 0.054810367,
+    "fast": 0.055809367,
+    "created_at": "2026-01-22T05:38:02.188419+00:00"
+  },
+  {
+    "id": 114159,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:38:02.64149+00:00"
+  },
+  {
+    "id": 114160,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:40:04.52525+00:00"
+  },
+  {
+    "id": 114161,
+    "blockchain": "ethereum",
+    "slow": 0.049465347,
+    "standard": 0.049466347,
+    "fast": 0.051408999,
+    "created_at": "2026-01-22T05:40:05.350336+00:00"
+  },
+  {
+    "id": 114162,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:42:01.291608+00:00"
+  },
+  {
+    "id": 114163,
+    "blockchain": "ethereum",
+    "slow": 0.04848804,
+    "standard": 0.04848904,
+    "fast": 0.05148804,
+    "created_at": "2026-01-22T05:42:02.865106+00:00"
+  },
+  {
+    "id": 114164,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:44:02.900727+00:00"
+  },
+  {
+    "id": 114165,
+    "blockchain": "ethereum",
+    "slow": 0.040641828,
+    "standard": 0.040642818,
+    "fast": 0.042096567,
+    "created_at": "2026-01-22T05:44:03.027397+00:00"
+  },
+  {
+    "id": 114166,
+    "blockchain": "ethereum",
+    "slow": 0.041780982,
+    "standard": 0.041781982,
+    "fast": 0.04596018,
+    "created_at": "2026-01-22T05:46:02.893856+00:00"
+  },
+  {
+    "id": 114167,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:46:03.254276+00:00"
+  },
+  {
+    "id": 114168,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:48:01.495542+00:00"
+  },
+  {
+    "id": 114169,
+    "blockchain": "ethereum",
+    "slow": 0.036404574,
+    "standard": 0.036405573,
+    "fast": 0.04004613,
+    "created_at": "2026-01-22T05:48:01.549417+00:00"
+  },
+  {
+    "id": 114170,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:50:04.428565+00:00"
+  },
+  {
+    "id": 114171,
+    "blockchain": "ethereum",
+    "slow": 0.040789832,
+    "standard": 0.040790822,
+    "fast": 0.041789822,
+    "created_at": "2026-01-22T05:50:05.283153+00:00"
+  },
+  {
+    "id": 114172,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:52:02.904763+00:00"
+  },
+  {
+    "id": 114173,
+    "blockchain": "ethereum",
+    "slow": 0.036186294,
+    "standard": 0.036186294,
+    "fast": 0.039804923,
+    "created_at": "2026-01-22T05:52:03.389542+00:00"
+  },
+  {
+    "id": 114174,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:54:02.936981+00:00"
+  },
+  {
+    "id": 114175,
+    "blockchain": "ethereum",
+    "slow": 0.034817189,
+    "standard": 0.035817189,
+    "fast": 0.036442348,
+    "created_at": "2026-01-22T05:54:03.569976+00:00"
+  },
+  {
+    "id": 114176,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:56:01.67666+00:00"
+  },
+  {
+    "id": 114177,
+    "blockchain": "ethereum",
+    "slow": 0.039989384,
+    "standard": 0.039990384,
+    "fast": 0.043989422,
+    "created_at": "2026-01-22T05:56:02.718575+00:00"
+  },
+  {
+    "id": 114178,
+    "blockchain": "ethereum",
+    "slow": 0.038050798,
+    "standard": 0.038050803,
+    "fast": 0.038051788,
+    "created_at": "2026-01-22T05:58:02.174552+00:00"
+  },
+  {
+    "id": 114179,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T05:58:02.293677+00:00"
+  },
+  {
+    "id": 114180,
+    "blockchain": "ethereum",
+    "slow": 0.038379077,
+    "standard": 0.038380077,
+    "fast": 0.039379077,
+    "created_at": "2026-01-22T06:00:09.476702+00:00"
+  },
+  {
+    "id": 114181,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:00:12.725675+00:00"
+  },
+  {
+    "id": 114182,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:02:01.321926+00:00"
+  },
+  {
+    "id": 114183,
+    "blockchain": "ethereum",
+    "slow": 0.044780874,
+    "standard": 0.044781874,
+    "fast": 0.050358961,
+    "created_at": "2026-01-22T06:02:02.125949+00:00"
+  },
+  {
+    "id": 114184,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:04:02.598782+00:00"
+  },
+  {
+    "id": 114185,
+    "blockchain": "ethereum",
+    "slow": 0.04403865,
+    "standard": 0.044039685,
+    "fast": 0.045310383,
+    "created_at": "2026-01-22T06:04:02.866798+00:00"
+  },
+  {
+    "id": 114186,
+    "blockchain": "ethereum",
+    "slow": 0.042155213,
+    "standard": 0.042155233,
+    "fast": 0.042156213,
+    "created_at": "2026-01-22T06:06:01.893156+00:00"
+  },
+  {
+    "id": 114187,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:06:02.514011+00:00"
+  },
+  {
+    "id": 114188,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:08:01.282655+00:00"
+  },
+  {
+    "id": 114189,
+    "blockchain": "ethereum",
+    "slow": 0.045393661,
+    "standard": 0.045394661,
+    "fast": 0.045394861,
+    "created_at": "2026-01-22T06:08:02.911948+00:00"
+  },
+  {
+    "id": 114190,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:10:03.375437+00:00"
+  },
+  {
+    "id": 114191,
+    "blockchain": "ethereum",
+    "slow": 0.045266495,
+    "standard": 0.045267495,
+    "fast": 0.046810333,
+    "created_at": "2026-01-22T06:10:05.82128+00:00"
+  },
+  {
+    "id": 114192,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:12:02.573007+00:00"
+  },
+  {
+    "id": 114193,
+    "blockchain": "ethereum",
+    "slow": 0.045663271,
+    "standard": 0.045663281,
+    "fast": 0.050229598,
+    "created_at": "2026-01-22T06:12:02.744459+00:00"
+  },
+  {
+    "id": 114194,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:14:05.359834+00:00"
+  },
+  {
+    "id": 114195,
+    "blockchain": "ethereum",
+    "slow": 0.051348727,
+    "standard": 0.051349727,
+    "fast": 0.051351427,
+    "created_at": "2026-01-22T06:14:05.888648+00:00"
+  },
+  {
+    "id": 114196,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T06:16:02.817916+00:00"
+  },
+  {
+    "id": 114197,
+    "blockchain": "ethereum",
+    "slow": 0.042443257,
+    "standard": 0.042443277,
+    "fast": 0.043443257,
+    "created_at": "2026-01-22T06:16:03.640484+00:00"
+  },
+  {
+    "id": 114198,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T06:18:02.515816+00:00"
+  },
+  {
+    "id": 114199,
+    "blockchain": "ethereum",
+    "slow": 0.043891052,
+    "standard": 0.043892042,
+    "fast": 0.045516201,
+    "created_at": "2026-01-22T06:18:05.706447+00:00"
+  },
+  {
+    "id": 114200,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T06:20:03.884713+00:00"
+  },
+  {
+    "id": 114201,
+    "blockchain": "ethereum",
+    "slow": 0.047009458,
+    "standard": 0.047010443,
+    "fast": 0.051711487,
+    "created_at": "2026-01-22T06:20:05.304777+00:00"
+  },
+  {
+    "id": 114202,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:22:02.298737+00:00"
+  },
+  {
+    "id": 114203,
+    "blockchain": "ethereum",
+    "slow": 0.043602266,
+    "standard": 0.043603256,
+    "fast": 0.043603456,
+    "created_at": "2026-01-22T06:22:02.465548+00:00"
+  },
+  {
+    "id": 114204,
+    "blockchain": "ethereum",
+    "slow": 0.042897599,
+    "standard": 0.043897599,
+    "fast": 0.047187358,
+    "created_at": "2026-01-22T06:24:01.661339+00:00"
+  },
+  {
+    "id": 114205,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:24:02.5578+00:00"
+  },
+  {
+    "id": 114206,
+    "blockchain": "ethereum",
+    "slow": 0.042854947,
+    "standard": 0.042855947,
+    "fast": 0.043854947,
+    "created_at": "2026-01-22T06:26:03.031995+00:00"
+  },
+  {
+    "id": 114207,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:26:03.779876+00:00"
+  },
+  {
+    "id": 114208,
+    "blockchain": "ethereum",
+    "slow": 0.045268572,
+    "standard": 0.045269572,
+    "fast": 0.045733007,
+    "created_at": "2026-01-22T06:28:01.913555+00:00"
+  },
+  {
+    "id": 114209,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:28:02.192947+00:00"
+  },
+  {
+    "id": 114210,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:30:00.926266+00:00"
+  },
+  {
+    "id": 114211,
+    "blockchain": "ethereum",
+    "slow": 0.04203835,
+    "standard": 0.042038365,
+    "fast": 0.046242201,
+    "created_at": "2026-01-22T06:30:03.425177+00:00"
+  },
+  {
+    "id": 114212,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:32:01.626964+00:00"
+  },
+  {
+    "id": 114213,
+    "blockchain": "ethereum",
+    "slow": 0.042461233,
+    "standard": 0.042462233,
+    "fast": 0.043461233,
+    "created_at": "2026-01-22T06:32:02.233572+00:00"
+  },
+  {
+    "id": 114214,
+    "blockchain": "ethereum",
+    "slow": 0.044903177,
+    "standard": 0.044904177,
+    "fast": 0.049394594,
+    "created_at": "2026-01-22T06:34:02.219941+00:00"
+  },
+  {
+    "id": 114215,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:34:02.570139+00:00"
+  },
+  {
+    "id": 114216,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:36:05.085572+00:00"
+  },
+  {
+    "id": 114217,
+    "blockchain": "ethereum",
+    "slow": 0.043260154,
+    "standard": 0.043260154,
+    "fast": 0.047586169,
+    "created_at": "2026-01-22T06:36:05.233182+00:00"
+  },
+  {
+    "id": 114218,
+    "blockchain": "ethereum",
+    "slow": 0.04531499,
+    "standard": 0.045315,
+    "fast": 0.04575231,
+    "created_at": "2026-01-22T06:38:02.157694+00:00"
+  },
+  {
+    "id": 114219,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:38:02.853299+00:00"
+  },
+  {
+    "id": 114220,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:40:03.895082+00:00"
+  },
+  {
+    "id": 114221,
+    "blockchain": "ethereum",
+    "slow": 0.040096404,
+    "standard": 0.040097394,
+    "fast": 0.041096394,
+    "created_at": "2026-01-22T06:40:03.969077+00:00"
+  },
+  {
+    "id": 114222,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:42:01.72395+00:00"
+  },
+  {
+    "id": 114223,
+    "blockchain": "ethereum",
+    "slow": 0.047903996,
+    "standard": 0.047904006,
+    "fast": 0.052696375,
+    "created_at": "2026-01-22T06:42:02.530997+00:00"
+  },
+  {
+    "id": 114224,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:44:01.403033+00:00"
+  },
+  {
+    "id": 114225,
+    "blockchain": "ethereum",
+    "slow": 0.047802324,
+    "standard": 0.047803314,
+    "fast": 0.048802314,
+    "created_at": "2026-01-22T06:44:02.84878+00:00"
+  },
+  {
+    "id": 114226,
+    "blockchain": "ethereum",
+    "slow": 0.042820584,
+    "standard": 0.042821584,
+    "fast": 0.042822384,
+    "created_at": "2026-01-22T06:46:01.082103+00:00"
+  },
+  {
+    "id": 114227,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:46:02.632707+00:00"
+  },
+  {
+    "id": 114228,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:48:01.345944+00:00"
+  },
+  {
+    "id": 114229,
+    "blockchain": "ethereum",
+    "slow": 0.045291759,
+    "standard": 0.046916918,
+    "fast": 0.049820934,
+    "created_at": "2026-01-22T06:48:02.802969+00:00"
+  },
+  {
+    "id": 114230,
+    "blockchain": "ethereum",
+    "slow": 0.041555291,
+    "standard": 0.041555291,
+    "fast": 0.04571082,
+    "created_at": "2026-01-22T06:50:03.755766+00:00"
+  },
+  {
+    "id": 114231,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:50:04.428059+00:00"
+  },
+  {
+    "id": 114232,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:52:02.62018+00:00"
+  },
+  {
+    "id": 114233,
+    "blockchain": "ethereum",
+    "slow": 0.034270672,
+    "standard": 0.034471552,
+    "fast": 0.037918707,
+    "created_at": "2026-01-22T06:52:02.681906+00:00"
+  },
+  {
+    "id": 114234,
+    "blockchain": "ethereum",
+    "slow": 0.046360736,
+    "standard": 0.046361726,
+    "fast": 0.046960802,
+    "created_at": "2026-01-22T06:54:02.004999+00:00"
+  },
+  {
+    "id": 114235,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:54:02.398699+00:00"
+  },
+  {
+    "id": 114236,
+    "blockchain": "ethereum",
+    "slow": 0.04351255,
+    "standard": 0.04351355,
+    "fast": 0.047864905,
+    "created_at": "2026-01-22T06:56:02.672293+00:00"
+  },
+  {
+    "id": 114237,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:56:03.0167+00:00"
+  },
+  {
+    "id": 114238,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T06:58:02.192795+00:00"
+  },
+  {
+    "id": 114239,
+    "blockchain": "ethereum",
+    "slow": 0.036052433,
+    "standard": 0.036052633,
+    "fast": 0.039657896,
+    "created_at": "2026-01-22T06:58:05.578847+00:00"
+  },
+  {
+    "id": 114240,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:00:07.268345+00:00"
+  },
+  {
+    "id": 114241,
+    "blockchain": "ethereum",
+    "slow": 0.035321105,
+    "standard": 0.035322103,
+    "fast": 0.038854313,
+    "created_at": "2026-01-22T07:00:07.493874+00:00"
+  },
+  {
+    "id": 114242,
+    "blockchain": "ethereum",
+    "slow": 0.0410037,
+    "standard": 0.0410047,
+    "fast": 0.04510517,
+    "created_at": "2026-01-22T07:02:01.187486+00:00"
+  },
+  {
+    "id": 114243,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T07:02:02.871378+00:00"
+  },
+  {
+    "id": 114244,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:04:02.412381+00:00"
+  },
+  {
+    "id": 114245,
+    "blockchain": "ethereum",
+    "slow": 0.045592763,
+    "standard": 0.045593763,
+    "fast": 0.04698851,
+    "created_at": "2026-01-22T07:04:03.131718+00:00"
+  },
+  {
+    "id": 114246,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:06:02.455585+00:00"
+  },
+  {
+    "id": 114247,
+    "blockchain": "ethereum",
+    "slow": 0.044478016,
+    "standard": 0.044479016,
+    "fast": 0.044479216,
+    "created_at": "2026-01-22T07:06:02.988983+00:00"
+  },
+  {
+    "id": 114248,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:08:01.508446+00:00"
+  },
+  {
+    "id": 114249,
+    "blockchain": "ethereum",
+    "slow": 0.043286735,
+    "standard": 0.043287735,
+    "fast": 0.044929096,
+    "created_at": "2026-01-22T07:08:02.068176+00:00"
+  },
+  {
+    "id": 114250,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:10:03.950842+00:00"
+  },
+  {
+    "id": 114251,
+    "blockchain": "ethereum",
+    "slow": 0.042456293,
+    "standard": 0.044140443,
+    "fast": 0.046701922,
+    "created_at": "2026-01-22T07:10:04.963263+00:00"
+  },
+  {
+    "id": 114252,
+    "blockchain": "ethereum",
+    "slow": 0.041492354,
+    "standard": 0.041493354,
+    "fast": 0.045642689,
+    "created_at": "2026-01-22T07:12:02.247268+00:00"
+  },
+  {
+    "id": 114253,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:12:02.81707+00:00"
+  },
+  {
+    "id": 114254,
+    "blockchain": "ethereum",
+    "slow": 0.042163388,
+    "standard": 0.042164388,
+    "fast": 0.048167401,
+    "created_at": "2026-01-22T07:14:01.172186+00:00"
+  },
+  {
+    "id": 114255,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T07:14:01.729484+00:00"
+  },
+  {
+    "id": 114256,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T07:16:00.832404+00:00"
+  },
+  {
+    "id": 114257,
+    "blockchain": "ethereum",
+    "slow": 0.048099712,
+    "standard": 0.048100712,
+    "fast": 0.049495459,
+    "created_at": "2026-01-22T07:16:01.45465+00:00"
+  },
+  {
+    "id": 114258,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T07:18:01.002573+00:00"
+  },
+  {
+    "id": 114259,
+    "blockchain": "ethereum",
+    "slow": 0.044145019,
+    "standard": 0.044145039,
+    "fast": 0.048559542,
+    "created_at": "2026-01-22T07:18:01.850043+00:00"
+  },
+  {
+    "id": 114260,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:20:02.052981+00:00"
+  },
+  {
+    "id": 114261,
+    "blockchain": "ethereum",
+    "slow": 0.045367756,
+    "standard": 0.04536777,
+    "fast": 0.046367756,
+    "created_at": "2026-01-22T07:20:04.051174+00:00"
+  },
+  {
+    "id": 114262,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:22:01.754936+00:00"
+  },
+  {
+    "id": 114263,
+    "blockchain": "ethereum",
+    "slow": 0.044750869,
+    "standard": 0.044751869,
+    "fast": 0.046376028,
+    "created_at": "2026-01-22T07:22:03.43845+00:00"
+  },
+  {
+    "id": 114264,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:24:02.596944+00:00"
+  },
+  {
+    "id": 114265,
+    "blockchain": "ethereum",
+    "slow": 0.057480351,
+    "standard": 0.057480351,
+    "fast": 0.063231345,
+    "created_at": "2026-01-22T07:24:03.243106+00:00"
+  },
+  {
+    "id": 114266,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:26:02.135436+00:00"
+  },
+  {
+    "id": 114267,
+    "blockchain": "ethereum",
+    "slow": 0.056497116,
+    "standard": 0.056498116,
+    "fast": 0.062147927,
+    "created_at": "2026-01-22T07:26:02.604679+00:00"
+  },
+  {
+    "id": 114268,
+    "blockchain": "ethereum",
+    "slow": 0.06372497,
+    "standard": 0.06372597,
+    "fast": 0.064470252,
+    "created_at": "2026-01-22T07:28:02.231916+00:00"
+  },
+  {
+    "id": 114269,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:28:02.734824+00:00"
+  },
+  {
+    "id": 114270,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:30:02.468347+00:00"
+  },
+  {
+    "id": 114271,
+    "blockchain": "ethereum",
+    "slow": 0.068274252,
+    "standard": 0.068275252,
+    "fast": 0.076636998,
+    "created_at": "2026-01-22T07:30:06.639984+00:00"
+  },
+  {
+    "id": 114272,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:32:00.76746+00:00"
+  },
+  {
+    "id": 114273,
+    "blockchain": "ethereum",
+    "slow": 0.069176188,
+    "standard": 0.069177187,
+    "fast": 0.070176187,
+    "created_at": "2026-01-22T07:32:01.996156+00:00"
+  },
+  {
+    "id": 114274,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:34:02.132208+00:00"
+  },
+  {
+    "id": 114275,
+    "blockchain": "ethereum",
+    "slow": 0.059624249,
+    "standard": 0.059625247,
+    "fast": 0.065587771,
+    "created_at": "2026-01-22T07:34:02.625674+00:00"
+  },
+  {
+    "id": 114276,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:36:01.375283+00:00"
+  },
+  {
+    "id": 114277,
+    "blockchain": "ethereum",
+    "slow": 0.062921322,
+    "standard": 0.062922322,
+    "fast": 0.064546481,
+    "created_at": "2026-01-22T07:36:02.843839+00:00"
+  },
+  {
+    "id": 114278,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:38:01.434798+00:00"
+  },
+  {
+    "id": 114279,
+    "blockchain": "ethereum",
+    "slow": 0.061353386,
+    "standard": 0.061354376,
+    "fast": 0.062353376,
+    "created_at": "2026-01-22T07:38:02.776197+00:00"
+  },
+  {
+    "id": 114280,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:40:05.15677+00:00"
+  },
+  {
+    "id": 114281,
+    "blockchain": "ethereum",
+    "slow": 0.069021904,
+    "standard": 0.069022894,
+    "fast": 0.070021894,
+    "created_at": "2026-01-22T07:40:08.013886+00:00"
+  },
+  {
+    "id": 114282,
+    "blockchain": "ethereum",
+    "slow": 0.067302291,
+    "standard": 0.06730329,
+    "fast": 0.06830229,
+    "created_at": "2026-01-22T07:42:01.750882+00:00"
+  },
+  {
+    "id": 114283,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T07:42:02.565179+00:00"
+  },
+  {
+    "id": 114284,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T07:44:02.116039+00:00"
+  },
+  {
+    "id": 114285,
+    "blockchain": "ethereum",
+    "slow": 0.066097824,
+    "standard": 0.066098824,
+    "fast": 0.072708706,
+    "created_at": "2026-01-22T07:44:03.224058+00:00"
+  },
+  {
+    "id": 114286,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T07:46:05.705129+00:00"
+  },
+  {
+    "id": 114287,
+    "blockchain": "ethereum",
+    "slow": 0.063864128,
+    "standard": 0.063865128,
+    "fast": 0.064864128,
+    "created_at": "2026-01-22T07:46:05.838109+00:00"
+  },
+  {
+    "id": 114288,
+    "blockchain": "ethereum",
+    "slow": 0.060241381,
+    "standard": 0.060241396,
+    "fast": 0.060242381,
+    "created_at": "2026-01-22T07:48:02.655521+00:00"
+  },
+  {
+    "id": 114289,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T07:48:03.3637+00:00"
+  },
+  {
+    "id": 114290,
+    "blockchain": "ethereum",
+    "slow": 0.059943383,
+    "standard": 0.059943398,
+    "fast": 0.060943383,
+    "created_at": "2026-01-22T07:50:03.87529+00:00"
+  },
+  {
+    "id": 114291,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:50:04.2071+00:00"
+  },
+  {
+    "id": 114292,
+    "blockchain": "ethereum",
+    "slow": 0.055930767,
+    "standard": 0.055931767,
+    "fast": 0.057555926,
+    "created_at": "2026-01-22T07:52:02.155735+00:00"
+  },
+  {
+    "id": 114293,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:52:03.468845+00:00"
+  },
+  {
+    "id": 114294,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:54:02.760324+00:00"
+  },
+  {
+    "id": 114295,
+    "blockchain": "ethereum",
+    "slow": 0.050405908,
+    "standard": 0.050405918,
+    "fast": 0.055446509,
+    "created_at": "2026-01-22T07:54:03.002611+00:00"
+  },
+  {
+    "id": 114296,
+    "blockchain": "ethereum",
+    "slow": 0.059407988,
+    "standard": 0.059408988,
+    "fast": 0.060407988,
+    "created_at": "2026-01-22T07:56:02.760287+00:00"
+  },
+  {
+    "id": 114297,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:56:03.676392+00:00"
+  },
+  {
+    "id": 114298,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T07:58:03.123886+00:00"
+  },
+  {
+    "id": 114299,
+    "blockchain": "ethereum",
+    "slow": 0.060689117,
+    "standard": 0.060690117,
+    "fast": 0.061581667,
+    "created_at": "2026-01-22T07:58:03.307993+00:00"
+  },
+  {
+    "id": 114300,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:00:05.356782+00:00"
+  },
+  {
+    "id": 114301,
+    "blockchain": "ethereum",
+    "slow": 0.056263894,
+    "standard": 0.056264894,
+    "fast": 0.059885173,
+    "created_at": "2026-01-22T08:00:09.68459+00:00"
+  },
+  {
+    "id": 114302,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:02:02.506531+00:00"
+  },
+  {
+    "id": 114303,
+    "blockchain": "ethereum",
+    "slow": 0.067635663,
+    "standard": 0.067636663,
+    "fast": 0.067735663,
+    "created_at": "2026-01-22T08:02:03.326933+00:00"
+  },
+  {
+    "id": 114304,
+    "blockchain": "ethereum",
+    "slow": 0.072345887,
+    "standard": 0.073345887,
+    "fast": 0.079580475,
+    "created_at": "2026-01-22T08:04:02.963598+00:00"
+  },
+  {
+    "id": 114305,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:04:03.383045+00:00"
+  },
+  {
+    "id": 114307,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:06:02.246335+00:00"
+  },
+  {
+    "id": 114306,
+    "blockchain": "ethereum",
+    "slow": 0.069950874,
+    "standard": 0.069951864,
+    "fast": 0.07694705,
+    "created_at": "2026-01-22T08:06:02.24634+00:00"
+  },
+  {
+    "id": 114308,
+    "blockchain": "ethereum",
+    "slow": 0.0660082,
+    "standard": 0.0660092,
+    "fast": 0.0660109,
+    "created_at": "2026-01-22T08:08:02.939168+00:00"
+  },
+  {
+    "id": 114309,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:08:03.578865+00:00"
+  },
+  {
+    "id": 114310,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:10:05.798714+00:00"
+  },
+  {
+    "id": 114311,
+    "blockchain": "ethereum",
+    "slow": 0.061718599,
+    "standard": 0.061719599,
+    "fast": 0.061818599,
+    "created_at": "2026-01-22T08:10:05.843921+00:00"
+  },
+  {
+    "id": 114312,
+    "blockchain": "ethereum",
+    "slow": 0.060017113,
+    "standard": 0.060017113,
+    "fast": 0.066018824,
+    "created_at": "2026-01-22T08:12:03.226377+00:00"
+  },
+  {
+    "id": 114313,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:12:03.24693+00:00"
+  },
+  {
+    "id": 114314,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:14:01.023721+00:00"
+  },
+  {
+    "id": 114315,
+    "blockchain": "ethereum",
+    "slow": 0.072899822,
+    "standard": 0.072900822,
+    "fast": 0.074524981,
+    "created_at": "2026-01-22T08:14:01.737269+00:00"
+  },
+  {
+    "id": 114316,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:16:00.544396+00:00"
+  },
+  {
+    "id": 114317,
+    "blockchain": "ethereum",
+    "slow": 0.06908351,
+    "standard": 0.0690845,
+    "fast": 0.07599295,
+    "created_at": "2026-01-22T08:16:02.144348+00:00"
+  },
+  {
+    "id": 114318,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:18:05.340025+00:00"
+  },
+  {
+    "id": 114319,
+    "blockchain": "ethereum",
+    "slow": 0.064863464,
+    "standard": 0.064864164,
+    "fast": 0.07135058,
+    "created_at": "2026-01-22T08:18:05.93699+00:00"
+  },
+  {
+    "id": 114320,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:20:05.789193+00:00"
+  },
+  {
+    "id": 114321,
+    "blockchain": "ethereum",
+    "slow": 0.061432486,
+    "standard": 0.061432501,
+    "fast": 0.062009996,
+    "created_at": "2026-01-22T08:20:06.176042+00:00"
+  },
+  {
+    "id": 114322,
+    "blockchain": "ethereum",
+    "slow": 0.06131571,
+    "standard": 0.06131671,
+    "fast": 0.06331571,
+    "created_at": "2026-01-22T08:22:02.731988+00:00"
+  },
+  {
+    "id": 114323,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:22:03.129839+00:00"
+  },
+  {
+    "id": 114324,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:24:01.004754+00:00"
+  },
+  {
+    "id": 114325,
+    "blockchain": "ethereum",
+    "slow": 0.06312254,
+    "standard": 0.063122555,
+    "fast": 0.064747699,
+    "created_at": "2026-01-22T08:24:02.518019+00:00"
+  },
+  {
+    "id": 114326,
+    "blockchain": "ethereum",
+    "slow": 0.056864144,
+    "standard": 0.056865144,
+    "fast": 0.062551658,
+    "created_at": "2026-01-22T08:26:01.4275+00:00"
+  },
+  {
+    "id": 114327,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:26:02.793561+00:00"
+  },
+  {
+    "id": 114328,
+    "blockchain": "ethereum",
+    "slow": 0.056501403,
+    "standard": 0.056502403,
+    "fast": 0.057082463,
+    "created_at": "2026-01-22T08:28:02.589468+00:00"
+  },
+  {
+    "id": 114329,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T08:28:02.952287+00:00"
+  },
+  {
+    "id": 114330,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T08:30:08.174206+00:00"
+  },
+  {
+    "id": 114331,
+    "blockchain": "ethereum",
+    "slow": 0.054070906,
+    "standard": 0.05407093,
+    "fast": 0.054893705,
+    "created_at": "2026-01-22T08:30:08.318516+00:00"
+  },
+  {
+    "id": 114332,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:32:02.125066+00:00"
+  },
+  {
+    "id": 114333,
+    "blockchain": "ethereum",
+    "slow": 0.057255392,
+    "standard": 0.057255407,
+    "fast": 0.059283565,
+    "created_at": "2026-01-22T08:32:03.569486+00:00"
+  },
+  {
+    "id": 114334,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:34:05.533343+00:00"
+  },
+  {
+    "id": 114335,
+    "blockchain": "ethereum",
+    "slow": 0.058041761,
+    "standard": 0.058041781,
+    "fast": 0.063119644,
+    "created_at": "2026-01-22T08:34:05.879776+00:00"
+  },
+  {
+    "id": 114336,
+    "blockchain": "ethereum",
+    "slow": 0.051743121,
+    "standard": 0.051743141,
+    "fast": 0.052743121,
+    "created_at": "2026-01-22T08:36:04.027014+00:00"
+  },
+  {
+    "id": 114337,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:36:04.437157+00:00"
+  },
+  {
+    "id": 114338,
+    "blockchain": "ethereum",
+    "slow": 0.039290937,
+    "standard": 0.039290937,
+    "fast": 0.04322003,
+    "created_at": "2026-01-22T08:38:02.720266+00:00"
+  },
+  {
+    "id": 114339,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:38:03.280154+00:00"
+  },
+  {
+    "id": 114340,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:40:05.411265+00:00"
+  },
+  {
+    "id": 114341,
+    "blockchain": "ethereum",
+    "slow": 0.05178773,
+    "standard": 0.051787744,
+    "fast": 0.058066501,
+    "created_at": "2026-01-22T08:40:05.921256+00:00"
+  },
+  {
+    "id": 114342,
+    "blockchain": "ethereum",
+    "slow": 0.05973148,
+    "standard": 0.05973163,
+    "fast": 0.060225269,
+    "created_at": "2026-01-22T08:42:02.713041+00:00"
+  },
+  {
+    "id": 114343,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:42:02.809478+00:00"
+  },
+  {
+    "id": 114344,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:44:02.848798+00:00"
+  },
+  {
+    "id": 114345,
+    "blockchain": "ethereum",
+    "slow": 0.05805008,
+    "standard": 0.05805158,
+    "fast": 0.063856738,
+    "created_at": "2026-01-22T08:44:03.789345+00:00"
+  },
+  {
+    "id": 114346,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:46:03.244195+00:00"
+  },
+  {
+    "id": 114347,
+    "blockchain": "ethereum",
+    "slow": 0.063281055,
+    "standard": 0.063282555,
+    "fast": 0.06971916,
+    "created_at": "2026-01-22T08:46:05.447251+00:00"
+  },
+  {
+    "id": 114348,
+    "blockchain": "ethereum",
+    "slow": 0.059261656,
+    "standard": 0.059263156,
+    "fast": 0.059263906,
+    "created_at": "2026-01-22T08:48:03.576578+00:00"
+  },
+  {
+    "id": 114349,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:48:04.808742+00:00"
+  },
+  {
+    "id": 114350,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:50:02.623108+00:00"
+  },
+  {
+    "id": 114351,
+    "blockchain": "ethereum",
+    "slow": 0.051279022,
+    "standard": 0.051280521,
+    "fast": 0.05290418,
+    "created_at": "2026-01-22T08:50:06.016069+00:00"
+  },
+  {
+    "id": 114353,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T08:52:03.152232+00:00"
+  },
+  {
+    "id": 114352,
+    "blockchain": "ethereum",
+    "slow": 0.057373812,
+    "standard": 0.057375312,
+    "fast": 0.063112843,
+    "created_at": "2026-01-22T08:52:03.15282+00:00"
+  },
+  {
+    "id": 114354,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T08:54:01.5008+00:00"
+  },
+  {
+    "id": 114355,
+    "blockchain": "ethereum",
+    "slow": 0.065526368,
+    "standard": 0.06552639,
+    "fast": 0.072080654,
+    "created_at": "2026-01-22T08:54:05.217713+00:00"
+  },
+  {
+    "id": 114356,
+    "blockchain": "ethereum",
+    "slow": 0.059583925,
+    "standard": 0.059585425,
+    "fast": 0.060583925,
+    "created_at": "2026-01-22T08:56:02.71932+00:00"
+  },
+  {
+    "id": 114357,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T08:56:03.741542+00:00"
+  },
+  {
+    "id": 114358,
+    "blockchain": "ethereum",
+    "slow": 0.05878558,
+    "standard": 0.05878708,
+    "fast": 0.05978558,
+    "created_at": "2026-01-22T08:58:01.22188+00:00"
+  },
+  {
+    "id": 114359,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T08:58:02.976951+00:00"
+  },
+  {
+    "id": 114360,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:00:11.595696+00:00"
+  },
+  {
+    "id": 114361,
+    "blockchain": "ethereum",
+    "slow": 0.066673703,
+    "standard": 0.066675203,
+    "fast": 0.068298862,
+    "created_at": "2026-01-22T09:00:15.093827+00:00"
+  },
+  {
+    "id": 114362,
+    "blockchain": "ethereum",
+    "slow": 0.06465199,
+    "standard": 0.06465211,
+    "fast": 0.072217189,
+    "created_at": "2026-01-22T09:02:02.758626+00:00"
+  },
+  {
+    "id": 114363,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:02:04.345586+00:00"
+  },
+  {
+    "id": 114365,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T09:04:04.235868+00:00"
+  },
+  {
+    "id": 114364,
+    "blockchain": "ethereum",
+    "slow": 0.054657419,
+    "standard": 0.054658919,
+    "fast": 0.06012481,
+    "created_at": "2026-01-22T09:04:04.235886+00:00"
+  },
+  {
+    "id": 114366,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T09:06:01.255001+00:00"
+  },
+  {
+    "id": 114367,
+    "blockchain": "ethereum",
+    "slow": 0.049062524,
+    "standard": 0.049064023,
+    "fast": 0.051155262,
+    "created_at": "2026-01-22T09:06:03.591981+00:00"
+  },
+  {
+    "id": 114368,
+    "blockchain": "ethereum",
+    "slow": 0.045390997,
+    "standard": 0.045392496,
+    "fast": 0.045490996,
+    "created_at": "2026-01-22T09:08:03.928896+00:00"
+  },
+  {
+    "id": 114369,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:08:04.301196+00:00"
+  },
+  {
+    "id": 114370,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:10:04.591581+00:00"
+  },
+  {
+    "id": 114371,
+    "blockchain": "ethereum",
+    "slow": 0.052179227,
+    "standard": 0.052180727,
+    "fast": 0.057398799,
+    "created_at": "2026-01-22T09:10:06.503982+00:00"
+  },
+  {
+    "id": 114372,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:12:05.338302+00:00"
+  },
+  {
+    "id": 114373,
+    "blockchain": "ethereum",
+    "slow": 0.05266468,
+    "standard": 0.052666179,
+    "fast": 0.054060426,
+    "created_at": "2026-01-22T09:12:05.871479+00:00"
+  },
+  {
+    "id": 114374,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:14:03.163296+00:00"
+  },
+  {
+    "id": 114375,
+    "blockchain": "ethereum",
+    "slow": 0.05341633,
+    "standard": 0.053416345,
+    "fast": 0.058757979,
+    "created_at": "2026-01-22T09:14:03.372572+00:00"
+  },
+  {
+    "id": 114376,
+    "blockchain": "ethereum",
+    "slow": 0.055068411,
+    "standard": 0.055069911,
+    "fast": 0.060575252,
+    "created_at": "2026-01-22T09:16:03.434366+00:00"
+  },
+  {
+    "id": 114377,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:16:03.84803+00:00"
+  },
+  {
+    "id": 114378,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:18:02.501612+00:00"
+  },
+  {
+    "id": 114379,
+    "blockchain": "ethereum",
+    "slow": 0.048500141,
+    "standard": 0.048500156,
+    "fast": 0.048800141,
+    "created_at": "2026-01-22T09:18:03.795499+00:00"
+  },
+  {
+    "id": 114380,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:20:04.834329+00:00"
+  },
+  {
+    "id": 114381,
+    "blockchain": "ethereum",
+    "slow": 0.052891469,
+    "standard": 0.052892969,
+    "fast": 0.052894169,
+    "created_at": "2026-01-22T09:20:07.451677+00:00"
+  },
+  {
+    "id": 114382,
+    "blockchain": "ethereum",
+    "slow": 0.061373119,
+    "standard": 0.061374619,
+    "fast": 0.064373119,
+    "created_at": "2026-01-22T09:22:03.70048+00:00"
+  },
+  {
+    "id": 114383,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:22:04.651391+00:00"
+  },
+  {
+    "id": 114384,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:24:03.75654+00:00"
+  },
+  {
+    "id": 114385,
+    "blockchain": "ethereum",
+    "slow": 0.058044022,
+    "standard": 0.058044051,
+    "fast": 0.063848456,
+    "created_at": "2026-01-22T09:24:04.594683+00:00"
+  },
+  {
+    "id": 114386,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:26:02.938443+00:00"
+  },
+  {
+    "id": 114387,
+    "blockchain": "ethereum",
+    "slow": 0.062440295,
+    "standard": 0.062440302,
+    "fast": 0.06244178,
+    "created_at": "2026-01-22T09:26:05.277477+00:00"
+  },
+  {
+    "id": 114388,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:28:02.930634+00:00"
+  },
+  {
+    "id": 114389,
+    "blockchain": "ethereum",
+    "slow": 0.057344072,
+    "standard": 0.057345572,
+    "fast": 0.057345722,
+    "created_at": "2026-01-22T09:28:03.827993+00:00"
+  },
+  {
+    "id": 114390,
+    "blockchain": "ethereum",
+    "slow": 0.052767889,
+    "standard": 0.052769374,
+    "fast": 0.054393033,
+    "created_at": "2026-01-22T09:30:07.930156+00:00"
+  },
+  {
+    "id": 114391,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:30:08.473818+00:00"
+  },
+  {
+    "id": 114392,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:32:03.124965+00:00"
+  },
+  {
+    "id": 114393,
+    "blockchain": "ethereum",
+    "slow": 0.051123965,
+    "standard": 0.05112545,
+    "fast": 0.052221957,
+    "created_at": "2026-01-22T09:32:03.187409+00:00"
+  },
+  {
+    "id": 114394,
+    "blockchain": "ethereum",
+    "slow": 0.053659729,
+    "standard": 0.053659744,
+    "fast": 0.053661229,
+    "created_at": "2026-01-22T09:34:03.300978+00:00"
+  },
+  {
+    "id": 114395,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:34:03.446886+00:00"
+  },
+  {
+    "id": 114396,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:36:01.925202+00:00"
+  },
+  {
+    "id": 114397,
+    "blockchain": "ethereum",
+    "slow": 0.049042682,
+    "standard": 0.049044182,
+    "fast": 0.050136569,
+    "created_at": "2026-01-22T09:36:05.871919+00:00"
+  },
+  {
+    "id": 114398,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:38:02.89953+00:00"
+  },
+  {
+    "id": 114399,
+    "blockchain": "ethereum",
+    "slow": 0.0495989,
+    "standard": 0.0496004,
+    "fast": 0.05456044,
+    "created_at": "2026-01-22T09:38:02.985696+00:00"
+  },
+  {
+    "id": 114400,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:40:06.805581+00:00"
+  },
+  {
+    "id": 114401,
+    "blockchain": "ethereum",
+    "slow": 0.044676912,
+    "standard": 0.044678412,
+    "fast": 0.049146253,
+    "created_at": "2026-01-22T09:40:07.972303+00:00"
+  },
+  {
+    "id": 114402,
+    "blockchain": "ethereum",
+    "slow": 0.053446934,
+    "standard": 0.053448434,
+    "fast": 0.054842681,
+    "created_at": "2026-01-22T09:42:03.665136+00:00"
+  },
+  {
+    "id": 114403,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:42:03.746864+00:00"
+  },
+  {
+    "id": 114404,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:44:01.832243+00:00"
+  },
+  {
+    "id": 114405,
+    "blockchain": "ethereum",
+    "slow": 0.049013214,
+    "standard": 0.049014714,
+    "fast": 0.050013214,
+    "created_at": "2026-01-22T09:44:03.782944+00:00"
+  },
+  {
+    "id": 114406,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:46:05.383881+00:00"
+  },
+  {
+    "id": 114407,
+    "blockchain": "ethereum",
+    "slow": 0.049847071,
+    "standard": 0.049848571,
+    "fast": 0.050847071,
+    "created_at": "2026-01-22T09:46:05.882146+00:00"
+  },
+  {
+    "id": 114408,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:48:05.485505+00:00"
+  },
+  {
+    "id": 114409,
+    "blockchain": "ethereum",
+    "slow": 0.045191234,
+    "standard": 0.045192284,
+    "fast": 0.046814495,
+    "created_at": "2026-01-22T09:48:05.860528+00:00"
+  },
+  {
+    "id": 114410,
+    "blockchain": "ethereum",
+    "slow": 0.045711245,
+    "standard": 0.04571273,
+    "fast": 0.049513962,
+    "created_at": "2026-01-22T09:50:06.753136+00:00"
+  },
+  {
+    "id": 114411,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:50:06.990662+00:00"
+  },
+  {
+    "id": 114412,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:52:03.482242+00:00"
+  },
+  {
+    "id": 114413,
+    "blockchain": "ethereum",
+    "slow": 0.052212108,
+    "standard": 0.052213608,
+    "fast": 0.057547117,
+    "created_at": "2026-01-22T09:52:03.985418+00:00"
+  },
+  {
+    "id": 114414,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:54:00.882985+00:00"
+  },
+  {
+    "id": 114415,
+    "blockchain": "ethereum",
+    "slow": 0.047358918,
+    "standard": 0.047358933,
+    "fast": 0.048403255,
+    "created_at": "2026-01-22T09:54:03.15909+00:00"
+  },
+  {
+    "id": 114416,
+    "blockchain": "ethereum",
+    "slow": 0.047649025,
+    "standard": 0.047649026,
+    "fast": 0.052413928,
+    "created_at": "2026-01-22T09:56:02.659785+00:00"
+  },
+  {
+    "id": 114417,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T09:56:03.140495+00:00"
+  },
+  {
+    "id": 114418,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T09:58:01.061262+00:00"
+  },
+  {
+    "id": 114419,
+    "blockchain": "ethereum",
+    "slow": 0.050501112,
+    "standard": 0.050501134,
+    "fast": 0.050503812,
+    "created_at": "2026-01-22T09:58:03.607952+00:00"
+  },
+  {
+    "id": 114420,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:00:04.472988+00:00"
+  },
+  {
+    "id": 114421,
+    "blockchain": "ethereum",
+    "slow": 0.049689513,
+    "standard": 0.049689528,
+    "fast": 0.05465848,
+    "created_at": "2026-01-22T10:00:13.032502+00:00"
+  },
+  {
+    "id": 114422,
+    "blockchain": "ethereum",
+    "slow": 0.049664049,
+    "standard": 0.049665549,
+    "fast": 0.053109808,
+    "created_at": "2026-01-22T10:02:02.783416+00:00"
+  },
+  {
+    "id": 114423,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:02:03.420166+00:00"
+  },
+  {
+    "id": 114424,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:04:03.129831+00:00"
+  },
+  {
+    "id": 114425,
+    "blockchain": "ethereum",
+    "slow": 0.048631325,
+    "standard": 0.048632825,
+    "fast": 0.0518715,
+    "created_at": "2026-01-22T10:04:03.325211+00:00"
+  },
+  {
+    "id": 114426,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T10:06:05.469509+00:00"
+  },
+  {
+    "id": 114427,
+    "blockchain": "ethereum",
+    "slow": 0.049144331,
+    "standard": 0.049145831,
+    "fast": 0.051759857,
+    "created_at": "2026-01-22T10:06:05.877196+00:00"
+  },
+  {
+    "id": 114428,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:08:01.165868+00:00"
+  },
+  {
+    "id": 114429,
+    "blockchain": "ethereum",
+    "slow": 0.049555479,
+    "standard": 0.049556979,
+    "fast": 0.052555479,
+    "created_at": "2026-01-22T10:08:03.185948+00:00"
+  },
+  {
+    "id": 114430,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:10:06.42237+00:00"
+  },
+  {
+    "id": 114431,
+    "blockchain": "ethereum",
+    "slow": 0.050881165,
+    "standard": 0.050881185,
+    "fast": 0.050882665,
+    "created_at": "2026-01-22T10:10:07.33625+00:00"
+  },
+  {
+    "id": 114432,
+    "blockchain": "ethereum",
+    "slow": 0.046479184,
+    "standard": 0.046480684,
+    "fast": 0.048326834,
+    "created_at": "2026-01-22T10:12:03.371617+00:00"
+  },
+  {
+    "id": 114433,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:12:04.273743+00:00"
+  },
+  {
+    "id": 114434,
+    "blockchain": "ethereum",
+    "slow": 0.047109844,
+    "standard": 0.047111329,
+    "fast": 0.050596988,
+    "created_at": "2026-01-22T10:14:02.372767+00:00"
+  },
+  {
+    "id": 114435,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:14:02.818896+00:00"
+  },
+  {
+    "id": 114436,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:16:04.050003+00:00"
+  },
+  {
+    "id": 114437,
+    "blockchain": "ethereum",
+    "slow": 0.048897482,
+    "standard": 0.0488975,
+    "fast": 0.053831107,
+    "created_at": "2026-01-22T10:16:04.476007+00:00"
+  },
+  {
+    "id": 114438,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:18:01.784778+00:00"
+  },
+  {
+    "id": 114439,
+    "blockchain": "ethereum",
+    "slow": 0.047024264,
+    "standard": 0.047025764,
+    "fast": 0.049767558,
+    "created_at": "2026-01-22T10:18:03.642463+00:00"
+  },
+  {
+    "id": 114440,
+    "blockchain": "ethereum",
+    "slow": 0.046437223,
+    "standard": 0.046437224,
+    "fast": 0.051080946,
+    "created_at": "2026-01-22T10:20:06.606178+00:00"
+  },
+  {
+    "id": 114441,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:20:06.831601+00:00"
+  },
+  {
+    "id": 114442,
+    "blockchain": "ethereum",
+    "slow": 0.04756548,
+    "standard": 0.04756698,
+    "fast": 0.049240215,
+    "created_at": "2026-01-22T10:22:03.023479+00:00"
+  },
+  {
+    "id": 114443,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:22:03.281525+00:00"
+  },
+  {
+    "id": 114444,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:24:02.314739+00:00"
+  },
+  {
+    "id": 114445,
+    "blockchain": "ethereum",
+    "slow": 0.044321834,
+    "standard": 0.044323319,
+    "fast": 0.04875565,
+    "created_at": "2026-01-22T10:24:02.531449+00:00"
+  },
+  {
+    "id": 114446,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:26:03.573754+00:00"
+  },
+  {
+    "id": 114447,
+    "blockchain": "ethereum",
+    "slow": 0.042900518,
+    "standard": 0.043378034,
+    "fast": 0.052864493,
+    "created_at": "2026-01-22T10:26:04.454732+00:00"
+  },
+  {
+    "id": 114448,
+    "blockchain": "ethereum",
+    "slow": 0.039489803,
+    "standard": 0.039491303,
+    "fast": 0.043440433,
+    "created_at": "2026-01-22T10:28:03.30236+00:00"
+  },
+  {
+    "id": 114449,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:28:03.789626+00:00"
+  },
+  {
+    "id": 114450,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:30:08.768314+00:00"
+  },
+  {
+    "id": 114451,
+    "blockchain": "ethereum",
+    "slow": 0.041153855,
+    "standard": 0.041155355,
+    "fast": 0.044029713,
+    "created_at": "2026-01-22T10:30:09.362384+00:00"
+  },
+  {
+    "id": 114452,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:32:03.586938+00:00"
+  },
+  {
+    "id": 114453,
+    "blockchain": "ethereum",
+    "slow": 0.043400392,
+    "standard": 0.043401892,
+    "fast": 0.044400392,
+    "created_at": "2026-01-22T10:32:04.090898+00:00"
+  },
+  {
+    "id": 114454,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:34:03.060276+00:00"
+  },
+  {
+    "id": 114455,
+    "blockchain": "ethereum",
+    "slow": 0.045882128,
+    "standard": 0.045883628,
+    "fast": 0.047300946,
+    "created_at": "2026-01-22T10:34:03.797583+00:00"
+  },
+  {
+    "id": 114456,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:36:02.71681+00:00"
+  },
+  {
+    "id": 114457,
+    "blockchain": "ethereum",
+    "slow": 0.049434909,
+    "standard": 0.049436409,
+    "fast": 0.049438959,
+    "created_at": "2026-01-22T10:36:04.39015+00:00"
+  },
+  {
+    "id": 114458,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:38:02.928744+00:00"
+  },
+  {
+    "id": 114459,
+    "blockchain": "ethereum",
+    "slow": 0.050637983,
+    "standard": 0.050639483,
+    "fast": 0.051637983,
+    "created_at": "2026-01-22T10:38:05.857612+00:00"
+  },
+  {
+    "id": 114460,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T10:40:06.865466+00:00"
+  },
+  {
+    "id": 114461,
+    "blockchain": "ethereum",
+    "slow": 0.051636729,
+    "standard": 0.051638229,
+    "fast": 0.057923346,
+    "created_at": "2026-01-22T10:40:07.213285+00:00"
+  },
+  {
+    "id": 114462,
+    "blockchain": "ethereum",
+    "slow": 0.050165719,
+    "standard": 0.050167219,
+    "fast": 0.052927976,
+    "created_at": "2026-01-22T10:42:03.310416+00:00"
+  },
+  {
+    "id": 114463,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T10:42:03.619887+00:00"
+  },
+  {
+    "id": 114464,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:44:02.768586+00:00"
+  },
+  {
+    "id": 114465,
+    "blockchain": "ethereum",
+    "slow": 0.048570255,
+    "standard": 0.048571755,
+    "fast": 0.050422664,
+    "created_at": "2026-01-22T10:44:03.164654+00:00"
+  },
+  {
+    "id": 114466,
+    "blockchain": "ethereum",
+    "slow": 0.043748303,
+    "standard": 0.043848303,
+    "fast": 0.047778475,
+    "created_at": "2026-01-22T10:46:03.322516+00:00"
+  },
+  {
+    "id": 114467,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:46:05.753409+00:00"
+  },
+  {
+    "id": 114468,
+    "blockchain": "ethereum",
+    "slow": 0.044673949,
+    "standard": 0.044675449,
+    "fast": 0.046209866,
+    "created_at": "2026-01-22T10:48:03.069102+00:00"
+  },
+  {
+    "id": 114469,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:48:03.978474+00:00"
+  },
+  {
+    "id": 114470,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:50:06.417856+00:00"
+  },
+  {
+    "id": 114471,
+    "blockchain": "ethereum",
+    "slow": 0.042880403,
+    "standard": 0.042880403,
+    "fast": 0.047168443,
+    "created_at": "2026-01-22T10:50:09.924708+00:00"
+  },
+  {
+    "id": 114472,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T10:52:01.403091+00:00"
+  },
+  {
+    "id": 114473,
+    "blockchain": "ethereum",
+    "slow": 0.037123984,
+    "standard": 0.037223984,
+    "fast": 0.041625288,
+    "created_at": "2026-01-22T10:52:03.662299+00:00"
+  },
+  {
+    "id": 114474,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T10:54:04.043291+00:00"
+  },
+  {
+    "id": 114475,
+    "blockchain": "ethereum",
+    "slow": 0.038594821,
+    "standard": 0.038902442,
+    "fast": 0.046038398,
+    "created_at": "2026-01-22T10:54:04.405378+00:00"
+  },
+  {
+    "id": 114476,
+    "blockchain": "ethereum",
+    "slow": 0.042420693,
+    "standard": 0.042422193,
+    "fast": 0.045653568,
+    "created_at": "2026-01-22T10:56:02.294076+00:00"
+  },
+  {
+    "id": 114477,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T10:56:03.719732+00:00"
+  },
+  {
+    "id": 114478,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T10:58:03.500827+00:00"
+  },
+  {
+    "id": 114479,
+    "blockchain": "ethereum",
+    "slow": 0.039887651,
+    "standard": 0.039889136,
+    "fast": 0.047412636,
+    "created_at": "2026-01-22T10:58:04.397023+00:00"
+  },
+  {
+    "id": 114480,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:00:11.800524+00:00"
+  },
+  {
+    "id": 114481,
+    "blockchain": "ethereum",
+    "slow": 0.035934685,
+    "standard": 0.035980302,
+    "fast": 0.038432399,
+    "created_at": "2026-01-22T11:00:15.341136+00:00"
+  },
+  {
+    "id": 114482,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:02:02.891076+00:00"
+  },
+  {
+    "id": 114483,
+    "blockchain": "ethereum",
+    "slow": 0.044576557,
+    "standard": 0.044578057,
+    "fast": 0.045492458,
+    "created_at": "2026-01-22T11:02:02.978015+00:00"
+  },
+  {
+    "id": 114484,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:04:04.282474+00:00"
+  },
+  {
+    "id": 114485,
+    "blockchain": "ethereum",
+    "slow": 0.046479348,
+    "standard": 0.046480848,
+    "fast": 0.05133684,
+    "created_at": "2026-01-22T11:04:04.915579+00:00"
+  },
+  {
+    "id": 114486,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:06:04.075588+00:00"
+  },
+  {
+    "id": 114487,
+    "blockchain": "ethereum",
+    "slow": 0.046200717,
+    "standard": 0.046202217,
+    "fast": 0.052306397,
+    "created_at": "2026-01-22T11:06:04.962187+00:00"
+  },
+  {
+    "id": 114488,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:08:02.753341+00:00"
+  },
+  {
+    "id": 114489,
+    "blockchain": "ethereum",
+    "slow": 0.044991023,
+    "standard": 0.044992523,
+    "fast": 0.045539613,
+    "created_at": "2026-01-22T11:08:03.793983+00:00"
+  },
+  {
+    "id": 114490,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:10:02.3896+00:00"
+  },
+  {
+    "id": 114491,
+    "blockchain": "ethereum",
+    "slow": 0.040848807,
+    "standard": 0.040848822,
+    "fast": 0.045791426,
+    "created_at": "2026-01-22T11:10:06.514504+00:00"
+  },
+  {
+    "id": 114492,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:12:03.412809+00:00"
+  },
+  {
+    "id": 114493,
+    "blockchain": "ethereum",
+    "slow": 0.047781529,
+    "standard": 0.047781544,
+    "fast": 0.049177276,
+    "created_at": "2026-01-22T11:12:03.942766+00:00"
+  },
+  {
+    "id": 114494,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:14:01.932026+00:00"
+  },
+  {
+    "id": 114495,
+    "blockchain": "ethereum",
+    "slow": 0.055813572,
+    "standard": 0.055813572,
+    "fast": 0.061394929,
+    "created_at": "2026-01-22T11:14:04.11586+00:00"
+  },
+  {
+    "id": 114496,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:16:02.599239+00:00"
+  },
+  {
+    "id": 114497,
+    "blockchain": "ethereum",
+    "slow": 0.070568671,
+    "standard": 0.070570171,
+    "fast": 0.077011503,
+    "created_at": "2026-01-22T11:16:04.125784+00:00"
+  },
+  {
+    "id": 114498,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:18:03.536846+00:00"
+  },
+  {
+    "id": 114499,
+    "blockchain": "ethereum",
+    "slow": 0.066830146,
+    "standard": 0.066831646,
+    "fast": 0.070238862,
+    "created_at": "2026-01-22T11:18:03.697171+00:00"
+  },
+  {
+    "id": 114500,
+    "blockchain": "ethereum",
+    "slow": 0.061911377,
+    "standard": 0.061911378,
+    "fast": 0.068102515,
+    "created_at": "2026-01-22T11:20:06.954384+00:00"
+  },
+  {
+    "id": 114501,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:20:07.702263+00:00"
+  },
+  {
+    "id": 114502,
+    "blockchain": "ethereum",
+    "slow": 0.059336057,
+    "standard": 0.059336357,
+    "fast": 0.069336057,
+    "created_at": "2026-01-22T11:22:03.407903+00:00"
+  },
+  {
+    "id": 114503,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:22:03.429494+00:00"
+  },
+  {
+    "id": 114504,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T11:24:05.405634+00:00"
+  },
+  {
+    "id": 114505,
+    "blockchain": "ethereum",
+    "slow": 0.056962948,
+    "standard": 0.056962964,
+    "fast": 0.066962948,
+    "created_at": "2026-01-22T11:24:05.967766+00:00"
+  },
+  {
+    "id": 114506,
+    "blockchain": "ethereum",
+    "slow": 0.059860902,
+    "standard": 0.065751435,
+    "fast": 0.065846992,
+    "created_at": "2026-01-22T11:26:03.196991+00:00"
+  },
+  {
+    "id": 114507,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T11:26:03.470566+00:00"
+  },
+  {
+    "id": 114508,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T11:28:02.469256+00:00"
+  },
+  {
+    "id": 114509,
+    "blockchain": "ethereum",
+    "slow": 0.070753951,
+    "standard": 0.070753966,
+    "fast": 0.077498323,
+    "created_at": "2026-01-22T11:28:04.390585+00:00"
+  },
+  {
+    "id": 114510,
+    "blockchain": "ethereum",
+    "slow": 0.069798455,
+    "standard": 0.075232939,
+    "fast": 0.0767783,
+    "created_at": "2026-01-22T11:30:04.593536+00:00"
+  },
+  {
+    "id": 114511,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T11:30:09.106455+00:00"
+  },
+  {
+    "id": 114512,
+    "blockchain": "ethereum",
+    "slow": 0.078854232,
+    "standard": 0.078854254,
+    "fast": 0.078954232,
+    "created_at": "2026-01-22T11:32:03.242253+00:00"
+  },
+  {
+    "id": 114513,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T11:32:03.690089+00:00"
+  },
+  {
+    "id": 114514,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:34:03.713031+00:00"
+  },
+  {
+    "id": 114515,
+    "blockchain": "ethereum",
+    "slow": 0.092596374,
+    "standard": 0.092596449,
+    "fast": 0.123856011,
+    "created_at": "2026-01-22T11:34:04.042352+00:00"
+  },
+  {
+    "id": 114517,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:36:03.466342+00:00"
+  },
+  {
+    "id": 114516,
+    "blockchain": "ethereum",
+    "slow": 0.107152378,
+    "standard": 0.107152903,
+    "fast": 0.127152378,
+    "created_at": "2026-01-22T11:36:03.466346+00:00"
+  },
+  {
+    "id": 114518,
+    "blockchain": "ethereum",
+    "slow": 0.14510301,
+    "standard": 0.14510304,
+    "fast": 0.15961336,
+    "created_at": "2026-01-22T11:38:02.684419+00:00"
+  },
+  {
+    "id": 114519,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:38:03.397343+00:00"
+  },
+  {
+    "id": 114520,
+    "blockchain": "ethereum",
+    "slow": 0.199000743,
+    "standard": 0.199158228,
+    "fast": 0.699000728,
+    "created_at": "2026-01-22T11:40:07.877751+00:00"
+  },
+  {
+    "id": 114521,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:40:10.077555+00:00"
+  },
+  {
+    "id": 114522,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:42:03.219686+00:00"
+  },
+  {
+    "id": 114523,
+    "blockchain": "ethereum",
+    "slow": 0.24954681,
+    "standard": 0.274501491,
+    "fast": 0.34354681,
+    "created_at": "2026-01-22T11:42:03.407368+00:00"
+  },
+  {
+    "id": 114524,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T11:44:00.599956+00:00"
+  },
+  {
+    "id": 114525,
+    "blockchain": "ethereum",
+    "slow": 0.315374727,
+    "standard": 0.315535474,
+    "fast": 0.515374727,
+    "created_at": "2026-01-22T11:44:06.030428+00:00"
+  },
+  {
+    "id": 114526,
+    "blockchain": "ethereum",
+    "slow": 0.460613742,
+    "standard": 0.460613897,
+    "fast": 0.613998031,
+    "created_at": "2026-01-22T11:46:03.526662+00:00"
+  },
+  {
+    "id": 114527,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:46:17.649474+00:00"
+  },
+  {
+    "id": 114528,
+    "blockchain": "ethereum",
+    "slow": 0.561018236,
+    "standard": 0.561018298,
+    "fast": 0.644620059,
+    "created_at": "2026-01-22T11:48:03.123685+00:00"
+  },
+  {
+    "id": 114529,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:48:04.145497+00:00"
+  },
+  {
+    "id": 114530,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:50:05.356495+00:00"
+  },
+  {
+    "id": 114531,
+    "blockchain": "ethereum",
+    "slow": 0.643595157,
+    "standard": 0.643595185,
+    "fast": 0.645595123,
+    "created_at": "2026-01-22T11:50:06.875873+00:00"
+  },
+  {
+    "id": 114532,
+    "blockchain": "ethereum",
+    "slow": 0.734424311,
+    "standard": 0.734429891,
+    "fast": 1.018919039,
+    "created_at": "2026-01-22T11:52:03.49123+00:00"
+  },
+  {
+    "id": 114533,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:52:03.491278+00:00"
+  },
+  {
+    "id": 114534,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T11:54:01.722503+00:00"
+  },
+  {
+    "id": 114535,
+    "blockchain": "ethereum",
+    "slow": 0.740332417,
+    "standard": 0.740332479,
+    "fast": 1.211199697,
+    "created_at": "2026-01-22T11:54:03.884792+00:00"
+  },
+  {
+    "id": 114536,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T11:56:00.785798+00:00"
+  },
+  {
+    "id": 114537,
+    "blockchain": "ethereum",
+    "slow": 0.851083003,
+    "standard": 0.854083003,
+    "fast": 0.939491303,
+    "created_at": "2026-01-22T11:56:03.470764+00:00"
+  },
+  {
+    "id": 114538,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T11:58:03.186051+00:00"
+  },
+  {
+    "id": 114539,
+    "blockchain": "ethereum",
+    "slow": 0.847575363,
+    "standard": 0.860113675,
+    "fast": 1.347575362,
+    "created_at": "2026-01-22T11:58:03.323866+00:00"
+  },
+  {
+    "id": 114540,
+    "blockchain": "ethereum",
+    "slow": 0.816303942,
+    "standard": 0.816313942,
+    "fast": 0.916790239,
+    "created_at": "2026-01-22T12:00:15.566207+00:00"
+  },
+  {
+    "id": 114541,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:00:37.924981+00:00"
+  },
+  {
+    "id": 114542,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:02:01.081155+00:00"
+  },
+  {
+    "id": 114543,
+    "blockchain": "ethereum",
+    "slow": 0.862802551,
+    "standard": 0.86880252,
+    "fast": 1.06462309,
+    "created_at": "2026-01-22T12:02:03.960562+00:00"
+  },
+  {
+    "id": 114544,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:04:02.822947+00:00"
+  },
+  {
+    "id": 114545,
+    "blockchain": "ethereum",
+    "slow": 0.879144304,
+    "standard": 0.881144304,
+    "fast": 1.079144304,
+    "created_at": "2026-01-22T12:04:03.840194+00:00"
+  },
+  {
+    "id": 114546,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:06:03.233524+00:00"
+  },
+  {
+    "id": 114547,
+    "blockchain": "ethereum",
+    "slow": 0.847168696,
+    "standard": 0.879248394,
+    "fast": 0.967173233,
+    "created_at": "2026-01-22T12:06:04.08374+00:00"
+  },
+  {
+    "id": 114548,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:08:03.965982+00:00"
+  },
+  {
+    "id": 114549,
+    "blockchain": "ethereum",
+    "slow": 0.680725235,
+    "standard": 0.682725235,
+    "fast": 0.750997758,
+    "created_at": "2026-01-22T12:08:04.794637+00:00"
+  },
+  {
+    "id": 114550,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:10:06.224624+00:00"
+  },
+  {
+    "id": 114551,
+    "blockchain": "ethereum",
+    "slow": 0.519500099,
+    "standard": 0.521500068,
+    "fast": 0.573650074,
+    "created_at": "2026-01-22T12:10:07.033379+00:00"
+  },
+  {
+    "id": 114552,
+    "blockchain": "ethereum",
+    "slow": 0.498420068,
+    "standard": 0.500420068,
+    "fast": 0.587330041,
+    "created_at": "2026-01-22T12:12:03.150464+00:00"
+  },
+  {
+    "id": 114553,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:12:03.346683+00:00"
+  },
+  {
+    "id": 114554,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:14:03.017613+00:00"
+  },
+  {
+    "id": 114555,
+    "blockchain": "ethereum",
+    "slow": 0.389700164,
+    "standard": 0.414700133,
+    "fast": 0.456170146,
+    "created_at": "2026-01-22T12:14:03.940453+00:00"
+  },
+  {
+    "id": 114556,
+    "blockchain": "ethereum",
+    "slow": 0.303527599,
+    "standard": 0.304527599,
+    "fast": 0.334980358,
+    "created_at": "2026-01-22T12:16:02.947875+00:00"
+  },
+  {
+    "id": 114557,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:16:03.404452+00:00"
+  },
+  {
+    "id": 114558,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:18:05.428594+00:00"
+  },
+  {
+    "id": 114559,
+    "blockchain": "ethereum",
+    "slow": 0.255709222,
+    "standard": 0.256709222,
+    "fast": 0.282380144,
+    "created_at": "2026-01-22T12:18:05.87748+00:00"
+  },
+  {
+    "id": 114560,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:20:04.835421+00:00"
+  },
+  {
+    "id": 114561,
+    "blockchain": "ethereum",
+    "slow": 0.235848479,
+    "standard": 0.235848479,
+    "fast": 0.259433326,
+    "created_at": "2026-01-22T12:20:07.216646+00:00"
+  },
+  {
+    "id": 114562,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:22:04.745446+00:00"
+  },
+  {
+    "id": 114563,
+    "blockchain": "ethereum",
+    "slow": 0.222519621,
+    "standard": 0.22261959,
+    "fast": 0.30151959,
+    "created_at": "2026-01-22T12:22:05.238079+00:00"
+  },
+  {
+    "id": 114564,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:24:03.630741+00:00"
+  },
+  {
+    "id": 114565,
+    "blockchain": "ethereum",
+    "slow": 0.206978549,
+    "standard": 0.207078549,
+    "fast": 0.256502445,
+    "created_at": "2026-01-22T12:24:04.589146+00:00"
+  },
+  {
+    "id": 114566,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:26:03.122135+00:00"
+  },
+  {
+    "id": 114567,
+    "blockchain": "ethereum",
+    "slow": 0.181226201,
+    "standard": 0.181226201,
+    "fast": 0.199348821,
+    "created_at": "2026-01-22T12:26:04.267897+00:00"
+  },
+  {
+    "id": 114568,
+    "blockchain": "ethereum",
+    "slow": 0.189256334,
+    "standard": 0.189261914,
+    "fast": 0.268256334,
+    "created_at": "2026-01-22T12:28:03.298305+00:00"
+  },
+  {
+    "id": 114569,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:28:03.679606+00:00"
+  },
+  {
+    "id": 114570,
+    "blockchain": "ethereum",
+    "slow": 0.16633433,
+    "standard": 0.1663427,
+    "fast": 0.166346885,
+    "created_at": "2026-01-22T12:30:07.8113+00:00"
+  },
+  {
+    "id": 114571,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:30:08.608169+00:00"
+  },
+  {
+    "id": 114572,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:32:01.232179+00:00"
+  },
+  {
+    "id": 114573,
+    "blockchain": "ethereum",
+    "slow": 0.172046632,
+    "standard": 0.172050352,
+    "fast": 0.175159599,
+    "created_at": "2026-01-22T12:32:01.356464+00:00"
+  },
+  {
+    "id": 114574,
+    "blockchain": "ethereum",
+    "slow": 0.189439465,
+    "standard": 0.190439464,
+    "fast": 0.21952091,
+    "created_at": "2026-01-22T12:34:01.940438+00:00"
+  },
+  {
+    "id": 114575,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T12:34:03.295257+00:00"
+  },
+  {
+    "id": 114576,
+    "blockchain": "ethereum",
+    "slow": 0.16492062,
+    "standard": 0.164926199,
+    "fast": 0.165020619,
+    "created_at": "2026-01-22T12:36:03.394874+00:00"
+  },
+  {
+    "id": 114577,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T12:36:03.851869+00:00"
+  },
+  {
+    "id": 114578,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T12:38:03.853188+00:00"
+  },
+  {
+    "id": 114579,
+    "blockchain": "ethereum",
+    "slow": 0.149850898,
+    "standard": 0.149856478,
+    "fast": 0.164842125,
+    "created_at": "2026-01-22T12:38:03.993983+00:00"
+  },
+  {
+    "id": 114580,
+    "blockchain": "ethereum",
+    "slow": 0.158292927,
+    "standard": 0.15829302,
+    "fast": 0.177288379,
+    "created_at": "2026-01-22T12:40:03.100387+00:00"
+  },
+  {
+    "id": 114581,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:40:05.293508+00:00"
+  },
+  {
+    "id": 114582,
+    "blockchain": "ethereum",
+    "slow": 0.133965007,
+    "standard": 0.133968107,
+    "fast": 0.147364917,
+    "created_at": "2026-01-22T12:42:03.310657+00:00"
+  },
+  {
+    "id": 114583,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:42:03.431314+00:00"
+  },
+  {
+    "id": 114584,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:44:03.405615+00:00"
+  },
+  {
+    "id": 114585,
+    "blockchain": "ethereum",
+    "slow": 0.145566867,
+    "standard": 0.145569967,
+    "fast": 0.163495901,
+    "created_at": "2026-01-22T12:44:03.500268+00:00"
+  },
+  {
+    "id": 114586,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:46:01.840718+00:00"
+  },
+  {
+    "id": 114587,
+    "blockchain": "ethereum",
+    "slow": 0.144445082,
+    "standard": 0.144445097,
+    "fast": 0.14794828,
+    "created_at": "2026-01-22T12:46:02.848714+00:00"
+  },
+  {
+    "id": 114588,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:48:03.104874+00:00"
+  },
+  {
+    "id": 114589,
+    "blockchain": "ethereum",
+    "slow": 0.138666596,
+    "standard": 0.138669696,
+    "fast": 0.163666596,
+    "created_at": "2026-01-22T12:48:03.188074+00:00"
+  },
+  {
+    "id": 114590,
+    "blockchain": "ethereum",
+    "slow": 0.136002553,
+    "standard": 0.136004053,
+    "fast": 0.152095568,
+    "created_at": "2026-01-22T12:50:06.989906+00:00"
+  },
+  {
+    "id": 114591,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:50:06.994085+00:00"
+  },
+  {
+    "id": 114592,
+    "blockchain": "ethereum",
+    "slow": 0.132728384,
+    "standard": 0.132787303,
+    "fast": 0.139922805,
+    "created_at": "2026-01-22T12:52:03.280574+00:00"
+  },
+  {
+    "id": 114593,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T12:52:03.5987+00:00"
+  },
+  {
+    "id": 114594,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:54:04.150652+00:00"
+  },
+  {
+    "id": 114595,
+    "blockchain": "ethereum",
+    "slow": 0.140393466,
+    "standard": 0.140493451,
+    "fast": 0.157230238,
+    "created_at": "2026-01-22T12:54:04.999724+00:00"
+  },
+  {
+    "id": 114596,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:56:03.394257+00:00"
+  },
+  {
+    "id": 114597,
+    "blockchain": "ethereum",
+    "slow": 0.127258045,
+    "standard": 0.12726803,
+    "fast": 0.145490856,
+    "created_at": "2026-01-22T12:56:03.640181+00:00"
+  },
+  {
+    "id": 114598,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T12:58:02.891881+00:00"
+  },
+  {
+    "id": 114599,
+    "blockchain": "ethereum",
+    "slow": 0.115193794,
+    "standard": 0.115193794,
+    "fast": 0.126713173,
+    "created_at": "2026-01-22T12:58:03.589605+00:00"
+  },
+  {
+    "id": 114600,
+    "blockchain": "ethereum",
+    "slow": 0.10493465,
+    "standard": 0.10493465,
+    "fast": 0.115428115,
+    "created_at": "2026-01-22T13:00:11.115775+00:00"
+  },
+  {
+    "id": 114601,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:00:12.208552+00:00"
+  },
+  {
+    "id": 114602,
+    "blockchain": "ethereum",
+    "slow": 0.113847108,
+    "standard": 0.113848143,
+    "fast": 0.115722223,
+    "created_at": "2026-01-22T13:02:03.849913+00:00"
+  },
+  {
+    "id": 114603,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T13:02:04.252884+00:00"
+  },
+  {
+    "id": 114604,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T13:04:02.85154+00:00"
+  },
+  {
+    "id": 114605,
+    "blockchain": "ethereum",
+    "slow": 0.119698956,
+    "standard": 0.119698963,
+    "fast": 0.121574071,
+    "created_at": "2026-01-22T13:04:04.029919+00:00"
+  },
+  {
+    "id": 114606,
+    "blockchain": "ethereum",
+    "slow": 0.132439591,
+    "standard": 0.132439606,
+    "fast": 0.14088324,
+    "created_at": "2026-01-22T13:06:03.204102+00:00"
+  },
+  {
+    "id": 114607,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T13:06:03.573689+00:00"
+  },
+  {
+    "id": 114608,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T13:08:03.178057+00:00"
+  },
+  {
+    "id": 114609,
+    "blockchain": "ethereum",
+    "slow": 0.130795355,
+    "standard": 0.130795371,
+    "fast": 0.136701632,
+    "created_at": "2026-01-22T13:08:03.230149+00:00"
+  },
+  {
+    "id": 114610,
+    "blockchain": "ethereum",
+    "slow": 0.125260626,
+    "standard": 0.125260646,
+    "fast": 0.150190359,
+    "created_at": "2026-01-22T13:10:07.762163+00:00"
+  },
+  {
+    "id": 114611,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:10:09.06151+00:00"
+  },
+  {
+    "id": 114612,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:12:00.876435+00:00"
+  },
+  {
+    "id": 114613,
+    "blockchain": "ethereum",
+    "slow": 0.137249882,
+    "standard": 0.1372499,
+    "fast": 0.148826486,
+    "created_at": "2026-01-22T13:12:04.694521+00:00"
+  },
+  {
+    "id": 114614,
+    "blockchain": "ethereum",
+    "slow": 0.159319912,
+    "standard": 0.159319915,
+    "fast": 0.209319897,
+    "created_at": "2026-01-22T13:14:02.80722+00:00"
+  },
+  {
+    "id": 114615,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T13:14:03.484967+00:00"
+  },
+  {
+    "id": 114616,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T13:16:00.623829+00:00"
+  },
+  {
+    "id": 114617,
+    "blockchain": "ethereum",
+    "slow": 0.156981363,
+    "standard": 0.156981379,
+    "fast": 0.170200728,
+    "created_at": "2026-01-22T13:16:02.614153+00:00"
+  },
+  {
+    "id": 114618,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T13:18:03.243404+00:00"
+  },
+  {
+    "id": 114619,
+    "blockchain": "ethereum",
+    "slow": 0.146791665,
+    "standard": 0.14679168,
+    "fast": 0.161470848,
+    "created_at": "2026-01-22T13:18:04.129485+00:00"
+  },
+  {
+    "id": 114620,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T13:20:06.560833+00:00"
+  },
+  {
+    "id": 114621,
+    "blockchain": "ethereum",
+    "slow": 0.136707233,
+    "standard": 0.136707248,
+    "fast": 0.150377972,
+    "created_at": "2026-01-22T13:20:07.503589+00:00"
+  },
+  {
+    "id": 114622,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:22:03.573903+00:00"
+  },
+  {
+    "id": 114623,
+    "blockchain": "ethereum",
+    "slow": 0.130505775,
+    "standard": 0.130505798,
+    "fast": 0.135253215,
+    "created_at": "2026-01-22T13:22:05.858882+00:00"
+  },
+  {
+    "id": 114624,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:24:03.193897+00:00"
+  },
+  {
+    "id": 114625,
+    "blockchain": "ethereum",
+    "slow": 0.115935122,
+    "standard": 0.115935137,
+    "fast": 0.116035122,
+    "created_at": "2026-01-22T13:24:03.251777+00:00"
+  },
+  {
+    "id": 114626,
+    "blockchain": "ethereum",
+    "slow": 0.114726218,
+    "standard": 0.114726241,
+    "fast": 0.133106756,
+    "created_at": "2026-01-22T13:26:03.718486+00:00"
+  },
+  {
+    "id": 114627,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:26:03.82399+00:00"
+  },
+  {
+    "id": 114628,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:28:02.110897+00:00"
+  },
+  {
+    "id": 114629,
+    "blockchain": "ethereum",
+    "slow": 0.105973306,
+    "standard": 0.105973336,
+    "fast": 0.120150745,
+    "created_at": "2026-01-22T13:28:03.619424+00:00"
+  },
+  {
+    "id": 114630,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:30:06.069676+00:00"
+  },
+  {
+    "id": 114631,
+    "blockchain": "ethereum",
+    "slow": 0.101250464,
+    "standard": 0.101250479,
+    "fast": 0.102236081,
+    "created_at": "2026-01-22T13:30:10.14943+00:00"
+  },
+  {
+    "id": 114632,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T13:32:03.78685+00:00"
+  },
+  {
+    "id": 114633,
+    "blockchain": "ethereum",
+    "slow": 0.116915336,
+    "standard": 0.118393762,
+    "fast": 0.128606869,
+    "created_at": "2026-01-22T13:32:04.149541+00:00"
+  },
+  {
+    "id": 114634,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T13:34:03.262925+00:00"
+  },
+  {
+    "id": 114635,
+    "blockchain": "ethereum",
+    "slow": 0.09811306,
+    "standard": 0.09811306,
+    "fast": 0.107924366,
+    "created_at": "2026-01-22T13:34:03.876555+00:00"
+  },
+  {
+    "id": 114636,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T13:36:03.450881+00:00"
+  },
+  {
+    "id": 114637,
+    "blockchain": "ethereum",
+    "slow": 0.096958717,
+    "standard": 0.096958732,
+    "fast": 0.106761838,
+    "created_at": "2026-01-22T13:36:03.678881+00:00"
+  },
+  {
+    "id": 114638,
+    "blockchain": "ethereum",
+    "slow": 0.131019119,
+    "standard": 0.132019119,
+    "fast": 0.14412103,
+    "created_at": "2026-01-22T13:38:04.599611+00:00"
+  },
+  {
+    "id": 114639,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T13:38:05.597312+00:00"
+  },
+  {
+    "id": 114640,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 2,
+    "fast": 3,
+    "created_at": "2026-01-22T13:40:01.970881+00:00"
+  },
+  {
+    "id": 114641,
+    "blockchain": "ethereum",
+    "slow": 0.148265092,
+    "standard": 0.148265107,
+    "fast": 0.164519292,
+    "created_at": "2026-01-22T13:40:07.521636+00:00"
+  },
+  {
+    "id": 114642,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T13:42:03.445611+00:00"
+  },
+  {
+    "id": 114643,
+    "blockchain": "ethereum",
+    "slow": 0.180739513,
+    "standard": 0.180739528,
+    "fast": 0.198813484,
+    "created_at": "2026-01-22T13:42:04.321263+00:00"
+  },
+  {
+    "id": 114644,
+    "blockchain": "ethereum",
+    "slow": 0.179518199,
+    "standard": 0.179518217,
+    "fast": 0.192980817,
+    "created_at": "2026-01-22T13:44:03.711642+00:00"
+  },
+  {
+    "id": 114645,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T13:44:04.34615+00:00"
+  },
+  {
+    "id": 114646,
+    "blockchain": "ethereum",
+    "slow": 0.19330571,
+    "standard": 0.19330697,
+    "fast": 0.205841959,
+    "created_at": "2026-01-22T13:46:03.896084+00:00"
+  },
+  {
+    "id": 114647,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 4,
+    "created_at": "2026-01-22T13:46:04.634322+00:00"
+  },
+  {
+    "id": 114648,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 4,
+    "created_at": "2026-01-22T13:48:02.919353+00:00"
+  },
+  {
+    "id": 114649,
+    "blockchain": "ethereum",
+    "slow": 0.238642253,
+    "standard": 0.238644953,
+    "fast": 0.247296048,
+    "created_at": "2026-01-22T13:48:03.271652+00:00"
+  },
+  {
+    "id": 114650,
+    "blockchain": "ethereum",
+    "slow": 0.246660144,
+    "standard": 0.246661944,
+    "fast": 0.246666219,
+    "created_at": "2026-01-22T13:50:07.009689+00:00"
+  },
+  {
+    "id": 114651,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 4,
+    "created_at": "2026-01-22T13:50:07.275748+00:00"
+  },
+  {
+    "id": 114652,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 4,
+    "created_at": "2026-01-22T13:52:03.132229+00:00"
+  },
+  {
+    "id": 114653,
+    "blockchain": "ethereum",
+    "slow": 0.239013534,
+    "standard": 0.239013556,
+    "fast": 0.262914911,
+    "created_at": "2026-01-22T13:52:03.587158+00:00"
+  },
+  {
+    "id": 114654,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:54:03.260304+00:00"
+  },
+  {
+    "id": 114655,
+    "blockchain": "ethereum",
+    "slow": 0.219097573,
+    "standard": 0.219097573,
+    "fast": 0.24100733,
+    "created_at": "2026-01-22T13:54:03.664915+00:00"
+  },
+  {
+    "id": 114656,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:56:02.932608+00:00"
+  },
+  {
+    "id": 114657,
+    "blockchain": "ethereum",
+    "slow": 0.234585262,
+    "standard": 0.234586762,
+    "fast": 0.234590324,
+    "created_at": "2026-01-22T13:56:04.188589+00:00"
+  },
+  {
+    "id": 114658,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T13:58:01.455679+00:00"
+  },
+  {
+    "id": 114659,
+    "blockchain": "ethereum",
+    "slow": 0.209261453,
+    "standard": 0.209262953,
+    "fast": 0.231649026,
+    "created_at": "2026-01-22T13:58:03.069813+00:00"
+  },
+  {
+    "id": 114660,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:00:09.903719+00:00"
+  },
+  {
+    "id": 114661,
+    "blockchain": "ethereum",
+    "slow": 0.243373447,
+    "standard": 0.243374946,
+    "fast": 0.27101079,
+    "created_at": "2026-01-22T14:00:16.397355+00:00"
+  },
+  {
+    "id": 114662,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:02:03.627756+00:00"
+  },
+  {
+    "id": 114663,
+    "blockchain": "ethereum",
+    "slow": 0.245866764,
+    "standard": 0.245868264,
+    "fast": 0.257858103,
+    "created_at": "2026-01-22T14:02:04.631859+00:00"
+  },
+  {
+    "id": 114664,
+    "blockchain": "ethereum",
+    "slow": 0.213164536,
+    "standard": 0.213166036,
+    "fast": 0.235850674,
+    "created_at": "2026-01-22T14:04:01.631758+00:00"
+  },
+  {
+    "id": 114665,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:04:03.191065+00:00"
+  },
+  {
+    "id": 114666,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:06:02.689079+00:00"
+  },
+  {
+    "id": 114667,
+    "blockchain": "ethereum",
+    "slow": 0.185645249,
+    "standard": 0.185646748,
+    "fast": 0.188398024,
+    "created_at": "2026-01-22T14:06:04.211798+00:00"
+  },
+  {
+    "id": 114668,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:08:03.023646+00:00"
+  },
+  {
+    "id": 114669,
+    "blockchain": "ethereum",
+    "slow": 0.161726142,
+    "standard": 0.161726157,
+    "fast": 0.177898772,
+    "created_at": "2026-01-22T14:08:03.78239+00:00"
+  },
+  {
+    "id": 114670,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:10:06.020871+00:00"
+  },
+  {
+    "id": 114671,
+    "blockchain": "ethereum",
+    "slow": 0.158361328,
+    "standard": 0.158362828,
+    "fast": 0.160361328,
+    "created_at": "2026-01-22T14:10:06.54988+00:00"
+  },
+  {
+    "id": 114672,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:12:05.4299+00:00"
+  },
+  {
+    "id": 114673,
+    "blockchain": "ethereum",
+    "slow": 0.14403326,
+    "standard": 0.144034759,
+    "fast": 0.158438234,
+    "created_at": "2026-01-22T14:12:05.883622+00:00"
+  },
+  {
+    "id": 114674,
+    "blockchain": "ethereum",
+    "slow": 0.174857728,
+    "standard": 0.1923435,
+    "fast": 0.199825821,
+    "created_at": "2026-01-22T14:14:03.566558+00:00"
+  },
+  {
+    "id": 114675,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:14:05.819943+00:00"
+  },
+  {
+    "id": 114676,
+    "blockchain": "ethereum",
+    "slow": 0.138671032,
+    "standard": 0.138671032,
+    "fast": 0.152538135,
+    "created_at": "2026-01-22T14:16:02.80236+00:00"
+  },
+  {
+    "id": 114677,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 4,
+    "created_at": "2026-01-22T14:16:03.948687+00:00"
+  },
+  {
+    "id": 114678,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 4,
+    "created_at": "2026-01-22T14:18:01.525142+00:00"
+  },
+  {
+    "id": 114679,
+    "blockchain": "ethereum",
+    "slow": 0.149195604,
+    "standard": 0.149197104,
+    "fast": 0.157862756,
+    "created_at": "2026-01-22T14:18:03.059839+00:00"
+  },
+  {
+    "id": 114680,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 2,
+    "fast": 2,
+    "created_at": "2026-01-22T14:20:05.531411+00:00"
+  },
+  {
+    "id": 114681,
+    "blockchain": "ethereum",
+    "slow": 0.148488099,
+    "standard": 0.148488117,
+    "fast": 0.154488099,
+    "created_at": "2026-01-22T14:20:08.059423+00:00"
+  },
+  {
+    "id": 114682,
+    "blockchain": "ethereum",
+    "slow": 0.173844519,
+    "standard": 0.173846019,
+    "fast": 0.191712711,
+    "created_at": "2026-01-22T14:22:02.637287+00:00"
+  },
+  {
+    "id": 114683,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 2,
+    "fast": 2,
+    "created_at": "2026-01-22T14:22:03.212789+00:00"
+  },
+  {
+    "id": 114684,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:24:03.327571+00:00"
+  },
+  {
+    "id": 114685,
+    "blockchain": "ethereum",
+    "slow": 0.186979717,
+    "standard": 0.186979732,
+    "fast": 0.186981217,
+    "created_at": "2026-01-22T14:24:04.063772+00:00"
+  },
+  {
+    "id": 114686,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:26:02.105095+00:00"
+  },
+  {
+    "id": 114687,
+    "blockchain": "ethereum",
+    "slow": 0.177456399,
+    "standard": 0.177457899,
+    "fast": 0.182228645,
+    "created_at": "2026-01-22T14:26:03.716915+00:00"
+  },
+  {
+    "id": 114688,
+    "blockchain": "ethereum",
+    "slow": 0.167701707,
+    "standard": 0.167703207,
+    "fast": 0.169701707,
+    "created_at": "2026-01-22T14:28:02.306016+00:00"
+  },
+  {
+    "id": 114689,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:28:03.638155+00:00"
+  },
+  {
+    "id": 114690,
+    "blockchain": "ethereum",
+    "slow": 0.14834261,
+    "standard": 0.14834411,
+    "fast": 0.163178521,
+    "created_at": "2026-01-22T14:30:03.915789+00:00"
+  },
+  {
+    "id": 114691,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:30:08.591345+00:00"
+  },
+  {
+    "id": 114692,
+    "blockchain": "ethereum",
+    "slow": 0.159027274,
+    "standard": 0.159028774,
+    "fast": 0.164647105,
+    "created_at": "2026-01-22T14:32:03.573656+00:00"
+  },
+  {
+    "id": 114693,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:32:03.595935+00:00"
+  },
+  {
+    "id": 114694,
+    "blockchain": "ethereum",
+    "slow": 0.147341409,
+    "standard": 0.15583149,
+    "fast": 0.162075549,
+    "created_at": "2026-01-22T14:34:01.949784+00:00"
+  },
+  {
+    "id": 114695,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:34:03.514233+00:00"
+  },
+  {
+    "id": 114696,
+    "blockchain": "ethereum",
+    "slow": 0.181868285,
+    "standard": 0.181868285,
+    "fast": 0.200055113,
+    "created_at": "2026-01-22T14:36:03.638028+00:00"
+  },
+  {
+    "id": 114697,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:36:03.994748+00:00"
+  },
+  {
+    "id": 114698,
+    "blockchain": "ethereum",
+    "slow": 0.230133734,
+    "standard": 0.253147107,
+    "fast": 0.278461817,
+    "created_at": "2026-01-22T14:38:02.646471+00:00"
+  },
+  {
+    "id": 114699,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 3,
+    "fast": 3,
+    "created_at": "2026-01-22T14:38:03.729373+00:00"
+  },
+  {
+    "id": 114700,
+    "blockchain": "ethereum",
+    "slow": 0.191726949,
+    "standard": 0.191726949,
+    "fast": 0.210899643,
+    "created_at": "2026-01-22T14:40:02.757551+00:00"
+  },
+  {
+    "id": 114701,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:40:05.136234+00:00"
+  },
+  {
+    "id": 114702,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:42:03.0467+00:00"
+  },
+  {
+    "id": 114703,
+    "blockchain": "ethereum",
+    "slow": 0.217636799,
+    "standard": 0.217636821,
+    "fast": 0.218636799,
+    "created_at": "2026-01-22T14:42:03.556325+00:00"
+  },
+  {
+    "id": 114704,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:44:02.57485+00:00"
+  },
+  {
+    "id": 114705,
+    "blockchain": "ethereum",
+    "slow": 0.201911933,
+    "standard": 0.222103126,
+    "fast": 0.236492984,
+    "created_at": "2026-01-22T14:44:04.055054+00:00"
+  },
+  {
+    "id": 114706,
+    "blockchain": "ethereum",
+    "slow": 0.194501223,
+    "standard": 0.194502723,
+    "fast": 0.213951345,
+    "created_at": "2026-01-22T14:46:03.16377+00:00"
+  },
+  {
+    "id": 114707,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:46:03.593194+00:00"
+  },
+  {
+    "id": 114708,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T14:48:02.07078+00:00"
+  },
+  {
+    "id": 114709,
+    "blockchain": "ethereum",
+    "slow": 0.179706643,
+    "standard": 0.179856643,
+    "fast": 0.197677307,
+    "created_at": "2026-01-22T14:48:03.370071+00:00"
+  },
+  {
+    "id": 114710,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T14:50:06.801764+00:00"
+  },
+  {
+    "id": 114711,
+    "blockchain": "ethereum",
+    "slow": 0.195998353,
+    "standard": 0.195998353,
+    "fast": 0.215598188,
+    "created_at": "2026-01-22T14:50:07.312327+00:00"
+  },
+  {
+    "id": 114712,
+    "blockchain": "ethereum",
+    "slow": 0.269994891,
+    "standard": 0.270994891,
+    "fast": 0.315369975,
+    "created_at": "2026-01-22T14:52:01.862625+00:00"
+  },
+  {
+    "id": 114713,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T14:52:01.930924+00:00"
+  },
+  {
+    "id": 114714,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T14:54:03.634339+00:00"
+  },
+  {
+    "id": 114715,
+    "blockchain": "ethereum",
+    "slow": 0.265518697,
+    "standard": 0.266518697,
+    "fast": 0.284576946,
+    "created_at": "2026-01-22T14:54:05.682287+00:00"
+  },
+  {
+    "id": 114716,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T14:56:02.615751+00:00"
+  },
+  {
+    "id": 114717,
+    "blockchain": "ethereum",
+    "slow": 0.214204616,
+    "standard": 0.223540257,
+    "fast": 0.245894282,
+    "created_at": "2026-01-22T14:56:05.869184+00:00"
+  },
+  {
+    "id": 114718,
+    "blockchain": "ethereum",
+    "slow": 0.227445496,
+    "standard": 0.229445496,
+    "fast": 0.238904942,
+    "created_at": "2026-01-22T14:58:04.064736+00:00"
+  },
+  {
+    "id": 114719,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T14:58:04.440708+00:00"
+  },
+  {
+    "id": 114720,
+    "blockchain": "ethereum",
+    "slow": 0.202561833,
+    "standard": 0.204561833,
+    "fast": 0.212561833,
+    "created_at": "2026-01-22T15:00:12.967535+00:00"
+  },
+  {
+    "id": 114721,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:00:24.291533+00:00"
+  },
+  {
+    "id": 114722,
+    "blockchain": "ethereum",
+    "slow": 0.212931319,
+    "standard": 0.213031319,
+    "fast": 0.215981937,
+    "created_at": "2026-01-22T15:02:03.795593+00:00"
+  },
+  {
+    "id": 114723,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:02:04.1501+00:00"
+  },
+  {
+    "id": 114724,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:04:03.272156+00:00"
+  },
+  {
+    "id": 114725,
+    "blockchain": "ethereum",
+    "slow": 0.23637553,
+    "standard": 0.23737553,
+    "fast": 0.264084517,
+    "created_at": "2026-01-22T15:04:03.318609+00:00"
+  },
+  {
+    "id": 114726,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:06:03.840403+00:00"
+  },
+  {
+    "id": 114727,
+    "blockchain": "ethereum",
+    "slow": 0.246665683,
+    "standard": 0.246805683,
+    "fast": 0.255065683,
+    "created_at": "2026-01-22T15:06:04.018192+00:00"
+  },
+  {
+    "id": 114728,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:08:01.679183+00:00"
+  },
+  {
+    "id": 114729,
+    "blockchain": "ethereum",
+    "slow": 0.229582996,
+    "standard": 0.229692996,
+    "fast": 0.252662295,
+    "created_at": "2026-01-22T15:08:02.485203+00:00"
+  },
+  {
+    "id": 114730,
+    "blockchain": "ethereum",
+    "slow": 0.235104126,
+    "standard": 0.235204126,
+    "fast": 0.242104126,
+    "created_at": "2026-01-22T15:10:05.730864+00:00"
+  },
+  {
+    "id": 114731,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T15:10:06.346054+00:00"
+  },
+  {
+    "id": 114732,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T15:12:02.135037+00:00"
+  },
+  {
+    "id": 114733,
+    "blockchain": "ethereum",
+    "slow": 0.273718442,
+    "standard": 0.273788442,
+    "fast": 0.280718442,
+    "created_at": "2026-01-22T15:12:03.841608+00:00"
+  },
+  {
+    "id": 114734,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T15:14:03.820909+00:00"
+  },
+  {
+    "id": 114735,
+    "blockchain": "ethereum",
+    "slow": 0.250509486,
+    "standard": 0.252509486,
+    "fast": 0.277760434,
+    "created_at": "2026-01-22T15:14:04.34914+00:00"
+  },
+  {
+    "id": 114736,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:16:03.044677+00:00"
+  },
+  {
+    "id": 114737,
+    "blockchain": "ethereum",
+    "slow": 0.235961722,
+    "standard": 0.236010722,
+    "fast": 0.238625722,
+    "created_at": "2026-01-22T15:16:03.830314+00:00"
+  },
+  {
+    "id": 114738,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:18:03.71952+00:00"
+  },
+  {
+    "id": 114739,
+    "blockchain": "ethereum",
+    "slow": 0.228423566,
+    "standard": 0.228472566,
+    "fast": 0.251265922,
+    "created_at": "2026-01-22T15:18:07.227816+00:00"
+  },
+  {
+    "id": 114740,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:20:02.542188+00:00"
+  },
+  {
+    "id": 114741,
+    "blockchain": "ethereum",
+    "slow": 0.211978805,
+    "standard": 0.212027798,
+    "fast": 0.227977954,
+    "created_at": "2026-01-22T15:20:06.072451+00:00"
+  },
+  {
+    "id": 114742,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:22:02.902037+00:00"
+  },
+  {
+    "id": 114743,
+    "blockchain": "ethereum",
+    "slow": 0.213481756,
+    "standard": 0.217940756,
+    "fast": 0.234829931,
+    "created_at": "2026-01-22T15:22:03.799472+00:00"
+  },
+  {
+    "id": 114744,
+    "blockchain": "ethereum",
+    "slow": 0.200539619,
+    "standard": 0.200588659,
+    "fast": 0.204998619,
+    "created_at": "2026-01-22T15:24:03.678328+00:00"
+  },
+  {
+    "id": 114745,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:24:04.070064+00:00"
+  },
+  {
+    "id": 114746,
+    "blockchain": "ethereum",
+    "slow": 0.208833235,
+    "standard": 0.208882234,
+    "fast": 0.229716558,
+    "created_at": "2026-01-22T15:26:02.924768+00:00"
+  },
+  {
+    "id": 114747,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:26:03.867061+00:00"
+  },
+  {
+    "id": 114748,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:28:05.659655+00:00"
+  },
+  {
+    "id": 114749,
+    "blockchain": "ethereum",
+    "slow": 0.327883628,
+    "standard": 0.327983628,
+    "fast": 0.36557689,
+    "created_at": "2026-01-22T15:28:05.854376+00:00"
+  },
+  {
+    "id": 114750,
+    "blockchain": "ethereum",
+    "slow": 0.374869313,
+    "standard": 0.374920763,
+    "fast": 0.418015744,
+    "created_at": "2026-01-22T15:30:08.250508+00:00"
+  },
+  {
+    "id": 114751,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:30:09.201432+00:00"
+  },
+  {
+    "id": 114752,
+    "blockchain": "ethereum",
+    "slow": 0.364536764,
+    "standard": 0.364588214,
+    "fast": 0.401047035,
+    "created_at": "2026-01-22T15:32:04.069891+00:00"
+  },
+  {
+    "id": 114753,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:32:04.938674+00:00"
+  },
+  {
+    "id": 114754,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:34:03.317072+00:00"
+  },
+  {
+    "id": 114755,
+    "blockchain": "ethereum",
+    "slow": 0.454363716,
+    "standard": 0.454399731,
+    "fast": 0.457965216,
+    "created_at": "2026-01-22T15:34:03.634307+00:00"
+  },
+  {
+    "id": 114756,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:36:03.481448+00:00"
+  },
+  {
+    "id": 114757,
+    "blockchain": "ethereum",
+    "slow": 0.472516944,
+    "standard": 0.472516945,
+    "fast": 0.476117944,
+    "created_at": "2026-01-22T15:36:04.017297+00:00"
+  },
+  {
+    "id": 114758,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:38:05.431743+00:00"
+  },
+  {
+    "id": 114759,
+    "blockchain": "ethereum",
+    "slow": 0.444710456,
+    "standard": 0.444735666,
+    "fast": 0.447231456,
+    "created_at": "2026-01-22T15:38:05.892848+00:00"
+  },
+  {
+    "id": 114760,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:40:05.05315+00:00"
+  },
+  {
+    "id": 114761,
+    "blockchain": "ethereum",
+    "slow": 0.435668384,
+    "standard": 0.435693594,
+    "fast": 0.438189384,
+    "created_at": "2026-01-22T15:40:05.177273+00:00"
+  },
+  {
+    "id": 114762,
+    "blockchain": "ethereum",
+    "slow": 0.38161398,
+    "standard": 0.38161398,
+    "fast": 0.419775378,
+    "created_at": "2026-01-22T15:42:02.793965+00:00"
+  },
+  {
+    "id": 114763,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T15:42:03.641509+00:00"
+  },
+  {
+    "id": 114764,
+    "blockchain": "ethereum",
+    "slow": 0.386041254,
+    "standard": 0.386058901,
+    "fast": 0.388158894,
+    "created_at": "2026-01-22T15:44:03.540243+00:00"
+  },
+  {
+    "id": 114765,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T15:44:03.962148+00:00"
+  },
+  {
+    "id": 114766,
+    "blockchain": "ethereum",
+    "slow": 0.431145504,
+    "standard": 0.431145504,
+    "fast": 0.474260054,
+    "created_at": "2026-01-22T15:46:03.423399+00:00"
+  },
+  {
+    "id": 114767,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 3,
+    "created_at": "2026-01-22T15:46:03.516003+00:00"
+  },
+  {
+    "id": 114768,
+    "blockchain": "ethereum",
+    "slow": 0.61515563,
+    "standard": 0.63119563,
+    "fast": 0.676671193,
+    "created_at": "2026-01-22T15:48:02.121487+00:00"
+  },
+  {
+    "id": 114769,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:48:02.937525+00:00"
+  },
+  {
+    "id": 114770,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:50:06.688783+00:00"
+  },
+  {
+    "id": 114771,
+    "blockchain": "ethereum",
+    "slow": 0.518685369,
+    "standard": 0.51920081,
+    "fast": 0.520685369,
+    "created_at": "2026-01-22T15:50:07.97043+00:00"
+  },
+  {
+    "id": 114772,
+    "blockchain": "ethereum",
+    "slow": 0.487257474,
+    "standard": 0.487772915,
+    "fast": 0.536550206,
+    "created_at": "2026-01-22T15:52:04.474243+00:00"
+  },
+  {
+    "id": 114773,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:52:04.558531+00:00"
+  },
+  {
+    "id": 114774,
+    "blockchain": "ethereum",
+    "slow": 0.480478735,
+    "standard": 0.486359324,
+    "fast": 0.513112577,
+    "created_at": "2026-01-22T15:54:03.080848+00:00"
+  },
+  {
+    "id": 114775,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:54:04.241609+00:00"
+  },
+  {
+    "id": 114776,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T15:56:03.016761+00:00"
+  },
+  {
+    "id": 114777,
+    "blockchain": "ethereum",
+    "slow": 0.389602183,
+    "standard": 0.389770603,
+    "fast": 0.428747663,
+    "created_at": "2026-01-22T15:56:04.419108+00:00"
+  },
+  {
+    "id": 114778,
+    "blockchain": "ethereum",
+    "slow": 0.326875069,
+    "standard": 0.332755069,
+    "fast": 0.339641571,
+    "created_at": "2026-01-22T15:58:03.007319+00:00"
+  },
+  {
+    "id": 114779,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T15:58:04.489355+00:00"
+  },
+  {
+    "id": 114780,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:00:13.147307+00:00"
+  },
+  {
+    "id": 114781,
+    "blockchain": "ethereum",
+    "slow": 0.275168016,
+    "standard": 0.281048016,
+    "fast": 0.309152817,
+    "created_at": "2026-01-22T16:00:19.620104+00:00"
+  },
+  {
+    "id": 114782,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:02:05.671316+00:00"
+  },
+  {
+    "id": 114783,
+    "blockchain": "ethereum",
+    "slow": 0.252399582,
+    "standard": 0.252499581,
+    "fast": 0.277749539,
+    "created_at": "2026-01-22T16:02:05.809357+00:00"
+  },
+  {
+    "id": 114784,
+    "blockchain": "ethereum",
+    "slow": 0.232033335,
+    "standard": 0.232133335,
+    "fast": 0.242033335,
+    "created_at": "2026-01-22T16:04:04.370757+00:00"
+  },
+  {
+    "id": 114785,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:04:04.454504+00:00"
+  },
+  {
+    "id": 114786,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:06:05.471574+00:00"
+  },
+  {
+    "id": 114787,
+    "blockchain": "ethereum",
+    "slow": 0.208001983,
+    "standard": 0.208071983,
+    "fast": 0.228879181,
+    "created_at": "2026-01-22T16:06:05.893798+00:00"
+  },
+  {
+    "id": 114788,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:08:03.173173+00:00"
+  },
+  {
+    "id": 114789,
+    "blockchain": "ethereum",
+    "slow": 0.197479391,
+    "standard": 0.197619391,
+    "fast": 0.21738133,
+    "created_at": "2026-01-22T16:08:03.802624+00:00"
+  },
+  {
+    "id": 114790,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:10:01.319759+00:00"
+  },
+  {
+    "id": 114791,
+    "blockchain": "ethereum",
+    "slow": 0.201838772,
+    "standard": 0.202590772,
+    "fast": 0.209651182,
+    "created_at": "2026-01-22T16:10:07.149965+00:00"
+  },
+  {
+    "id": 114792,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:12:05.379363+00:00"
+  },
+  {
+    "id": 114793,
+    "blockchain": "ethereum",
+    "slow": 0.186373675,
+    "standard": 0.187073675,
+    "fast": 0.215836066,
+    "created_at": "2026-01-22T16:12:05.802353+00:00"
+  },
+  {
+    "id": 114794,
+    "blockchain": "ethereum",
+    "slow": 0.18019286,
+    "standard": 0.18029286,
+    "fast": 0.18719286,
+    "created_at": "2026-01-22T16:14:03.474109+00:00"
+  },
+  {
+    "id": 114795,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:14:04.192645+00:00"
+  },
+  {
+    "id": 114796,
+    "blockchain": "ethereum",
+    "slow": 0.181072142,
+    "standard": 0.181172142,
+    "fast": 0.204679356,
+    "created_at": "2026-01-22T16:16:02.880976+00:00"
+  },
+  {
+    "id": 114797,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:17:56.056566+00:00"
+  },
+  {
+    "id": 114798,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:18:03.505071+00:00"
+  },
+  {
+    "id": 114799,
+    "blockchain": "ethereum",
+    "slow": 0.152406653,
+    "standard": 0.154406653,
+    "fast": 0.169847318,
+    "created_at": "2026-01-22T16:18:04.687508+00:00"
+  },
+  {
+    "id": 114800,
+    "blockchain": "ethereum",
+    "slow": 0.219237101,
+    "standard": 0.241160811,
+    "fast": 0.243360811,
+    "created_at": "2026-01-22T16:20:02.377751+00:00"
+  },
+  {
+    "id": 114801,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:20:05.533723+00:00"
+  },
+  {
+    "id": 114802,
+    "blockchain": "ethereum",
+    "slow": 0.218127872,
+    "standard": 0.218227872,
+    "fast": 0.225127872,
+    "created_at": "2026-01-22T16:22:05.84838+00:00"
+  },
+  {
+    "id": 114803,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:22:06.022943+00:00"
+  },
+  {
+    "id": 114804,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:24:02.574982+00:00"
+  },
+  {
+    "id": 114805,
+    "blockchain": "ethereum",
+    "slow": 0.233342647,
+    "standard": 0.236367945,
+    "fast": 0.265916911,
+    "created_at": "2026-01-22T16:24:02.789009+00:00"
+  },
+  {
+    "id": 114806,
+    "blockchain": "ethereum",
+    "slow": 0.209553845,
+    "standard": 0.209553846,
+    "fast": 0.216553845,
+    "created_at": "2026-01-22T16:26:02.992462+00:00"
+  },
+  {
+    "id": 114807,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:26:03.918534+00:00"
+  },
+  {
+    "id": 114808,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:28:03.306562+00:00"
+  },
+  {
+    "id": 114809,
+    "blockchain": "ethereum",
+    "slow": 0.187139011,
+    "standard": 0.187209011,
+    "fast": 0.205929912,
+    "created_at": "2026-01-22T16:28:04.120686+00:00"
+  },
+  {
+    "id": 114810,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:30:08.818354+00:00"
+  },
+  {
+    "id": 114811,
+    "blockchain": "ethereum",
+    "slow": 0.224594424,
+    "standard": 0.226094424,
+    "fast": 0.231594424,
+    "created_at": "2026-01-22T16:30:08.83105+00:00"
+  },
+  {
+    "id": 114812,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 1,
+    "created_at": "2026-01-22T16:32:01.869557+00:00"
+  },
+  {
+    "id": 114813,
+    "blockchain": "ethereum",
+    "slow": 0.229494431,
+    "standard": 0.230894431,
+    "fast": 0.254494431,
+    "created_at": "2026-01-22T16:32:02.929964+00:00"
+  },
+  {
+    "id": 114814,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:34:03.047711+00:00"
+  },
+  {
+    "id": 114815,
+    "blockchain": "ethereum",
+    "slow": 0.19949685,
+    "standard": 0.19956685,
+    "fast": 0.20649685,
+    "created_at": "2026-01-22T16:34:03.628831+00:00"
+  },
+  {
+    "id": 114816,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:36:03.914278+00:00"
+  },
+  {
+    "id": 114817,
+    "blockchain": "ethereum",
+    "slow": 0.181371156,
+    "standard": 0.191371156,
+    "fast": 0.199508271,
+    "created_at": "2026-01-22T16:36:04.313905+00:00"
+  },
+  {
+    "id": 114818,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:38:03.978899+00:00"
+  },
+  {
+    "id": 114819,
+    "blockchain": "ethereum",
+    "slow": 0.196645736,
+    "standard": 0.198645736,
+    "fast": 0.23406693,
+    "created_at": "2026-01-22T16:38:04.512095+00:00"
+  },
+  {
+    "id": 114820,
+    "blockchain": "bitcoin",
+    "slow": 1,
+    "standard": 1,
+    "fast": 2,
+    "created_at": "2026-01-22T16:40:06.099851+00:00"
+  }
+]

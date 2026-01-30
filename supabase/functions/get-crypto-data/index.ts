@@ -6,7 +6,7 @@ const corsHeaders = {
 };
 
 interface DataRequest {
-  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'market_data_history' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens' | 'derivatives_data' | 'market_stress' | 'stablecoin_supply';
+  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'market_data_history' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens' | 'derivatives_data' | 'market_stress' | 'leverage_index' | 'stablecoin_supply' | 'bitcoin_cycle';
   blockchain?: 'ethereum' | 'bitcoin';
   category?: string;
   days?: number;
@@ -20,9 +20,9 @@ async function withRetry<T>(fn: () => Promise<T>, retries = 2, delay = 500): Pro
       return await fn();
     } catch (error) {
       lastError = error as Error;
-      const isRetryable = lastError.message?.includes('connection') || 
-                          lastError.message?.includes('reset') ||
-                          lastError.message?.includes('timeout');
+      const isRetryable = lastError.message?.includes('connection') ||
+        lastError.message?.includes('reset') ||
+        lastError.message?.includes('timeout');
       if (i < retries && isRetryable) {
         console.log(`[get-crypto-data] Retry ${i + 1}/${retries} after error: ${lastError.message}`);
         await new Promise(r => setTimeout(r, delay * (i + 1)));
@@ -79,8 +79,14 @@ Deno.serve(async (req) => {
       case 'market_stress':
         result = await withRetry(() => getMarketStress(supabase));
         break;
+      case 'leverage_index':
+        result = await withRetry(() => getLeverageIndex(supabase));
+        break;
       case 'stablecoin_supply':
         result = await withRetry(() => getStablecoinSupply(supabase));
+        break;
+      case 'bitcoin_cycle':
+        result = await withRetry(() => getBitcoinCycle(supabase));
         break;
       default:
         throw new Error(`Unknown data type: ${type}`);
@@ -108,7 +114,7 @@ async function getGasPrices(supabase: any, blockchain: string) {
     .single();
 
   if (error) throw error;
-  
+
   return {
     slow: parseFloat(data.slow),
     standard: parseFloat(data.standard),
@@ -240,9 +246,9 @@ async function getTrendingTokens(supabase: any) {
     .select('*')
     .order('created_at', { ascending: false })
     .limit(15); // 5 of each type
-  
+
   if (error) throw error;
-  
+
   // Organize by type
   return {
     trending: data.filter((t: any) => t.token_type === 'trending').slice(0, 5),
@@ -311,6 +317,38 @@ async function getMarketStress(supabase: any) {
   };
 }
 
+async function getLeverageIndex(supabase: any) {
+  const { data, error } = await supabase
+    .from('leverage_index')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .single();
+
+  if (error) {
+    console.log('[getLeverageIndex] No data yet:', error.message);
+    return null;
+  }
+
+  return {
+    value: data.value,
+    classification: data.classification,
+    components: {
+      fundingScore: parseFloat(data.funding_score) || 0,
+      oiScore: parseFloat(data.oi_score) || 0,
+      longShortScore: parseFloat(data.long_short_score) || 0,
+      liquidationScore: parseFloat(data.liquidation_score) || 0,
+    },
+    metrics: {
+      totalOI: parseFloat(data.total_oi) || 0,
+      avgFunding: parseFloat(data.avg_funding) || 0,
+      avgLongShortRatio: parseFloat(data.avg_long_short_ratio) || 1,
+    },
+    insight: data.insight || 'Market positioning within normal parameters',
+    timestamp: new Date(data.created_at).getTime(),
+  };
+}
+
 async function getStablecoinSupply(supabase: any) {
   const { data, error } = await supabase
     .from('stablecoin_supply')
@@ -332,3 +370,45 @@ async function getStablecoinSupply(supabase: any) {
     timestamp: new Date(data.created_at).getTime(),
   };
 }
+
+async function getBitcoinCycle(supabase: any) {
+  // 1. Get current position
+  const { data: current } = await supabase
+    .from('current_cycle_position')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .single();
+
+  // 2. Get statistics (band)
+  const { data: stats } = await supabase
+    .from('cycle_statistics')
+    .select('blocks_from_halving, avg_normalized_price, std_deviation, percentile_25, percentile_75')
+    .order('blocks_from_halving', { ascending: true });
+
+  // 3. Get historical cycles (lightweight)
+  // We only fetch minimal data for plotting: x, y, series
+  const { data: history } = await supabase
+    .from('bitcoin_cycle_data')
+    .select('blocks_from_halving, normalized_price, cycle_number')
+    .order('blocks_from_halving', { ascending: true });
+
+  // Organize history by cycle for easier frontend usage
+  const cycles: Record<number, any[]> = {};
+  if (history) {
+    history.forEach((point: any) => {
+      if (!cycles[point.cycle_number]) cycles[point.cycle_number] = [];
+      cycles[point.cycle_number].push({
+        x: point.blocks_from_halving,
+        y: point.normalized_price
+      });
+    });
+  }
+
+  return {
+    current,
+    stats,
+    cycles
+  };
+}
+

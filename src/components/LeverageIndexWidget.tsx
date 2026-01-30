@@ -1,0 +1,155 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+import { useLeverageIndex } from '@/hooks/useLeverageIndex';
+import { InfoTooltip } from '@/components/InfoTooltip';
+
+const getGaugeColor = (value: number): string => {
+    if (value <= 30) return 'hsl(142, 76%, 36%)'; // Green - Healthy
+    if (value <= 50) return 'hsl(142, 71%, 45%)'; // Light Green - Normal
+    if (value <= 70) return 'hsl(45, 93%, 58%)'; // Yellow - Loaded
+    return 'hsl(0, 84%, 60%)'; // Red - Overleveraged
+};
+
+const getTextColorClass = (value: number): string => {
+    if (value <= 30) return 'text-green-500';
+    if (value <= 50) return 'text-emerald-500';
+    if (value <= 70) return 'text-yellow-500';
+    return 'text-red-500';
+};
+
+const formatOI = (value: number): string => {
+    if (value >= 1e12) return `$${(value / 1e12).toFixed(2)}T`;
+    if (value >= 1e9) return `$${(value / 1e9).toFixed(2)}B`;
+    if (value >= 1e6) return `$${(value / 1e6).toFixed(0)}M`;
+    return `$${value.toFixed(0)}`;
+};
+
+const formatFunding = (rate: number): string => {
+    return `${rate >= 0 ? '+' : ''}${(rate * 100).toFixed(4)}%`;
+};
+
+const tooltipContent = {
+    leverageIndex: `The Leverage Index measures the overall leverage and risk in crypto derivatives markets.
+
+**Components:**
+• Funding Rate (30%) - High funding = crowded positions
+• Open Interest (30%) - High OI = heavy leverage
+• Long/Short Ratio (20%) - Extreme ratios = one-sided bets
+• Liquidations (20%) - High liquidations = volatility
+
+**Levels:**
+• 0-30: Healthy - Low risk, balanced market
+• 30-50: Normal - Typical activity
+• 50-70: Loaded - Elevated positions, caution
+• 70-100: Overleveraged - High squeeze risk`
+};
+
+export const LeverageIndexWidget = () => {
+    const { data, isLoading, error } = useLeverageIndex();
+
+    return (
+        <Card>
+            <CardHeader>
+                <div className="flex items-center justify-between">
+                    <div>
+                        <CardTitle>Leverage Index</CardTitle>
+                        <CardDescription>Derivatives risk gauge</CardDescription>
+                    </div>
+                    <InfoTooltip content={tooltipContent.leverageIndex} />
+                </div>
+            </CardHeader>
+            <CardContent>
+                {isLoading ? (
+                    <div className="space-y-4">
+                        <Skeleton className="h-16 w-full" />
+                        <Skeleton className="h-4 w-full" />
+                    </div>
+                ) : error || !data ? (
+                    <div className="text-center py-4">
+                        <p className="text-sm text-muted-foreground">Loading leverage data...</p>
+                    </div>
+                ) : (
+                    <div className="space-y-2">
+                        {/* Semi-circle gauge */}
+                        <div className="relative h-16 w-full max-w-[200px] mx-auto flex items-end justify-center overflow-hidden">
+                            <svg viewBox="0 0 200 100" className="w-full h-full" preserveAspectRatio="xMidYMax meet">
+                                {/* Background arc */}
+                                <path
+                                    d="M 20 95 A 75 75 0 0 1 180 95"
+                                    fill="none"
+                                    stroke="hsl(var(--muted))"
+                                    strokeWidth="14"
+                                    strokeLinecap="round"
+                                />
+
+                                {/* Gradient arc - green to red */}
+                                <defs>
+                                    <linearGradient id="leverageGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stopColor="hsl(142, 76%, 36%)" />
+                                        <stop offset="30%" stopColor="hsl(142, 71%, 45%)" />
+                                        <stop offset="50%" stopColor="hsl(45, 93%, 58%)" />
+                                        <stop offset="70%" stopColor="hsl(25, 95%, 53%)" />
+                                        <stop offset="100%" stopColor="hsl(0, 84%, 60%)" />
+                                    </linearGradient>
+                                </defs>
+
+                                <path
+                                    d="M 20 95 A 75 75 0 0 1 180 95"
+                                    fill="none"
+                                    stroke="url(#leverageGradient)"
+                                    strokeWidth="14"
+                                    strokeLinecap="round"
+                                    strokeDasharray={`${((data.value || 0) / 100) * 236} 236`}
+                                />
+
+                                {/* Pointer */}
+                                <line
+                                    x1="100"
+                                    y1="95"
+                                    x2="100"
+                                    y2="30"
+                                    stroke="hsl(var(--foreground))"
+                                    strokeWidth="2.5"
+                                    strokeLinecap="round"
+                                    transform={`rotate(${((data.value || 0) / 100) * 180 - 90} 100 95)`}
+                                />
+                                <circle cx="100" cy="95" r="5" fill="hsl(var(--foreground))" />
+                            </svg>
+                        </div>
+
+                        {/* Value and classification */}
+                        <div className="text-center space-y-1 pt-2">
+                            <div className={`text-3xl font-bold ${getTextColorClass(data.value || 50)}`}>
+                                {data.value}
+                            </div>
+                            <div className="text-base font-semibold text-muted-foreground">
+                                {data.classification}
+                            </div>
+                        </div>
+
+                        {/* Compact metrics row */}
+                        <div className="flex justify-center gap-4 pt-2 text-xs text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                                <span className="font-medium">OI:</span>
+                                <span>{formatOI(data.metrics.totalOI)}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                                <span className="font-medium">Funding:</span>
+                                <span className={data.metrics.avgFunding >= 0 ? 'text-green-500' : 'text-red-500'}>
+                                    {formatFunding(data.metrics.avgFunding)}
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Insight footer */}
+                        <div className="pt-3 border-t border-border mt-2">
+                            <p className="text-xs text-muted-foreground italic">
+                                💡 {data.insight}
+                            </p>
+                        </div>
+                    </div>
+                )}
+            </CardContent>
+        </Card>
+    );
+};
