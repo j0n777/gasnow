@@ -1,0 +1,28 @@
+
+> gasnow@1.0.0 build
+> vite build
+
+vite v5.4.21 building for production...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+transforming...
+✓ 2904 modules transformed.
+x Build failed in 10.09s
+error during build:
+src/components/BitcoinCycleWidget.tsx (1:9): "useBitcoinCycle" is not exported by "src/hooks/useBitcoinCycle.ts", imported by "src/components/BitcoinCycleWidget.tsx".
+file: /home/docker-sites/gasnow2.0/src/components/BitcoinCycleWidget.tsx:1:9
+
+1: import { useBitcoinCycle } from '@/hooks/useBitcoinCycle';
+            ^
+2: import { useTranslation } from 'react-i18next';
+3: import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+
+    at getRollupError (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+    at error (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+    at Module.error (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/node-entry.js:16946:16)
+    at Module.traceVariable (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/node-entry.js:17400:29)
+    at ModuleScope.findVariable (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/node-entry.js:15067:39)
+    at ReturnValueScope.findVariable (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/node-entry.js:5641:38)
+    at FunctionBodyScope.findVariable (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/node-entry.js:5641:38)
+    at Identifier.bind (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/node-entry.js:5415:40)
+    at CallExpression.bind (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/node-entry.js:2806:23)
+    at CallExpression.bind (file:///home/docker-sites/gasnow2.0/node_modules/rollup/dist/es/shared/node-entry.js:12114:15)

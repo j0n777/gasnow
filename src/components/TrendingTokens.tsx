@@ -5,7 +5,11 @@ import { TrendingUp, Award, Crown } from 'lucide-react';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
 import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
 
-export const TrendingTokens = () => {
+interface TrendingTokensProps {
+  title?: string;
+}
+
+export const TrendingTokens = ({ title = "Market Leaders" }: TrendingTokensProps) => {
   const { data, isLoading, error } = useTrendingTokens();
 
   const renderTokenList = (tokens: any[], title: string, icon: React.ReactNode, tooltip: string) => (
@@ -15,7 +19,7 @@ export const TrendingTokens = () => {
         <h3 className="font-semibold text-sm">{title}</h3>
         <InfoTooltip content={tooltip} />
       </div>
-      
+
       {isLoading ? (
         <div className="space-y-2">
           {[1, 2, 3, 4, 5].map((i) => (
@@ -29,18 +33,18 @@ export const TrendingTokens = () => {
       ) : (
         <div className="space-y-2">
           {tokens?.slice(0, 5).map((token, index) => (
-            <div 
+            <div
               key={token.id}
               className="flex items-center justify-between text-sm hover:bg-muted/50 p-2 rounded-lg transition-colors"
             >
               <div className="flex items-center gap-2 flex-1 min-w-0">
                 <span className="text-xs text-muted-foreground font-medium">#{index + 1}</span>
-                <img 
+                <img
                   src={token.image_url || `https://assets.coingecko.com/coins/images/${token.token_id}/small/${token.token_id}.png`}
                   alt={`${token.name} icon`}
                   className="w-5 h-5 rounded-full"
-                  onError={(e) => { 
-                    e.currentTarget.src = '/images/default-crypto-news.jpg'; 
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/default-crypto-news.jpg';
                   }}
                 />
                 <div className="min-w-0 flex-1">
@@ -50,15 +54,15 @@ export const TrendingTokens = () => {
                   </p>
                 </div>
               </div>
-              
+
               {/* Sparkline chart */}
               {token.sparkline_7d && token.sparkline_7d.length > 0 && (
                 <div className="w-16 h-8" aria-label={`${token.name} 7-day price trend`}>
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={token.sparkline_7d.map((value: number) => ({ value }))}>
-                      <Line 
-                        type="monotone" 
-                        dataKey="value" 
+                      <Line
+                        type="monotone"
+                        dataKey="value"
                         stroke={token.change_24h >= 0 ? '#22c55e' : '#ef4444'}
                         strokeWidth={1.5}
                         dot={false}
@@ -67,7 +71,7 @@ export const TrendingTokens = () => {
                   </ResponsiveContainer>
                 </div>
               )}
-              
+
               <div className="text-right">
                 {token.price && (
                   <p className="text-xs font-semibold">
@@ -75,9 +79,8 @@ export const TrendingTokens = () => {
                   </p>
                 )}
                 {token.change_24h !== undefined && token.change_24h !== null && (
-                  <p className={`text-[10px] font-medium ${
-                    token.change_24h > 0 ? 'text-green-500' : 'text-red-500'
-                  }`}>
+                  <p className={`text-[10px] font-medium ${token.change_24h > 0 ? 'text-green-500' : 'text-red-500'
+                    }`}>
                     {token.change_24h > 0 ? '+' : ''}
                     {token.change_24h.toFixed(2)}%
                   </p>
@@ -98,27 +101,27 @@ export const TrendingTokens = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Market Leaders</CardTitle>
+        <CardTitle>{title}</CardTitle>
         <CardDescription>Top performing tokens</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {renderTokenList(
-            data?.trending || [], 
+            data?.trending || [],
             'Trending',
             <TrendingUp className="h-4 w-4 text-blue-500" />,
             tooltipContent.trending
           )}
-          
+
           {renderTokenList(
-            data?.gainers || [], 
+            data?.gainers || [],
             'Gainers',
             <Award className="h-4 w-4 text-green-500" />,
             tooltipContent.gainers
           )}
-          
+
           {renderTokenList(
-            data?.top5 || [], 
+            data?.top5 || [],
             'Top 5',
             <Crown className="h-4 w-4 text-yellow-500" />,
             tooltipContent.top5

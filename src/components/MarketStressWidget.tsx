@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Skeleton } from '@/components/ui/skeleton';
 import { useMarketStress } from '@/hooks/useMarketStress';
 import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
+import { useTranslation } from 'react-i18next';
 
 const getGaugeColor = (value: number): string => {
   if (value <= 30) return 'hsl(142, 76%, 36%)'; // Green - Low Stress
@@ -15,16 +16,19 @@ const getTextColorClass = (value: number): string => {
   return 'text-red-500';
 };
 
+// ...
+
 export const MarketStressWidget = () => {
   const { data, isLoading, error } = useMarketStress();
+  const { t } = useTranslation();
 
   return (
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Market Stress Index</CardTitle>
-            <CardDescription>Derivatives-based risk indicator</CardDescription>
+            <CardTitle>{t('dashboard.market_stress')}</CardTitle>
+            <CardDescription>{t('dashboard.market_stress_desc')}</CardDescription>
           </div>
           <InfoTooltip content={tooltipContent.marketStress} />
         </div>
@@ -52,7 +56,7 @@ export const MarketStressWidget = () => {
                   strokeWidth="14"
                   strokeLinecap="round"
                 />
-                
+
                 {/* Gradient arc - reversed: green to red */}
                 <defs>
                   <linearGradient id="stressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -63,7 +67,7 @@ export const MarketStressWidget = () => {
                     <stop offset="100%" stopColor="hsl(0, 84%, 60%)" />
                   </linearGradient>
                 </defs>
-                
+
                 <path
                   d="M 20 95 A 75 75 0 0 1 180 95"
                   fill="none"
@@ -72,7 +76,7 @@ export const MarketStressWidget = () => {
                   strokeLinecap="round"
                   strokeDasharray={`${((data.value || 0) / 100) * 236} 236`}
                 />
-                
+
                 {/* Pointer */}
                 <line
                   x1="100"
@@ -87,7 +91,7 @@ export const MarketStressWidget = () => {
                 <circle cx="100" cy="95" r="5" fill="hsl(var(--foreground))" />
               </svg>
             </div>
-            
+
             {/* Value and classification */}
             <div className="text-center space-y-1 pt-2">
               <div className={`text-3xl font-bold ${getTextColorClass(data.value || 50)}`}>
@@ -97,7 +101,7 @@ export const MarketStressWidget = () => {
                 {data.classification}
               </div>
             </div>
-            
+
             {/* Insights */}
             {data.insights && data.insights.length > 0 && (
               <div className="pt-3 border-t border-border mt-3">

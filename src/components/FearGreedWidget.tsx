@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Skeleton } from '@/components/ui/skeleton';
 import { useFearGreedIndex } from '@/hooks/useFearGreedIndex';
 import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
+import { useTranslation } from 'react-i18next';
 
 const getGaugeColor = (value: number): string => {
   if (value < 25) return 'hsl(0, 84%, 60%)'; // Red
@@ -19,16 +20,19 @@ const getTextColorClass = (value: number): string => {
   return 'text-emerald-500';
 };
 
+// ...
+
 export const FearGreedWidget = () => {
   const { data, isLoading, error } = useFearGreedIndex();
+  const { t } = useTranslation();
 
   return (
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle>Fear & Greed Index</CardTitle>
-            <CardDescription>Market sentiment indicator</CardDescription>
+            <CardTitle>{t('dashboard.fear_greed')}</CardTitle>
+            <CardDescription>{t('dashboard.fear_greed_desc')}</CardDescription>
           </div>
           <InfoTooltip content={tooltipContent.fearGreed} />
         </div>
@@ -56,7 +60,7 @@ export const FearGreedWidget = () => {
                   strokeWidth="14"
                   strokeLinecap="round"
                 />
-                
+
                 {/* Gradient arc */}
                 <defs>
                   <linearGradient id="fearGreedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -67,7 +71,7 @@ export const FearGreedWidget = () => {
                     <stop offset="100%" stopColor="hsl(142, 76%, 36%)" />
                   </linearGradient>
                 </defs>
-                
+
                 <path
                   d="M 20 95 A 75 75 0 0 1 180 95"
                   fill="none"
@@ -76,7 +80,7 @@ export const FearGreedWidget = () => {
                   strokeLinecap="round"
                   strokeDasharray={`${((data?.value || 0) / 100) * 236} 236`}
                 />
-                
+
                 {/* Pointer */}
                 <line
                   x1="100"
@@ -91,7 +95,7 @@ export const FearGreedWidget = () => {
                 <circle cx="100" cy="95" r="5" fill="hsl(var(--foreground))" />
               </svg>
             </div>
-            
+
             {/* Value and classification */}
             <div className="text-center space-y-1 pt-2">
               <div className={`text-3xl font-bold ${getTextColorClass(data?.value || 50)}`}>
@@ -101,7 +105,7 @@ export const FearGreedWidget = () => {
                 {data?.classification}
               </div>
             </div>
-            
+
           </div>
         )}
       </CardContent>

@@ -1,0 +1,51 @@
+{
+    "header": {
+        "gas_fees": "Gas Fees",
+        "market": "Market",
+        "news": "News",
+        "privacy": "Privacy",
+        "search_placeholder": "Search tokens...",
+        "mobile_menu_open": "Open menu",
+        "mobile_menu_close": "Close menu"
+    },
+    "dashboard": {
+        "eth_gas_title": "Ethereum Gas Fees",
+        "btc_gas_title": "Bitcoin Gas Fees",
+        "gas_subtitle": "Real-time network transaction fees updated every 2 minutes",
+        "slow": "Slow",
+        "standard": "Standard",
+        "fast": "Fast",
+        "market_stats": "Global Crypto Market Statistics",
+        "indices": "Market Indicators",
+        "cycles": "Market Cycles",
+        "trending": "Trending Cryptocurrencies",
+        "news": "Latest Crypto News",
+        "privacy_tools": "Privacy Tools",
+        "partners": "Partners",
+        "fear_greed": "Fear & Greed Index",
+        "fear_greed_desc": "Market sentiment indicator",
+        "market_cycle": "Market Cycle",
+        "market_cycle_desc": "BTC vs Altcoins dominance",
+        "leverage_index": "Est. Leverage Ratio",
+        "leverage_index_desc": "Exchange leverage heatmap",
+        "bitcoin_cycle": "Bitcoin Cycle",
+        "bitcoin_cycle_desc": "Strategic Position",
+        "market_stress": "Market Stress",
+        "market_stress_desc": "Volatility & Liquidity Risk"
+    },
+    "widgets": {
+        "season": {
+            "bitcoin": "Bitcoin Season",
+            "neutral": "Neutral",
+            "altcoin": "Altseason"
+        }
+    },
+    "footer": {
+        "copyright": "© {{year}} GasNow. Real-time crypto gas tracker. Free and open-source.",
+        "language": "Language"
+    },
+    "metadata": {
+        "title": "GasNow - Real-time Crypto Gas Fees & Market Intelligence",
+        "description": "Free live gas tracker for Ethereum & Bitcoin. Monitor crypto market cap, Fear & Greed Index, derivatives, trending tokens and breaking news in one dashboard."
+    }
+}

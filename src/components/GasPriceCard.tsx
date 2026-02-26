@@ -9,6 +9,7 @@ interface GasPriceCardProps {
   blockchain: 'ethereum' | 'bitcoin';
   isLoading?: boolean;
   usdValue?: number;
+  title?: string;
 }
 
 const formatGasPrice = (price: number): string => {
@@ -42,7 +43,7 @@ const speedConfig = {
   },
 };
 
-export const GasPriceCard = ({ speed, price, blockchain, isLoading, usdValue }: GasPriceCardProps) => {
+export const GasPriceCard = ({ speed, price, blockchain, isLoading, usdValue, title }: GasPriceCardProps) => {
   const config = speedConfig[speed];
   const Icon = config.icon;
   const unit = blockchain === 'ethereum' ? 'Gwei' : 'sat/vB';
@@ -52,7 +53,7 @@ export const GasPriceCard = ({ speed, price, blockchain, isLoading, usdValue }: 
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5">
-            <CardTitle className="text-lg font-semibold">{config.label}</CardTitle>
+            <CardTitle className="text-lg font-semibold">{title || config.label}</CardTitle>
             <InfoTooltip content={config.tooltip} />
           </div>
           <div className={`p-2 rounded-lg ${config.bgColor}`}>

@@ -5,7 +5,11 @@ import { useMarketCapHistory } from '@/hooks/useMarketCapHistory';
 import { AreaChart, Area, ResponsiveContainer, YAxis } from 'recharts';
 import { InfoTooltip, tooltipContent } from '@/components/InfoTooltip';
 
-export const MarketStats = () => {
+interface MarketStatsProps {
+  title?: string;
+}
+
+export const MarketStats = ({ title = "Market Overview" }: MarketStatsProps) => {
   const { data, isLoading, error } = useGlobalMarketCap();
   const { data: historyData, isLoading: historyLoading } = useMarketCapHistory(30);
 
@@ -26,17 +30,17 @@ export const MarketStats = () => {
               <AreaChart data={historyData}>
                 <defs>
                   <linearGradient id="marketCapGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.9}/>
-                    <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.1}/>
+                    <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.9} />
+                    <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.1} />
                   </linearGradient>
                 </defs>
                 <YAxis domain={['dataMin', 'dataMax']} hide />
-                <Area 
-                  type="monotone" 
-                  dataKey="value" 
-                  stroke="hsl(var(--primary))" 
+                <Area
+                  type="monotone"
+                  dataKey="value"
+                  stroke="hsl(var(--primary))"
                   strokeWidth={2.5}
-                  fill="url(#marketCapGradient)" 
+                  fill="url(#marketCapGradient)"
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -44,7 +48,7 @@ export const MarketStats = () => {
         )}
 
         <CardHeader className="relative z-10">
-          <CardTitle>Market Overview</CardTitle>
+          <CardTitle>{title}</CardTitle>
           <CardDescription>Global cryptocurrency market data</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 relative z-10">
@@ -69,7 +73,7 @@ export const MarketStats = () => {
                   {formatLargeNumber(data?.totalMarketCap || 0)}
                 </p>
               </div>
-              
+
               {/* 24h Volume */}
               <div>
                 <div className="flex items-center gap-1.5">

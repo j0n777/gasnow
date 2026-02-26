@@ -2,6 +2,7 @@ import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from './ThemeProvider';
 import { useCryptoPrices } from '@/hooks/useCryptoPrices';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
   selectedBlockchain: 'ethereum' | 'bitcoin';
@@ -11,6 +12,7 @@ interface HeaderProps {
 export const Header = ({ selectedBlockchain, onBlockchainSelect }: HeaderProps) => {
   const { theme, toggleTheme } = useTheme();
   const { data: prices } = useCryptoPrices();
+  const { t } = useTranslation();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -30,11 +32,10 @@ export const Header = ({ selectedBlockchain, onBlockchainSelect }: HeaderProps) 
             <div className="hidden md:flex items-center gap-4">
               <button
                 onClick={() => onBlockchainSelect('ethereum')}
-                className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-colors ${
-                  selectedBlockchain === 'ethereum'
+                className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-colors ${selectedBlockchain === 'ethereum'
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-secondary hover:bg-secondary/80'
-                }`}
+                  }`}
               >
                 <img src="/images/eth-icon.png" alt="ETH" className="w-5 h-5 dark:invert" />
                 <span className="font-semibold">ETH</span>
@@ -44,14 +45,13 @@ export const Header = ({ selectedBlockchain, onBlockchainSelect }: HeaderProps) 
                   </span>
                 )}
               </button>
-              
+
               <button
                 onClick={() => onBlockchainSelect('bitcoin')}
-                className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-colors ${
-                  selectedBlockchain === 'bitcoin'
+                className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-colors ${selectedBlockchain === 'bitcoin'
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-secondary hover:bg-secondary/80'
-                }`}
+                  }`}
               >
                 <img src="/images/btc-icon.png" alt="BTC" className="w-5 h-5 dark:invert" />
                 <span className="font-semibold">BTC</span>

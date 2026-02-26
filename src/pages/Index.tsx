@@ -7,21 +7,41 @@ import { MarketCycleWidget } from '@/components/MarketCycleWidget';
 import { BitcoinCycleWidget } from '@/components/BitcoinCycleWidget';
 import { MarketStats } from '@/components/MarketStats';
 import { TrendingTokens } from '@/components/TrendingTokens';
-import { Sponsors } from '@/components/Sponsors';
-import { StealthExWidget } from '@/components/StealthExWidget';
 import { MarketStressWidget } from '@/components/MarketStressWidget';
 import { LeverageIndexWidget } from '@/components/LeverageIndexWidget';
+import PrivacyDojo from '@/components/PrivacyDojo';
+import { BecomePartner } from '@/components/BecomePartner';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { SEOHead } from '@/components/SEOHead';
 import { useGasPrices } from '@/hooks/useGasPrices';
+import { FAQ_SCHEMA, SOFTWARE_APP_SCHEMA, ORGANIZATION_SCHEMA, DATASET_SCHEMA, BREADCRUMB_SCHEMA, BITCOIN_CYCLE_DATASET_SCHEMA } from '@/constants/seoSchemas';
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 const Index = () => {
   const [selectedBlockchain, setSelectedBlockchain] = useState<'ethereum' | 'bitcoin'>('ethereum');
   const gasPrices = useGasPrices(selectedBlockchain);
+  const { t } = useTranslation();
+
+  const indexSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      ORGANIZATION_SCHEMA,
+      SOFTWARE_APP_SCHEMA,
+      DATASET_SCHEMA,
+      FAQ_SCHEMA,
+      BREADCRUMB_SCHEMA,
+      BITCOIN_CYCLE_DATASET_SCHEMA
+    ]
+  };
 
   return (
     <ThemeProvider>
-      <SEOHead />
+      <SEOHead
+        title={gasPrices?.data?.standard ? `⚡ ${gasPrices.data.standard} Gwei | GasNow` : undefined}
+        description={gasPrices?.data?.standard ? `Current Gas: ${gasPrices.data.slow} (Slow) / ${gasPrices.data.standard} (Std) / ${gasPrices.data.fast} (Fast). Real-time crypto market data.` : undefined}
+        schema={indexSchema}
+      />
       <div className="min-h-screen bg-background">
         <Header
           selectedBlockchain={selectedBlockchain}
@@ -32,12 +52,13 @@ const Index = () => {
           {/* 1. Gas Prices */}
           <section aria-labelledby="gas-fees-heading">
             <h1 id="gas-fees-heading" className="text-2xl font-bold mb-2">
-              {selectedBlockchain === 'ethereum' ? 'Ethereum' : 'Bitcoin'} Gas Fees
+              {selectedBlockchain === 'ethereum' ? t('dashboard.eth_gas_title') : t('dashboard.btc_gas_title')}
             </h1>
-            <p className="text-sm text-muted-foreground mb-4">Real-time network transaction fees updated every 2 minutes</p>
+            <p className="text-sm text-muted-foreground mb-4">{t('dashboard.gas_subtitle')}</p>
             <div className="grid gap-4 md:grid-cols-3">
               <GasPriceCard
                 speed="slow"
+                title={t('dashboard.slow')}
                 price={gasPrices?.data?.slow || 0}
                 blockchain={selectedBlockchain}
                 isLoading={gasPrices.isLoading}
@@ -45,6 +66,7 @@ const Index = () => {
               />
               <GasPriceCard
                 speed="standard"
+                title={t('dashboard.standard')}
                 price={gasPrices?.data?.standard || 0}
                 blockchain={selectedBlockchain}
                 isLoading={gasPrices.isLoading}
@@ -52,6 +74,7 @@ const Index = () => {
               />
               <GasPriceCard
                 speed="fast"
+                title={t('dashboard.fast')}
                 price={gasPrices?.data?.fast || 0}
                 blockchain={selectedBlockchain}
                 isLoading={gasPrices.isLoading}
@@ -62,13 +85,13 @@ const Index = () => {
 
           {/* 2. Market Stats */}
           <section aria-labelledby="market-stats-heading">
-            <h2 id="market-stats-heading" className="sr-only">Global Crypto Market Statistics</h2>
-            <MarketStats />
+            <h2 id="market-stats-heading" className="sr-only">{t('dashboard.market_stats')}</h2>
+            <MarketStats title={t('dashboard.market_stats')} />
           </section>
 
           {/* 3. Market Indices - 3 Gauges Side by Side */}
           <section aria-labelledby="indices-heading">
-            <h2 id="indices-heading" className="sr-only">Market Indicators</h2>
+            <h2 id="indices-heading" className="sr-only">{t('dashboard.indices')}</h2>
             <div className="grid gap-4 md:grid-cols-3">
               <LeverageIndexWidget />
               <FearGreedWidget />
@@ -78,7 +101,7 @@ const Index = () => {
 
           {/* 4. Cycle Widgets - 2 Side by Side */}
           <section aria-labelledby="cycles-heading">
-            <h2 id="cycles-heading" className="sr-only">Market Cycles</h2>
+            <h2 id="cycles-heading" className="sr-only">{t('dashboard.cycles')}</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <BitcoinCycleWidget />
               <MarketCycleWidget />
@@ -87,34 +110,35 @@ const Index = () => {
 
           {/* 5. Market Leaders - Full Width */}
           <section aria-labelledby="trending-heading">
-            <h2 id="trending-heading" className="sr-only">Trending Cryptocurrencies</h2>
-            <TrendingTokens />
+            <h2 id="trending-heading" className="sr-only">{t('dashboard.trending')}</h2>
+            <TrendingTokens title={t('dashboard.trending')} />
           </section>
 
           {/* 6. News Section - Full Width */}
           <section aria-labelledby="news-heading">
-            <h2 id="news-heading" className="sr-only">Latest Crypto News</h2>
-            <NewsSection />
+            <h2 id="news-heading" className="sr-only">{t('dashboard.news')}</h2>
+            <NewsSection initialCategory={new URLSearchParams(window.location.search).get('news') || 'general'} title={t('dashboard.news')} />
           </section>
 
-          {/* 7. StealthEx Sponsor - Full Width */}
-          <section aria-labelledby="exchange-heading">
-            <h2 id="exchange-heading" className="sr-only">Exchange Partner</h2>
-            <StealthExWidget />
+          {/* 7. Privacy Tools - Full Width */}
+          <section aria-labelledby="privacy-heading">
+            <h2 id="privacy-heading" className="sr-only">{t('dashboard.privacy_tools')}</h2>
+            <PrivacyDojo title={t('dashboard.privacy_tools')} />
           </section>
 
-          {/* 8. Sponsors Section */}
-          <section aria-labelledby="sponsors-heading">
-            <h2 id="sponsors-heading" className="sr-only">Our Partners and Sponsors</h2>
-            <Sponsors />
+
+          <section aria-labelledby="partner-heading">
+            <h2 id="partner-heading" className="sr-only">{t('dashboard.partners')}</h2>
+            <BecomePartner title={t('dashboard.partners')} />
           </section>
         </main>
 
         <footer className="border-t border-border mt-16" role="contentinfo">
-          <div className="container mx-auto px-4 py-6">
+          <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-center text-sm text-muted-foreground">
-              © 2024 GasNow. Real-time crypto gas tracker. Free and open-source.
+              {t('footer.copyright', { year: new Date().getFullYear() })}
             </p>
+            <LanguageSwitcher />
           </div>
         </footer>
       </div>

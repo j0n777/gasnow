@@ -1,0 +1,51 @@
+{
+    "header": {
+        "gas_fees": "Taxas de Gás",
+        "market": "Mercado",
+        "news": "Notícias",
+        "privacy": "Privacidade",
+        "search_placeholder": "Buscar tokens...",
+        "mobile_menu_open": "Abrir menu",
+        "mobile_menu_close": "Fechar menu"
+    },
+    "dashboard": {
+        "eth_gas_title": "Taxas Ethereum",
+        "btc_gas_title": "Taxas Bitcoin",
+        "gas_subtitle": "Taxas de transação da rede atualizadas a cada 2 minutos",
+        "slow": "Lenta",
+        "standard": "Padrão",
+        "fast": "Rápida",
+        "market_stats": "Estatísticas Globais do Mercado",
+        "indices": "Indicadores de Mercado",
+        "cycles": "Ciclos de Mercado",
+        "trending": "Criptomoedas em Alta",
+        "news": "Últimas Notícias",
+        "privacy_tools": "Ferramentas de Privacidade",
+        "partners": "Parceiros",
+        "fear_greed": "Índice Medo & Ganância",
+        "fear_greed_desc": "Indicador de sentimento do mercado",
+        "market_cycle": "Ciclo de Mercado",
+        "market_cycle_desc": "Dominância BTC vs Altcoins",
+        "leverage_index": "Alavancagem Est.",
+        "leverage_index_desc": "Mapa de calor de alavancagem",
+        "bitcoin_cycle": "Ciclo do Bitcoin",
+        "bitcoin_cycle_desc": "Posição Estratégica",
+        "market_stress": "Estresse de Mercado",
+        "market_stress_desc": "Risco de Volatilidade & Liquidez"
+    },
+    "widgets": {
+        "season": {
+            "bitcoin": "Temporada Bitcoin",
+            "neutral": "Neutro",
+            "altcoin": "Altseason"
+        }
+    },
+    "footer": {
+        "copyright": "© {{year}} GasNow. Rastreador de taxas cripto em tempo real. Gratuito e open-source.",
+        "language": "Idioma"
+    },
+    "metadata": {
+        "title": "GasNow - Taxas de Gás Cripto em Tempo Real & Inteligência de Mercado",
+        "description": "Rastreador gratuito de taxas para Ethereum & Bitcoin. Monitore valor de mercado, Índice Medo & Ganância, derivativos, tokens em alta e notícias urgentes."
+    }
+}

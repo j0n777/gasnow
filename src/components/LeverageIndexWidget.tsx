@@ -44,16 +44,21 @@ const tooltipContent = {
 • 70-100: Overleveraged - High squeeze risk`
 };
 
+import { useTranslation } from 'react-i18next';
+
+// ...
+
 export const LeverageIndexWidget = () => {
     const { data, isLoading, error } = useLeverageIndex();
+    const { t } = useTranslation();
 
     return (
         <Card>
             <CardHeader>
                 <div className="flex items-center justify-between">
                     <div>
-                        <CardTitle>Leverage Index</CardTitle>
-                        <CardDescription>Derivatives risk gauge</CardDescription>
+                        <CardTitle>{t('dashboard.leverage_index')}</CardTitle>
+                        <CardDescription>{t('dashboard.leverage_index_desc')}</CardDescription>
                     </div>
                     <InfoTooltip content={tooltipContent.leverageIndex} />
                 </div>

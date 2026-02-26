@@ -1,38 +1,63 @@
-import { useEffect } from 'react';
-import { useCryptoPrices } from '@/hooks/useCryptoPrices';
-import { useFearGreedIndex } from '@/hooks/useFearGreedIndex';
-import { useGasPrices } from '@/hooks/useGasPrices';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
-export const SEOHead = () => {
-  const { data: cryptoPrices } = useCryptoPrices();
-  const { data: fearGreed } = useFearGreedIndex();
-  const { data: gasPrices } = useGasPrices('ethereum');
+interface SEOHeadProps {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  type?: string;
+  schema?: any;
+}
 
-  useEffect(() => {
-    // Dynamic title with live data
-    const btcPrice = cryptoPrices?.btc?.price;
-    const ethPrice = cryptoPrices?.eth?.price;
-    const gasPrice = gasPrices?.standard;
+export const SEOHead: React.FC<SEOHeadProps> = (props) => {
+  const { t } = useTranslation();
 
-    let title = 'GasNow - Real-time Crypto Gas Fees & Market Data';
-    
-    if (btcPrice && ethPrice && gasPrice) {
-      title = `ETH Gas: ${gasPrice?.toFixed(1)} Gwei | BTC: $${btcPrice.toLocaleString()} | GasNow`;
-    }
+  const {
+    title = t('metadata.title'),
+    description = t('metadata.description'),
+    image = 'https://storage.googleapis.com/gpt-engineer-file-uploads/8GP29eTmvBO0Kqf0CrHfX8Rb2hI3/social-images/social-1763601573739-gasnow perfil.png',
+    url = 'https://gasnow.tools/',
+    type = 'website',
+    schema
+  } = props;
 
-    document.title = title;
+  // Avoid double branding if title already contains it
+  const siteTitle = title.includes('GasNow') ? title : `${title} | GasNow`;
 
-    // Update meta description with live data
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription && btcPrice && ethPrice) {
-      const fearValue = fearGreed?.value || 50;
-      const fearClass = fearGreed?.classification || 'Neutral';
-      metaDescription.setAttribute(
-        'content',
-        `Live crypto data: BTC $${btcPrice.toLocaleString()}, ETH $${ethPrice.toLocaleString()}, ETH Gas ${gasPrice?.toFixed(1) || '--'} Gwei. Fear & Greed: ${fearValue} (${fearClass}). Track gas fees, market cap, derivatives & trending tokens.`
-      );
-    }
-  }, [cryptoPrices, fearGreed, gasPrices]);
+  return (
+    <Helmet>
+      {/* Primary Meta Tags */}
+      <title>{siteTitle}</title>
+      <meta name="title" content={siteTitle} />
+      <meta name="description" content={description} />
 
-  return null;
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={siteTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:site_name" content="GasNow" />
+
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={url} />
+      <meta property="twitter:title" content={siteTitle} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content={image} />
+      <meta property="twitter:creator" content="@gasnow_tools" />
+
+      {/* Canonical */}
+      <link rel="canonical" href={url} />
+
+      {/* Structured Data (JSON-LD) */}
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
+    </Helmet>
+  );
 };

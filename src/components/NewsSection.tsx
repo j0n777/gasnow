@@ -14,14 +14,19 @@ const newsCategories = [
   { value: 'altcoins', label: 'Altcoins' },
 ];
 
-export const NewsSection = () => {
-  const [category, setCategory] = useState('general');
+interface NewsSectionProps {
+  initialCategory?: string;
+  title?: string;
+}
+
+export const NewsSection = ({ initialCategory = 'general', title = "Crypto News" }: NewsSectionProps) => {
+  const [category, setCategory] = useState(initialCategory);
   const { data: articles, isLoading } = useCryptoNews(category);
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Crypto News</CardTitle>
+        <CardTitle>{title}</CardTitle>
         <CardDescription>Latest updates from the crypto world</CardDescription>
       </CardHeader>
       <CardContent>
@@ -33,7 +38,7 @@ export const NewsSection = () => {
               </TabsTrigger>
             ))}
           </TabsList>
-          
+
           <TabsContent value={category} className="mt-4">
             {isLoading ? (
               <div className="space-y-4">
@@ -56,8 +61,8 @@ export const NewsSection = () => {
                   >
                     <div className="flex gap-4">
                       {article.image && (
-                        <img 
-                          src={article.image} 
+                        <img
+                          src={article.image}
                           alt={article.title}
                           className="w-20 h-20 object-cover rounded flex-shrink-0"
                           onError={(e) => {
