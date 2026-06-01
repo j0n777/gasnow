@@ -1,5 +1,23 @@
 # GasNow Tools
 
+> ## ⚠️ AVISO CRÍTICO DE INFRAESTRUTURA — LEIA ANTES DE QUALQUER DEPLOY
+>
+> **Este projeto roda via Docker. Cada `docker-compose up --build` gera uma nova imagem (~63MB).**
+> **Imagens antigas ficam como "dangling" e acumulam no disco da VPS.**
+>
+> **OBRIGATÓRIO após qualquer rebuild:**
+> ```bash
+> docker image prune -f        # remove imagens dangling
+> docker builder prune -f      # limpa build cache (pode acumular 30+ GB)
+> ```
+> Em 2026-03-07 o disco chegou a **99% de uso** por causa desse acúmulo.
+> Ver relatório completo: `/home/docker-sites/STORAGE_REPORT.md`
+>
+> **Nunca instale `node_modules` localmente** (havia 364MB desnecessários no host). Remova se existir:
+> ```bash
+> rm -rf /home/docker-sites/gasnow2.0/node_modules
+> ```
+
 [![Site](https://img.shields.io/badge/Visit%20Site-gasnow.tools-blue)](https://gasnow.tools)
 [![GitHub](https://img.shields.io/github/stars/j0n777/gasnow?style=social)](https://github.com/j0n777/gasnow)
 
@@ -28,7 +46,7 @@ Visit: [https://gasnow.tools](https://gasnow.tools)
 - **Frontend:** React 18, TypeScript, TailwindCSS, shadcn/ui
 - **Backend:** Supabase Edge Functions (Deno), PostgreSQL
 - **Data Sources:** CoinGecko, Binance, Alternative.me, Mempool.space, Beaconcha.in
-- **Hosting:** Docker, Nginx
+- **Hosting:** Docker, Nginx (Internal port `80` routed globally via *Traefik* on the VPS. Do not map manually.)
 
 ---
 
