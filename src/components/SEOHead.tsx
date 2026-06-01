@@ -39,15 +39,18 @@ export const SEOHead: React.FC<SEOHeadProps> = (props) => {
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:alt" content="GasNow Dashboard - Real-time Crypto Gas Fees & Market Analytics" />
       <meta property="og:site_name" content="GasNow" />
+      <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={url} />
-      <meta property="twitter:title" content={siteTitle} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={image} />
-      <meta property="twitter:creator" content="@gasnow_tools" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={url} />
+      <meta name="twitter:title" content={siteTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:alt" content="GasNow Dashboard - Real-time Crypto Gas Fees & Market Analytics" />
+      <meta name="twitter:creator" content="@gasnow_tools" />
 
       {/* Canonical */}
       <link rel="canonical" href={url} />

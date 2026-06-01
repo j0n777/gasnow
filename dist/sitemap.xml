@@ -2,32 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gasnow.tools/</loc>
-    <changefreq>always</changefreq>
-    <priority>1</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=bitcoin</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>hourly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=ethereum</loc>
-    <changefreq>hourly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=defi</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=nft</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=altcoins</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
   </url>
 </urlset>

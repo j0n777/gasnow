@@ -49,17 +49,13 @@ export const SOFTWARE_APP_SCHEMA = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "GasNow Gas Tracker",
+    "url": "https://gasnow.tools/",
     "applicationCategory": "Cryptocurrency Tool",
     "operatingSystem": "Web",
     "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-    },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "850"
     }
 };
 
@@ -102,7 +98,7 @@ export const ORGANIZATION_SCHEMA = {
     "logo": "https://storage.googleapis.com/gpt-engineer-file-uploads/8GP29eTmvBO0Kqf0CrHfX8Rb2hI3/uploads/1763601546392-favicon.ico.png",
     "description": "Open-source cryptocurrency gas tracker and market analytics platform",
     "sameAs": [
-        "https://github.com/gasnow-tools",
+        "https://github.com/j0n777/gasnow",
         "https://twitter.com/gasnow_tools"
     ]
 };

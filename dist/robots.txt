@@ -13,10 +13,6 @@ Crawl-delay: 1
 
 # Block non-content paths
 Disallow: /api/
-Disallow: /_next/
-Disallow: /static/chunks/
-Disallow: /*.json$
-Disallow: /*.map$
 
 # Allow all major search engines
 User-agent: Googlebot
