@@ -1,0 +1,6 @@
+Contact: https://github.com/j0n777/gasnow/issues
+Contact: mailto:jonata@jonataribas.com
+Expires: 2027-06-02T00:00:00.000Z
+Preferred-Languages: en, pt
+Canonical: https://gasnow.tools/.well-known/security.txt
+Policy: https://github.com/j0n777/gasnow/security/policy

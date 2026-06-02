@@ -18,6 +18,21 @@
   <meta name="bingbot" content="index, follow" />
   <link rel="canonical" href="https://gasnow.tools/" />
 
+  <!-- hreflang for international targeting -->
+  <link rel="alternate" hreflang="en" href="https://gasnow.tools/" />
+  <link rel="alternate" hreflang="pt" href="https://gasnow.tools/?lang=pt" />
+  <link rel="alternate" hreflang="x-default" href="https://gasnow.tools/" />
+
+  <!-- Search-engine site verification (replace tokens before publishing) -->
+  <!-- <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN" /> -->
+  <!-- <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN" /> -->
+  <!-- <meta name="yandex-verification" content="REPLACE_WITH_YANDEX_TOKEN" /> -->
+
+  <!-- Discoverability for AI agents (llmstxt.org) and SEO assets -->
+  <link rel="alternate" type="text/plain" title="LLM-friendly summary" href="/llms.txt" />
+  <link rel="alternate" type="text/plain" title="LLM-friendly full content" href="/llms-full.txt" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gasnow.tools/" />
@@ -69,7 +84,58 @@
   <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin />
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
 
-  <!-- JSON-LD Structured Data is injected dynamically by SEOHead.tsx to avoid duplication -->
+  <!-- Baseline JSON-LD for non-JS crawlers (SEOHead.tsx injects an enriched version at runtime) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "GasNow",
+        "url": "https://gasnow.tools",
+        "logo": "https://gasnow.tools/images/gasnow-icon.png",
+        "description": "Open-source cryptocurrency gas tracker and market analytics platform",
+        "sameAs": [
+          "https://github.com/j0n777/gasnow",
+          "https://twitter.com/gasnow_tools"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "GasNow",
+        "url": "https://gasnow.tools/",
+        "inLanguage": ["en", "pt"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://gasnow.tools/?news={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "GasNow Gas Tracker",
+        "url": "https://gasnow.tools/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "Dataset",
+        "name": "GasNow Cryptocurrency Gas Prices",
+        "description": "Real-time Ethereum and Bitcoin gas / transaction fee data, updated every ~30 seconds.",
+        "url": "https://gasnow.tools/",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "creator": { "@type": "Organization", "name": "GasNow" },
+        "temporalCoverage": "2021/..",
+        "distribution": {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://gasnow.tools/api_v2?action=prices&blockchain=eth"
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Umami Analytics -->
   <script defer src="https://analytics.jonataribas.com/script.js" data-website-id="2257a18c-4b9f-45b8-8bd2-08b48c33be12"></script>

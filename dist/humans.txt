@@ -1,0 +1,16 @@
+/* TEAM */
+  Maintainer: Jonata Ribas
+  Site: https://gasnow.tools
+  GitHub: https://github.com/j0n777
+  Twitter: @gasnow_tools
+
+/* THANKS */
+  Open-source community, the Ethereum and Bitcoin core developers,
+  and the public data providers that make this dashboard possible.
+
+/* SITE */
+  Last update: 2026/06/02
+  Standards: HTML5, CSS3, JSON-LD (Schema.org), Sitemaps 0.9 + image, robots.txt, llmstxt.org
+  Components: React 18, Vite, TypeScript, TailwindCSS, react-helmet-async, i18next
+  Backend: Node.js (Express) + Supabase
+  Software: Open source — https://github.com/j0n777/gasnow
