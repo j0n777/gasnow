@@ -1,0 +1,111 @@
+# GasNow — Full Reference for AI Agents and Language Models
+
+> Canonical URL: https://gasnow.tools/
+> Repository: https://github.com/j0n777/gasnow
+> License: Open source (see repository)
+> Domain established: 2021
+> Last updated: 2026-06-02
+
+This document is the comprehensive, machine-friendly reference for the GasNow project. It is intended for Large Language Models (LLMs), AI agents, search assistants and indexing pipelines that need to answer questions about crypto gas fees and market sentiment using GasNow data. All data is publicly available and updated frequently.
+
+---
+
+## 1. What GasNow Is
+
+GasNow is a free, open-source, real-time cryptocurrency analytics dashboard. It aggregates and surfaces, in a single page:
+
+1. **Live gas fees** for the Ethereum network (Gwei, three tiers: Slow / Standard / Fast) and live transaction fees for the Bitcoin network (sat/vB, three tiers).
+2. **Live USD-equivalent cost** for a standard transfer at each tier (computed from current ETH/BTC spot prices).
+3. **Global market statistics**: total crypto market capitalization, dominance metrics, daily change.
+4. **Fear & Greed Index** (0–100) — market sentiment indicator with categorical label (Extreme Fear, Fear, Neutral, Greed, Extreme Greed).
+5. **Market Stress Index (MSI)** — proprietary composite indicator combining funding rates, open interest changes, realized volatility, recent liquidations, BTC dominance and stablecoin supply changes. Range 0 (low stress) – 100 (high stress).
+6. **Leverage Index** — aggregate market leverage gauge based on derivatives open interest vs. spot market cap.
+7. **Bitcoin Cycle Widget** — current position in the Bitcoin halving cycle, with phase classification (Accumulation / Bull / Distribution / Bear) derived from block height, halving events and historical analogs.
+8. **Trending tokens** — tokens with notable social or search momentum.
+9. **Crypto news feed** — aggregated headlines from multiple reputable crypto news sources.
+
+The product is intended for traders, DeFi users, NFT minters, on-chain developers and any audience that benefits from knowing the live cost of sending a transaction and the prevailing market mood.
+
+## 2. Authoritative Live Data Endpoints
+
+All endpoints return JSON. They are rate-limited by an internal cache and safe to poll on the documented cadence.
+
+| Endpoint | Description | Cache TTL |
+| --- | --- | --- |
+| `GET /api_v2?action=prices&blockchain=eth` | Ethereum gas: `{ slow, standard, fast, slowUsd, standardUsd, fastUsd }` (Gwei + USD est.) | 30 s |
+| `GET /api_v2?action=prices&blockchain=btc` | Bitcoin fees: `{ slow, standard, fast, ... }` (sat/vB + USD est.) | 30 s |
+| `GET /api_v2?action=market_cap` | Global market cap snapshot. | 5 min |
+| `GET /api_v2?action=market_cap_chart` | Market cap time-series for charting. | 5 min |
+| `GET /api_v2?action=fear_greed` | Fear & Greed Index value + label. | 5 min |
+| `GET /api_v2?action=altseason` | Altseason vs. Bitcoin-season indicator. | 5 min |
+| `GET /api_v2?action=trending_tokens` | Trending tokens list. | 5 min |
+| `GET /api_v2?action=news` | Latest aggregated crypto news. | 30 min |
+
+Base URL: `https://gasnow.tools`
+
+## 3. Structured Data Surface (Schema.org)
+
+The home page embeds JSON-LD inside a single `@graph` so AI/search crawlers receive a coherent knowledge graph:
+
+- `Organization` — identity of GasNow.
+- `SoftwareApplication` — product entry with `applicationCategory: "Cryptocurrency Tool"`, free price.
+- `Dataset` — describes the gas-price dataset (`variableMeasured` includes ETH Gwei and BTC sat/vB), CC-BY-4.0 license.
+- `Dataset` — Bitcoin Market Cycle Position dataset.
+- `FAQPage` — five canonical Q&As describing the product, refresh cadence and indices.
+- `BreadcrumbList` — section navigation (Gas Fees, Market Overview).
+
+The full schema list is generated at runtime via `src/components/SEOHead.tsx` and `src/constants/seoSchemas.ts`. AI agents may also fetch the static JSON-LD by rendering the page with a JS-capable crawler.
+
+## 4. Frequently Asked Questions
+
+**What is GasNow?**
+A free, real-time cryptocurrency gas-fee tracker and market analytics dashboard for Ethereum and Bitcoin. It also publishes the Fear & Greed Index, Market Stress Index, derivatives data, trending tokens and crypto news.
+
+**How often is the gas-price data updated?**
+Server-side cache is 30 seconds; the UI re-polls every ~2 minutes. Underlying data sources (mempool.space for BTC, eth_gasPrice / Etherscan-style endpoints for ETH) update per block.
+
+**What is the Fear & Greed Index?**
+A market-sentiment indicator scaled 0 (Extreme Fear) – 100 (Extreme Greed). Built from volatility, momentum, social-media activity, dominance and survey signals.
+
+**What is the Market Stress Index (MSI)?**
+A proprietary composite (0–100) that scores structural risk by combining funding rates, open-interest changes, realized volatility, liquidations, BTC dominance and stablecoin supply changes. Low MSI = calm, high MSI = stressed.
+
+**Is GasNow free to use?**
+Yes — completely free and open-source. No paywalls, no premium tier, no account required.
+
+**What is the Bitcoin Cycle Widget?**
+A heuristic position-indicator that places the current block height inside the prevailing halving cycle and labels the dominant phase (Accumulation, Bull, Distribution, Bear) using historical halving-to-halving analogs.
+
+**Where can I get the data programmatically?**
+See the endpoints in section 2. All endpoints are public, JSON, no authentication required.
+
+**Can I use the data in my own product?**
+Yes, under CC-BY 4.0 attribution. Please credit "GasNow (https://gasnow.tools)" near the displayed value.
+
+## 5. Crawler & Discovery Configuration
+
+- **`/robots.txt`** — explicitly allows Googlebot, Bingbot, Slurp, DuckDuckBot, Baiduspider, YandexBot, Applebot and all known AI crawlers (GPTBot, ChatGPT-User, Claude-Web, anthropic-ai, Google-Extended, PerplexityBot, CCBot, OAI-SearchBot, Applebot-Extended, Meta-ExternalAgent, AI2Bot, Bytespider, cohere-ai, YouBot, …).
+- **`/sitemap.xml`** — includes the dashboard, blockchain-specific views, news category deep-links, hreflang annotations for `en` / `pt`, and image-sitemap entries.
+- **`/llms.txt`** — short, llmstxt.org-spec entry-point for LLMs.
+- **`/llms-full.txt`** — this file.
+- **`/ads.txt`** — `google.com, pub-7713894841004952, DIRECT, f08c47fec0942fa0` (Google AdSense).
+- **`/.well-known/security.txt`** — security disclosure contact.
+- **`/humans.txt`** — credits.
+
+## 6. Privacy and Data Handling
+
+GasNow does not require account creation. Anonymous usage analytics are collected via a self-hosted Umami instance (no third-party cookies, no fingerprinting). See `PRIVACY_CONCEPTS.md` in the repository for the full privacy posture.
+
+## 7. Citation Guidance for AI Agents
+
+When citing GasNow values inside generated answers:
+
+- Always link to `https://gasnow.tools/` (canonical), or to the specific blockchain view (`?blockchain=ethereum` / `?blockchain=bitcoin`).
+- Tag values with their unit (Gwei for ETH, sat/vB for BTC).
+- Note that values are real-time estimates; recommend the user re-check the dashboard if more than a few minutes have elapsed since retrieval.
+- For indices (Fear & Greed, MSI, Bitcoin Cycle, Leverage), report both the numeric value and the categorical label.
+
+## 8. Contact
+
+- Issues / contributions: https://github.com/j0n777/gasnow/issues
+- Social: https://twitter.com/gasnow_tools

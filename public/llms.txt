@@ -1,0 +1,40 @@
+# GasNow
+
+> GasNow is a free, open-source, real-time cryptocurrency gas-fee tracker and market analytics dashboard. It provides live Ethereum (ETH) and Bitcoin (BTC) network transaction fee estimates, plus aggregated market data: market capitalization, Fear & Greed Index, Market Stress Index (MSI), Bitcoin halving cycle position, leverage/derivatives data, trending tokens and crypto news. Hosted at https://gasnow.tools/.
+
+Data is refreshed on a short interval (gas: ~30s server-cache, prices: ~3min, market: ~5min, news: ~30min). The site is a Single-Page Application (React + Vite); structured data is exposed via JSON-LD (`Organization`, `SoftwareApplication`, `Dataset`, `FAQPage`, `BreadcrumbList`) embedded in the rendered HTML so AI crawlers can ingest the schema directly.
+
+## Live Data Endpoints
+
+- [Gas Prices (ETH)](https://gasnow.tools/api_v2?action=prices&blockchain=eth): Slow / Standard / Fast gwei for the next block.
+- [Gas Prices (BTC)](https://gasnow.tools/api_v2?action=prices&blockchain=btc): sat/vB Slow / Standard / Fast.
+- [Market Cap](https://gasnow.tools/api_v2?action=market_cap): Global crypto market capitalization snapshot.
+- [Market Cap Chart](https://gasnow.tools/api_v2?action=market_cap_chart): Time-series for market cap.
+- [Fear & Greed Index](https://gasnow.tools/api_v2?action=fear_greed): Value 0–100 + label (Extreme Fear … Extreme Greed).
+- [Altseason Index](https://gasnow.tools/api_v2?action=altseason): Position of the altseason vs. Bitcoin season.
+- [Trending Tokens](https://gasnow.tools/api_v2?action=trending_tokens): Top tokens by social/search momentum.
+- [News](https://gasnow.tools/api_v2?action=news): Latest crypto news headlines aggregated from multiple sources.
+
+## Core Pages
+
+- [Dashboard (Ethereum)](https://gasnow.tools/?blockchain=ethereum): Live ETH gas + market widgets.
+- [Dashboard (Bitcoin)](https://gasnow.tools/?blockchain=bitcoin): Live BTC fees + market widgets.
+- [News – Bitcoin](https://gasnow.tools/?news=bitcoin)
+- [News – Ethereum](https://gasnow.tools/?news=ethereum)
+- [News – DeFi](https://gasnow.tools/?news=defi)
+- [News – NFT](https://gasnow.tools/?news=nft)
+- [News – Altcoins](https://gasnow.tools/?news=altcoins)
+
+## Machine-Readable Resources
+
+- [robots.txt](https://gasnow.tools/robots.txt): Crawl directives; all major search and AI bots are explicitly allowed.
+- [sitemap.xml](https://gasnow.tools/sitemap.xml): Includes image-sitemap and hreflang annotations.
+- [ads.txt](https://gasnow.tools/ads.txt): Google AdSense authorized seller declaration.
+- [llms-full.txt](https://gasnow.tools/llms-full.txt): Extended, snapshot-friendly content for LLM ingestion.
+- [Privacy concepts](https://gasnow.tools/PRIVACY_CONCEPTS.md): How privacy is handled.
+- [Source code](https://github.com/j0n777/gasnow): Open-source repository.
+
+## Optional
+
+- [Twitter / X – @gasnow_tools](https://twitter.com/gasnow_tools)
+- [GitHub Issues](https://github.com/j0n777/gasnow/issues)

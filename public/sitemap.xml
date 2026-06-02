@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gasnow.tools/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gasnow.tools/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gasnow.tools/?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gasnow.tools/" />
+    <image:image>
+      <image:loc>https://storage.googleapis.com/gpt-engineer-file-uploads/8GP29eTmvBO0Kqf0CrHfX8Rb2hI3/social-images/social-1763601573739-gasnow%20perfil.png</image:loc>
+      <image:title>GasNow Dashboard - Real-time Crypto Gas Fees &amp; Market Analytics</image:title>
+      <image:caption>Live Ethereum and Bitcoin gas tracker with market sentiment indices</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gasnow.tools/images/gasnow-icon.png</image:loc>
+      <image:title>GasNow Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gasnow.tools/images/eth-icon.png</image:loc>
+      <image:title>Ethereum Gas Tracker</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gasnow.tools/images/btc-icon.png</image:loc>
+      <image:title>Bitcoin Transaction Fee Tracker</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gasnow.tools/?blockchain=ethereum</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gasnow.tools/?blockchain=bitcoin</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gasnow.tools/?news=bitcoin</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>hourly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gasnow.tools/?news=ethereum</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gasnow.tools/?news=defi</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gasnow.tools/?news=nft</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gasnow.tools/?news=altcoins</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

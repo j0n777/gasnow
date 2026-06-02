@@ -1,18 +1,27 @@
 # GasNow Robots.txt
 # https://gasnow.tools
 # Domain established 2021 - Crypto Analytics Authority
+#
+# Machine-readable resources for AI / LLM ingestion:
+#   - https://gasnow.tools/llms.txt        (llmstxt.org spec)
+#   - https://gasnow.tools/llms-full.txt   (full reference)
+#   - https://gasnow.tools/sitemap.xml     (with image + hreflang)
+#   - https://gasnow.tools/ads.txt         (Google AdSense)
+#   - https://gasnow.tools/.well-known/security.txt
 
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap location (Google, Bing and IndexNow consumers all read this)
 Sitemap: https://gasnow.tools/sitemap.xml
+Host: gasnow.tools
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
 
 # Block non-content paths
 Disallow: /api/
+Disallow: /api_v2/
 
 # Allow all major search engines
 User-agent: Googlebot
