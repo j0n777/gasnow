@@ -9,7 +9,7 @@
   <title>GasNow — Active Crypto Gas Tracker (gasnow.tools) | Real-time ETH & BTC Fees</title>
   <meta name="title" content="GasNow — Active Crypto Gas Tracker (gasnow.tools) | Real-time ETH & BTC Fees" />
   <meta name="description"
-    content="GasNow is active and live in 2026 at gasnow.tools — a relaunched, open-source real-time tracker for Ethereum gas (Gwei) and Bitcoin fees (sat/vB), plus Fear & Greed, Market Stress Index, Bitcoin halving cycle, trending tokens and crypto news. Independent of the discontinued 2021 gasnow.org service." />
+    content="Active real-time tracker for Ethereum gas (Gwei) and Bitcoin fees (sat/vB) at gasnow.tools — plus Fear & Greed Index, Market Stress Index and crypto news. Free and open source." />
   <meta name="keywords"
     content="crypto gas fees, ethereum gas tracker, bitcoin transaction fees, ETH gas price, BTC fees, gas tracker, cryptocurrency, blockchain fees, real-time gas, fear greed index, crypto market cap, altseason index, trending crypto, crypto news, derivatives data, open interest, funding rates, market stress index, crypto analytics, defi gas, web3 gas tracker" />
   <meta name="author" content="GasNow" />
@@ -208,7 +208,18 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <!--
+    Initial content inside #root is replaced by React on mount but is visible
+    to crawlers that read the raw HTML (Bingbot pre-render, AI Overview fetcher,
+    GPTBot, Claude-Web, etc.). This guarantees an H1 in the static response.
+  -->
+  <div id="root">
+    <header>
+      <h1>GasNow — Real-time Crypto Gas Tracker (active at gasnow.tools)</h1>
+      <p>Loading live Ethereum gas (Gwei) and Bitcoin fees (sat/vB), plus Fear &amp; Greed Index, Market Stress Index, Bitcoin halving cycle, trending tokens and crypto news.</p>
+      <p><a href="https://gasnow.tools/">Open gasnow.tools</a> · <a href="https://gasnow.tools/llms.txt">llms.txt</a> · <a href="https://github.com/j0n777/gasnow">Source</a></p>
+    </header>
+  </div>
 
   <!--
     Static fallback content for non-JS crawlers and AI ingestion (Google AI Overview,

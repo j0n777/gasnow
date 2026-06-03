@@ -19,6 +19,10 @@ type Url = {
   images?: { loc: string; title: string; caption?: string }[];
 };
 
+// NOTE: GasNow is currently a single-page dashboard. Adding ?news=X or
+// ?blockchain=X URLs here causes duplicate-content penalties because the SPA
+// doesn't actually render distinct pages per query string. Keep this list
+// minimal until React Router (or per-route prerender) lands.
 const urls: Url[] = [
   {
     loc: '/',
@@ -36,13 +40,9 @@ const urls: Url[] = [
       { loc: `${DOMAIN}/images/btc-icon.png`, title: 'Bitcoin Transaction Fee Tracker' },
     ],
   },
-  { loc: '/?blockchain=ethereum', priority: 0.9, changefreq: 'always' },
-  { loc: '/?blockchain=bitcoin', priority: 0.9, changefreq: 'always' },
-  { loc: '/?news=bitcoin', priority: 0.8, changefreq: 'hourly' },
-  { loc: '/?news=ethereum', priority: 0.8, changefreq: 'hourly' },
-  { loc: '/?news=defi', priority: 0.7, changefreq: 'daily' },
-  { loc: '/?news=nft', priority: 0.7, changefreq: 'daily' },
-  { loc: '/?news=altcoins', priority: 0.7, changefreq: 'daily' },
+  // Also surface the LLM-facing entry points so they show up in Bing/Google sitemap
+  { loc: '/llms.txt', priority: 0.5, changefreq: 'weekly' },
+  { loc: '/llms-full.txt', priority: 0.5, changefreq: 'weekly' },
 ];
 
 const escapeXml = (s: string) =>

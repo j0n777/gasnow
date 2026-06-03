@@ -29,45 +29,15 @@
     </image:image>
   </url>
   <url>
-    <loc>https://gasnow.tools/?blockchain=ethereum</loc>
+    <loc>https://gasnow.tools/llms.txt</loc>
     <lastmod>2026-06-03</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://gasnow.tools/?blockchain=bitcoin</loc>
+    <loc>https://gasnow.tools/llms-full.txt</loc>
     <lastmod>2026-06-03</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=bitcoin</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=ethereum</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=defi</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=nft</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=altcoins</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
