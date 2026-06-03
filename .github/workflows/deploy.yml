@@ -21,3 +21,20 @@ jobs:
             docker compose up -d --build
             docker image prune -f
             echo "Deploy concluído em $(date '+%Y-%m-%d %H:%M UTC')"
+
+      - name: Ping IndexNow (Bing / Yandex / Naver / Seznam)
+        if: success()
+        run: |
+          curl -fsS -X POST 'https://api.indexnow.org/IndexNow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d '{
+              "host": "gasnow.tools",
+              "key": "e215998a6fdd355bd75e7a7525f84961",
+              "keyLocation": "https://gasnow.tools/e215998a6fdd355bd75e7a7525f84961.txt",
+              "urlList": [
+                "https://gasnow.tools/",
+                "https://gasnow.tools/sitemap.xml",
+                "https://gasnow.tools/llms.txt",
+                "https://gasnow.tools/llms-full.txt"
+              ]
+            }' && echo "✅ IndexNow notified"
