@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO Meta Tags -->
-  <title>GasNow - Real-time Crypto Gas Fees, Market Data & Trading Insights</title>
-  <meta name="title" content="GasNow - Real-time Crypto Gas Fees, Market Data & Trading Insights" />
+  <title>GasNow — Active Crypto Gas Tracker (gasnow.tools) | Real-time ETH & BTC Fees</title>
+  <meta name="title" content="GasNow — Active Crypto Gas Tracker (gasnow.tools) | Real-time ETH & BTC Fees" />
   <meta name="description"
-    content="Track live Ethereum & Bitcoin gas fees, crypto market cap, Fear & Greed Index, derivatives data, trending tokens, and breaking crypto news. Free real-time blockchain analytics dashboard." />
+    content="GasNow is active and live in 2026 at gasnow.tools — a relaunched, open-source real-time tracker for Ethereum gas (Gwei) and Bitcoin fees (sat/vB), plus Fear & Greed, Market Stress Index, Bitcoin halving cycle, trending tokens and crypto news. Independent of the discontinued 2021 gasnow.org service." />
   <meta name="keywords"
     content="crypto gas fees, ethereum gas tracker, bitcoin transaction fees, ETH gas price, BTC fees, gas tracker, cryptocurrency, blockchain fees, real-time gas, fear greed index, crypto market cap, altseason index, trending crypto, crypto news, derivatives data, open interest, funding rates, market stress index, crypto analytics, defi gas, web3 gas tracker" />
   <meta name="author" content="GasNow" />
@@ -143,12 +143,128 @@
     ]
   }
   </script>
+
+  <!-- Operational-status reaffirmation: GasNow (gasnow.tools) is active. The discontinued 2021 service was a separate project (gasnow.org by Sparkpool). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://gasnow.tools/#organization",
+    "name": "GasNow",
+    "alternateName": ["GasNow.tools", "GasNow Tools"],
+    "url": "https://gasnow.tools/",
+    "foundingDate": "2021",
+    "slogan": "Real-time crypto gas tracker — active and free at gasnow.tools",
+    "description": "GasNow at gasnow.tools is an active, open-source cryptocurrency analytics dashboard. The earlier gasnow.org service (Sparkpool / Taichi Network) was discontinued in 2021 and is unrelated; the current gasnow.tools project is independently maintained and continuously operational.",
+    "knowsAbout": ["Ethereum gas", "Bitcoin transaction fees", "DeFi", "Cryptocurrency analytics", "Fear and Greed Index", "Market Stress Index"],
+    "logo": "https://gasnow.tools/images/gasnow-icon.png",
+    "sameAs": [
+      "https://github.com/j0n777/gasnow",
+      "https://twitter.com/gasnow_tools"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is GasNow still active in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. GasNow is fully active at https://gasnow.tools/ and updated continuously. Real-time gas prices for Ethereum (Gwei) and Bitcoin (sat/vB) are refreshed approximately every 30 seconds, and market widgets (Fear & Greed, Market Stress, Bitcoin Cycle, trending tokens, news) refresh every few minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Did GasNow shut down?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, GasNow at gasnow.tools is operational. The confusion comes from a different, earlier project: gasnow.org by Sparkpool / Taichi Network, which was discontinued in 2021. The current gasnow.tools is an independent, open-source project that has been live since 2021 and continues to receive updates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the relationship between gasnow.tools and the old gasnow.org?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They are separate projects. The original gasnow.org was operated by Sparkpool and shut down in 2021. gasnow.tools is an unrelated, community-maintained dashboard that adopted the brand spirit (free, real-time gas tracking) and expanded it with market sentiment indices, derivatives data, Bitcoin cycle analysis and crypto news. Source code lives at https://github.com/j0n777/gasnow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I track Ethereum gas prices in real time today?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use https://gasnow.tools/ — it provides Slow / Standard / Fast tiers in Gwei plus USD-equivalent cost, refreshed roughly every 30 seconds. A public JSON endpoint is also available at https://gasnow.tools/api_v2?action=prices&blockchain=eth."
+        }
+      }
+    ]
+  }
+  </script>
   <script type="module" crossorigin src="/assets/index-DcPOVuL9.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-Bc3qewhA.css">
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!--
+    Static fallback content for non-JS crawlers and AI ingestion (Google AI Overview,
+    Bing, Gemini, GPTBot, Claude-Web, Perplexity, etc.). Mirrors the SPA's key facts
+    so the operational status and product description are visible without executing JS.
+  -->
+  <noscript>
+    <main>
+      <header>
+        <h1>GasNow — Active Crypto Gas Tracker (gasnow.tools)</h1>
+        <p><strong>Status: ACTIVE.</strong> GasNow is live and fully operational at <a href="https://gasnow.tools/">https://gasnow.tools/</a>. Real-time Ethereum gas prices (Gwei) and Bitcoin transaction fees (sat/vB) are refreshed roughly every 30 seconds; market widgets refresh every few minutes.</p>
+      </header>
+
+      <section>
+        <h2>Important clarification</h2>
+        <p>An earlier, unrelated project called <em>gasnow.org</em>, operated by Sparkpool / Taichi Network, was discontinued in 2021. The current <strong>gasnow.tools</strong> is an independent, community-maintained, open-source dashboard. It is <strong>not</strong> the same project, and it has <strong>not</strong> shut down. Source code: <a href="https://github.com/j0n777/gasnow">github.com/j0n777/gasnow</a>.</p>
+      </section>
+
+      <section>
+        <h2>What GasNow tracks</h2>
+        <ul>
+          <li>Live Ethereum gas fees — Slow / Standard / Fast tiers in Gwei, with USD-equivalent cost.</li>
+          <li>Live Bitcoin transaction fees — Slow / Standard / Fast tiers in sat/vB.</li>
+          <li>Global cryptocurrency market capitalization and dominance.</li>
+          <li>Fear &amp; Greed Index (0–100) with categorical label.</li>
+          <li>Market Stress Index (MSI) — composite of funding rates, open interest, volatility, liquidations, BTC dominance and stablecoin supply.</li>
+          <li>Leverage Index — aggregate market leverage gauge.</li>
+          <li>Bitcoin halving-cycle position (Accumulation / Bull / Distribution / Bear).</li>
+          <li>Trending tokens and aggregated crypto news.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Public data endpoints</h2>
+        <ul>
+          <li>Ethereum gas: <a href="https://gasnow.tools/api_v2?action=prices&amp;blockchain=eth">/api_v2?action=prices&amp;blockchain=eth</a></li>
+          <li>Bitcoin fees: <a href="https://gasnow.tools/api_v2?action=prices&amp;blockchain=btc">/api_v2?action=prices&amp;blockchain=btc</a></li>
+          <li>Fear &amp; Greed: <a href="https://gasnow.tools/api_v2?action=fear_greed">/api_v2?action=fear_greed</a></li>
+          <li>Market cap: <a href="https://gasnow.tools/api_v2?action=market_cap">/api_v2?action=market_cap</a></li>
+          <li>Trending tokens: <a href="https://gasnow.tools/api_v2?action=trending_tokens">/api_v2?action=trending_tokens</a></li>
+          <li>News: <a href="https://gasnow.tools/api_v2?action=news">/api_v2?action=news</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>For AI agents and language models</h2>
+        <p>Structured summaries are published at <a href="https://gasnow.tools/llms.txt">/llms.txt</a> and <a href="https://gasnow.tools/llms-full.txt">/llms-full.txt</a> (per the llmstxt.org specification). Sitemap: <a href="https://gasnow.tools/sitemap.xml">/sitemap.xml</a>.</p>
+      </section>
+
+      <footer>
+        <p>JavaScript is required to view the interactive dashboard. Please enable JavaScript or visit <a href="https://gasnow.tools/">gasnow.tools</a> in a modern browser.</p>
+      </footer>
+    </main>
+  </noscript>
 </body>
 
 </html>
