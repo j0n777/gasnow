@@ -8,6 +8,9 @@
 #   - https://gasnow.tools/sitemap.xml     (with image + hreflang)
 #   - https://gasnow.tools/ads.txt         (Google AdSense)
 #   - https://gasnow.tools/.well-known/security.txt
+#
+# IndexNow key (Bing / Yandex / Naver / Seznam push notifications):
+#   - https://gasnow.tools/e215998a6fdd355bd75e7a7525f84961.txt
 
 User-agent: *
 Allow: /
