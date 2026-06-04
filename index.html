@@ -216,9 +216,24 @@
   <div id="root">
     <header>
       <h1>GasNow — Real-time Crypto Gas Tracker (active at gasnow.tools)</h1>
-      <p>Loading live Ethereum gas (Gwei) and Bitcoin fees (sat/vB), plus Fear &amp; Greed Index, Market Stress Index, Bitcoin halving cycle, trending tokens and crypto news.</p>
-      <p><a href="https://gasnow.tools/">Open gasnow.tools</a> · <a href="https://gasnow.tools/llms.txt">llms.txt</a> · <a href="https://github.com/j0n777/gasnow">Source</a></p>
+      <p>Live Ethereum gas prices (Gwei) and Bitcoin transaction fees (sat/vB), refreshed every 30 seconds, plus Fear &amp; Greed Index, Market Stress Index, Leverage Index, Bitcoin halving-cycle position, trending tokens and crypto news. Free, no signup, open-source.</p>
+      <p><a href="#about">About &amp; Methodology</a> · <a href="#faq">FAQ</a> · <a href="https://gasnow.tools/llms.txt">llms.txt</a> · <a href="https://github.com/j0n777/gasnow">Source</a></p>
     </header>
+    <section>
+      <h2>Why GasNow matters</h2>
+      <p>Every interaction with a public blockchain costs money. On Ethereum the unit is <em>gas</em>, denominated in Gwei (one-billionth of an ether); on Bitcoin it is satoshis per virtual byte (sat/vB). Fees can swing from cents during quiet periods to tens of dollars during congestion. Checking the live price before you sign a transaction is the difference between paying $0.40 and $35 for the same swap. GasNow shows Slow / Standard / Fast tiers with the USD-equivalent cost, updated continuously, so users can decide whether to execute now or wait.</p>
+    </section>
+    <section>
+      <h2>What you'll find on this page</h2>
+      <ul>
+        <li><strong>Gas Fees</strong> — Live Ethereum and Bitcoin transaction-fee tiers with USD cost.</li>
+        <li><strong>Market Stress Index (MSI)</strong> — Composite 0–100 risk indicator blending funding rates, open interest, volatility, liquidations, BTC dominance and stablecoin supply.</li>
+        <li><strong>Leverage Index</strong> — Aggregate derivatives open interest vs. spot market capitalisation.</li>
+        <li><strong>Fear &amp; Greed Index</strong> — Market sentiment 0–100.</li>
+        <li><strong>Bitcoin Halving Cycle</strong> — Position in the current 210 000-block cycle with phase classification.</li>
+        <li><strong>Trending tokens, crypto news</strong> and a public JSON API at <code>/api_v2</code>.</li>
+      </ul>
+    </section>
   </div>
 
   <!--

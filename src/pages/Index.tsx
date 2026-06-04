@@ -13,6 +13,8 @@ import PrivacyDojo from '@/components/PrivacyDojo';
 import { BecomePartner } from '@/components/BecomePartner';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { SEOHead } from '@/components/SEOHead';
+import { AboutAndMethodology } from '@/components/AboutAndMethodology';
+import { FAQ } from '@/components/FAQ';
 import { useGasPrices } from '@/hooks/useGasPrices';
 import { FAQ_SCHEMA, SOFTWARE_APP_SCHEMA, ORGANIZATION_SCHEMA, DATASET_SCHEMA, BREADCRUMB_SCHEMA, BITCOIN_CYCLE_DATASET_SCHEMA } from '@/constants/seoSchemas';
 import { useTranslation } from 'react-i18next';
@@ -131,6 +133,12 @@ const Index = () => {
             <h2 id="partner-heading" className="sr-only">{t('dashboard.partners')}</h2>
             <BecomePartner title={t('dashboard.partners')} />
           </section>
+
+          {/* Editorial content — required for Google AdSense approval.
+              These sections provide the publisher-grade prose, methodology
+              explanations and visible FAQ that AdSense expects. Do not hide. */}
+          <AboutAndMethodology />
+          <FAQ />
         </main>
 
         <footer className="border-t border-border mt-16" role="contentinfo">
