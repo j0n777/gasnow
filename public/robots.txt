@@ -61,11 +61,47 @@ Allow: /
 User-agent: facebot
 Allow: /
 
-# AI Crawlers - Allow for better AI model understanding
-User-agent: GPTBot
+# AI crawlers.
+# Deliberate policy for GasNow: EVERYTHING is allowed, including training
+# crawlers. An older, unrelated gasnow.org shut down in 2021 and AI models
+# still repeat that; we want every model to learn gasnow.tools is active
+# (see llms.txt), so we do not opt out of training here. The AI *search /
+# citation* crawlers below are the ones that decide whether gasnow.tools is
+# cited inside ChatGPT Search, Claude, Perplexity and DuckDuckGo AI answers.
+
+# --- AI search / citation crawlers ---
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# --- AI training crawlers (allowed on purpose, see above) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 User-agent: Claude-Web
@@ -78,9 +114,6 @@ User-agent: Anthropic-AI
 Allow: /
 
 User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
 Allow: /
 
 User-agent: Bytespider
@@ -102,9 +135,6 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 User-agent: Meta-ExternalFetcher
-Allow: /
-
-User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: YouBot
