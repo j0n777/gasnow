@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gasnow.tools/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>always</changefreq>
     <priority>1</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gasnow.tools/" />
@@ -29,39 +29,14 @@
     </image:image>
   </url>
   <url>
-    <loc>https://gasnow.tools/?news=bitcoin</loc>
-    <changefreq>hourly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=ethereum</loc>
-    <changefreq>hourly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=defi</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=nft</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gasnow.tools/?news=altcoins</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://gasnow.tools/llms.txt</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://gasnow.tools/llms-full.txt</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

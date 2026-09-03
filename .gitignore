@@ -26,3 +26,7 @@ node_modules/
 !private/config.env.example
 !config.env.example 
 .env
+
+# chave privada de deploy (nunca versionar)
+VPS_DEPLOY_KEY.txt
+*.pem
