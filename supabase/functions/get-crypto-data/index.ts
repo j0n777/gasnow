@@ -3,13 +3,103 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.4';
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
 };
 
 interface DataRequest {
-  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'market_data_history' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens' | 'derivatives_data' | 'market_stress' | 'leverage_index' | 'stablecoin_supply' | 'bitcoin_cycle';
+  type: 'gas_prices' | 'crypto_prices' | 'market_data' | 'market_data_history' | 'fear_greed' | 'altseason' | 'news' | 'trending_tokens' | 'derivatives_data' | 'market_stress' | 'leverage_index' | 'stablecoin_supply' | 'bitcoin_cycle' | 'snapshot';
   blockchain?: 'ethereum' | 'bitcoin';
   category?: string;
   days?: number;
+  format?: 'json' | 'text';
+}
+
+// 13/09/2026: além do POST usado pelo app, a function aceita GET com query string
+// (?type=...&format=text) para crawlers de busca/IA e para o prerender de build.
+// `type=snapshot` devolve todas as seções do dashboard de uma vez; `format=text`
+// devolve markdown legível por LLM. GET é cacheado por 60s na borda.
+async function parseRequest(req: Request): Promise<DataRequest> {
+  if (req.method === 'GET') {
+    const u = new URL(req.url);
+    const daysParam = u.searchParams.get('days');
+    return {
+      type: (u.searchParams.get('type') || 'snapshot') as DataRequest['type'],
+      blockchain: (u.searchParams.get('blockchain') || undefined) as DataRequest['blockchain'],
+      category: u.searchParams.get('category') || undefined,
+      days: daysParam ? parseInt(daysParam, 10) : undefined,
+      format: (u.searchParams.get('format') || 'json') as DataRequest['format'],
+    };
+  }
+  const body = await req.json();
+  return body as DataRequest;
+}
+
+async function safeCall(fn: () => Promise<any>): Promise<any> {
+  try { return await fn(); } catch (_e) { return null; }
+}
+
+async function getSnapshot(supabase: any) {
+  const [gasEth, gasBtc, prices, market, fearGreed, altseason, trending, news, derivatives, stress, leverage, stablecoins, cycle] = await Promise.all([
+    safeCall(() => getGasPrices(supabase, 'ethereum')),
+    safeCall(() => getGasPrices(supabase, 'bitcoin')),
+    safeCall(() => getCryptoPrices(supabase)),
+    safeCall(() => getMarketData(supabase)),
+    safeCall(() => getFearGreed(supabase)),
+    safeCall(() => getAltseason(supabase)),
+    safeCall(() => getTrendingTokens(supabase)),
+    safeCall(() => getNews(supabase, 'general')),
+    safeCall(() => getDerivativesData(supabase)),
+    safeCall(() => getMarketStress(supabase)),
+    safeCall(() => getLeverageIndex(supabase)),
+    safeCall(() => getStablecoinSupply(supabase)),
+    safeCall(() => getBitcoinCycle(supabase)),
+  ]);
+  const cycleLite = cycle ? { position: cycle.current ?? null, statistics: cycle.stats ?? null } : null;
+  return {
+    generated_at: new Date().toISOString(),
+    site: 'https://gasnow.tools/',
+    gas: { ethereum: gasEth, bitcoin: gasBtc },
+    prices, market, fear_greed: fearGreed, altseason, trending,
+    news: Array.isArray(news) ? news.slice(0, 10) : null,
+    derivatives, market_stress: stress, leverage_index: leverage, stablecoins, bitcoin_cycle: cycleLite,
+  };
+}
+
+function fmtNum(v: any, digits = 2): string {
+  const n = typeof v === 'string' ? parseFloat(v) : v;
+  if (typeof n !== 'number' || !isFinite(n)) return 'n/a';
+  if (Math.abs(n) >= 1e12) return `${(n / 1e12).toFixed(2)}T`;
+  if (Math.abs(n) >= 1e9) return `${(n / 1e9).toFixed(2)}B`;
+  if (Math.abs(n) >= 1e6) return `${(n / 1e6).toFixed(2)}M`;
+  return n.toFixed(digits);
+}
+
+// Markdown para LLMs/crawlers: mesma informação do dashboard, em texto.
+function snapshotToText(s: any): string {
+  const L: string[] = [];
+  const NL = '\n';
+  L.push('# GasNow — live crypto gas fees & market snapshot');
+  L.push(`Generated: ${s.generated_at} (UTC). Source: https://gasnow.tools/ — JSON: https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=snapshot`);
+  if (s.gas?.ethereum) L.push(['## Ethereum gas (gwei)', `- Slow: ${s.gas.ethereum.slow}`, `- Standard: ${s.gas.ethereum.standard}`, `- Fast: ${s.gas.ethereum.fast}`, `- As of: ${new Date(s.gas.ethereum.timestamp).toISOString()}`].join(NL));
+  if (s.gas?.bitcoin) L.push(['## Bitcoin fees (sat/vB)', `- Slow (1h): ${s.gas.bitcoin.slow}`, `- Standard (30min): ${s.gas.bitcoin.standard}`, `- Fast (next block): ${s.gas.bitcoin.fast}`, `- As of: ${new Date(s.gas.bitcoin.timestamp).toISOString()}`].join(NL));
+  if (s.prices) L.push(['## Prices (USD)', ...Object.entries(s.prices).map(([k, v]: any) => `- ${k.toUpperCase()}: $${fmtNum(v?.price ?? v?.usd ?? v, 2)}${v?.change24h != null ? ` (24h ${fmtNum(v.change24h)}%)` : ''}`)].join(NL));
+  if (s.market) L.push(['## Global market', ...Object.entries(s.market).map(([k, v]: any) => `- ${k}: ${typeof v === 'number' ? fmtNum(v) : v}`)].join(NL));
+  if (s.fear_greed) L.push(`## Fear & Greed Index${NL}- Value: ${s.fear_greed.value} (${s.fear_greed.classification ?? ''})`);
+  if (s.altseason) L.push(`## Altseason Index${NL}- Value: ${s.altseason.value} (${s.altseason.classification ?? ''})`);
+  if (s.market_stress) L.push(`## Market Stress Index (MSI)${NL}- Value: ${s.market_stress.value} (${s.market_stress.classification ?? ''})${Array.isArray(s.market_stress.insights) && s.market_stress.insights.length ? `${NL}- Insights: ${s.market_stress.insights.join('; ')}` : ''}`);
+  if (s.leverage_index) L.push(`## Leverage Index${NL}- Value: ${s.leverage_index.value} (${s.leverage_index.classification ?? ''})${s.leverage_index.insight ? `${NL}- Insight: ${s.leverage_index.insight}` : ''}`);
+  const c = s.bitcoin_cycle?.position;
+  if (c) L.push(['## Bitcoin halving cycle', `- Phase: ${c.phase ?? 'n/a'} (confidence ${c.phase_confidence ?? 'n/a'})`, `- Cycle progress: ${c.cycle_progress != null ? fmtNum(c.cycle_progress) + '%' : 'n/a'}`, `- Blocks since halving: ${c.blocks_from_halving ?? 'n/a'}`, `- Predicted top: ${c.predicted_top_date ?? 'n/a'} · Predicted bottom: ${c.predicted_bottom_date ?? 'n/a'} · Next halving: ${c.predicted_next_halving_date ?? 'n/a'}`].join(NL));
+  if (Array.isArray(s.derivatives) && s.derivatives.length) L.push(['## Derivatives (perpetual futures)', ...s.derivatives.map((d: any) => `- ${d.symbol}: price $${fmtNum(d.price)}, funding ${(d.funding_rate * 100).toFixed(4)}%, open interest $${fmtNum(d.open_interest_usd)}, long/short ${fmtNum(d.long_short_ratio)}, 24h ${fmtNum(d.price_change_24h)}%`)].join(NL));
+  if (s.stablecoins) L.push(['## Stablecoin supply', ...Object.entries(s.stablecoins).map(([k, v]: any) => `- ${k}: ${typeof v === 'number' ? fmtNum(v) : v}`)].join(NL));
+  const tt = s.trending;
+  if (tt) {
+    const list = (arr: any[]) => (arr || []).map((t: any) => `${t.name ?? t.symbol} (${(t.symbol ?? '').toUpperCase()})${t.price != null ? ` $${fmtNum(t.price, 4)}` : ''}${t.change_24h != null ? ` ${fmtNum(t.change_24h)}%` : ''}`).join(', ');
+    L.push(['## Trending tokens', `- Trending: ${list(tt.trending)}`, `- Top gainers: ${list(tt.gainers)}`, `- Top 5 by market cap: ${list(tt.top5)}`].join(NL));
+  }
+  if (Array.isArray(s.news) && s.news.length) L.push(['## Latest crypto news', ...s.news.map((n: any) => `- [${n.title}](${n.url}) — ${n.source}, ${n.publishedAt}`)].join(NL));
+  L.push('---' + NL + 'GasNow (gasnow.tools) is an independent, community-maintained crypto analytics dashboard, unrelated to the discontinued gasnow.org. Data refreshes every 5–30 minutes.');
+  return L.join(NL + NL);
 }
 
 // Retry helper for transient network errors
@@ -44,11 +134,14 @@ Deno.serve(async (req) => {
     const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    const { type, blockchain, category, days } = await req.json() as DataRequest;
+    const { type, blockchain, category, days, format } = await parseRequest(req);
     console.log(`[get-crypto-data] Fetching data for type: ${type}`);
 
     let result;
     switch (type) {
+      case 'snapshot':
+        result = await getSnapshot(supabase);
+        break;
       case 'gas_prices':
         result = await withRetry(() => getGasPrices(supabase, blockchain || 'ethereum'));
         break;
@@ -92,8 +185,14 @@ Deno.serve(async (req) => {
         throw new Error(`Unknown data type: ${type}`);
     }
 
+    const cache = req.method === 'GET' ? { 'Cache-Control': 'public, max-age=60, s-maxage=60' } : {};
+    if (format === 'text' && type === 'snapshot') {
+      return new Response(snapshotToText(result), {
+        headers: { ...corsHeaders, ...cache, 'Content-Type': 'text/markdown; charset=utf-8' },
+      });
+    }
     return new Response(JSON.stringify({ data: result }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders, ...cache, 'Content-Type': 'application/json' },
     });
   } catch (error) {
     console.error('[get-crypto-data] Error:', error);

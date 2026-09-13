@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "npx tsx scripts/generate-sitemap.ts",
-    "build": "vite build",
+    "build": "vite build && tsx scripts/prerender.ts",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "sitemap": "npx tsx scripts/generate-sitemap.ts",
-    "indexnow": "npx tsx scripts/indexnow-ping.ts"
+    "indexnow": "npx tsx scripts/indexnow-ping.ts",
+    "prerender": "tsx scripts/prerender.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
@@ -79,6 +80,7 @@
     "postcss": "^8.4.45",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.3",
-    "vite": "^5.4.3"
+    "vite": "^5.4.3",
+    "tsx": "^4.19.2"
   }
 }

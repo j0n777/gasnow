@@ -84,62 +84,66 @@ async function updateGasPrices(supabase: any, blockchain: string) {
   console.log(`[updateGasPrices] Fetching ${blockchain} gas prices...`);
 
   if (blockchain === 'ethereum') {
+    // 13/09/2026: ETH ficou 41 dias sem atualizar. Não havia ETHERSCAN_API_KEY nos
+    // secrets (o código só chamava a v2 com chave) e o fallback beaconcha.in passou
+    // a exigir chave (401). A v2 responde SEM chave com limite de 1 req/5s, e o
+    // cron roda a cada 5 min — basta. Segundo fallback: eth_feeHistory num RPC
+    // público (sem chave, sem geo-bloqueio).
     const etherscanApiKey = Deno.env.get('ETHERSCAN_API_KEY');
-
-    // Try Etherscan v2 API first
-    if (etherscanApiKey) {
-      try {
-        const url = `https://api.etherscan.io/v2/api?chainid=1&module=gastracker&action=gasoracle&apikey=${etherscanApiKey}`;
-        const response = await fetch(url);
-        const data = await response.json();
-
-        if (data.status === '1' && data.result) {
-          const { SafeGasPrice, ProposeGasPrice, FastGasPrice } = data.result;
-
-          const { error } = await supabase.from('gas_prices').insert({
-            blockchain: 'ethereum',
-            slow: parseFloat(SafeGasPrice),
-            standard: parseFloat(ProposeGasPrice),
-            fast: parseFloat(FastGasPrice),
-          });
-
-          if (error) throw error;
-
-          console.log('[updateGasPrices] Ethereum prices updated via Etherscan v2');
-          return { blockchain: 'ethereum', source: 'etherscan_v2' };
-        }
-      } catch (error) {
-        console.error('[updateGasPrices] Etherscan v2 API error:', error);
-      }
-    }
-
-    // Fallback to beaconcha.in
     try {
-      const response = await fetch('https://beaconcha.in/api/v1/execution/gasnow');
+      const url = `https://api.etherscan.io/v2/api?chainid=1&module=gastracker&action=gasoracle${etherscanApiKey ? `&apikey=${etherscanApiKey}` : ''}`;
+      const response = await fetch(url);
       const data = await response.json();
-
-      if (data.data) {
-        // Keep decimal precision for sub-1 gwei values
-        const slow = data.data.slow / 1000000000;
-        const standard = data.data.standard / 1000000000;
-        const fast = data.data.fast / 1000000000;
-
+      if (data.status === '1' && data.result?.ProposeGasPrice) {
+        const { SafeGasPrice, ProposeGasPrice, FastGasPrice } = data.result;
         const { error } = await supabase.from('gas_prices').insert({
           blockchain: 'ethereum',
-          slow,
-          standard,
-          fast,
+          slow: parseFloat(SafeGasPrice),
+          standard: parseFloat(ProposeGasPrice),
+          fast: parseFloat(FastGasPrice),
         });
-
         if (error) throw error;
-
-        console.log('[updateGasPrices] Ethereum prices updated via beaconcha.in');
-        return { blockchain: 'ethereum', source: 'beaconcha' };
+        console.log(`[updateGasPrices] Ethereum prices updated via Etherscan v2${etherscanApiKey ? '' : ' (sem chave)'}`);
+        return { blockchain: 'ethereum', source: 'etherscan_v2' };
       }
+      console.log('[updateGasPrices] Etherscan v2 sem resultado:', JSON.stringify(data).slice(0, 160));
     } catch (error) {
-      console.error('[updateGasPrices] beaconcha.in error:', error);
-      throw new Error('All Ethereum gas price sources failed');
+      console.error('[updateGasPrices] Etherscan v2 API error:', error);
     }
+
+    // Fallback: EIP-1559 fee history via RPC público. slow/standard/fast = baseFee do
+    // próximo bloco + priority fee nos percentis 25/50/75 dos últimos 5 blocos.
+    const rpcs = ['https://ethereum-rpc.publicnode.com', 'https://cloudflare-eth.com', 'https://eth.llamarpc.com'];
+    for (const rpc of rpcs) {
+      try {
+        const res = await fetch(rpc, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'eth_feeHistory', params: ['0x5', 'latest', [25, 50, 75]] }),
+        });
+        const json = await res.json();
+        const fh = json?.result;
+        if (!fh?.baseFeePerGas?.length || !fh?.reward?.length) throw new Error('feeHistory vazio');
+        const gwei = (hex: string) => parseInt(hex, 16) / 1e9;
+        const nextBase = gwei(fh.baseFeePerGas[fh.baseFeePerGas.length - 1]);
+        const pct = (i: number) => {
+          const vals = fh.reward.map((r: string[]) => gwei(r[i])).sort((a: number, b: number) => a - b);
+          return vals[Math.floor(vals.length / 2)];
+        };
+        const round = (v: number) => Math.round(v * 1000) / 1000;
+        const slow = round(nextBase + pct(0));
+        const standard = round(nextBase + pct(1));
+        const fast = round(nextBase + pct(2));
+        if (!(standard > 0)) throw new Error('valores inválidos');
+        const { error } = await supabase.from('gas_prices').insert({ blockchain: 'ethereum', slow, standard, fast });
+        if (error) throw error;
+        console.log(`[updateGasPrices] Ethereum prices updated via eth_feeHistory (${rpc})`);
+        return { blockchain: 'ethereum', source: `feeHistory:${new URL(rpc).host}` };
+      } catch (error) {
+        console.error(`[updateGasPrices] RPC ${rpc} error:`, error);
+      }
+    }
+    throw new Error('All Ethereum gas price sources failed');
   } else if (blockchain === 'bitcoin') {
     try {
       const response = await fetch('https://mempool.space/api/v1/fees/recommended');
@@ -297,6 +301,21 @@ async function updateAltseason(supabase: any) {
   }
 }
 
+// Categoria primária por palavras-chave no título/descrição. Antes tudo entrava como
+// 'general' e as abas Bitcoin/Ethereum/DeFi/NFT/Altcoins da UI ficavam vazias (13/09/2026).
+const NEWS_CATEGORY_RULES: Array<[string, RegExp]> = [
+  ['nft', /\bnfts?\b|non-fungible|opensea|ordinals?\b|digital collectible/i],
+  ['defi', /\bdefi\b|decentrali[sz]ed finance|\bdex\b|uniswap|aave|liquidity pool|yield|staking|lending protocol|\btvl\b|stablecoin|usdt|usdc|tether/i],
+  ['ethereum', /\bethereum\b|\beth\b|\bether\b|vitalik|layer[- ]?2|arbitrum|optimism|\bbase\b.*(chain|network)|rollup|eip-|\berc-?\d+/i],
+  ['bitcoin', /\bbitcoin\b|\bbtc\b|satoshi|lightning network|halving|\bsats?\b|michael saylor|strategy\b.*btc|bitcoin etf/i],
+  ['altcoins', /\bsolana\b|\bsol\b|\bxrp\b|ripple|cardano|\bada\b|dogecoin|\bdoge\b|\bton\b|toncoin|avalanche|\bavax\b|polkadot|chainlink|\blink\b|\bbnb\b|litecoin|\baltcoins?\b|memecoin|meme coin|\bsui\b|\bapt\b|aptos|tron\b|\btrx\b/i],
+];
+function classifyNews(title: string, description: string | null): string {
+  const text = `${title} ${description || ''}`;
+  for (const [category, rule] of NEWS_CATEGORY_RULES) if (rule.test(text)) return category;
+  return 'general';
+}
+
 async function updateNews(supabase: any) {
   console.log('[updateNews] Fetching crypto news...');
 
@@ -304,22 +323,26 @@ async function updateNews(supabase: any) {
     { url: 'https://www.coindesk.com/arc/outboundfeeds/rss/', source: 'CoinDesk' },
     { url: 'https://cointelegraph.com/rss', source: 'Cointelegraph' },
     { url: 'https://decrypt.co/feed', source: 'Decrypt' },
+    { url: 'https://www.theblock.co/rss.xml', source: 'The Block' },
+    { url: 'https://bitcoinmagazine.com/feed', source: 'Bitcoin Magazine' },
+    { url: 'https://blockworks.co/feed', source: 'Blockworks' },
   ];
 
   let insertedCount = 0;
+  const byCategory: Record<string, number> = {};
 
   for (const feed of feeds) {
     try {
-      const response = await fetch(feed.url);
+      const response = await fetch(feed.url, { redirect: 'follow', headers: { 'User-Agent': 'GasNow/2.0 (+https://gasnow.tools)' } });
       const text = await response.text();
 
       // Simple RSS parsing
       const items = text.match(/<item>[\s\S]*?<\/item>/g) || [];
 
-      for (const item of items.slice(0, 5)) {
+      for (const item of items.slice(0, 10)) {
         const titleMatch = item.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/) || item.match(/<title>(.*?)<\/title>/);
         const linkMatch = item.match(/<link>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/link>/);
-        const descMatch = item.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/) || item.match(/<description>(.*?)<\/description>/);
+        const descMatch = item.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/) || item.match(/<description>([\s\S]*?)<\/description>/);
         const pubDateMatch = item.match(/<pubDate>(.*?)<\/pubDate>/);
 
         // Extract image from various RSS formats
@@ -333,17 +356,20 @@ async function updateNews(supabase: any) {
         else if (contentMatch) imageUrl = contentMatch[1];
 
         if (titleMatch && linkMatch) {
+          const title = titleMatch[1].trim().replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"');
+          const description = descMatch ? descMatch[1].trim().replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').slice(0, 500) : null;
+          const category = classifyNews(title, description);
           const { error } = await supabase.from('crypto_news').insert({
-            title: titleMatch[1].trim(),
-            description: descMatch ? descMatch[1].trim().replace(/<[^>]*>/g, '').slice(0, 500) : null,
+            title,
+            description,
             url: linkMatch[1].trim(),
             image_url: imageUrl,
             source: feed.source,
-            category: 'general',
+            category,
             published_at: pubDateMatch ? new Date(pubDateMatch[1]).toISOString() : new Date().toISOString(),
           }).select();
 
-          if (!error) insertedCount++;
+          if (!error) { insertedCount++; byCategory[category] = (byCategory[category] || 0) + 1; }
         }
       }
     } catch (error) {
@@ -351,8 +377,8 @@ async function updateNews(supabase: any) {
     }
   }
 
-  console.log(`[updateNews] Inserted ${insertedCount} news articles`);
-  return { inserted: insertedCount };
+  console.log(`[updateNews] Inserted ${insertedCount} new articles`, byCategory);
+  return { inserted: insertedCount, byCategory };
 }
 
 async function updateTrendingTokens(supabase: any) {
@@ -453,96 +479,127 @@ async function updateTrendingTokens(supabase: any) {
 
 // ========== NEW FUNCTIONS FOR MARKET STRESS INDEX ==========
 
+// 13/09/2026: derivativos pararam em 30/01 porque a Binance Futures bloqueia os IPs
+// dos EUA onde a Edge Function roda. Agora cada símbolo tenta, em ordem, Binance →
+// OKX → Bybit → Hyperliquid (DEX, sem geo-bloqueio) e grava a primeira que responder.
+type DerivSnapshot = { markPrice: number; openInterest: number; fundingRate: number; longShortRatio: number; priceChange24h: number; source: string };
+
+async function fetchJson(url: string, init?: RequestInit, timeoutMs = 8000): Promise<any> {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, { ...init, signal: ctrl.signal });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+async function derivFromBinance(symbol: string): Promise<DerivSnapshot> {
+  const premium = await fetchJson(`https://fapi.binance.com/fapi/v1/premiumIndex?symbol=${symbol}`);
+  if (!premium?.markPrice || premium.code) throw new Error('premiumIndex inválido');
+  const oi = await fetchJson(`https://fapi.binance.com/fapi/v1/openInterest?symbol=${symbol}`);
+  if (!oi?.openInterest) throw new Error('openInterest inválido');
+  let longShortRatio = 1;
+  try {
+    const ls = await fetchJson(`https://fapi.binance.com/futures/data/globalLongShortAccountRatio?symbol=${symbol}&period=1h&limit=1`);
+    if (Array.isArray(ls) && ls[0]?.longShortRatio) longShortRatio = parseFloat(ls[0].longShortRatio);
+  } catch (_) { /* opcional */ }
+  let priceChange24h = 0;
+  try {
+    const ticker = await fetchJson(`https://api.binance.com/api/v3/ticker/24hr?symbol=${symbol}`);
+    if (ticker?.priceChangePercent) priceChange24h = parseFloat(ticker.priceChangePercent);
+  } catch (_) { /* opcional */ }
+  return { markPrice: parseFloat(premium.markPrice), openInterest: parseFloat(oi.openInterest), fundingRate: parseFloat(premium.lastFundingRate) || 0, longShortRatio, priceChange24h, source: 'binance' };
+}
+
+async function derivFromOkx(symbol: string): Promise<DerivSnapshot> {
+  const base = symbol.replace('USDT', '');
+  const inst = `${base}-USDT-SWAP`;
+  const [mark, oi, fund] = await Promise.all([
+    fetchJson(`https://www.okx.com/api/v5/public/mark-price?instType=SWAP&instId=${inst}`),
+    fetchJson(`https://www.okx.com/api/v5/public/open-interest?instType=SWAP&instId=${inst}`),
+    fetchJson(`https://www.okx.com/api/v5/public/funding-rate?instId=${inst}`),
+  ]);
+  const markPrice = parseFloat(mark?.data?.[0]?.markPx);
+  const oiCcy = parseFloat(oi?.data?.[0]?.oiCcy); // em moeda base (BTC, ETH, SOL)
+  if (!(markPrice > 0) || !(oiCcy > 0)) throw new Error('OKX sem dados');
+  let longShortRatio = 1;
+  try {
+    const ls = await fetchJson(`https://www.okx.com/api/v5/rubik/stat/contracts/long-short-account-ratio?ccy=${base}&period=1H`);
+    if (ls?.data?.[0]?.[1]) longShortRatio = parseFloat(ls.data[0][1]);
+  } catch (_) { /* opcional */ }
+  let priceChange24h = 0;
+  try {
+    const t = await fetchJson(`https://www.okx.com/api/v5/market/ticker?instId=${inst}`);
+    const last = parseFloat(t?.data?.[0]?.last), open = parseFloat(t?.data?.[0]?.open24h);
+    if (last > 0 && open > 0) priceChange24h = ((last - open) / open) * 100;
+  } catch (_) { /* opcional */ }
+  return { markPrice, openInterest: oiCcy, fundingRate: parseFloat(fund?.data?.[0]?.fundingRate) || 0, longShortRatio, priceChange24h, source: 'okx' };
+}
+
+async function derivFromBybit(symbol: string): Promise<DerivSnapshot> {
+  const r = await fetchJson(`https://api.bybit.com/v5/market/tickers?category=linear&symbol=${symbol}`);
+  const t = r?.result?.list?.[0];
+  const markPrice = parseFloat(t?.markPrice), openInterest = parseFloat(t?.openInterest);
+  if (!(markPrice > 0) || !(openInterest > 0)) throw new Error('Bybit sem dados');
+  return { markPrice, openInterest, fundingRate: parseFloat(t.fundingRate) || 0, longShortRatio: 1, priceChange24h: (parseFloat(t.price24hPcnt) || 0) * 100, source: 'bybit' };
+}
+
+async function derivFromHyperliquid(symbol: string): Promise<DerivSnapshot> {
+  const coin = symbol.replace('USDT', '');
+  const r = await fetchJson('https://api.hyperliquid.xyz/info', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'metaAndAssetCtxs' }) });
+  const idx = r?.[0]?.universe?.findIndex((u: any) => u.name === coin);
+  const ctx = idx >= 0 ? r?.[1]?.[idx] : null;
+  const markPrice = parseFloat(ctx?.markPx), openInterest = parseFloat(ctx?.openInterest);
+  if (!(markPrice > 0) || !(openInterest > 0)) throw new Error('Hyperliquid sem dados');
+  const prev = parseFloat(ctx.prevDayPx);
+  return { markPrice, openInterest, fundingRate: parseFloat(ctx.funding) || 0, longShortRatio: 1, priceChange24h: prev > 0 ? ((markPrice - prev) / prev) * 100 : 0, source: 'hyperliquid' };
+}
+
 async function updateDerivativesData(supabase: any) {
-  console.log('[updateDerivativesData] Fetching derivatives data from Binance...');
+  console.log('[updateDerivativesData] Fetching derivatives data (binance → okx → bybit → hyperliquid)...');
 
   const symbols = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'];
+  const providers: Array<[string, (s: string) => Promise<DerivSnapshot>]> = [
+    ['binance', derivFromBinance], ['okx', derivFromOkx], ['bybit', derivFromBybit], ['hyperliquid', derivFromHyperliquid],
+  ];
   const results: any[] = [];
 
-  try {
-    for (const symbol of symbols) {
+  for (const symbol of symbols) {
+    let snap: DerivSnapshot | null = null;
+    for (const [name, fn] of providers) {
       try {
-        // Fetch funding rate and mark price
-        const premiumRes = await fetch(`https://fapi.binance.com/fapi/v1/premiumIndex?symbol=${symbol}`);
-        const premiumData = await premiumRes.json();
-
-        // Validate response
-        if (!premiumData || premiumData.code || !premiumData.markPrice) {
-          console.log(`[updateDerivativesData] Invalid premium data for ${symbol}:`, JSON.stringify(premiumData).slice(0, 200));
-          continue;
-        }
-
-        // Fetch open interest
-        const oiRes = await fetch(`https://fapi.binance.com/fapi/v1/openInterest?symbol=${symbol}`);
-        const oiData = await oiRes.json();
-
-        if (!oiData || oiData.code || !oiData.openInterest) {
-          console.log(`[updateDerivativesData] Invalid OI data for ${symbol}:`, JSON.stringify(oiData).slice(0, 200));
-          continue;
-        }
-
-        // Fetch long/short ratio
-        let longShortRatio = 1;
-        try {
-          const lsRes = await fetch(`https://fapi.binance.com/futures/data/globalLongShortAccountRatio?symbol=${symbol}&period=1h&limit=1`);
-          const lsData = await lsRes.json();
-          if (lsData && Array.isArray(lsData) && lsData[0]?.longShortRatio) {
-            longShortRatio = parseFloat(lsData[0].longShortRatio);
-          }
-        } catch (e) {
-          console.log(`[updateDerivativesData] Could not fetch L/S ratio for ${symbol}`);
-        }
-
-        // Calculate values
-        const markPrice = parseFloat(premiumData.markPrice);
-        const openInterest = parseFloat(oiData.openInterest);
-        const openInterestUsd = openInterest * markPrice;
-        const fundingRate = parseFloat(premiumData.lastFundingRate) || 0;
-
-        // Get 24h price change from spot
-        let priceChange24h = 0;
-        try {
-          const tickerRes = await fetch(`https://api.binance.com/api/v3/ticker/24hr?symbol=${symbol}`);
-          const tickerData = await tickerRes.json();
-          if (tickerData && tickerData.priceChangePercent) {
-            priceChange24h = parseFloat(tickerData.priceChangePercent);
-          }
-        } catch (e) {
-          console.log(`[updateDerivativesData] Could not fetch ticker for ${symbol}`);
-        }
-
-        // Only insert if we have valid data
-        if (markPrice > 0 && openInterest > 0) {
-          const { error } = await supabase.from('derivatives_data').insert({
-            symbol,
-            funding_rate: fundingRate,
-            open_interest: openInterest,
-            open_interest_usd: openInterestUsd,
-            long_short_ratio: longShortRatio,
-            liquidations_24h: 0,
-            price: markPrice,
-            price_change_24h: priceChange24h,
-          });
-
-          if (error) {
-            console.error(`[updateDerivativesData] Error inserting ${symbol}:`, error);
-          } else {
-            results.push({ symbol, price: markPrice, oi: openInterestUsd });
-          }
-        } else {
-          console.log(`[updateDerivativesData] Skipping ${symbol} - invalid values: price=${markPrice}, oi=${openInterest}`);
-        }
-      } catch (symbolError) {
-        console.error(`[updateDerivativesData] Error processing ${symbol}:`, symbolError);
+        snap = await fn(symbol);
+        break;
+      } catch (e) {
+        console.log(`[updateDerivativesData] ${name} falhou para ${symbol}: ${e instanceof Error ? e.message : e}`);
       }
     }
-
-    console.log('[updateDerivativesData] Derivatives data updated:', results.length, 'symbols');
-    return { success: true, symbols: results.map(r => r.symbol), count: results.length };
-  } catch (error) {
-    console.error('[updateDerivativesData] Error:', error);
-    throw error;
+    if (!snap) {
+      console.error(`[updateDerivativesData] Nenhuma fonte respondeu para ${symbol}`);
+      continue;
+    }
+    const { error } = await supabase.from('derivatives_data').insert({
+      symbol,
+      funding_rate: snap.fundingRate,
+      open_interest: snap.openInterest,
+      open_interest_usd: snap.openInterest * snap.markPrice,
+      long_short_ratio: snap.longShortRatio,
+      liquidations_24h: 0,
+      price: snap.markPrice,
+      price_change_24h: snap.priceChange24h,
+    });
+    if (error) {
+      console.error(`[updateDerivativesData] Error inserting ${symbol}:`, error);
+    } else {
+      results.push({ symbol, price: snap.markPrice, oi: snap.openInterest * snap.markPrice, source: snap.source });
+    }
   }
+
+  console.log(`[updateDerivativesData] Updated ${results.length}/${symbols.length} symbols`, results.map(r => `${r.symbol}:${r.source}`).join(' '));
+  return { updated: results.length, results };
 }
 
 async function updateStablecoinSupply(supabase: any) {

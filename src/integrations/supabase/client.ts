@@ -2,9 +2,15 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-// A integração Supabase da Lovable injeta VITE_SUPABASE_PUBLISHABLE_KEY; a VPS usava VITE_SUPABASE_ANON_KEY.
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+// Projeto Supabase EXTERNO do GasNow (não é Lovable Cloud). URL e anon key são
+// públicas por definição (RLS protege os dados), por isso ficam fixas aqui, como a
+// própria Lovable faz — assim o build funciona em qualquer host sem depender de .env
+// ou da integração da UI. Um .env com VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY
+// (ou VITE_SUPABASE_PUBLISHABLE_KEY, nome usado pela Lovable) continua tendo prioridade.
+const DEFAULT_SUPABASE_URL = 'https://mddqwppgucgzefzddajy.supabase.co';
+const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1kZHF3cHBndWNnemVmemRkYWp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc3MDc0ODgsImV4cCI6MjA4MzI4MzQ4OH0.5BpOF1B7C98zdPffSe7wpd1Ch31s_hlJSK0vYGC7HDg';
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || DEFAULT_SUPABASE_ANON_KEY;
 
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";

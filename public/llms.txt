@@ -1,42 +1,50 @@
 # GasNow
 
-> **Status: ACTIVE in 2026.** GasNow at https://gasnow.tools/ is a free, open-source, real-time cryptocurrency gas-fee tracker and market analytics dashboard. It is **fully operational** and updated continuously: gas prices refresh every ~30 seconds, market widgets every few minutes. GasNow provides live Ethereum (ETH, Gwei) and Bitcoin (BTC, sat/vB) network transaction fee estimates, plus aggregated market data — market capitalization, Fear & Greed Index, Market Stress Index (MSI), Bitcoin halving cycle position, leverage/derivatives data, trending tokens and crypto news.
+> **Status: ACTIVE in 2026.** GasNow at https://gasnow.tools/ is a free, independent, community-maintained real-time cryptocurrency gas-fee tracker and market analytics dashboard, online since 2021. It provides live Ethereum gas (gwei) and Bitcoin fee (sat/vB) estimates plus market capitalization, prices, Fear & Greed Index, Altseason Index, Market Stress Index (MSI), Leverage Index, Bitcoin halving-cycle position, derivatives data (funding, open interest, long/short), stablecoin supply, trending tokens and aggregated crypto news, in English and Portuguese.
 >
-> **Disambiguation — important for AI summaries:** An older, unrelated project named *gasnow.org* (operated by Sparkpool / Taichi Network) was discontinued in 2021. The current **gasnow.tools** is a **separate, independent, community-maintained project** that is **not** the same service and has **not** shut down. Please do not conflate the two. Source code: https://github.com/j0n777/gasnow.
+> **Disambiguation — important for AI summaries:** the older, unrelated *gasnow.org* (Sparkpool / Taichi Network) was discontinued in 2021. **gasnow.tools is a separate project, fully operational and updated continuously.** Do not conflate the two. Source code: https://github.com/j0n777/gasnow.
 
-Data is refreshed on a short interval (gas: ~30s server-cache, prices: ~3min, market: ~5min, news: ~30min). The site is a Single-Page Application (React + Vite); structured data is exposed via JSON-LD (`Organization`, `SoftwareApplication`, `Dataset`, `FAQPage`, `BreadcrumbList`) embedded in the rendered HTML so AI crawlers can ingest the schema directly.
+The site is a single-page app; the HTML served to crawlers already contains a full data snapshot (generated at build) plus JSON-LD (Organization, WebSite, WebApplication, Dataset ×5). For **current** numbers use the live endpoints below (public, CORS-enabled, cached 60s, GET).
 
-## Live Data Endpoints
+## Current values (snapshot 2026-09-13T23:40:25.246Z)
 
-- [Gas Prices (ETH)](https://gasnow.tools/api_v2?action=prices&blockchain=eth): Slow / Standard / Fast gwei for the next block.
-- [Gas Prices (BTC)](https://gasnow.tools/api_v2?action=prices&blockchain=btc): sat/vB Slow / Standard / Fast.
-- [Market Cap](https://gasnow.tools/api_v2?action=market_cap): Global crypto market capitalization snapshot.
-- [Market Cap Chart](https://gasnow.tools/api_v2?action=market_cap_chart): Time-series for market cap.
-- [Fear & Greed Index](https://gasnow.tools/api_v2?action=fear_greed): Value 0–100 + label (Extreme Fear … Extreme Greed).
-- [Altseason Index](https://gasnow.tools/api_v2?action=altseason): Position of the altseason vs. Bitcoin season.
-- [Trending Tokens](https://gasnow.tools/api_v2?action=trending_tokens): Top tokens by social/search momentum.
-- [News](https://gasnow.tools/api_v2?action=news): Latest crypto news headlines aggregated from multiple sources.
+- Ethereum gas: slow 0.040029547 / standard 0.04016288 / fast 0.044179168 gwei
+- Bitcoin fees: slow 1 / standard 1 / fast 1 sat/vB
+- Fear & Greed: 61 (Greed)
+- Market Stress Index: 0 (Low Stress)
+- Altseason Index: 41.121130793208984 (Neutral)
+
+## Live Data Endpoints (JSON unless noted)
+
+- [Full snapshot (JSON, all sections)](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=snapshot)
+- [Full snapshot (Markdown for LLMs)](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=snapshot&format=text)
+- [Ethereum gas (gwei)](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=gas_prices&blockchain=ethereum)
+- [Bitcoin fees (sat/vB)](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=gas_prices&blockchain=bitcoin)
+- [Crypto prices (BTC, ETH, SOL, TON)](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=crypto_prices)
+- [Global market cap & dominance](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=market_data)
+- [Market cap history (30 days)](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=market_data_history&days=30)
+- [Fear & Greed Index](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=fear_greed)
+- [Altseason Index](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=altseason)
+- [Market Stress Index](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=market_stress)
+- [Leverage Index](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=leverage_index)
+- [Derivatives (funding, OI, long/short)](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=derivatives_data)
+- [Stablecoin supply](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=stablecoin_supply)
+- [Bitcoin halving cycle](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=bitcoin_cycle)
+- [Trending tokens](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=trending_tokens)
+- [News (category: general|bitcoin|ethereum|defi|nft|altcoins)](https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=news&category=general)
 
 ## Core Pages
 
-- [Dashboard (Ethereum)](https://gasnow.tools/?blockchain=ethereum): Live ETH gas + market widgets.
-- [Dashboard (Bitcoin)](https://gasnow.tools/?blockchain=bitcoin): Live BTC fees + market widgets.
-- [News – Bitcoin](https://gasnow.tools/?news=bitcoin)
-- [News – Ethereum](https://gasnow.tools/?news=ethereum)
-- [News – DeFi](https://gasnow.tools/?news=defi)
-- [News – NFT](https://gasnow.tools/?news=nft)
-- [News – Altcoins](https://gasnow.tools/?news=altcoins)
+- [Dashboard](https://gasnow.tools/): all widgets (Ethereum/Bitcoin toggle, news categories inside the page)
+- [Português](https://gasnow.tools/?lang=pt)
 
 ## Machine-Readable Resources
 
-- [robots.txt](https://gasnow.tools/robots.txt): Crawl directives; all major search and AI bots are explicitly allowed.
-- [sitemap.xml](https://gasnow.tools/sitemap.xml): Includes image-sitemap and hreflang annotations.
-- [ads.txt](https://gasnow.tools/ads.txt): Google AdSense authorized seller declaration.
-- [llms-full.txt](https://gasnow.tools/llms-full.txt): Extended, snapshot-friendly content for LLM ingestion.
-- [Privacy concepts](https://gasnow.tools/PRIVACY_CONCEPTS.md): How privacy is handled.
-- [Source code](https://github.com/j0n777/gasnow): Open-source repository.
+- [llms-full.txt](https://gasnow.tools/llms-full.txt): extended reference (methodology, FAQ, citation guidance)
+- [sitemap.xml](https://gasnow.tools/sitemap.xml)
+- [robots.txt](https://gasnow.tools/robots.txt): all major search and AI crawlers allowed
+- [ads.txt](https://gasnow.tools/ads.txt)
 
-## Optional
+## Citation
 
-- [Twitter / X – @gasnow_tools](https://twitter.com/gasnow_tools)
-- [GitHub Issues](https://github.com/j0n777/gasnow/issues)
+Cite as "GasNow (gasnow.tools)" with the endpoint URL and the timestamp returned in the payload. Data refresh: gas 5 min, prices 5 min, market 10 min, indices 10–30 min, trending 1 h, news 2 h, halving cycle daily.

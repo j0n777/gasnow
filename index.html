@@ -130,7 +130,7 @@
         "distribution": {
           "@type": "DataDownload",
           "encodingFormat": "application/json",
-          "contentUrl": "https://gasnow.tools/api_v2?action=prices&blockchain=eth"
+          "contentUrl": "https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=gas_prices&blockchain=ethereum"
         }
       }
     ]
@@ -192,7 +192,7 @@
         "name": "Where can I track Ethereum gas prices in real time today?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use https://gasnow.tools/ — it provides Slow / Standard / Fast tiers in Gwei plus USD-equivalent cost, refreshed roughly every 30 seconds. A public JSON endpoint is also available at https://gasnow.tools/api_v2?action=prices&blockchain=eth."
+          "text": "Use https://gasnow.tools/ — it provides Slow / Standard / Fast tiers in Gwei plus USD-equivalent cost, refreshed roughly every 30 seconds. A public JSON endpoint is also available at https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=gas_prices&blockchain=ethereum."
         }
       }
     ]
@@ -231,7 +231,7 @@
         <li><strong>Leverage Index</strong> — Aggregate derivatives open interest vs. spot market capitalisation.</li>
         <li><strong>Fear &amp; Greed Index</strong> — Market sentiment 0–100.</li>
         <li><strong>Bitcoin Halving Cycle</strong> — Position in the current 210 000-block cycle with phase classification.</li>
-        <li><strong>Trending tokens, crypto news</strong> and a public JSON API at <code>/api_v2</code>.</li>
+        <li><strong>Trending tokens, crypto news</strong> and a public JSON API (<a href="https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=snapshot">full snapshot</a>, <a href="https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=snapshot&amp;format=text">Markdown for LLMs</a>).</li>
       </ul>
     </section>
   </div>
@@ -270,12 +270,12 @@
       <section>
         <h2>Public data endpoints</h2>
         <ul>
-          <li>Ethereum gas: <a href="https://gasnow.tools/api_v2?action=prices&amp;blockchain=eth">/api_v2?action=prices&amp;blockchain=eth</a></li>
-          <li>Bitcoin fees: <a href="https://gasnow.tools/api_v2?action=prices&amp;blockchain=btc">/api_v2?action=prices&amp;blockchain=btc</a></li>
-          <li>Fear &amp; Greed: <a href="https://gasnow.tools/api_v2?action=fear_greed">/api_v2?action=fear_greed</a></li>
-          <li>Market cap: <a href="https://gasnow.tools/api_v2?action=market_cap">/api_v2?action=market_cap</a></li>
-          <li>Trending tokens: <a href="https://gasnow.tools/api_v2?action=trending_tokens">/api_v2?action=trending_tokens</a></li>
-          <li>News: <a href="https://gasnow.tools/api_v2?action=news">/api_v2?action=news</a></li>
+          <li>Ethereum gas: <a href="https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=gas_prices&amp;blockchain=ethereum">JSON (gwei)</a></li>
+          <li>Bitcoin fees: <a href="https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=gas_prices&amp;blockchain=bitcoin">JSON (sat/vB)</a></li>
+          <li>Fear &amp; Greed: <a href="https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=fear_greed">JSON</a></li>
+          <li>Market cap: <a href="https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=market_data">JSON</a></li>
+          <li>Trending tokens: <a href="https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=trending_tokens">JSON</a></li>
+          <li>News: <a href="https://mddqwppgucgzefzddajy.supabase.co/functions/v1/get-crypto-data?type=news&category=general">JSON</a></li>
         </ul>
       </section>
 
