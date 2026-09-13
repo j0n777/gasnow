@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gasnow.tools/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>always</changefreq>
     <priority>1</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://gasnow.tools/" />
@@ -30,13 +30,13 @@
   </url>
   <url>
     <loc>https://gasnow.tools/llms.txt</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://gasnow.tools/llms-full.txt</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
