@@ -1,4 +1,4 @@
-project_id = "pqmfzeqczfsidxaabvok"
+project_id = "mddqwppgucgzefzddajy"
 
 [functions.get-crypto-data]
 verify_jwt = false
