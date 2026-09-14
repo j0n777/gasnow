@@ -472,10 +472,12 @@ async function getStablecoinSupply(supabase: any) {
 
 async function getBitcoinCycle(supabase: any) {
   // 1. Get current position
+  // current_cycle_position não tem created_at (tem updated_at): o order antigo
+  // falhava e `current` vinha null desde sempre (13/09/2026).
   const { data: current } = await supabase
     .from('current_cycle_position')
     .select('*')
-    .order('created_at', { ascending: false })
+    .order('updated_at', { ascending: false })
     .limit(1)
     .single();
 

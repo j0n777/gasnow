@@ -44,6 +44,7 @@ export const useBitcoinCycle = () => {
             const { data: currentData, error: currentError } = await supabase
                 .from('current_cycle_position')
                 .select('*')
+                .order('updated_at', { ascending: false }) // a tabela acumula 1 linha por dia; sem order vinha uma antiga
                 .limit(1)
                 .single();
 
