@@ -85,7 +85,8 @@ function buildSnapshotHtml(s: Snap | null): string {
   H.push(`</dl></section>`);
 
   const cyc = s?.bitcoin_cycle?.position;
-  H.push(`<section id="pre-cycle"><h2>Bitcoin halving cycle</h2>${cyc ? kv(cyc, ['id']) : '<p>Data temporarily unavailable.</p>'}</section>`);
+  const cycView = cyc ? { ...cyc, cycle_progress: cyc.cycle_progress != null ? `${num(parseFloat(cyc.cycle_progress) <= 1 ? parseFloat(cyc.cycle_progress) * 100 : cyc.cycle_progress, 1)}%` : undefined } : null;
+  H.push(`<section id="pre-cycle"><h2>Bitcoin halving cycle</h2>${cycView ? kv(cycView, ['id']) : '<p>Data temporarily unavailable.</p>'}</section>`);
 
   const der = s?.derivatives;
   H.push(`<section id="pre-derivatives"><h2>Derivatives (perpetual futures)</h2>${Array.isArray(der) && der.length ? `<table><thead><tr><th>Symbol</th><th>Mark price</th><th>Funding rate</th><th>Open interest (USD)</th><th>Long/short</th><th>24h</th></tr></thead><tbody>${der.map((d: any) => `<tr><th scope="row">${esc(d.symbol)}</th><td>$${esc(num(d.price))}</td><td>${esc((d.funding_rate * 100).toFixed(4))}%</td><td>$${esc(num(d.open_interest_usd))}</td><td>${esc(num(d.long_short_ratio))}</td><td>${esc(num(d.price_change_24h))}%</td></tr>`).join('')}</tbody></table>` : '<p>Data temporarily unavailable.</p>'}</section>`);
